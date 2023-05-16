@@ -1,0 +1,35 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@master
+
+      - name: Clean
+        run: npm cache verify
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run publish-build
+
+      - name: Deploy
+        uses: SamKirkland/FTP-Deploy-Action@master
+        with:
+          server: ${{ secrets.FTP_DEV_HOST }}
+          username: ${{ secrets.FTP_DEV_USERNAME }}
+          password: ${{ secrets.FTP_DEV_PASSWORD }}
+          local-dir: ./dist/app/
+          server-dir: VOL1/www_document_root/pub/hanacapital-dt-rebuild/pc/
+          exclude: |
+            **/.htaccess

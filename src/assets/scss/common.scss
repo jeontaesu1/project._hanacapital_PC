@@ -1,0 +1,453 @@
+@import '@duetds/date-picker/dist/duet/themes/default.css';
+@import '@vueform/slider/themes/default.css';
+@import '@/assets/fonts/SpoqaHanSansNeo/style.css';
+
+html,
+body,
+pre,
+button,
+select,
+textarea,
+[type='button'],
+[type='submit'],
+[type='text'],
+[type='password'],
+[type='search'],
+[type='email'],
+[type='url'],
+[type='number'],
+[type='tel'],
+[type='file'],
+[type='date'],
+[type='time'] {
+  font-family: $font-spoqa-han-sans-neo, $font-default;
+  line-height: $line-height-default;
+  letter-spacing: $letter-spacing-default;
+  color: $color-black;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+button:focus:not(:focus-visible),
+[type='button']:focus:not(:focus-visible),
+[type='submit']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+  select {
+    text-indent: -2px;
+  }
+}
+
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+
+  &.is-scroll-blocking {
+    &,
+    & body,
+    & #app {
+      overflow: hidden;
+    }
+  }
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+// display-block
+.display-block.display-block {
+  display: block;
+}
+
+// inline-block
+.inline-block.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// display-none
+.display-none.display-none {
+  display: none;
+}
+
+// contents-wrap
+.contents-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+// flex-box
+.flex-box {
+  display: flex;
+  align-items: center;
+
+  &__cell {
+    display: block;
+    flex: none;
+    min-width: 0;
+
+    & + & {
+      margin-left: 8px;
+    }
+
+    & + &--large {
+      margin-left: 20px;
+    }
+
+    & + &--medium {
+      margin-left: 16px;
+    }
+
+    & + &--regular {
+      margin-left: 12px;
+    }
+
+    & + &--small-regular {
+      margin-left: 6px;
+    }
+
+    & + &--small {
+      margin-left: 4px;
+    }
+
+    & + &--mini {
+      margin-left: 2px;
+    }
+  }
+}
+
+// align-items
+.align-items-start.align-items-start {
+  align-items: flex-start;
+}
+.align-items-center.align-items-center {
+  align-items: center;
+}
+.align-items-end.align-items-end {
+  align-items: flex-end;
+}
+
+// align-self
+.align-self-start.align-self-start {
+  align-self: flex-start;
+}
+.align-self-center.align-self-center {
+  align-self: center;
+}
+.align-self-end.align-self-end {
+  align-self: flex-end;
+}
+
+// justify-conten
+.justify-conten-start.justify-conten-start {
+  justify-content: flex-start;
+}
+.justify-conten-center.justify-conten-center {
+  justify-content: center;
+}
+.justify-conten-end.justify-conten-end {
+  justify-content: flex-end;
+}
+
+// flex none
+.flex-none.flex-none {
+  flex: none;
+}
+
+// flex-n
+.flex-1.flex-1 {
+  flex: 1;
+}
+.flex-2.flex-2 {
+  flex: 2;
+}
+
+// input-width
+.input-width {
+  &-telecom {
+    width: 128px;
+  }
+  &-category {
+    width: 100px;
+  }
+  &-driving-license {
+    width: 100px;
+  }
+}
+
+// colors
+.color-black.color-black {
+  color: $color-black;
+}
+.color-white.color-white {
+  color: $color-white;
+}
+.color-green.color-green {
+  color: $color-green-50;
+}
+.color-red.color-red {
+  color: $color-semantic-essential;
+}
+.color-gray.color-gray {
+  color: $color-gray-70;
+}
+.color-gray-secondary.color-gray-secondary {
+  color: $color-gray-60;
+}
+.color-gray-tertiary.color-gray-tertiary {
+  color: $color-gray-80;
+}
+.color-gray-quaternary.color-gray-quaternary {
+  color: $color-gray-50;
+}
+.color-gray-quinary.color-gray-quinary {
+  color: $color-gray-40;
+}
+.color-gray-senary.color-gray-senary {
+  color: $color-gray-90;
+}
+.color-navy.color-navy {
+  color: $color-navy-50;
+}
+.color-blue.color-blue {
+  color: $color-blue-50;
+}
+
+// text
+.text-body-1.text-body-1 {
+  margin: 0;
+  @include font-size-default(16);
+}
+.text-body-2.text-body-2 {
+  margin: 0;
+  @include font-size-default(15);
+}
+.text-body-3.text-body-3 {
+  margin: 0;
+  @include font-size-default(14);
+}
+.text-body-4.text-body-4 {
+  margin: 0;
+  @include font-size-default(13);
+}
+.text-body-5.text-body-5 {
+  margin: 0;
+  @include font-size-default(12);
+}
+
+.text-title-1.text-title-1 {
+  margin: 0;
+  @include font-size-head(20);
+}
+.text-title-2.text-title-2 {
+  margin: 0;
+  @include font-size-head(18);
+}
+
+.text-caption-1.text-caption-1 {
+  margin: 0;
+  @include font-size-head(11);
+}
+
+// font-weight
+.font-weight-thin.font-weight-thin {
+  font-weight: 100;
+}
+.font-weight-light.font-weight-light {
+  font-weight: 300;
+}
+.font-weight-regular.font-weight-regular {
+  font-weight: 400;
+}
+.font-weight-medium.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-bold.font-weight-bold {
+  font-weight: 700;
+}
+
+// align
+.align-left.align-left {
+  text-align: left;
+}
+.align-right.align-right {
+  text-align: right;
+}
+.align-center.align-center {
+  text-align: center;
+}
+
+// underline
+.underline.underline {
+  text-decoration: underline;
+}
+
+// basic-link
+.basic-link.basic-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+// none-deco-link
+.none-deco-link.none-deco-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+// link-block
+.link-block.link-block {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+// ellipsis
+.ellipsis.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// multi-ellipsis
+.multi-ellipsis {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: #{$line-height-default * 2}em;
+
+  &--line-3 {
+    -webkit-line-clamp: 3;
+    max-height: #{$line-height-default * 3}em;
+  }
+}
+
+// reset-list
+.reset-list {
+  @include reset-list;
+}
+
+// inline-wrap
+.inline-wrap {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+// for-a11y
+.for-a11y {
+  @include for-a11y;
+}
+
+// row-margin
+@mixin row-margin-first-last {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.row-margin-none.row-margin-none {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.row-margin-mini.row-margin-mini {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  @include row-margin-first-last;
+}
+.row-margin-small.row-margin-small {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  @include row-margin-first-last;
+}
+.row-margin-item-small.row-margin-item-small {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  @include row-margin-first-last;
+}
+.row-margin-item.row-margin-item {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  @include row-margin-first-last;
+}
+.row-margin-item-regular.row-margin-item-regular {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @include row-margin-first-last;
+}
+.row-margin-item-medium.row-margin-item-medium {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  @include row-margin-first-last;
+}
+.row-margin-item-group-small.row-margin-item-group-small {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  @include row-margin-first-last;
+}
+.row-margin-item-group.row-margin-item-group {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  @include row-margin-first-last;
+}
+.row-margin-contents-small.row-margin-contents-small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include row-margin-first-last;
+}
+.row-margin-contents.row-margin-contents {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  @include row-margin-first-last;
+}
+.row-margin-contents-group.row-margin-contents-group {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include row-margin-first-last;
+}
+.row-margin-container.row-margin-container {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  @include row-margin-first-last;
+}
+.row-margin-container-medium.row-margin-container-medium {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include row-margin-first-last;
+}
+.row-margin-container-group.row-margin-container-group {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  @include row-margin-first-last;
+}
+.row-margin-block.row-margin-block {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include row-margin-first-last;
+}
+.row-margin-block-group.row-margin-block-group {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  @include row-margin-first-last;
+}
+.row-margin-top-none.row-margin-top-none {
+  margin-top: 0;
+}
+.row-margin-bottom-none.row-margin-bottom-none {
+  margin-bottom: 0;
+}
