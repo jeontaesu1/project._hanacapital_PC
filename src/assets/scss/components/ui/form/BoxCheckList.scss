@@ -1,0 +1,76 @@
+.box-check-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  &--align-full {
+    .box-check-list__list {
+      display: block;
+    }
+
+    .box-check-list__item {
+      display: block;
+
+      & + .box-check-list__item {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &--wrap {
+    &::before {
+      content: '';
+      display: table;
+    }
+
+    .box-check-list {
+      &__list {
+        margin: -10px 0 0 -10px;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        flex: none;
+        width: 50%;
+        padding: 10px 0 0 10px;
+
+        & + .box-check-list__item {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &--col-3 {
+    .box-check-list {
+      &__item {
+        width: 33.333333%;
+      }
+    }
+  }
+
+  &--col-4 {
+    .box-check-list {
+      &__item {
+        width: 25%;
+      }
+    }
+  }
+}

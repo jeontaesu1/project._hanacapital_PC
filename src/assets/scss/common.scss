@@ -1,3 +1,5 @@
+@import 'simplebar-vue/dist/simplebar.min.css';
+@import 'vue-select/dist/vue-select.css';
 @import '@duetds/date-picker/dist/duet/themes/default.css';
 @import '@vueform/slider/themes/default.css';
 @import '@/assets/fonts/SpoqaHanSansNeo/style.css';
@@ -102,6 +104,7 @@ body,
       margin-left: 8px;
     }
 
+    /*
     & + &--large {
       margin-left: 20px;
     }
@@ -125,6 +128,7 @@ body,
     & + &--mini {
       margin-left: 2px;
     }
+    */
   }
 }
 
@@ -177,14 +181,16 @@ body,
 // input-width
 .input-width {
   &-telecom {
-    width: 128px;
+    width: 180px;
   }
+  /*
   &-category {
     width: 100px;
   }
   &-driving-license {
     width: 100px;
   }
+  */
 }
 
 // colors
@@ -201,22 +207,7 @@ body,
   color: $color-semantic-essential;
 }
 .color-gray.color-gray {
-  color: $color-gray-70;
-}
-.color-gray-secondary.color-gray-secondary {
   color: $color-gray-60;
-}
-.color-gray-tertiary.color-gray-tertiary {
-  color: $color-gray-80;
-}
-.color-gray-quaternary.color-gray-quaternary {
-  color: $color-gray-50;
-}
-.color-gray-quinary.color-gray-quinary {
-  color: $color-gray-40;
-}
-.color-gray-senary.color-gray-senary {
-  color: $color-gray-90;
 }
 .color-navy.color-navy {
   color: $color-navy-50;
@@ -254,6 +245,19 @@ body,
 .text-title-2.text-title-2 {
   margin: 0;
   @include font-size-head(18);
+}
+
+.text-big-1.text-big-1 {
+  margin: 0;
+  @include font-size-head(32);
+}
+.text-big-2.text-big-2 {
+  margin: 0;
+  @include font-size-head(28);
+}
+.text-big-3.text-big-3 {
+  margin: 0;
+  @include font-size-head(24);
 }
 
 .text-caption-1.text-caption-1 {
@@ -433,6 +437,11 @@ body,
 .row-margin-container-group.row-margin-container-group {
   margin-top: 48px;
   margin-bottom: 48px;
+  @include row-margin-first-last;
+}
+.row-margin-block-small.row-margin-block-small {
+  margin-top: 60px;
+  margin-bottom: 60px;
   @include row-margin-first-last;
 }
 .row-margin-block.row-margin-block {

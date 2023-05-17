@@ -1,0 +1,87 @@
+.status {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1px 6px;
+  border-radius: 100px;
+  @include font-size-default(11);
+  font-weight: 500;
+  color: $color-gray-70;
+  border: 1px solid $color-gray-20;
+  background-color: $color-gray-20;
+
+  &--theme {
+    &-secondary {
+      color: $color-green-50;
+      border-color: transparent;
+      background-color: rgba($color-green-10, 0.2);
+    }
+
+    &-tertiary {
+      color: $color-white;
+      border-color: $color-semantic-accent;
+      background-color: $color-semantic-accent;
+    }
+
+    &-quaternary {
+      color: $color-white;
+      border-color: $color-semantic-positive;
+      background-color: $color-semantic-positive;
+    }
+
+    &-quinary {
+      color: $color-white;
+      border-color: $color-semantic-warning;
+      background-color: $color-semantic-warning;
+    }
+
+    &-senary {
+      color: $color-white;
+      border-color: $color-semantic-caution;
+      background-color: $color-semantic-caution;
+    }
+
+    &-septenary {
+      color: $color-white;
+      border-color: $color-semantic-essential;
+      background-color: $color-semantic-essential;
+    }
+
+    &-octonary {
+      color: $color-gray-70;
+      border-color: transparent;
+      background-color: rgba($color-gray-20, 0.2);
+    }
+
+    &-nonary {
+      color: $color-semantic-essential;
+      border-color: transparent;
+      background-color: rgba($color-semantic-essential, 0.1);
+    }
+
+    &-denary {
+      color: $color-blue-50;
+      border-color: transparent;
+      background-color: rgba($color-blue-50, 0.1);
+    }
+
+    &-undenary {
+      color: $color-navy-50;
+      border-color: transparent;
+      background-color: rgba($color-navy-50, 0.1);
+    }
+  }
+
+  &--block {
+    display: block;
+    text-align: center;
+  }
+
+  /*
+  &--size {
+    &-small {
+      padding: 0 5px;
+      @include font-size-default(10);
+    }
+  }
+  */
+}

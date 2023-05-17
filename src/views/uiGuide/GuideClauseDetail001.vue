@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import ToastAlert from '@/components/ui/layer/ToastAlert.vue';
+import Common_P00_l001 from '@/views/clause/Common_P00_l001.vue';
 
 export default {
   components: {
@@ -14,18 +14,18 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    ToastAlert,
+    Common_P00_l001,
   },
   setup() {
-    const toastAlert = ref(null);
+    const layer001 = ref(null);
 
-    const toastAlertPush = (message) => {
-      toastAlert.value.push(message);
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
     };
 
     return {
-      toastAlert,
-      toastAlertPush,
+      layer001,
+      layer001Open,
     };
   },
 };
@@ -40,17 +40,12 @@ export default {
       align="full"
     >
       <ButtonListItem>
-        <BasicButton
-          @click="
-            toastAlertPush(
-              '여기에 내용이 표시될 예정입니다.\n줄바꿈은 \\n 이용.\n세 줄일 경우는 이렿게 표시됩니다.'
-            )
-          "
-          >토스트 얼럿</BasicButton
-        >
+        <BasicButton @click="layer001Open">
+          약관동의_상세<br />Common_P00_l001
+        </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <ToastAlert ref="toastAlert" />
+    <Common_P00_l001 ref="layer001" />
   </PageContents>
 </template>

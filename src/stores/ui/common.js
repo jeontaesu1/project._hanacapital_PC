@@ -2,16 +2,11 @@ import { defineStore } from 'pinia';
 
 export const useUiCommonStore = defineStore('uiCommon', {
   state: () => ({
-    isAPP: false,
     rootClassName: null,
     scrollbarsWidth: 0,
   }),
 
   actions: {
-    setApp(val = false) {
-      this.isAPP = val;
-    },
-
     setRootClassName(className = null) {
       const html = document.getElementsByTagName('html')[0];
       const { rootClassName } = this;

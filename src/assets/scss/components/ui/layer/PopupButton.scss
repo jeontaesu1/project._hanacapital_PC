@@ -1,0 +1,50 @@
+.popup-button {
+  @include reset-button;
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    box-sizing: content-box;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    * {
+      fill: $color-black;
+    }
+  }
+
+  &__text {
+    @include for-a11y;
+  }
+
+  &--theme {
+    &-white {
+      .popup-button {
+        &__icon {
+          * {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.part-input {
+  display: flex;
+  align-items: center;
+
+  &__dot {
+    flex: none;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: $color-gray-40;
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+
+  &__block {
+    flex: none;
+    width: rem(13);
+  }
+
+  &__dot + &__block,
+  &__block + &__dot {
+    margin-left: 8px;
+  }
+
+  &__input {
+    @include reset-input-text;
+    width: 100%;
+    @include font-size-head(20);
+    height: #{$line-height-head}em;
+
+    &[disabled] {
+      color: $color-gray-40;
+    }
+  }
+
+  &--disabled {
+    .part-input {
+      &__dot {
+        background-color: $color-gray-40;
+      }
+    }
+  }
+}

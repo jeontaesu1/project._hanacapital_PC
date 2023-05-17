@@ -1,0 +1,17 @@
+.invalid {
+  display: block;
+
+  &__message {
+    display: none;
+  }
+
+  &--error {
+    .invalid__message {
+      display: block;
+    }
+
+    .invalid__help {
+      display: none;
+    }
+  }
+}

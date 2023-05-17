@@ -1,0 +1,12 @@
+.page-title {
+  margin: 0;
+  @include font-size-head(32);
+  font-weight: 700;
+  text-align: center;
+
+  &--align {
+    &-left {
+      text-align: left;
+    }
+  }
+}

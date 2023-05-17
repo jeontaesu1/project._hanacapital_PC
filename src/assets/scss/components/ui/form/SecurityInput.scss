@@ -1,0 +1,67 @@
+.security-input {
+  display: block;
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    @include font-size-head(20);
+    height: #{$line-height-head}em;
+  }
+
+  &__dot {
+    flex: none;
+    display: block;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    border: 2px solid $color-gray-60;
+    border-radius: 50%;
+
+    & + & {
+      margin-left: 8px;
+    }
+
+    &--active {
+      border-color: $color-black;
+      background-color: $color-black;
+    }
+  }
+
+  &__button[disabled] {
+    .security-input__dot {
+      border-color: $color-gray-40;
+
+      &--active {
+        background-color: $color-gray-40;
+      }
+    }
+  }
+
+  /*
+  &--theme {
+    &-pin {
+      .security-input__button {
+        justify-content: center;
+        min-height: 0;
+      }
+
+      .security-input__dot {
+        width: 18px;
+        height: 18px;
+
+        & + .security-input__dot {
+          margin-left: 16px;
+        }
+
+        &--active {
+          border-color: $color-green-50;
+          background-color: $color-green-50;
+        }
+      }
+    }
+  }
+  */
+}

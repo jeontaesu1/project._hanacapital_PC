@@ -1,0 +1,101 @@
+.layer {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+  text-align: center;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 350ms linear;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  &__container {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size-default(16);
+    white-space: normal;
+    text-align: left;
+  }
+
+  &__loop {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &--opened {
+    display: block;
+    opacity: 1;
+  }
+
+  &--type {
+    &-full {
+      overflow: hidden;
+      -webkit-overflow-scrolling: auto;
+      background-color: transparent;
+
+      &::before {
+        display: none;
+      }
+
+      .layer__container {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-toast,
+    &-toast-fix {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      overflow: hidden;
+      -webkit-overflow-scrolling: auto;
+
+      &::before {
+        display: block;
+        height: 80px;
+        flex: none;
+      }
+
+      .layer__container {
+        flex: 0 1 auto;
+        min-height: 0;
+        display: block;
+        width: 100%;
+        transform: translateY(100%);
+        transition: transform 350ms;
+      }
+
+      &.layer--opened .layer__container {
+        transform: translateY(0);
+      }
+
+      :global(.is-date-picker-opened) & .layer__container,
+      :global(.is-date-picker-animated) & .layer__container {
+        transform: none;
+        transition: transform 0s !important;
+      }
+    }
+
+    &-toast-fix {
+      .layer__container {
+        flex: 1;
+      }
+    }
+  }
+}
