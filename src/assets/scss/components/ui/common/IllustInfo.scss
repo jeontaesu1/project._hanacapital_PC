@@ -1,28 +1,23 @@
 .illust-info {
-  padding-bottom: 80px;
   margin: auto 0;
 
+  /*
   .illust-info__object {
     padding-bottom: 16px;
   }
+  */
 
   &__title {
     margin: 0;
-    @include font-size-head(20);
-    font-weight: 300;
-    color: $color-black;
+    @include font-size-head(32);
+    font-weight: 700;
     text-align: center;
-
-    strong {
-      font-weight: 500;
-    }
   }
 
   &__text {
     margin: 0;
-    @include font-size-default(14);
+    @include font-size-head(18);
     font-weight: 300;
-    color: $color-gray-80;
     text-align: center;
 
     strong {

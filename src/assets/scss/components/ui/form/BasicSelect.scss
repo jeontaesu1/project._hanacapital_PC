@@ -102,6 +102,7 @@
   &__list {
     &:global(.vs__dropdown-menu) {
       @include reset-list;
+      z-index: 99999999;
       padding: 0;
       border: none;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

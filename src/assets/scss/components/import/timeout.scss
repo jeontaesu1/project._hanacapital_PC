@@ -1,0 +1,16 @@
+.timeout {
+  padding: 16px 0;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 2px;
+    @include font-size-default(16);
+    color: $color-gray-60;
+  }
+
+  &__time {
+    @include font-size-head(32);
+    font-weight: 700;
+    color: $color-green-50;
+  }
+}

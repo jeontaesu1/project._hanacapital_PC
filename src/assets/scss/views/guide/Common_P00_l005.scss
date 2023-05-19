@@ -1,0 +1,11 @@
+.opener {
+  width: 20px;
+  height: 20px;
+}
+
+.contents {
+  margin: 6px 28px 0 30px;
+  @include font-size-default(14);
+  font-weight: 300;
+  color: $color-gray-80;
+}

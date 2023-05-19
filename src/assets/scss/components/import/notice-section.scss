@@ -1,0 +1,12 @@
+.notice-section {
+  & + & {
+    margin-top: 16px;
+  }
+
+  &__title {
+    margin: 0 12px 8px;
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-gray-70;
+  }
+}

@@ -1,12 +1,12 @@
 .illust-object {
   display: block;
-  width: 200px;
-  height: 160px;
+  width: 225px;
+  height: 180px;
   margin: auto;
   box-sizing: content-box;
-  padding-bottom: 40px;
+  padding: 40px 0;
   background: url('@/assets/images/illustration/img-1qcapital.png') no-repeat
-    50% 0 / 100% auto;
+    50% 50% / 100% auto;
 
   &--type {
     &-complete {
@@ -23,9 +23,6 @@
     }
     &-certification {
       background-image: url('@/assets/images/illustration/img-certification.png');
-    }
-    &-star {
-      background-image: url('@/assets/images/illustration/img-star.png');
     }
     &-appfree {
       background-image: url('@/assets/images/illustration/img-appfree.png');

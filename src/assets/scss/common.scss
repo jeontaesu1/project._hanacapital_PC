@@ -120,6 +120,7 @@ body,
     & + &--small-regular {
       margin-left: 6px;
     }
+    */
 
     & + &--small {
       margin-left: 4px;
@@ -128,7 +129,6 @@ body,
     & + &--mini {
       margin-left: 2px;
     }
-    */
   }
 }
 
@@ -208,6 +208,9 @@ body,
 }
 .color-gray.color-gray {
   color: $color-gray-60;
+}
+.color-gray-secondary.color-gray-secondary {
+  color: $color-gray-80;
 }
 .color-navy.color-navy {
   color: $color-navy-50;

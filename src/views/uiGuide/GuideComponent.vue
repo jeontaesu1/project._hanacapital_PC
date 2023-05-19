@@ -53,8 +53,16 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import IllustObject from '@/components/ui/common/IllustObject.vue';
+import IllustInfo from '@/components/ui/common/IllustInfo.vue';
+import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
+import IconPerson from '@/assets/images/icon/person.svg?component';
+import IconBuilding from '@/assets/images/icon/building.svg?component';
+import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 
 export default {
   components: {
@@ -110,7 +118,15 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    ContentsButton,
+    IllustObject,
+    IllustInfo,
+    IllustInfoTitle,
+    IllustInfoText,
     IconAdd,
+    IconPerson,
+    IconBuilding,
+    IconCustomer,
   },
 
   setup() {
@@ -716,6 +732,28 @@ export default {
             <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
           </ButtonListItem>
         </ButtonList>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Contents Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <ContentsButton>
+          <h3 class="text-body-1 row-margin-small">타이틀</h3>
+          <KeyValue align="left" margin="small" size="medium">
+            <KeyValueItem :classNames="{ item: 'text-body-3 color-black' }">
+              <KeyValueTitle>도로명</KeyValueTitle>
+              <KeyValueText>인천 서구 에코로 181</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem :classNames="{ item: 'text-body-3 color-black' }">
+              <KeyValueTitle>입력 주소</KeyValueTitle>
+              <KeyValueText>하나금융그룹 로비</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </ContentsButton>
       </div>
     </section>
 
@@ -2810,7 +2848,6 @@ export default {
           </KeyValueItem>
         </KeyValue>
 
-        <!--
         <h3 class="test-section-sub-title row-margin-item-group">
           align left (size: regular)
         </h3>
@@ -2839,7 +2876,6 @@ export default {
             <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
           </KeyValueItem>
         </KeyValue>
-        -->
       </div>
 
       <div class="test-section-sub">
@@ -2937,10 +2973,11 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </div>
+      -->
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">margin mini</h3>
-        <KeyValue margin="mini">
+        <h3 class="test-section-sub-title">margin small</h3>
+        <KeyValue margin="small">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -2964,7 +3001,6 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </div>
-      -->
     </section>
 
     <section class="test-section">
@@ -2993,6 +3029,209 @@ export default {
 
         <div :class="$style['empty']">
           <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Notice section</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 등록</h3>
+          <ul :class="$style['basic-list']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
+                공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이 필요하지
+                않습니다.)
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                아이디에 등록했던 공동인증서를 삭제합니다. 공동인증서를 삭제할
+                경우 로그인을 위해 공동인증서를 다시 등록해야 합니다.
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section :class="$style['notice-section']">
+          <h3 :class="$style['notice-section__title']">공동인증서 삭제</h3>
+          <ul :class="$style['basic-list']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인/개인사업자 회원은 공동인증서 로그인을 위해 아이디에
+                공동인증서를 등록해야 합니다. (법인 회원은 별도 등록이 필요하지
+                않습니다.)
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                아이디에 등록했던 공동인증서를 삭제합니다. 공동인증서를 삭제할
+                경우 로그인을 위해 공동인증서를 다시 등록해야 합니다.
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Address List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['address-list']">
+          <li v-for="i in 3" :key="i" :class="$style['address-list__item']">
+            <div :class="$style['address-list__block']">
+              <div :class="$style['address-list__title']">16997</div>
+              <KeyValue align="left" margin="small" size="regular">
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>도로명</KeyValueTitle>
+                  <KeyValueText
+                    >인천 서구 에코로 181 하나금융그룹데이터센터</KeyValueText
+                  >
+                </KeyValueItem>
+
+                <KeyValueItem :classNames="{ item: 'text-body-3' }">
+                  <KeyValueTitle>지번</KeyValueTitle>
+                  <KeyValueText>인천 서구 청라동 7-5</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <button type="button" :class="$style['address-list__button']">
+                <span class="for-a11y">선택</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Contents Button</h3>
+        <ul :class="[$style['address-list'], $style['address-list--select']]">
+          <li :class="$style['address-list__item']">
+            <ContentsButton>
+              <div :class="$style['address-list__block']">
+                <div :class="$style['address-list__title']">16997</div>
+                <KeyValue align="left" margin="small" size="medium">
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-3 color-black' }"
+                  >
+                    <KeyValueTitle>도로명</KeyValueTitle>
+                    <KeyValueText>인천 서구 에코로 181</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-3 color-black' }"
+                  >
+                    <KeyValueTitle>입력 주소</KeyValueTitle>
+                    <KeyValueText>하나금융그룹 로비</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </div>
+            </ContentsButton>
+          </li>
+          <li :class="$style['address-list__item']">
+            <ContentsButton>
+              <div :class="$style['address-list__block']">
+                <div :class="$style['address-list__title']">16997</div>
+                <KeyValue align="left" margin="small" size="medium">
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-3 color-black' }"
+                  >
+                    <KeyValueTitle>지번</KeyValueTitle>
+                    <KeyValueText>인천 서구 청라동 7-5</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem
+                    :classNames="{ item: 'text-body-3 color-black' }"
+                  >
+                    <KeyValueTitle>입력 주소</KeyValueTitle>
+                    <KeyValueText>하나금융그룹 로비</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </div>
+            </ContentsButton>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Illust Object</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <IllustObject />
+        <IllustObject type="complete" />
+        <IllustObject type="error" />
+        <IllustObject type="fail" />
+        <IllustObject type="license" />
+        <IllustObject type="certification" />
+        <IllustObject type="appfree" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Illust Info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <IllustInfo>
+          <IllustObject type="fail" />
+          <IllustInfoTitle>
+            만기연장 신청 대상이 아닙니다<br />
+            <strong>잔여 회차를 확인해 주세요</strong>
+          </IllustInfoTitle>
+          <IllustInfoText>
+            하나캐피탈 스탁론에<br />
+            관심을 가져주셔서 감사합니다.
+          </IllustInfoText>
+        </IllustInfo>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Icon List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['icon-list']">
+          <ul :class="$style['icon-list__list']">
+            <li :class="$style['icon-list__item']">
+              <button type="button" :class="$style['icon-list__block']">
+                <span :class="$style['icon-list__icon']"><IconPerson /></span>
+                <span :class="$style['icon-list__content']">
+                  <span :class="$style['icon-list__title']"
+                    >개인 (개인사업자)</span
+                  >
+                </span>
+              </button>
+            </li>
+            <li :class="$style['icon-list__item']">
+              <button type="button" :class="$style['icon-list__block']">
+                <span :class="$style['icon-list__icon']"><IconBuilding /></span>
+                <span :class="$style['icon-list__content']">
+                  <span :class="$style['icon-list__title']">법인</span>
+                </span>
+              </button>
+            </li>
+            <li :class="$style['icon-list__item']">
+              <div :class="$style['icon-list__block']">
+                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list__content']">
+                  <div :class="$style['icon-list__title']">
+                    고객센터 1800-1110
+                  </div>
+                  <div :class="$style['icon-list__text']">
+                    평일 09:00 ~ 18:00
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

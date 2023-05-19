@@ -1,0 +1,37 @@
+.contents-button {
+  position: relative;
+
+  &__content {
+    padding: 24px 20px;
+  }
+
+  &__button {
+    @include reset-button;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid $color-gray-20;
+    border-radius: 8px;
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      border-width: 2px;
+      border-color: $color-navy-50;
+
+      & + .contents-button__content {
+        color: $color-navy-50;
+      }
+    }
+
+    &-text {
+      @include for-a11y;
+    }
+  }
+}
