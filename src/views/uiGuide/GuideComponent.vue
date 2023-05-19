@@ -28,6 +28,7 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
@@ -36,6 +37,22 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabList from '@/components/ui/tab/UiTabList.vue';
+import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 
@@ -68,6 +85,7 @@ export default {
     SecurityInput,
     PartInput,
     SecurityKeypadButton,
+    SearchButton,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckObject,
@@ -76,6 +94,22 @@ export default {
     StepProgress,
     RoundStatus,
     NoticeText,
+    UiTab,
+    UiTabList,
+    UiTabButton,
+    UiTabPanel,
+    NavTab,
+    NavTabButton,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionLayer,
+    UiAccordionOpener,
+    BasicHr,
+    BasicBox,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
     IconAdd,
   },
 
@@ -1288,6 +1322,23 @@ export default {
           </FormListItem>
         </FormList>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Search</h3>
+
+        <InputBlock>
+          <InputBlockCell :flexible="true">
+            <BasicInput
+              type="search"
+              title="아파트 검색어"
+              placeholder="동(읍/면) 또는 아파트 이름 입력"
+            />
+          </InputBlockCell>
+          <InputBlockCell type="search">
+            <SearchButton />
+          </InputBlockCell>
+        </InputBlock>
+      </div>
     </section>
 
     <section class="test-section">
@@ -2250,15 +2301,6 @@ export default {
               법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
             </div>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              비씨카드는 비씨로고(
-              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
-              )가 표시된 카드만 이용가능합니다.<br />
-              (예 : 농협BC, 우리카드, IBK카드 등)
-            </div>
-          </li>
           <li :class="[$style['basic-list__item'], 'color-black']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -2296,15 +2338,6 @@ export default {
               본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
             </div>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']">3.</div>
-            <div :class="$style['basic-list__content']">
-              비씨카드는 비씨로고(
-              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
-              )가 표시된 카드만 이용가능합니다.<br />
-              (예 : 농협BC, 우리카드, IBK카드 등)
-            </div>
-          </li>
           <li :class="[$style['basic-list__item'], 'color-black']">
             <div :class="$style['basic-list__symbol']">4.</div>
             <div :class="$style['basic-list__content']">
@@ -2340,15 +2373,6 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
-            </div>
-          </li>
-          <li :class="[$style['basic-list__item'], 'text-body-3']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              비씨카드는 비씨로고(
-              <span :class="$style['inline-logo']"><BrandLogo007 /></span>
-              )가 표시된 카드만 이용가능합니다.<br />
-              (예 : 농협BC, 우리카드, IBK카드 등)
             </div>
           </li>
           <li
@@ -2411,6 +2435,565 @@ export default {
         <NoticeText type="check" :classNames="{ wrap: 'color-navy' }">
           Text Text Text Text Text
         </NoticeText>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Tab Base</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <UiTab v-slot="tabSlotProps" initialOpen="testTab001_003">
+          <UiTabList>
+            <UiTabButton link="testTab001_001">Tab 1</UiTabButton>
+            <UiTabButton link="testTab001_002">Tab 2</UiTabButton>
+            <UiTabButton link="testTab001_003">Tab 3</UiTabButton>
+            <UiTabButton link="testTab001_004">Tab 4</UiTabButton>
+          </UiTabList>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Nav Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <NavTab :useUiTab="true">
+            <NavTabButton link="testNavTab001_001">Tab 1</NavTabButton>
+            <NavTabButton link="testNavTab001_002">Tab 2</NavTabButton>
+            <NavTabButton link="testNavTab001_003">Tab 3</NavTabButton>
+            <NavTabButton link="testNavTab001_004">Tab 4</NavTabButton>
+          </NavTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testNavTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testNavTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <NavTab>
+          <NavTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </NavTabButton>
+          <NavTabButton tagName="RouterLink" to="">Tab 2</NavTabButton>
+
+          <NavTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </NavTabButton>
+          <NavTabButton tagName="a" href="">Tab 4</NavTabButton>
+
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+        </NavTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">auto</h3>
+
+        <NavTab :auto="true">
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 2</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 3</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 4</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 6</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 7</NavTabButton>
+          <NavTabButton tagName="button" type="button">Tab 8</NavTabButton>
+        </NavTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Type Popup</h3>
+
+        <NavTab type="popup">
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 2
+          </NavTabButton>
+        </NavTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Type Popup Head</h3>
+
+        <NavTab type="popup-head">
+          <NavTabButton tagName="button" type="button">Tab 1</NavTabButton>
+          <NavTabButton tagName="button" type="button" :active="true">
+            Tab 2
+          </NavTabButton>
+        </NavTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Accordion Base</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <button type="button" @click="testAccordionAllOpen">모두 열기</button>
+        <button type="button" @click="testAccordionAllClose">모두 닫기</button>
+
+        <UiAccordion ref="testAccordion">
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps" :initialOpen="true">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Once</h3>
+
+        <UiAccordion :once="true">
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+
+          <UiAccordionItem v-slot="accordionItemSlotProps">
+            <UiAccordionOpener />
+            <button type="button" @click="accordionItemSlotProps.toggle()">
+              {{ accordionItemSlotProps.opened ? '닫기' : '열기' }}
+            </button>
+
+            <UiAccordionLayer>
+              지나가는 동경과 어머니, 그리워 아름다운 시와 것은 옥 거외다.
+              라이너 이름을 이네들은 어머니, 말 써 멀리 못 불러 계십니다.<br /><br />
+
+              봄이 어머님, 가득 버리었습니다. 소학교 청춘이 이름과 나는 이웃
+              책상을 봅니다. 패, 경, 내 하나에 하나에 봅니다. 가을로 사랑과
+              이름과, 패, 무성할 잠, 내 차 추억과 듯합니다.<br /><br />
+
+              마리아 하나에 이런 가득 까닭입니다. 걱정도 별 하나에 이런 아름다운
+              거외다.
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">hr</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicHr className="row-margin-contents" />
+        <BasicHr theme="secondary" className="row-margin-contents" />
+        <BasicHr theme="tertiary" className="row-margin-contents" />
+        <BasicHr theme="quaternary" className="row-margin-contents" />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Popup</h3>
+        <BasicHr type="popup" className="row-margin-contents" />
+        <BasicHr
+          theme="secondary"
+          type="popup"
+          className="row-margin-contents"
+        />
+        <BasicHr
+          theme="tertiary"
+          type="popup"
+          className="row-margin-contents"
+        />
+        <BasicHr
+          theme="quaternary"
+          type="popup"
+          className="row-margin-contents"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>// contnets</BasicBox>
+        <BasicBox theme="secondary">// contnets</BasicBox>
+        <BasicBox theme="tertiary">// contnets</BasicBox>
+        <!--
+        <BasicBox theme="quaternary">// contnets</BasicBox>
+        <BasicBox theme="quinary">// contnets</BasicBox>
+        <BasicBox theme="senary">// contnets</BasicBox>
+        -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Key Value Text</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align left</h3>
+        <KeyValue align="left">
+          <KeyValueItem>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <!--
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align left (size: regular)
+        </h3>
+        <KeyValue align="left" size="regular">
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align left (size: medium)
+        </h3>
+        <KeyValue align="left" size="medium">
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>타이틀</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+        -->
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align : center</h3>
+        <KeyValue verticalAlign="center">
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <!--
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Vertical</h3>
+        <KeyValue direction="vertical">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular</h3>
+        <KeyValue margin="regular">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular-small</h3>
+        <KeyValue margin="regular-small">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin mini</h3>
+        <KeyValue margin="mini">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+      -->
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">division info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['division-info']">
+          <ul :class="$style['division-info__list']">
+            <li :class="$style['division-info__item']">
+              <div class="text-body-3 font-weight-light">2023.01.10</div>
+            </li>
+            <li :class="$style['division-info__item']">
+              <div class="color-green text-body-3 font-weight-medium">
+                신용동의
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Empty</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
       </div>
     </section>
 

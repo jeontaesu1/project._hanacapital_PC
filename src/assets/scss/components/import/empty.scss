@@ -1,0 +1,11 @@
+.empty {
+  padding: 60px 0;
+  margin: auto 0;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    @include font-size-default(13);
+    font-weight: 300;
+  }
+}

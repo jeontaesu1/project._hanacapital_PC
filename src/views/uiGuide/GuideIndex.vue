@@ -135,8 +135,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/search-workplace-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.05.19',
         log: [],
       },
       {

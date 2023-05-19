@@ -1,0 +1,27 @@
+.hr {
+  height: 10px;
+  background-color: $color-gray-20;
+
+  &--type {
+    &-popup {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+  }
+
+  &--theme {
+    &-secondary {
+      background-color: $color-gray-15;
+    }
+
+    &-tertiary {
+      height: 1px;
+      background-color: $color-gray-30;
+    }
+
+    &-quaternary {
+      height: 1px;
+      background-color: $color-gray-20;
+    }
+  }
+}

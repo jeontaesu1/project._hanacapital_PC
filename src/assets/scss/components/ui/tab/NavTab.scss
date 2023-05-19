@@ -1,0 +1,247 @@
+.nav-tab {
+  margin: 0 0 40px;
+
+  &,
+  &__inner {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 30px;
+      opacity: 0;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  & {
+    &::before,
+    &::after {
+      bottom: 0;
+      height: 1px;
+    }
+
+    &::before {
+      background: linear-gradient(
+        to right,
+        rgba($color-gray-20, 1) 0%,
+        rgba($color-gray-20, 1) 49.48%,
+        rgba($color-gray-20, 0) 100%
+      );
+    }
+
+    &::after {
+      background: linear-gradient(
+        to right,
+        rgba($color-gray-20, 0) 0%,
+        rgba($color-gray-20, 1) 50.52%,
+        rgba($color-gray-20, 1) 100%
+      );
+    }
+  }
+
+  &__inner {
+    box-shadow: 0 -1px 0 $color-gray-20 inset;
+
+    &::before,
+    &::after {
+      top: 0;
+      bottom: 1px;
+    }
+
+    &::before {
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 49.48%,
+        rgba($color-white, 0) 100%
+      );
+    }
+
+    &::after {
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0) 0%,
+        rgba($color-white, 1) 50.52%,
+        rgba($color-white, 1) 100%
+      );
+    }
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+  }
+
+  &__button {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px 18px;
+  }
+
+  &__text {
+    display: block;
+    @include font-size-head(18);
+    color: $color-gray-60;
+  }
+
+  &__item--active,
+  &__item:global(.is-tab-opened) {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: $color-black;
+    }
+
+    .nav-tab__text {
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+
+  &__scroller {
+    > :global(.simplebar-track) {
+      background: none;
+
+      :global(.simplebar-scrollbar) {
+        &::before {
+          top: 2px;
+          bottom: 2px;
+          left: 2px;
+          right: 2px;
+          border-radius: 2px;
+          background: $color-gray-40;
+        }
+
+        &:global(.simplebar-visible) {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:global(.simplebar-horizontal) {
+        height: 8px;
+
+        :global(.simplebar-scrollbar) {
+          top: 0;
+          height: 100%;
+
+          &::before {
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            height: auto;
+          }
+        }
+      }
+
+      &:global(.simplebar-vertical) {
+        width: 8px;
+
+        :global(.simplebar-scrollbar) {
+          &::before {
+            top: 2px;
+            bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &--auto {
+    .nav-tab__item {
+      flex: none;
+
+      & + .nav-tab__item {
+        margin-left: 24px;
+      }
+    }
+  }
+
+  &--type {
+    &-popup {
+      margin-left: -30px;
+      margin-right: -30px;
+
+      .nav-tab__list {
+        &::before,
+        &::after {
+          content: '';
+          flex: none;
+          display: block;
+          width: 30px;
+        }
+      }
+
+      &.nav-tab--auto {
+        &,
+        .nav-tab__inner {
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-popup-head {
+      margin-bottom: 0;
+      padding-top: 16px;
+
+      .nav-tab__list {
+        &::before,
+        &::after {
+          content: '';
+          flex: none;
+          display: block;
+          width: 30px;
+        }
+      }
+
+      &.nav-tab--auto {
+        &,
+        .nav-tab__inner {
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

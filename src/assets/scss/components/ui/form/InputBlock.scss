@@ -92,23 +92,15 @@
       margin-left: 16px;
     }
 
-    /*
     & + &--type-search,
     &--type-search + & {
       margin-left: 10px;
     }
-    */
 
     & + &--margin-regular {
       margin-left: 16px;
     }
   }
-
-  /*
-  &--type-search {
-    padding-top: 6px;
-  }
-  */
 
   &--disabled {
     &,

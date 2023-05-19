@@ -178,6 +178,11 @@ const routes = [
     component: () => import('@/views/sign/Member_P03_p002.vue'),
   },
   {
+    path: '/sign/Member_P03_p003',
+    name: '/sign/Member_P03_p003',
+    component: () => import('@/views/sign/Member_P03_p003.vue'),
+  },
+  {
     path: '/sign/Member_P04_p001',
     name: '/sign/Member_P04_p001',
     component: () => import('@/views/sign/Member_P04_p001.vue'),

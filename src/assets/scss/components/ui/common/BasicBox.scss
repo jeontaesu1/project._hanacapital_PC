@@ -1,0 +1,31 @@
+.box {
+  padding: 23px 19px;
+  border-radius: 8px;
+  border: 1px solid $color-gray-20;
+
+  &--theme {
+    &-secondary {
+      border-color: $color-white;
+      background-color: $color-white;
+    }
+
+    &-tertiary {
+      border-color: $color-gray-05;
+      background-color: $color-gray-05;
+    }
+
+    /*
+    &-quaternary {
+    }
+
+    &-quinary {
+    }
+
+    &-senary {
+    }
+
+    &-septenary {
+    }
+    */
+  }
+}
