@@ -193,32 +193,6 @@ body,
   */
 }
 
-// colors
-.color-black.color-black {
-  color: $color-black;
-}
-.color-white.color-white {
-  color: $color-white;
-}
-.color-green.color-green {
-  color: $color-green-50;
-}
-.color-red.color-red {
-  color: $color-semantic-essential;
-}
-.color-gray.color-gray {
-  color: $color-gray-60;
-}
-.color-gray-secondary.color-gray-secondary {
-  color: $color-gray-80;
-}
-.color-navy.color-navy {
-  color: $color-navy-50;
-}
-.color-blue.color-blue {
-  color: $color-blue-50;
-}
-
 // text
 .text-body-1.text-body-1 {
   margin: 0;
@@ -340,6 +314,35 @@ body,
     -webkit-line-clamp: 3;
     max-height: #{$line-height-default * 3}em;
   }
+}
+
+// colors
+.color-black.color-black {
+  color: $color-black;
+}
+.color-white.color-white {
+  color: $color-white;
+}
+.color-green.color-green {
+  color: $color-green-50;
+}
+.color-red.color-red {
+  color: $color-semantic-essential;
+}
+.color-gray.color-gray {
+  color: $color-gray-60;
+}
+.color-gray-secondary.color-gray-secondary {
+  color: $color-gray-80;
+}
+.color-gray-tertiary.color-gray-tertiary {
+  color: $color-gray-70;
+}
+.color-navy.color-navy {
+  color: $color-navy-50;
+}
+.color-blue.color-blue {
+  color: $color-blue-50;
 }
 
 // reset-list

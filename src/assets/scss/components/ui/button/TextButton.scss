@@ -1,0 +1,146 @@
+@mixin button-theme($color) {
+  color: $color;
+
+  .button__icon {
+    svg {
+      *:first-child {
+        fill: $color;
+      }
+    }
+
+    &--fill-all {
+      svg {
+        * {
+          fill: $color;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  @include reset-button;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  @include font-size-button(18);
+  font-weight: 500;
+
+  &__text {
+    display: block;
+  }
+
+  &__icon {
+    flex: none;
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      *:first-child {
+        fill: $color-black;
+      }
+    }
+
+    &--fill-all {
+      svg {
+        * {
+          fill: $color-black;
+        }
+      }
+    }
+  }
+
+  &__icon + &__text,
+  &__text + &__icon {
+    margin-left: 2px;
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  &--icon {
+    &-regular {
+      .button__icon {
+        width: 16px;
+        height: 16px;
+      }
+      .button__icon + .button__text,
+      .button__text + .button__icon {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--text {
+    &-regular {
+      @include font-size-button(14);
+    }
+  }
+
+  &--theme {
+    &-secondary {
+      @include button-theme($color-green-50);
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-green-70);
+      }
+      &[disabled] {
+        @include button-theme($color-green-10);
+      }
+    }
+    &-tertiary {
+      @include button-theme($color-blue-50);
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-blue-70);
+      }
+      &[disabled] {
+        @include button-theme($color-blue-10);
+      }
+    }
+    &-quaternary {
+      @include button-theme($color-navy-50);
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-navy-70);
+      }
+      &[disabled] {
+        @include button-theme($color-navy-10);
+      }
+    }
+    &-quinary {
+      &:hover,
+      &:active,
+      &:focus-visible {
+        @include button-theme($color-gray-80);
+      }
+      &[disabled] {
+        @include button-theme($color-gray-40);
+      }
+    }
+  }
+
+  &:global(.color-gray-tertiary) {
+    @include button-theme($color-gray-70);
+  }
+}

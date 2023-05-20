@@ -1,9 +1,16 @@
 .page-sub-text {
-  margin: 16px 0 0;
+  margin: 0;
   @include font-size-head(18);
   font-weight: 300;
+  text-align: center;
 
   strong {
     font-weight: 500;
+  }
+
+  &--align {
+    &-left {
+      text-align: left;
+    }
   }
 }

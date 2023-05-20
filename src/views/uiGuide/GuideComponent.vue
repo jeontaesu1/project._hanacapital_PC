@@ -4,6 +4,7 @@ import { ref, reactive } from 'vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
@@ -63,12 +64,15 @@ import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
+import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    TextButton,
     UiLayer,
     PopupTitle,
     PopupSubTitle,
@@ -127,6 +131,8 @@ export default {
     IconPerson,
     IconBuilding,
     IconCustomer,
+    IconLogo,
+    IconLink,
   },
 
   setup() {
@@ -732,6 +738,142 @@ export default {
             <BasicButton :line="true" theme="quaternary">Button 4</BasicButton>
           </ButtonListItem>
         </ButtonList>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Text Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextButton>Button</TextButton>
+        <TextButton theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+        <TextButton theme="quaternary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+        <TextButton theme="quinary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">a Tag</h3>
+        <TextButton tagName="a" href="">Button</TextButton>
+        <TextButton tagName="a" href="" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton tagName="a" href="" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Router Link</h3>
+        <TextButton tagName="RouterLink" to="">Button</TextButton>
+        <TextButton
+          tagName="RouterLink"
+          to=""
+          theme="secondary"
+          :iconFillAll="true"
+        >
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton
+          tagName="RouterLink"
+          to=""
+          theme="tertiary"
+          :iconFillAll="true"
+        >
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">underline</h3>
+        <TextButton :underline="true">Button</TextButton>
+        <TextButton theme="secondary" :underline="true" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :underline="true" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon size regular</h3>
+        <TextButton iconSize="regular" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton iconSize="regular" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">text size regular</h3>
+        <TextButton textSize="regular" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton textSize="regular" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">block</h3>
+        <TextButton :block="true">Button</TextButton>
+        <TextButton theme="secondary" :block="true" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton theme="tertiary" :block="true" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
       </div>
     </section>
 
@@ -3183,10 +3325,10 @@ export default {
           <IllustObject type="fail" />
           <IllustInfoTitle>
             만기연장 신청 대상이 아닙니다<br />
-            <strong>잔여 회차를 확인해 주세요</strong>
+            잔여 회차를 확인해 주세요
           </IllustInfoTitle>
           <IllustInfoText>
-            하나캐피탈 스탁론에<br />
+            <strong>하나캐피탈 스탁론</strong>에<br />
             관심을 가져주셔서 감사합니다.
           </IllustInfoText>
         </IllustInfo>
@@ -3232,6 +3374,31 @@ export default {
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Join</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['join']">
+          <div :class="$style['join__inner']">
+            <div :class="$style['join__icon']"><IconLogo /></div>
+            <div :class="$style['join__title']">앱에서 가입하셨나요?</div>
+            <TextButton
+              :block="true"
+              :classNames="{
+                wrap: [$style['join__link'], 'color-gray-tertiary'],
+              }"
+            >
+              앱회원 가입
+              <template v-slot:rightIcon>
+                <IconLink />
+              </template>
+            </TextButton>
+          </div>
         </div>
       </div>
     </section>

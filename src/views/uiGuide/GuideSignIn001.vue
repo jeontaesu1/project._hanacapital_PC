@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import layer from '@/views/';
+import Member_P02_l001 from '@/views/sign/Member_P02_l001.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    Member_P02_l001,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,13 +41,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          공동인증서 등록<br />Member_P02_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <Member_P02_l001 ref="layer001" />
   </PageContents>
 </template>

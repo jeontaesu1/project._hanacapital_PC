@@ -107,8 +107,10 @@ export default {
           <StepProgress :total="5" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText>실명 및 본인 인증을 진행해 주세요</PageMainText>
-      <PageSubText>
+      <PageMainText align="left"
+        >실명 및 본인 인증을 진행해 주세요</PageMainText
+      >
+      <PageSubText align="left">
         대출상담 및 한도 조회를 위한 신용정보 조회는<br />
         개인신용평점에 영향을 주지 않습니다.
       </PageSubText>
@@ -522,6 +524,10 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText
+                >수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
+                인증을 진행해 주세요.</FormHelpText
+              >
             </FormInvalid>
           </FormListItem>
         </FormList>
@@ -738,6 +744,10 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText
+                >수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
+                인증을 진행해 주세요.</FormHelpText
+              >
             </FormInvalid>
           </FormListItem>
         </FormList>

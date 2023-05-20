@@ -84,9 +84,9 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideCustomerCertificate001.vue'),
   },
   {
-    path: '/guide/sign-login-001',
-    name: '/guide/sign-login-001',
-    component: () => import('@/views/uiGuide/GuideSignLogin001.vue'),
+    path: '/guide/sign-in-001',
+    name: '/guide/sign-in-001',
+    component: () => import('@/views/uiGuide/GuideSignIn001.vue'),
   },
 
   // main

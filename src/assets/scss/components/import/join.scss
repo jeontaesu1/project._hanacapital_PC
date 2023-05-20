@@ -1,0 +1,33 @@
+.join {
+  margin-top: 40px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    flex: none;
+    width: 48px;
+    height: 48px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    margin: 0 12px;
+    @include font-size-head(18);
+    font-weight: 500;
+  }
+
+  &__link {
+    flex: none;
+    width: auto;
+  }
+}

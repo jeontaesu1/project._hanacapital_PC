@@ -17,6 +17,10 @@ export default {
         return defaultClassNames();
       },
     },
+    align: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -34,7 +38,13 @@ export default {
 <template>
   <component
     :is="tagName"
-    :class="[$style['page-main-text'], customClassNames.wrap]"
+    :class="[
+      $style['page-main-text'],
+      {
+        [$style[`page-main-text--align-${align}`]]: align,
+      },
+      customClassNames.wrap,
+    ]"
   >
     <slot />
   </component>

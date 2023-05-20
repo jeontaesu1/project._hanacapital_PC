@@ -1,8 +1,12 @@
 .page-title {
-  margin: 0;
+  margin: 0 0 30px;
   @include font-size-head(32);
   font-weight: 700;
   text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &--align {
     &-left {

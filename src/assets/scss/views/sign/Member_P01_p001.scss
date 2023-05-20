@@ -1,0 +1,22 @@
+@import '@/assets/scss/components/import/join.scss';
+@import '@/assets/scss/components/import/division-info.scss';
+
+.division-info {
+  margin-top: 30px;
+
+  &__list {
+    justify-content: center;
+  }
+
+  &__item {
+    & + & {
+      padding-left: 33px;
+
+      &::before {
+        left: 16px;
+        margin-top: -8px;
+        height: 16px;
+      }
+    }
+  }
+}

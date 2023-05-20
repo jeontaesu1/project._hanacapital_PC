@@ -1,5 +1,16 @@
 .page-main-text {
-  margin: 30px 0 0;
+  margin: 0 0 16px;
   @include font-size-head(24);
   font-weight: 500;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--align {
+    &-left {
+      text-align: left;
+    }
+  }
 }

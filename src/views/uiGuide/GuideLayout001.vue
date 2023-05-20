@@ -56,10 +56,10 @@ export default {
           <StepProgress :total="5" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText>
+      <PageMainText align="left">
         메인 텍스트 메인 텍스트 메인 텍스트 메인 텍스트
       </PageMainText>
-      <PageSubText>
+      <PageSubText align="left">
         서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트
         서브 텍스트 서브 텍스트
       </PageSubText>
