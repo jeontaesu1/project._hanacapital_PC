@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/mobile"
+    "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/pc"
   },
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
