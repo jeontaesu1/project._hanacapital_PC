@@ -19,11 +19,10 @@
     position: relative;
     display: block;
     height: #{$line-height-default}em;
-    margin-right: 4px;
+    margin-right: 8px;
 
     &:empty {
       min-width: 2px;
-      margin-right: 8px;
 
       &::before {
         content: '';
