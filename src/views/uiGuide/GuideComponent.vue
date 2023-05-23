@@ -68,6 +68,18 @@ import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
 import IconDot from '@/assets/images/icon/dot.svg?component';
+import IconStar from '@/assets/images/icon/star-badge.svg?component';
+
+import IconPhone from '@/assets/images/icon/phone.svg?component';
+import IconSend from '@/assets/images/icon/send.svg?component';
+import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
+import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
+import IconCompleted from '@/assets/images/icon/completed.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
+import IconCar from '@/assets/images/icon/car.svg?component';
+import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 
 export default {
   components: {
@@ -137,6 +149,17 @@ export default {
     IconLink,
     IconLinkSmall,
     IconDot,
+    IconStar,
+    IconPhone,
+    IconSend,
+    IconPersonalTerms,
+    IconDeposit,
+    IconCallMint,
+    IconCompleted,
+    IconContract,
+    IconCarCheck,
+    IconCar,
+    IconDocumentSearch,
   },
 
   setup() {
@@ -2464,6 +2487,178 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Block</h3>
         <RoundStatus :block="true">텍스트</RoundStatus>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Icon Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div :class="$style['icon-box__icon']">
+              <IconStar />
+            </div>
+            <p
+              :class="[
+                $style['icon-box__content'],
+                'text-title-1',
+                'row-margin-item',
+              ]"
+            >
+              <span class="color-green font-weight-bold">하나프라자</span>님은
+              하나캐피탈에 등록된<br />
+              <span class="font-weight-bold">정식 모집인</span>입니다
+            </p>
+          </div>
+        </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Step Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['step']">
+          <ul :class="$style['step__list']">
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    홈페이지/모바일(웹)을 통하여
+                    <strong>재리스 신청 및 견적</strong>을 요청합니다.
+                    (신용조회동의)
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPhone />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 2</div>
+                  <p :class="$style['step__text']">
+                    신청내역을 확인하여
+                    <strong>심사결과를 안내</strong>드립니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconSend />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 3</div>
+                  <p :class="$style['step__text']">
+                    <strong>서면약정 또는 온라인약정</strong>으로 계약이
+                    진행됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPersonalTerms />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 4</div>
+                  <p :class="$style['step__text']">
+                    입금/지급 <strong>금액을 정산</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDeposit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 5</div>
+                  <p :class="$style['step__text']">
+                    계약사항에 대해
+                    <strong>이해하였음을 유선상 확인</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCallMint />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 6</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCompleted />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconContract />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCarCheck />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCar />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDocumentSearch />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
