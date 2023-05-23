@@ -3404,6 +3404,37 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Search List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <ul :class="$style['search-list']">
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+          <li :class="$style['search-list__item']">
+            <button type="button" :class="$style['search-list__link']">
+              <span :class="$style['search-list__text']">
+                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
