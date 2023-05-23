@@ -50,6 +50,9 @@ import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -118,6 +121,9 @@ export default {
     UiAccordionOpener,
     BasicHr,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -2457,6 +2463,22 @@ export default {
         <RoundStatus theme="denary">텍스트</RoundStatus>
         <RoundStatus theme="undenary">텍스트</RoundStatus>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size - Large</h3>
+        <RoundStatus size="large">텍스트</RoundStatus>
+        <RoundStatus theme="secondary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="tertiary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="quaternary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="quinary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="senary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="septenary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="octonary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="nonary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="denary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="undenary" size="large">텍스트</RoundStatus>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Block</h3>
         <RoundStatus :block="true">텍스트</RoundStatus>
@@ -2944,6 +2966,42 @@ export default {
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
         -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Box Head</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
+              <div :class="[$style['division-info'], 'row-margin-item-small']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
+                  </li>
+                  <li :class="$style['division-info__item']">
+                    <div class="text-body-3 color-gray-tertiary">
+                      L99999999999999
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <RoundStatus
+                theme="secondary"
+                size="large"
+                :classNames="{ wrap: 'display-block' }"
+              >
+                정상
+              </RoundStatus>
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          // contents
+        </BasicBox>
       </div>
     </section>
 
