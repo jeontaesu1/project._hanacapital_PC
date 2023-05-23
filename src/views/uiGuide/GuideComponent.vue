@@ -66,6 +66,8 @@ import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
+import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
+import IconDot from '@/assets/images/icon/dot.svg?component';
 
 export default {
   components: {
@@ -133,6 +135,8 @@ export default {
     IconCustomer,
     IconLogo,
     IconLink,
+    IconLinkSmall,
+    IconDot,
   },
 
   setup() {
@@ -3404,9 +3408,208 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
+      <h2 class="test-section-title">
+        pagination page - (컨텐츠 내부에 올때는 생략기능 있음)
+      </h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- 페이징 -->
+        <div :class="$style['pagination']">
+          <button
+            disabled
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--prev'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
+            <desc id="catDesc" class="for-a11y">이전</desc>
+          </button>
+          <span :class="$style['pagination__list']">
+            <a
+              :class="[
+                $style['pagination__item'],
+                $style['pagination__item--selected'],
+              ]"
+              href="#"
+              >1</a
+            >
+            <a :class="$style['pagination__item']" href="#">2</a>
+            <a :class="$style['pagination__item']" href="#">3</a>
+            <a :class="$style['pagination__item']" href="#">4</a>
+            <a :class="$style['pagination__item']" href="#">5</a>
+            <a :class="$style['pagination__item']" href="#">6</a>
+            <a :class="$style['pagination__item']" href="#">7</a>
+
+            <span :class="$style['pagination__elision']">
+              <IconDot aria-labelledby="nextDesc" role="img" />
+              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
+            </span>
+            <a :class="$style['pagination__item']" href="#">25</a>
+          </span>
+
+          <button
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--next'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
+            <desc id="nextDesc" class="for-a11y">다음</desc>
+          </button>
+        </div>
+        <!-- //페이징 -->
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">중간단계일때</h3>
+
+        <div :class="$style['pagination']">
+          <button
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--prev'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
+            <desc id="catDesc" class="for-a11y">이전</desc>
+          </button>
+          <span :class="$style['pagination__list']">
+            <a :class="$style['pagination__item']" title="현재 페이지" href="#"
+              >1</a
+            >
+
+            <span :class="$style['pagination__elision']">
+              <IconDot aria-labelledby="nextDesc" role="img" />
+              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
+            </span>
+
+            <a :class="$style['pagination__item']" href="#">4</a>
+            <a :class="$style['pagination__item']" href="#">5</a>
+            <a
+              :class="[
+                $style['pagination__item'],
+                $style['pagination__item--selected'],
+              ]"
+              href="#"
+              >6</a
+            >
+            <a :class="$style['pagination__item']" href="#">6</a>
+            <a :class="$style['pagination__item']" href="#">7</a>
+
+            <span :class="$style['pagination__elision']">
+              <IconDot aria-labelledby="nextDesc" role="img" />
+              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
+            </span>
+            <a :class="$style['pagination__item']" href="#">25</a>
+          </span>
+
+          <button
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--next'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
+            <desc id="nextDesc" class="for-a11y">다음</desc>
+          </button>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">마지막단계일때</h3>
+
+        <div :class="$style['pagination']">
+          <button
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--prev'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
+            <desc id="catDesc" class="for-a11y">이전</desc>
+          </button>
+          <span :class="$style['pagination__list']">
+            <a :class="$style['pagination__item']" title="현재 페이지" href="#"
+              >1</a
+            >
+
+            <span :class="$style['pagination__elision']">
+              <IconDot aria-labelledby="nextDesc" role="img" />
+              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
+            </span>
+
+            <a :class="$style['pagination__item']" href="#">19</a>
+            <a :class="$style['pagination__item']" href="#">20</a>
+            <a :class="$style['pagination__item']" href="#">21</a>
+            <a :class="$style['pagination__item']" href="#">22</a>
+            <a :class="$style['pagination__item']" href="#">23</a>
+            <a :class="$style['pagination__item']" href="#">24</a>
+            <a
+              :class="[
+                $style['pagination__item'],
+                $style['pagination__item--selected'],
+              ]"
+              href="#"
+              >25</a
+            >
+          </span>
+
+          <button
+            disabled
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--next'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
+            <desc id="nextDesc" class="for-a11y">다음</desc>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="test-section">
+      <h2 class="test-section-title">
+        pagination Popup - (팝업은 5개 로테이션)
+      </h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- 페이징 -->
+        <div :class="$style['pagination']">
+          <button
+            disabled
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--prev'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
+            <desc id="catDesc" class="for-a11y">이전</desc>
+          </button>
+          <span :class="$style['pagination__list']">
+            <a
+              :class="[
+                $style['pagination__item'],
+                $style['pagination__item--selected'],
+              ]"
+              href="#"
+              >1</a
+            >
+            <a :class="$style['pagination__item']" href="#">2</a>
+            <a :class="$style['pagination__item']" href="#">3</a>
+            <a :class="$style['pagination__item']" href="#">4</a>
+            <a :class="$style['pagination__item']" href="#">5</a>
+          </span>
+
+          <button
+            :class="[
+              $style['pagination__function'],
+              $style['pagination__function--next'],
+            ]"
+          >
+            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
+            <desc id="nextDesc" class="for-a11y">다음</desc>
+          </button>
+        </div>
+        <!-- //페이징 -->
       </div>
     </section>
   </div>
