@@ -26,6 +26,7 @@ import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -52,26 +53,12 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicHr,
   },
 
   setup() {
     const state = reactive({
-      name001Error: false,
-      name002Error: false,
       name003Error: false,
-      idNumber001Error: false,
-      idNumber002Error: false,
-      idNumber003Error: false,
-      phone001Error: false,
-      phone002Error: false,
-      code001Error: false,
-      code002Error: false,
-      businessNameError: false,
-      businessLicenseError: false,
-      businessNumberError: false,
-      cardNumberError: false,
-      cardDateError: false,
-      cardPasswordError: false,
     });
 
     return {
