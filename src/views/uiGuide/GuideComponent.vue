@@ -4707,57 +4707,134 @@ export default {
         </ul>
       </div>
     </section>
-
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
+      <h2 class="test-section-title">Term List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!--  -->
-        <ul :class="$style['status-inquiry']">
-          <li :class="$style['status-inquiry__item']">
-            <button
-              type="button"
-              :class="[
-                $style['status-inquiry__category'],
-                $style['status-inquiry__category--active'],
-              ]"
-            >
-              <span :class="$style['status-inquiry__number']">10</span>
-              <span :class="$style['status-inquiry__text']">전체</span>
-            </button>
+        <UiAccordion :classNames="{ wrap: $style['term-list__list'] }">
+          <li :class="$style['term-list__item']">
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                온라인 서비스 이용약관
+              </div>
+              <div :class="$style['term-list__right']">
+                <button type="button" :class="$style['term-list__link']">
+                  <span :class="$style['term-list__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
           </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">신용동의</span>
-            </button>
+
+          <li :class="$style['term-list__item']">
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                <CheckBox id="testCheckBox123321" theme="tertiary">
+                  <CheckBoxObject />
+                  <CheckBoxLabelText>재고금융 확약서</CheckBoxLabelText>
+                </CheckBox>
+              </div>
+              <div :class="$style['term-list__right']">
+                <button type="button" :class="$style['term-list__link']">
+                  <span :class="$style['term-list__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
           </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">3</span>
-              <span :class="$style['status-inquiry__text']">상담</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">계약</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">심사</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">1</span>
-              <span :class="$style['status-inquiry__text']">송금</span>
-            </button>
-          </li>
-        </ul>
-        <!--  -->
+
+          <UiAccordionItem
+            :classNames="{ item: $style['term-list__item'] }"
+            :initialOpen="true"
+          >
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">휴대폰 인증약관</div>
+              <div :class="$style['term-list__right']">
+                <UiAccordionOpener
+                  :classNames="{ button: $style['term-list__opener'] }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['term-list__contents']">
+                <ul
+                  :class="[
+                    $style['term-list__list'],
+                    $style['term-list__list--secondary'],
+                  ]"
+                >
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        본인확인 이용약관
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인정보 수집·이용, 취급위탁 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        통신사 본인확인 이용약관 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        고유식별정보 처리 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
       </div>
     </section>
 
