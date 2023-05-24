@@ -616,7 +616,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="주민등록번호 앞 6자리"
-                    id="My_p04_p002_id001"
+                    id="My_p04_p002_id"
                   />
                 </InputBlockCell>
                 <InputBlockCell type="sub">-</InputBlockCell>

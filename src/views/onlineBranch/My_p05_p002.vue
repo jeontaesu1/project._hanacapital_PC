@@ -153,10 +153,10 @@ export default {
         </BoxCheckListItem>
       </BoxCheckList>
 
+      <!-- Case : 신용도 상승 선택 시 경우 노출 -->
       <FormList>
         <FormListItem titleText="상세사유" :forceFocus="true">
           <BoxCheckList>
-            <!-- Case : 신용도 상승 선택 시 경우 노출 -->
             <BoxCheckListItem>
               <BoxCheck
                 name="My_p05_p002_details"
@@ -176,32 +176,38 @@ export default {
                 <BoxCheckLabel>기타 신용도 상승</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
-            <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
+          </BoxCheckList>
+        </FormListItem>
+      </FormList>
+      <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
 
-            <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
+      <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
+      <FormList>
+        <FormListItem titleText="상세사유" :forceFocus="true">
+          <BoxCheckList>
             <BoxCheckListItem>
               <BoxCheck
                 name="My_p05_p002_details"
-                id="My_p05_p002_details_001"
+                id="My_p05_p002_details_004"
                 :defaultChecked="true"
               >
                 <BoxCheckLabel>소득증가</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
             <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_002">
+              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_005">
                 <BoxCheckLabel>재상증가</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
             <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_003">
+              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_006">
                 <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
-            <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
           </BoxCheckList>
         </FormListItem>
       </FormList>
+      <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
     </section>
 
     <section class="row-margin-block-small row-margin-top-none">
@@ -312,7 +318,7 @@ export default {
     </BasicBox>
 
     <div class="row-margin-contents row-margin-bottom-none">
-      <h4 class="color-gray font-weight-medium align-right">
+      <h4 class="text-body-1 color-gray font-weight-medium align-right">
         위 내역이 사실과 다름이 없음을 확인합니다.
       </h4>
       <p
