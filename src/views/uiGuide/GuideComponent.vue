@@ -3811,27 +3811,6 @@ export default {
         </KeyValue>
       </div>
 
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">align horizontal</h3>
-        <KeyValue align="horizontal">
-          <KeyValueItem>
-            <KeyValueTitle>약정기간</KeyValueTitle>
-            <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
-            <KeyValueTitle>한도잔액</KeyValueTitle>
-            <KeyValueText> 2,000,000 원 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>한도금액</KeyValueTitle>
-            <KeyValueText> 200,000,000 원 </KeyValueText>
-            <KeyValueTitle>실행금액</KeyValueTitle>
-            <KeyValueText> 2,000,000 원 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>실행건수</KeyValueTitle>
-            <KeyValueText> N 건 </KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </div>
       <!--
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
