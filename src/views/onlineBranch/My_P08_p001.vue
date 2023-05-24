@@ -1,12 +1,14 @@
 <script>
 // My_P08_p001
 // My_P08_p002
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
@@ -23,7 +25,10 @@ import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-
+import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     PageContents,
@@ -32,6 +37,7 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     UiTab,
     UiTabPanel,
     NavTab,
@@ -46,8 +52,12 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    IconLinkSmall,
     BasicButton,
     NoticeText,
+    TextButton,
+    ButtonList,
+    ButtonListItem,
   },
 };
 </script>
@@ -57,20 +67,43 @@ export default {
     <!-- <UiTab v-slot="tabSlotProps"> -->
     <PageContents>
       <PageHead>
+        <!-- case : 만기후처리_구매 -->
         <PageTitle
           >렌터카 계약 만기 1개월 전까지<br />만기후처리를 반드시 선택해
           주세요</PageTitle
         >
+        <!-- //case : 만기후처리_구매 -->
+        <!-- case : 만기후처리_신청후  -->
+        <PageTitle
+          >만기후 연장(재리스) 신청이<br />
+          완료되었습니다.</PageTitle
+        >
+        <!-- //case : 만기후처리_신청후  -->
       </PageHead>
       <BasicBox class="row-margin-block row-margin-top-none">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">
-              NH투자증권(유캔그린)
-            </h3>
+            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
           </BasicBoxHeadLeft>
+          <!-- case : 만기후처리_신청후  -->
+          <BasicBoxHeadRight>
+            <TextButton :classNames="{ wrap: 'text-body-3 color-green' }">
+              만기후처리 변경
+              <template v-slot:rightIcon>
+                <IconLinkSmall />
+              </template>
+            </TextButton>
+          </BasicBoxHeadRight>
+          <!-- //case : 만기후처리_신청후  -->
         </BasicBoxHead>
         <div>대기영역</div>
+        <!-- case : 만기후처리_신청후 -->
+        <ButtonList :wrap="true" align="center">
+          <ButtonListItem>
+            <BasicButton size="regular">연장 심사접수 하러가기</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- //case : 만기후처리_신청후  -->
       </BasicBox>
 
       <NavTab :useUiTab="true">
@@ -82,7 +115,7 @@ export default {
       <UiTabPanel name="testNavTab001_001">
         <section>
           <h3 class="text-title-1 font-weight-bold">
-            만기후 연장(재렌트) 진행절차
+            만기후 연장(재리스) 진행절차
           </h3>
           <div :class="[$style['step'], 'row-margin-contents']">
             <ul :class="$style['step__list']">
@@ -92,7 +125,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
                       홈페이지/모바일(웹)을 통하여
-                      <strong>재리스 신청 및 견적</strong>을 요청합니다.
+                      <strong> 재리스 신청 및 견적을 요청 </strong>합니다.
                       (신용조회동의)
                     </p>
                   </div>
@@ -221,7 +254,7 @@ export default {
                     <div :class="$style['step__text']">
                       지정 평가기관에서
                       <strong>반환자동차의 상태 및 성능을 평가</strong>합니다.
-                      <NoticeText
+                      <NoticeText class="row-margin-item"
                         >평가결과에 따라 ‘차량평가정산금’이 발생될 수
                         있습니다.</NoticeText
                       >
