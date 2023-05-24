@@ -76,12 +76,10 @@
     text-align: center;
   }
 
-  /*
   &--size {
-    &-small {
-      padding: 0 5px;
-      @include font-size-default(10);
+    &-large {
+      padding: 3px 11px;
+      @include font-size-default(14);
     }
   }
-  */
 }

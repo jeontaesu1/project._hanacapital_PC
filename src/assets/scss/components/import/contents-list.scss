@@ -1,0 +1,237 @@
+.contents-list {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 16px;
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid $color-gray-30;
+    border-radius: 8px;
+  }
+
+  &__symbol {
+    flex: none;
+    margin-right: 8px;
+    min-width: 26px;
+    text-align: center;
+    @include font-size-default(16);
+    font-weight: 500;
+    min-height: #{$line-height-default}em;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    flex: 0 1 auto;
+    min-width: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    margin-left: auto;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    @include font-size-default(16);
+    min-height: #{$line-height-default}em;
+  }
+
+  &__opener {
+    flex: none;
+    margin-left: 10px;
+    position: static;
+
+    &:only-child {
+      margin-left: 0;
+    }
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
+  &__contents {
+    padding-top: 16px;
+  }
+
+  &__depth {
+    padding-left: 42px;
+    padding-right: 16px;
+  }
+
+  &__depth-2 {
+    padding-left: 22px;
+  }
+
+  &__depth-3 {
+    padding-left: 28px;
+  }
+
+  &__list--secondary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 10px 16px;
+
+        .contents-list__symbol {
+          margin-right: 12px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 24px;
+          min-height: 24px;
+          @include font-size-default(11);
+          border-radius: 8px;
+          background-color: $color-gray-15;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 1px;
+          @include font-size-default(15);
+        }
+      }
+    }
+  }
+
+  &__list--tertiary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 8px 0;
+
+        .contents-list__symbol {
+          margin-right: 2px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 23px;
+          min-height: 24px;
+          @include font-size-default(11);
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 2px;
+          @include font-size-default(14);
+        }
+      }
+    }
+  }
+
+  &__list--quaternary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 0;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 6px 0;
+        color: $color-gray-70;
+
+        .contents-list__symbol {
+          margin-right: 2px;
+          padding-top: 4px;
+          padding-bottom: 3px;
+          min-width: 23px;
+          min-height: 24px;
+          @include font-size-default(11);
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          padding-top: 2px;
+          @include font-size-default(13);
+        }
+      }
+    }
+  }
+
+  &__list--quinary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 20px;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+
+        .contents-list__symbol {
+          margin-top: 3px;
+          margin-right: 8px;
+          padding-top: 2px;
+          box-sizing: border-box;
+          min-width: 20px;
+          min-height: 20px;
+          border-radius: 100px;
+          @include font-size-default(10);
+          background-color: $color-gray-20;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          @include font-size-default(16);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__list--senary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 20px;
+      }
+
+      > .contents-list__head {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+
+        .contents-list__symbol {
+          margin-top: 2px;
+          margin-right: 8px;
+          padding-top: 2px;
+          min-width: 20px;
+          min-height: 20px;
+          border-radius: 6px;
+          @include font-size-default(11);
+          background-color: $color-gray-15;
+        }
+
+        .contents-list__title,
+        .contents-list__right {
+          @include font-size-default(16);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

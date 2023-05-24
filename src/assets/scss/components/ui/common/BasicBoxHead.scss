@@ -1,9 +1,9 @@
 .box-head {
   display: flex;
   align-items: center;
-  padding-bottom: 23px;
+  padding-bottom: 24px;
   border-bottom: 1px solid $color-gray-20;
-  margin-bottom: 23px;
+  margin-bottom: 24px;
 
   &__left {
     flex: 1;
@@ -12,9 +12,10 @@
 
   &__right {
     flex: none;
-    margin-left: 16px;
+    margin-left: 8px;
   }
 
+  /*
   &--align {
     &-top {
       align-items: flex-start;
@@ -24,4 +25,5 @@
       align-items: flex-end;
     }
   }
+  */
 }
