@@ -1,0 +1,111 @@
+.input {
+  padding-top: 0;
+
+  &__title {
+    top: 17px;
+    left: 21px;
+    right: 21px;
+    width: auto;
+  }
+
+  &__contents {
+    display: block;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    height: 200px;
+    border: 1px solid $color-gray-20;
+    border-radius: 8px;
+    padding: 40px 20px 6px;
+    transition: border-color 0.2s;
+
+    textarea {
+      @include reset-textarea;
+      width: 100%;
+      height: 100%;
+      @include font-size-head(20);
+      font-weight: 500;
+      outline: none;
+
+      &[disabled] {
+        color: $color-gray-40;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $color-gray-60;
+      }
+      &::-moz-placeholder {
+        color: $color-gray-60;
+      }
+      &:-ms-input-placeholder {
+        color: $color-gray-60;
+      }
+      &:-moz-placeholder {
+        color: $color-gray-60;
+      }
+      &::placeholder {
+        color: $color-gray-60;
+      }
+    }
+
+    .input--focus & {
+      border-width: 2px;
+      border-color: $color-black;
+      padding: 39px 19px 5px;
+    }
+
+    .input--error &,
+    .input--error.input--focus & {
+      border-color: $color-semantic-essential;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 8px;
+
+    &-left {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  &__count {
+    flex: none;
+    margin-left: 8px;
+    @include font-size-default(12);
+    color: $color-gray-60;
+
+    &-current {
+      transition: color 0.2s;
+    }
+  }
+
+  &__help,
+  &__invalid {
+    margin-top: 0;
+  }
+
+  &--focus,
+  &--inputed {
+    .input__count-current {
+      color: $color-black;
+    }
+  }
+
+  &--focus,
+  &--inputed,
+  &--error.input--focus {
+    .input__title {
+      transform: translateY(0);
+    }
+  }
+
+  &--disabled {
+    .input__count,
+    .input__count-current {
+      color: $color-gray-40;
+    }
+  }
+}

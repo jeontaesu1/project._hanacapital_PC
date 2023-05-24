@@ -17,6 +17,7 @@ export default {
   setup(props) {
     const formListItem = inject('formListItem', {});
     const formInvalid = inject('formInvalid', {});
+    const basicTextarea = inject('basicTextarea', {});
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -27,6 +28,7 @@ export default {
       customClassNames,
       formListItem,
       formInvalid,
+      basicTextarea,
     };
   },
 };
@@ -38,6 +40,7 @@ export default {
       $style['help-message'],
       formListItem.helpClass,
       formInvalid.helpClass,
+      basicTextarea.helpClass,
       customClassNames.wrap,
     ]"
   >

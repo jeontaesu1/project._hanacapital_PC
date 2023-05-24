@@ -25,7 +25,8 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-// import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
@@ -62,6 +63,7 @@ import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -110,7 +112,8 @@ export default {
     FormHelpText,
     BasicInput,
     BasicSelect,
-    // BasicTextarea,
+    BasicDatepicker,
+    BasicTextarea,
     SecurityInput,
     PartInput,
     SecurityKeypadButton,
@@ -147,6 +150,7 @@ export default {
     IllustInfo,
     IllustInfoTitle,
     IllustInfoText,
+    UnitText,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -1533,6 +1537,150 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <FormListItem titleText="인도 요청일" target="#testInput012Button">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="인도 요청일"
+                    id="testInput012"
+                    buttonId="testInput012Button"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="조회기간" target="#testInput013StartButton">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput013Start"
+                    buttonId="testInput013StartButton"
+                    :max="state.testMaxDate001"
+                    v-model="state.testMinDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">~</InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput013End"
+                    buttonId="testInput013EndButton"
+                    :min="state.testMinDate001"
+                    v-model="state.testMaxDate001"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="조회기간" :forceFocus="true">
+            <FormInvalid :error="state.testError001">
+              <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testInputCheck014"
+                    id="testInputCheck014_001"
+                  >
+                    <BoxCheckLabel>1개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testInputCheck014"
+                    id="testInputCheck014_002"
+                  >
+                    <BoxCheckLabel>3개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testInputCheck014"
+                    id="testInputCheck014_003"
+                  >
+                    <BoxCheckLabel>6개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="testInputCheck014"
+                    id="testInputCheck014_004"
+                  >
+                    <BoxCheckLabel>1년</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="testInput014Start"
+                    buttonId="testInput014StartButton"
+                    :max="state.testMaxDate002"
+                    v-model="state.testMinDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">~</InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="testInput014End"
+                    buttonId="testInput014EndButton"
+                    :min="state.testMinDate002"
+                    v-model="state.testMaxDate002"
+                    :onChange="testInputEvent"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>조회기간은 최대 1년까지 가능해요.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+            title="Label"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
+
+          <BasicTextarea
+            :error="state.testError001"
+            titleText="Label"
+            titleOptionalText="Optional"
+            :require="true"
+            :maxlength="150"
+            :count="true"
+            :disabled="true"
+            title="Label"
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>Helper Text</FormHelpText>
+            </template>
+          </BasicTextarea>
         </FormList>
       </div>
 
@@ -3320,6 +3468,48 @@ export default {
           </li>
         </ul>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">regular margin (12px)</h3>
+        <ul
+          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
+        >
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-green', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red', 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="test-section">
@@ -3764,7 +3954,21 @@ export default {
         </KeyValue>
 
         <h3 class="test-section-sub-title row-margin-item-group">
-          align left (size: regular)
+          align left (title width size: small)
+        </h3>
+        <KeyValue align="left" size="small">
+          <KeyValueItem>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>제목</KeyValueTitle>
+            <KeyValueText> 내용내용내용내용내용내용내용</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <h3 class="test-section-sub-title row-margin-item-group">
+          align left (title width size: regular)
         </h3>
         <KeyValue align="left" size="regular">
           <KeyValueItem>
@@ -3778,7 +3982,7 @@ export default {
         </KeyValue>
 
         <h3 class="test-section-sub-title row-margin-item-group">
-          align left (size: medium)
+          align left (title width size: medium)
         </h3>
         <KeyValue align="left" size="medium">
           <KeyValueItem>
@@ -3807,7 +4011,6 @@ export default {
         </KeyValue>
       </div>
 
-      <!--
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Vertical</h3>
         <KeyValue direction="vertical">
@@ -3836,8 +4039,8 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">margin regular</h3>
-        <KeyValue margin="regular">
+        <h3 class="test-section-sub-title">wrap - col 2</h3>
+        <KeyValue :wrap="true">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -3861,38 +4064,37 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </div>
-
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">margin regular-small</h3>
-        <KeyValue margin="regular-small">
-          <KeyValueItem>
-            <KeyValueTitle>차량명의</KeyValueTitle>
-            <KeyValueText>
-              본인명의(공동명의 제외)<br />
-              소유기간 3개월 이상
-            </KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>소유차종</KeyValueTitle>
-            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>차량연식</KeyValueTitle>
-            <KeyValueText>
-              출고 이후 10년 이내<br />
-              차량가격 500만원 이상<br />
-              (당사 차량 시세 가격 기준)
-            </KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </div>
-      -->
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">margin small</h3>
         <KeyValue margin="small">
+          <KeyValueItem>
+            <KeyValueTitle>차량명의</KeyValueTitle>
+            <KeyValueText>
+              본인명의(공동명의 제외)<br />
+              소유기간 3개월 이상
+            </KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>소유차종</KeyValueTitle>
+            <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>차량연식</KeyValueTitle>
+            <KeyValueText>
+              출고 이후 10년 이내<br />
+              차량가격 500만원 이상<br />
+              (당사 차량 시세 가격 기준)
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">margin regular</h3>
+        <KeyValue margin="regular">
           <KeyValueItem>
             <KeyValueTitle>차량명의</KeyValueTitle>
             <KeyValueText>
@@ -4381,6 +4583,100 @@ export default {
         <!-- //페이징 -->
       </div>
     </section>
+    <section class="test-section">
+      <h2 class="test-section-title">UnitText</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <UnitText leftUnit="$">333,389</UnitText>
+        <UnitText rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">align right</h3>
+
+        <UnitText leftUnit="$" align="right">333,389</UnitText>
+        <UnitText rightUnit="원" align="right">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">vertical align center</h3>
+
+        <UnitText verticalAlign="center" leftUnit="$">333,389</UnitText>
+        <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
+      </div>
+      <!--
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Regular</h3>
+
+        <UnitText size="regular" leftUnit="$">333,389</UnitText>
+        <UnitText size="regular" rightUnit="원">333,389</UnitText>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Large</h3>
+
+        <UnitText size="large" verticalAlign="center" leftUnit="$"
+          >333,389</UnitText
+        >
+        <UnitText size="large" verticalAlign="center" rightUnit="원"
+          >333,389</UnitText
+        >
+      </div>
+      -->
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Table</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- table -->
+        <div :class="$style['basic-table']">
+          <table>
+            <colgroup>
+              <col style="width: 120px" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>월</th>
+                <th>방문자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>합계</td>
+                <td>1</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- // table -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">image view</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['image-view']">
+          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
     <section class="test-section">
       <h2 class="test-section-title">Search List</h2>
       <div class="test-section-sub">
