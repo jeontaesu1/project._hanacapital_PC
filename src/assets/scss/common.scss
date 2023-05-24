@@ -1,7 +1,6 @@
 @import 'simplebar-vue/dist/simplebar.min.css';
 @import 'vue-select/dist/vue-select.css';
 @import '@duetds/date-picker/dist/duet/themes/default.css';
-@import '@vueform/slider/themes/default.css';
 @import '@/assets/fonts/SpoqaHanSansNeo/style.css';
 
 html,
@@ -104,11 +103,11 @@ body,
       margin-left: 8px;
     }
 
-    /*
     & + &--large {
       margin-left: 20px;
     }
 
+    /*
     & + &--medium {
       margin-left: 16px;
     }
