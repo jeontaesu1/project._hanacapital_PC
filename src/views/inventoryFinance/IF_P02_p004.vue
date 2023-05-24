@@ -479,8 +479,8 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText
-              >수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
+            <FormHelpText>
+              수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
               인증을 진행해 주세요.</FormHelpText
             >
           </FormInvalid>
