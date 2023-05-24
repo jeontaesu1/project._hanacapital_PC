@@ -34,20 +34,6 @@
         text-align: left;
       }
     }
-
-    &-horizontal {
-      .key-value__key {
-        flex: none;
-        width: 60px;
-        margin-left: 30px;
-        &:first-child {
-          margin-left: 0;
-        }
-      }
-
-      .key-value__value {
-      }
-    }
   }
 
   &--vertical-align {
