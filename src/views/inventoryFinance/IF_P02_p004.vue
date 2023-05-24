@@ -19,7 +19,6 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -28,7 +27,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
@@ -55,7 +53,6 @@ export default {
     FormHelpText,
     BasicInput,
     BasicSelect,
-    SecurityInput,
     PartInput,
     SecurityKeypadButton,
     BasicButton,
@@ -64,7 +61,6 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
-    NoticeText,
   },
 
   setup() {
