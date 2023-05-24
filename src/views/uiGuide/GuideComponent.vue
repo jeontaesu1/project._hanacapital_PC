@@ -3809,10 +3809,10 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Component Title</h2>
+      <h2 class="test-section-title">status-inquiry</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!--  -->
+        <!-- status-inquiry -->
         <ul :class="$style['status-inquiry']">
           <li :class="$style['status-inquiry__item']">
             <button
@@ -3857,7 +3857,7 @@ export default {
             </button>
           </li>
         </ul>
-        <!--  -->
+        <!-- status-inquiry -->
       </div>
     </section>
 
