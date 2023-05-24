@@ -5,11 +5,8 @@ import { reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
-import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
-import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import FormList from '@/components/ui/form/FormList.vue';
@@ -414,5 +411,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventoryFinance/IF_P03_p001.scss';
+@import '@/assets/scss/views/inventoryFinance/IF_P04_p001.scss';
 </style>
