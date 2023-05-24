@@ -914,8 +914,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P07_p002',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.05.26',
         log: [],
       },
       {
@@ -1128,8 +1128,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/online-branch/MI_P00_p003',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.05.26',
         log: [],
       },
       {
