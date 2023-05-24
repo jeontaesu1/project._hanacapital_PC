@@ -1,6 +1,6 @@
 <script>
 // PF_P01_l002
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -10,6 +10,16 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 
 export default {
   components: {
@@ -21,11 +31,28 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    PopupSubTitle,
+    FormList,
+    FormListItem,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    FormInvalid,
+    BasicSelect,
+    FormInvalidMessage,
+    SecurityKeypadButton,
   },
   setup() {
+    const state = reactive({
+      nameError001: false,
+      idNumberError001: false,
+      passwordError001: false,
+    });
+
     const layer = ref(null);
 
     return {
+      state,
       layer,
     };
   },
@@ -40,11 +67,97 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>소득정보 자동제출</PopupTitle>
+          <template v-slot:sub>
+            <PopupSubTitle>
+              건강보험공단 및 국민연금공단, 국세청 로그인 후 아래의 소득관련
+              서류를 자동으로 제출합니다.
+            </PopupSubTitle>
+            <PopupSubTitle class="row-margin-item">
+              (자격득실확인서 및 보험료 납부확인서, 소득금액증명원)
+            </PopupSubTitle>
+          </template>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <FormList>
+        <FormListItem
+          titleText="이름"
+          target="#PF_P01_l002_name"
+          :disabled="true"
+        >
+          <InputBlock :error="state.nameError001" :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                title="이름"
+                defaultValue="김하나"
+                :disabled="true"
+                id="PF_P01_l002_name"
+              />
+            </InputBlockCell>
+          </InputBlock>
+        </FormListItem>
+
+        <FormListItem
+          titleText="주민등록번호"
+          target="#PF_P01_l002_idNumber"
+          :disabled="true"
+        >
+          <InputBlock :error="state.idNumberError001" :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                title="주민등록번호"
+                defaultValue="951222-2******"
+                :disabled="true"
+                id="PF_P01_l002_idNumber"
+              />
+            </InputBlockCell>
+          </InputBlock>
+        </FormListItem>
+
+        <FormListItem
+          titleText="공동인증서"
+          target="#PF_P01_l002_select"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.testError001">
+            <InputBlock :error="state.testError001">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '[2022-12-31]김하나()0004048100574819',
+                    },
+                  ]"
+                  title="공동인증서"
+                  inputId="PF_P01_l002_select"
+                  defaultValue="1"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="비밀번호" target="#PF_P01_l002_password">
+          <FormInvalid :error="state.passwordError001">
+            <InputBlock :error="state.passwordError001">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="password"
+                  title="비밀번호"
+                  id="PF_P01_l002_password"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +168,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
