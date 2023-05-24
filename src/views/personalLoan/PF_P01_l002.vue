@@ -168,7 +168,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">확인</BasicButton>
+            <BasicButton size="regular">제출하기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

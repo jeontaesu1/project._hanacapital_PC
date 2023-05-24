@@ -188,6 +188,16 @@ export default {
                               개인(신용)정보 필수적 수집 · 이용동의
                             </CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -209,18 +219,6 @@ export default {
                                   개인(신용)정보 필수적 수집·이용
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -237,18 +235,6 @@ export default {
                                   고유식별번호 필수적 수집·이용
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -268,6 +254,16 @@ export default {
                               동의</CheckBoxLabelText
                             >
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -289,18 +285,6 @@ export default {
                                   >개인(신용)정보 필수적 조회</CheckBoxLabelText
                                 >
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -317,18 +301,6 @@ export default {
                                   >고유식별번호 필수적 조회</CheckBoxLabelText
                                 >
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -348,6 +320,16 @@ export default {
                               동의</CheckBoxLabelText
                             >
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -369,18 +351,6 @@ export default {
                                   >개인(신용)정보 필수적 제공</CheckBoxLabelText
                                 >
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -397,18 +367,6 @@ export default {
                                   >고유식별번호 필수적 제공</CheckBoxLabelText
                                 >
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -425,6 +383,16 @@ export default {
                             <CheckBoxObject />
                             <CheckBoxLabelText>금융상품안내</CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -446,18 +414,6 @@ export default {
                                   >금융 상품 안내 동의</CheckBoxLabelText
                                 >
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -498,6 +454,16 @@ export default {
                               마이데이터)
                             </CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -519,18 +485,6 @@ export default {
                                   개인(신용)정보 수집·이용 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -547,18 +501,6 @@ export default {
                                   고유식별정보 수집·이용 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -577,6 +519,16 @@ export default {
                               개인(신용)정보 필수적 제공 동의(공공 마이데이터)
                             </CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -598,18 +550,6 @@ export default {
                                   개인(신용)정보 제공 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -626,18 +566,6 @@ export default {
                                   고유식별정보 제공 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -657,6 +585,16 @@ export default {
                               마이데이터)
                             </CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -678,18 +616,6 @@ export default {
                                   개인(신용)정보 제공(조회) 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                           <li :class="$style['agree-list__item']">
@@ -706,18 +632,6 @@ export default {
                                   고유식별정보 제공(조회) 동의
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
@@ -736,6 +650,16 @@ export default {
                               본인 행정정보 제3자 제공 요구서(공공 마이데이터)
                             </CheckBoxLabelText>
                           </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
                         </div>
                         <ul
                           :class="[
@@ -757,18 +681,6 @@ export default {
                                   본인 행정정보 제3자 제공 요구
                                 </CheckBoxLabelText>
                               </CheckBox>
-                              <div :class="$style['agree-list__right']">
-                                <button
-                                  type="button"
-                                  :class="$style['agree-list__link']"
-                                >
-                                  <span
-                                    :class="$style['agree-list__link-text']"
-                                  >
-                                    상세보기
-                                  </span>
-                                </button>
-                              </div>
                             </div>
                           </li>
                         </ul>
