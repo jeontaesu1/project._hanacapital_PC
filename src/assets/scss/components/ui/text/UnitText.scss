@@ -40,19 +40,27 @@
     align-items: center;
   }
 
-  /*
-  &--size-regular {
+  &--size-small {
     .unit-text__left,
     .unit-text__right {
-      @include font-size-default(13);
+      @include font-size-default(15);
+    }
+
+    .unit-text__left {
+      margin-right: 2px;
+    }
+
+    .unit-text__right {
+      margin-left: 2px;
     }
 
     .unit-text__val {
-      @include font-size-default(16);
+      @include font-size-default(18);
       font-weight: 500;
     }
   }
 
+  /*
   &--size-large {
     .unit-text__left,
     .unit-text__right {

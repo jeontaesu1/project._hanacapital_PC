@@ -71,6 +71,8 @@ import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
+import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
+import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 
 export default {
   components: {
@@ -143,6 +145,8 @@ export default {
     IconCustomer,
     IconLogo,
     IconLink,
+    IconSearchMoney,
+    IconInterestRate,
   },
 
   setup() {
@@ -4159,6 +4163,42 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Product Detail Icon List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['product-detail']">
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconSearchMoney />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">대출가능금액</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="small" rightUnit="만원">20,000</UnitText>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconInterestRate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">대출금리</div>
+                <div :class="$style['product-detail__desc']">
+                  <UnitText size="small" rightUnit="%">13.2</UnitText>
+                  <div :class="$style['product-detail__desc-sub']">
+                    (36개월 기준)
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Join</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -4203,13 +4243,15 @@ export default {
         <UnitText verticalAlign="center" leftUnit="$">333,389</UnitText>
         <UnitText verticalAlign="center" rightUnit="원">333,389</UnitText>
       </div>
-      <!--
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Regular</h3>
 
-        <UnitText size="regular" leftUnit="$">333,389</UnitText>
-        <UnitText size="regular" rightUnit="원">333,389</UnitText>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+
+        <UnitText size="small" leftUnit="$">333,389</UnitText>
+        <UnitText size="small" rightUnit="원">333,389</UnitText>
       </div>
+
+      <!--
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Large</h3>
 
@@ -4273,6 +4315,19 @@ export default {
 
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+
+        <div :class="$style['image-view']">
+          <img
+            src="@/assets/images/_dummy/box-detail-small.png"
+            alt="샘플 이미지"
+          />
         </div>
       </div>
     </section>
