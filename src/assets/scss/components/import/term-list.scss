@@ -15,7 +15,7 @@
     position: relative;
     display: flex;
     align-items: flex-start;
-    padding: 15px;
+    padding: 17px 19px 17px 19px;
     border: 1px solid $color-gray-30;
     border-radius: 8px;
   }
@@ -63,8 +63,8 @@
     @include reset-button;
     flex: none;
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background: url('@/assets/images/icon/link.svg') no-repeat 50% 50% / 100%
       100%;
     margin-left: 10px;
