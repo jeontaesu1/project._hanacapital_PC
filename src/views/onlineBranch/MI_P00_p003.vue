@@ -6,11 +6,12 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -20,11 +21,12 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    UiTab,
-    UiTabPanel,
-    NavTab,
-    NavTabButton,
     BasicBox,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    TextButton,
   },
 };
 </script>
@@ -60,11 +62,42 @@ export default {
       </ul>
 
       <ul class="reset-list row-margin-block-small">
-        <li class="row-margin-contents">
-          <BasicBox>// contnets</BasicBox>
-        </li>
-        <li class="row-margin-contents">
-          <BasicBox>// contnets</BasicBox>
+        <li v-for="i in 5" :key="i" class="row-margin-contents">
+          <BasicBox>
+            // contnets
+
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>대출금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>상태</KeyValueTitle>
+                <KeyValueText>정상</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>자동이체계좌</KeyValueTitle>
+                <KeyValueText>신한 123-123456-12345</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>최근변경일</KeyValueTitle>
+                <KeyValueText>2022.12.06</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
         </li>
       </ul>
     </section>
