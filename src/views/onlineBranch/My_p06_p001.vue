@@ -3,7 +3,8 @@
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -19,7 +20,8 @@ export default {
     PageHead,
     PageTitle,
     BasicBox,
-    BasicHr,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -82,18 +84,15 @@ export default {
     <!-- Case : 보유 상품이 있는 경우 노출 -->
     <div class="row-margin-block-small">
       <BasicBox>
-        <KeyValue>
-          <KeyValueItem verticalAlign="center">
-            <KeyValueTitle :classNames="{ title: 'color-black' }">
-              소비자신용대출
-            </KeyValueTitle>
-          </KeyValueItem>
-        </KeyValue>
-        <BasicHr
-          type="contents"
-          theme="quaternary"
-          className="row-margin-contents-small"
-        />
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
         <KeyValue>
           <KeyValueItem>
             <KeyValueTitle>대출기간</KeyValueTitle>

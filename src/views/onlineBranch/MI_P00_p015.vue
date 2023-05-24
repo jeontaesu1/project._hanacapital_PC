@@ -18,10 +18,8 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -30,7 +28,14 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 export default {
   components: {
@@ -50,35 +55,36 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    FormHelpText,
     BasicInput,
     BasicSelect,
-    SecurityInput,
     PartInput,
     SecurityKeypadButton,
     BasicButton,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    BasicDatepicker,
+    CheckBox,
+    CheckBoxObject,
+    CheckBoxLabelText,
     ButtonList,
     ButtonListItem,
-    CheckBox,
-    CheckBoxLabelText,
-    CheckBoxObject,
-    NoticeText,
   },
 
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
-      phone001Error: false,
-      phone002Error: false,
-      code001Error: false,
-      code002Error: false,
-      businessNameError: false,
-      businessLicenseError: false,
-      businessNumberError: false,
-      cardNumberError: false,
-      cardDateError: false,
-      cardPasswordError: false,
+      name001Error: false,
+      name002Error: false,
+      idNumber001Error: false,
+      idNumber002Error: false,
+      license001Error: false,
+      license002Error: false,
+      issueError001: false,
+      issueError002: false,
     });
 
     return {
@@ -94,765 +100,468 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">지정운전자 등록</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="1" />
         </template>
       </PageHeadRow>
-      <PageMainText align="left">본인인증을 진행해 주세요</PageMainText>
+      <PageMainText align="left">지정운전자 정보를 입력해 주세요</PageMainText>
     </PageHead>
 
-    <BoxCheckList
-      :classNames="{
-        wrap: 'row-margin-block-small row-margin-top-none',
-      }"
-    >
-      <BoxCheckListItem>
-        <BoxCheck
-          name="MI_P00_p015_type"
-          id="MI_P00_p015_type_001"
-          :defaultChecked="true"
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
+          <div :class="[$style['division-info'], 'row-margin-item-small']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="text-body-3 color-gray-tertiary">
+                  팰리세이드 디젤 2
+                </div>
+              </li>
+              <li :class="$style['division-info__item']">
+                <div class="text-body-3 color-gray-tertiary">
+                  L99999999999999
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue>
+        <KeyValueItem>
+          <KeyValueTitle>보험사</KeyValueTitle>
+          <KeyValueText>탄톤칙김기매니</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>가입연령</KeyValueTitle>
+          <KeyValueText>만 26세 이상</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>임직원특약</KeyValueTitle>
+          <KeyValueText>미가입</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+
+    <section class="row-margin-block-small">
+      <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅰ</h3>
+
+      <FormList>
+        <FormListItem titleText="지정운전자" target="#MI_P00_p015_name001">
+          <FormInvalid :error="state.name001Error">
+            <InputBlock :error="state.name001Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="지정운전자" id="MI_P00_p015_name001" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <FormListItem titleText="계약자와의 관계" :forceFocus="true">
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="MI_P00_p015_relative001"
+                id="MI_P00_p015_relative_001_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>친인척</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="MI_P00_p015_relative001"
+                id="MI_P00_p015_relative_001_002"
+              >
+                <BoxCheckLabel>기타</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+        </FormListItem>
+
+        <FormListItem
+          titleText="생년월일"
+          titleOptionalText="(6자리)"
+          target="#MI_P00_p015_idNumber001"
         >
-          <BoxCheckLabel>개인 (개인사업자 포함)</BoxCheckLabel>
-        </BoxCheck>
-      </BoxCheckListItem>
-      <BoxCheckListItem>
-        <BoxCheck name="MI_P00_p015_type" id="MI_P00_p015_type_002">
-          <BoxCheckLabel>법인</BoxCheckLabel>
-        </BoxCheck>
-      </BoxCheckListItem>
-    </BoxCheckList>
+          <FormInvalid :error="state.idNumber001Error">
+            <InputBlock :error="state.idNumber001Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 앞 6자리"
+                  id="MI_P00_p015_idNumber001"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <PartInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 뒤 7자리 중 첫번째자리"
+                  :afterDot="6"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
 
-    <section>
-      <h3 class="text-title-1 row-margin-contents">본인인증</h3>
-
-      <BoxCheckList
-        :classNames="{
-          wrap: 'row-margin-container-medium row-margin-top-none',
-        }"
-      >
-        <BoxCheckListItem>
-          <BoxCheck
-            name="MI_P00_p015_method"
-            id="MI_P00_p015_method_001"
-            :defaultChecked="true"
-          >
-            <BoxCheckLabel>휴대폰</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck name="MI_P00_p015_method" id="MI_P00_p015_method_002">
-            <BoxCheckLabel>공동인증서</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck name="MI_P00_p015_method" id="MI_P00_p015_method_003">
-            <BoxCheckLabel>신용카드</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
-
-      <!-- Case : 휴대폰 선택시 노출 -->
-      <div>
-        <div :class="$style['agree-list']">
-          <ul :class="$style['agree-list__depth']">
-            <li :class="$style['agree-list__depth-item']">
-              <div :class="$style['agree-list__depth-head']">
-                <CheckBox
-                  id="MI_P00_p015_phoneAgree001"
+        <FormListItem titleText="면허번호" target="#MI_P00_p015_license001">
+          <FormInvalid :error="state.license001Error">
+            <InputBlock :error="state.license001Error">
+              <InputBlockCell>
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '서울 (11)',
+                    },
+                    {
+                      value: '2',
+                      label: '부산 (12)',
+                    },
+                    {
+                      value: '3',
+                      label: '경기 (13)',
+                    },
+                    {
+                      value: '4',
+                      label: '강원 (14)',
+                    },
+                    {
+                      value: '5',
+                      label: '충북 (15)',
+                    },
+                    {
+                      value: '6',
+                      label: '충남 (16',
+                    },
+                    {
+                      value: '7',
+                      text: '전북 (17)',
+                    },
+                    {
+                      value: '8',
+                      text: '경남 (18)',
+                    },
+                    {
+                      value: '9',
+                      text: '제주 (19)',
+                    },
+                    {
+                      value: '10',
+                      text: '대구 (20)',
+                    },
+                    {
+                      value: '11',
+                      text: '인천 (21)',
+                    },
+                    {
+                      value: '12',
+                      text: '광주 (22)',
+                    },
+                    {
+                      value: '13',
+                      text: '대전 (23)',
+                    },
+                    {
+                      value: '14',
+                      text: '울산 (24)',
+                    },
+                  ]"
+                  title="지역번호 선택하기"
+                  layerTitle="면허발급번호를 선택해 주세요"
+                  inputId="MI_P00_p015_license001"
                   :classNames="{
-                    wrap: $style['agree-list__depth-checkbox'],
+                    wrap: 'input-width-driving-license',
                   }"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>
-                    본인인증 약관 전체동의
-                  </CheckBoxLabelText>
-                </CheckBox>
-              </div>
-              <div :class="$style['agree-list__depth-contents']">
-                <ul :class="$style['agree-list__list']">
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree001_001"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          개인정보 수집·이용, 취급위탁 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree001_002"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          고유식별정보 처리 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree001_003"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          본인확인 이용약관
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree001_004"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          통신사 본인확인 이용약관 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
-          <FormListItem
-            titleText="휴대폰번호"
-            target="#MI_P00_p015_phone001_telecom"
-          >
-            <FormInvalid :error="state.phone001Error">
-              <InputBlock :error="state.phone001Error">
-                <InputBlockCell>
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: 'SKT',
-                      },
-                      {
-                        value: '2',
-                        label: 'KT',
-                      },
-                      {
-                        value: '3',
-                        label: 'LG U+',
-                      },
-                      {
-                        value: '4',
-                        label: '알뜰폰 SKT',
-                      },
-                      {
-                        value: '5',
-                        label: '알뜰폰 KT',
-                      },
-                      {
-                        value: '6',
-                        label: '알뜰폰 LG +',
-                      },
-                    ]"
-                    title="통신사"
-                    inputId="MI_P00_p015_phone001_telecom"
-                    :classNames="{
-                      wrap: 'input-width-telecom',
-                    }"
-                  />
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
-                </InputBlockCell>
-                <template v-slot:right>
-                  <!-- Cass : 전송 전 -->
-                  <BasicButton size="small" theme="quaternary">
-                    인증번호 전송
-                  </BasicButton>
-                  <!-- Cass : 전송 전 -->
-
-                  <!-- Cass : 전송 후
+                />
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput
+                  type="text"
+                  pattern="\d*"
+                  title="면허발급번호 앞 2자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell
+                :classNames="{
+                  cell: 'flex-2',
+                }"
+                margin="regular"
+              >
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="면허발급번호 두번째 6자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="면허발급번호 뒤 2자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <template v-slot:right>
                 <BasicButton size="small" theme="quaternary">
-                  인증번호 재전송
+                  확인
                 </BasicButton>
-                -->
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>본인명의의 휴대폰만 가능합니다.</FormHelpText>
-            </FormInvalid>
-          </FormListItem>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
 
-          <FormListItem
-            titleText="인증번호"
-            titleOptionalText="(6자리)"
-            target="#MI_P00_p015_phone001_code"
-          >
-            <FormInvalid :error="state.code001Error">
-              <InputBlock :error="state.code001Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="인증번호 (6자리)"
-                    id="MI_P00_p015_phone001_code"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3 color-red">00:00</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>
-                수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
-                인증을 진행해 주세요.
-              </FormHelpText>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </div>
-      <!-- // Case : 휴대폰 선택시 노출 -->
-
-      <!-- Case : 휴대폰 선택시 노출 (1차 실명인증 입력 정보를 활용하는 case) -->
-      <div>
-        <div :class="[$style['agree-list'], 'row-margin-contents']">
-          <ul :class="$style['agree-list__depth']">
-            <li :class="$style['agree-list__depth-item']">
-              <div :class="$style['agree-list__depth-head']">
-                <CheckBox
-                  id="MI_P00_p015_phoneAgree002"
-                  :classNames="{
-                    wrap: $style['agree-list__depth-checkbox'],
-                  }"
-                >
-                  <CheckBoxObject />
-                  <CheckBoxLabelText>본인인증 약관 전체동의</CheckBoxLabelText>
-                </CheckBox>
-              </div>
-              <div :class="$style['agree-list__depth-contents']">
-                <ul :class="$style['agree-list__list']">
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree002_001"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          개인정보 수집·이용, 취급위탁 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree002_002"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          고유식별정보 처리 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree002_003"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>본인확인 이용약관</CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['agree-list__item']">
-                    <div :class="$style['agree-list__head']">
-                      <CheckBox
-                        id="MI_P00_p015_phoneAgree002_004"
-                        :classNames="{
-                          wrap: $style['agree-list__checkbox'],
-                        }"
-                        theme="tertiary"
-                      >
-                        <CheckBoxObject />
-                        <CheckBoxLabelText>
-                          통신사 본인확인 이용약관 동의
-                        </CheckBoxLabelText>
-                      </CheckBox>
-                      <div :class="$style['agree-list__right']">
-                        <button
-                          type="button"
-                          :class="$style['agree-list__link']"
-                        >
-                          <span :class="$style['agree-list__link-text']">
-                            상세보기
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <FormList>
-          <FormListItem
-            titleText="휴대폰번호"
-            target="#MI_P00_p015_phone002_telecom"
-          >
-            <FormInvalid :error="state.phone002Error">
-              <InputBlock :error="state.phone002Error">
-                <InputBlockCell>
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: 'SKT',
-                      },
-                      {
-                        value: '2',
-                        label: 'KT',
-                      },
-                      {
-                        value: '3',
-                        label: 'LG U+',
-                      },
-                      {
-                        value: '4',
-                        label: '알뜰폰 SKT',
-                      },
-                      {
-                        value: '5',
-                        label: '알뜰폰 KT',
-                      },
-                      {
-                        value: '6',
-                        label: '알뜰폰 LG +',
-                      },
-                    ]"
-                    title="통신사"
-                    inputId="MI_P00_p015_phone002_telecom"
-                    :classNames="{
-                      wrap: 'input-width-telecom',
-                    }"
-                  />
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
-                </InputBlockCell>
-                <template v-slot:right>
-                  <!-- Cass : 전송 전 -->
-                  <BasicButton size="small" theme="quaternary">
-                    인증번호 전송
-                  </BasicButton>
-                  <!-- Cass : 전송 전 -->
-
-                  <!-- Cass : 전송 후
-                  <BasicButton size="small" theme="quaternary">
-                    인증번호 재전송
-                  </BasicButton>
-                  -->
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>본인명의의 휴대폰만 가능합니다.</FormHelpText>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="인증번호"
-            titleOptionalText="(6자리)"
-            target="#MI_P00_p015_phone002_code"
-          >
-            <FormInvalid :error="state.code002Error">
-              <InputBlock :error="state.code002Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="인증번호 (6자리)"
-                    id="MI_P00_p015_phone002_code"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3 color-red">00:00</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <FormHelpText>
-                수신된 인증번호를 3회 이상 입력 실패 시 인증번호를 재전송 받아
-                인증을 진행해 주세요.
-              </FormHelpText>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </div>
-      <!-- // Case : 휴대폰 선택시 노출 (1차 실명인증 입력 정보를 활용하는 case) -->
-
-      <!-- Case : 공동인증서 선택시 노출 (개인 A type) -->
-      <div>
-        <FormList>
-          <FormListItem titleText="이름" target="#MI_P00_p015_name">
-            <FormInvalid :error="state.nameError">
-              <InputBlock :error="state.nameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="이름" id="MI_P00_p015_name" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem titleText="주민등록번호" target="#MI_P00_p015_id">
-            <FormInvalid :error="state.idNumberError">
-              <InputBlock :error="state.idNumberError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="주민등록번호 앞 6자리"
-                    id="MI_P00_p015_id"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                  <SecurityInput
-                    title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
-                  />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </div>
-      <!-- // Case : 공동인증서 선택시 노출 (개인 A type) -->
-
-      <!-- Case : 공동인증서 선택시 노출 (법인) -->
-      <div>
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-1 font-weight-medium row-margin-item-group">
-            법인 정보 확인을 위해 몇 가지 정보를 입력 후 공동인증서 인증을
-            진행해 주세요.
-          </h4>
-
-          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-            <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                법인 고객은 공동인증서를 통한 인증 수단만 이용 가능합니다.
-              </div>
-            </li>
-            <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                사용 가능한 공동인증서 (은행/신용카드/보험용 인증서 및 범용
-                공동인증서)
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <FormList>
-          <FormListItem titleText="법인명" target="#MI_P00_p015_businessName">
-            <FormInvalid :error="state.businessNameError">
-              <InputBlock :error="state.businessNameError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="법인명" id="MI_P00_p015_businessName" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="사업자등록번호"
-            titleOptionalText="(10자리)"
-            target="#MI_P00_p015_BusinessLicense"
-          >
-            <FormInvalid :error="state.businessLicenseError">
-              <InputBlock :error="state.businessLicenseError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    ref="license"
-                    title="사업자등록번호 (10자리)"
-                    id="MI_P00_p015_BusinessLicense"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="법인번호"
-            target="#MI_P00_p015_businessNumber"
-          >
-            <FormInvalid :error="state.businessNumberError">
-              <InputBlock :error="state.businessNumberError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="법인번호 앞 6자리"
-                    id="MI_P00_p015_businessNumber"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                  <SecurityInput
-                    title="법인번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
-                  />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </div>
-      <!-- // Case : 공동인증서 선택시 노출 (법인) -->
-
-      <!-- Case : 신용카드 선택시 노출 -->
-      <div>
-        <FormList>
-          <FormListItem titleText="카드번호" target="#MI_P00_p015_cardNumber1">
-            <FormInvalid :error="state.cardNumberError">
-              <InputBlock :error="state.cardNumberError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="카드번호 첫번째 4자리"
-                    id="MI_P00_p015_cardNumber1"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                  <SecurityInput
-                    title="카드번호 두번째 4자리"
-                    :dot="[true, true, false, false]"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                  <SecurityInput
-                    title="카드번호 세번째 4자리"
-                    :dot="[false, false, false, false]"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="카드번호 네번째 4자리"
-                    id="MI_P00_p015_cardNumber4"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem titleText="유효기간" target="#MI_P00_p015_cardDate1">
-            <FormInvalid :error="state.cardDateError">
-              <InputBlock :error="state.cardDateError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="유효기간 월"
-                    id="MI_P00_p015_cardDate1"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-1">월</div>
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="유효기간 년"
-                    id="MI_P00_p015_cardDate2"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-1">년</div>
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="카드비밀번호 앞 2자리"
-            target="#MI_P00_p015_cardPassword"
-          >
-            <FormInvalid :error="state.cardPasswordError">
-              <InputBlock :error="state.cardPasswordError">
-                <InputBlockCell :flexible="true">
-                  <PartInput
-                    type="number"
-                    pattern="\d*"
-                    title="카드비밀번호 앞 2자리"
-                    :afterDot="2"
-                    :length="2"
-                    id="MI_P00_p015_cardPassword"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-
-        <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
-          일부 카드사는 지원되지 않습니다.
-        </NoticeText>
-      </div>
-      <!-- // Case : 신용카드 선택시 노출 -->
+        <FormListItem
+          titleText="발급일자"
+          target="#MI_P00_p015_issue_button001"
+        >
+          <FormInvalid :error="state.issueError001">
+            <InputBlock :error="state.issueError001">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="발급일자"
+                  id="MI_P00_p015_issue"
+                  buttonId="MI_P00_p015_issue_button001"
+                  :onChange="MI_P00_p015_issueEvent001"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
     </section>
 
+    <section class="row-margin-block-small row-margin-bottom-none">
+      <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅱ</h3>
+
+      <FormList>
+        <FormListItem titleText="지정운전자" target="#MI_P00_p015_name002">
+          <FormInvalid :error="state.name002Error">
+            <InputBlock :error="state.name002Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="지정운전자" id="MI_P00_p015_name002" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <FormListItem titleText="계약자와의 관계" :forceFocus="true">
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="MI_P00_p015_relative002"
+                id="MI_P00_p015_relative_002_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>친인척</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="MI_P00_p015_relative002"
+                id="MI_P00_p015_relative_002_001"
+              >
+                <BoxCheckLabel>기타</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+        </FormListItem>
+
+        <FormListItem
+          titleText="생년월일"
+          titleOptionalText="(6자리)"
+          target="#MI_P00_p015_idNumber002"
+        >
+          <FormInvalid :error="state.idNumber002Error">
+            <InputBlock :error="state.idNumber002Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 앞 6자리"
+                  id="MI_P00_p015_idNumber002"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <PartInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 뒤 7자리 중 첫번째자리"
+                  :afterDot="6"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="면허번호" target="#MI_P00_p015_license002">
+          <FormInvalid :error="state.license002Error">
+            <InputBlock :error="state.license002Error">
+              <InputBlockCell>
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '서울 (11)',
+                    },
+                    {
+                      value: '2',
+                      label: '부산 (12)',
+                    },
+                    {
+                      value: '3',
+                      label: '경기 (13)',
+                    },
+                    {
+                      value: '4',
+                      label: '강원 (14)',
+                    },
+                    {
+                      value: '5',
+                      label: '충북 (15)',
+                    },
+                    {
+                      value: '6',
+                      label: '충남 (16',
+                    },
+                    {
+                      value: '7',
+                      text: '전북 (17)',
+                    },
+                    {
+                      value: '8',
+                      text: '경남 (18)',
+                    },
+                    {
+                      value: '9',
+                      text: '제주 (19)',
+                    },
+                    {
+                      value: '10',
+                      text: '대구 (20)',
+                    },
+                    {
+                      value: '11',
+                      text: '인천 (21)',
+                    },
+                    {
+                      value: '12',
+                      text: '광주 (22)',
+                    },
+                    {
+                      value: '13',
+                      text: '대전 (23)',
+                    },
+                    {
+                      value: '14',
+                      text: '울산 (24)',
+                    },
+                  ]"
+                  title="지역번호 선택하기"
+                  layerTitle="면허발급번호를 선택해 주세요"
+                  inputId="MI_P00_p015_license002"
+                  :classNames="{
+                    wrap: 'input-width-driving-license',
+                  }"
+                />
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput
+                  type="text"
+                  pattern="\d*"
+                  title="면허발급번호 앞 2자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell
+                :classNames="{
+                  cell: 'flex-2',
+                }"
+                margin="regular"
+              >
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="면허발급번호 두번째 6자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="면허발급번호 뒤 2자리"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <template v-slot:right>
+                <BasicButton size="small" theme="quaternary">
+                  확인
+                </BasicButton>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="발급일자"
+          target="#MI_P00_p015_issue_button002"
+        >
+          <FormInvalid :error="state.issueError002">
+            <InputBlock :error="state.issueError002">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="발급일자"
+                  id="MI_P00_p015_issue"
+                  buttonId="MI_P00_p015_issue_button002"
+                  :onChange="MI_P00_p015_issueEvent002"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+    </section>
+
+    <div class="row-margin-container-medium">
+      <CheckBox id="MI_P00_p015_sms" theme="tertiary">
+        <CheckBoxObject />
+        <CheckBoxLabelText>
+          지정운전자 등록은 운전면허 취득 후 1년이 경과된 손님에 한하여 적용
+          가능합니다. 면허취득 1년 미만인 경우, 사고 발생 시 보험적용이
+          불가하오니 반드시 면허취득일자를 다시 한 번 확인 후 입력해 주세요.
+        </CheckBoxLabelText>
+      </CheckBox>
+    </div>
+
     <ButtonList align="full">
-      <!-- Case : 휴대폰 선택시 노출 -->
       <ButtonListItem>
-        <BasicButton>다음</BasicButton>
+        <BasicButton>등록/변경 신청</BasicButton>
       </ButtonListItem>
-      <!-- // Case : 휴대폰 선택시 노출 -->
-
-      <!-- Case : 공동인증서 선택시 노출 -->
-      <ButtonListItem>
-        <BasicButton>공동인증서 인증</BasicButton>
-      </ButtonListItem>
-      <!-- // Case : 공동인증서 선택시 노출 -->
-
-      <!-- Case : 신용카드 선택시 노출 -->
-      <ButtonListItem>
-        <BasicButton>신용카드 인증</BasicButton>
-      </ButtonListItem>
-      <!-- // Case : 신용카드 선택시 노출 -->
     </ButtonList>
   </PageContents>
 </template>

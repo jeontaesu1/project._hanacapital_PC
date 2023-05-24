@@ -241,19 +241,19 @@ const routes = [
     component: () => import('@/views/additionalService/My_P02_p002.vue'),
   },
   {
-    path: '/additional-service/My_P05_p001',
-    name: '/additional-service/My_P05_p001',
-    component: () => import('@/views/additionalService/My_P05_p001.vue'),
+    path: '/additional-service/My_P05_p011',
+    name: '/additional-service/My_P05_p011',
+    component: () => import('@/views/additionalService/My_P05_p011.vue'),
   },
   {
-    path: '/additional-service/My_P05_p002',
-    name: '/additional-service/My_P05_p002',
-    component: () => import('@/views/additionalService/My_P05_p002.vue'),
+    path: '/additional-service/My_P06_p011',
+    name: '/additional-service/My_P06_p011',
+    component: () => import('@/views/additionalService/My_P06_p011.vue'),
   },
   {
-    path: '/additional-service/My_P05_p003',
-    name: '/additional-service/My_P05_p003',
-    component: () => import('@/views/additionalService/My_P05_p003.vue'),
+    path: '/additional-service/My_P05_p013',
+    name: '/additional-service/My_P05_p013',
+    component: () => import('@/views/additionalService/My_P05_p013.vue'),
   },
   {
     path: '/additional-service/My_P06_p001',

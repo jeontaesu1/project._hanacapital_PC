@@ -1,10 +1,13 @@
 <script>
-// My_P02_p001
+// MI_P00_p015a
 import { reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
+import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -33,7 +36,10 @@ export default {
   components: {
     PageContents,
     PageHead,
+    PageHeadRow,
     PageTitle,
+    PageMainText,
+    StepProgress,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -85,7 +91,13 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>본인인증을 진행해 주세요</PageTitle>
+      <PageHeadRow>
+        <PageTitle align="left">지정운전자 등록</PageTitle>
+        <template v-slot:right>
+          <StepProgress :total="3" :current="1" />
+        </template>
+      </PageHeadRow>
+      <PageMainText align="left">본인인증을 진행해 주세요</PageMainText>
     </PageHead>
 
     <BoxCheckList
@@ -95,15 +107,15 @@ export default {
     >
       <BoxCheckListItem>
         <BoxCheck
-          name="My_P02_p001_type"
-          id="My_P02_p001_type_001"
+          name="MI_P00_p015_type"
+          id="MI_P00_p015_type_001"
           :defaultChecked="true"
         >
           <BoxCheckLabel>개인 (개인사업자 포함)</BoxCheckLabel>
         </BoxCheck>
       </BoxCheckListItem>
       <BoxCheckListItem>
-        <BoxCheck name="My_P02_p001_type" id="My_P02_p001_type_002">
+        <BoxCheck name="MI_P00_p015_type" id="MI_P00_p015_type_002">
           <BoxCheckLabel>법인</BoxCheckLabel>
         </BoxCheck>
       </BoxCheckListItem>
@@ -119,20 +131,20 @@ export default {
       >
         <BoxCheckListItem>
           <BoxCheck
-            name="My_P02_p001_method"
-            id="My_P02_p001_method_001"
+            name="MI_P00_p015_method"
+            id="MI_P00_p015_method_001"
             :defaultChecked="true"
           >
             <BoxCheckLabel>휴대폰</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck name="My_P02_p001_method" id="My_P02_p001_method_002">
+          <BoxCheck name="MI_P00_p015_method" id="MI_P00_p015_method_002">
             <BoxCheckLabel>공동인증서</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck name="My_P02_p001_method" id="My_P02_p001_method_003">
+          <BoxCheck name="MI_P00_p015_method" id="MI_P00_p015_method_003">
             <BoxCheckLabel>신용카드</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
@@ -145,7 +157,7 @@ export default {
             <li :class="$style['agree-list__depth-item']">
               <div :class="$style['agree-list__depth-head']">
                 <CheckBox
-                  id="My_P02_p001_phoneAgree001"
+                  id="MI_P00_p015_phoneAgree001"
                   :classNames="{
                     wrap: $style['agree-list__depth-checkbox'],
                   }"
@@ -161,7 +173,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree001_001"
+                        id="MI_P00_p015_phoneAgree001_001"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -187,7 +199,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree001_002"
+                        id="MI_P00_p015_phoneAgree001_002"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -213,7 +225,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree001_003"
+                        id="MI_P00_p015_phoneAgree001_003"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -239,7 +251,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree001_004"
+                        id="MI_P00_p015_phoneAgree001_004"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -271,7 +283,7 @@ export default {
         <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem
             titleText="휴대폰번호"
-            target="#My_P02_p001_phone001_telecom"
+            target="#MI_P00_p015_phone001_telecom"
           >
             <FormInvalid :error="state.phone001Error">
               <InputBlock :error="state.phone001Error">
@@ -304,7 +316,7 @@ export default {
                       },
                     ]"
                     title="통신사"
-                    inputId="My_P02_p001_phone001_telecom"
+                    inputId="MI_P00_p015_phone001_telecom"
                     :classNames="{
                       wrap: 'input-width-telecom',
                     }"
@@ -335,7 +347,7 @@ export default {
           <FormListItem
             titleText="인증번호"
             titleOptionalText="(6자리)"
-            target="#My_P02_p001_phone001_code"
+            target="#MI_P00_p015_phone001_code"
           >
             <FormInvalid :error="state.code001Error">
               <InputBlock :error="state.code001Error">
@@ -344,7 +356,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="인증번호 (6자리)"
-                    id="My_P02_p001_phone001_code"
+                    id="MI_P00_p015_phone001_code"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -369,7 +381,7 @@ export default {
             <li :class="$style['agree-list__depth-item']">
               <div :class="$style['agree-list__depth-head']">
                 <CheckBox
-                  id="My_P02_p001_phoneAgree002"
+                  id="MI_P00_p015_phoneAgree002"
                   :classNames="{
                     wrap: $style['agree-list__depth-checkbox'],
                   }"
@@ -383,7 +395,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree002_001"
+                        id="MI_P00_p015_phoneAgree002_001"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -409,7 +421,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree002_002"
+                        id="MI_P00_p015_phoneAgree002_002"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -435,7 +447,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree002_003"
+                        id="MI_P00_p015_phoneAgree002_003"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -459,7 +471,7 @@ export default {
                   <li :class="$style['agree-list__item']">
                     <div :class="$style['agree-list__head']">
                       <CheckBox
-                        id="My_P02_p001_phoneAgree002_004"
+                        id="MI_P00_p015_phoneAgree002_004"
                         :classNames="{
                           wrap: $style['agree-list__checkbox'],
                         }"
@@ -491,7 +503,7 @@ export default {
         <FormList>
           <FormListItem
             titleText="휴대폰번호"
-            target="#My_P02_p001_phone002_telecom"
+            target="#MI_P00_p015_phone002_telecom"
           >
             <FormInvalid :error="state.phone002Error">
               <InputBlock :error="state.phone002Error">
@@ -524,7 +536,7 @@ export default {
                       },
                     ]"
                     title="통신사"
-                    inputId="My_P02_p001_phone002_telecom"
+                    inputId="MI_P00_p015_phone002_telecom"
                     :classNames="{
                       wrap: 'input-width-telecom',
                     }"
@@ -555,7 +567,7 @@ export default {
           <FormListItem
             titleText="인증번호"
             titleOptionalText="(6자리)"
-            target="#My_P02_p001_phone002_code"
+            target="#MI_P00_p015_phone002_code"
           >
             <FormInvalid :error="state.code002Error">
               <InputBlock :error="state.code002Error">
@@ -564,7 +576,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="인증번호 (6자리)"
-                    id="My_P02_p001_phone002_code"
+                    id="MI_P00_p015_phone002_code"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -585,18 +597,18 @@ export default {
       <!-- Case : 공동인증서 선택시 노출 (개인 A type) -->
       <div>
         <FormList>
-          <FormListItem titleText="이름" target="#My_P02_p001_name">
+          <FormListItem titleText="이름" target="#MI_P00_p015_name">
             <FormInvalid :error="state.nameError">
               <InputBlock :error="state.nameError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="이름" id="My_P02_p001_name" />
+                  <BasicInput title="이름" id="MI_P00_p015_name" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="주민등록번호" target="#My_P02_p001_id">
+          <FormListItem titleText="주민등록번호" target="#MI_P00_p015_id">
             <FormInvalid :error="state.idNumberError">
               <InputBlock :error="state.idNumberError">
                 <InputBlockCell :flexible="true">
@@ -604,7 +616,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="주민등록번호 앞 6자리"
-                    id="My_P02_p001_id"
+                    id="MI_P00_p015_id"
                   />
                 </InputBlockCell>
                 <InputBlockCell type="sub">-</InputBlockCell>
@@ -652,11 +664,11 @@ export default {
         </section>
 
         <FormList>
-          <FormListItem titleText="법인명" target="#My_P02_p001_businessName">
+          <FormListItem titleText="법인명" target="#MI_P00_p015_businessName">
             <FormInvalid :error="state.businessNameError">
               <InputBlock :error="state.businessNameError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="법인명" id="My_P02_p001_businessName" />
+                  <BasicInput title="법인명" id="MI_P00_p015_businessName" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -666,7 +678,7 @@ export default {
           <FormListItem
             titleText="사업자등록번호"
             titleOptionalText="(10자리)"
-            target="#My_P02_p001_BusinessLicense"
+            target="#MI_P00_p015_BusinessLicense"
           >
             <FormInvalid :error="state.businessLicenseError">
               <InputBlock :error="state.businessLicenseError">
@@ -674,7 +686,7 @@ export default {
                   <BasicInput
                     ref="license"
                     title="사업자등록번호 (10자리)"
-                    id="My_P02_p001_BusinessLicense"
+                    id="MI_P00_p015_BusinessLicense"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -684,7 +696,7 @@ export default {
 
           <FormListItem
             titleText="법인번호"
-            target="#My_P02_p001_businessNumber"
+            target="#MI_P00_p015_businessNumber"
           >
             <FormInvalid :error="state.businessNumberError">
               <InputBlock :error="state.businessNumberError">
@@ -693,7 +705,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="법인번호 앞 6자리"
-                    id="My_P02_p001_businessNumber"
+                    id="MI_P00_p015_businessNumber"
                   />
                 </InputBlockCell>
                 <InputBlockCell type="sub">-</InputBlockCell>
@@ -718,7 +730,7 @@ export default {
       <!-- Case : 신용카드 선택시 노출 -->
       <div>
         <FormList>
-          <FormListItem titleText="카드번호" target="#My_P02_p001_cardNumber1">
+          <FormListItem titleText="카드번호" target="#MI_P00_p015_cardNumber1">
             <FormInvalid :error="state.cardNumberError">
               <InputBlock :error="state.cardNumberError">
                 <InputBlockCell :flexible="true">
@@ -726,7 +738,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="카드번호 첫번째 4자리"
-                    id="My_P02_p001_cardNumber1"
+                    id="MI_P00_p015_cardNumber1"
                     :useDelete="false"
                   />
                 </InputBlockCell>
@@ -752,7 +764,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="카드번호 네번째 4자리"
-                    id="My_P02_p001_cardNumber4"
+                    id="MI_P00_p015_cardNumber4"
                     :useDelete="false"
                   />
                 </InputBlockCell>
@@ -764,7 +776,7 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="유효기간" target="#My_P02_p001_cardDate1">
+          <FormListItem titleText="유효기간" target="#MI_P00_p015_cardDate1">
             <FormInvalid :error="state.cardDateError">
               <InputBlock :error="state.cardDateError">
                 <InputBlockCell :flexible="true">
@@ -772,7 +784,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="유효기간 월"
-                    id="My_P02_p001_cardDate1"
+                    id="MI_P00_p015_cardDate1"
                   />
                 </InputBlockCell>
                 <InputBlockCell margin="regular">
@@ -783,7 +795,7 @@ export default {
                     type="number"
                     pattern="\d*"
                     title="유효기간 년"
-                    id="My_P02_p001_cardDate2"
+                    id="MI_P00_p015_cardDate2"
                   />
                 </InputBlockCell>
                 <InputBlockCell margin="regular">
@@ -796,7 +808,7 @@ export default {
 
           <FormListItem
             titleText="카드비밀번호 앞 2자리"
-            target="#My_P02_p001_cardPassword"
+            target="#MI_P00_p015_cardPassword"
           >
             <FormInvalid :error="state.cardPasswordError">
               <InputBlock :error="state.cardPasswordError">
@@ -807,7 +819,7 @@ export default {
                     title="카드비밀번호 앞 2자리"
                     :afterDot="2"
                     :length="2"
-                    id="My_P02_p001_cardPassword"
+                    id="MI_P00_p015_cardPassword"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -821,68 +833,6 @@ export default {
         </NoticeText>
       </div>
       <!-- // Case : 신용카드 선택시 노출 -->
-    </section>
-
-    <section class="row-margin-block-small row-margin-bottom-none">
-      <h3 class="text-title-1 row-margin-contents">약관동의</h3>
-
-      <div :class="$style['agree-list']">
-        <ul :class="$style['agree-list__container']">
-          <li :class="$style['agree-list__all']">
-            <div :class="$style['agree-list__all-contents']">
-              <ul :class="$style['agree-list__depth']">
-                <li :class="$style['agree-list__depth-item']">
-                  <div :class="$style['agree-list__depth-contents']">
-                    <ul :class="$style['agree-list__list']">
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__depth-head']">
-                          <CheckBox
-                            id="My_P02_p001_agree_002"
-                            :classNames="{
-                              wrap: $style['agree-list__depth-checkbox'],
-                            }"
-                          >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              서비스 이용약관 전체동의
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                        </div>
-                      </li>
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__head']">
-                          <CheckBox
-                            id="My_P02_p001_agree_002_001"
-                            :classNames="{
-                              wrap: $style['agree-list__checkbox'],
-                            }"
-                            theme="tertiary"
-                          >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              개인정보 수집·이용 동의
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                          <div :class="$style['agree-list__right']">
-                            <button
-                              type="button"
-                              :class="$style['agree-list__link']"
-                            >
-                              <span :class="$style['agree-list__link-text']">
-                                상세보기
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
     </section>
 
     <ButtonList align="full">
@@ -908,5 +858,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/additionalService/My_P02_p001.scss';
+@import '@/assets/scss/views/onlineBranch/MI_P00_p015a.scss';
 </style>
