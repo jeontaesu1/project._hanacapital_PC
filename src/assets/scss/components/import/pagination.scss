@@ -1,8 +1,5 @@
 @mixin function-hover-focus-visible {
-  &:hover {
-    color: $color-gray-90;
-    background-color: rgba($color-navy-50, 0.08);
-  }
+  &:hover,
   &:focus-visible {
     color: $color-gray-90;
     background-color: rgba($color-navy-50, 0.08);
