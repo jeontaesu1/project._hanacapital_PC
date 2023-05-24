@@ -121,7 +121,21 @@ export default {
       <div>대기영역</div>
     </BasicBox>
 
-    <div class="row-margin-block-small row-margin-top-none">영역</div>
+    <div class="row-margin-block-small row-margin-top-none">
+      <div :class="$style['term-list__head']">
+        <div :class="$style['term-list__title']">
+          <CheckBox id="testCheckBox123321" theme="tertiary">
+            <CheckBoxObject />
+            <CheckBoxLabelText>재고금융 확약서</CheckBoxLabelText>
+          </CheckBox>
+        </div>
+        <div :class="$style['term-list__right']">
+          <button type="button" :class="$style['term-list__link']">
+            <span :class="$style['term-list__link-text']">상세보기</span>
+          </button>
+        </div>
+      </div>
+    </div>
     <h3 class="text-title-1 row-margin-item-group row-margin-bottom-none">
       대출신청 내용을 확인하고 약정합니다.
     </h3>
@@ -483,5 +497,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/identification/Common_P00_p003.scss';
+@import '@/assets/scss/views/inventoryFinance/IF_P02_p004.scss';
 </style>
