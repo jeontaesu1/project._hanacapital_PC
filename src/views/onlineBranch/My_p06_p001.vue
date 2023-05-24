@@ -9,6 +9,9 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
@@ -21,6 +24,9 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
 };
 </script>
@@ -67,44 +73,86 @@ export default {
       </ul>
     </div>
 
-    <BasicBox>
-      <KeyValue>
-        <KeyValueItem verticalAlign="center">
-          <KeyValueTitle :classNames="{ title: 'color-black' }">
-            소비자신용대출
-          </KeyValueTitle>
-        </KeyValueItem>
-      </KeyValue>
-      <BasicHr
-        type="contents"
-        theme="quaternary"
-        className="row-margin-contents-small"
-      />
-      <KeyValue>
-        <KeyValueItem>
-          <KeyValueTitle>대출금액</KeyValueTitle>
-          <KeyValueText>81,310,000 원</KeyValueText>
-        </KeyValueItem>
+    <!-- Case : 보유 상품이 없는 경우 노출 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">현재 보유하고 계신 상품이 없습니다.</p>
+    </div>
+    <!-- // Case : 보유 상품이 없는 경우 노출 -->
 
-        <KeyValueItem>
-          <KeyValueTitle>적용금리</KeyValueTitle>
-          <KeyValueText>4,709%</KeyValueText>
-        </KeyValueItem>
+    <!-- Case : 보유 상품이 있는 경우 노출 -->
+    <div class="row-margin-block-small">
+      <BasicBox>
+        <KeyValue>
+          <KeyValueItem verticalAlign="center">
+            <KeyValueTitle :classNames="{ title: 'color-black' }">
+              소비자신용대출
+            </KeyValueTitle>
+          </KeyValueItem>
+        </KeyValue>
+        <BasicHr
+          type="contents"
+          theme="quaternary"
+          className="row-margin-contents-small"
+        />
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>대출실행일</KeyValueTitle>
-          <KeyValueText>2021.12.31</KeyValueText>
-        </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>대출금액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>대출종료일</KeyValueTitle>
-          <KeyValueText>2026.12.21</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+          <KeyValueItem>
+            <KeyValueTitle>대출실행일</KeyValueTitle>
+            <KeyValueText>2021.12.31</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출잔액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton>철회 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+    </div>
+    <!-- // Case : 보유 상품이 있는 경우 노출 -->
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p008.scss';
+@import '@/assets/scss/views/onlineBranch/My_P06_p001.scss';
 </style>

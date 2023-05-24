@@ -494,14 +494,14 @@ const routes = [
     component: () => import('@/views/onlineBranch/My_p04_p001.vue'),
   },
   {
-    path: '/online-branch/My_P04_p002',
-    name: '/online-branch/My_P04_p002',
-    component: () => import('@/views/onlineBranch/My_P04_p002.vue'),
+    path: '/online-branch/My_p04_p002',
+    name: '/online-branch/My_p04_p002',
+    component: () => import('@/views/onlineBranch/My_p04_p002.vue'),
   },
   {
-    path: '/online-branch/My_P04_p003',
-    name: '/online-branch/My_P04_p003',
-    component: () => import('@/views/onlineBranch/My_P04_p003.vue'),
+    path: '/online-branch/My_p04_p003',
+    name: '/online-branch/My_p04_p003',
+    component: () => import('@/views/onlineBranch/My_p04_p003.vue'),
   },
   {
     path: '/online-branch/MI_P00_p013',
@@ -529,9 +529,9 @@ const routes = [
     component: () => import('@/views/onlineBranch/My_p05_p001.vue'),
   },
   {
-    path: '/online-branch/My_P05_p002',
-    name: '/online-branch/My_P05_p002',
-    component: () => import('@/views/onlineBranch/My_P05_p002.vue'),
+    path: '/online-branch/My_p05_p002',
+    name: '/online-branch/My_p05_p002',
+    component: () => import('@/views/onlineBranch/My_p05_p002.vue'),
   },
   {
     path: '/online-branch/My_p05_p003',
@@ -539,14 +539,14 @@ const routes = [
     component: () => import('@/views/onlineBranch/My_p05_p003.vue'),
   },
   {
-    path: '/online-branch/My_P05_p004',
-    name: '/online-branch/My_P05_p004',
-    component: () => import('@/views/onlineBranch/My_P05_p004.vue'),
+    path: '/online-branch/My_p05_p004',
+    name: '/online-branch/My_p05_p004',
+    component: () => import('@/views/onlineBranch/My_p05_p004.vue'),
   },
   {
-    path: '/online-branch/My_P05_p005',
-    name: '/online-branch/My_P05_p005',
-    component: () => import('@/views/onlineBranch/My_P05_p005.vue'),
+    path: '/online-branch/My_p05_p005',
+    name: '/online-branch/My_p05_p005',
+    component: () => import('@/views/onlineBranch/My_p05_p005.vue'),
   },
   {
     path: '/online-branch/My_p06_p001',
