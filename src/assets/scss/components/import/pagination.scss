@@ -3,6 +3,10 @@
     color: $color-gray-90;
     background-color: rgba($color-navy-50, 0.08);
   }
+  &:focus-visible {
+    color: $color-gray-90;
+    background-color: rgba($color-navy-50, 0.08);
+  }
 }
 
 @mixin function-active {
