@@ -2,7 +2,7 @@
 import { computed, inject } from 'vue';
 
 const defaultClassNames = () => ({
-  wrap: '',
+  right: '',
 });
 
 export default {
@@ -15,8 +15,7 @@ export default {
     },
   },
   setup(props) {
-    const formInvalid = inject('formInvalid', {});
-    const basicTextarea = inject('basicTextarea', {});
+    const styleModule = inject('BasicBoxHeadStyleModule');
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -24,27 +23,15 @@ export default {
     });
 
     return {
+      styleModule,
       customClassNames,
-      formInvalid,
-      basicTextarea,
     };
   },
 };
 </script>
 
 <template>
-  <p
-    :class="[
-      $style['invalid-message'],
-      formInvalid.messageClass,
-      basicTextarea.invalidClass,
-      customClassNames.wrap,
-    ]"
-  >
+  <div :class="[styleModule['box-head__right'], customClassNames.right]">
     <slot />
-  </p>
+  </div>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/components/ui/form/FormInvalidMessage.scss';
-</style>

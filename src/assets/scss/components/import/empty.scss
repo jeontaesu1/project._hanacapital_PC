@@ -5,7 +5,8 @@
 
   &__text {
     margin: 0;
-    @include font-size-default(13);
+    @include font-size-default(14);
     font-weight: 300;
+    padding-bottom: 12px;
   }
 }

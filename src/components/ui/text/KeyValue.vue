@@ -3,6 +3,7 @@ import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
+  list: '',
 });
 
 export default {
@@ -33,6 +34,14 @@ export default {
       Type: String,
       default: null,
     },
+    wrap: {
+      Type: Boolean,
+      default: false,
+    },
+    col: {
+      Type: Number,
+      default: 2,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -50,7 +59,7 @@ export default {
 </script>
 
 <template>
-  <dl
+  <div
     :class="[
       $style['key-value'],
       {
@@ -59,12 +68,16 @@ export default {
         [$style[`key-value--direction-${direction}`]]: direction,
         [$style[`key-value--margin-${margin}`]]: margin,
         [$style[`key-value--size-${size}`]]: size,
+        [$style['key-value--wrap']]: wrap,
+        [$style[`key-value--col-${col}`]]: wrap && col > 2,
       },
       customClassNames.wrap,
     ]"
   >
-    <slot />
-  </dl>
+    <dl :class="[$style['key-value__list'], customClassNames.list]">
+      <slot />
+    </dl>
+  </div>
 </template>
 
 <style lang="scss" module>

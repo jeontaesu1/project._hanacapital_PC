@@ -1,5 +1,5 @@
 <script>
-import { computed, inject } from 'vue';
+import { computed, useCssModule, provide } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -13,41 +13,38 @@ export default {
         return defaultClassNames();
       },
     },
+    align: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props) {
-    const formListItem = inject('formListItem', {});
-    const formInvalid = inject('formInvalid', {});
-    const basicTextarea = inject('basicTextarea', {});
-
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    provide('BasicBoxHeadStyleModule', useCssModule());
+
     return {
       customClassNames,
-      formListItem,
-      formInvalid,
-      basicTextarea,
     };
   },
 };
 </script>
 
 <template>
-  <p
+  <div
     :class="[
-      $style['help-message'],
-      formListItem.helpClass,
-      formInvalid.helpClass,
-      basicTextarea.helpClass,
+      $style['box-head'],
+      { [$style[`box-head--align-${align}`]]: align },
       customClassNames.wrap,
     ]"
   >
     <slot />
-  </p>
+  </div>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/form/FormHelpText.scss';
+@import '@/assets/scss/components/ui/common/BasicBoxHead.scss';
 </style>
