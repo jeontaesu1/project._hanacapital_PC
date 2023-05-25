@@ -25,10 +25,16 @@ import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import IconLinkSmall from '@/assets/images/icon/link.svg?component';
+// import IconLinkSmalldsds from '@/assets/images/icon/link-small.svg?component';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+
 export default {
   components: {
     PageContents,
@@ -58,6 +64,10 @@ export default {
     TextButton,
     ButtonList,
     ButtonListItem,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
   },
 };
 </script>
@@ -80,14 +90,19 @@ export default {
         >
         <!-- //case : 만기후처리_신청후  -->
       </PageHead>
+      <!-- case : 연장 -->
       <BasicBox class="row-margin-block row-margin-top-none">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+            <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
           </BasicBoxHeadLeft>
           <!-- case : 만기후처리_신청후  -->
           <BasicBoxHeadRight>
-            <TextButton :classNames="{ wrap: 'text-body-3 color-green' }">
+            <TextButton
+              theme="secondary"
+              :iconFillAll="true"
+              class="text-body-3"
+            >
               만기후처리 변경
               <template v-slot:rightIcon>
                 <IconLinkSmall />
@@ -96,15 +111,132 @@ export default {
           </BasicBoxHeadRight>
           <!-- //case : 만기후처리_신청후  -->
         </BasicBoxHead>
-        <div>대기영역</div>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>만기후처리</KeyValueTitle>
+            <KeyValueText> 재렌트 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>약정주행거리</KeyValueTitle>
+            <KeyValueText>999,999km</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>렌트기간</KeyValueTitle>
+            <KeyValueText>12개월 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>정비서비스</KeyValueTitle>
+            <KeyValueText> 프리미엄</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>보증금</KeyValueTitle>
+            <KeyValueText>99,999,999원</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
         <!-- case : 만기후처리_신청후 -->
-        <ButtonList :wrap="true" align="center">
+        <ButtonList :wrap="true" align="center" class="row-margin-contents">
           <ButtonListItem>
             <BasicButton size="regular">연장 심사접수 하러가기</BasicButton>
           </ButtonListItem>
         </ButtonList>
         <!-- //case : 만기후처리_신청후  -->
       </BasicBox>
+      <!-- //case : 연장 -->
+      <!-- case :  구매-직접이전(공통) -->
+      <BasicBox class="row-margin-block row-margin-top-none">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>만기후처리</KeyValueTitle>
+            <KeyValueText> 재렌트 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>매수자정보</KeyValueTitle>
+            <KeyValueText>김하나</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>구매방법</KeyValueTitle>
+            <KeyValueText>직접이전</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>서류수령방법</KeyValueTitle>
+            <KeyValueText> 등기</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>매도용인감주소</KeyValueTitle>
+            <KeyValueText
+              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+            >
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>주소</KeyValueTitle>
+            <KeyValueText
+              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+            >
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- //case :  구매-직접이전(공통) -->
+      <!-- case :  구매-이전대행(공통)-->
+      <BasicBox class="row-margin-block row-margin-top-none">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>만기후처리</KeyValueTitle>
+            <KeyValueText> 재렌트 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>대행수수료</KeyValueTitle>
+            <KeyValueText>20,000 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>구매방법</KeyValueTitle>
+            <KeyValueText>직접이전</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>대행업체정보</KeyValueTitle>
+            <KeyValueText> 다코스 010-1234-5678</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- //case :  구매-이전대행(공통)-->
+      <!-- case :  반환(공통)-->
+      <BasicBox class="row-margin-block row-margin-top-none">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>만기후처리</KeyValueTitle>
+            <KeyValueText> 재렌트 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>반환일시</KeyValueTitle>
+            <KeyValueText>2023.01.01</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>반환담당자</KeyValueTitle>
+            <KeyValueText>김길동</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>반환주소</KeyValueTitle>
+            <KeyValueText
+              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+            >
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- //case :  반환(공통)-->
 
       <NavTab :useUiTab="true">
         <NavTabButton link="testNavTab001_001">연장</NavTabButton>
@@ -206,10 +338,287 @@ export default {
           </div>
         </section>
         <section class="row-margin-block-small">
-          <h3 class="text-title-1 font-weight-bold">상품안내</h3>
-        </section>
-        <section>
-          <h3 class="text-title-1 font-weight-bold">유의사항</h3>
+          <div class="row-margin-container-medium">
+            <section class="row-margin-container-medium">
+              <h3 class="text-title-1 row-margin-contents">상품안내</h3>
+
+              <section class="row-margin-contents">
+                <h4
+                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+                >
+                  취급조건
+                </h4>
+
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    $style['basic-list--mini-margin'],
+                  ]"
+                >
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-2',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="[$style['basic-list__content']]">
+                      <div>계약기간: 12개월 ~ 48개월</div>
+                      <div
+                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                      >
+                        사용연한 5년 이내 (이전 계약기간 포함)
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-2',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="[$style['basic-list__content']]">
+                      <div>
+                        렌트료 포함 내역 : 취득세, 보험료, 자동차세, 정비료
+                      </div>
+                      <div
+                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                      >
+                        (계약상품에 따라 포함이 안될 수 있음)
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-2',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="[$style['basic-list__content']]">
+                      <div>정비상품 : Special, Self 상품</div>
+                      <div
+                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
+                      >
+                        (기존 정비상품 동일 적용)
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'color-black',
+                      'text-body-2',
+                      'font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="[$style['basic-list__content']]">
+                      만기 시 처리: 계약 종료 후 고객의 의향에 따라 반환, 구매,
+                      연장 가능
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="row-margin-contents">
+                <h4
+                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+                >
+                  연체이자율
+                </h4>
+
+                <p class="text-body-2 font-weight-regular">연20%</p>
+              </section>
+
+              <section class="row-margin-contents">
+                <h4
+                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+                >
+                  중도해지수수료
+                </h4>
+
+                <p class="text-body-2 font-weight-regular">
+                  중도해지수수료율 = 잔여렌트료 X 해지위약금율
+                </p>
+
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li :class="$style['basic-list__item']">
+                    <div :class="$style['basic-list__symbol']">※</div>
+                    <div :class="$style['basic-list__content']">
+                      잔여렌트료 = 앞면표기 "월렌트료" X (미청구 잔여개월수 -
+                      1개월) + 해지시점 당월 잔여렌트료
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="row-margin-contents">
+                <h4
+                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-item"
+                >
+                  위약금률
+                </h4>
+
+                <div :class="$style['basic-table']">
+                  <div :class="$style['basic-table']">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>2년 이하</th>
+                          <th>3년 이하</th>
+                          <th>4년 이하</th>
+                          <th>4년 초과</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>35%</td>
+                          <td>30%</td>
+                          <td>25%</td>
+                          <td>20%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              <section class="row-margin-contents">
+                <h4
+                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
+                >
+                  승계수수료
+                </h4>
+
+                <p class="text-body-2 font-weight-regular">30만원 (VAT 별도)</p>
+              </section>
+            </section>
+
+            <section class="row-margin-container-medium">
+              <h3 class="text-title-2 row-margin-contents">유의사항</h3>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  $style['basic-list--regular-margin'],
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    계약을 체결하기 전에 자세한 내용은 상품설명서와 약관을
+                    읽어보시기 바랍니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                    'font-weight-medium',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
+                    개인신용평점이 하락할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                    'font-weight-medium',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
+                    있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                    'font-weight-medium',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
+                    발생할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
+                    대출이 제한될 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
+                    설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-body-3',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                    홈페이지에서 확인하시기 바랍니다.
+                  </div>
+                </li>
+              </ul>
+              <ul :class="[$style['basic-list'], 'row-margin-contents']">
+                <li :class="$style['basic-list__item']">
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    준법심의필 xx-xxxx<br />
+                    (2022.01.01~2022.12.31)
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
         </section>
 
         <div class="row-margin-block">
