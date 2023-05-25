@@ -44,9 +44,10 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError001: false,
-      idNumberError001: false,
-      passwordError001: false,
+      nameError: false,
+      idNumberError: false,
+      certificateError: false,
+      passwordError: false,
     });
 
     const layer = ref(null);
@@ -86,7 +87,7 @@ export default {
           target="#PF_P07_l002_name"
           :disabled="true"
         >
-          <InputBlock :error="state.nameError001" :disabled="true">
+          <InputBlock :error="state.nameError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="이름"
@@ -103,7 +104,7 @@ export default {
           target="#PF_P07_l002_idNumber"
           :disabled="true"
         >
-          <InputBlock :error="state.idNumberError001" :disabled="true">
+          <InputBlock :error="state.idNumberError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="주민등록번호"
@@ -117,11 +118,11 @@ export default {
 
         <FormListItem
           titleText="공동인증서"
-          target="#PF_P07_l002_select"
+          target="#PF_P07_l002_certificate"
           :selectOnly="true"
         >
-          <FormInvalid :error="state.testError001">
-            <InputBlock :error="state.testError001">
+          <FormInvalid :error="state.certificateError">
+            <InputBlock :error="state.certificateError">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -131,7 +132,7 @@ export default {
                     },
                   ]"
                   title="공동인증서"
-                  inputId="PF_P07_l002_select"
+                  inputId="PF_P07_l002_certificate"
                   defaultValue="1"
                 />
               </InputBlockCell>
@@ -141,8 +142,8 @@ export default {
         </FormListItem>
 
         <FormListItem titleText="비밀번호" target="#PF_P01_l002_password">
-          <FormInvalid :error="state.passwordError001">
-            <InputBlock :error="state.passwordError001">
+          <FormInvalid :error="state.passwordError">
+            <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="password"

@@ -9,6 +9,8 @@ import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 
+import IconQR from '@/assets/images/icon/qr.svg?component';
+
 export default {
   components: {
     UiLayer,
@@ -17,6 +19,7 @@ export default {
     ModalPopup,
     ModalPopupHead,
     PopupSubTitle,
+    IconQR,
   },
   setup() {
     const layer = ref(null);
@@ -45,6 +48,10 @@ export default {
           </template>
         </ModalPopupHead>
       </template>
+
+      <div class="inline-wrap align-center">
+        <IconQR />
+      </div>
     </ModalPopup>
   </UiLayer>
 </template>

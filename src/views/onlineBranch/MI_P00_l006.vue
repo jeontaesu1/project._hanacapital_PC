@@ -18,6 +18,7 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 
 export default {
   components: {
@@ -37,13 +38,15 @@ export default {
     BasicInput,
     FormInvalid,
     FormInvalidMessage,
+    BasicSelect,
   },
   setup() {
     const state = reactive({
-      name001Error: false,
-      idNumber001Error: false,
-      bankNumber001Error: false,
-      businessNumber001Error: false,
+      nameError: false,
+      idNumberError: false,
+      bankNumberError: false,
+      businessNumberError: false,
+      bankError: false,
     });
 
     const layer = ref(null);
@@ -77,15 +80,15 @@ export default {
         <FormListItem
           titleText="예금주"
           :disabled="true"
-          target="#Common_MI_P00_l006_name001"
+          target="#MI_P00_l006_name"
         >
-          <InputBlock :disabled="true" :error="state.name001Error">
+          <InputBlock :disabled="true" :error="state.nameError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="예금주"
                 defaultValue="김하나"
                 :disabled="true"
-                id="Common_MI_P00_l006_name001"
+                id="MI_P00_l006_name"
               />
             </InputBlockCell>
           </InputBlock>
@@ -94,15 +97,15 @@ export default {
         <FormListItem
           titleText="생년월일"
           :disabled="true"
-          target="#Common_MI_P00_l006_idNumber001"
+          target="#MI_P00_l006_idNumber"
         >
-          <InputBlock :disabled="true" :error="state.idNumber001Error">
+          <InputBlock :disabled="true" :error="state.idNumberError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="생년월일"
                 defaultValue="1995.02.06"
                 :disabled="true"
-                id="Common_MI_P00_l006_idNumber001"
+                id="MI_P00_l006_idNumber"
               />
             </InputBlockCell>
           </InputBlock>
@@ -112,40 +115,50 @@ export default {
         <FormListItem
           titleText="사업자등록번호"
           :disabled="true"
-          target="#Common_MI_P00_l006_businessNumberNumber001"
+          target="#MI_P00_l006_businessNumberNumber"
         >
-          <InputBlock :disabled="true" :error="state.businessNumber001Error">
+          <InputBlock :disabled="true" :error="state.businessNumberError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="사업자등록번호"
                 defaultValue="1995.02.06"
                 :disabled="true"
-                id="Common_MI_P00_l006_businessNumberNumber001"
+                id="MI_P00_l006_businessNumberNumber"
               />
             </InputBlockCell>
           </InputBlock>
         </FormListItem>
         <!-- // Case : 법인 -->
 
-        <FormListItem titleText="은행명">
-          <InputBlock>
-            <InputBlockCell :flexible="true">
-              <BasicInput title="은행명" />
-            </InputBlockCell>
-          </InputBlock>
+        <FormListItem
+          titleText="은행명"
+          target="#MI_P01_l006_bank"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.bankError">
+            <InputBlock :error="state.bankError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '하나은행',
+                    },
+                  ]"
+                  title="은행명"
+                  inputId="MI_P01_l006_bank"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
         </FormListItem>
 
-        <FormListItem
-          titleText="계좌번호"
-          target="#Common_MI_P00_l006_bankNumber001"
-        >
-          <FormInvalid :error="state.bankNumber001Error">
-            <InputBlock :error="state.bankNumber001Error">
+        <FormListItem titleText="계좌번호" target="#MI_P00_l006_bankNumber">
+          <FormInvalid :error="state.bankNumberError">
+            <InputBlock :error="state.bankNumberError">
               <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="계좌번호"
-                  id="Common_MI_P00_l006_bankNumber001"
-                />
+                <BasicInput title="계좌번호" id="MI_P00_l006_bankNumber" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

@@ -28,6 +28,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 export default {
   components: {
@@ -57,24 +58,34 @@ export default {
     FormHelpText,
     ButtonList,
     ButtonListItem,
+    BasicDatepicker,
   },
 
   setup() {
     const state = reactive({
-      name001Error: false,
-      idNumber001Error: false,
-      bankNumber001Error: false,
-      businessNumber001Error: false,
+      nameError: false,
+      idNumberError: false,
+      typeError: false,
       workplaceNameError001: false,
-      dayError001: false,
-      incomeError: false,
       workplaceNameError002: false,
-      businessNumberError: false,
+      dayError001: false,
       dayError002: false,
+      incomeError: false,
+      businessNumberError: false,
     });
+
+    const dayInputEvent001 = (e = {}) => {
+      console.log(e.type, e.target);
+    };
+
+    const dayInputEvent002 = (e = {}) => {
+      console.log(e.type, e.target);
+    };
 
     return {
       state,
+      dayInputEvent001,
+      dayInputEvent002,
     };
   },
 };
@@ -106,8 +117,8 @@ export default {
           <li :class="[$style['basic-list__item'], 'font-weight-regular']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              실제 사업영위, 담보주택 소유권 이전등기일로부터 3개월 경과부터
-              신청 가능합니다.
+              건강보험공단 또는 국민연금공단, 국세청의 소득정보(자격득실 및
+              보험료 납부확인서, 소득금액증명원)를 자동제출합니다.
             </div>
           </li>
           <li :class="[$style['basic-list__item'], 'font-weight-regular']">
@@ -164,7 +175,6 @@ export default {
         </div>
       </section>
 
-      <!-- Case : 고객정보입력_급여소득자  -->
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-small">고객정보</h3>
         <div class="text-body-1 color-gray-secondary font-weight-light">
@@ -177,7 +187,7 @@ export default {
             :disabled="true"
             target="#PF_P01_p003_name001"
           >
-            <InputBlock :disabled="true" :error="state.name001Error">
+            <InputBlock :disabled="true" :error="state.nameError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -194,7 +204,7 @@ export default {
             target="#PF_P01_p003_id001"
             :disabled="true"
           >
-            <InputBlock :error="state.idNumber001Error">
+            <InputBlock :error="state.idNumberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
@@ -226,9 +236,9 @@ export default {
         <h3 class="text-title-1 row-margin-small">소득구분</h3>
 
         <FormList>
-          <FormListItem :disabled="true" target="#PF_P01_p003_name001">
+          <FormListItem :disabled="true" target="#PF_P01_p003_type">
             <FormInvalid
-              :error="state.addressDetailError001"
+              :error="state.typeError"
               :classNames="{ wrap: 'row-margin-contents' }"
             >
               <BoxCheckList
@@ -287,11 +297,19 @@ export default {
                 </FormInvalid>
               </FormListItem>
 
-              <FormListItem titleText="입사일" target="#PF_P01_p003_day001">
+              <FormListItem
+                titleText="입사일"
+                target="#PF_P01_p003_day_001_Button"
+              >
                 <FormInvalid :error="state.dayError001">
                   <InputBlock :error="state.dayError001">
                     <InputBlockCell :flexible="true">
-                      <BasicInput title="입사일" id="PF_P01_p003_day001" />
+                      <BasicDatepicker
+                        title="입사일"
+                        id="PF_P01_p003_day_001"
+                        buttonId="PF_P01_p003_day_001_Button"
+                        :onChange="dayInputEvent001"
+                      />
                     </InputBlockCell>
                   </InputBlock>
                   <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -357,22 +375,30 @@ export default {
                   <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
                 </FormInvalid>
               </FormListItem>
-            </FormInvalid>
-          </FormListItem>
 
-          <FormListItem titleText="사업개시일" target="#PF_P01_p003_day002">
-            <FormInvalid :error="state.dayError002">
-              <InputBlock :error="state.dayError002">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="사업개시일" id="PF_P01_p003_day002" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormListItem
+                titleText="사업개시일"
+                target="#PF_P01_p003_day_002_Button"
+              >
+                <FormInvalid :error="state.dayError002">
+                  <InputBlock :error="state.dayError002">
+                    <InputBlockCell :flexible="true">
+                      <BasicDatepicker
+                        title="사업개시일"
+                        id="PF_P01_p003_day_002"
+                        buttonId="PF_P01_p003_day_002_Button"
+                        :onChange="dayInputEvent002"
+                      />
+                    </InputBlockCell>
+                  </InputBlock>
+                  <FormInvalidMessage>Error Message</FormInvalidMessage>
+                </FormInvalid>
+              </FormListItem>
+              <!-- // Case : '자영업자' 선택 시  -->
             </FormInvalid>
           </FormListItem>
         </FormList>
       </section>
-      <!-- // Case : 고객정보입력_급여소득자  -->
     </div>
 
     <ButtonList>

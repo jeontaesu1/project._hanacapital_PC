@@ -34,13 +34,7 @@ export default {
       </IllustInfoText>
     </IllustInfo>
 
-    <ButtonList
-      :wrap="true"
-      align="center"
-      :classNames="{
-        wrap: 'row-margin-none',
-      }"
-    >
+    <ButtonList :wrap="true" align="center">
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>

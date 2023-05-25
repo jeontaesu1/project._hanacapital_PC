@@ -51,8 +51,8 @@ export default {
 
   setup() {
     const state = reactive({
-      name001Error: false,
-      idNumber001Error: false,
+      nameError: false,
+      idNumberError: false,
     });
 
     return {
@@ -81,26 +81,26 @@ export default {
         wrap: 'row-margin-block-small row-margin-top-none',
       }"
     >
-      <FormListItem titleText="이름" target="#PF_P07_p011_name001">
-        <FormInvalid :error="state.name001Error">
-          <InputBlock :error="state.name001Error">
+      <FormListItem titleText="이름" target="#PF_P07_p011_name">
+        <FormInvalid :error="state.nameError">
+          <InputBlock :error="state.nameError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="이름" id="PF_P07_p011_name001" />
+              <BasicInput title="이름" id="PF_P07_p011_name" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="주민등록번호" target="#PF_P07_p011_id001">
-        <FormInvalid :error="state.idNumber001Error">
-          <InputBlock :error="state.idNumber001Error">
+      <FormListItem titleText="주민등록번호" target="#PF_P07_p011_id">
+        <FormInvalid :error="state.idNumberError">
+          <InputBlock :error="state.idNumberError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 type="number"
                 pattern="\d*"
                 title="주민등록번호 앞 6자리"
-                id="PF_P07_p011_id001"
+                id="PF_P07_p011_id"
               />
             </InputBlockCell>
             <InputBlockCell type="sub">-</InputBlockCell>

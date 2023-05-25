@@ -53,7 +53,12 @@ export default {
           ]"
         >
           <li
-            :class="[$style['basic-list__item'], 'text-body-1', 'color-black']"
+            :class="[
+              $style['basic-list__item'],
+              'text-body-1',
+              'color-black',
+              'font-weight-regular',
+            ]"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -62,7 +67,12 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'text-body-1', 'color-black']"
+            :class="[
+              $style['basic-list__item'],
+              'text-body-1',
+              'color-black',
+              'font-weight-regular',
+            ]"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -70,7 +80,12 @@ export default {
             </div>
           </li>
           <li
-            :class="[$style['basic-list__item'], 'text-body-1', 'color-black']"
+            :class="[
+              $style['basic-list__item'],
+              'text-body-1',
+              'color-black',
+              'font-weight-regular',
+            ]"
           >
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">

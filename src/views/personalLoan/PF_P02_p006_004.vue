@@ -64,7 +64,7 @@ export default {
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
                 신용등급이 개선된 고객(단, 내부정책 및 평가결과 등에 따라서
-                금리인하가 되지 않을 수도 있습니다.
+                금리인하가 되지 않을 수도 있습니다.)
               </div>
             </li>
           </ul>
