@@ -65,6 +65,7 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
@@ -155,6 +156,7 @@ export default {
     IllustInfoText,
     UnitText,
     BankLogo,
+    PaginationNav,
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
