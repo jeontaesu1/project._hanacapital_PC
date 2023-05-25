@@ -64,6 +64,10 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -71,6 +75,17 @@ import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
+import IconStar from '@/assets/images/icon/star-badge.svg?component';
+import IconPhone from '@/assets/images/icon/phone.svg?component';
+import IconSend from '@/assets/images/icon/send.svg?component';
+import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
+import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
+import IconCompleted from '@/assets/images/icon/completed.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
+import IconCar from '@/assets/images/icon/car.svg?component';
+import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 
 export default {
   components: {
@@ -137,12 +152,27 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     UnitText,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavEllipsis,
+    PaginationNavNumber,
     IconAdd,
     IconPerson,
     IconBuilding,
     IconCustomer,
     IconLogo,
     IconLink,
+    IconStar,
+    IconPhone,
+    IconSend,
+    IconPersonalTerms,
+    IconDeposit,
+    IconCallMint,
+    IconCompleted,
+    IconContract,
+    IconCarCheck,
+    IconCar,
+    IconDocumentSearch,
   },
 
   setup() {
@@ -3154,6 +3184,178 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Icon Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div :class="$style['icon-box__icon']">
+              <IconStar />
+            </div>
+            <p
+              :class="[
+                $style['icon-box__content'],
+                'text-title-1',
+                'row-margin-item',
+              ]"
+            >
+              <span class="color-green font-weight-bold">하나프라자</span>님은
+              하나캐피탈에 등록된<br />
+              <span class="font-weight-bold">정식 모집인</span>입니다
+            </p>
+          </div>
+        </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Step Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['step']">
+          <ul :class="$style['step__list']">
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    홈페이지/모바일(웹)을 통하여
+                    <strong>재리스 신청 및 견적</strong>을 요청합니다.
+                    (신용조회동의)
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPhone />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 2</div>
+                  <p :class="$style['step__text']">
+                    신청내역을 확인하여
+                    <strong>심사결과를 안내</strong>드립니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconSend />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 3</div>
+                  <p :class="$style['step__text']">
+                    <strong>서면약정 또는 온라인약정</strong>으로 계약이
+                    진행됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPersonalTerms />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 4</div>
+                  <p :class="$style['step__text']">
+                    입금/지급 <strong>금액을 정산</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDeposit />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 5</div>
+                  <p :class="$style['step__text']">
+                    계약사항에 대해
+                    <strong>이해하였음을 유선상 확인</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCallMint />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 6</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCompleted />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconContract />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCarCheck />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconCar />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>재렌트가 완료</strong>됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDocumentSearch />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Basic List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -4184,6 +4386,76 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">PaginationNav</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <!-- Case : 첫번째 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" :disabled="true" />
+          <PaginationNavNumber :active="true">1</PaginationNavNumber>
+          <PaginationNavNumber>2</PaginationNavNumber>
+          <PaginationNavNumber>3</PaginationNavNumber>
+          <PaginationNavNumber>4</PaginationNavNumber>
+          <PaginationNavNumber>5</PaginationNavNumber>
+          <PaginationNavNumber>6</PaginationNavNumber>
+          <PaginationNavNumber>7</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>999</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 첫번째 페이지일 때 -->
+
+        <!-- Case : 중간 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>13</PaginationNavNumber>
+          <PaginationNavNumber>14</PaginationNavNumber>
+          <PaginationNavNumber :active="true">15</PaginationNavNumber>
+          <PaginationNavNumber>16</PaginationNavNumber>
+          <PaginationNavNumber>17</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>99</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 중간 페이지일 때 -->
+
+        <!-- Case : 마지막 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>93</PaginationNavNumber>
+          <PaginationNavNumber>94</PaginationNavNumber>
+          <PaginationNavNumber>95</PaginationNavNumber>
+          <PaginationNavNumber>96</PaginationNavNumber>
+          <PaginationNavNumber>97</PaginationNavNumber>
+          <PaginationNavNumber>98</PaginationNavNumber>
+          <PaginationNavNumber :active="true">99</PaginationNavNumber>
+          <PaginationNavArrow type="next" :disabled="true" />
+        </PaginationNav>
+        <!-- // Case : 마지막 페이지일 때 -->
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Popup</h3>
+
+        <!-- Pagination -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" :disabled="true" />
+          <PaginationNavNumber :active="true">1</PaginationNavNumber>
+          <PaginationNavNumber>2</PaginationNavNumber>
+          <PaginationNavNumber>3</PaginationNavNumber>
+          <PaginationNavNumber>4</PaginationNavNumber>
+          <PaginationNavNumber>5</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Pagination -->
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">UnitText</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -4307,11 +4579,195 @@ export default {
         </ul>
       </div>
     </section>
+    <section class="test-section">
+      <h2 class="test-section-title">Term List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <UiAccordion :classNames="{ wrap: $style['term-list__list'] }">
+          <li :class="$style['term-list__item']">
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                온라인 서비스 이용약관
+              </div>
+              <div :class="$style['term-list__right']">
+                <button type="button" :class="$style['term-list__link']">
+                  <span :class="$style['term-list__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <li :class="$style['term-list__item']">
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">
+                <CheckBox id="testCheckBox123321" theme="tertiary">
+                  <CheckBoxObject />
+                  <CheckBoxLabelText>재고금융 확약서</CheckBoxLabelText>
+                </CheckBox>
+              </div>
+              <div :class="$style['term-list__right']">
+                <button type="button" :class="$style['term-list__link']">
+                  <span :class="$style['term-list__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <UiAccordionItem
+            :classNames="{ item: $style['term-list__item'] }"
+            :initialOpen="true"
+          >
+            <div :class="$style['term-list__head']">
+              <div :class="$style['term-list__title']">휴대폰 인증약관</div>
+              <div :class="$style['term-list__right']">
+                <UiAccordionOpener
+                  :classNames="{ button: $style['term-list__opener'] }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['term-list__contents']">
+                <ul
+                  :class="[
+                    $style['term-list__list'],
+                    $style['term-list__list--secondary'],
+                  ]"
+                >
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        본인확인 이용약관
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        개인정보 수집·이용, 취급위탁 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        통신사 본인확인 이용약관 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li :class="$style['term-list__item']">
+                    <div :class="$style['term-list__head']">
+                      <div :class="$style['term-list__title']">
+                        고유식별정보 처리 동의
+                      </div>
+                      <div :class="$style['term-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['term-list__link']"
+                        >
+                          <span :class="$style['term-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">status-inquiry</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- status-inquiry -->
+        <ul :class="$style['status-inquiry']">
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">심사</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+        <!-- status-inquiry -->
+      </div>
+    </section>
 
     <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        내용
       </div>
     </section>
   </div>
