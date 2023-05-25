@@ -1,0 +1,72 @@
+.step {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    border-right: 1px dashed $color-gray-30;
+  }
+
+  &__list {
+    @include reset-list;
+    position: relative;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: 24px 30px 24px 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: $color-navy-05;
+  }
+
+  &__contents {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__badge {
+    display: block;
+    min-width: 46px;
+    margin-right: 20px;
+    padding: 4px 8px;
+    border-radius: 100px;
+    box-sizing: border-box;
+    background-color: rgba($color-navy-80, 0.12);
+    @include font-size-default(10);
+    color: $color-navy-90;
+    font-weight: 700;
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    @include font-size-default(16);
+  }
+
+  &__icon {
+    flex: none;
+    margin-left: 20px;
+    width: 48px;
+    height: 48px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
