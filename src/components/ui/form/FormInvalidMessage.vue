@@ -16,6 +16,7 @@ export default {
   },
   setup(props) {
     const formInvalid = inject('formInvalid', {});
+    const basicTextarea = inject('basicTextarea', {});
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -25,6 +26,7 @@ export default {
     return {
       customClassNames,
       formInvalid,
+      basicTextarea,
     };
   },
 };
@@ -35,6 +37,7 @@ export default {
     :class="[
       $style['invalid-message'],
       formInvalid.messageClass,
+      basicTextarea.invalidClass,
       customClassNames.wrap,
     ]"
   >
