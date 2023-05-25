@@ -30,6 +30,11 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -61,6 +66,11 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    TextButton,
   },
 
   setup() {
@@ -114,7 +124,56 @@ export default {
           </p>
         </BasicBoxHeadLeft>
       </BasicBoxHead>
-      <div>대기영역</div>
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>대출신청금액</KeyValueTitle>
+          <KeyValueText>200,000,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>차대번호</KeyValueTitle>
+          <KeyValueText>KNALD2237A21548</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대출기간</KeyValueTitle>
+          <KeyValueText>3개월</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>상환방법</KeyValueTitle>
+          <KeyValueText>만기일시상환</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대출금리</KeyValueTitle>
+          <KeyValueText>7.5%</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>연체이자율</KeyValueTitle>
+          <KeyValueText>약정대출금리 + 3%</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>만기일자</KeyValueTitle>
+          <KeyValueText>2023.02.11</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>결제일자</KeyValueTitle>
+          <KeyValueText>매월 11일<br />(최초결제일 2월 11일)</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>총 납부 금액<br />(원금+이자)</KeyValueTitle>
+          <KeyValueText>10,500,000원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>서류등록</KeyValueTitle>
+          <KeyValueText
+            ><TextButton
+              :underline="true"
+              :classNames="{
+                wrap: 'text-body-3 color-green font-weight-medium',
+              }"
+              >서류확인</TextButton
+            ></KeyValueText
+          >
+        </KeyValueItem>
+      </KeyValue>
     </BasicBox>
 
     <div class="row-margin-block-small row-margin-top-none">
@@ -158,6 +217,7 @@ export default {
       </BoxCheckList>
 
       <h3 class="text-title-1 row-margin-item-group">본인인증</h3>
+      <!-- 입력전 -->
       <BoxCheckList
         :classNames="{
           wrap: 'row-margin-contents',
@@ -170,9 +230,42 @@ export default {
             :defaultChecked="true"
           >
             <BoxCheckLabel>휴대폰</BoxCheckLabel>
+          </BoxCheck> </BoxCheckListItem
+        ><BoxCheckListItem>
+          <BoxCheck
+            name="Common_P00_p003_method"
+            id="Common_P00_p003_method_002"
+            :defaultChecked="true"
+          >
+            <BoxCheckLabel>공동인증서</BoxCheckLabel>
+          </BoxCheck> </BoxCheckListItem
+        ><BoxCheckListItem>
+          <BoxCheck
+            name="Common_P00_p003_method"
+            id="Common_P00_p003_method_003"
+            :defaultChecked="true"
+          >
+            <BoxCheckLabel>신용카드</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>
+      <!-- //입력전 -->
+      <!-- 입력후 -->
+      <BoxCheckList
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
+        <BoxCheckListItem>
+          <BoxCheck
+            name="Common_P00_p007_method"
+            id="Common_P00_p007_method_001"
+            :defaultChecked="true"
+          >
+            <BoxCheckLabel>휴대폰</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem> </BoxCheckList
+      ><!-- //입력후 -->
     </div>
 
     <div>

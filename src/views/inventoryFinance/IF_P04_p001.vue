@@ -34,6 +34,11 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 export default {
   components: {
@@ -60,7 +65,7 @@ export default {
     BasicBoxHeadLeft,
     BasicHr,
     RoundStatus,
-
+    BasicDatepicker,
     PaginationNav,
     PaginationNavArrow,
     PaginationNavEllipsis,
@@ -69,6 +74,10 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BoxCheck,
+    BoxCheckLabel,
+    BoxCheckList,
+    BoxCheckListItem,
   },
 
   setup() {
@@ -106,31 +115,32 @@ export default {
           <BasicBoxHead>
             <BasicBoxHeadLeft>
               <h3 class="text-title-2 font-weight-medium">
-                NH투자증권(유캔그린)
+                주식회사알차이노베이션 (재고금융)
               </h3>
             </BasicBoxHeadLeft>
           </BasicBoxHead>
           <KeyValue :wrap="true">
             <KeyValueItem>
-              <KeyValueTitle>차량명의</KeyValueTitle>
-              <KeyValueText>
-                본인명의(공동명의 제외)<br />
-                소유기간 3개월 이상
-              </KeyValueText>
+              <KeyValueTitle>약정기간</KeyValueTitle>
+              <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>소유차종</KeyValueTitle>
-              <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+              <KeyValueTitle>한도잔액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>차량연식</KeyValueTitle>
-              <KeyValueText>
-                출고 이후 10년 이내<br />
-                차량가격 500만원 이상<br />
-                (당사 차량 시세 가격 기준)
-              </KeyValueText>
+              <KeyValueTitle>한도금액</KeyValueTitle>
+              <KeyValueText>200,000,000 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>실행건수</KeyValueTitle>
+              <KeyValueText>N 건</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -153,7 +163,74 @@ export default {
                 <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
-            <div>대기영역</div>
+            <FormListItem titleText="조회기간" :forceFocus="true">
+              <FormInvalid :error="state.testError001">
+                <BoxCheckList
+                  :classNames="{ wrap: 'row-margin-contents-small' }"
+                >
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="testInputCheck014"
+                      id="testInputCheck014_001"
+                    >
+                      <BoxCheckLabel>1개월</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="testInputCheck014"
+                      id="testInputCheck014_002"
+                    >
+                      <BoxCheckLabel>3개월</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="testInputCheck014"
+                      id="testInputCheck014_003"
+                    >
+                      <BoxCheckLabel>6개월</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      :minSide="true"
+                      name="testInputCheck014"
+                      id="testInputCheck014_004"
+                    >
+                      <BoxCheckLabel>1년</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                </BoxCheckList>
+                <InputBlock :error="state.testError001">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="조회기간 시작 날짜"
+                      id="testInput014Start"
+                      buttonId="testInput014StartButton"
+                      :max="state.testMaxDate002"
+                      v-model="state.testMinDate002"
+                      :onChange="testInputEvent"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell margin="regular">~</InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicDatepicker
+                      title="조회기간 종료 날짜"
+                      id="testInput014End"
+                      buttonId="testInput014EndButton"
+                      :min="state.testMinDate002"
+                      v-model="state.testMaxDate002"
+                      :onChange="testInputEvent"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
           </FormList>
           <ButtonList align="full">
             <ButtonListItem>
@@ -179,8 +256,27 @@ export default {
                   <RoundStatus theme="secondary" size="large">정상</RoundStatus>
                 </BasicBoxHeadRight>
               </BasicBoxHead>
-              <div>대기영역</div>
-              <ButtonList :wrap="true" align="center">
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>대출기간</KeyValueTitle>
+                  <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출실행금액</KeyValueTitle>
+                  <KeyValueText>2,000,000 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출금리</KeyValueTitle>
+                  <KeyValueText>7.5%</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <ButtonList
+                :wrap="true"
+                align="center"
+                class="row-margin-contents"
+              >
                 <ButtonListItem>
                   <BasicButton size="regular">중도상환 신청</BasicButton>
                 </ButtonListItem>
@@ -202,7 +298,22 @@ export default {
                   <RoundStatus theme="nonary" size="large">연체</RoundStatus>
                 </BasicBoxHeadRight>
               </BasicBoxHead>
-              <div>대기영역</div>
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>대출기간</KeyValueTitle>
+                  <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출실행금액</KeyValueTitle>
+                  <KeyValueText>2,000,000 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출금리</KeyValueTitle>
+                  <KeyValueText>7.5%</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
             </BasicBox>
           </li>
           <li class="row-margin-contents">
@@ -220,8 +331,27 @@ export default {
                   <RoundStatus theme="secondary" size="large">정상</RoundStatus>
                 </BasicBoxHeadRight>
               </BasicBoxHead>
-              <div>대기영역</div>
-              <ButtonList :wrap="true" align="center">
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>대출기간</KeyValueTitle>
+                  <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출실행금액</KeyValueTitle>
+                  <KeyValueText>2,000,000 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>대출금리</KeyValueTitle>
+                  <KeyValueText>7.5%</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+              <ButtonList
+                :wrap="true"
+                align="center"
+                class="row-margin-contents"
+              >
                 <ButtonListItem>
                   <BasicButton size="regular">중도상환 신청</BasicButton>
                 </ButtonListItem>
@@ -255,26 +385,118 @@ export default {
     <BasicBox>
       <BasicBoxHead>
         <BasicBoxHeadLeft>
-          <h3 class="text-title-2 font-weight-medium">NH투자증권(유캔그린)</h3>
+          <h3 class="text-title-2 font-weight-medium">
+            주식회사알차이노베이션 (재고금융)
+          </h3>
         </BasicBoxHeadLeft>
       </BasicBoxHead>
-      <div>대기영역</div>
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>약정기간</KeyValueTitle>
+          <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>한도잔액</KeyValueTitle>
+          <KeyValueText>2,000,000 원</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>한도금액</KeyValueTitle>
+          <KeyValueText>200,000,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>실행금액</KeyValueTitle>
+          <KeyValueText>2,000,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>실행건수</KeyValueTitle>
+          <KeyValueText>N 건</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
     </BasicBox>
+
     <BasicHr theme="quaternary" className="row-margin-block" />
+
     <section>
       <h3 class="text-title-1 row-margin-contents">조회이력</h3>
       <FormList>
-        <FormListItem titleText="차량번호" target="#Common_P00_p003_name004">
-          <FormInvalid :error="state.name004Error">
-            <InputBlock :error="state.name004Error">
+        <FormListItem titleText="차량번호" target="#Common_P00_p003_name003">
+          <FormInvalid :error="state.name003Error">
+            <InputBlock :error="state.name003Error">
               <InputBlockCell :flexible="true">
-                <BasicInput title="차량번호" id="Common_P00_p003_name004" />
+                <BasicInput title="차량번호" id="Common_P00_p003_name003" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <div>대기영역</div>
+        <FormListItem titleText="조회기간" :forceFocus="true">
+          <FormInvalid :error="state.testError001">
+            <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_001"
+                >
+                  <BoxCheckLabel>1개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_002"
+                >
+                  <BoxCheckLabel>3개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_003"
+                >
+                  <BoxCheckLabel>6개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="testInputCheck014"
+                  id="testInputCheck014_004"
+                >
+                  <BoxCheckLabel>1년</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <InputBlock :error="state.testError001">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="testInput014Start"
+                  buttonId="testInput014StartButton"
+                  :max="state.testMaxDate002"
+                  v-model="state.testMinDate002"
+                  :onChange="testInputEvent"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">~</InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="testInput014End"
+                  buttonId="testInput014EndButton"
+                  :min="state.testMinDate002"
+                  v-model="state.testMaxDate002"
+                  :onChange="testInputEvent"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
       </FormList>
       <ButtonList align="full">
         <ButtonListItem>
@@ -300,8 +522,23 @@ export default {
               <RoundStatus theme="secondary" size="large">정상</RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
-          <div>대기영역</div>
-          <ButtonList :wrap="true" align="center">
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>대출기간</KeyValueTitle>
+              <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출금리</KeyValueTitle>
+              <KeyValueText>7.5%</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+          <ButtonList :wrap="true" align="center" class="row-margin-contents">
             <ButtonListItem>
               <BasicButton size="regular">중도상환 신청</BasicButton>
             </ButtonListItem>
@@ -320,15 +557,25 @@ export default {
               </p>
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <RoundStatus theme="secondary" size="large">정상</RoundStatus>
+              <RoundStatus theme="nonary" size="large">연체</RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
-          <div>대기영역</div>
-          <ButtonList :wrap="true" align="center">
-            <ButtonListItem>
-              <BasicButton size="regular">중도상환 신청</BasicButton>
-            </ButtonListItem>
-          </ButtonList>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>대출기간</KeyValueTitle>
+              <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출금리</KeyValueTitle>
+              <KeyValueText>7.5%</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
         </BasicBox>
       </li>
       <li class="row-margin-contents">
@@ -346,8 +593,23 @@ export default {
               <RoundStatus theme="secondary" size="large">정상</RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
-          <div>대기영역</div>
-          <ButtonList :wrap="true" align="center">
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>대출기간</KeyValueTitle>
+              <KeyValueText> 2021.11.10 ~ 2022.03.10 </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출금리</KeyValueTitle>
+              <KeyValueText>7.5%</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+          <ButtonList :wrap="true" align="center" class="row-margin-contents">
             <ButtonListItem>
               <BasicButton size="regular">중도상환 신청</BasicButton>
             </ButtonListItem>
@@ -355,7 +617,6 @@ export default {
         </BasicBox>
       </li>
     </ul>
-    <!-- //조회후 영역 -->
     <!-- 페이징 -->
     <PaginationNav class="row-margin-container-medium">
       <PaginationNavArrow type="prev" :disabled="true" />
@@ -371,6 +632,7 @@ export default {
       <PaginationNavArrow type="next" />
     </PaginationNav>
     <!-- //페이징 -->
+    <!-- //조회후 영역 -->
     <!-- //case : 재고금융 1개일경우 -->
 
     <!-- 조회결과 없을때 -->

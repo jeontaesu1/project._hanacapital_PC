@@ -122,6 +122,81 @@ export default {
         </FormInvalid>
       </FormListItem>
     </FormList>
-    // contents
+    <!-- table -->
+    <div :class="[$style['basic-table'], 'row-margin-block-small']">
+      <table>
+        <colgroup>
+          <col style="width: 200px" />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>월</th>
+            <th>방문자</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>합계</td>
+            <td>1</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- // table -->
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/lmBlog/LM_P04_p001.scss';
+</style>
