@@ -4140,10 +4140,10 @@ export default {
         <div :class="$style['division-info']">
           <ul :class="$style['division-info__list']">
             <li :class="$style['division-info__item']">
-              <div class="text-body-3 font-weight-light">2023.01.10</div>
+              <div class="text-body-4 font-weight-light">2023.01.10</div>
             </li>
             <li :class="$style['division-info__item']">
-              <div class="color-green text-body-3 font-weight-medium">
+              <div class="color-green text-body-4 font-weight-medium">
                 신용동의
               </div>
             </li>

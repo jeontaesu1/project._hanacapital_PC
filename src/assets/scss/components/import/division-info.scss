@@ -10,7 +10,7 @@
   &__item {
     & + & {
       position: relative;
-      padding-left: 17px;
+      padding-left: 13px;
 
       &::before {
         content: '';
@@ -18,7 +18,7 @@
         position: absolute;
         z-index: 1;
         top: 50%;
-        left: 8px;
+        left: 6px;
         margin-top: -6px;
         width: 1px;
         height: 12px;
