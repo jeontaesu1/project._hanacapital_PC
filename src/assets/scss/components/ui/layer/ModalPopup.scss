@@ -177,6 +177,15 @@
     height: 800px;
   }
 
+  &--agreement {
+    width: 1215px;
+    height: 800px;
+
+    .popup__body-inner {
+      padding: 0 !important;
+    }
+  }
+
   /*
   &--bg {
     &-secondary {
