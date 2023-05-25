@@ -19,21 +19,21 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import PartInput from '@/components/ui/form/PartInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import CheckBox from '@/components/ui/form/CheckBox.vue';
-import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
-import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 export default {
   components: {
@@ -54,21 +54,21 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-    FormHelpText,
     BasicInput,
-    BasicSelect,
     SecurityInput,
-    PartInput,
     SecurityKeypadButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
-    CheckBox,
-    CheckBoxLabelText,
-    CheckBoxObject,
-    NoticeText,
     BasicHr,
     BasicDatepicker,
+    BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
   },
 
   setup() {
@@ -82,13 +82,8 @@ export default {
       sendError: false,
     });
 
-    const LM_P01_p001_sendEvent = (e = {}) => {
-      console.log(e.type, e.target);
-    };
-
     return {
       state,
-      LM_P01_p001_sendEvent,
     };
   },
 };
@@ -256,10 +251,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem
-          titleText="URL 발송일"
-          target="#LM_P01_p001_send_button001"
-        >
+        <FormListItem titleText="URL 발송일" target="#LM_P01_p001_send_button">
           <FormInvalid :error="state.sendError">
             <InputBlock :error="state.sendError">
               <InputBlockCell :flexible="true">
@@ -278,9 +270,137 @@ export default {
 
       <ButtonList align="full">
         <ButtonListItem>
-          <BasicButton theme="tertiary">신용정보조회동의(URL 발송)</BasicButton>
+          <BasicButton :line="true">조회</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </section>
+
+    <BasicHr theme="quaternary" className="row-margin-block" />
+
+    <div>
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>123456-2******</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>휴대폰번호</KeyValueTitle>
+            <KeyValueText>010-1234-5678</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>URL발송일</KeyValueTitle>
+            <KeyValueText>2022.11.09</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>동의일자</KeyValueTitle>
+            <KeyValueText>2022.11.09</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton tagName="RouterLink" to="">한도조회</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>123456-2******</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>휴대폰번호</KeyValueTitle>
+            <KeyValueText>010-1234-5678</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>123456-2******</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>휴대폰번호</KeyValueTitle>
+            <KeyValueText>010-1234-5678</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>123456-2******</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>휴대폰번호</KeyValueTitle>
+            <KeyValueText>010-1234-5678</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">김하나</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>생년월일</KeyValueTitle>
+            <KeyValueText>123456-2******</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>휴대폰번호</KeyValueTitle>
+            <KeyValueText>010-1234-5678</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+    </div>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/lmBlog/LM_P01_p001.scss';
+</style>

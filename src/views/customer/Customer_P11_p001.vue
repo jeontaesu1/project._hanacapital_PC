@@ -1,6 +1,5 @@
 <script>
 //Customer_P11_p001
-import { ref } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -9,7 +8,6 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
-import Customer_P11_l001 from '@/views/customer/Customer_P11_l001.vue';
 
 export default {
   components: {
@@ -20,19 +18,6 @@ export default {
     ButtonList,
     ButtonListItem,
     IllustObject,
-    Customer_P11_l001,
-  },
-
-  setup() {
-    const layer001 = ref(null);
-    const layer001Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
-    };
-
-    return {
-      layer001,
-      layer001Open,
-    };
   },
 };
 </script>
@@ -55,9 +40,7 @@ export default {
       }"
     >
       <ButtonListItem>
-        <BasicButton @click="layer001Open">
-          인증서 내보내기 [ PC > 스마트폰 ]
-        </BasicButton>
+        <BasicButton> 인증서 내보내기 [ PC > 스마트폰 ] </BasicButton>
       </ButtonListItem>
     </ButtonList>
     <ButtonList
@@ -102,8 +85,6 @@ export default {
         </li>
       </ul>
     </div>
-
-    <Customer_P11_l001 ref="layer001" />
   </PageContents>
 </template>
 

@@ -123,56 +123,39 @@ export default {
 
         <BasicBox>
           <KeyValue>
-            <KeyValueItem verticalAlign="center">
-              <KeyValueTitle :classNames="{ title: 'color-black' }">
-                소비자신용대출
-              </KeyValueTitle>
-            </KeyValueItem>
-          </KeyValue>
-          <BasicHr
-            type="contents"
-            theme="quaternary"
-            className="row-margin-contents-small"
-          />
-          <KeyValue>
             <KeyValueItem>
-              <KeyValueTitle>대출기간</KeyValueTitle>
-              <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              <KeyValueTitle>청약철회 상환금액</KeyValueTitle>
+              <KeyValueText>23,064,000 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>대출금액</KeyValueTitle>
+              <KeyValueTitle>상환원금</KeyValueTitle>
               <KeyValueText>23,000,000 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>대출실행일</KeyValueTitle>
-              <KeyValueText>2021.12.31</KeyValueText>
+              <KeyValueTitle>경과이자</KeyValueTitle>
+              <KeyValueText>64,000 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제회차</KeyValueTitle>
-              <KeyValueText>12/36</KeyValueText>
+              <KeyValueTitle>중도상환수수료</KeyValueTitle>
+              <KeyValueText>면제</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>대출잔액</KeyValueTitle>
-              <KeyValueText>23,000,000 원</KeyValueText>
+              <KeyValueTitle>설정비</KeyValueTitle>
+              <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일</KeyValueTitle>
-              <KeyValueText>05일</KeyValueText>
+              <KeyValueTitle>인지세</KeyValueTitle>
+              <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제예정금액</KeyValueTitle>
-              <KeyValueText>6,265,200 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem>
-              <KeyValueTitle>상환방법</KeyValueTitle>
-              <KeyValueText>원리금균등분할상환</KeyValueText>
+              <KeyValueTitle>기타비용</KeyValueTitle>
+              <KeyValueText>0 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -193,7 +176,7 @@ export default {
         <div class="row-margin-contents">
           <FormList>
             <FormListItem
-              titleText="대출기간"
+              titleText="입금가상계좌"
               target="#My_p06_p002_account"
               :selectOnly="true"
             >
@@ -232,7 +215,7 @@ export default {
                         },
                       ]"
                       title="대출기간"
-                      inputId="testInput010"
+                      inputId="My_p06_p002_account"
                       defaultValue="1"
                     />
                   </InputBlockCell>

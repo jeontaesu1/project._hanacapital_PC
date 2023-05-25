@@ -83,7 +83,9 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton :line="true" theme="quaternary">추가약정하기</BasicButton>
+        <BasicButton tagName="RouterLink" to="" :line="true" theme="quaternary">
+          추가약정하기
+        </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton tagName="RouterLink" to="">대출약정완료</BasicButton>

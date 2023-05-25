@@ -13,6 +13,10 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 
 export default {
   components: {
@@ -29,6 +33,10 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavNumber,
+    PaginationNavEllipsis,
   },
 };
 </script>
@@ -36,10 +44,19 @@ export default {
 <template>
   <PageContents>
     <PageHead>
+      <!-- Case : 보유 상품이 있는 경우 노출 -->
       <PageTitle>
         청약철회권 신청 가능한 상품은 총
         <span class="color-green">42</span>건
       </PageTitle>
+      <!-- // Case : 보유 상품이 있는 경우 노출 -->
+
+      <!-- Case : 보유 상품이 없는 경우 노출 -->
+      <PageTitle>
+        청약철회권 신청 가능한 상품은 총
+        <span class="color-green">0</span>건
+      </PageTitle>
+      <!-- // Case : 보유 상품이 없는 경우 노출 -->
     </PageHead>
 
     <div>
@@ -83,7 +100,7 @@ export default {
 
     <!-- Case : 보유 상품이 있는 경우 노출 -->
     <div class="row-margin-block-small">
-      <BasicBox>
+      <BasicBox className="row-margin-contents">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
@@ -143,10 +160,284 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>철회 신청</BasicButton>
+            <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출금액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출실행일</KeyValueTitle>
+            <KeyValueText>2021.12.31</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출잔액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출금액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출실행일</KeyValueTitle>
+            <KeyValueText>2021.12.31</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출잔액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출금액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출실행일</KeyValueTitle>
+            <KeyValueText>2021.12.31</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출잔액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <BasicBox className="row-margin-contents">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">소비자신용대출</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+
+        <KeyValue>
+          <KeyValueItem>
+            <KeyValueTitle>대출기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출금액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출실행일</KeyValueTitle>
+            <KeyValueText>2021.12.31</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>대출잔액</KeyValueTitle>
+            <KeyValueText>23,000,000 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+
+          <KeyValueItem>
+            <KeyValueTitle>상환방법</KeyValueTitle>
+            <KeyValueText>원리금균등분할상환</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-contents',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </BasicBox>
+
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>25</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
     </div>
     <!-- // Case : 보유 상품이 있는 경우 노출 -->
   </PageContents>

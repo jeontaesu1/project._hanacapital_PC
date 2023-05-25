@@ -45,7 +45,7 @@ export default {
           <PopupTitle>인증서 내보내기</PopupTitle>
           <template v-slot:sub>
             <PopupSubTitle>
-              즉시출금으로 중도상환신청을 하시겠어요?
+              고객님의 인증서 내보내기를 시작합니다.
             </PopupSubTitle>
           </template>
         </ModalPopupHead>

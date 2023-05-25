@@ -90,238 +90,256 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <BasicBox>
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <h3 class="text-title-2 font-weight-medium">오토론</h3>
-        </BasicBoxHeadLeft>
-      </BasicBoxHead>
+    <div>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">대상 여신 내용</h3>
 
-      <KeyValue>
-        <KeyValueItem>
-          <KeyValueTitle>대출금액</KeyValueTitle>
-          <KeyValueText>81,310,000 원</KeyValueText>
-        </KeyValueItem>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">오토론</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-        <KeyValueItem>
-          <KeyValueTitle>적용금리</KeyValueTitle>
-          <KeyValueText>4,709%</KeyValueText>
-        </KeyValueItem>
+          <KeyValue>
+            <KeyValueItem>
+              <KeyValueTitle>대출금액</KeyValueTitle>
+              <KeyValueText>81,310,000 원</KeyValueText>
+            </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>대출실행일</KeyValueTitle>
-          <KeyValueText>2021.12.31</KeyValueText>
-        </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>적용금리</KeyValueTitle>
+              <KeyValueText>4,709%</KeyValueText>
+            </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>대출종료일</KeyValueTitle>
-          <KeyValueText>2026.12.21</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+            <KeyValueItem>
+              <KeyValueTitle>대출실행일</KeyValueTitle>
+              <KeyValueText>2021.12.31</KeyValueText>
+            </KeyValueItem>
 
-    <section class="row-margin-block-small">
-      <h3 class="text-title-1 row-margin-contents">신청사유</h3>
+            <KeyValueItem>
+              <KeyValueTitle>대출종료일</KeyValueTitle>
+              <KeyValueText>2026.12.21</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
 
-      <BoxCheckList
-        :classNames="{
-          wrap: 'row-margin-container-medium row-margin-top-none',
-        }"
-      >
-        <BoxCheckListItem>
-          <BoxCheck
-            name="My_p05_p002_method"
-            id="My_p05_p002_method_001"
-            :defaultChecked="true"
-          >
-            <BoxCheckLabel>신용도 상승</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck name="My_p05_p002_method" id="My_p05_p002_method_002">
-            <BoxCheckLabel>소득 재산 증가</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck name="My_p05_p002_method" id="My_p05_p002_method_003">
-            <BoxCheckLabel>기타</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">신청사유</h3>
 
-      <!-- Case : 신용도 상승 선택 시 경우 노출 -->
-      <FormList>
-        <FormListItem titleText="상세사유" :forceFocus="true">
-          <BoxCheckList>
-            <BoxCheckListItem>
-              <BoxCheck
-                name="My_p05_p002_details"
-                id="My_p05_p002_details_001"
-                :defaultChecked="true"
-              >
-                <BoxCheckLabel>신용평점(등급) 개선</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_002">
-                <BoxCheckLabel>재무상태 개선</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_003">
-                <BoxCheckLabel>기타 신용도 상승</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </FormListItem>
-      </FormList>
-      <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
-
-      <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
-      <FormList>
-        <FormListItem titleText="상세사유" :forceFocus="true">
-          <BoxCheckList>
-            <BoxCheckListItem>
-              <BoxCheck
-                name="My_p05_p002_details"
-                id="My_p05_p002_details_004"
-                :defaultChecked="true"
-              >
-                <BoxCheckLabel>소득증가</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_005">
-                <BoxCheckLabel>재상증가</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-            <BoxCheckListItem>
-              <BoxCheck name="My_p05_p002_details" id="My_p05_p002_details_006">
-                <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
-              </BoxCheck>
-            </BoxCheckListItem>
-          </BoxCheckList>
-        </FormListItem>
-      </FormList>
-      <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
-    </section>
-
-    <section class="row-margin-block-small row-margin-top-none">
-      <h3 class="text-title-1 row-margin-small">제출서류</h3>
-      <p
-        class="font-weight-light color-gray-secondary row-margin-contents row-margin-top-none"
-      >
-        제출 가능한 항목을 선택해 주세요.
-      </p>
-
-      <div>
-        <BoxCheckList :wrap="true">
+        <BoxCheckList
+          :classNames="{
+            wrap: 'row-margin-container-medium row-margin-top-none',
+          }"
+        >
           <BoxCheckListItem>
             <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_001"
+              name="My_p05_p002_method"
+              id="My_p05_p002_method_001"
+              :defaultChecked="true"
             >
-              <BoxCheckLabel>없음</BoxCheckLabel>
+              <BoxCheckLabel>신용도 상승</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_002"
-            >
-              <BoxCheckLabel>건강보험 자격득실/납부확인서</BoxCheckLabel>
+            <BoxCheck name="My_p05_p002_method" id="My_p05_p002_method_002">
+              <BoxCheckLabel>소득 재산 증가</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
           <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_003"
-            >
-              <BoxCheckLabel>재직증명서</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_004"
-            >
-              <BoxCheckLabel>근로소득원천징수영수증</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_005"
-            >
-              <BoxCheckLabel>소득금액증명원</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_006"
-            >
-              <BoxCheckLabel>사업소득원천징수영수증</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_007"
-            >
-              <BoxCheckLabel>재무제표</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_008"
-            >
-              <BoxCheckLabel>부가가치세과세표준증명</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="My_p05_p002_submission"
-              id="My_p05_p002_submission_009"
-            >
+            <BoxCheck name="My_p05_p002_method" id="My_p05_p002_method_003">
               <BoxCheckLabel>기타</BoxCheckLabel>
             </BoxCheck>
           </BoxCheckListItem>
         </BoxCheckList>
 
-        <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-          당사는 신청인의 신용상태 개선을 확인하기 위해 추가서류를 요청할 수
-          있습니다.
-        </NoticeText>
+        <!-- Case : 신용도 상승 선택 시 경우 노출 -->
+        <FormList>
+          <FormListItem titleText="상세사유" :forceFocus="true">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>신용평점(등급) 개선</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_002"
+                >
+                  <BoxCheckLabel>재무상태 개선</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_003"
+                >
+                  <BoxCheckLabel>기타 신용도 상승</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </FormListItem>
+        </FormList>
+        <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
+
+        <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
+        <FormList>
+          <FormListItem titleText="상세사유" :forceFocus="true">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details002"
+                  id="My_p05_p002_details_002_001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>소득증가</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details"
+                  id="My_p05_p002_details_002_002"
+                >
+                  <BoxCheckLabel>재상증가</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="My_p05_p002_details"
+                  id="My_p05_p002_details_002_003"
+                >
+                  <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </FormListItem>
+        </FormList>
+        <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
+      </section>
+
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-small">제출서류</h3>
+        <p
+          class="font-weight-light color-gray-secondary row-margin-contents row-margin-top-none"
+        >
+          제출 가능한 항목을 선택해 주세요.
+        </p>
+
+        <div>
+          <BoxCheckList :wrap="true">
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_001"
+              >
+                <BoxCheckLabel>없음</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_002"
+              >
+                <BoxCheckLabel>건강보험 자격득실/납부확인서</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_003"
+              >
+                <BoxCheckLabel>재직증명서</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_004"
+              >
+                <BoxCheckLabel>근로소득원천징수영수증</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_005"
+              >
+                <BoxCheckLabel>소득금액증명원</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_006"
+              >
+                <BoxCheckLabel>사업소득원천징수영수증</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_007"
+              >
+                <BoxCheckLabel>재무제표</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_008"
+              >
+                <BoxCheckLabel>부가가치세과세표준증명</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="My_p05_p002_submission"
+                id="My_p05_p002_submission_009"
+              >
+                <BoxCheckLabel>기타</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+
+          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+            당사는 신청인의 신용상태 개선을 확인하기 위해 추가서류를 요청할 수
+            있습니다.
+          </NoticeText>
+        </div>
+      </section>
+
+      <BasicBox theme="tertiary">
+        <span class="color-gray font-weight-medium">
+          본인은 상기 항목의 내용을 사실대로 기재하였고, 귀사의 신용평가
+          시스템에 따른 결과에 이의를 제기하지 않겠습니다.
+        </span>
+      </BasicBox>
+
+      <div class="row-margin-contents row-margin-bottom-none">
+        <h4 class="text-body-1 color-gray font-weight-medium align-right">
+          위 내역이 사실과 다름이 없음을 확인합니다.
+        </h4>
+        <p
+          class="color-gray-tertiary font-weight-light row-margin-contents-small align-right"
+        >
+          2023년 01월 05일
+        </p>
       </div>
-    </section>
-
-    <BasicBox theme="tertiary">
-      <span class="color-gray font-weight-medium">
-        본인은 상기 항목의 내용을 사실대로 기재하였고, 귀사의 신용평가 시스템에
-        따른 결과에 이의를 제기하지 않겠습니다.
-      </span>
-    </BasicBox>
-
-    <div class="row-margin-contents row-margin-bottom-none">
-      <h4 class="text-body-1 color-gray font-weight-medium align-right">
-        위 내역이 사실과 다름이 없음을 확인합니다.
-      </h4>
-      <p
-        class="color-gray-tertiary font-weight-light row-margin-contents-small align-right"
-      >
-        2023년 01월 05일
-      </p>
     </div>
 
     <ButtonList align="full">
@@ -331,7 +349,3 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p005.scss';
-</style>

@@ -20,6 +20,9 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -41,6 +44,9 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
 
   setup() {
@@ -233,6 +239,12 @@ export default {
         </div>
       </FormListItem>
     </FormList>
+
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>상담예약신청</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
 

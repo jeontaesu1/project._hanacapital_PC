@@ -1,5 +1,6 @@
 <script>
 // IF_P03_p003
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
@@ -98,7 +99,7 @@ export default {
         <BasicButton :line="true" theme="quaternary">다시 계산하기</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">중도상환신청</BasicButton>
+        <BasicButton>중도상환신청</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>
