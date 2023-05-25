@@ -64,6 +64,10 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -71,10 +75,7 @@ import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
-import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
-import IconDot from '@/assets/images/icon/dot.svg?component';
 import IconStar from '@/assets/images/icon/star-badge.svg?component';
-
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
@@ -151,14 +152,16 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     UnitText,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavEllipsis,
+    PaginationNavNumber,
     IconAdd,
     IconPerson,
     IconBuilding,
     IconCustomer,
     IconLogo,
     IconLink,
-    IconLinkSmall,
-    IconDot,
     IconStar,
     IconPhone,
     IconSend,
@@ -4381,211 +4384,77 @@ export default {
         </div>
       </div>
     </section>
+
     <section class="test-section">
-      <h2 class="test-section-title">
-        pagination page - (컨텐츠 내부에 올때는 생략기능 있음)
-      </h2>
+      <h2 class="test-section-title">PaginationNav</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!-- 페이징 -->
-        <div :class="$style['pagination']">
-          <button
-            disabled
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--prev'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
-            <desc id="catDesc" class="for-a11y">이전</desc>
-          </button>
-          <span :class="$style['pagination__list']">
-            <a
-              :class="[
-                $style['pagination__item'],
-                $style['pagination__item--selected'],
-              ]"
-              href="#"
-              >1</a
-            >
-            <a :class="$style['pagination__item']" href="#">2</a>
-            <a :class="$style['pagination__item']" href="#">3</a>
-            <a :class="$style['pagination__item']" href="#">4</a>
-            <a :class="$style['pagination__item']" href="#">5</a>
-            <a :class="$style['pagination__item']" href="#">6</a>
-            <a :class="$style['pagination__item']" href="#">7</a>
 
-            <span :class="$style['pagination__elision']">
-              <IconDot aria-labelledby="nextDesc" role="img" />
-              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
-            </span>
-            <a :class="$style['pagination__item']" href="#">25</a>
-          </span>
+        <!-- Case : 첫번째 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" :disabled="true" />
+          <PaginationNavNumber :active="true">1</PaginationNavNumber>
+          <PaginationNavNumber>2</PaginationNavNumber>
+          <PaginationNavNumber>3</PaginationNavNumber>
+          <PaginationNavNumber>4</PaginationNavNumber>
+          <PaginationNavNumber>5</PaginationNavNumber>
+          <PaginationNavNumber>6</PaginationNavNumber>
+          <PaginationNavNumber>7</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>999</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 첫번째 페이지일 때 -->
 
-          <button
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--next'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
-            <desc id="nextDesc" class="for-a11y">다음</desc>
-          </button>
-        </div>
-        <!-- //페이징 -->
+        <!-- Case : 중간 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>13</PaginationNavNumber>
+          <PaginationNavNumber>14</PaginationNavNumber>
+          <PaginationNavNumber :active="true">15</PaginationNavNumber>
+          <PaginationNavNumber>16</PaginationNavNumber>
+          <PaginationNavNumber>17</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>99</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 중간 페이지일 때 -->
+
+        <!-- Case : 마지막 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>93</PaginationNavNumber>
+          <PaginationNavNumber>94</PaginationNavNumber>
+          <PaginationNavNumber>95</PaginationNavNumber>
+          <PaginationNavNumber>96</PaginationNavNumber>
+          <PaginationNavNumber>97</PaginationNavNumber>
+          <PaginationNavNumber>98</PaginationNavNumber>
+          <PaginationNavNumber :active="true">99</PaginationNavNumber>
+          <PaginationNavArrow type="next" :disabled="true" />
+        </PaginationNav>
+        <!-- // Case : 마지막 페이지일 때 -->
       </div>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">중간단계일때</h3>
+        <h3 class="test-section-sub-title">Popup</h3>
 
-        <div :class="$style['pagination']">
-          <button
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--prev'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
-            <desc id="catDesc" class="for-a11y">이전</desc>
-          </button>
-          <span :class="$style['pagination__list']">
-            <a :class="$style['pagination__item']" title="현재 페이지" href="#"
-              >1</a
-            >
-
-            <span :class="$style['pagination__elision']">
-              <IconDot aria-labelledby="nextDesc" role="img" />
-              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
-            </span>
-
-            <a :class="$style['pagination__item']" href="#">4</a>
-            <a :class="$style['pagination__item']" href="#">5</a>
-            <a
-              :class="[
-                $style['pagination__item'],
-                $style['pagination__item--selected'],
-              ]"
-              href="#"
-              >6</a
-            >
-            <a :class="$style['pagination__item']" href="#">6</a>
-            <a :class="$style['pagination__item']" href="#">7</a>
-
-            <span :class="$style['pagination__elision']">
-              <IconDot aria-labelledby="nextDesc" role="img" />
-              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
-            </span>
-            <a :class="$style['pagination__item']" href="#">25</a>
-          </span>
-
-          <button
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--next'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
-            <desc id="nextDesc" class="for-a11y">다음</desc>
-          </button>
-        </div>
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">마지막단계일때</h3>
-
-        <div :class="$style['pagination']">
-          <button
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--prev'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
-            <desc id="catDesc" class="for-a11y">이전</desc>
-          </button>
-          <span :class="$style['pagination__list']">
-            <a :class="$style['pagination__item']" title="현재 페이지" href="#"
-              >1</a
-            >
-
-            <span :class="$style['pagination__elision']">
-              <IconDot aria-labelledby="nextDesc" role="img" />
-              <desc id="nextDesc" class="for-a11y">생략된 페이징</desc>
-            </span>
-
-            <a :class="$style['pagination__item']" href="#">19</a>
-            <a :class="$style['pagination__item']" href="#">20</a>
-            <a :class="$style['pagination__item']" href="#">21</a>
-            <a :class="$style['pagination__item']" href="#">22</a>
-            <a :class="$style['pagination__item']" href="#">23</a>
-            <a :class="$style['pagination__item']" href="#">24</a>
-            <a
-              :class="[
-                $style['pagination__item'],
-                $style['pagination__item--selected'],
-              ]"
-              href="#"
-              >25</a
-            >
-          </span>
-
-          <button
-            disabled
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--next'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
-            <desc id="nextDesc" class="for-a11y">다음</desc>
-          </button>
-        </div>
+        <!-- Pagination -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" :disabled="true" />
+          <PaginationNavNumber :active="true">1</PaginationNavNumber>
+          <PaginationNavNumber>2</PaginationNavNumber>
+          <PaginationNavNumber>3</PaginationNavNumber>
+          <PaginationNavNumber>4</PaginationNavNumber>
+          <PaginationNavNumber>5</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Pagination -->
       </div>
     </section>
-    <section class="test-section">
-      <h2 class="test-section-title">
-        pagination Popup - (팝업은 5개 로테이션)
-      </h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <!-- 페이징 -->
-        <div :class="$style['pagination']">
-          <button
-            disabled
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--prev'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="prevDesc" role="img" />
-            <desc id="catDesc" class="for-a11y">이전</desc>
-          </button>
-          <span :class="$style['pagination__list']">
-            <a
-              :class="[
-                $style['pagination__item'],
-                $style['pagination__item--selected'],
-              ]"
-              href="#"
-              >1</a
-            >
-            <a :class="$style['pagination__item']" href="#">2</a>
-            <a :class="$style['pagination__item']" href="#">3</a>
-            <a :class="$style['pagination__item']" href="#">4</a>
-            <a :class="$style['pagination__item']" href="#">5</a>
-          </span>
 
-          <button
-            :class="[
-              $style['pagination__function'],
-              $style['pagination__function--next'],
-            ]"
-          >
-            <IconLinkSmall aria-labelledby="nextDesc" role="img" />
-            <desc id="nextDesc" class="for-a11y">다음</desc>
-          </button>
-        </div>
-        <!-- //페이징 -->
-      </div>
-    </section>
     <section class="test-section">
       <h2 class="test-section-title">UnitText</h2>
       <div class="test-section-sub">
