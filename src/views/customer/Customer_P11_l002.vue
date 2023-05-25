@@ -92,14 +92,6 @@ export default {
       </div>
 
       <FormList>
-        <FormListItem titleText="인증번호" :forceFocus="true">
-          <InputBlock>
-            <InputBlockCell :flexible="true">1234</InputBlockCell>
-            <InputBlockCell type="sub">-</InputBlockCell>
-            <InputBlockCell :flexible="true">5678</InputBlockCell>
-          </InputBlock>
-        </FormListItem>
-
         <FormListItem titleText="인증번호" target="#Customer_P11_l002_number">
           <FormInvalid :error="state.numberError">
             <InputBlock :error="state.numberError">

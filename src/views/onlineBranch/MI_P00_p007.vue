@@ -12,6 +12,12 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
@@ -33,6 +39,12 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
     TextButton,
     InputBlock,
     InputBlockCell,
@@ -70,54 +82,94 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <section>
-      <div class="flex-box">
-        <div class="flex-box__cell flex-1">
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular'],
-              $style['basic-list--regular-margin'],
-            ]"
-          >
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                SMS안내 수신 여부와 안내를 받을 연락처를 설정할 수 있습니다.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                SMS안내 수신을 받을 전화번호 수정을 원하실 경우 [온라인지점 >
-                내정보관리] 메뉴를 이용하세요.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                스탁론은 변경이 불가하며 고객센터(1800-1110)로 연락 바랍니다.
-              </div>
-            </li>
-          </ul>
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          SMS안내 수신 여부와 안내를 받을 연락처를 설정할 수 있습니다.
         </div>
-        <div class="flex-box__cell flex-box__cell--medium">
-          <TextButton
-            textSize="regular"
-            theme="secondary"
-            :underline="true"
-            :block="true"
-          >
-            바로가기
-          </TextButton>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          <div class="flex-box align-items-start">
+            <div class="flex-box__cell flex-1">
+              SMS안내 수신을 받을 전화번호 수정을 원하실 경우 [온라인지점 >
+              내정보관리] 메뉴를 이용하세요.
+            </div>
+            <div class="flex-box__cell flex-box__cell--medium">
+              <TextButton
+                textSize="regular"
+                theme="secondary"
+                :underline="true"
+                :classNames="{ wrap: $style['right-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </div>
-      </div>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          스탁론은 변경이 불가하며 고객센터(1800-1110)로 연락 바랍니다.
+        </div>
+      </li>
+    </ul>
 
-      <ul class="reset-list row-margin-block-small">
+    <section class="row-margin-block-small">
+      <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
-            // contnets
-            <BasicBox theme="tertiary">
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <div
+                  :class="[$style['division-info'], 'row-margin-item-small']"
+                >
+                  <ul :class="$style['division-info__list']">
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        BMW 435d
+                      </div>
+                    </li>
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        L99999999999999
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>대출금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicBox theme="tertiary" className="row-margin-contents">
               <FormList>
                 <FormListItem
                   titleText="SMS 수신"

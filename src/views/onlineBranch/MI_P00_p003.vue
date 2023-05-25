@@ -3,10 +3,10 @@
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -18,10 +18,10 @@ export default {
     PageContents,
     PageHead,
     PageTitle,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -37,36 +37,67 @@ export default {
       <PageTitle>자동이체 계좌 변경</PageTitle>
     </PageHead>
 
-    <section>
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          $style['basic-list--regular-margin'],
-        ]"
-      >
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            결제계좌 변경 시 각 은행의 계좌 승인 작업으로 인해 1~3 영업일 소요
-            후 변경됩니다.<br />
-            (단, 하나은행의 경우 실시간 승인 작업으로 즉시 변경됩니다.)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            스탁론은 변경이 불가하며 고객센터(1800-1110)로 연락 바랍니다.
-          </div>
-        </li>
-      </ul>
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          결제계좌 변경 시 각 은행의 계좌 승인 작업으로 인해 1~3 영업일 소요 후
+          변경됩니다.<br />
+          (단, 하나은행의 경우 실시간 승인 작업으로 즉시 변경됩니다.)
+        </div>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          스탁론은 변경이 불가하며 고객센터(1800-1110)로 연락 바랍니다.
+        </div>
+      </li>
+    </ul>
 
-      <ul class="reset-list row-margin-block-small">
+    <section class="row-margin-block-small">
+      <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
-            // contnets
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <div
+                  :class="[$style['division-info'], 'row-margin-item-small']"
+                >
+                  <ul :class="$style['division-info__list']">
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        BMW 435d
+                      </div>
+                    </li>
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        L99999999999999
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <TextButton
+                  :underline="true"
+                  :classNames="{
+                    wrap: 'color-gray-tertiary',
+                  }"
+                  >변경</TextButton
+                >
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
 
-            <KeyValue>
+            <KeyValue :wrap="true">
               <KeyValueItem>
                 <KeyValueTitle>대출금액</KeyValueTitle>
                 <KeyValueText>6,265,200 원</KeyValueText>
@@ -89,7 +120,10 @@ export default {
 
               <KeyValueItem>
                 <KeyValueTitle>자동이체계좌</KeyValueTitle>
-                <KeyValueText>신한 123-123456-12345</KeyValueText>
+                <KeyValueText>
+                  신한<br />
+                  123-123456-12345
+                </KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem>

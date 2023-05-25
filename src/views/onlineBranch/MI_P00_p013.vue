@@ -9,6 +9,12 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
+import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
@@ -28,6 +34,12 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicBox,
+    BasicBoxHead,
+    BasicBoxHeadLeft,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
     TextButton,
     InputBlock,
     InputBlockCell,
@@ -57,37 +69,37 @@ export default {
       <PageTitle>범칙금/자동차세 조회</PageTitle>
     </PageHead>
 
-    <div class="flex-box">
-      <div class="flex-box__cell flex-1">
-        <ul
-          :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            $style['basic-list--regular-margin'],
-          ]"
-        >
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
               각 계약별로 조회를 원하실 경우 [계약 정보 > 계약 현황]의 각 계약을
               클릭하세요.
             </div>
-          </li>
-        </ul>
-      </div>
-      <div class="flex-box__cell flex-box__cell--medium">
-        <TextButton
-          textSize="regular"
-          theme="secondary"
-          :underline="true"
-          :block="true"
-        >
-          바로가기
-        </TextButton>
-      </div>
-    </div>
+            <div class="flex-box__cell flex-box__cell--medium">
+              <TextButton
+                textSize="regular"
+                theme="secondary"
+                :underline="true"
+                :classNames="{ wrap: $style['right-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
 
-    <section>
+    <div class="row-margin-block-small row-margin-bottom-none">
       <FormList>
         <FormListItem
           titleText="조회기간"
@@ -114,22 +126,79 @@ export default {
           <BasicButton :line="true">자동차세 조회</BasicButton>
         </ButtonListItem>
       </ButtonList>
-    </section>
+    </div>
 
+    <!-- DD : 조회 버튼 클릭 시 노출 -->
     <BasicHr theme="tertiary" className="row-margin-block" />
 
     <!-- Case : 범칙금 조회 시 노출 -->
     <section>
       <h3 class="text-title-1 row-margin-contents">범칙금 조회 결과</h3>
 
+      <!-- Case : 조회 결과 없을 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">조회 결과가 없습니다.</p>
+      </div>
+      <!-- // Case : 조회 결과 없을 경우 -->
+
+      <!-- Case : 조회 결과 있을 경우 -->
       <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+        <li v-for="i in 2" :key="i" class="row-margin-contents">
           <BasicBox>
-            // contnets
-            <BasicBox theme="tertiary"> // keyvalue 대기 </BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <div
+                  :class="[$style['division-info'], 'row-margin-item-small']"
+                >
+                  <ul :class="$style['division-info__list']">
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        BMW 435d
+                      </div>
+                    </li>
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        L99999999999999
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>위반내용</KeyValueTitle>
+                <KeyValueText>속도위반 (40km/h 초과)</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>위반일자</KeyValueTitle>
+                <KeyValueText>2022.10.21 16:49:00</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>관할기관</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>60,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발생장소</KeyValueTitle>
+                <KeyValueText>인제군 남면 관대리 인제1동 41</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </li>
       </ul>
+      <!-- // Case : 조회 결과 있을 경우 -->
     </section>
     <!-- // Case : 범칙금 조회 시 노출 -->
 
@@ -137,16 +206,63 @@ export default {
     <section>
       <h3 class="text-title-1 row-margin-contents">자동차세 조회 결과</h3>
 
+      <!-- Case : 조회 결과 없을 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">조회 결과가 없습니다.</p>
+      </div>
+      <!-- // Case : 조회 결과 없을 경우 -->
+
+      <!-- Case : 조회 결과 있을 경우 -->
       <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+        <li v-for="i in 2" :key="i" class="row-margin-contents">
           <BasicBox>
-            // contnets
-            <BasicBox theme="tertiary"> // keyvalue 대기 </BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <div
+                  :class="[$style['division-info'], 'row-margin-item-small']"
+                >
+                  <ul :class="$style['division-info__list']">
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        BMW 435d
+                      </div>
+                    </li>
+                    <li :class="$style['division-info__item']">
+                      <div class="text-body-3 color-gray-tertiary">
+                        L99999999999999
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>납부기일</KeyValueTitle>
+                <KeyValueText>2022.10.21</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>360,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발급관청</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </li>
       </ul>
+      <!-- // Case : 조회 결과 있을 경우 -->
     </section>
     <!-- // Case : 자동차세 조회 시 노출 -->
+    <!-- // DD : 조회 버튼 클릭 시 노출 -->
   </PageContents>
 </template>
 
