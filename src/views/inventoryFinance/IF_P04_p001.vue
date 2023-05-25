@@ -28,6 +28,10 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
 import IconDot from '@/assets/images/icon/dot.svg?component';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 export default {
   components: {
@@ -56,6 +60,10 @@ export default {
     RoundStatus,
     IconLinkSmall,
     IconDot,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
   },
 
   setup() {
@@ -97,7 +105,29 @@ export default {
               </h3>
             </BasicBoxHeadLeft>
           </BasicBoxHead>
-          <div>대기영역</div>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>차량명의</KeyValueTitle>
+              <KeyValueText>
+                본인명의(공동명의 제외)<br />
+                소유기간 3개월 이상
+              </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>소유차종</KeyValueTitle>
+              <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>차량연식</KeyValueTitle>
+              <KeyValueText>
+                출고 이후 10년 이내<br />
+                차량가격 500만원 이상<br />
+                (당사 차량 시세 가격 기준)
+              </KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
         </BasicBox>
 
         <BasicHr theme="quaternary" className="row-margin-block" />
