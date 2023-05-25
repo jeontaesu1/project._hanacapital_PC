@@ -64,6 +64,7 @@ import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -139,6 +140,7 @@ export default {
     IllustInfoTitle,
     IllustInfoText,
     UnitText,
+    BankLogo,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -4360,6 +4362,133 @@ export default {
             </button>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Logo List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <KeyValue align="left" margin="regular">
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="004" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">국민</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="011" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">농협</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="020" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">우리</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="081" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">하나</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="088" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">신한</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText>123-456-78901234-1234567890-12345</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 2</h3>
+
+        <KeyValue align="left" :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="004" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">국민</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="011" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">농협</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="020" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">우리</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="081" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">하나</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText> 123-456-78901234 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo size="small" code="088" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--mini">신한</div>
+              </div>
+            </KeyValueTitle>
+            <KeyValueText>123-456-78901234-1234567890-12345</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
       </div>
     </section>
 
