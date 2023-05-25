@@ -22,6 +22,13 @@ import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vu
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
@@ -45,6 +52,13 @@ export default {
     CheckBox,
     CheckBoxObject,
     CheckBoxLabelText,
+    BoxCheckList,
+    BoxCheckListItem,
+    BoxCheck,
+    BoxCheckLabel,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
 
   setup() {
@@ -52,6 +66,10 @@ export default {
       name001Error: false,
       idNumber001Error: false,
       phoneError001: false,
+      idNumber002Error: false,
+      partnershipError001: false,
+      evaluationError001: false,
+      possibleAmountError: false,
     });
 
     return {
@@ -161,7 +179,7 @@ export default {
 
     <div>// [공통 > 본인인증] 내용 노출</div>
 
-    <div class="row-margin-block-small">
+    <div class="row-margin-block-small row-margin-bottom-none">
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">약관동의</h3>
 
@@ -405,6 +423,7 @@ export default {
         </div>
       </section>
 
+      <!-- Case : 약관동의 선택시 노출 -->
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">
           건강보험공단/국민연금공단 정보 이용 동의
@@ -438,8 +457,238 @@ export default {
             </div>
           </li>
         </ul>
+
+        <div
+          :class="[
+            $style['agree-list__all-contents'],
+            'row-margin-container-medium',
+          ]"
+        >
+          <ul :class="$style['agree-list__depth']">
+            <li :class="$style['agree-list__depth-item']">
+              <ul :class="$style['agree-list__list']">
+                <li :class="$style['agree-list__item']">
+                  <div :class="$style['agree-list__head']">
+                    <CheckBox
+                      id="PF_P07_p004_agree_002"
+                      :classNames="{
+                        wrap: $style['agree-list__checkbox'],
+                      }"
+                      theme="tertiary"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >소득정보 자동산출 약관</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <button type="button" :class="$style['agree-list__link']">
+                        <span :class="$style['agree-list__link-text']">
+                          상세보기
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </section>
+      <!-- // Case : 약관동의 선택시 노출 -->
+
+      <!--  Case : 소득정보 자동제출 성공시 노출 -->
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">계좌정보</h3>
+
+        <ul :class="$style['agree-list__depth']">
+          <li :class="$style['agree-list__depth-item']">
+            <ul :class="$style['agree-list__list']">
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="PF_P07_p004_agree_003"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="tertiary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText
+                      >개인 증권계좌정보의 제공·활용 동의</CheckBoxLabelText
+                    >
+                  </CheckBox>
+                  <div :class="$style['agree-list__right']">
+                    <button type="button" :class="$style['agree-list__link']">
+                      <span :class="$style['agree-list__link-text']">
+                        상세보기
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <FormList class="row-margin-container-medium">
+          <FormListItem
+            titleText="주민등록번호"
+            target="#PF_P07_p004_id001"
+            :disabled="true"
+          >
+            <FormInvalid :error="state.idNumber002Error">
+              <InputBlock :error="state.idNumber002Error">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="주민등록번호 앞 6자리"
+                    id="PF_P07_p004_id001"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true">
+                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                  <SecurityInput
+                    title="주민등록번호 뒤 7자리"
+                    :dot="[true, true, true, true, true, true, true]"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+                <InputBlockCell>
+                  <SecurityKeypadButton :disabled="true" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="제휴증권사"
+            target="#PF_P07_p004_partnership"
+            :disabled="true"
+          >
+            <InputBlock :error="state.partnershipError001" :disabled="true">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="제휴증권사"
+                  defaultValue="하나증권"
+                  :disabled="true"
+                  id="PF_P07_p004_partnership"
+                />
+              </InputBlockCell>
+            </InputBlock>
+          </FormListItem>
+
+          <FormListItem titleText="계좌담보평가" :forceFocus="true">
+            <FormInvalid :error="state.evaluationError001">
+              <BoxCheckList align="full">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="PF_P07_p004_BoxCheckList001"
+                    id="PF_P07_p004_BoxCheckList001_001"
+                  >
+                    <BoxCheckLabel>5천만원 이하</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="PF_P07_p004_BoxCheckList001"
+                    id="PF_P07_p004_BoxCheckList001_002"
+                  >
+                    <BoxCheckLabel>5천만원 초과 ~ 1억원 이하</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="PF_P07_p004_BoxCheckList001"
+                    id="PF_P07_p004_BoxCheckList001_003"
+                  >
+                    <BoxCheckLabel>1억원 초과</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="증권계좌" target="#PF_P07_p004_account">
+            <FormInvalid :error="state.accountError">
+              <InputBlock :error="state.accountError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="증권계좌" id="PF_P07_p004_account" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="대출가능금액"
+            target="#PF_P07_p004_possibleAmount"
+          >
+            <FormInvalid :error="state.possibleAmountError">
+              <InputBlock :error="state.possibleAmountError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="대출가능금액"
+                    id="PF_P07_p004_possibleAmount"
+                    align="right"
+                  />
+                </InputBlockCell>
+                <template v-slot:innerRight>
+                  <div class="text-body-1 font-weight-medium">백만원</div>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+
+        <ul
+          :class="[
+            $style['basic-list'],
+            $style['basic-list--regular'],
+            $style['basic-list--regular-margin'],
+          ]"
+        >
+          <li :class="[$style['basic-list__item'], 'text-body-5']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              스탁론을 이용하시기 위해서는 $하나증권(유캔그린)$에 계좌를
+              개설하셔야만 가능하며 증권계좌에 100만원 이상 보유하시면 신청 하실
+              수 있습니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-5']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              대출 신청 시간은 증권사 영업일 08:10~16:00 (토/일요일, 공휴일
+              제외) 입니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-5']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              금융기관(은행/보험 등)에서 발급받으신 본인 명의의 은행용, 범용
+              공동인증서로 신청할 수 있으며, 일 5회 이상 오류 시 당일에는 대출
+              신청을 할 수 없습니다.
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- // Case : 소득정보 자동제출 성공시 노출 -->
     </div>
+
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
 
