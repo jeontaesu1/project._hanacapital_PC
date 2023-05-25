@@ -40,7 +40,7 @@
     align-items: center;
   }
 
-  &--size-small {
+  &--size-regular {
     .unit-text__left,
     .unit-text__right {
       @include font-size-default(15);

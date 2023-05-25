@@ -4177,7 +4177,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">대출가능금액</div>
                 <div :class="$style['product-detail__desc']">
-                  <UnitText size="small" rightUnit="만원">20,000</UnitText>
+                  <UnitText size="regular" rightUnit="만원">20,000</UnitText>
                 </div>
               </div>
             </li>
@@ -4188,7 +4188,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">대출금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <UnitText size="small" rightUnit="%">13.2</UnitText>
+                  <UnitText size="regular" rightUnit="%">13.2</UnitText>
                   <div :class="$style['product-detail__desc-sub']">
                     (36개월 기준)
                   </div>
@@ -4247,10 +4247,10 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Small</h3>
+        <h3 class="test-section-sub-title">Regular</h3>
 
-        <UnitText size="small" leftUnit="$">333,389</UnitText>
-        <UnitText size="small" rightUnit="원">333,389</UnitText>
+        <UnitText size="regular" leftUnit="$">333,389</UnitText>
+        <UnitText size="regular" rightUnit="원">333,389</UnitText>
       </div>
 
       <!--
