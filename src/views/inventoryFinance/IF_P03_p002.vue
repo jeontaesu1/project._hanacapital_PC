@@ -132,7 +132,7 @@ export default {
 
       <KeyValue :wrap="true">
         <KeyValueItem>
-          <KeyValueTitle>즉시 출금 계좌</KeyValueTitle>
+          <KeyValueTitle>대출기간</KeyValueTitle>
           <KeyValueText>2019.05.30 ~ 2019.06.30</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>

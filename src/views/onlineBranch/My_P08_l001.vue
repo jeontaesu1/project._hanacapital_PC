@@ -356,7 +356,7 @@ export default {
                 <div :class="$style['contents-list__head']">
                   <div :class="$style['contents-list__symbol']">1</div>
                   <div :class="$style['contents-list__title']">
-                    차량 반환 일시와 장소를 협의하여 반환 후 차량 평가
+                    평가결과에 따라 ‘차량평가정산금’이 발생될 수 있습니다.
                   </div>
                 </div>
               </li>

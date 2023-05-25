@@ -109,6 +109,10 @@ export default {
               <KeyValueText>1,300,000 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
+              <KeyValueTitle>원금잔액</KeyValueTitle>
+              <KeyValueText>11,700,000 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
               <KeyValueTitle>금리</KeyValueTitle>
               <KeyValueText>10%</KeyValueText>
             </KeyValueItem>

@@ -10,6 +10,7 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
   components: {
@@ -21,6 +22,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    NoticeText,
   },
   setup() {
     const layer = ref(null);
@@ -45,7 +47,12 @@ export default {
       </template>
 
       <section>
-        <div :class="$style['contents-list']">
+        <NoticeText>
+          온라인약정 이용가이드는 오토론 상품 기준으로 작성되었으며, 각 상품에
+          따라서 온라인약정 진행 순서가 다를 수 있습니다.
+        </NoticeText>
+
+        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
           <ol
             :class="[
               $style['contents-list__list'],

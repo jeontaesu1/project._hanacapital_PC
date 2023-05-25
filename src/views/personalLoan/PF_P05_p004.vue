@@ -52,7 +52,9 @@ export default {
                       대출가능금액
                     </div>
                     <div :class="$style['product-detail__desc']">
-                      <UnitText size="small" rightUnit="만원">20,000</UnitText>
+                      <UnitText size="regular" rightUnit="만원"
+                        >20,000</UnitText
+                      >
                     </div>
                   </div>
                 </div>
@@ -71,7 +73,7 @@ export default {
                   <div :class="$style['product-detail__block']">
                     <div :class="$style['product-detail__title']">대출금리</div>
                     <div :class="$style['product-detail__desc']">
-                      <UnitText size="small" rightUnit="%">13.2</UnitText>
+                      <UnitText size="regular" rightUnit="%">13.2</UnitText>
                     </div>
                   </div>
                 </div>

@@ -118,26 +118,41 @@ export default {
           wrap: 'row-margin-block-small row-margin-top-none',
         }"
       >
-        <FormListItem titleText="이름" target="#PF_P04_p003_name">
+        <FormListItem
+          titleText="이름"
+          target="#PF_P04_p003_name"
+          :disabled="true"
+        >
           <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+            <InputBlock :error="state.nameError" :disabled="true">
               <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="PF_P04_p003_name" />
+                <BasicInput
+                  title="이름"
+                  id="PF_P04_p003_name"
+                  defaultValue="김하나"
+                  :disabled="true"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="주민등록번호" target="#PF_P04_p003_idNumber">
+        <FormListItem
+          titleText="주민등록번호"
+          target="#PF_P04_p003_idNumber"
+          :disabled="true"
+        >
           <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
+            <InputBlock :error="state.idNumberError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="PF_P04_p003_idNumber"
+                  defaultValue="123456"
+                  :disabled="true"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -145,11 +160,12 @@ export default {
                 <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                 <SecurityInput
                   title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
+                  :dot="[true, true, true, true, true, true, true]"
+                  :disabled="true"
                 />
               </InputBlockCell>
               <InputBlockCell>
-                <SecurityKeypadButton />
+                <SecurityKeypadButton :disabled="true" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
