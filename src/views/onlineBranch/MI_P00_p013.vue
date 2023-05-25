@@ -18,6 +18,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -43,6 +44,7 @@ export default {
     TextButton,
     InputBlock,
     InputBlockCell,
+    BasicDatepicker,
     FormList,
     FormListItem,
     FormInvalid,
@@ -54,6 +56,8 @@ export default {
   setup() {
     const state = reactive({
       dateError: false,
+      dateMinDate: '2022.02.17',
+      dateMaxDate: '2022.03.17',
     });
 
     return {
@@ -103,13 +107,28 @@ export default {
       <FormList>
         <FormListItem
           titleText="조회기간"
-          target="#MI_P00_p013_date"
-          :selectOnly="true"
+          target="#MI_P00_p013_dateStartButton"
         >
           <FormInvalid :error="state.dateError">
             <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
-                //datepicker 대기
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="MI_P00_p013_dateStart"
+                  buttonId="MI_P00_p013_dateStartButton"
+                  :max="state.dateMaxDate"
+                  v-model="state.dateMinDate"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">~</InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="MI_P00_p013_dateEnd"
+                  buttonId="MI_P00_p013_dateEndButton"
+                  :min="state.dateMinDate"
+                  v-model="state.dateMaxDate"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

@@ -26,6 +26,10 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 
 export default {
   components: {
@@ -53,6 +57,10 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     BasicSelect,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavEllipsis,
+    PaginationNavNumber,
   },
 
   setup() {
@@ -125,7 +133,7 @@ export default {
       </li>
     </ul>
 
-    <section class="row-margin-block-small">
+    <section class="row-margin-block-small row-margin-bottom-none">
       <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
@@ -300,6 +308,22 @@ export default {
           </BasicBox>
         </li>
       </ul>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
     </section>
 
     <ButtonList align="full">

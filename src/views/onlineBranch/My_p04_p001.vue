@@ -15,6 +15,10 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 
 export default {
   components: {
@@ -33,6 +37,10 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavEllipsis,
+    PaginationNavNumber,
   },
 };
 </script>
@@ -413,7 +421,21 @@ export default {
         </li>
       </ul>
 
-      // paging
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
       <!-- // Case : 근저당설정 조회 가능한 계약 있는 경우 -->
     </section>
   </PageContents>
