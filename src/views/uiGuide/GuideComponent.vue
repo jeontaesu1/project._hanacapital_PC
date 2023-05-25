@@ -4839,6 +4839,59 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">status-inquiry</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- status-inquiry -->
+        <ul :class="$style['status-inquiry']">
+          <li :class="$style['status-inquiry__item']">
+            <button
+              type="button"
+              :class="[
+                $style['status-inquiry__category'],
+                $style['status-inquiry__category--active'],
+              ]"
+            >
+              <span :class="$style['status-inquiry__number']">10</span>
+              <span :class="$style['status-inquiry__text']">전체</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">신용동의</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">3</span>
+              <span :class="$style['status-inquiry__text']">상담</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">계약</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">4</span>
+              <span :class="$style['status-inquiry__text']">심사</span>
+            </button>
+          </li>
+          <li :class="$style['status-inquiry__item']">
+            <button type="button" :class="$style['status-inquiry__category']">
+              <span :class="$style['status-inquiry__number']">1</span>
+              <span :class="$style['status-inquiry__text']">송금</span>
+            </button>
+          </li>
+        </ul>
+        <!-- status-inquiry -->
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
