@@ -1,0 +1,59 @@
+.status-inquiry {
+  @include reset-list;
+  display: flex;
+  padding: 0 16px;
+  background-color: $color-gray-05;
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  &__category {
+    @include reset-button;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    &--active {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $color-black;
+      }
+
+      .status-inquiry__text {
+        color: $color-black;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__number {
+    display: block;
+    color: $color-green-50;
+    @include font-size-default(18);
+    font-weight: 700;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 2px;
+    color: $color-gray-60;
+    @include font-size-default(16);
+  }
+
+  &--secondary {
+    .status-inquiry__number {
+      color: $color-blue-50;
+    }
+  }
+}
