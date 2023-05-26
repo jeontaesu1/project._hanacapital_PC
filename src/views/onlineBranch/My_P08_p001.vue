@@ -77,12 +77,12 @@ export default {
     <!-- <UiTab v-slot="tabSlotProps"> -->
     <PageContents>
       <PageHead>
-        <!-- case : 만기후처리_구매 -->
+        <!-- case : 만기후처리_신청전 -->
         <PageTitle
           >렌터카 계약 만기 1개월 전까지<br />만기후처리를 반드시 선택해
           주세요</PageTitle
         >
-        <!-- //case : 만기후처리_구매 -->
+        <!-- //case : 만기후처리_신청전 -->
         <!-- case : 만기후처리_신청후  -->
         <PageTitle
           >만기후 연장(재리스) 신청이<br />
@@ -90,6 +90,43 @@ export default {
         >
         <!-- //case : 만기후처리_신청후  -->
       </PageHead>
+      <!-- case : 만기후처리_신청전 -->
+      <BasicBox class="row-margin-block row-margin-top-none">
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>계약기간</KeyValueTitle>
+            <KeyValueText> 2016.01.01-2021.01.01 </KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>실납렌트료(VAT포함)</KeyValueTitle>
+            <KeyValueText>999,999원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>잔존가치(VAT포함)</KeyValueTitle>
+            <KeyValueText>99,999,999원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>약정주행거리</KeyValueTitle>
+            <KeyValueText> 999,999km</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>보증금</KeyValueTitle>
+            <KeyValueText>99,999,999원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>정비서비스</KeyValueTitle>
+            <KeyValueText>프리미엄</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- //case : 만기후처리_신청전 -->
+
+      <!-- 만기후처리_신청후 -->
       <!-- case : 연장 -->
       <BasicBox class="row-margin-block row-margin-top-none">
         <BasicBoxHead>
@@ -237,6 +274,7 @@ export default {
         </KeyValue>
       </BasicBox>
       <!-- //case :  반환(공통)-->
+      <!-- //만기후처리_신청후 -->
 
       <NavTab :useUiTab="true">
         <NavTabButton link="testNavTab001_001">연장</NavTabButton>
@@ -247,7 +285,7 @@ export default {
       <UiTabPanel name="testNavTab001_001">
         <section>
           <h3 class="text-title-1 font-weight-bold">
-            만기후 연장(재리스) 진행절차
+            만기후 연장(재렌트) 진행절차
           </h3>
           <div :class="[$style['step'], 'row-margin-contents']">
             <ul :class="$style['step__list']">
@@ -257,7 +295,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
                       홈페이지/모바일(웹)을 통하여
-                      <strong> 재리스 신청 및 견적을 요청 </strong>합니다.
+                      <strong> 재렌트 신청 및 견적을 요청 </strong>합니다.
                       (신용조회동의)
                     </p>
                   </div>
@@ -271,8 +309,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      신청내역을 확인하여
-                      <strong>심사결과를 안내</strong>드립니다.
+                      <strong>재렌트 견적 발송 및 재렌트 상담</strong>을
+                      진행합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -337,174 +375,16 @@ export default {
             </ul>
           </div>
         </section>
-        <section class="row-margin-block-small">
-          <div class="row-margin-container-medium">
-            <section class="row-margin-container-medium">
-              <h3 class="text-title-1 row-margin-contents">상품안내</h3>
+        <div class="row-margin-block-small row-margin-bottom-none">
+          <section class="row-margin-container-medium">
+            <h3 class="text-title-1 row-margin-contents">상품안내</h3>
 
-              <section class="row-margin-contents">
-                <h4
-                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
-                >
-                  취급조건
-                </h4>
-
-                <ul
-                  :class="[
-                    $style['basic-list'],
-                    $style['basic-list--regular'],
-                    $style['basic-list--mini-margin'],
-                  ]"
-                >
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-2',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']"></div>
-                    <div :class="[$style['basic-list__content']]">
-                      <div>계약기간: 12개월 ~ 48개월</div>
-                      <div
-                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                      >
-                        사용연한 5년 이내 (이전 계약기간 포함)
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-2',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']"></div>
-                    <div :class="[$style['basic-list__content']]">
-                      <div>
-                        렌트료 포함 내역 : 취득세, 보험료, 자동차세, 정비료
-                      </div>
-                      <div
-                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                      >
-                        (계약상품에 따라 포함이 안될 수 있음)
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-2',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']"></div>
-                    <div :class="[$style['basic-list__content']]">
-                      <div>정비상품 : Special, Self 상품</div>
-                      <div
-                        class="text-body-4 font-weight-light color-gray-tertiary row-margin-mini"
-                      >
-                        (기존 정비상품 동일 적용)
-                      </div>
-                    </div>
-                  </li>
-                  <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'color-black',
-                      'text-body-2',
-                      'font-weight-regular',
-                    ]"
-                  >
-                    <div :class="$style['basic-list__symbol']"></div>
-                    <div :class="[$style['basic-list__content']]">
-                      만기 시 처리: 계약 종료 후 고객의 의향에 따라 반환, 구매,
-                      연장 가능
-                    </div>
-                  </li>
-                </ul>
-              </section>
-
-              <section class="row-margin-contents">
-                <h4
-                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
-                >
-                  연체이자율
-                </h4>
-
-                <p class="text-body-2 font-weight-regular">연20%</p>
-              </section>
-
-              <section class="row-margin-contents">
-                <h4
-                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
-                >
-                  중도해지수수료
-                </h4>
-
-                <p class="text-body-2 font-weight-regular">
-                  중도해지수수료율 = 잔여렌트료 X 해지위약금율
-                </p>
-
-                <ul :class="[$style['basic-list'], 'row-margin-item']">
-                  <li :class="$style['basic-list__item']">
-                    <div :class="$style['basic-list__symbol']">※</div>
-                    <div :class="$style['basic-list__content']">
-                      잔여렌트료 = 앞면표기 "월렌트료" X (미청구 잔여개월수 -
-                      1개월) + 해지시점 당월 잔여렌트료
-                    </div>
-                  </li>
-                </ul>
-              </section>
-
-              <section class="row-margin-contents">
-                <h4
-                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-item"
-                >
-                  위약금률
-                </h4>
-
-                <div :class="$style['basic-table']">
-                  <div :class="$style['basic-table']">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>2년 이하</th>
-                          <th>3년 이하</th>
-                          <th>4년 이하</th>
-                          <th>4년 초과</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>35%</td>
-                          <td>30%</td>
-                          <td>25%</td>
-                          <td>20%</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </section>
-
-              <section class="row-margin-contents">
-                <h4
-                  class="text-body-4 color-gray-secondary font-weight-regular row-margin-mini"
-                >
-                  승계수수료
-                </h4>
-
-                <p class="text-body-2 font-weight-regular">30만원 (VAT 별도)</p>
-              </section>
-            </section>
-
-            <section class="row-margin-container-medium">
-              <h3 class="text-title-2 row-margin-contents">유의사항</h3>
+            <section class="row-margin-contents">
+              <h4
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
+              >
+                취급조건
+              </h4>
 
               <ul
                 :class="[
@@ -517,113 +397,270 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'color-black',
-                    'text-body-3',
+                    'text-title-2',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    계약을 체결하기 전에 자세한 내용은 상품설명서와 약관을
-                    읽어보시기 바랍니다.
+                  <div :class="[$style['basic-list__content']]">
+                    <div>계약기간: 12개월 ~ 48개월</div>
+                    <div class="text-body-3 color-gray row-margin-small">
+                      사용연한 5년 이내 (이전 계약기간 포함)
+                    </div>
                   </div>
                 </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'color-black',
-                    'text-body-3',
-                    'font-weight-medium',
+                    'text-title-2',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
-                    개인신용평점이 하락할 수 있습니다.
+                  <div :class="[$style['basic-list__content']]">
+                    <div>
+                      렌트료 포함 내역 : 취득세, 보험료, 자동차세, 정비료
+                    </div>
+                    <div class="text-body-3 color-gray row-margin-small">
+                      (계약상품에 따라 포함이 안될 수 있음)
+                    </div>
                   </div>
                 </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'color-black',
-                    'text-body-3',
-                    'font-weight-medium',
+                    'text-title-2',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
-                    있습니다.
+                  <div :class="[$style['basic-list__content']]">
+                    <div>정비상품 : Special, Self 상품</div>
+                    <div class="text-body-3 color-gray row-margin-small">
+                      (기존 정비상품 동일 적용)
+                    </div>
                   </div>
                 </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'color-black',
-                    'text-body-3',
-                    'font-weight-medium',
+                    'text-title-2',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
-                    발생할 수 있습니다.
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-3',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
-                    대출이 제한될 수 있습니다.
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-3',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
-                    설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'color-black',
-                    'text-body-3',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
-                    홈페이지에서 확인하시기 바랍니다.
-                  </div>
-                </li>
-              </ul>
-              <ul :class="[$style['basic-list'], 'row-margin-contents']">
-                <li :class="$style['basic-list__item']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    준법심의필 xx-xxxx<br />
-                    (2022.01.01~2022.12.31)
+                  <div :class="[$style['basic-list__content']]">
+                    만기 시 처리: 계약 종료 후 고객의 의향에 따라 반환, 구매,
+                    연장 가능
                   </div>
                 </li>
               </ul>
             </section>
-          </div>
-        </section>
 
+            <section class="row-margin-contents">
+              <h4
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
+              >
+                연체이자율
+              </h4>
+
+              <p class="text-title-2">연20%</p>
+            </section>
+
+            <section class="row-margin-contents">
+              <h4
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
+              >
+                중도해지수수료
+              </h4>
+
+              <p class="text-title-2">
+                중도해지수수료율 = 잔여렌트료 X 해지위약금율
+              </p>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
+                <li :class="[$style['basic-list__item'], 'text-body-4 ']">
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    잔여렌트료 = 앞면표기 "월렌트료" X (미청구 잔여개월수 -
+                    1개월) + 해지시점 당월 잔여렌트료
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="row-margin-contents">
+              <h4
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
+              >
+                위약금률
+              </h4>
+
+              <div :class="$style['basic-table']">
+                <div :class="$style['basic-table']">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>2년 이하</th>
+                        <th>3년 이하</th>
+                        <th>4년 이하</th>
+                        <th>4년 초과</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>35%</td>
+                        <td>30%</td>
+                        <td>25%</td>
+                        <td>20%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <section class="row-margin-contents">
+              <h4
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
+              >
+                승계수수료
+              </h4>
+
+              <p class="text-title-2">30만원 (VAT 별도)</p>
+            </section>
+          </section>
+
+          <section class="row-margin-block-small">
+            <h3 class="text-title-1 row-margin-contents">유의사항</h3>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular'],
+                $style['basic-list--regular-margin'],
+              ]"
+            >
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  계약을 체결하기 전에 자세한 내용은 상품설명서와 약관을
+                  읽어보시기 바랍니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                  'font-weight-medium',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  상환능력에 비해 대출금이 과도할 경우 귀하의 신용등급 또는
+                  개인신용평점이 하락할 수 있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                  'font-weight-medium',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
+                  있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                  'font-weight-medium',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
+                  발생할 수 있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  대출취급이 부적정한 경우(연체금 보유, 개인신용평점 낮음)
+                  대출이 제한될 수 있습니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
+                  설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
+                </div>
+              </li>
+              <li
+                :class="[
+                  $style['basic-list__item'],
+                  'color-black',
+                  'text-body-1',
+                ]"
+              >
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                  홈페이지에서 확인하시기 바랍니다.
+                </div>
+              </li>
+            </ul>
+            <ul :class="[$style['basic-list'], 'row-margin-contents']">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  준법심의필 xx-xxxx<br />
+                  (2022.01.01~2022.12.31)
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- case : 만기후처리 -신청전 -->
         <div class="row-margin-block">
           <BasicButton size="regular">연장 신청</BasicButton>
         </div>
+        <!-- //case : 만기후처리 -신청전 -->
       </UiTabPanel>
       <UiTabPanel name="testNavTab001_002">
         <section>
