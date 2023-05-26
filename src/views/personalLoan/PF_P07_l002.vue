@@ -141,7 +141,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="비밀번호" target="#PF_P01_l002_password">
+        <FormListItem titleText="비밀번호" target="#PF_P07_l002_password">
           <FormInvalid :error="state.passwordError">
             <InputBlock :error="state.passwordError">
               <InputBlockCell :flexible="true">

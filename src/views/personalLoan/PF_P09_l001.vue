@@ -113,5 +113,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/uiGuide/GuideComponentModule.scss';
+@import '@/assets/scss/views/personalLoan/PF_P09_l001.scss';
 </style>
