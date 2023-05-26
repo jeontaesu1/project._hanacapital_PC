@@ -34,7 +34,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
 
 export default {
   components: {
@@ -69,7 +68,6 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    LoadingLayer,
   },
 };
 </script>
