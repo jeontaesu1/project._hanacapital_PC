@@ -1,6 +1,6 @@
 <script>
 // MI_P00_p011
-import { reactive } from 'vue';
+import { ref, reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -35,6 +35,8 @@ import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+
+import IF_P03_l002 from '@/views/inventoryFinance/IF_P03_l002.vue';
 
 import iconInformation from '@/assets/images/icon/information.svg?component';
 
@@ -73,6 +75,7 @@ export default {
     TextButton,
     BasicHr,
     UnitText,
+    IF_P03_l002,
     iconInformation,
   },
   setup() {
@@ -80,15 +83,24 @@ export default {
       accountNumberError: false,
       repaymentMethodError: false,
       paymentDateError: false,
-      repaymentStandardError: false,
+      repaymentStandardError001: false,
+      repaymentStandardError002: false,
       accountError: false,
       repaymentAmountError: false,
       paymentMethodError001: false,
       paymentMethodError002: false,
     });
 
+    const layer001 = ref(null);
+
+    const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
+    };
+
     return {
       state,
+      layer001,
+      layer001Open,
     };
   },
 };
@@ -107,14 +119,15 @@ export default {
     </PageHead>
 
     <section>
+      <!-- Case : 스탁론일 때 -->
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
+            <h3 class="text-title-2 font-weight-medium">스탁론</h3>
             <div :class="[$style['division-info'], 'row-margin-item-small']">
               <ul :class="$style['division-info__list']">
                 <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
+                  <div class="text-body-3 color-gray-tertiary">키움증권</div>
                 </li>
                 <li :class="$style['division-info__item']">
                   <div class="text-body-3 color-gray-tertiary">
@@ -154,6 +167,54 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
+      <!-- //Case : 스탁론일 때 -->
+
+      <!-- Case : 스탁론 외 일 때 -->
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">신용대출</h3>
+            <div :class="[$style['division-info'], 'row-margin-item-small']">
+              <ul :class="$style['division-info__list']">
+                <li :class="$style['division-info__item']">
+                  <div class="text-body-3 color-gray-tertiary">
+                    L99999999999999
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <RoundStatus
+              theme="secondary"
+              size="large"
+              :classNames="{ wrap: 'display-block' }"
+            >
+              정상
+            </RoundStatus>
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
+
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>결제예정금액</KeyValueTitle>
+            <KeyValueText>6,265,200 원</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>이용기간</KeyValueTitle>
+            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>결제일</KeyValueTitle>
+            <KeyValueText>05일</KeyValueText>
+          </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>결제회차</KeyValueTitle>
+            <KeyValueText>12/36</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- //Case : 스탁론 외 일 때 -->
 
       <FormList
         :classNames="{
@@ -205,21 +266,22 @@ export default {
           </FormInvalid>
         </FormListItem>
 
+        <!-- Case : 디폴트, 일부상환 선택 시 -->
         <FormListItem titleText="상환기준" :forceFocus="true">
-          <FormInvalid :error="state.repaymentStandardError">
+          <FormInvalid :error="state.repaymentStandardError001">
             <BoxCheckList>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="MI_P00_p011_repaymentStandard"
-                  id="MI_P00_p011_repaymentStandard001"
+                  name="MI_P00_p011_repaymentStandard001"
+                  id="MI_P00_p011_repaymentStandard001_001"
                 >
                   <BoxCheckLabel>원금기준</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="MI_P00_p011_repaymentStandard"
-                  id="MI_P00_p011_repaymentStandard002"
+                  name="MI_P00_p011_repaymentStandard001"
+                  id="MI_P00_p011_repaymentStandard001_002"
                 >
                   <BoxCheckLabel>입금액기준</BoxCheckLabel>
                 </BoxCheck>
@@ -227,6 +289,24 @@ export default {
             </BoxCheckList>
           </FormInvalid>
         </FormListItem>
+        <!-- //Case : 디폴트, 일부상환 선택 시 -->
+
+        <!-- Case : 전체상환 선택 시 -->
+        <FormListItem titleText="상환기준" :forceFocus="true">
+          <FormInvalid :error="state.repaymentStandardError002">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="MI_P00_p011_repaymentStandard002"
+                  id="MI_P00_p011_repaymentStandard002_001"
+                >
+                  <BoxCheckLabel>원금기준</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </FormInvalid>
+        </FormListItem>
+        <!-- //Case : 전체상환 선택 시 -->
 
         <!-- Case : 스탁론 외 일 때 노출 -->
         <FormListItem
@@ -241,15 +321,15 @@ export default {
                   :options="[
                     {
                       value: '1',
-                      label: '2023.01.05',
+                      label: '2021.11.20',
                     },
                     {
                       value: '2',
-                      label: '2023.01.10',
+                      label: '2021.12.20',
                     },
                     {
                       value: '3',
-                      label: '2023.01.15',
+                      label: '2022.01.20',
                     },
                   ]"
                   title="중도상환 후 결제일자"
@@ -328,8 +408,12 @@ export default {
             </BoxCheckList>
           </FormInvalid>
         </FormListItem>
+      </FormList>
 
-        <!-- Case : 오늘 즉시 출금 선택시 -->
+      <!-- Case : 오늘 즉시 출금 선택시 -->
+      <FormList
+        :classNames="{ wrap: 'row-margin-contents row-margin-bottom-none' }"
+      >
         <FormListItem
           titleText="즉시 출금 계좌"
           target="#MI_P00_p011_account"
@@ -367,8 +451,8 @@ export default {
             >
           </FormInvalid>
         </FormListItem>
-        <!-- //Case : 오늘 즉시 출금 선택시 -->
       </FormList>
+      <!-- //Case : 오늘 즉시 출금 선택시 -->
 
       <!-- Case : 가상계좌 입금 선택시 -->
       <BasicBox
@@ -459,7 +543,12 @@ export default {
       </BasicBox>
 
       <div class="inline-wrap align-right row-margin-item-medium">
-        <TextButton theme="quaternary" textSize="regular" iconSize="regular">
+        <TextButton
+          theme="quaternary"
+          textSize="regular"
+          iconSize="regular"
+          @click="layer001Open"
+        >
           가상계좌 유의사항
           <template v-slot:rightIcon>
             <iconInformation />
@@ -541,6 +630,8 @@ export default {
         중도상환 신청하기
       </BasicButton>
     </section>
+
+    <IF_P03_l002 ref="layer001" />
   </PageContents>
 </template>
 

@@ -49,7 +49,7 @@ export default {
       </template>
 
       <section>
-        <InputBlock type="search" :classNames="{ wrap: 'row-margin-contents' }">
+        <InputBlock :classNames="{ wrap: 'row-margin-contents' }">
           <InputBlockCell :flexible="true">
             <BasicInput
               type="search"

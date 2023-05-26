@@ -56,10 +56,10 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>중도상환 즉시출금 신청</PopupTitle>
+          <PopupTitle>중도상환 입금 예약 신청</PopupTitle>
           <template v-slot:sub>
             <PopupSubTitle>
-              즉시출금으로 중도상환신청을 하시겠어요?
+              가상계좌입금으로 중도상환신청을 하시겠습니까?
             </PopupSubTitle>
           </template>
         </ModalPopupHead>
@@ -72,12 +72,12 @@ export default {
             <KeyValueText>운영자금대출</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
-            <KeyValueTitle>즉시출금일자</KeyValueTitle>
-            <KeyValueText>2022.06.12</KeyValueText>
+            <KeyValueTitle>입금예정금액</KeyValueTitle>
+            <KeyValueText>7,485,870 원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
-            <KeyValueTitle>즉시출금금액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
+            <KeyValueTitle>입금예정일자</KeyValueTitle>
+            <KeyValueText>2021.03.04</KeyValueText>
           </KeyValueItem>
         </KeyValue>
 

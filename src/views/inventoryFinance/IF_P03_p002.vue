@@ -79,14 +79,14 @@ export default {
 
   setup() {
     const state = reactive({
-      accountError: false,
-      accountError01: false,
-      repaymentMethodError01: false,
-      repaymentMethodError02: false,
-      repaymentMethodError03: false,
-      repaymentAmountError01: false,
-      repaymentAmountError02: false,
-      repaymentAmountError03: false,
+      accountError001: false,
+      accountError002: false,
+      repaymentMethodError001: false,
+      repaymentMethodError002: false,
+      repaymentMethodError003: false,
+      repaymentAmountError001: false,
+      repaymentAmountError002: false,
+      repaymentAmountError003: false,
       dateError: false,
     });
 
@@ -111,7 +111,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">중도상환</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="1" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">
@@ -175,11 +175,11 @@ export default {
         <FormList>
           <FormListItem
             titleText="즉시 출금 계좌"
-            target="#IF_P03_p002_account"
+            target="#IF_P03_p002_account001"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.accountError">
-              <InputBlock :error="state.accountError">
+            <FormInvalid :error="state.accountError001">
+              <InputBlock :error="state.accountError001">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :options="[
@@ -197,7 +197,7 @@ export default {
                       },
                     ]"
                     title="즉시 출금 계좌"
-                    inputId="IF_P03_p002_account"
+                    inputId="IF_P03_p002_account001"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -208,12 +208,12 @@ export default {
           <!-- Case : 출금 가능 계좌가 없을 시 -->
           <FormListItem
             titleText="즉시 출금 계좌"
-            target="#IF_P03_p002_account01"
+            target="#IF_P03_p002_account002"
             :selectOnly="true"
             :disabled="true"
           >
-            <FormInvalid :error="state.accountError01">
-              <InputBlock :error="state.accountError01" :disabled="true">
+            <FormInvalid :error="state.accountError002">
+              <InputBlock :error="state.accountError002" :disabled="true">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :options="[
@@ -223,7 +223,7 @@ export default {
                       },
                     ]"
                     title="즉시 출금 계좌"
-                    inputId="IF_P03_p002_account01"
+                    inputId="IF_P03_p002_account002"
                     defaultValue="1"
                     :disabled="true"
                   />
@@ -236,18 +236,18 @@ export default {
 
           <FormListItem
             titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod01"
+            target="#IF_P03_p002_repaymentMethod001"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentMethodError01">
+            <FormInvalid :error="state.repaymentMethodError001">
               <InputBlock
-                :error="state.repaymentMethodError01"
+                :error="state.repaymentMethodError001"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod01"
+                    id="IF_P03_p002_repaymentMethod001"
                     defaultValue="전체상환"
                     :disabled="true"
                   />
@@ -259,19 +259,19 @@ export default {
 
           <FormListItem
             titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount01"
+            target="#IF_P03_p002_repaymentAmount001"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentAmountError01">
+            <FormInvalid :error="state.repaymentAmountError001">
               <InputBlock
-                :error="state.repaymentAmountError01"
+                :error="state.repaymentAmountError001"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     pattern="\d*"
                     title="상환금액"
-                    id="IF_P03_p002_repaymentAmount01"
+                    id="IF_P03_p002_repaymentAmount001"
                     :useDelete="false"
                     align="right"
                     defaultValue="7,400,000"
@@ -366,18 +366,18 @@ export default {
         <FormList>
           <FormListItem
             titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod02"
+            target="#IF_P03_p002_repaymentMethod002"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentMethodError02">
+            <FormInvalid :error="state.repaymentMethodError002">
               <InputBlock
-                :error="state.repaymentMethodError02"
+                :error="state.repaymentMethodError002"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod02"
+                    id="IF_P03_p002_repaymentMethod002"
                     defaultValue="전체상환"
                     :disabled="true"
                   />
@@ -388,19 +388,19 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount02"
+            target="#IF_P03_p002_repaymentAmount002"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentAmountError02">
+            <FormInvalid :error="state.repaymentAmountError002">
               <InputBlock
-                :error="state.repaymentAmountError02"
+                :error="state.repaymentAmountError002"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     pattern="\d*"
                     title="상환금액"
-                    id="IF_P03_p002_repaymentAmount02"
+                    id="IF_P03_p002_repaymentAmount002"
                     :useDelete="false"
                     align="right"
                     defaultValue="7,400,000"
@@ -421,18 +421,18 @@ export default {
         <FormList>
           <FormListItem
             titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod03"
+            target="#IF_P03_p002_repaymentMethod003"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentMethodError03">
+            <FormInvalid :error="state.repaymentMethodError003">
               <InputBlock
-                :error="state.repaymentMethodError03"
+                :error="state.repaymentMethodError003"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod03"
+                    id="IF_P03_p002_repaymentMethod003"
                     defaultValue="전체상환"
                     :disabled="true"
                   />
@@ -457,19 +457,19 @@ export default {
           </FormListItem>
           <FormListItem
             titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount03"
+            target="#IF_P03_p002_repaymentAmount003"
             :disabled="true"
           >
-            <FormInvalid :error="state.repaymentAmountError03">
+            <FormInvalid :error="state.repaymentAmountError003">
               <InputBlock
-                :error="state.repaymentAmountError03"
+                :error="state.repaymentAmountError003"
                 :disabled="true"
               >
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     pattern="\d*"
                     title="상환금액"
-                    id="IF_P03_p002_repaymentAmount03"
+                    id="IF_P03_p002_repaymentAmount003"
                     :useDelete="false"
                     align="right"
                     defaultValue="7,400,000"

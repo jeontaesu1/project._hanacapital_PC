@@ -9,8 +9,6 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
-import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -39,8 +37,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
-    RoundStatus,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -67,7 +63,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">지정운전자 등록</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="1" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">
@@ -285,15 +281,6 @@ export default {
                   </ul>
                 </div>
               </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="secondary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
-                  정상
-                </RoundStatus>
-              </BasicBoxHeadRight>
             </BasicBoxHead>
 
             <KeyValue :wrap="true">

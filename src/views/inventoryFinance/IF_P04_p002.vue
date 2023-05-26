@@ -97,7 +97,7 @@ export default {
               <KeyValueText>2019.03.05</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>5일</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
@@ -113,20 +113,20 @@ export default {
               <KeyValueText>11,700,000 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>금리</KeyValueTitle>
-              <KeyValueText>10%</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
               <KeyValueTitle>연체이자율</KeyValueTitle>
               <KeyValueText>10.5%</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>기간</KeyValueTitle>
-              <KeyValueText>2개월</KeyValueText>
+              <KeyValueTitle>금리</KeyValueTitle>
+              <KeyValueText>10%</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>상환방법</KeyValueTitle>
               <KeyValueText>만기일시상환</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>기간</KeyValueTitle>
+              <KeyValueText>2개월</KeyValueText>
             </KeyValueItem>
           </KeyValue>
 
@@ -184,7 +184,6 @@ export default {
                 >
                   <BoxCheckListItem>
                     <BoxCheck
-                      :minSide="true"
                       name="IF_P04_p002_percent"
                       id="IF_P04_p002_percent01"
                     >
@@ -193,7 +192,6 @@ export default {
                   </BoxCheckListItem>
                   <BoxCheckListItem>
                     <BoxCheck
-                      :minSide="true"
                       name="IF_P04_p002_percent"
                       id="IF_P04_p002_percent02"
                     >
@@ -202,7 +200,6 @@ export default {
                   </BoxCheckListItem>
                   <BoxCheckListItem>
                     <BoxCheck
-                      :minSide="true"
                       name="IF_P04_p002_percent"
                       id="IF_P04_p002_percent03"
                       :defaultChecked="true"
@@ -362,7 +359,7 @@ export default {
               </KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>5일</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
