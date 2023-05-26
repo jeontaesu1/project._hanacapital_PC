@@ -190,14 +190,14 @@ export default {
             <!-- Case : '급여소득자' 선택 시  -->
             <FormListItem
               titleText="직장명"
-              target="#PF_P05_p003_SearchWorkplaceName001"
+              target="#PF_P05_p003_WorkplaceName001"
             >
               <FormInvalid :error="state.workplaceNameError001">
                 <InputBlock :error="state.workplaceNameError001">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="직장명"
-                      id="PF_P05_p003_SearchWorkplaceName001"
+                      id="PF_P05_p003_WorkplaceName001"
                     />
                   </InputBlockCell>
                   <template v-slot:right>
@@ -251,14 +251,14 @@ export default {
             <!-- Case : '자영업자' 선택 시  -->
             <FormListItem
               titleText="상호명"
-              target="#PF_P05_p003_WorkplaceName002"
+              target="#PF_P05_p003_workplaceName002"
             >
               <FormInvalid :error="state.workplaceNameError002">
                 <InputBlock :error="state.workplaceNameError002">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       title="상호명"
-                      id="PF_P05_p003_WorkplaceName002"
+                      id="PF_P05_p003_workplaceName002"
                     />
                   </InputBlockCell>
                 </InputBlock>

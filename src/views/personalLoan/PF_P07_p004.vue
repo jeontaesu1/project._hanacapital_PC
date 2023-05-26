@@ -63,12 +63,12 @@ export default {
 
   setup() {
     const state = reactive({
-      name001Error: false,
-      idNumber001Error: false,
-      phoneError001: false,
-      idNumber002Error: false,
-      partnershipError001: false,
-      evaluationError001: false,
+      nameError: false,
+      idNumberError001: false,
+      phoneError: false,
+      idNumberError002: false,
+      partnershipError: false,
+      evaluationError: false,
       possibleAmountError: false,
     });
 
@@ -127,26 +127,26 @@ export default {
         wrap: 'row-margin-block-small row-margin-top-none',
       }"
     >
-      <FormListItem titleText="이름" target="#PF_P07_p004_name001">
-        <FormInvalid :error="state.name001Error">
-          <InputBlock :error="state.name001Error">
+      <FormListItem titleText="이름" target="#PF_P07_p004_name">
+        <FormInvalid :error="state.nameError">
+          <InputBlock :error="state.nameError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="이름" id="PF_P07_p004_name001" />
+              <BasicInput title="이름" id="PF_P07_p004_name" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="주민등록번호" target="#PF_P07_p004_id001">
-        <FormInvalid :error="state.idNumber001Error">
-          <InputBlock :error="state.idNumber001Error">
+      <FormListItem titleText="주민등록번호" target="#PF_P07_p004_id">
+        <FormInvalid :error="state.idNumberError001">
+          <InputBlock :error="state.idNumberError001">
             <InputBlockCell :flexible="true">
               <BasicInput
                 type="number"
                 pattern="\d*"
                 title="주민등록번호 앞 6자리"
-                id="PF_P07_p004_id001"
+                id="PF_P07_p004_id"
               />
             </InputBlockCell>
             <InputBlockCell type="sub">-</InputBlockCell>
@@ -165,11 +165,11 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="연락처" target="#PF_P07_p004_phone001">
-        <FormInvalid :error="state.phoneError001">
-          <InputBlock :error="state.phoneError001">
+      <FormListItem titleText="연락처" target="#PF_P07_p004_phone">
+        <FormInvalid :error="state.phoneError">
+          <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="연락처" id="PF_P07_p004_phone001" />
+              <BasicInput title="연락처" id="PF_P07_p004_phone" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -534,17 +534,17 @@ export default {
         <FormList class="row-margin-container-medium">
           <FormListItem
             titleText="주민등록번호"
-            target="#PF_P07_p004_id001"
+            target="#PF_P07_p004_id"
             :disabled="true"
           >
-            <FormInvalid :error="state.idNumber002Error">
-              <InputBlock :error="state.idNumber002Error">
+            <FormInvalid :error="state.idNumberError002">
+              <InputBlock :error="state.idNumberError002">
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     type="number"
                     pattern="\d*"
                     title="주민등록번호 앞 6자리"
-                    id="PF_P07_p004_id001"
+                    id="PF_P07_p004_id"
                     :disabled="true"
                   />
                 </InputBlockCell>
@@ -570,7 +570,7 @@ export default {
             target="#PF_P07_p004_partnership"
             :disabled="true"
           >
-            <InputBlock :error="state.partnershipError001" :disabled="true">
+            <InputBlock :error="state.partnershipError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="제휴증권사"
@@ -583,7 +583,7 @@ export default {
           </FormListItem>
 
           <FormListItem titleText="계좌담보평가" :forceFocus="true">
-            <FormInvalid :error="state.evaluationError001">
+            <FormInvalid :error="state.evaluationError">
               <BoxCheckList align="full">
                 <BoxCheckListItem>
                   <BoxCheck

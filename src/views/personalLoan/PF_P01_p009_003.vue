@@ -1,5 +1,5 @@
 <script>
-// PF_P01_p009 대출신청실패_Fraud 대상자
+// PF_P01_p009 대출신청실패_오류
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
@@ -30,9 +30,12 @@ export default {
   <PageContents>
     <IllustInfo>
       <IllustObject type="error" />
-      <IllustInfoTitle>온라인약정이 완료되지 않았습니다</IllustInfoTitle>
+      <IllustInfoTitle>
+        일시적 오류로 온라인약정이<br />
+        완료되지 않았습니다
+      </IllustInfoTitle>
       <IllustInfoText>
-        고객님은 상담원과 통화 후 온라인약정이 가능합니다.
+        지속적인 문제 발생 시, 고객센터로 연락 부탁드립니다.
       </IllustInfoText>
     </IllustInfo>
 
@@ -63,5 +66,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/PF_P01_p009_002.scss';
+@import '@/assets/scss/views/personalLoan/PF_P01_p009_003.scss';
 </style>

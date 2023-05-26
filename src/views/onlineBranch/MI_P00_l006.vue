@@ -132,7 +132,7 @@ export default {
 
         <FormListItem
           titleText="은행명"
-          target="#MI_P01_l006_bank"
+          target="#MI_P00_l006_bank"
           :selectOnly="true"
         >
           <FormInvalid :error="state.bankError">
@@ -146,7 +146,7 @@ export default {
                     },
                   ]"
                   title="은행명"
-                  inputId="MI_P01_l006_bank"
+                  inputId="MI_P00_l006_bank"
                 />
               </InputBlockCell>
             </InputBlock>

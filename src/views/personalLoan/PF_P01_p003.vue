@@ -185,7 +185,7 @@ export default {
           <FormListItem
             titleText="이름"
             :disabled="true"
-            target="#PF_P01_p003_name001"
+            target="#PF_P01_p003_name"
           >
             <InputBlock :disabled="true" :error="state.nameError">
               <InputBlockCell :flexible="true">
@@ -193,7 +193,7 @@ export default {
                   title="이름"
                   defaultValue="김하나"
                   :disabled="true"
-                  id="PF_P01_p003_name001"
+                  id="PF_P01_p003_name"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -201,7 +201,7 @@ export default {
 
           <FormListItem
             titleText="주민등록번호"
-            target="#PF_P01_p003_id001"
+            target="#PF_P01_p003_id"
             :disabled="true"
           >
             <InputBlock :error="state.idNumberError">
@@ -210,7 +210,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
-                  id="PF_P01_p003_id001"
+                  id="PF_P01_p003_id"
                   :disabled="true"
                   defaultValue="951222"
                 />
@@ -277,14 +277,14 @@ export default {
               <!-- Case : '급여소득자' 선택 시  -->
               <FormListItem
                 titleText="직장명"
-                target="#PF_P01_p003_SearchWorkplaceName001"
+                target="#PF_P01_p003_workplaceName001"
               >
                 <FormInvalid :error="state.workplaceNameError001">
                   <InputBlock :error="state.workplaceNameError001">
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="직장명"
-                        id="PF_P01_p003_SearchWorkplaceName001"
+                        id="PF_P01_p003_workplaceName001"
                       />
                     </InputBlockCell>
                     <template v-slot:right>
