@@ -57,6 +57,7 @@ export default {
       >
         유의사항
       </h4>
+
       <ul
         :class="[
           $style['basic-list'],

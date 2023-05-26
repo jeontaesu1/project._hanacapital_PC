@@ -185,17 +185,15 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
           </FormListItem>
-        </FormList>
-        <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
+          <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
 
-        <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
-        <FormList>
+          <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
           <FormListItem titleText="상세사유" :forceFocus="true">
             <BoxCheckList>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="My_p05_p002_details002"
-                  id="My_p05_p002_details_002_001"
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_004"
                   :defaultChecked="true"
                 >
                   <BoxCheckLabel>소득증가</BoxCheckLabel>
@@ -203,24 +201,24 @@ export default {
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="My_p05_p002_details"
-                  id="My_p05_p002_details_002_002"
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_005"
                 >
                   <BoxCheckLabel>재상증가</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
               <BoxCheckListItem>
                 <BoxCheck
-                  name="My_p05_p002_details"
-                  id="My_p05_p002_details_002_003"
+                  name="My_p05_p002_details001"
+                  id="My_p05_p002_details_001_006"
                 >
                   <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
           </FormListItem>
+          <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
         </FormList>
-        <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
       </section>
 
       <section class="row-margin-block-small">

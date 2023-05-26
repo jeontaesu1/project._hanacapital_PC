@@ -318,85 +318,29 @@ export default {
         </ButtonList>
       </BasicBox>
 
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">김하나</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+      <ul class="reset-list">
+        <li v-for="i in 4" :key="i" class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">김하나</h3>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
 
-        <KeyValue>
-          <KeyValueItem>
-            <KeyValueTitle>생년월일</KeyValueTitle>
-            <KeyValueText>123456-2******</KeyValueText>
-          </KeyValueItem>
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>생년월일</KeyValueTitle>
+                <KeyValueText>123456-2******</KeyValueText>
+              </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>휴대폰번호</KeyValueTitle>
-            <KeyValueText>010-1234-5678</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">김하나</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-
-        <KeyValue>
-          <KeyValueItem>
-            <KeyValueTitle>생년월일</KeyValueTitle>
-            <KeyValueText>123456-2******</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>휴대폰번호</KeyValueTitle>
-            <KeyValueText>010-1234-5678</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">김하나</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-
-        <KeyValue>
-          <KeyValueItem>
-            <KeyValueTitle>생년월일</KeyValueTitle>
-            <KeyValueText>123456-2******</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>휴대폰번호</KeyValueTitle>
-            <KeyValueText>010-1234-5678</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">김하나</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-
-        <KeyValue>
-          <KeyValueItem>
-            <KeyValueTitle>생년월일</KeyValueTitle>
-            <KeyValueText>123456-2******</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>휴대폰번호</KeyValueTitle>
-            <KeyValueText>010-1234-5678</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
+              <KeyValueItem>
+                <KeyValueTitle>휴대폰번호</KeyValueTitle>
+                <KeyValueText>010-1234-5678</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+      </ul>
     </div>
   </PageContents>
 </template>
