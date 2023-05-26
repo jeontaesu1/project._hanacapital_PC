@@ -28,7 +28,7 @@ import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import IconLinkSmall from '@/assets/images/icon/link.svg?component';
+import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
 // import IconLinkSmalldsds from '@/assets/images/icon/link-small.svg?component';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';

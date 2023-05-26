@@ -1,12 +1,12 @@
 <script>
 import { computed, inject } from 'vue';
 
-import IconPrev from '@/assets/images/icon/pagination-prev.svg?component';
-import IconNext from '@/assets/images/icon/pagination-next.svg?component';
+import IconReduction from '@/assets/images/icon/minus-black.svg?component';
+import IconEnlargement from '@/assets/images/icon/add1.svg?component';
 
 const defaultClassNames = () => ({
   item: '',
-  link: '',
+  button: '',
   guide: '',
   icon: '',
 });
@@ -38,8 +38,8 @@ export default {
     });
 
     const icons = {
-      enlargement: IconNext,
-      reduction: IconPrev,
+      enlargement: IconEnlargement,
+      reduction: IconReduction,
     };
 
     const texts = {
@@ -69,12 +69,12 @@ export default {
     <button
       type="button"
       v-bind="$attrs"
-      :class="[styleModule['agreement__link'], customClassNames.link]"
+      :class="[styleModule['agreement__button'], customClassNames.button]"
       :disabled="disabled"
     >
       <component
         :is="icons[type]"
-        :class="[styleModule['agreement__icon'], customClassNames.icon]"
+        :class="[styleModule['agreement__zoomicon'], customClassNames.icon]"
       />
       <span :class="[styleModule['agreement__guide'], customClassNames.guide]">
         {{ texts[type] }}

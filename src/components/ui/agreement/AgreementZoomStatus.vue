@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[styleModule['agreement__text'], customClassNames.text]">
+  <div :class="[styleModule['agreement__zoomtext'], customClassNames.text]">
     <slot />
     <span :class="[styleModule['agreement__guide'], customClassNames.guide]">
       (현재 화면 SIZE 입니다.)

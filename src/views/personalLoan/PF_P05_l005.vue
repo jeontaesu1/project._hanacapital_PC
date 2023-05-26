@@ -55,7 +55,7 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>재고금융 확약서</PopupTitle>
+          <PopupTitle>온라인 약정 - 신용대출</PopupTitle>
         </ModalPopupHead>
       </template>
       <!-- 외부 프로그램 영역 == 주석내부 태그 삭제하고 사용해주세요.  -->
@@ -80,6 +80,7 @@ export default {
         <AgreementPaginationNav>
           <AgreementPaginationNavArrow type="prev" :disabled="true" />
           <AgreementCurrentPageNumber>1</AgreementCurrentPageNumber>
+          <span class="text-body-1 color-white">/</span>
           <AgreementTotalPageCount>10</AgreementTotalPageCount>
           <AgreementPaginationNavArrow type="next" />
         </AgreementPaginationNav>
