@@ -120,15 +120,15 @@ export default {
       >
         <BoxCheckListItem>
           <BoxCheck
-            name="LM_P01_p0011_type"
-            id="LM_P01_p0011_type_001"
+            name="LM_P01_p001_type"
+            id="LM_P01_p001_type_001"
             :defaultChecked="true"
           >
             <BoxCheckLabel>아니오</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
         <BoxCheckListItem>
-          <BoxCheck name="LM_P01_p0011_type" id="LM_P01_p0011_type_002">
+          <BoxCheck name="LM_P01_p001_type" id="LM_P01_p001_type_002">
             <BoxCheckLabel>예</BoxCheckLabel>
           </BoxCheck>
         </BoxCheckListItem>
