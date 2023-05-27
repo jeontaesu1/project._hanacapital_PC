@@ -40,11 +40,20 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>보이스피싱 주의 안내</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <section>
+        <div>
+          금융감독원, 금융기관, 검찰청, 경찰청 직원을 사칭한 의심스러운 전화
+          또는 문자를 받고 대출을 신청하신다면, 대출진행을 중단하시기 바랍니다.
+        </div>
+        <div class="row-margin-item-group">
+          대출 보이스 피싱이 우려되는 경우는 금융감독원 콜센터(1332) 또는
+          경찰청(112)으로 문의바랍니다.
+        </div>
+      </section>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +64,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

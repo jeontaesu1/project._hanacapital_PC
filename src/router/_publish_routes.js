@@ -621,11 +621,6 @@ const routes = [
     component: () => import('@/views/personalLoan/PF_P01_p006_003.vue'),
   },
   {
-    path: '/personal-loan/PF_P01_p006_004',
-    name: '/personal-loan/PF_P01_p006_004',
-    component: () => import('@/views/personalLoan/PF_P01_p006_004.vue'),
-  },
-  {
     path: '/personal-loan/PF_P01_p009_001',
     name: '/personal-loan/PF_P01_p009_001',
     component: () => import('@/views/personalLoan/PF_P01_p009_001.vue'),
@@ -634,6 +629,11 @@ const routes = [
     path: '/personal-loan/PF_P01_p009_002',
     name: '/personal-loan/PF_P01_p009_002',
     component: () => import('@/views/personalLoan/PF_P01_p009_002.vue'),
+  },
+  {
+    path: '/personal-loan/PF_P01_p009_003',
+    name: '/personal-loan/PF_P01_p009_003',
+    component: () => import('@/views/personalLoan/PF_P01_p009_003.vue'),
   },
   {
     path: '/personal-loan/PF_P01_p010',
@@ -674,11 +674,6 @@ const routes = [
     path: '/personal-loan/PF_P02_p006_003',
     name: '/personal-loan/PF_P02_p006_003',
     component: () => import('@/views/personalLoan/PF_P02_p006_003.vue'),
-  },
-  {
-    path: '/personal-loan/PF_P02_p006_004',
-    name: '/personal-loan/PF_P02_p006_004',
-    component: () => import('@/views/personalLoan/PF_P02_p006_004.vue'),
   },
   {
     path: '/personal-loan/PF_P04_p002',

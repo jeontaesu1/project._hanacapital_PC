@@ -7,9 +7,9 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
+
+import IconQR from '@/assets/images/icon/qr.svg?component';
 
 export default {
   components: {
@@ -18,9 +18,8 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
+    PopupSubTitle,
+    IconQR,
   },
   setup() {
     const layer = ref(null);
@@ -40,30 +39,19 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>하나은행 계좌가 없으시다면?</PopupTitle>
+          <template v-slot:sub>
+            <PopupSubTitle>
+              언제 어디서나 빠르고 간편하게<br />
+              하나은행 비대면 계좌 개설 서비스
+            </PopupSubTitle>
+          </template>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
-
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+      <div class="inline-wrap align-center">
+        <IconQR />
+      </div>
     </ModalPopup>
   </UiLayer>
 </template>
