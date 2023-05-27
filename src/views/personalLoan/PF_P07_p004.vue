@@ -116,9 +116,15 @@ export default {
             </li>
           </ul>
         </div>
-        <TextButton :underline="true" class="text-body-4 color-gray-tertiary">
-          상세내용보기
-        </TextButton>
+        <div class="flex-box__cell">
+          <TextButton
+            :underline="true"
+            :block="true"
+            class="text-body-4 color-gray-tertiary"
+          >
+            상세내용보기
+          </TextButton>
+        </div>
       </div>
     </PageHead>
 
@@ -458,12 +464,7 @@ export default {
           </li>
         </ul>
 
-        <div
-          :class="[
-            $style['agree-list__all-contents'],
-            'row-margin-container-medium',
-          ]"
-        >
+        <div :class="[$style['agree-list'], 'row-margin-container-medium']">
           <ul :class="$style['agree-list__depth']">
             <li :class="$style['agree-list__depth-item']">
               <ul :class="$style['agree-list__list']">
@@ -501,35 +502,37 @@ export default {
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">계좌정보</h3>
 
-        <ul :class="$style['agree-list__depth']">
-          <li :class="$style['agree-list__depth-item']">
-            <ul :class="$style['agree-list__list']">
-              <li :class="$style['agree-list__item']">
-                <div :class="$style['agree-list__head']">
-                  <CheckBox
-                    id="PF_P07_p004_agree_003"
-                    :classNames="{
-                      wrap: $style['agree-list__checkbox'],
-                    }"
-                    theme="tertiary"
-                  >
-                    <CheckBoxObject />
-                    <CheckBoxLabelText
-                      >개인 증권계좌정보의 제공·활용 동의</CheckBoxLabelText
+        <div :class="$style['agree-list']">
+          <ul :class="$style['agree-list__depth']">
+            <li :class="$style['agree-list__depth-item']">
+              <ul :class="$style['agree-list__list']">
+                <li :class="$style['agree-list__item']">
+                  <div :class="$style['agree-list__head']">
+                    <CheckBox
+                      id="PF_P07_p004_agree_003"
+                      :classNames="{
+                        wrap: $style['agree-list__checkbox'],
+                      }"
+                      theme="tertiary"
                     >
-                  </CheckBox>
-                  <div :class="$style['agree-list__right']">
-                    <button type="button" :class="$style['agree-list__link']">
-                      <span :class="$style['agree-list__link-text']">
-                        상세보기
-                      </span>
-                    </button>
+                      <CheckBoxObject />
+                      <CheckBoxLabelText
+                        >개인 증권계좌정보의 제공·활용 동의</CheckBoxLabelText
+                      >
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <button type="button" :class="$style['agree-list__link']">
+                        <span :class="$style['agree-list__link-text']">
+                          상세보기
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
         <FormList class="row-margin-container-medium">
           <FormListItem
@@ -570,16 +573,19 @@ export default {
             target="#PF_P07_p004_partnership"
             :disabled="true"
           >
-            <InputBlock :error="state.partnershipError" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="제휴증권사"
-                  defaultValue="하나증권"
-                  :disabled="true"
-                  id="PF_P07_p004_partnership"
-                />
-              </InputBlockCell>
-            </InputBlock>
+            <FormInvalid :error="state.partnershipError">
+              <InputBlock :error="state.partnershipError" :disabled="true">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="제휴증권사"
+                    defaultValue="하나증권"
+                    :disabled="true"
+                    id="PF_P07_p004_partnership"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
           </FormListItem>
 
           <FormListItem titleText="계좌담보평가" :forceFocus="true">
@@ -635,13 +641,16 @@ export default {
               <InputBlock :error="state.possibleAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    align="right"
+                    :useDelete="false"
+                    type="number"
+                    pattern="\d*"
                     title="대출가능금액"
                     id="PF_P07_p004_possibleAmount"
-                    align="right"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-1 font-weight-medium">백만원</div>
+                  <div class="text-body-1">백만원</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

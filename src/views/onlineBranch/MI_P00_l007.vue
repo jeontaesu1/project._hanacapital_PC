@@ -64,6 +64,8 @@ export default {
           <KeyValueTitle>상품명</KeyValueTitle>
           <KeyValueText>스탁론 (L99999999999)</KeyValueText>
         </KeyValueItem>
+
+        <!-- Case : 즉시출금 -->
         <KeyValueItem>
           <KeyValueTitle>즉시출금일자</KeyValueTitle>
           <KeyValueText>2022.06.12</KeyValueText>
@@ -76,6 +78,25 @@ export default {
           <KeyValueTitle>즉시출금계좌</KeyValueTitle>
           <KeyValueText>하나은행 123-456-789012</KeyValueText>
         </KeyValueItem>
+        <!-- // Case : 즉시출금 -->
+
+        <!-- Case : 가상계좌 -->
+        <KeyValueItem>
+          <KeyValueTitle>입금예약일자</KeyValueTitle>
+          <KeyValueText>2022.06.12</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>입금예정금액</KeyValueTitle>
+          <KeyValueText>999,999,999 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>입금가상계좌</KeyValueTitle>
+          <KeyValueText>
+            하나은행 123-12345-1234 / 예금주 : 하나캐피탈㈜<br />
+            농협 123-345-123456 / 예금주 : 하나캐피탈㈜
+          </KeyValueText>
+        </KeyValueItem>
+        <!-- // Case : 가상계좌 -->
       </KeyValue>
 
       <template v-slot:foot>

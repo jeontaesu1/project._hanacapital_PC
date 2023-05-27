@@ -9,8 +9,6 @@ import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 
-import IconQR from '@/assets/images/icon/qr.svg?component';
-
 export default {
   components: {
     UiLayer,
@@ -19,7 +17,6 @@ export default {
     ModalPopup,
     ModalPopupHead,
     PopupSubTitle,
-    IconQR,
   },
   setup() {
     const layer = ref(null);
@@ -49,9 +46,13 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <div class="inline-wrap align-center">
-        <IconQR />
+      <div :class="$style['image-view']">
+        <img src="@/assets/images/contents/qr.png" alt="QR Code" />
       </div>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/PF_P01_l003.scss';
+</style>

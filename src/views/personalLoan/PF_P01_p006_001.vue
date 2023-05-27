@@ -37,7 +37,7 @@ export default {
 
     <BasicHr theme="tertiary" class="row-margin-block" />
 
-    <div class="row-margin-block row-margin-top-none">
+    <div>
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">금리인하권 요구 안내</h3>
 
@@ -132,15 +132,9 @@ export default {
       </section>
     </div>
 
-    <ButtonList
-      :wrap="true"
-      align="center"
-      :classNames="{
-        wrap: 'row-margin-none',
-      }"
-    >
+    <ButtonList :wrap="true" align="center">
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

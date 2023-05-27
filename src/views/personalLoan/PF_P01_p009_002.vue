@@ -8,6 +8,7 @@ import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 
@@ -21,6 +22,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BasicHr,
     IconCustomer,
   },
 };
@@ -28,36 +30,36 @@ export default {
 
 <template>
   <PageContents>
-    <IllustInfo>
-      <IllustObject type="error" />
-      <IllustInfoTitle>온라인약정이 완료되지 않았습니다</IllustInfoTitle>
-      <IllustInfoText>
-        고객님은 상담원과 통화 후 온라인약정이 가능합니다.
-      </IllustInfoText>
-    </IllustInfo>
+    <div class="row-margin-container-medium">
+      <IllustInfo>
+        <IllustObject type="error" />
+        <IllustInfoTitle>온라인약정이 완료되지 않았습니다</IllustInfoTitle>
+        <IllustInfoText>
+          고객님은 상담원과 통화 후 온라인약정이 가능합니다.
+        </IllustInfoText>
+      </IllustInfo>
 
-    <ButtonList :wrap="true" align="center">
-      <ButtonListItem>
-        <BasicButton>확인</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList :wrap="true" align="center">
+        <ButtonListItem>
+          <BasicButton>확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
-    <div :class="$style['bottom-info']">
-      <div :class="$style['icon-list']">
-        <ul :class="$style['icon-list__list']">
-          <li :class="$style['icon-list__item']">
-            <div :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-              <div :class="$style['icon-list__content']">
-                <div :class="$style['icon-list__title']">
-                  고객센터 1800-1110
-                </div>
-                <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
-              </div>
+    <BasicHr theme="tertiary" className="row-margin-container-medium" />
+
+    <div :class="$style['icon-list']">
+      <ul :class="$style['icon-list__list']">
+        <li :class="$style['icon-list__item']">
+          <div :class="$style['icon-list__block']">
+            <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+            <div :class="$style['icon-list__content']">
+              <div :class="$style['icon-list__title']">고객센터 1800-1110</div>
+              <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </PageContents>
 </template>

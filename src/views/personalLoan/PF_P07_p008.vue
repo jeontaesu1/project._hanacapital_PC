@@ -53,7 +53,7 @@ export default {
       <PageMainText align="left">상품설명서를 확인해 주세요</PageMainText>
     </PageHead>
 
-    <div :class="$style['agree-list__all-contents']">
+    <div :class="$style['agree-list']">
       <ul :class="$style['agree-list__depth']">
         <li :class="$style['agree-list__depth-item']">
           <ul :class="$style['agree-list__list']">
@@ -102,7 +102,7 @@ export default {
       </ul>
     </div>
 
-    <section class="row-margin-block-small">
+    <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-small">설명의무 대상 확인</h3>
 
       <div class="text-body-1 color-gray-secondary font-weight-light">
@@ -165,10 +165,10 @@ export default {
     </section>
 
     <!-- Case : '다음' 선택시 노출 -->
-    <section>
+    <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">약관동의</h3>
 
-      <div :class="$style['agree-list__all-contents']">
+      <div :class="$style['agree-list']">
         <ul :class="$style['agree-list__depth']">
           <li :class="$style['agree-list__depth-item']">
             <ul :class="$style['agree-list__list']">
@@ -325,11 +325,6 @@ export default {
               </li>
             </ul>
           </li>
-        </ul>
-      </div>
-
-      <div :class="$style['agree-list__all-contents']">
-        <ul :class="$style['agree-list__depth']">
           <li :class="$style['agree-list__depth-item']">
             <div :class="$style['agree-list__depth-head']">
               <CheckBox
@@ -563,11 +558,6 @@ export default {
               </ul>
             </div>
           </li>
-        </ul>
-      </div>
-
-      <div :class="$style['agree-list__all-contents']">
-        <ul :class="$style['agree-list__depth']">
           <li :class="$style['agree-list__depth-item']">
             <div :class="$style['agree-list__depth-head']">
               <CheckBox

@@ -76,11 +76,7 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <FormList
-      :classNames="{
-        wrap: 'row-margin-block-small row-margin-top-none',
-      }"
-    >
+    <FormList>
       <FormListItem titleText="이름" target="#PF_P07_p011_name">
         <FormInvalid :error="state.nameError">
           <InputBlock :error="state.nameError">
@@ -121,7 +117,7 @@ export default {
     </FormList>
 
     <!-- Case : '확인' 선택시 노출 -->
-    <section class="row-margin-bottom-none">
+    <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">약관동의</h3>
 
       <div :class="$style['agree-list']">

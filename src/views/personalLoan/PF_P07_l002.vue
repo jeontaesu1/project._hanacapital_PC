@@ -44,8 +44,6 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
       certificateError: false,
       passwordError: false,
     });
@@ -87,7 +85,7 @@ export default {
           target="#PF_P07_l002_name"
           :disabled="true"
         >
-          <InputBlock :error="state.nameError" :disabled="true">
+          <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="이름"
@@ -104,7 +102,7 @@ export default {
           target="#PF_P07_l002_idNumber"
           :disabled="true"
         >
-          <InputBlock :error="state.idNumberError" :disabled="true">
+          <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="주민등록번호"

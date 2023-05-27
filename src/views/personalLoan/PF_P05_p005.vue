@@ -64,7 +64,6 @@ export default {
 
   setup() {
     const state = reactive({
-      nameError: false,
       idNumberError: false,
       mailError: false,
       homeNumberError: false,
@@ -87,13 +86,8 @@ export default {
       ownerError: false,
     });
 
-    const dayInputEvent001 = (e = {}) => {
-      console.log(e.type, e.target);
-    };
-
     return {
       state,
-      dayInputEvent001,
     };
   },
 };
@@ -119,7 +113,7 @@ export default {
             :disabled="true"
             target="#PF_P05_p005_name"
           >
-            <InputBlock :disabled="true" :error="state.nameError">
+            <InputBlock :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -178,8 +172,7 @@ export default {
                         label: 'freechal.com',
                       },
                     ]"
-                    buttonTitle="이메일 도메인 선택하기"
-                    layerTitle="도메인을 선택해 주세요"
+                    title="이메일 도메인"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -216,56 +209,63 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="자택주소" target="#PF_P05_p005_address">
+          <FormListItem
+            titleText="자택주소"
+            target="#PF_P05_p005_addressSerachButton"
+          >
             <FormInvalid :error="state.addressError001">
               <InputBlock :error="state.addressError001">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="자택주소" id="PF_P05_p005_address" />
+                  <BasicInput
+                    title="자택주소 - 우편번호"
+                    defaultValue="12345"
+                    :disabled="true"
+                  />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary"
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P05_p005_addressSerachButton"
                     >주소검색</BasicButton
                   >
                 </template>
               </InputBlock>
+              <!-- Case: 주소 검색 및 입력 후 노출 -->
+              <InputBlock
+                :error="state.addressError001"
+                :disabled="true"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="자택주소 - 주소"
+                    defaultValue="인천광역시 서구 에코로 181"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <InputBlock
+                :error="state.addressError001"
+                :disabled="true"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="자택주소 - 상세주소"
+                    defaultValue="하나아파트 835동 4590호"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- // Case: 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-
-          <!-- Case: 주소 검색 및 입력 후 노출 -->
-          <InputBlock
-            :error="state.addressError002"
-            :disabled="true"
-            :classNames="{
-              wrap: 'row-margin-item-group row-margin-bottom-none',
-            }"
-          >
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                title="기타주소2 - 주소"
-                id="PF_P05_p005_address_001"
-                defaultValue="인천광역시 서구 에코로 181"
-                :disabled="true"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <InputBlock
-            :error="state.addressError002"
-            :disabled="true"
-            :classNames="{
-              wrap: 'row-margin-item-group row-margin-bottom-none',
-            }"
-          >
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                title="기타주소2 - 상세주소"
-                id="PF_P05_p005_address_002"
-                defaultValue="하나아파트 835동 4590호"
-                :disabled="true"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <!-- // Case: 주소 검색 및 입력 후 노출 -->
         </FormList>
       </section>
 
@@ -295,174 +295,159 @@ export default {
           </li>
         </ul>
 
-        <FormList :classNames="{ wrap: 'row-margin-item-medium' }">
-          <FormListItem :disabled="true" target="#PF_P05_p005_type">
-            <FormInvalid
-              :error="state.typeError"
-              :classNames="{ wrap: 'row-margin-contents' }"
+        <BoxCheckList :classNames="{ wrap: 'row-margin-container-medium' }">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="PF_P05_p005_checkBox001"
+              id="PF_P05_p005_checkBox001_001"
+              :defaultChecked="true"
             >
-              <BoxCheckList
-                :classNames="{ wrap: 'row-margin-container-medium' }"
-              >
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="PF_P05_p005_checkBox001"
-                    id="PF_P05_p005_checkBox001_001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>주민등록증</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="PF_P05_p005_checkBox001"
-                    id="PF_P05_p005_checkBox001_002"
-                  >
-                    <BoxCheckLabel>운전면허증</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
+              <BoxCheckLabel>주민등록증</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="PF_P05_p005_checkBox001"
+              id="PF_P05_p005_checkBox001_002"
+            >
+              <BoxCheckLabel>운전면허증</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
 
-              <!-- Case : '주민등록증' 선택 시  -->
-              <FormListItem
-                titleText="발급일자"
-                target="#PF_P05_p005_day_001_Button"
-              >
-                <FormInvalid :error="state.dayError001">
-                  <InputBlock :error="state.dayError001">
-                    <InputBlockCell :flexible="true">
-                      <BasicDatepicker
-                        title="발급일자"
-                        id="PF_P05_p005_day_001"
-                        buttonId="PF_P05_p005_day_001_Button"
-                        :onChange="dayInputEvent001"
-                      />
-                    </InputBlockCell>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-              <!-- // Case : '주민등록증' 선택 시  -->
-
-              <!-- Case : '운전면허증' 선택 시  -->
-              <FormListItem
-                titleText="면허발급번호"
-                target="#PF_P05_p005_license"
-              >
-                <FormInvalid :error="state.licenseError">
-                  <InputBlock :error="state.licenseError">
-                    <InputBlockCell>
-                      <BasicSelect
-                        :options="[
-                          {
-                            value: '1',
-                            label: '서울 (11)',
-                          },
-                          {
-                            value: '2',
-                            label: '부산 (12)',
-                          },
-                          {
-                            value: '3',
-                            label: '경기 (13)',
-                          },
-                          {
-                            value: '4',
-                            label: '강원 (14)',
-                          },
-                          {
-                            value: '5',
-                            label: '충북 (15)',
-                          },
-                          {
-                            value: '6',
-                            label: '충남 (16)',
-                          },
-                          {
-                            value: '7',
-                            label: '전북 (17)',
-                          },
-                          {
-                            value: '8',
-                            label: '경남 (18)',
-                          },
-                          {
-                            value: '9',
-                            label: '제주 (19)',
-                          },
-                          {
-                            value: '10',
-                            label: '대구 (20)',
-                          },
-                          {
-                            value: '11',
-                            label: '인천 (21)',
-                          },
-                          {
-                            value: '12',
-                            label: '광주 (22)',
-                          },
-                          {
-                            value: '13',
-                            label: '대전 (23)',
-                          },
-                          {
-                            value: '14',
-                            label: '울산 (24)',
-                          },
-                        ]"
-                        buttonTitle="지역번호 선택하기"
-                        layerTitle="면허발급번호를 선택해 주세요"
-                        buttonId="PF_P05_p005_license"
-                        :classNames="{
-                          wrap: 'input-width-driving-license',
-                        }"
-                        defaultValue="1"
-                      />
-                    </InputBlockCell>
-                    <InputBlockCell :flexible="true" margin="regular">
-                      <BasicInput
-                        type="number"
-                        pattern="\d*"
-                        title="면허발급번호 앞 2자리"
-                        :useDelete="false"
-                        defaultValue="12"
-                      />
-                    </InputBlockCell>
-                    <InputBlockCell type="sub">-</InputBlockCell>
-                    <InputBlockCell
-                      :classNames="{
-                        cell: 'flex-2',
-                      }"
-                      margin="regular"
-                    >
-                      <BasicInput
-                        type="number"
-                        pattern="\d*"
-                        title="면허발급번호 두번째 6자리"
-                        :useDelete="false"
-                        defaultValue="123456"
-                      />
-                    </InputBlockCell>
-                    <InputBlockCell type="sub">-</InputBlockCell>
-                    <InputBlockCell :flexible="true" margin="regular">
-                      <BasicInput
-                        type="number"
-                        pattern="\d*"
-                        title="면허발급번호 뒤 2자리"
-                        :useDelete="false"
-                        defaultValue="12"
-                      />
-                    </InputBlockCell>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-              <!-- // Case : '운전면허증' 선택 시  -->
+        <FormList>
+          <!-- Case : '주민등록증' 선택 시  -->
+          <FormListItem
+            titleText="발급일자"
+            target="#PF_P05_p005_day_001_Button"
+          >
+            <FormInvalid :error="state.dayError001">
+              <InputBlock :error="state.dayError001">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="발급일자"
+                    id="PF_P05_p005_day_001"
+                    buttonId="PF_P05_p005_day_001_Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : '주민등록증' 선택 시  -->
+
+          <!-- Case : '운전면허증' 선택 시  -->
+          <FormListItem
+            titleText="면허발급번호"
+            target="#PF_P05_p005_license001"
+          >
+            <FormInvalid :error="state.licenseError">
+              <InputBlock :error="state.licenseError">
+                <InputBlockCell>
+                  <BasicSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '서울 (11)',
+                      },
+                      {
+                        value: '2',
+                        label: '부산 (12)',
+                      },
+                      {
+                        value: '3',
+                        label: '경기 (13)',
+                      },
+                      {
+                        value: '4',
+                        label: '강원 (14)',
+                      },
+                      {
+                        value: '5',
+                        label: '충북 (15)',
+                      },
+                      {
+                        value: '6',
+                        label: '충남 (16)',
+                      },
+                      {
+                        value: '7',
+                        label: '전북 (17)',
+                      },
+                      {
+                        value: '8',
+                        label: '경남 (18)',
+                      },
+                      {
+                        value: '9',
+                        label: '제주 (19)',
+                      },
+                      {
+                        value: '10',
+                        label: '대구 (20)',
+                      },
+                      {
+                        value: '11',
+                        label: '인천 (21)',
+                      },
+                      {
+                        value: '12',
+                        label: '광주 (22)',
+                      },
+                      {
+                        value: '13',
+                        label: '대전 (23)',
+                      },
+                      {
+                        value: '14',
+                        label: '울산 (24)',
+                      },
+                    ]"
+                    title="면허발급번호 지역번호 선택하기"
+                    inputId="PF_P05_p005_license001"
+                    :classNames="{
+                      wrap: 'input-width-driving-license',
+                    }"
+                  />
+                </InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="면허발급번호 앞 2자리"
+                    :useDelete="false"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell
+                  :classNames="{
+                    cell: 'flex-2',
+                  }"
+                  margin="regular"
+                >
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="면허발급번호 두번째 6자리"
+                    :useDelete="false"
+                  />
+                </InputBlockCell>
+                <InputBlockCell type="sub">-</InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="면허발급번호 뒤 2자리"
+                    :useDelete="false"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '운전면허증' 선택 시  -->
         </FormList>
 
         <ButtonList>
@@ -551,8 +536,7 @@ export default {
                         label: '21일',
                       },
                     ]"
-                    buttonTitle="결제일 선택하기"
-                    layerTitle="결제일을 선택해 주세요"
+                    title="결제일"
                     inputId="PF_P05_p005_date"
                   />
                 </InputBlockCell>
@@ -596,8 +580,7 @@ export default {
                         label: '우편(지속)',
                       },
                     ]"
-                    buttonTitle="청구방법 선택하기"
-                    layerTitle="청구방법을 선택해 주세요"
+                    title="청구방법"
                     inputId="PF_P05_p005_Method"
                   />
                 </InputBlockCell>
@@ -622,8 +605,7 @@ export default {
                           '22742 인천 서구 에코로 181 하나금융그룹통합데이터센터',
                       },
                     ]"
-                    buttonTitle="청구지를 선택하기"
-                    layerTitle="청구지를 선택해 주세요"
+                    title="청구지"
                     inputId="PF_P05_p005_addressMethod"
                   />
                 </InputBlockCell>
@@ -771,8 +753,7 @@ export default {
                         label: '120개월',
                       },
                     ]"
-                    buttonTitle="대출기간 선택하기"
-                    layerTitle="대출기간을 선택해 주세요"
+                    title="대출기간"
                     inputId="PF_P05_p005_period"
                   />
                 </InputBlockCell>
@@ -878,8 +859,7 @@ export default {
                         label: '무응답',
                       },
                     ]"
-                    buttonTitle="주거형태를 선택하기"
-                    layerTitle="주거형태를 선택하세요"
+                    title="주거형태"
                     inputId="PF_P05_p005_residenceType"
                   />
                 </InputBlockCell>
@@ -911,8 +891,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="주택소유구분을 선택하기"
-                    layerTitle="주택소유구분을 선택하세요"
+                    title="주택소유구분"
                     inputId="PF_P05_p005_additionalType"
                   />
                 </InputBlockCell>
@@ -944,8 +923,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="상품인지경로를 선택하기"
-                    layerTitle="상품인지경로를 선택하세요"
+                    title="상품인지경로"
                     inputId="PF_P05_p005_route"
                   />
                 </InputBlockCell>
@@ -1001,8 +979,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="대출목적선택하기"
-                    layerTitle="대출목적을 선택해 주세요"
+                    title="대출목적선택하기"
                     inputId="PF_P05_p005_object"
                   />
                 </InputBlockCell>
@@ -1046,8 +1023,7 @@ export default {
                         label: '본인',
                       },
                     ]"
-                    buttonTitle="실제소유자를 선택하기"
-                    layerTitle="실제소유자를 선택하세요"
+                    title="실제소유자 확인"
                     inputId="PF_P05_p005_owner"
                   />
                 </InputBlockCell>

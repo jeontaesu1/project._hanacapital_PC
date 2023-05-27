@@ -44,56 +44,54 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
-        <ul
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--regular-margin'],
+        ]"
+      >
+        <li
           :class="[
-            $style['basic-list'],
-            $style['basic-list--regular'],
-            $style['basic-list--regular-margin'],
+            $style['basic-list__item'],
+            'text-body-1',
+            'color-black',
+            'font-weight-regular',
           ]"
         >
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-1',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              실제 사업영위, 담보주택 소유권 이전등기일로부터 3개월 경과부터
-              신청 가능합니다.
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-1',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              주택임대사업자, 주택매매사업자는 취급 불가합니다.
-            </div>
-          </li>
-          <li
-            :class="[
-              $style['basic-list__item'],
-              'text-body-1',
-              'color-black',
-              'font-weight-regular',
-            ]"
-          >
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              서울, 인천, 경기 지역만 신청 가능합니다.
-            </div>
-          </li>
-        </ul>
-      </section>
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            실제 사업영위, 담보주택 소유권 이전등기일로부터 3개월 경과부터 신청
+            가능합니다.
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'text-body-1',
+            'color-black',
+            'font-weight-regular',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            주택임대사업자, 주택매매사업자는 취급 불가합니다.
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'text-body-1',
+            'color-black',
+            'font-weight-regular',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            서울, 인천, 경기 지역만 신청 가능합니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

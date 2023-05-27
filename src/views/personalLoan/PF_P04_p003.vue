@@ -301,11 +301,12 @@ export default {
                 <InputBlock :error="state.annualIncomeError">
                   <InputBlockCell :flexible="true">
                     <BasicInput
+                      align="right"
+                      :useDelete="false"
+                      type="number"
                       pattern="\d*"
                       title="연소득"
                       id="PF_P04_p003_annualIncome"
-                      :useDelete="false"
-                      align="right"
                     />
                   </InputBlockCell>
                   <template v-slot:innerRight>

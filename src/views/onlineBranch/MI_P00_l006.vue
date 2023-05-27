@@ -42,11 +42,8 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
-      bankNumberError: false,
-      businessNumberError: false,
       bankError: false,
+      bankNumberError: false,
     });
 
     const layer = ref(null);
@@ -82,7 +79,7 @@ export default {
           :disabled="true"
           target="#MI_P00_l006_name"
         >
-          <InputBlock :disabled="true" :error="state.nameError">
+          <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="예금주"
@@ -94,12 +91,13 @@ export default {
           </InputBlock>
         </FormListItem>
 
+        <!-- Case : 개인 -->
         <FormListItem
           titleText="생년월일"
           :disabled="true"
           target="#MI_P00_l006_idNumber"
         >
-          <InputBlock :disabled="true" :error="state.idNumberError">
+          <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="생년월일"
@@ -110,6 +108,7 @@ export default {
             </InputBlockCell>
           </InputBlock>
         </FormListItem>
+        <!-- // Case : 개인 -->
 
         <!-- Case : 법인 -->
         <FormListItem
@@ -117,7 +116,7 @@ export default {
           :disabled="true"
           target="#MI_P00_l006_businessNumberNumber"
         >
-          <InputBlock :disabled="true" :error="state.businessNumberError">
+          <InputBlock :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="사업자등록번호"

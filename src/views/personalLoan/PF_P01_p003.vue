@@ -8,6 +8,9 @@ import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -18,14 +21,11 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
-import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
@@ -43,19 +43,19 @@ export default {
     CheckBoxLabelText,
     FormList,
     FormListItem,
+    FormHelpText,
+    FormInvalid,
+    FormInvalidMessage,
     InputBlock,
     InputBlockCell,
     BasicInput,
     SecurityInput,
     SecurityKeypadButton,
-    FormInvalid,
     BoxCheckList,
     BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
-    FormInvalidMessage,
     BasicButton,
-    FormHelpText,
     ButtonList,
     ButtonListItem,
     BasicDatepicker,
@@ -63,8 +63,6 @@ export default {
 
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
       typeError: false,
       workplaceNameError001: false,
       workplaceNameError002: false,
@@ -74,18 +72,8 @@ export default {
       businessNumberError: false,
     });
 
-    const dayInputEvent001 = (e = {}) => {
-      console.log(e.type, e.target);
-    };
-
-    const dayInputEvent002 = (e = {}) => {
-      console.log(e.type, e.target);
-    };
-
     return {
       state,
-      dayInputEvent001,
-      dayInputEvent002,
     };
   },
 };
@@ -106,7 +94,7 @@ export default {
     </PageHead>
 
     <div>
-      <section class="row-margin-block-small">
+      <div class="row-margin-block-small">
         <ul
           :class="[
             $style['basic-list'],
@@ -135,14 +123,14 @@ export default {
             </div>
           </li>
         </ul>
-      </section>
+      </div>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">
+        <h3 class="text-title-1 row-margin-contents">
           건강보험공단/국민연금공단 정보 이용 동의
         </h3>
 
-        <div :class="$style['agree-list__all-contents']">
+        <div :class="$style['agree-list']">
           <ul :class="$style['agree-list__depth']">
             <li :class="$style['agree-list__depth-item']">
               <ul :class="$style['agree-list__list']">
@@ -176,18 +164,20 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">고객정보</h3>
-        <div class="text-body-1 color-gray-secondary font-weight-light">
-          실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
+        <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">고객정보</h3>
+          <div class="text-body-1 color-gray-secondary font-weight-light">
+            실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
+          </div>
         </div>
 
-        <FormList class="row-margin-contents">
+        <FormList>
           <FormListItem
             titleText="이름"
             :disabled="true"
             target="#PF_P01_p003_name"
           >
-            <InputBlock :disabled="true" :error="state.nameError">
+            <InputBlock :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -204,7 +194,7 @@ export default {
             target="#PF_P01_p003_id"
             :disabled="true"
           >
-            <InputBlock :error="state.idNumberError">
+            <InputBlock>
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
@@ -233,170 +223,160 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">소득구분</h3>
+        <h3 class="text-title-1 row-margin-contents">소득구분</h3>
 
-        <FormList>
-          <FormListItem :disabled="true" target="#PF_P01_p003_type">
-            <FormInvalid
-              :error="state.typeError"
-              :classNames="{ wrap: 'row-margin-contents' }"
+        <BoxCheckList>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="PF_P01_p003_checkBox001"
+              id="PF_P01_p003_checkBox001_001"
+              :defaultChecked="true"
             >
-              <BoxCheckList
-                :classNames="{ wrap: 'row-margin-container-medium' }"
-              >
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="PF_P01_p003_checkBox001"
-                    id="PF_P01_p003_checkBox001_001"
-                    :defaultChecked="true"
+              <BoxCheckLabel>급여소득자</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="PF_P01_p003_checkBox001"
+              id="PF_P01_p003_checkBox001_002"
+            >
+              <BoxCheckLabel>자영업자</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="PF_P01_p003_checkBox001"
+              id="PF_P01_p003_checkBox001_003"
+            >
+              <BoxCheckLabel>기타</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+
+        <FormList :classNames="{ wrap: 'row-margin-container-medium' }">
+          <!-- Case : '급여소득자' 선택 시  -->
+          <FormListItem
+            titleText="직장명"
+            target="#PF_P01_p003_workplaceName001Button"
+          >
+            <FormInvalid :error="state.workplaceNameError001">
+              <InputBlock :error="state.workplaceNameError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="직장명" :disabled="true" />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P01_p003_workplaceName001Button"
                   >
-                    <BoxCheckLabel>급여소득자</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="PF_P01_p003_checkBox001"
-                    id="PF_P01_p003_checkBox001_002"
-                  >
-                    <BoxCheckLabel>자영업자</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    :minSide="true"
-                    name="PF_P01_p003_checkBox001"
-                    id="PF_P01_p003_checkBox001_003"
-                  >
-                    <BoxCheckLabel>기타</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-
-              <!-- Case : '급여소득자' 선택 시  -->
-              <FormListItem
-                titleText="직장명"
-                target="#PF_P01_p003_workplaceName001"
-              >
-                <FormInvalid :error="state.workplaceNameError001">
-                  <InputBlock :error="state.workplaceNameError001">
-                    <InputBlockCell :flexible="true">
-                      <BasicInput
-                        title="직장명"
-                        id="PF_P01_p003_workplaceName001"
-                      />
-                    </InputBlockCell>
-                    <template v-slot:right>
-                      <BasicButton size="small" theme="tertiary">
-                        직장 검색
-                      </BasicButton>
-                    </template>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-
-              <FormListItem
-                titleText="입사일"
-                target="#PF_P01_p003_day_001_Button"
-              >
-                <FormInvalid :error="state.dayError001">
-                  <InputBlock :error="state.dayError001">
-                    <InputBlockCell :flexible="true">
-                      <BasicDatepicker
-                        title="입사일"
-                        id="PF_P01_p003_day_001"
-                        buttonId="PF_P01_p003_day_001_Button"
-                        :onChange="dayInputEvent001"
-                      />
-                    </InputBlockCell>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-
-              <FormListItem titleText="연소득" target="#PF_P01_p003_income">
-                <FormInvalid :error="state.incomeError">
-                  <InputBlock :error="state.incomeError">
-                    <InputBlockCell :flexible="true">
-                      <BasicInput
-                        title="연소득"
-                        id="PF_P01_p003_income"
-                        align="right"
-                      />
-                    </InputBlockCell>
-                    <template v-slot:innerRight>
-                      <div class="text-body-1 font-weight-medium">만원</div>
-                    </template>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-              <!-- // Case : '급여소득자' 선택 시  -->
-
-              <!-- Case : '자영업자' 선택 시  -->
-              <FormListItem
-                titleText="상호명"
-                target="#PF_P01_p003_WorkplaceName001"
-              >
-                <FormInvalid :error="state.workplaceNameError002">
-                  <InputBlock :error="state.workplaceNameError002">
-                    <InputBlockCell :flexible="true">
-                      <BasicInput
-                        title="상호명"
-                        id="PF_P01_p003_WorkplaceName001"
-                      />
-                    </InputBlockCell>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-
-              <FormListItem
-                titleText="사업자번호"
-                target="#PF_P01_p003_businessNumber"
-              >
-                <FormInvalid :error="state.businessNumberError">
-                  <InputBlock :error="state.businessNumberError">
-                    <InputBlockCell :flexible="true">
-                      <BasicInput
-                        title="사업자번호"
-                        id="PF_P01_p003_businessNumber"
-                      />
-                    </InputBlockCell>
-                    <template v-slot:right>
-                      <BasicButton size="small" theme="quaternary">
-                        확인
-                      </BasicButton>
-                    </template>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                  <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
-                </FormInvalid>
-              </FormListItem>
-
-              <FormListItem
-                titleText="사업개시일"
-                target="#PF_P01_p003_day_002_Button"
-              >
-                <FormInvalid :error="state.dayError002">
-                  <InputBlock :error="state.dayError002">
-                    <InputBlockCell :flexible="true">
-                      <BasicDatepicker
-                        title="사업개시일"
-                        id="PF_P01_p003_day_002"
-                        buttonId="PF_P01_p003_day_002_Button"
-                        :onChange="dayInputEvent002"
-                      />
-                    </InputBlockCell>
-                  </InputBlock>
-                  <FormInvalidMessage>Error Message</FormInvalidMessage>
-                </FormInvalid>
-              </FormListItem>
-              <!-- // Case : '자영업자' 선택 시  -->
+                    직장 검색
+                  </BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+
+          <FormListItem titleText="입사일" target="#PF_P01_p003_day_001_Button">
+            <FormInvalid :error="state.dayError001">
+              <InputBlock :error="state.dayError001">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="입사일"
+                    id="PF_P01_p003_day_001"
+                    buttonId="PF_P01_p003_day_001_Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="연소득" target="#PF_P01_p003_income">
+            <FormInvalid :error="state.incomeError">
+              <InputBlock :error="state.incomeError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    align="right"
+                    :useDelete="false"
+                    type="number"
+                    pattern="\d*"
+                    title="연소득"
+                    id="PF_P01_p003_income"
+                  />
+                </InputBlockCell>
+                <template v-slot:innerRight>
+                  <div class="text-body-1">만원</div>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '급여소득자' 선택 시  -->
+
+          <!-- Case : '자영업자' 선택 시  -->
+          <FormListItem
+            titleText="상호명"
+            target="#PF_P01_p003_WorkplaceName001"
+          >
+            <FormInvalid :error="state.workplaceNameError002">
+              <InputBlock :error="state.workplaceNameError002">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="상호명"
+                    id="PF_P01_p003_WorkplaceName001"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="사업자번호"
+            target="#PF_P01_p003_businessNumber"
+          >
+            <FormInvalid :error="state.businessNumberError">
+              <InputBlock :error="state.businessNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="사업자번호"
+                    id="PF_P01_p003_businessNumber"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="small" theme="quaternary">
+                    확인
+                  </BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="사업개시일"
+            target="#PF_P01_p003_day_002_Button"
+          >
+            <FormInvalid :error="state.dayError002">
+              <InputBlock :error="state.dayError002">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="사업개시일"
+                    id="PF_P01_p003_day_002"
+                    buttonId="PF_P01_p003_day_002_Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : '자영업자' 선택 시  -->
         </FormList>
       </section>
     </div>

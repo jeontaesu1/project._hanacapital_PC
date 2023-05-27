@@ -55,7 +55,6 @@ export default {
 
   setup() {
     const state = reactive({
-      nameError: false,
       idNumberError: false,
       mailError: false,
       homeNumberError: false,
@@ -105,7 +104,7 @@ export default {
             :disabled="true"
             target="#PF_P02_p005_name"
           >
-            <InputBlock :disabled="true" :error="state.nameError">
+            <InputBlock :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   title="이름"
@@ -164,8 +163,7 @@ export default {
                         label: 'freechal.com',
                       },
                     ]"
-                    buttonTitle="이메일 도메인 선택하기"
-                    layerTitle="도메인을 선택해 주세요"
+                    title="이메일 도메인"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -202,56 +200,63 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="자택주소" target="#PF_P02_p005_address">
+          <FormListItem
+            titleText="자택주소"
+            target="#PF_P02_p005_addressSerachButton"
+          >
             <FormInvalid :error="state.addressError001">
               <InputBlock :error="state.addressError001">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="자택주소" id="PF_P02_p005_address" />
+                  <BasicInput
+                    title="자택주소 - 우편번호"
+                    defaultValue="12345"
+                    :disabled="true"
+                  />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary"
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P02_p005_addressSerachButton"
                     >주소검색</BasicButton
                   >
                 </template>
               </InputBlock>
+              <!-- Case: 주소 검색 및 입력 후 노출 -->
+              <InputBlock
+                :error="state.addressError001"
+                :disabled="true"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="자택주소 - 주소"
+                    defaultValue="인천광역시 서구 에코로 181"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <InputBlock
+                :error="state.addressError001"
+                :disabled="true"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="자택주소 - 상세주소"
+                    defaultValue="하나아파트 835동 4590호"
+                    :disabled="true"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- // Case: 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-
-          <!-- Case: 주소 검색 및 입력 후 노출 -->
-          <InputBlock
-            :error="state.addressError002"
-            :disabled="true"
-            :classNames="{
-              wrap: 'row-margin-item-group row-margin-bottom-none',
-            }"
-          >
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                title="기타주소2 - 주소"
-                id="PF_P02_p005_address_001"
-                defaultValue="인천광역시 서구 에코로 181"
-                :disabled="true"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <InputBlock
-            :error="state.addressError002"
-            :disabled="true"
-            :classNames="{
-              wrap: 'row-margin-item-group row-margin-bottom-none',
-            }"
-          >
-            <InputBlockCell :flexible="true">
-              <BasicInput
-                title="기타주소2 - 상세주소"
-                id="PF_P02_p005_address_002"
-                defaultValue="하나아파트 835동 4590호"
-                :disabled="true"
-              />
-            </InputBlockCell>
-          </InputBlock>
-          <!-- // Case: 주소 검색 및 입력 후 노출 -->
         </FormList>
       </section>
 
@@ -334,8 +339,7 @@ export default {
                         label: '21일',
                       },
                     ]"
-                    buttonTitle="결제일 선택하기"
-                    layerTitle="결제일을 선택해 주세요"
+                    title="결제일"
                     inputId="PF_P02_p005_date"
                   />
                 </InputBlockCell>
@@ -379,8 +383,7 @@ export default {
                         label: '우편(지속)',
                       },
                     ]"
-                    buttonTitle="청구방법 선택하기"
-                    layerTitle="청구방법을 선택해 주세요"
+                    title="청구방법"
                     inputId="PF_P02_p005_Method"
                   />
                 </InputBlockCell>
@@ -405,8 +408,7 @@ export default {
                           '22742 인천 서구 에코로 181 하나금융그룹통합데이터센터',
                       },
                     ]"
-                    buttonTitle="청구지를 선택하기"
-                    layerTitle="청구지를 선택해 주세요"
+                    title="청구지"
                     inputId="PF_P02_p005_addressMethod"
                   />
                 </InputBlockCell>
@@ -554,8 +556,7 @@ export default {
                         label: '120개월',
                       },
                     ]"
-                    buttonTitle="대출기간 선택하기"
-                    layerTitle="대출기간을 선택해 주세요"
+                    title="대출기간"
                     inputId="PF_P02_p005_period"
                   />
                 </InputBlockCell>
@@ -661,8 +662,7 @@ export default {
                         label: '무응답',
                       },
                     ]"
-                    buttonTitle="주거형태를 선택하기"
-                    layerTitle="주거형태를 선택하세요"
+                    title="주거형태"
                     inputId="PF_P02_p005_residenceType"
                   />
                 </InputBlockCell>
@@ -694,8 +694,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="주택소유구분을 선택하기"
-                    layerTitle="주택소유구분을 선택하세요"
+                    title="주택소유구분"
                     inputId="PF_P02_p005_additionalType"
                   />
                 </InputBlockCell>
@@ -727,8 +726,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="상품인지경로를 선택하기"
-                    layerTitle="상품인지경로를 선택하세요"
+                    title="상품인지경로"
                     inputId="PF_P02_p005_route"
                   />
                 </InputBlockCell>
@@ -784,8 +782,7 @@ export default {
                         label: '기타',
                       },
                     ]"
-                    buttonTitle="대출목적선택하기"
-                    layerTitle="대출목적을 선택해 주세요"
+                    title="대출목적선택하기"
                     inputId="PF_P02_p005_object"
                   />
                 </InputBlockCell>
@@ -829,8 +826,7 @@ export default {
                         label: '본인',
                       },
                     ]"
-                    buttonTitle="실제소유자를 선택하기"
-                    layerTitle="실제소유자를 선택하세요"
+                    title="실제소유자 확인"
                     inputId="PF_P02_p005_owner"
                   />
                 </InputBlockCell>
