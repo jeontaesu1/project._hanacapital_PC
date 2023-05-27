@@ -65,7 +65,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
+      <div>
         <KeyValue margin="regular">
           <KeyValueItem>
             <KeyValueTitle>계약상품명</KeyValueTitle>
@@ -81,12 +81,12 @@ export default {
           </KeyValueItem>
         </KeyValue>
 
-        <div class="row-margin-item-group">
-          <div
+        <section class="row-margin-item-group">
+          <h3
             class="text-body-1 font-weight-regular color-gray row-margin-item-group"
           >
             입금가상계좌
-          </div>
+          </h3>
           <BasicBox theme="tertiary">
             <KeyValue align="left">
               <KeyValueItem>
@@ -146,7 +146,7 @@ export default {
               </KeyValueItem>
             </KeyValue>
           </BasicBox>
-        </div>
+        </section>
 
         <KeyValue>
           <KeyValueItem>
@@ -159,7 +159,7 @@ export default {
           >가상계좌 입금 후 반드시 고객센터(1800-1110)로
           연락바랍니다.</NoticeText
         >
-      </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

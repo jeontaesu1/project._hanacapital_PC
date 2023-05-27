@@ -20,6 +20,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -46,6 +47,7 @@ export default {
     FormList,
     FormListItem,
     FormInvalid,
+    FormInvalidMessage,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -130,7 +132,7 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicHr theme="quaternary" className="row-margin-contents"></BasicHr>
+          <BasicHr theme="quaternary" className="row-margin-contents" />
 
           <KeyValue :wrap="true">
             <KeyValueItem>
@@ -208,6 +210,7 @@ export default {
                     </BoxCheck>
                   </BoxCheckListItem>
                 </BoxCheckList>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
               </FormInvalid>
             </FormListItem>
           </FormList>
@@ -253,12 +256,12 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <div class="row-margin-item-group">
-              <div
+            <section class="row-margin-item-group">
+              <h5
                 class="text-body-1 font-weight-regular color-gray row-margin-item-group"
               >
                 입금가상계좌
-              </div>
+              </h5>
               <BasicBox theme="tertiary">
                 <KeyValue align="left" :wrap="true">
                   <KeyValueItem>
@@ -328,7 +331,7 @@ export default {
                   </KeyValueItem>
                 </KeyValue>
               </BasicBox>
-            </div>
+            </section>
           </BasicBox>
         </section>
       </section>
@@ -439,9 +442,7 @@ export default {
         </BasicBox>
       </section>
 
-      <section class="row-margin-block">
-        <div>// [공통 > 본인인증] 내용 노출</div>
-      </section>
+      <div class="row-margin-block">// [공통 > 본인인증] 내용 노출</div>
 
       <ButtonList align="full">
         <ButtonListItem>

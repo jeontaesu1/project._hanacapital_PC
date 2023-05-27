@@ -113,11 +113,7 @@ export default {
     </PageHead>
 
     <div>
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-block-small row-margin-top-none',
-        }"
-      >
+      <FormList>
         <FormListItem
           titleText="이름"
           target="#PF_P04_p003_name"
@@ -180,6 +176,7 @@ export default {
             <BoxCheck
               name="PF_P04_p003_incomeCheck"
               id="PF_P04_p003_incomeCheck001"
+              :defaultChecked="true"
             >
               <BoxCheckLabel>급여소득자</BoxCheckLabel>
             </BoxCheck>
@@ -342,11 +339,8 @@ export default {
         </FormList>
 
         <UiAccordion :classNames="{ wrap: 'row-margin-contents' }">
-          <UiAccordionItem
-            :classNames="{ item: 'row-margin-item-group' }"
-            :initialOpen="true"
-          >
-            <BasicBox :class="$style['application']">
+          <UiAccordionItem :initialOpen="true">
+            <BasicBox :className="$style['application']">
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
                   <h3 class="text-body-1 font-weight-medium">

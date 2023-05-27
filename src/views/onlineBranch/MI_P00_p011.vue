@@ -14,6 +14,8 @@ import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -54,6 +56,8 @@ export default {
     BasicBoxHeadRight,
     RoundStatus,
     BasicButton,
+    ButtonList,
+    ButtonListItem,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -118,7 +122,7 @@ export default {
       <PageMainText align="left">중도상환신청을 진행해 주세요</PageMainText>
     </PageHead>
 
-    <section>
+    <div>
       <!-- Case : 스탁론일 때 -->
       <BasicBox>
         <BasicBoxHead>
@@ -138,11 +142,7 @@ export default {
             </div>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <RoundStatus
-              theme="secondary"
-              size="large"
-              :classNames="{ wrap: 'display-block' }"
-            >
+            <RoundStatus theme="secondary" size="large" :block="true">
               정상
             </RoundStatus>
           </BasicBoxHeadRight>
@@ -185,11 +185,7 @@ export default {
             </div>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
-            <RoundStatus
-              theme="secondary"
-              size="large"
-              :classNames="{ wrap: 'display-block' }"
-            >
+            <RoundStatus theme="secondary" size="large" :block="true">
               정상
             </RoundStatus>
           </BasicBoxHeadRight>
@@ -250,6 +246,7 @@ export default {
                 <BoxCheck
                   name="MI_P00_p011_repaymentMethod"
                   id="MI_P00_p011_repaymentMethod001"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>일부상환</BoxCheckLabel>
                 </BoxCheck>
@@ -263,6 +260,7 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
@@ -274,6 +272,7 @@ export default {
                 <BoxCheck
                   name="MI_P00_p011_repaymentStandard001"
                   id="MI_P00_p011_repaymentStandard001_001"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>원금기준</BoxCheckLabel>
                 </BoxCheck>
@@ -287,6 +286,7 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
         <!-- //Case : 디폴트, 일부상환 선택 시 -->
@@ -299,11 +299,13 @@ export default {
                 <BoxCheck
                   name="MI_P00_p011_repaymentStandard002"
                   id="MI_P00_p011_repaymentStandard002_001"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>원금기준</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
         <!-- //Case : 전체상환 선택 시 -->
@@ -373,11 +375,13 @@ export default {
                 <BoxCheck
                   name="MI_P00_p011_paymentMethodError001"
                   id="MI_P00_p011_paymentMethodError001_001"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>오늘 즉시 출금 (2023.01.01)</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
           <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }"
             >오늘 즉시 출금은 하나은행 계좌만 가능합니다.</NoticeText
@@ -393,6 +397,7 @@ export default {
                 <BoxCheck
                   name="MI_P00_p011_paymentMethodError002"
                   id="MI_P00_p011_paymentMethodError002_001"
+                  :defaultChecked="true"
                 >
                   <BoxCheckLabel>오늘 즉시 출금 (2023.01.01)</BoxCheckLabel>
                 </BoxCheck>
@@ -406,6 +411,7 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
@@ -558,10 +564,12 @@ export default {
       <!--// Case : 가상계좌 입금 선택시 -->
       <!-- //Case : 스탁론 외 일 때 노출 -->
 
-      <BasicButton :line="true" size="regular" class="row-margin-block">
-        중도상환금액 조회하기
-      </BasicButton>
-    </section>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton :line="true">중도상환금액 조회하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
     <BasicHr theme="quaternary" className="row-margin-block"></BasicHr>
 
@@ -626,9 +634,11 @@ export default {
         </NoticeText>
       </div>
 
-      <BasicButton size="regular" class="row-margin-block">
-        중도상환 신청하기
-      </BasicButton>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>중도상환 신청하기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
     </section>
 
     <IF_P03_l002 ref="layer001" />

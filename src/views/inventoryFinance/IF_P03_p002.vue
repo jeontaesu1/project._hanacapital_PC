@@ -146,7 +146,7 @@ export default {
       </KeyValue>
     </BasicBox>
 
-    <section class="row-margin-block-small">
+    <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">중도상환 조건 입력</h3>
       <BoxCheckList :wrap="true" :col="3">
         <BoxCheckListItem>
@@ -172,318 +172,324 @@ export default {
 
       <div class="row-margin-contents">
         <!-- Case : 오늘 즉시 출금 선택시 -->
-        <FormList>
-          <FormListItem
-            titleText="즉시 출금 계좌"
-            target="#IF_P03_p002_account001"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.accountError001">
-              <InputBlock :error="state.accountError001">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '농협은행 52438123435',
-                      },
-                      {
-                        value: '2',
-                        label: '신한 123-456-789012',
-                      },
-                      {
-                        value: '3',
-                        label: '우리 123-456-789012',
-                      },
-                    ]"
-                    title="즉시 출금 계좌"
-                    inputId="IF_P03_p002_account001"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+        <div>
+          <FormList>
+            <FormListItem
+              titleText="즉시 출금 계좌"
+              target="#IF_P03_p002_account001"
+              :selectOnly="true"
+            >
+              <FormInvalid :error="state.accountError001">
+                <InputBlock :error="state.accountError001">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '농협은행 52438123435',
+                        },
+                        {
+                          value: '2',
+                          label: '신한 123-456-789012',
+                        },
+                        {
+                          value: '3',
+                          label: '우리 123-456-789012',
+                        },
+                      ]"
+                      title="즉시 출금 계좌"
+                      inputId="IF_P03_p002_account001"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <!-- Case : 출금 가능 계좌가 없을 시 -->
-          <FormListItem
-            titleText="즉시 출금 계좌"
-            target="#IF_P03_p002_account002"
-            :selectOnly="true"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.accountError002">
-              <InputBlock :error="state.accountError002" :disabled="true">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '즉시출금 가능한 계좌가 없습니다',
-                      },
-                    ]"
-                    title="즉시 출금 계좌"
-                    inputId="IF_P03_p002_account002"
-                    defaultValue="1"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <!-- //Case : 출금 가능 계좌가 없을 시 -->
+            <!-- Case : 출금 가능 계좌가 없을 시 -->
+            <FormListItem
+              titleText="즉시 출금 계좌"
+              target="#IF_P03_p002_account002"
+              :selectOnly="true"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.accountError002">
+                <InputBlock :error="state.accountError002" :disabled="true">
+                  <InputBlockCell :flexible="true">
+                    <BasicSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '즉시출금 가능한 계좌가 없습니다',
+                        },
+                      ]"
+                      title="즉시 출금 계좌"
+                      inputId="IF_P03_p002_account002"
+                      defaultValue="1"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <!-- //Case : 출금 가능 계좌가 없을 시 -->
 
-          <FormListItem
-            titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod001"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentMethodError001">
-              <InputBlock
-                :error="state.repaymentMethodError001"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod001"
-                    defaultValue="전체상환"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+            <FormListItem
+              titleText="중도상환방법"
+              target="#IF_P03_p002_repaymentMethod001"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentMethodError001">
+                <InputBlock
+                  :error="state.repaymentMethodError001"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="중도상환방법"
+                      id="IF_P03_p002_repaymentMethod001"
+                      defaultValue="전체상환"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <FormListItem
-            titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount001"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentAmountError001">
-              <InputBlock
-                :error="state.repaymentAmountError001"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    pattern="\d*"
-                    title="상환금액"
-                    id="IF_P03_p002_repaymentAmount001"
-                    :useDelete="false"
-                    align="right"
-                    defaultValue="7,400,000"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-1">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+            <FormListItem
+              titleText="상환금액"
+              target="#IF_P03_p002_repaymentAmount001"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentAmountError001">
+                <InputBlock
+                  :error="state.repaymentAmountError001"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      pattern="\d*"
+                      title="상환금액"
+                      id="IF_P03_p002_repaymentAmount001"
+                      :useDelete="false"
+                      align="right"
+                      defaultValue="7,400,000"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-1">원</div>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </div>
         <!-- //Case : 오늘 즉시 출금 선택시 -->
 
         <!-- Case : 가상계좌 입금 선택시 -->
-        <BasicBox theme="tertiary">
-          <KeyValue align="left" :wrap="true">
-            <KeyValueItem>
-              <KeyValueTitle>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <BankLogo size="small" code="004" />
+        <div>
+          <BasicBox theme="tertiary">
+            <KeyValue align="left" :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <BankLogo size="small" code="004" />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">국민</div>
                   </div>
-                  <div class="flex-box__cell flex-box__cell--mini">국민</div>
-                </div>
-              </KeyValueTitle>
-              <KeyValueText> 123-456-78901234 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <BankLogo size="small" code="011" />
+                </KeyValueTitle>
+                <KeyValueText> 123-456-78901234 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <BankLogo size="small" code="011" />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">농협</div>
                   </div>
-                  <div class="flex-box__cell flex-box__cell--mini">농협</div>
-                </div>
-              </KeyValueTitle>
-              <KeyValueText> 123-456-78901234 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <BankLogo size="small" code="020" />
+                </KeyValueTitle>
+                <KeyValueText> 123-456-78901234 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <BankLogo size="small" code="020" />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">우리</div>
                   </div>
-                  <div class="flex-box__cell flex-box__cell--mini">우리</div>
-                </div>
-              </KeyValueTitle>
-              <KeyValueText> 123-456-78901234 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <BankLogo size="small" code="081" />
+                </KeyValueTitle>
+                <KeyValueText> 123-456-78901234 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <BankLogo size="small" code="081" />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">하나</div>
                   </div>
-                  <div class="flex-box__cell flex-box__cell--mini">하나</div>
-                </div>
-              </KeyValueTitle>
-              <KeyValueText> 123-456-78901234 </KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <BankLogo size="small" code="088" />
+                </KeyValueTitle>
+                <KeyValueText> 123-456-78901234 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <BankLogo size="small" code="088" />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">신한</div>
                   </div>
-                  <div class="flex-box__cell flex-box__cell--mini">신한</div>
-                </div>
-              </KeyValueTitle>
-              <KeyValueText>123-456-78901234</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+                </KeyValueTitle>
+                <KeyValueText>123-456-78901234</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
 
-        <div class="inline-wrap align-right row-margin-item-medium">
-          <TextButton
-            theme="quaternary"
-            textSize="regular"
-            iconSize="regular"
-            @click="layer001Open"
-          >
-            가상계좌 유의사항
-            <template v-slot:rightIcon>
-              <iconInformation />
-            </template>
-          </TextButton>
+          <div class="inline-wrap align-right row-margin-item-medium">
+            <TextButton
+              theme="quaternary"
+              textSize="regular"
+              iconSize="regular"
+              @click="layer001Open"
+            >
+              가상계좌 유의사항
+              <template v-slot:rightIcon>
+                <iconInformation />
+              </template>
+            </TextButton>
+          </div>
+
+          <FormList :classNames="{ wrap: 'row-margin-contents' }">
+            <FormListItem
+              titleText="중도상환방법"
+              target="#IF_P03_p002_repaymentMethod002"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentMethodError002">
+                <InputBlock
+                  :error="state.repaymentMethodError002"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="중도상환방법"
+                      id="IF_P03_p002_repaymentMethod002"
+                      defaultValue="전체상환"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <FormListItem
+              titleText="상환금액"
+              target="#IF_P03_p002_repaymentAmount002"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentAmountError002">
+                <InputBlock
+                  :error="state.repaymentAmountError002"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      pattern="\d*"
+                      title="상환금액"
+                      id="IF_P03_p002_repaymentAmount002"
+                      :useDelete="false"
+                      align="right"
+                      defaultValue="7,400,000"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-1">원</div>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
         </div>
-
-        <FormList>
-          <FormListItem
-            titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod002"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentMethodError002">
-              <InputBlock
-                :error="state.repaymentMethodError002"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod002"
-                    defaultValue="전체상환"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount002"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentAmountError002">
-              <InputBlock
-                :error="state.repaymentAmountError002"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    pattern="\d*"
-                    title="상환금액"
-                    id="IF_P03_p002_repaymentAmount002"
-                    :useDelete="false"
-                    align="right"
-                    defaultValue="7,400,000"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-1">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
         <!-- //Case : 가상계좌 입금 선택시 -->
 
         <!-- Case : 중도상환 시뮬레이션 선택시 -->
-        <FormList>
-          <FormListItem
-            titleText="중도상환방법"
-            target="#IF_P03_p002_repaymentMethod003"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentMethodError003">
-              <InputBlock
-                :error="state.repaymentMethodError003"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="중도상환방법"
-                    id="IF_P03_p002_repaymentMethod003"
-                    defaultValue="전체상환"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem titleText="입금일자" target="#IF_P03_p002_dateButton">
-            <FormInvalid :error="state.dateError">
-              <InputBlock :error="state.dateError">
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="입금일자"
-                    id="IF_P03_p002_date"
-                    buttonId="IF_P03_p002_dateButton"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="상환금액"
-            target="#IF_P03_p002_repaymentAmount003"
-            :disabled="true"
-          >
-            <FormInvalid :error="state.repaymentAmountError003">
-              <InputBlock
-                :error="state.repaymentAmountError003"
-                :disabled="true"
-              >
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    pattern="\d*"
-                    title="상환금액"
-                    id="IF_P03_p002_repaymentAmount003"
-                    :useDelete="false"
-                    align="right"
-                    defaultValue="7,400,000"
-                    :disabled="true"
-                  />
-                </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-1">원</div>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+        <div>
+          <FormList>
+            <FormListItem
+              titleText="중도상환방법"
+              target="#IF_P03_p002_repaymentMethod003"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentMethodError003">
+                <InputBlock
+                  :error="state.repaymentMethodError003"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      title="중도상환방법"
+                      id="IF_P03_p002_repaymentMethod003"
+                      defaultValue="전체상환"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <FormListItem titleText="입금일자" target="#IF_P03_p002_dateButton">
+              <FormInvalid :error="state.dateError">
+                <InputBlock :error="state.dateError">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="입금일자"
+                      id="IF_P03_p002_date"
+                      buttonId="IF_P03_p002_dateButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+            <FormListItem
+              titleText="상환금액"
+              target="#IF_P03_p002_repaymentAmount003"
+              :disabled="true"
+            >
+              <FormInvalid :error="state.repaymentAmountError003">
+                <InputBlock
+                  :error="state.repaymentAmountError003"
+                  :disabled="true"
+                >
+                  <InputBlockCell :flexible="true">
+                    <BasicInput
+                      pattern="\d*"
+                      title="상환금액"
+                      id="IF_P03_p002_repaymentAmount003"
+                      :useDelete="false"
+                      align="right"
+                      defaultValue="7,400,000"
+                      :disabled="true"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:innerRight>
+                    <div class="text-body-1">원</div>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </div>
         <!-- //Case : 중도상환 시뮬레이션 선택시 -->
       </div>
     </section>

@@ -57,64 +57,62 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
-        <div :class="$style['contents-list']">
-          <ol
-            :class="[
-              $style['contents-list__list'],
-              $style['contents-list__list--senary'],
-            ]"
-          >
-            <li :class="$style['contents-list__item']">
-              <div :class="$style['contents-list__head']">
-                <div :class="$style['contents-list__symbol']">1</div>
-                <div :class="$style['contents-list__title']">
-                  청약철회 상환금액은 당일 기준으로
-                  <span class="color-green font-weight-medium">17시 이내</span
-                  >로 입금해주셔야 합니다.
-                </div>
-              </div>
-            </li>
-            <li :class="$style['contents-list__item']">
-              <div :class="$style['contents-list__head']">
-                <div :class="$style['contents-list__symbol']">2</div>
-                <div :class="$style['contents-list__title']">
-                  당일
-                  <span class="color-green font-weight-medium">17시 이내</span
-                  >로 입금하지 않을시 청약철회가 불가능하거나 추가 경과이자
-                  발생할 수 있으며 입금 금액을 재조회하셔야 합니다.
-                </div>
-              </div>
-            </li>
-            <li :class="$style['contents-list__item']">
-              <div :class="$style['contents-list__head']">
-                <div :class="$style['contents-list__symbol']">3</div>
-                <div :class="$style['contents-list__title']">
-                  청약철회처리가능일은 대출계약 후 14일 이내입니다.
-                </div>
-              </div>
-            </li>
-            <li :class="$style['contents-list__item']">
-              <div :class="$style['contents-list__head']">
-                <div :class="$style['contents-list__symbol']">4</div>
-                <div :class="$style['contents-list__title']">
-                  청약철회 신청 이후 청약철회 기간(대출 계약 후 14일)이
-                  경과하거나 결제일이 도래한 경우 청약철회가 불가합니다.
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <CheckBox
-          id="My_p06_p003_agree01"
-          theme="tertiary"
-          :classNames="{ wrap: 'row-margin-contents' }"
+      <div :class="$style['contents-list']">
+        <ol
+          :class="[
+            $style['contents-list__list'],
+            $style['contents-list__list--senary'],
+          ]"
         >
-          <CheckBoxObject />
-          <CheckBoxLabelText>유의사항을 확인했습니다.</CheckBoxLabelText>
-        </CheckBox>
-      </section>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">1</div>
+              <div :class="$style['contents-list__title']">
+                청약철회 상환금액은 당일 기준으로
+                <span class="color-green font-weight-medium">17시 이내</span>로
+                입금해주셔야 합니다.
+              </div>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">2</div>
+              <div :class="$style['contents-list__title']">
+                당일
+                <span class="color-green font-weight-medium">17시 이내</span>로
+                입금하지 않을시 청약철회가 불가능하거나 추가 경과이자 발생할 수
+                있으며 입금 금액을 재조회하셔야 합니다.
+              </div>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">3</div>
+              <div :class="$style['contents-list__title']">
+                청약철회처리가능일은 대출계약 후 14일 이내입니다.
+              </div>
+            </div>
+          </li>
+          <li :class="$style['contents-list__item']">
+            <div :class="$style['contents-list__head']">
+              <div :class="$style['contents-list__symbol']">4</div>
+              <div :class="$style['contents-list__title']">
+                청약철회 신청 이후 청약철회 기간(대출 계약 후 14일)이 경과하거나
+                결제일이 도래한 경우 청약철회가 불가합니다.
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <CheckBox
+        id="My_p06_p003_agree01"
+        theme="tertiary"
+        :classNames="{ wrap: 'row-margin-contents' }"
+      >
+        <CheckBoxObject />
+        <CheckBoxLabelText>유의사항을 확인했습니다.</CheckBoxLabelText>
+      </CheckBox>
 
       <template v-slot:foot>
         <ButtonList

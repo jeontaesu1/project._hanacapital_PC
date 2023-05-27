@@ -46,7 +46,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
+      <div>
         <NoticeText>
           온라인약정 이용가이드는 오토론 상품 기준으로 작성되었으며, 각 상품에
           따라서 온라인약정 진행 순서가 다를 수 있습니다.
@@ -244,7 +244,7 @@ export default {
             </li>
           </ol>
         </div>
-      </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

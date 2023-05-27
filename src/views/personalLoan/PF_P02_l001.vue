@@ -48,62 +48,60 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
-        <InputBlock :classNames="{ wrap: 'row-margin-contents' }">
-          <InputBlockCell :flexible="true">
-            <BasicInput
-              type="search"
-              title="아파트 검색어"
-              placeholder="동(읍/면) 또는 아파트 이름 입력"
-            />
-          </InputBlockCell>
-          <InputBlockCell type="search">
-            <SearchButton />
-          </InputBlockCell>
-        </InputBlock>
+      <InputBlock>
+        <InputBlockCell :flexible="true">
+          <BasicInput
+            type="search"
+            title="아파트 검색어"
+            placeholder="동(읍/면) 또는 아파트 이름 입력"
+          />
+        </InputBlockCell>
+        <InputBlockCell type="search">
+          <SearchButton />
+        </InputBlockCell>
+      </InputBlock>
 
-        <!-- Case : 검색 후 노출 -->
+      <!-- Case : 검색 후 노출 -->
 
-        <BasicHr
-          className="row-margin-container-medium"
-          theme="secondary"
-          type="popup"
-        />
+      <BasicHr
+        className="row-margin-container-medium"
+        theme="secondary"
+        type="popup"
+      />
 
-        <!-- Case : 결과 없을 때 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-        </div>
-        <!-- Case : 결과 없을 때 -->
+      <!-- Case : 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+      </div>
+      <!-- Case : 결과 없을 때 -->
 
-        <!-- Case : 결과 있을 때 -->
-        <ul :class="$style['search-list']">
-          <li :class="$style['search-list__item']">
-            <button type="button" :class="$style['search-list__link']">
-              <span :class="$style['search-list__text']">
-                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
-              </span>
-            </button>
-          </li>
-          <li :class="$style['search-list__item']">
-            <button type="button" :class="$style['search-list__link']">
-              <span :class="$style['search-list__text']">
-                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
-              </span>
-            </button>
-          </li>
-          <li :class="$style['search-list__item']">
-            <button type="button" :class="$style['search-list__link']">
-              <span :class="$style['search-list__text']">
-                서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
-              </span>
-            </button>
-          </li>
-        </ul>
-        <!-- // Case : 결과 있을 때 -->
+      <!-- Case : 결과 있을 때 -->
+      <ul :class="$style['search-list']">
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <!-- // Case : 결과 있을 때 -->
 
-        <!-- // Case : 검색 후 노출 -->
-      </section>
+      <!-- // Case : 검색 후 노출 -->
     </ModalPopup>
   </UiLayer>
 </template>

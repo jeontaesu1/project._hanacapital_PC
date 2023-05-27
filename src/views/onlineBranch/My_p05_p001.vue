@@ -73,47 +73,101 @@ export default {
     </PageHead>
 
     <!-- Case : 금리인하요구권 신청 가능한 상품이 있는 경우 -->
-    <ul class="reset-list">
-      <li v-for="i in 5" :key="i" class="row-margin-contents">
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <h3 class="text-title-2 font-weight-medium">오토할부 20고5678</h3>
-              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
-                벤츠 S-Class 세단 가솔린 3.0 S350 Long 자동
-              </p>
-            </BasicBoxHeadLeft>
-          </BasicBoxHead>
+    <div class="row-margin-block row-margin-top-none">
+      <ul class="reset-list">
+        <li v-for="i in 5" :key="i" class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토할부 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  벤츠 S-Class 세단 가솔린 3.0 S350 Long 자동
+                </p>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
 
-          <KeyValue :wrap="true">
-            <KeyValueItem>
-              <KeyValueTitle>현재금리</KeyValueTitle>
-              <KeyValueText>4.50%</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>월 납입금</KeyValueTitle>
-              <KeyValueText>324,440 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>대출잔액</KeyValueTitle>
-              <KeyValueText>4,820,000 원</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>현재금리</KeyValueTitle>
+                <KeyValueText>4.50%</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>월 납입금</KeyValueTitle>
+                <KeyValueText>324,440 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>4,820,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
 
-          <ButtonList
-            :wrap="true"
-            align="center"
-            :classNames="{
-              wrap: 'row-margin-contents',
-            }"
-          >
-            <ButtonListItem>
-              <BasicButton size="regular">신청</BasicButton>
-            </ButtonListItem>
-          </ButtonList>
-        </BasicBox>
-      </li>
-    </ul>
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{
+                wrap: 'row-margin-contents',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton size="regular">신청</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </BasicBox>
+        </li>
+      </ul>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
+    </div>
     <!-- //Case : 금리인하요구권 신청 가능한 상품이 있는 경우 -->
 
     <!-- Case : 금리인하요구권 신청가능 상품이 없을 경우 -->
@@ -130,27 +184,9 @@ export default {
     </div>
     <!-- //Case : 보유상품이 없는 경우 -->
 
-    <PaginationNav
-      :classNames="{
-        wrap: 'row-margin-container-medium row-margin-bottom-none',
-      }"
-    >
-      <PaginationNavArrow type="prev" :disabled="true" />
-      <PaginationNavNumber :active="true">1</PaginationNavNumber>
-      <PaginationNavNumber>2</PaginationNavNumber>
-      <PaginationNavNumber>3</PaginationNavNumber>
-      <PaginationNavNumber>4</PaginationNavNumber>
-      <PaginationNavNumber>5</PaginationNavNumber>
-      <PaginationNavNumber>6</PaginationNavNumber>
-      <PaginationNavNumber>7</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>999</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-
-    <UiAccordion :classNames="{ wrap: 'row-margin-block' }">
-      <UiAccordionItem :classNames="{ item: 'row-margin-item-group' }">
-        <BasicBox :class="$style['application']">
+    <UiAccordion>
+      <UiAccordionItem>
+        <BasicBox :className="$style['application']">
           <div class="flex-box">
             <div class="flex-box__cell flex-1">
               <h3 class="text-body-1 font-weight-medium">유의사항</h3>
@@ -206,7 +242,6 @@ export default {
         </BasicBox>
       </UiAccordionItem>
     </UiAccordion>
-    <!-- //Case : 중도상환신청이 가능한 계약 리스트가 있는 경우 -->
   </PageContents>
 </template>
 
