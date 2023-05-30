@@ -30,32 +30,34 @@ export default {
 
 <template>
   <PageContents>
-    <IllustInfo>
-      <!-- Case : 신청완료 시 노출 -->
-      <IllustObject type="complete" />
-      <IllustInfoTitle>중도상환신청이 접수되었습니다</IllustInfoTitle>
-      <IllustInfoText>
-        고객님 감사합니다.<br />
-        문의사항이 있으시면 고객센터로 연락바랍니다.
-      </IllustInfoText>
-      <!-- // Case : 신청완료 시 노출 -->
+    <div class="row-margin-container-medium">
+      <IllustInfo>
+        <!-- Case : 신청완료 시 노출 -->
+        <IllustObject type="complete" />
+        <IllustInfoTitle>중도상환신청이 접수되었습니다</IllustInfoTitle>
+        <IllustInfoText>
+          고객님 감사합니다.<br />
+          문의사항이 있으시면 고객센터로 연락바랍니다.
+        </IllustInfoText>
+        <!-- // Case : 신청완료 시 노출 -->
 
-      <!-- Case : 신청완료 시 노출 -->
-      <IllustObject type="fail" />
-      <IllustInfoTitle>중도상환신청에 실패하였습니다</IllustInfoTitle>
-      <IllustInfoText>
-        문의사항이 있으시면 고객센터로 연락바랍니다.
-      </IllustInfoText>
-      <!-- // Case : 신청완료 시 노출 -->
-    </IllustInfo>
+        <!-- Case : 신청실패 시 노출 -->
+        <IllustObject type="fail" />
+        <IllustInfoTitle>중도상환신청에 실패하였습니다</IllustInfoTitle>
+        <IllustInfoText>
+          문의사항이 있으시면 고객센터로 연락바랍니다.
+        </IllustInfoText>
+        <!-- // Case : 신청실패 시 노출 -->
+      </IllustInfo>
 
-    <ButtonList :wrap="true" align="center">
-      <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList :wrap="true" align="center">
+        <ButtonListItem>
+          <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
-    <BasicHr className="row-margin-block" theme="tertiary" />
+    <BasicHr className="row-margin-container-medium" theme="tertiary" />
 
     <div :class="$style['icon-list']">
       <ul :class="$style['icon-list__list']">
