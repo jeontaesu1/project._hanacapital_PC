@@ -259,7 +259,6 @@ export default {
                   title="URL 발송일"
                   id="LM_P01_p001_send"
                   buttonId="LM_P01_p001_send_button"
-                  :onChange="LM_P01_p001_sendEvent"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -285,7 +284,7 @@ export default {
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
-        <KeyValue>
+        <KeyValue :wrap="true">
           <KeyValueItem>
             <KeyValueTitle>생년월일</KeyValueTitle>
             <KeyValueText>123456-2******</KeyValueText>
@@ -308,12 +307,16 @@ export default {
         </KeyValue>
 
         <ButtonList
+          :wrap="true"
+          align="center"
           :classNames="{
             wrap: 'row-margin-contents',
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="RouterLink" to="">한도조회</BasicButton>
+            <BasicButton size="regular" tagName="RouterLink" to="">
+              한도조회
+            </BasicButton>
           </ButtonListItem>
         </ButtonList>
       </BasicBox>
@@ -327,7 +330,7 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <KeyValue>
+            <KeyValue :wrap="true">
               <KeyValueItem>
                 <KeyValueTitle>생년월일</KeyValueTitle>
                 <KeyValueText>123456-2******</KeyValueText>

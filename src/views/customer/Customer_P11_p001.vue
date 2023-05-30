@@ -1,6 +1,5 @@
 <script>
 //Customer_P11_p001
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -40,16 +39,9 @@ export default {
       }"
     >
       <ButtonListItem>
-        <BasicButton> 인증서 내보내기 [ PC > 스마트폰 ] </BasicButton>
+        <BasicButton>인증서 내보내기 [ PC > 스마트폰 ]</BasicButton>
       </ButtonListItem>
-    </ButtonList>
-    <ButtonList
-      align="full"
-      :classNames="{
-        wrap: 'row-margin-item-medium row-margin-bottom-none',
-      }"
-    >
-      <ButtonListItem :classNames="{ item: 'row-margin-item-medium ' }">
+      <ButtonListItem>
         <BasicButton>인증서 가져오기 [ 스마트폰 > PC ]</BasicButton>
       </ButtonListItem>
     </ButtonList>

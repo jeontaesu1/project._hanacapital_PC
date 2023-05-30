@@ -98,6 +98,14 @@ export default {
     </div>
     <!-- // Case : 보유 상품이 없는 경우 노출 -->
 
+    <!-- Case : 신청 가능 상품이 없는 경우 노출 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">
+        현재 금리인하가 가능한 상품이 없습니다.
+      </p>
+    </div>
+    <!-- // Case : 신청 가능 상품이 없는 경우 노출 -->
+
     <!-- Case : 보유 상품이 있는 경우 노출 -->
     <div class="row-margin-block-small">
       <ul class="reset-list">
@@ -114,7 +122,7 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <KeyValue>
+            <KeyValue :wrap="true">
               <KeyValueItem>
                 <KeyValueTitle>대출기간</KeyValueTitle>
                 <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
@@ -123,11 +131,6 @@ export default {
               <KeyValueItem>
                 <KeyValueTitle>대출금액</KeyValueTitle>
                 <KeyValueText>23,000,000 원</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem>
-                <KeyValueTitle>대출실행일</KeyValueTitle>
-                <KeyValueText>2021.12.31</KeyValueText>
               </KeyValueItem>
 
               <KeyValueItem>
@@ -164,13 +167,16 @@ export default {
               }"
             >
               <ButtonListItem>
-                <BasicButton tagName="RouterLink" to="">철회 신청</BasicButton>
+                <BasicButton size="regular" tagName="RouterLink" to="">
+                  철회 신청
+                </BasicButton>
               </ButtonListItem>
             </ButtonList>
           </BasicBox>
         </li>
       </ul>
 
+      <!-- Case : 첫번째 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" :disabled="true" />
         <PaginationNavNumber :active="true">1</PaginationNavNumber>
@@ -181,9 +187,40 @@ export default {
         <PaginationNavNumber>6</PaginationNavNumber>
         <PaginationNavNumber>7</PaginationNavNumber>
         <PaginationNavEllipsis />
-        <PaginationNavNumber>25</PaginationNavNumber>
+        <PaginationNavNumber>999</PaginationNavNumber>
         <PaginationNavArrow type="next" />
       </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
     </div>
     <!-- // Case : 보유 상품이 있는 경우 노출 -->
   </PageContents>

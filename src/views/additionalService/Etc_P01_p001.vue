@@ -51,6 +51,7 @@ export default {
 
   setup() {
     const state = reactive({
+      type001Error: false,
       field001Error: false,
       nameError: false,
       phoneError: false,
@@ -74,22 +75,25 @@ export default {
 
     <FormList>
       <FormListItem titleText="회원구분" :forceFocus="true">
-        <BoxCheckList>
-          <BoxCheckListItem>
-            <BoxCheck
-              name="Etc_P01_p001_type"
-              id="Etc_P01_p001_type_001"
-              :defaultChecked="true"
-            >
-              <BoxCheckLabel>개인 (개인사업자 포함)</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck name="Etc_P01_p001_type" id="Etc_P01_p001_type_002">
-              <BoxCheckLabel>법인</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
+        <FormInvalid :error="state.type001Error">
+          <BoxCheckList>
+            <BoxCheckListItem>
+              <BoxCheck
+                name="Etc_P01_p001_type"
+                id="Etc_P01_p001_type_001"
+                :defaultChecked="true"
+              >
+                <BoxCheckLabel>개인 (개인사업자 포함)</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck name="Etc_P01_p001_type" id="Etc_P01_p001_type_002">
+                <BoxCheckLabel>법인</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+          </BoxCheckList>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
       </FormListItem>
 
       <FormListItem

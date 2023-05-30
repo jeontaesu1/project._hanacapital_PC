@@ -1,6 +1,5 @@
 <script>
 // Customer_P02_p001;
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
@@ -35,8 +34,6 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <div class="row-margin-block-small row-margin-bottom-none">
-      // [공통 > 본인인증] 내용 노출
-    </div>
+    <div>// [공통 > 본인인증] 내용 노출</div>
   </PageContents>
 </template>

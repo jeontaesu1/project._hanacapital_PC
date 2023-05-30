@@ -1,6 +1,5 @@
 <script>
 // IF_P03_p003
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
@@ -42,7 +41,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">중도상환</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="3" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">
@@ -51,7 +50,7 @@ export default {
     </PageHead>
 
     <BasicBox>
-      <KeyValue>
+      <KeyValue :wrap="true">
         <KeyValueItem>
           <KeyValueTitle>상환원금</KeyValueTitle>
           <KeyValueText>7,400,000 원</KeyValueText>

@@ -43,11 +43,7 @@ export default {
       <!-- // Case : 서류 등록 실패 시 노출 -->
     </IllustInfo>
 
-    <ButtonList
-      :classNames="{
-        wrap: 'row-margin-block-small',
-      }"
-    >
+    <ButtonList>
       <ButtonListItem>
         <BasicButton tagName="RouterLink" to="" :line="true">
           서류등록 추가

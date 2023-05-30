@@ -1,7 +1,5 @@
 <script>
 // My_p05_p004
-import { reactive } from 'vue';
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
@@ -9,15 +7,6 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
-import InputBlock from '@/components/ui/form/InputBlock.vue';
-import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
-import FormList from '@/components/ui/form/FormList.vue';
-import FormListItem from '@/components/ui/form/FormListItem.vue';
-import FormInvalid from '@/components/ui/form/FormInvalid.vue';
-import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -35,15 +24,6 @@ export default {
     PageMainText,
     PageSubText,
     StepProgress,
-    InputBlock,
-    InputBlockCell,
-    FormList,
-    FormListItem,
-    FormInvalid,
-    FormInvalidMessage,
-    BasicInput,
-    SecurityInput,
-    SecurityKeypadButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -51,17 +31,6 @@ export default {
     CheckBoxLabelText,
     CheckBoxObject,
     NoticeText,
-  },
-
-  setup() {
-    const state = reactive({
-      name001Error: false,
-      idNumberError: false,
-    });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -72,7 +41,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">금리인하요구권 신청</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="3" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">본인인증을 진행해 주세요</PageMainText>
@@ -115,48 +84,6 @@ export default {
         금리인하요구 비대상상품은 금리인하 요구 수용이 불가능합니다.
       </NoticeText>
     </section>
-
-    <div class="row-margin-block-small">
-      <FormList>
-        <FormListItem titleText="이름" target="#My_p05_p004_name001">
-          <FormInvalid :error="state.name001Error">
-            <InputBlock :error="state.name001Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="My_p05_p004_name001" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem titleText="주민등록번호" target="#My_p05_p004_id">
-          <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="number"
-                  pattern="\d*"
-                  title="주민등록번호 앞 6자리"
-                  id="My_p05_p004_id"
-                />
-              </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                <SecurityInput
-                  title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
-    </div>
 
     <div class="row-margin-block-small row-margin-bottom-none">
       // [공통 > 본인인증] 내용 노출
@@ -454,9 +381,7 @@ export default {
 
     <ButtonList align="full">
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="/online-branch/My_p05_p005">
-          신청서 제출하기
-        </BasicButton>
+        <BasicButton tagName="RouterLink" to="">신청서 제출하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

@@ -34,9 +34,7 @@ export default {
       <IllustObject type="fail" />
       <IllustInfoTitle>근저당설정 해지 신청이 불가합니다</IllustInfoTitle>
       <!-- // Case : 해지 신청 실패 시 -->
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         문의사항이 있으시면 고객센터(1800-1110)로 연락 바랍니다.<br />
         (상담가능시간: 평일 09시 ~ 18시)
       </IllustInfoText>

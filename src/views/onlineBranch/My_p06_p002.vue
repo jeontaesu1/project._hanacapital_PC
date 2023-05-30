@@ -79,7 +79,7 @@ export default {
             </BasicBoxHeadLeft>
           </BasicBoxHead>
 
-          <KeyValue>
+          <KeyValue :wrap="true">
             <KeyValueItem>
               <KeyValueTitle>대출기간</KeyValueTitle>
               <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
@@ -122,7 +122,7 @@ export default {
         <h3 class="text-title-1 row-margin-contents">청약철회 예상금액</h3>
 
         <BasicBox>
-          <KeyValue>
+          <KeyValue :wrap="true">
             <KeyValueItem>
               <KeyValueTitle>청약철회 상환금액</KeyValueTitle>
               <KeyValueText>23,064,000 원</KeyValueText>
@@ -173,63 +173,61 @@ export default {
           </KeyValue>
         </BasicBox>
 
-        <div class="row-margin-contents">
-          <FormList>
-            <FormListItem
-              titleText="입금가상계좌"
-              target="#My_p06_p002_account"
-              :selectOnly="true"
-            >
-              <FormInvalid :error="state.accountError">
-                <InputBlock :error="state.accountError">
-                  <InputBlockCell :flexible="true">
-                    <BasicSelect
-                      :options="[
-                        {
-                          value: '1',
-                          label: '하나 123-456-789012',
-                        },
-                        {
-                          value: '2',
-                          label: '신한 123-456-789012',
-                        },
-                        {
-                          value: '3',
-                          label: '우리 123-456-789012',
-                        },
-                        {
-                          value: '4',
-                          label: '농협 123-456-789012',
-                        },
-                        {
-                          value: '5',
-                          label: '국민 123-456-789012',
-                        },
-                        {
-                          value: '6',
-                          label: '카카오뱅크 123-456-789012',
-                        },
-                        {
-                          value: '7',
-                          label: '기업 123-456-789012',
-                        },
-                      ]"
-                      title="대출기간"
-                      inputId="My_p06_p002_account"
-                      defaultValue="1"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-              </FormInvalid>
-            </FormListItem>
-          </FormList>
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+          <FormListItem
+            titleText="입금가상계좌"
+            target="#My_p06_p002_account"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.accountError">
+              <InputBlock :error="state.accountError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '하나 123-456-789012',
+                      },
+                      {
+                        value: '2',
+                        label: '신한 123-456-789012',
+                      },
+                      {
+                        value: '3',
+                        label: '우리 123-456-789012',
+                      },
+                      {
+                        value: '4',
+                        label: '농협 123-456-789012',
+                      },
+                      {
+                        value: '5',
+                        label: '국민 123-456-789012',
+                      },
+                      {
+                        value: '6',
+                        label: '카카오뱅크 123-456-789012',
+                      },
+                      {
+                        value: '7',
+                        label: '기업 123-456-789012',
+                      },
+                    ]"
+                    title="대출기간"
+                    inputId="My_p06_p002_account"
+                    defaultValue="1"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
 
-          <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
-            당일 기준 금액으로 <span class="color-green">17시 이내</span> 입금해
-            주셔야 합니다.
-          </NoticeText>
-        </div>
+        <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
+          당일 기준 금액으로 <span class="color-green">17시 이내</span> 입금해
+          주셔야 합니다.
+        </NoticeText>
       </section>
     </div>
 

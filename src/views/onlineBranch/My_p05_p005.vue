@@ -28,9 +28,7 @@ export default {
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>금리인하요구권 신청이 완료되었습니다</IllustInfoTitle>
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         담당부서에서 금리인하상담으로 연락드리겠습니다. 감사합니다.<br />
         (상담가능시간 : 평일 09~18시)
       </IllustInfoText>

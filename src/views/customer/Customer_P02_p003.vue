@@ -28,9 +28,7 @@ export default {
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>상담등록이 완료되었습니다</IllustInfoTitle>
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         고객님 감사합니다.<br />
         문의하신 사항에 대해서는 빠른 시일 내에 답변 드리겠습니다.<br />
         (상담가능시간 : 평일 09~18시)

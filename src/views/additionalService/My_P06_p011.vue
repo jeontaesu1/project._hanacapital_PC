@@ -1,6 +1,5 @@
 <script>
 // My_P06_p011
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -26,9 +25,7 @@ export default {
       <PageTitle>실명인증 및 본인인증을 진행해 주세요</PageTitle>
     </PageHead>
 
-    <div class="row-margin-block-small row-margin-bottom-none">
-      // [공통 > 본인인증] 내용 노출
-    </div>
+    <div>// [공통 > 본인인증] 내용 노출</div>
 
     <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">약관동의</h3>

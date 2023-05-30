@@ -173,8 +173,8 @@ export default {
               :selectOnly="true"
               :disabled="true"
             >
-              <FormInvalid :error="state.area002Error">
-                <InputBlock :error="state.area002Error">
+              <FormInvalid :error="state.area002Error" :disabled="true">
+                <InputBlock :error="state.area002Error" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
                       :options="[
@@ -262,8 +262,8 @@ export default {
               :selectOnly="true"
               :disabled="true"
             >
-              <FormInvalid :error="state.area003Error">
-                <InputBlock :error="state.area003Error">
+              <FormInvalid :error="state.area003Error" :disabled="true">
+                <InputBlock :error="state.area003Error" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
                       :options="[
@@ -392,8 +392,8 @@ export default {
               target="#LM_P01_l009_lease"
               :disabled="true"
             >
-              <FormInvalid :error="state.leaseError">
-                <InputBlock :error="state.leaseError">
+              <FormInvalid :error="state.leaseError" :disabled="true">
+                <InputBlock :error="state.leaseError" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
                       align="right"

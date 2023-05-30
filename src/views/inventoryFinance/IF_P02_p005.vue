@@ -32,53 +32,52 @@ export default {
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>2건 중 1건 온라인약정이 완료되었습니다</IllustInfoTitle>
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         접수하신 내역을 확인하여 빠른 시일 내에 답변 드리겠습니다.
       </IllustInfoText>
     </IllustInfo>
 
-    <div class="row-margin-block-small">
-      <BasicBox className="row-margin-contents">
-        <div class="flex-box">
-          <div class="flex-box__cell flex-1">
-            <h3 class="text-body-1 font-weight-medium">재고금융Ⅱ20고5678</h3>
-            <p class="text-body-4 color-gray row-margin-item-small">
-              BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
-            </p>
-          </div>
-          <div class="flex-box__cell">
-            <RoundStatus
-              theme="secondary"
-              size="large"
-              :classNames="{ wrap: 'display-block' }"
-            >
-              성공
-            </RoundStatus>
-          </div>
-        </div>
-      </BasicBox>
-
-      <BasicBox className="row-margin-contents">
-        <div class="flex-box">
-          <div class="flex-box__cell flex-1">
-            <h3 class="text-body-1 font-weight-medium">재고금융 20고5678</h3>
-            <p class="text-body-4 color-gray row-margin-item-small">
-              BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
-            </p>
-          </div>
-          <div class="flex-box__cell">
-            <RoundStatus
-              theme="nonary"
-              size="large"
-              :classNames="{ wrap: 'display-block' }"
-            >
-              실패
-            </RoundStatus>
-          </div>
-        </div>
-      </BasicBox>
+    <div class="row-margin-block-small row-margin-bottom-none">
+      <ul class="reset-list">
+        <li class="row-margin-contents">
+          <BasicBox className="row-margin-contents">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-1 font-weight-medium">
+                  재고금융Ⅱ20고5678
+                </h3>
+                <p class="text-body-4 color-gray row-margin-item-small">
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                </p>
+              </div>
+              <div class="flex-box__cell">
+                <RoundStatus theme="secondary" size="large" block="true">
+                  성공
+                </RoundStatus>
+              </div>
+            </div>
+          </BasicBox>
+        </li>
+        <li class="row-margin-contents">
+          <BasicBox className="row-margin-contents">
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <h3 class="text-body-1 font-weight-medium">
+                  재고금융 20고5678
+                </h3>
+                <p class="text-body-4 color-gray row-margin-item-small">
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                </p>
+              </div>
+              <div class="flex-box__cell">
+                <RoundStatus theme="nonary" size="large" block="true">
+                  실패
+                </RoundStatus>
+              </div>
+            </div>
+          </BasicBox>
+        </li>
+      </ul>
     </div>
 
     <ButtonList>

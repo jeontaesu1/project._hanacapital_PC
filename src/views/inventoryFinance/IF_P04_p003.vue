@@ -31,9 +31,7 @@ export default {
       <!-- Case : 신청완료 시 노출 -->
       <IllustObject type="complete" />
       <IllustInfoTitle>만기연장 신청이 접수되었습니다</IllustInfoTitle>
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         만기연장 예정일자에 필수 상환금액에 대한<br />
         가상계좌 입금 확인 시 만기연장 처리 예정입니다.
       </IllustInfoText>
@@ -42,9 +40,7 @@ export default {
       <!-- Case : 신청완료 시 노출 -->
       <IllustObject type="fail" />
       <IllustInfoTitle>만기연장 신청에 실패하였습니다</IllustInfoTitle>
-      <IllustInfoText
-        className="text-title-2 row-margin-contents-group align-center"
-      >
+      <IllustInfoText>
         문의사항이 있으시면 고객센터로 연락바랍니다.
       </IllustInfoText>
       <!-- // Case : 신청완료 시 노출 -->

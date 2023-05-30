@@ -79,6 +79,8 @@ export default {
     const state = reactive({
       name001Error: false,
       name002Error: false,
+      relative001Error: false,
+      relative002Error: false,
       idNumber001Error: false,
       idNumber002Error: false,
       license001Error: false,
@@ -100,52 +102,52 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">지정운전자 등록</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="4" :current="1" />
+          <StepProgress :total="4" :current="2" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">지정운전자 정보를 입력해 주세요</PageMainText>
     </PageHead>
 
-    <BasicBox>
-      <BasicBoxHead>
-        <BasicBoxHeadLeft>
-          <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
-          <div :class="[$style['division-info'], 'row-margin-item-small']">
-            <ul :class="$style['division-info__list']">
-              <li :class="$style['division-info__item']">
-                <div class="text-body-3 color-gray-tertiary">
-                  팰리세이드 디젤 2
-                </div>
-              </li>
-              <li :class="$style['division-info__item']">
-                <div class="text-body-3 color-gray-tertiary">
-                  L99999999999999
-                </div>
-              </li>
-            </ul>
-          </div>
-        </BasicBoxHeadLeft>
-      </BasicBoxHead>
+    <div>
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
+            <div :class="[$style['division-info'], 'row-margin-item-small']">
+              <ul :class="$style['division-info__list']">
+                <li :class="$style['division-info__item']">
+                  <div class="text-body-3 color-gray-tertiary">
+                    팰리세이드 디젤 2
+                  </div>
+                </li>
+                <li :class="$style['division-info__item']">
+                  <div class="text-body-3 color-gray-tertiary">
+                    L99999999999999
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </BasicBoxHeadLeft>
+        </BasicBoxHead>
 
-      <KeyValue>
-        <KeyValueItem>
-          <KeyValueTitle>보험사</KeyValueTitle>
-          <KeyValueText>탄톤칙김기매니</KeyValueText>
-        </KeyValueItem>
+        <KeyValue :wrap="true">
+          <KeyValueItem>
+            <KeyValueTitle>보험사</KeyValueTitle>
+            <KeyValueText>탄톤칙김기매니</KeyValueText>
+          </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>가입연령</KeyValueTitle>
-          <KeyValueText>만 26세 이상</KeyValueText>
-        </KeyValueItem>
+          <KeyValueItem>
+            <KeyValueTitle>가입연령</KeyValueTitle>
+            <KeyValueText>만 26세 이상</KeyValueText>
+          </KeyValueItem>
 
-        <KeyValueItem>
-          <KeyValueTitle>임직원특약</KeyValueTitle>
-          <KeyValueText>미가입</KeyValueText>
-        </KeyValueItem>
-      </KeyValue>
-    </BasicBox>
+          <KeyValueItem>
+            <KeyValueTitle>임직원특약</KeyValueTitle>
+            <KeyValueText>미가입</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
 
-    <div class="row-margin-block-small">
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅰ</h3>
 
@@ -161,25 +163,28 @@ export default {
             </FormInvalid>
           </FormListItem>
           <FormListItem titleText="계약자와의 관계" :forceFocus="true">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="MI_P00_p015_relative001"
-                  id="MI_P00_p015_relative_001_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>친인척</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="MI_P00_p015_relative001"
-                  id="MI_P00_p015_relative_001_002"
-                >
-                  <BoxCheckLabel>기타</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+            <FormInvalid :error="state.relative001Error">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="MI_P00_p015_relative001"
+                    id="MI_P00_p015_relative_001_001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>친인척</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="MI_P00_p015_relative001"
+                    id="MI_P00_p015_relative_001_002"
+                  >
+                    <BoxCheckLabel>기타</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
           </FormListItem>
 
           <FormListItem
@@ -246,35 +251,35 @@ export default {
                       },
                       {
                         value: '7',
-                        text: '전북 (17)',
+                        label: '전북 (17)',
                       },
                       {
                         value: '8',
-                        text: '경남 (18)',
+                        label: '경남 (18)',
                       },
                       {
                         value: '9',
-                        text: '제주 (19)',
+                        label: '제주 (19)',
                       },
                       {
                         value: '10',
-                        text: '대구 (20)',
+                        label: '대구 (20)',
                       },
                       {
                         value: '11',
-                        text: '인천 (21)',
+                        label: '인천 (21)',
                       },
                       {
                         value: '12',
-                        text: '광주 (22)',
+                        label: '광주 (22)',
                       },
                       {
                         value: '13',
-                        text: '대전 (23)',
+                        label: '대전 (23)',
                       },
                       {
                         value: '14',
-                        text: '울산 (24)',
+                        label: '울산 (24)',
                       },
                     ]"
                     title="지역번호 선택하기"
@@ -337,7 +342,6 @@ export default {
                     title="발급일자"
                     id="MI_P00_p015_issue"
                     buttonId="MI_P00_p015_issue_button001"
-                    :onChange="MI_P00_p015_issueEvent001"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -347,7 +351,7 @@ export default {
         </FormList>
       </section>
 
-      <section class="row-margin-block-small row-margin-bottom-none">
+      <section>
         <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅱ</h3>
 
         <FormList>
@@ -362,25 +366,28 @@ export default {
             </FormInvalid>
           </FormListItem>
           <FormListItem titleText="계약자와의 관계" :forceFocus="true">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="MI_P00_p015_relative002"
-                  id="MI_P00_p015_relative_002_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>친인척</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="MI_P00_p015_relative002"
-                  id="MI_P00_p015_relative_002_001"
-                >
-                  <BoxCheckLabel>기타</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+            <FormInvalid :error="state.relative002Error">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="MI_P00_p015_relative002"
+                    id="MI_P00_p015_relative_002_001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>친인척</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="MI_P00_p015_relative002"
+                    id="MI_P00_p015_relative_002_002"
+                  >
+                    <BoxCheckLabel>기타</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
           </FormListItem>
 
           <FormListItem
@@ -538,7 +545,6 @@ export default {
                     title="발급일자"
                     id="MI_P00_p015_issue"
                     buttonId="MI_P00_p015_issue_button002"
-                    :onChange="MI_P00_p015_issueEvent002"
                   />
                 </InputBlockCell>
               </InputBlock>

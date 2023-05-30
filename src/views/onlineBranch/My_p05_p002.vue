@@ -25,6 +25,8 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 
 export default {
   components: {
@@ -51,22 +53,14 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    FormInvalid,
+    FormInvalidMessage,
   },
 
   setup() {
     const state = reactive({
-      nameError: false,
-      idNumberError: false,
-      phone001Error: false,
-      phone002Error: false,
-      code001Error: false,
-      code002Error: false,
-      businessNameError: false,
-      businessLicenseError: false,
-      businessNumberError: false,
-      cardNumberError: false,
-      cardDateError: false,
-      cardPasswordError: false,
+      details001Error: false,
+      details002Error: false,
     });
 
     return {
@@ -82,7 +76,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">금리인하요구권 신청</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="4" :current="1" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">
@@ -101,7 +95,7 @@ export default {
             </BasicBoxHeadLeft>
           </BasicBoxHead>
 
-          <KeyValue>
+          <KeyValue :wrap="true">
             <KeyValueItem>
               <KeyValueTitle>대출금액</KeyValueTitle>
               <KeyValueText>81,310,000 원</KeyValueText>
@@ -154,82 +148,88 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
 
-        <!-- Case : 신용도 상승 선택 시 경우 노출 -->
+        <!-- Case : 신용도 상승, 소득 재산 증가 선택 시 경우 노출 -->
         <FormList>
+          <!-- Case : 신용도 상승 선택 시 경우 노출 -->
           <FormListItem titleText="상세사유" :forceFocus="true">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>신용평점(등급) 개선</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_002"
-                >
-                  <BoxCheckLabel>재무상태 개선</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_003"
-                >
-                  <BoxCheckLabel>기타 신용도 상승</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+            <FormInvalid :error="state.details001Error">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_001"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>신용평점(등급) 개선</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_002"
+                  >
+                    <BoxCheckLabel>재무상태 개선</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_003"
+                  >
+                    <BoxCheckLabel>기타 신용도 상승</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
           </FormListItem>
           <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
 
           <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
           <FormListItem titleText="상세사유" :forceFocus="true">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_004"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>소득증가</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_005"
-                >
-                  <BoxCheckLabel>재상증가</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_p05_p002_details001"
-                  id="My_p05_p002_details_001_006"
-                >
-                  <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
+            <FormInvalid :error="state.details002Error">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_004"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>소득증가</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_005"
+                  >
+                    <BoxCheckLabel>재상증가</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="My_p05_p002_details001"
+                    id="My_p05_p002_details_001_006"
+                  >
+                    <BoxCheckLabel>기타 소득증가</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
           </FormListItem>
           <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
         </FormList>
+        <!-- // Case : 신용도 상승, 소득 재산 증가 선택 시 경우 노출 -->
       </section>
 
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-small">제출서류</h3>
-        <p
-          class="font-weight-light color-gray-secondary row-margin-contents row-margin-top-none"
-        >
+        <p class="text-body-1 font-weight-light color-gray-secondary">
           제출 가능한 항목을 선택해 주세요.
         </p>
 
-        <div>
+        <div class="row-margin-contents">
           <BoxCheckList :wrap="true">
             <BoxCheckListItem>
               <BoxCheck
@@ -328,12 +328,12 @@ export default {
         </span>
       </BasicBox>
 
-      <div class="row-margin-contents row-margin-bottom-none">
+      <div class="row-margin-contents">
         <h4 class="text-body-1 color-gray font-weight-medium align-right">
           위 내역이 사실과 다름이 없음을 확인합니다.
         </h4>
         <p
-          class="color-gray-tertiary font-weight-light row-margin-contents-small align-right"
+          class="text-body-1 color-gray-tertiary font-weight-light row-margin-contents-small align-right"
         >
           2023년 01월 05일
         </p>
