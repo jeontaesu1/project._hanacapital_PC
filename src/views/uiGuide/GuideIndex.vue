@@ -892,8 +892,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-005',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.02',
         log: [],
       },
       {
@@ -947,8 +947,8 @@ const datas = () => [
         depth5: '대출정보 입력\nPF_P07_p005',
         depth6: '',
         path: '/personal-loan/PF_P07_p005',
-        status: 'ing',
-        create: '2023.05.26',
+        status: 'end',
+        create: '2023.06.02',
         log: [],
       },
       {
@@ -958,8 +958,8 @@ const datas = () => [
         depth5: '계약정보 확인\nPF_P07_p006',
         depth6: '',
         path: '/personal-loan/PF_P07_p006',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.02',
         log: [],
       },
       {
@@ -991,8 +991,8 @@ const datas = () => [
         depth5: '대출입금\nPF_P07_p009',
         depth6: '',
         path: '/personal-loan/PF_P07_p009',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.02',
         log: [],
       },
       {
