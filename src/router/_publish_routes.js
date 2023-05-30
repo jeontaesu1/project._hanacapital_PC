@@ -261,14 +261,14 @@ const routes = [
     component: () => import('@/views/additionalService/My_P06_p001.vue'),
   },
   {
-    path: '/additional-service/My_P06_p002',
-    name: '/additional-service/My_P06_p002',
-    component: () => import('@/views/additionalService/My_P06_p002.vue'),
-  },
-  {
     path: '/additional-service/My_P06_p012',
     name: '/additional-service/My_P06_p012',
     component: () => import('@/views/additionalService/My_P06_p012.vue'),
+  },
+  {
+    path: '/additional-service/My_P06_p003',
+    name: '/additional-service/My_P06_p003',
+    component: () => import('@/views/additionalService/My_P06_p003.vue'),
   },
   {
     path: '/additional-service/Etc_P01_p001',
