@@ -129,6 +129,16 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideOnlineBranch002.vue'),
   },
   {
+    path: '/guide/online-branch-003',
+    name: '/guide/online-branch-003',
+    component: () => import('@/views/uiGuide/GuideOnlineBranch003.vue'),
+  },
+  {
+    path: '/guide/online-branch-004',
+    name: '/guide/online-branch-004',
+    component: () => import('@/views/uiGuide/GuideOnlineBranch004.vue'),
+  },
+  {
     path: '/guide/additional-service-001',
     name: '/guide/additional-service-001',
     component: () => import('@/views/uiGuide/GuideAdditionalService001.vue'),
@@ -152,6 +162,26 @@ const routes = [
     path: '/guide/lm-blog-002',
     name: '/guide/lm-blog-002',
     component: () => import('@/views/uiGuide/GuideLmBlog002.vue'),
+  },
+  {
+    path: '/guide/auto-001',
+    name: '/guide/auto-001',
+    component: () => import('@/views/uiGuide/GuideAuto001.vue'),
+  },
+  {
+    path: '/guide/auto-002',
+    name: '/guide/auto-002',
+    component: () => import('@/views/uiGuide/GuideAuto002.vue'),
+  },
+  {
+    path: '/guide/auto-003',
+    name: '/guide/auto-003',
+    component: () => import('@/views/uiGuide/GuideAuto003.vue'),
+  },
+  {
+    path: '/guide/auto-004',
+    name: '/guide/auto-004',
+    component: () => import('@/views/uiGuide/GuideAuto004.vue'),
   },
 
   // main
@@ -573,6 +603,221 @@ const routes = [
     name: '/online-branch/My_P08_p003',
     component: () => import('@/views/onlineBranch/My_P08_p003.vue'),
   },
+  {
+    path: '/online-branch/My_P08_p005',
+    name: '/online-branch/My_P08_p005',
+    component: () => import('@/views/onlineBranch/My_P08_p005.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p006',
+    name: '/online-branch/My_P08_p006',
+    component: () => import('@/views/onlineBranch/My_P08_p006.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p007',
+    name: '/online-branch/My_P08_p007',
+    component: () => import('@/views/onlineBranch/My_P08_p007.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p008',
+    name: '/online-branch/My_P08_p008',
+    component: () => import('@/views/onlineBranch/My_P08_p008.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p009',
+    name: '/online-branch/My_P08_p009',
+    component: () => import('@/views/onlineBranch/My_P08_p009.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p010',
+    name: '/online-branch/My_P08_p010',
+    component: () => import('@/views/onlineBranch/My_P08_p010.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p011',
+    name: '/online-branch/My_P08_p011',
+    component: () => import('@/views/onlineBranch/My_P08_p011.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p012',
+    name: '/online-branch/My_P08_p012',
+    component: () => import('@/views/onlineBranch/My_P08_p012.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p013',
+    name: '/online-branch/My_P08_p013',
+    component: () => import('@/views/onlineBranch/My_P08_p013.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p014',
+    name: '/online-branch/My_P08_p014',
+    component: () => import('@/views/onlineBranch/My_P08_p014.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p015',
+    name: '/online-branch/My_P08_p015',
+    component: () => import('@/views/onlineBranch/My_P08_p015.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p016',
+    name: '/online-branch/My_P08_p016',
+    component: () => import('@/views/onlineBranch/My_P08_p016.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p017',
+    name: '/online-branch/My_P08_p017',
+    component: () => import('@/views/onlineBranch/My_P08_p017.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p018',
+    name: '/online-branch/My_P08_p018',
+    component: () => import('@/views/onlineBranch/My_P08_p018.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p019',
+    name: '/online-branch/My_P08_p019',
+    component: () => import('@/views/onlineBranch/My_P08_p019.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p020',
+    name: '/online-branch/My_P08_p020',
+    component: () => import('@/views/onlineBranch/My_P08_p020.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p021',
+    name: '/online-branch/My_P08_p021',
+    component: () => import('@/views/onlineBranch/My_P08_p021.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p022',
+    name: '/online-branch/My_P08_p022',
+    component: () => import('@/views/onlineBranch/My_P08_p022.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p023',
+    name: '/online-branch/My_P08_p023',
+    component: () => import('@/views/onlineBranch/My_P08_p023.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p024',
+    name: '/online-branch/My_P08_p024',
+    component: () => import('@/views/onlineBranch/My_P08_p024.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p025',
+    name: '/online-branch/My_P08_p025',
+    component: () => import('@/views/onlineBranch/My_P08_p025.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p026',
+    name: '/online-branch/My_P08_p026',
+    component: () => import('@/views/onlineBranch/My_P08_p026.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p027',
+    name: '/online-branch/My_P08_p027',
+    component: () => import('@/views/onlineBranch/My_P08_p027.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p028',
+    name: '/online-branch/My_P08_p028',
+    component: () => import('@/views/onlineBranch/My_P08_p028.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p029',
+    name: '/online-branch/My_P08_p029',
+    component: () => import('@/views/onlineBranch/My_P08_p029.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p030',
+    name: '/online-branch/My_P08_p030',
+    component: () => import('@/views/onlineBranch/My_P08_p030.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p031',
+    name: '/online-branch/My_P08_p031',
+    component: () => import('@/views/onlineBranch/My_P08_p031.vue'),
+  },
+  {
+    path: '/online-branch/MI_P02_p005',
+    name: '/online-branch/MI_P02_p005',
+    component: () => import('@/views/onlineBranch/MI_P02_p005.vue'),
+  },
+  {
+    path: '/online-branch/MI_P02_p006',
+    name: '/online-branch/MI_P02_p006',
+    component: () => import('@/views/onlineBranch/MI_P02_p006.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p001',
+    name: '/online-branch/MI_P01_p001',
+    component: () => import('@/views/onlineBranch/MI_P01_p001.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p002',
+    name: '/online-branch/MI_P01_p002',
+    component: () => import('@/views/onlineBranch/MI_P01_p002.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p003',
+    name: '/online-branch/MI_P01_p003',
+    component: () => import('@/views/onlineBranch/MI_P01_p003.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p004',
+    name: '/online-branch/MI_P01_p004',
+    component: () => import('@/views/onlineBranch/MI_P01_p004.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p005',
+    name: '/online-branch/MI_P01_p005',
+    component: () => import('@/views/onlineBranch/MI_P01_p005.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p006',
+    name: '/online-branch/MI_P01_p006',
+    component: () => import('@/views/onlineBranch/MI_P01_p006.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p007',
+    name: '/online-branch/MI_P01_p007',
+    component: () => import('@/views/onlineBranch/MI_P01_p007.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p008',
+    name: '/online-branch/MI_P01_p008',
+    component: () => import('@/views/onlineBranch/MI_P01_p008.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p009',
+    name: '/online-branch/MI_P01_p009',
+    component: () => import('@/views/onlineBranch/MI_P01_p009.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p010',
+    name: '/online-branch/MI_P01_p010',
+    component: () => import('@/views/onlineBranch/MI_P01_p010.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p011',
+    name: '/online-branch/MI_P01_p011',
+    component: () => import('@/views/onlineBranch/MI_P01_p011.vue'),
+  },
+  {
+    path: '/online-branch/MI_P01_p012',
+    name: '/online-branch/MI_P01_p012',
+    component: () => import('@/views/onlineBranch/MI_P01_p012.vue'),
+  },
+  {
+    path: '/online-branch/MI_P06_p001',
+    name: '/online-branch/MI_P06_p001',
+    component: () => import('@/views/onlineBranch/MI_P06_p001.vue'),
+  },
+  {
+    path: '/online-branch/MI_P07_p001',
+    name: '/online-branch/MI_P07_p001',
+    component: () => import('@/views/onlineBranch/MI_P07_p001.vue'),
+  },
 
   // personal-loan
   {
@@ -814,6 +1059,194 @@ const routes = [
     path: '/personal-loan/PF_P09_p004',
     name: '/personal-loan/PF_P09_p004',
     component: () => import('@/views/personalLoan/PF_P09_p004.vue'),
+  },
+
+  // auto
+  {
+    path: '/auto/AF_P01_p002',
+    name: '/auto/AF_P01_p002',
+    component: () => import('@/views/auto/AF_P01_p002.vue'),
+  },
+  {
+    path: '/auto/AF_P01_p003',
+    name: '/auto/AF_P01_p003',
+    component: () => import('@/views/auto/AF_P01_p003.vue'),
+  },
+  {
+    path: '/auto/AF_P01_p004',
+    name: '/auto/AF_P01_p004',
+    component: () => import('@/views/auto/AF_P01_p004.vue'),
+  },
+  {
+    path: '/auto/AF_P02_p002',
+    name: '/auto/AF_P02_p002',
+    component: () => import('@/views/auto/AF_P02_p002.vue'),
+  },
+  {
+    path: '/auto/AF_P02_p003',
+    name: '/auto/AF_P02_p003',
+    component: () => import('@/views/auto/AF_P02_p003.vue'),
+  },
+  {
+    path: '/auto/AF_P02_p004',
+    name: '/auto/AF_P02_p004',
+    component: () => import('@/views/auto/AF_P02_p004.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p002',
+    name: '/auto/AF_P06_p002',
+    component: () => import('@/views/auto/AF_P06_p002.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p003',
+    name: '/auto/AF_P06_p003',
+    component: () => import('@/views/auto/AF_P06_p003.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p004',
+    name: '/auto/AF_P06_p004',
+    component: () => import('@/views/auto/AF_P06_p004.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p005',
+    name: '/auto/AF_P06_p005',
+    component: () => import('@/views/auto/AF_P06_p005.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p006',
+    name: '/auto/AF_P06_p006',
+    component: () => import('@/views/auto/AF_P06_p006.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p007',
+    name: '/auto/AF_P06_p007',
+    component: () => import('@/views/auto/AF_P06_p007.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p002',
+    name: '/auto/AF_P07_p002',
+    component: () => import('@/views/auto/AF_P07_p002.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p003',
+    name: '/auto/AF_P07_p003',
+    component: () => import('@/views/auto/AF_P07_p003.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p004',
+    name: '/auto/AF_P07_p004',
+    component: () => import('@/views/auto/AF_P07_p004.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p005',
+    name: '/auto/AF_P07_p005',
+    component: () => import('@/views/auto/AF_P07_p005.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p013',
+    name: '/auto/AF_P07_p013',
+    component: () => import('@/views/auto/AF_P07_p013.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p006',
+    name: '/auto/AF_P07_p006',
+    component: () => import('@/views/auto/AF_P07_p006.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p007',
+    name: '/auto/AF_P07_p007',
+    component: () => import('@/views/auto/AF_P07_p007.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p008',
+    name: '/auto/AF_P07_p008',
+    component: () => import('@/views/auto/AF_P07_p008.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p009',
+    name: '/auto/AF_P07_p009',
+    component: () => import('@/views/auto/AF_P07_p009.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p010',
+    name: '/auto/AF_P07_p010',
+    component: () => import('@/views/auto/AF_P07_p010.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p011',
+    name: '/auto/AF_P07_p011',
+    component: () => import('@/views/auto/AF_P07_p011.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p012',
+    name: '/auto/AF_P07_p012',
+    component: () => import('@/views/auto/AF_P07_p012.vue'),
+  },
+
+  // membership
+  {
+    path: '/membership/MI_P03_p001',
+    name: '/membership/MI_P03_p001',
+    component: () => import('@/views/membership/MI_P03_p001.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p002',
+    name: '/membership/MI_P03_p002',
+    component: () => import('@/views/membership/MI_P03_p002.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p003',
+    name: '/membership/MI_P03_p003',
+    component: () => import('@/views/membership/MI_P03_p003.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p003a',
+    name: '/membership/MI_P03_p003a',
+    component: () => import('@/views/membership/MI_P03_p003a.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p004',
+    name: '/membership/MI_P03_p004',
+    component: () => import('@/views/membership/MI_P03_p004.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p005',
+    name: '/membership/MI_P03_p005',
+    component: () => import('@/views/membership/MI_P03_p005.vue'),
+  },
+  {
+    path: '/membership/MI_P03_p006',
+    name: '/membership/MI_P03_p006',
+    component: () => import('@/views/membership/MI_P03_p006.vue'),
+  },
+
+  // hana-money
+  {
+    path: '/hana-money/MI_P02_p001',
+    name: '/hana-money/MI_P02_p001',
+    component: () => import('@/views/hanaMoney/MI_P02_p001.vue'),
+  },
+  {
+    path: '/hana-money/MI_P02_p002',
+    name: '/hana-money/MI_P02_p002',
+    component: () => import('@/views/hanaMoney/MI_P02_p002.vue'),
+  },
+  {
+    path: '/hana-money/MI_P02_p002a',
+    name: '/hana-money/MI_P02_p002a',
+    component: () => import('@/views/hanaMoney/MI_P02_p002a.vue'),
+  },
+  {
+    path: '/hana-money/MI_P02_p003',
+    name: '/hana-money/MI_P02_p003',
+    component: () => import('@/views/hanaMoney/MI_P02_p003.vue'),
+  },
+
+  // business
+  {
+    path: '/business/BF_P00_main',
+    name: '/business/BF_P00_main',
+    component: () => import('@/views/business/BF_P00_main.vue'),
   },
 ];
 
