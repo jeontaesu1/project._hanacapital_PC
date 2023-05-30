@@ -9,6 +9,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import PF_P01_l001 from '@/views/personalLoan/PF_P01_l001.vue';
 import PF_P01_l002 from '@/views/personalLoan/PF_P01_l002.vue';
 import PF_P01_l003 from '@/views/personalLoan/PF_P01_l003.vue';
+import PF_P01_l006 from '@/views/personalLoan/PF_P01_l006.vue';
 
 export default {
   components: {
@@ -19,11 +20,13 @@ export default {
     PF_P01_l001,
     PF_P01_l002,
     PF_P01_l003,
+    PF_P01_l006,
   },
   setup() {
     const layer001 = ref(null);
     const layer002 = ref(null);
     const layer003 = ref(null);
+    const layer004 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -34,14 +37,19 @@ export default {
     const layer003Open = (e = {}) => {
       layer003.value.layer.open(e.target);
     };
+    const layer004Open = (e = {}) => {
+      layer004.value.layer.open(e.target);
+    };
 
     return {
       layer001,
       layer002,
       layer003,
+      layer004,
       layer001Open,
       layer002Open,
       layer003Open,
+      layer004Open,
     };
   },
 };
@@ -70,10 +78,16 @@ export default {
           하나은행 계좌 개설 팝업<br />PF_P01_l003
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer004Open">
+          1원 인증<br />PF_P01_l006
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <PF_P01_l001 ref="layer001" />
     <PF_P01_l002 ref="layer002" />
     <PF_P01_l003 ref="layer003" />
+    <PF_P01_l006 ref="layer004" />
   </PageContents>
 </template>
