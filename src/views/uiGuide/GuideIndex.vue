@@ -1513,7 +1513,7 @@ const datas = () => [
       },
       {
         depth2: '약정목록\nMy_P05_p003',
-        depth3: '약정안내\nMy_P06_p001',
+        depth3: '약정안내\nMy_P06_p003',
         depth4: '',
         depth5: '',
         depth6: '',

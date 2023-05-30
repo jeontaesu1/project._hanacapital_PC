@@ -190,5 +190,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/My_P06_p001.scss';
+@import '@/assets/scss/views/onlineBranch/My_p06_p001.scss';
 </style>
