@@ -92,5 +92,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/My_P05_p005.scss';
+@import '@/assets/scss/views/onlineBranch/My_p05_p005.scss';
 </style>
