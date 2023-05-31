@@ -48,9 +48,9 @@ export default {
         심사결과는 등록하신 휴대폰 번호로 문자(SMS)안내 드리겠습니다.
       </IllustInfoText>
     </IllustInfo>
-    <div>
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">차량정보</h3>
+    <ul class="reset-list row-margin-block-small">
+      <li class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
         <BasicBox>
           <BasicBoxHead>
@@ -58,8 +58,8 @@ export default {
               <p class="text-body-4 font-weight-light row-margin-mini">
                 2020년식
               </p>
-              <h3 class="text-body-1 font-weight-medium">운용리스 11가1111</h3>
-              <p class="text-body-4 color-gray row-margin-small">
+              <h3 class="text-title-2 font-weight-medium">운용리스 11가1111</h3>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
                 쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
               </p>
             </BasicBoxHeadLeft>
@@ -78,11 +78,11 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
-      </section>
+      </li>
 
       <!-- Case : 리스일 경우 노출 -->
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">리스 조건</h3>
+      <li class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">리스 조건</h3>
 
         <ul :class="$style['logs']">
           <li :class="$style['logs__item']">
@@ -135,12 +135,12 @@ export default {
             </div>
           </li>
         </ul>
-      </section>
+      </li>
       <!-- // Case : 리스일 경우 노출 -->
 
       <!-- Case : 렌트일 경우 노출 -->
-      <section class="row-margin-container-medium">
-        <h3 class="text-title-2 row-margin-contents">렌트 조건</h3>
+      <li class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">렌트 조건</h3>
 
         <ul :class="$style['logs']">
           <li :class="$style['logs__item']">
@@ -193,11 +193,11 @@ export default {
             </div>
           </li>
         </ul>
-      </section>
+      </li>
       <!-- // Case : 렌트일 경우 노출 -->
 
-      <section>
-        <h3 class="text-title-2 row-margin-contents">승계 조건</h3>
+      <li class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">승계 조건</h3>
 
         <BasicBox>
           <h4 class="text-body-2 font-weight-regular row-margin-small">
@@ -207,8 +207,8 @@ export default {
             현재 계약자의 이용 조건을 동일하게 승계합니다.
           </p>
         </BasicBox>
-      </section>
-    </div>
+      </li>
+    </ul>
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
