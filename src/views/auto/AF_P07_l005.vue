@@ -10,6 +10,11 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -21,6 +26,11 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    BasicHr,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +50,86 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>렌트 상세조건</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <KeyValue>
+        <KeyValueItem>
+          <KeyValueTitle>렌트료 합계</KeyValueTitle>
+          <KeyValueText>
+            <h3 class="text-body-1 font-weight-regular">0 원</h3>
+            <p class="text-body-3 color-gray row-margin-mini">자동차세 포함</p>
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>만기 인수 시 납부금액</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>만기 반환 시 환급금액</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>승계수수료 (인지대 포함)</KeyValueTitle>
+          <KeyValueText>5,000,000 원</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <BasicHr
+        type="contents"
+        theme="quaternary"
+        className="row-margin-contents"
+      />
+
+      <KeyValue>
+        <KeyValueItem>
+          <KeyValueTitle>보증금</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>잔여선납금</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>잔존가치 (VAT포함)</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>월 렌트료</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>렌트기간</KeyValueTitle>
+          <KeyValueText>00개월</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>계약주행거리</KeyValueTitle>
+          <KeyValueText>100,000 Km</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>종료 후 처리</KeyValueTitle>
+          <KeyValueText>-</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>
+            렌트 만기일자/<br />
+            최종결제일자
+          </KeyValueTitle>
+          <KeyValueText>
+            2023.04.01/<br />
+            2023.09.11
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>정비 서비스</KeyValueTitle>
+          <KeyValueText>-</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>보험가입정보</KeyValueTitle>
+          <KeyValueText>-</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +140,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
