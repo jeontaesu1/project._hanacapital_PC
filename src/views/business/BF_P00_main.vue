@@ -49,16 +49,30 @@ export default {
             >
               <ImgMainSample />
             </div>
-            <p
-              :class="[
-                $style['icon-box__content'],
-                'text-big-3',
-                'row-margin-item',
-                'font-weight-bold',
-              ]"
-            >
-              의료기할부
-            </p>
+            <dl class="reset-list row-margin-item-group">
+              <dt
+                :class="[
+                  $style['icon-box__content'],
+                  'text-big-3',
+                  'font-weight-bold',
+                  'color-white',
+                ]"
+              >
+                의료기할부
+              </dt>
+              <dd
+                :class="[
+                  $style['icon-box__content'],
+                  'text-body-1',
+                  'row-margin-item',
+                  'font-weight-regular',
+                  'color-white',
+                ]"
+              >
+                병/의원 및 의료법인대상<br />
+                의료기기, 의료소모품 구입자금 대출
+              </dd>
+            </dl>
           </div>
         </BasicBox>
       </li>
@@ -73,16 +87,30 @@ export default {
             >
               <ImgMainSample />
             </div>
-            <p
-              :class="[
-                $style['icon-box__content'],
-                'text-big-3',
-                'row-margin-item',
-                'font-weight-bold',
-              ]"
-            >
-              의료기할부
-            </p>
+            <dl class="reset-list row-margin-item-group">
+              <dt
+                :class="[
+                  $style['icon-box__content'],
+                  'text-big-3',
+                  'font-weight-bold',
+                  'color-white',
+                ]"
+              >
+                의료기리스
+              </dt>
+              <dd
+                :class="[
+                  $style['icon-box__content'],
+                  'text-body-1',
+                  'row-margin-item',
+                  'font-weight-regular',
+                  'color-white',
+                ]"
+              >
+                의료장비, 의료기관 전용<br />
+                금융리스
+              </dd>
+            </dl>
           </div>
         </BasicBox>
       </li>
@@ -97,16 +125,30 @@ export default {
             >
               <ImgMainSample />
             </div>
-            <p
-              :class="[
-                $style['icon-box__content'],
-                'text-big-3',
-                'row-margin-item',
-                'font-weight-bold',
-              ]"
-            >
-              의료기할부
-            </p>
+            <dl class="reset-list row-margin-item-group">
+              <dt
+                :class="[
+                  $style['icon-box__content'],
+                  'text-big-3',
+                  'font-weight-bold',
+                  'color-white',
+                ]"
+              >
+                산업재리스
+              </dt>
+              <dd
+                :class="[
+                  $style['icon-box__content'],
+                  'text-body-1',
+                  'row-margin-item',
+                  'font-weight-regular',
+                  'color-white',
+                ]"
+              >
+                각종 시설, 기계 등<br />
+                산업설비 전문 리스
+              </dd>
+            </dl>
           </div>
         </BasicBox>
       </li>
