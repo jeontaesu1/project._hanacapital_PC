@@ -3308,6 +3308,7 @@ export default {
                 $style['icon-box__content'],
                 'text-title-1',
                 'row-margin-item',
+                'color-white',
               ]"
             >
               <span class="color-green font-weight-bold">하나프라자</span>님은
@@ -3321,7 +3322,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">icon 라지 사이즈</h3>
 
-        <BasicBox>
+        <BasicBox theme="quaternary">
           <div :class="$style['icon-box']">
             <div
               :class="[
@@ -3331,17 +3332,31 @@ export default {
             >
               <ImgMainSample />
             </div>
-            <p
-              :class="[
-                $style['icon-box__content'],
-                'text-title-1',
-                'row-margin-item',
-              ]"
-            >
-              <span class="color-green font-weight-bold">하나프라자</span>님은
-              하나캐피탈에 등록된<br />
-              <span class="font-weight-bold">정식 모집인</span>입니다
-            </p>
+            <dl>
+              <dt
+                :class="[
+                  $style['icon-box__content'],
+                  'text-big-3',
+                  'row-margin-item-group',
+                  'font-weight-bold',
+                  'color-white',
+                ]"
+              >
+                의료기할부
+              </dt>
+              <dd
+                :class="[
+                  $style['icon-box__content'],
+                  'text-body-1',
+                  'row-margin-item',
+                  'font-weight-regular',
+                  'color-white',
+                ]"
+              >
+                병/의원 및 의료법인대상<br />
+                의료기기, 의료소모품 구입자금 대출
+              </dd>
+            </dl>
           </div>
         </BasicBox>
       </div>
