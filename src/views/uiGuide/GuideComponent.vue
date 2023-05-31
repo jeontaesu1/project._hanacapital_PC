@@ -3983,11 +3983,10 @@ export default {
         <BasicBox>// contnets</BasicBox>
         <BasicBox theme="secondary">// contnets</BasicBox>
         <BasicBox theme="tertiary">// contnets</BasicBox>
-        <!--
+
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
-        -->
       </div>
     </section>
 
@@ -5075,6 +5074,14 @@ export default {
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
 
