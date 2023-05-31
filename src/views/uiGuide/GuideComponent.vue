@@ -3315,6 +3315,29 @@ export default {
           </div>
         </BasicBox>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon 라지 사이즈</h3>
+
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div :class="$style['icon-box__icon']">
+              <IconStar />
+            </div>
+            <p
+              :class="[
+                $style['icon-box__content'],
+                'text-title-1',
+                'row-margin-item',
+              ]"
+            >
+              <span class="color-green font-weight-bold">하나프라자</span>님은
+              하나캐피탈에 등록된<br />
+              <span class="font-weight-bold">정식 모집인</span>입니다
+            </p>
+          </div>
+        </BasicBox>
+      </div>
     </section>
 
     <section class="test-section">
@@ -3981,11 +4004,10 @@ export default {
         <BasicBox>// contnets</BasicBox>
         <BasicBox theme="secondary">// contnets</BasicBox>
         <BasicBox theme="tertiary">// contnets</BasicBox>
-        <!--
+
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
-        -->
       </div>
     </section>
 
