@@ -89,6 +89,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
@@ -179,6 +180,7 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    ImgMainSample,
   },
 
   setup() {
@@ -3321,8 +3323,13 @@ export default {
 
         <BasicBox>
           <div :class="$style['icon-box']">
-            <div :class="$style['icon-box__icon']">
-              <IconStar />
+            <div
+              :class="[
+                $style['icon-box__icon'],
+                $style['icon-box__icon--large'],
+              ]"
+            >
+              <ImgMainSample />
             </div>
             <p
               :class="[
