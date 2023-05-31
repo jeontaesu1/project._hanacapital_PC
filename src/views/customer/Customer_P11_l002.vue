@@ -40,7 +40,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      numberError: false,
     });
 
     const layer = ref(null);

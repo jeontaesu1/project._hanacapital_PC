@@ -116,6 +116,7 @@ export default {
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 :classNames="{ wrap: $style['right-button'] }"
               >
                 바로가기
@@ -132,7 +133,7 @@ export default {
       </li>
     </ul>
 
-    <section class="row-margin-block-small row-margin-bottom-none">
+    <div class="row-margin-block-small row-margin-bottom-none">
       <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
@@ -181,7 +182,7 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="SMS 수신"
-                  target="#MI_P00_p007_sms"
+                  :target="`#MI_P00_p007_sms_${i}`"
                   :selectOnly="true"
                 >
                   <FormInvalid :error="state.smsError">
@@ -199,7 +200,7 @@ export default {
                             },
                           ]"
                           title="SMS 수신"
-                          inputId="MI_P00_p007_sms"
+                          :inputId="`MI_P00_p007_sms_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -211,7 +212,7 @@ export default {
                 <!-- Case : 수신 선택 시 노출  -->
                 <FormListItem
                   titleText="연락처"
-                  target="#MI_P00_p007_phone"
+                  :target="`#MI_P00_p007_phone_${i}`"
                   :selectOnly="true"
                 >
                   <FormInvalid :error="state.phoneError">
@@ -233,7 +234,7 @@ export default {
                             },
                           ]"
                           title="연락처"
-                          inputId="MI_P00_p007_phone"
+                          :inputId="`MI_P00_p007_phone_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -263,7 +264,39 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 첫번째 페이지일 때 -->
-    </section>
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
+    </div>
 
     <ButtonList align="full">
       <ButtonListItem>

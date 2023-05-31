@@ -39,7 +39,6 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
-
     ImgAccount,
   },
   setup() {
@@ -76,7 +75,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
+      <div>
         <div :class="$style['img-account']"><ImgAccount /></div>
 
         <FormList
@@ -86,7 +85,6 @@ export default {
         >
           <FormListItem
             titleText="입금자명"
-            :forceFocus="true"
             target="#PF_P01_l006_accountAuthName"
           >
             <FormInvalid :error="state.nameError">
@@ -113,7 +111,7 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
-      </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList

@@ -43,133 +43,133 @@ export default {
 
 <template>
   <PageContents>
-    <IllustInfo :classNames="{ wrap: 'row-margin-block-small' }">
+    <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>중도상환신청이 완료되었습니다</IllustInfoTitle>
     </IllustInfo>
 
-    <section>
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">신용대출</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <RoundStatus
-              theme="secondary"
-              size="large"
-              :classNames="{ wrap: 'display-block' }"
-            >
-              정상
-            </RoundStatus>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
+    <div class="row-margin-block-small row-margin-bottom-none">
+      <section class="row-margin-block-small">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">신용대출</h3>
+              <div :class="[$style['division-info'], 'row-margin-item-small']">
+                <ul :class="$style['division-info__list']">
+                  <li :class="$style['division-info__item']">
+                    <div class="text-body-3 color-gray-tertiary">
+                      L99999999999999
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <RoundStatus theme="secondary" size="large" :block="true">
+                정상
+              </RoundStatus>
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
 
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>6,265,200 원</KeyValueText>
-          </KeyValueItem>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>결제예정금액</KeyValueTitle>
+              <KeyValueText>6,265,200 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>이용기간</KeyValueTitle>
-            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>이용기간</KeyValueTitle>
+              <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>05일</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>결제일</KeyValueTitle>
+              <KeyValueText>05일</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>12/36</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
+            <KeyValueItem>
+              <KeyValueTitle>결제회차</KeyValueTitle>
+              <KeyValueText>12/36</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
 
-    <section class="row-margin-block-small">
-      <h3 class="text-title-1 row-margin-contents">신청내역</h3>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">신청내역</h3>
 
-      <BasicBox>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>결제방법</KeyValueTitle>
-            <KeyValueText>오늘 즉시출금 (2022.06.12)</KeyValueText>
-          </KeyValueItem>
+        <BasicBox>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>결제방법</KeyValueTitle>
+              <KeyValueText>오늘 즉시출금 (2022.06.12)</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>중도상환방법</KeyValueTitle>
-            <KeyValueText>일부상환 (원금기준)</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
+            <KeyValueItem>
+              <KeyValueTitle>중도상환방법</KeyValueTitle>
+              <KeyValueText>일부상환 (원금기준)</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
 
-    <section>
-      <h3 class="text-title-1 row-margin-contents">
-        중도상환금액<span :class="$style['sub']">(결제하실 금액)</span>
-      </h3>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">
+          중도상환금액<span :class="$style['sub']">(결제하실 금액)</span>
+        </h3>
 
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <KeyValue verticalAlign="center">
-              <KeyValueItem>
-                <KeyValueTitle :classNames="{ title: 'color-black' }">
-                  실 납부액
-                </KeyValueTitle>
-                <KeyValueText>
-                  <UnitText rightUnit="원" align="right">999,999,999</UnitText>
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <KeyValue verticalAlign="center">
+                <KeyValueItem>
+                  <KeyValueTitle :classNames="{ title: 'color-black' }">
+                    실 납부액
+                  </KeyValueTitle>
+                  <KeyValueText>
+                    <UnitText rightUnit="원" align="right"
+                      >999,999,999</UnitText
+                    >
+                  </KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>상환원금</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>상환원금</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>경과이자</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>경과이자</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>중도상환수수료</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>중도상환수수료</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>지연배상금</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>지연배상금</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>비용</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>비용</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>환급금액</KeyValueTitle>
-            <KeyValueText>999,999,999 원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
+            <KeyValueItem>
+              <KeyValueTitle>환급금액</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
+    </div>
 
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>

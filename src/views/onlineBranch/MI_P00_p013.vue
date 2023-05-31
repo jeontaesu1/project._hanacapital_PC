@@ -93,6 +93,7 @@ export default {
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 :classNames="{ wrap: $style['right-button'] }"
               >
                 바로가기
@@ -151,7 +152,7 @@ export default {
     <BasicHr theme="tertiary" className="row-margin-block" />
 
     <!-- Case : 범칙금 조회 시 노출 -->
-    <section>
+    <section class="contents-wrap">
       <h3 class="text-title-1 row-margin-contents">범칙금 조회 결과</h3>
 
       <!-- Case : 조회 결과 없을 경우 -->
@@ -222,7 +223,7 @@ export default {
     <!-- // Case : 범칙금 조회 시 노출 -->
 
     <!-- Case : 자동차세 조회 시 노출 -->
-    <section>
+    <section class="contents-wrap">
       <h3 class="text-title-1 row-margin-contents">자동차세 조회 결과</h3>
 
       <!-- Case : 조회 결과 없을 경우 -->

@@ -33,12 +33,12 @@ export default {
 
 <template>
   <PageContents>
-    <IllustInfo :classNames="{ wrap: 'row-margin-block-small' }">
+    <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>스탁론 대출신청이 완료되었습니다</IllustInfoTitle>
     </IllustInfo>
 
-    <BasicBox>
+    <BasicBox className="row-margin-block-small row-margin-bottom-none">
       <KeyValue :wrap="true">
         <KeyValueItem>
           <KeyValueTitle>신청금액</KeyValueTitle>

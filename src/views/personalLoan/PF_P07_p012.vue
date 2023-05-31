@@ -70,12 +70,7 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
-                  미신청
-                </RoundStatus>
+                <RoundStatus size="large" :block="true"> 미신청 </RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -116,11 +111,7 @@ export default {
                 </h3>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="secondary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
+                <RoundStatus theme="secondary" size="large" :block="true">
                   신청완료
                 </RoundStatus>
               </BasicBoxHeadRight>
@@ -156,7 +147,7 @@ export default {
         </li>
       </ul>
 
-      <!-- Case : 상풀 선택 시 노출 -->
+      <!-- Case : 상품 선택 시 노출 -->
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">만기현황</h3>
 
@@ -249,7 +240,7 @@ export default {
           </KeyValue>
         </BasicBox>
       </section>
-      <!-- // Case : 상풀 선택 시 노출 -->
+      <!-- // Case : 상품 선택 시 노출 -->
     </div>
 
     <ButtonList :wrap="true" align="center">

@@ -936,8 +936,8 @@ const datas = () => [
         depth5: '대출정보 입력\nPF_P07_p005',
         depth6: '',
         path: '/personal-loan/PF_P07_p005',
-        status: 'ing',
-        create: '2023.05.31',
+        status: '',
+        create: '',
         log: [],
       },
       {
