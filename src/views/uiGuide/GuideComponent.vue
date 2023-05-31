@@ -90,6 +90,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
@@ -181,6 +182,7 @@ export default {
     IconCar,
     IconDocumentSearch,
     CarThumb,
+    ImgMainSample,
   },
 
   setup() {
@@ -3302,6 +3304,34 @@ export default {
           <div :class="$style['icon-box']">
             <div :class="$style['icon-box__icon']">
               <IconStar />
+            </div>
+            <p
+              :class="[
+                $style['icon-box__content'],
+                'text-title-1',
+                'row-margin-item',
+              ]"
+            >
+              <span class="color-green font-weight-bold">하나프라자</span>님은
+              하나캐피탈에 등록된<br />
+              <span class="font-weight-bold">정식 모집인</span>입니다
+            </p>
+          </div>
+        </BasicBox>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon 라지 사이즈</h3>
+
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div
+              :class="[
+                $style['icon-box__icon'],
+                $style['icon-box__icon--large'],
+              ]"
+            >
+              <ImgMainSample />
             </div>
             <p
               :class="[
