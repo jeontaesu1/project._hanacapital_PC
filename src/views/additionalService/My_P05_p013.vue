@@ -1,5 +1,5 @@
 <script>
-// Etc_P01_p002
+// My_P05_p013
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -26,16 +26,29 @@ export default {
 <template>
   <PageContents>
     <IllustInfo>
+      <!-- Case : 서류 등록 실패 시 노출 -->
+      <IllustObject type="fail" />
+      <IllustInfoTitle>서류등록에 실패하였습니다</IllustInfoTitle>
+      <!-- // Case : 서류 등록 실패 시 노출 -->
+
+      <!-- Case : 서류 등록 실패 시 노출 -->
       <IllustObject type="complete" />
-      <IllustInfoTitle>전화상담신청이 완료되었습니다</IllustInfoTitle>
+      <IllustInfoTitle>서류등록이 완료되었습니다</IllustInfoTitle>
       <IllustInfoText>
         고객님 감사합니다.<br />
-        빠른 시일 내에 답변 드리겠습니다.<br />
-        (상담가능시간 : 평일 09-18시)
+        접수하신 서류를 확인하여 빠른 시일내에 답변 드리겠습니다.<br />
+        (단, 토요일 및 공휴일에 신청하신 경우 연락이 지연될 수 있으니
+        양해바랍니다.)
       </IllustInfoText>
+      <!-- // Case : 서류 등록 실패 시 노출 -->
     </IllustInfo>
 
-    <ButtonList :wrap="true" align="center">
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton tagName="RouterLink" to="" :line="true">
+          서류등록 추가
+        </BasicButton>
+      </ButtonListItem>
       <ButtonListItem>
         <BasicButton tagName="RouterLink" to="">확인</BasicButton>
       </ButtonListItem>

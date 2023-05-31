@@ -1,11 +1,8 @@
 <script>
-// My_P02_p001
+// My_P06_p011
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
@@ -15,9 +12,6 @@ export default {
     PageContents,
     PageHead,
     PageTitle,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
@@ -28,7 +22,7 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>본인인증을 진행해 주세요</PageTitle>
+      <PageTitle>실명인증 및 본인인증을 진행해 주세요</PageTitle>
     </PageHead>
 
     <div>// [공통 > 본인인증] 내용 노출</div>
@@ -47,7 +41,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__depth-head']">
                           <CheckBox
-                            id="My_P02_p001_agree_001"
+                            id="My_P06_p011_agree_001"
                             :classNames="{
                               wrap: $style['agree-list__depth-checkbox'],
                             }"
@@ -62,7 +56,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="My_P02_p001_agree_001_001"
+                            id="My_P06_p011_agree_001_001"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -70,7 +64,34 @@ export default {
                           >
                             <CheckBoxObject />
                             <CheckBoxLabelText>
-                              개인정보 수집·이용 동의
+                              개인정보 필수적 수집·이용
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="My_P06_p011_agree_001_002"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              고유식별정보 필수적 수집·이용
                             </CheckBoxLabelText>
                           </CheckBox>
                           <div :class="$style['agree-list__right']">
@@ -94,15 +115,9 @@ export default {
         </ul>
       </div>
     </section>
-
-    <ButtonList align="full">
-      <ButtonListItem>
-        <BasicButton>조회하기</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/additionalService/My_P02_p001.scss';
+@import '@/assets/scss/views/additionalService/My_P06_p011.scss';
 </style>

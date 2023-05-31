@@ -16,9 +16,9 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageTitle>본인인증을 진행해 주세요</PageTitle>
     </PageHead>
 
-    // contents
+    <div>// [공통 > 본인인증] 내용 노출</div>
   </PageContents>
 </template>

@@ -1,14 +1,20 @@
 <script>
-// Customer_P02_p001
+// Customer_P02_p001;
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
+import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
+    PageHeadRow,
     PageTitle,
+    PageMainText,
+    StepProgress,
   },
 };
 </script>
@@ -16,9 +22,18 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageHeadRow>
+        <PageTitle align="left">고객상담</PageTitle>
+        <template v-slot:right>
+          <StepProgress :total="3" :current="1" />
+        </template>
+      </PageHeadRow>
+      <PageMainText align="left">
+        고객상담을 위해<br />
+        본인확인이 필요합니다
+      </PageMainText>
     </PageHead>
 
-    // contents
+    <div>// [공통 > 본인인증] 내용 노출</div>
   </PageContents>
 </template>

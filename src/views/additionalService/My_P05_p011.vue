@@ -1,11 +1,11 @@
 <script>
-// My_P02_p001
+// My_P05_p011
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
+import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
@@ -14,10 +14,10 @@ export default {
   components: {
     PageContents,
     PageHead,
+    PageHeadRow,
     PageTitle,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
+    PageMainText,
+    StepProgress,
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
@@ -28,7 +28,13 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>본인인증을 진행해 주세요</PageTitle>
+      <PageHeadRow>
+        <PageTitle align="left">서류등록</PageTitle>
+        <template v-slot:right>
+          <StepProgress :total="3" :current="1" />
+        </template>
+      </PageHeadRow>
+      <PageMainText align="left">본인인증을 진행해 주세요</PageMainText>
     </PageHead>
 
     <div>// [공통 > 본인인증] 내용 노출</div>
@@ -47,7 +53,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__depth-head']">
                           <CheckBox
-                            id="My_P02_p001_agree_001"
+                            id="My_P05_p011_agree_001"
                             :classNames="{
                               wrap: $style['agree-list__depth-checkbox'],
                             }"
@@ -62,7 +68,7 @@ export default {
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
-                            id="My_P02_p001_agree_001_001"
+                            id="My_P05_p011_agree_001_001"
                             :classNames="{
                               wrap: $style['agree-list__checkbox'],
                             }"
@@ -94,15 +100,9 @@ export default {
         </ul>
       </div>
     </section>
-
-    <ButtonList align="full">
-      <ButtonListItem>
-        <BasicButton>조회하기</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/additionalService/My_P02_p001.scss';
+@import '@/assets/scss/views/additionalService/My_P05_p011.scss';
 </style>
