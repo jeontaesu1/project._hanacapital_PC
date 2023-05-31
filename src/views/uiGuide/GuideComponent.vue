@@ -5050,6 +5050,33 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Box Link (logs)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['logs']">
+          <li v-for="i in 2" :key="i" :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="$style['logs__title']">정비</h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button
+                    type="button"
+                    :class="$style['logs__link']"
+                    @click="layer001Open"
+                  >
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Component Title</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
