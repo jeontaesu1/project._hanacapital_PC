@@ -1,7 +1,6 @@
 <script>
 // My_P08_p003
 // My_P08_p004
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -13,6 +12,16 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+
 import IconPhone from '@/assets/images/icon/phone.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
@@ -23,17 +32,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import IconLinkSmall from '@/assets/images/icon/link-small.svg?component';
-// import IconLinkSmalldsds from '@/assets/images/icon/link-small.svg?component';
-import KeyValue from '@/components/ui/text/KeyValue.vue';
-import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
-import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
-import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -48,6 +47,15 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    NoticeText,
+    TextButton,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
     IconPhone,
     IconSend,
     IconPersonalTerms,
@@ -58,356 +66,359 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
-    IconLinkSmall,
-    BasicButton,
-    NoticeText,
-    TextButton,
-    ButtonList,
-    ButtonListItem,
-    KeyValue,
-    KeyValueItem,
-    KeyValueTitle,
-    KeyValueText,
+    IconLink,
   },
 };
 </script>
 
 <template>
-  <UiTab>
-    <!-- <UiTab v-slot="tabSlotProps"> -->
-    <PageContents>
-      <PageHead>
-        <!-- case : 만기후처리_신청전 -->
-        <PageTitle
-          >오토리스 계약 만기 1개월 전까지<br />만기후처리를 반드시 선택해
-          주세요</PageTitle
-        >
-        <!-- //case : 만기후처리_신청전 -->
-        <!-- case : 만기후처리_신청후  -->
-        <PageTitle
-          >만기후 연장(재리스) 신청이<br />
-          완료되었습니다.</PageTitle
-        >
-        <!-- //case : 만기후처리_신청후  -->
-      </PageHead>
-      <!-- case : 만기후처리_신청전 -->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>계약기간</KeyValueTitle>
-            <KeyValueText> 2016.01.01-2021.01.01 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>실납렌트료</KeyValueTitle>
-            <KeyValueText>999,999원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>잔존가치</KeyValueTitle>
-            <KeyValueText>99,999,999원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>자동차세</KeyValueTitle>
-            <KeyValueText>포함</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>보증금</KeyValueTitle>
-            <KeyValueText>99,999,999원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>약정주행거리</KeyValueTitle>
-            <KeyValueText>999,999km</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- //case : 만기후처리_신청전 -->
-      <!-- 만기후처리_신청후 -->
-      <!-- case : 연장 -->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-          <!-- case : 만기후처리_신청후  -->
-          <BasicBoxHeadRight>
-            <TextButton
-              theme="secondary"
-              :iconFillAll="true"
-              class="text-body-3"
-            >
-              만기후처리 변경
-              <template v-slot:rightIcon>
-                <IconLinkSmall />
-              </template>
-            </TextButton>
-          </BasicBoxHeadRight>
-          <!-- //case : 만기후처리_신청후  -->
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>만기후처리</KeyValueTitle>
-            <KeyValueText> 재리스 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>실납리스료</KeyValueTitle>
-            <KeyValueText>999,999원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>리스기간</KeyValueTitle>
-            <KeyValueText>12개월 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>자동차세</KeyValueTitle>
-            <KeyValueText> 포함</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>잔존가치</KeyValueTitle>
-            <KeyValueText>99,999,999원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>약정주행거리</KeyValueTitle>
-            <KeyValueText>999,999km</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>보증금</KeyValueTitle>
-            <KeyValueText>99,999,999원</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-        <!-- case : 만기후처리_신청후 -->
-        <ButtonList :wrap="true" align="center" class="row-margin-contents">
-          <ButtonListItem>
-            <BasicButton size="regular">연장 심사접수 하러가기</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-        <!-- //case : 만기후처리_신청후  -->
-      </BasicBox>
-      <!-- //case : 연장 -->
-      <!-- case :  구매-직접이전(공통) -->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>만기후처리</KeyValueTitle>
-            <KeyValueText> 구매 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>매수자정보</KeyValueTitle>
-            <KeyValueText>김하나</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>구매방법</KeyValueTitle>
-            <KeyValueText>직접이전</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>서류수령방법</KeyValueTitle>
-            <KeyValueText> 등기</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>매도용인감주소</KeyValueTitle>
-            <KeyValueText
-              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
-            >
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>주소</KeyValueTitle>
-            <KeyValueText
-              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
-            >
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- //case :  구매-직접이전(공통) -->
-      <!-- case :  구매-이전대행(공통)-->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>만기후처리</KeyValueTitle>
-            <KeyValueText> 구매 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>대행수수료</KeyValueTitle>
-            <KeyValueText>20,000 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>구매방법</KeyValueTitle>
-            <KeyValueText>이전대행</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>대행업체정보</KeyValueTitle>
-            <KeyValueText> 다코스 010-1234-5678</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- //case :  구매-이전대행(공통)-->
-      <!-- case :  구매-이용자명의-->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>만기후처리</KeyValueTitle>
-            <KeyValueText> 구매 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>저당설정해지</KeyValueTitle>
-            <KeyValueText>1800-1110</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>취득세</KeyValueTitle>
-            <KeyValueText>2% (자진납부)</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- //case :  구매-이용자명의 -->
-      <!-- case :  반환(공통)-->
-      <BasicBox class="row-margin-block row-margin-top-none">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>만기후처리</KeyValueTitle>
-            <KeyValueText> 반환 </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>반환일시</KeyValueTitle>
-            <KeyValueText>2023.01.01</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>반환담당자</KeyValueTitle>
-            <KeyValueText>김길동</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>반환주소</KeyValueTitle>
-            <KeyValueText
-              >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
-            >
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- //case :  반환(공통)-->
-      <!-- //만기후처리_신청후 -->
+  <PageContents>
+    <PageHead>
+      <!-- Case : 신청전 -->
+      <PageTitle>
+        오토리스 계약 만기 1개월 전까지<br />
+        만기후처리를 반드시 선택해 주세요
+      </PageTitle>
+      <!-- // Case : 신청전 -->
+      <!-- Case : 신청후  -->
+      <PageTitle>
+        만기후 연장(재리스) 신청이<br />
+        완료되었습니다.
+      </PageTitle>
+      <!-- // Case : 신청후  -->
+    </PageHead>
 
+    <!-- Case : 신청전 -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>계약기간</KeyValueTitle>
+          <KeyValueText>2016.01.01-2021.01.01</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>실납렌트료(VAT포함)</KeyValueTitle>
+          <KeyValueText>999,999원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>잔존가치(VAT포함)</KeyValueTitle>
+          <KeyValueText>99,999,999원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>자동차세</KeyValueTitle>
+          <KeyValueText>포함</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>보증금</KeyValueTitle>
+          <KeyValueText>99,999,999원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>약정주행거리</KeyValueTitle>
+          <KeyValueText>999,999km</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청전 -->
+
+    <!-- Case : 신청후 - 연장 -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <TextButton
+            theme="secondary"
+            textSize="regular"
+            iconSize="regular"
+            :block="true"
+          >
+            만기후처리 변경
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>재리스</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>실납리스료</KeyValueTitle>
+          <KeyValueText>실납리스료</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>리스기간</KeyValueTitle>
+          <KeyValueText>24개월</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>자동차세</KeyValueTitle>
+          <KeyValueText>포함</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>잔존가치</KeyValueTitle>
+          <KeyValueText>99,999,999원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>약정주행거리</KeyValueTitle>
+          <KeyValueText>999,999km</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>보증금</KeyValueTitle>
+          <KeyValueText>99,999,999원</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <ButtonList
+        :wrap="true"
+        align="center"
+        :classNames="{ wrap: 'row-margin-contents' }"
+      >
+        <ButtonListItem>
+          <BasicButton size="regular">연장 심사접수 하러가기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 신청후 - 연장 -->
+
+    <!-- Case : 신청후 - 구매 (직접이전) -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>구매</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>매수자정보</KeyValueTitle>
+          <KeyValueText>김하나</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>구매방법</KeyValueTitle>
+          <KeyValueText>직접이전</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>서류수령방법</KeyValueTitle>
+          <KeyValueText>등기</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>매도용인감주소</KeyValueTitle>
+          <KeyValueText
+            >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+          >
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>주소</KeyValueTitle>
+          <KeyValueText
+            >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+          >
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 구매 (직접이전) -->
+
+    <!-- Case : 신청후 - 구매 (이전대행) -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>구매</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대행수수료</KeyValueTitle>
+          <KeyValueText>20,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>구매방법</KeyValueTitle>
+          <KeyValueText>이전대행</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대행업체정보</KeyValueTitle>
+          <KeyValueText>다코스 010-1234-5678</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 구매 (이전대행) -->
+
+    <!-- Case : 신청후 - 구매 (이용자명의) -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>구매</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>저당설정해지</KeyValueTitle>
+          <KeyValueText>1800-1110</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>취득세</KeyValueTitle>
+          <KeyValueText>2% (자진납부)</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 구매 (이용자명의) -->
+
+    <!-- Case : 신청후 - 반환 -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>반환</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환일시</KeyValueTitle>
+          <KeyValueText>2023.01.01</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환담당자</KeyValueTitle>
+          <KeyValueText>김길동</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환주소</KeyValueTitle>
+          <KeyValueText
+            >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+          >
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 반환 -->
+
+    <UiTab :classNames="{ wrap: 'row-margin-block' }">
       <NavTab :useUiTab="true">
-        <NavTabButton link="testNavTab001_001">연장</NavTabButton>
-        <NavTabButton link="testNavTab001_002">반환</NavTabButton>
-        <NavTabButton link="testNavTab001_003">구매</NavTabButton>
+        <NavTabButton link="My_P08_p001_tab001">연장</NavTabButton>
+        <NavTabButton link="My_P08_p001_tab002">반환</NavTabButton>
+        <NavTabButton link="My_P08_p001_tab003">구매</NavTabButton>
       </NavTab>
 
-      <UiTabPanel name="testNavTab001_001">
-        <section>
-          <h3 class="text-title-1 font-weight-bold">
-            만기후 연장(재리스) 진행절차
-          </h3>
+      <UiTabPanel name="My_P08_p001_tab001">
+        <div>
+          <section class="row-margin-block-small">
+            <h3 class="text-title-1 row-margin-contents">
+              만기후 연장(재리스) 진행절차
+            </h3>
 
-          <div :class="[$style['step'], 'row-margin-contents']">
-            <ul :class="$style['step__list']">
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 1</div>
-                    <p :class="$style['step__text']">
-                      홈페이지/모바일(웹)을 통하여
-                      <strong> 재리스 신청 및 견적을 요청 </strong>합니다.
-                      (신용조회동의)
-                    </p>
+            <div :class="$style['step']">
+              <ul :class="$style['step__list']">
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 1</div>
+                      <p :class="$style['step__text']">
+                        홈페이지/모바일(웹)을 통하여
+                        <strong>재리스 신청 및 견적을 요청 </strong>합니다.
+                        (신용조회동의)
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconPhone />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconPhone />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 2</div>
+                      <p :class="$style['step__text']">
+                        신청내역을 확인하여
+                        <strong>심사결과를 안내</strong>드립니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconSend />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 2</div>
-                    <p :class="$style['step__text']">
-                      신청내역을 확인하여
-                      <strong>심사결과를 안내</strong>드립니다.
-                    </p>
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 3</div>
+                      <p :class="$style['step__text']">
+                        <strong>서면약정 또는 온라인약정</strong>으로 계약이
+                        진행됩니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconPersonalTerms />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconSend />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 4</div>
+                      <p :class="$style['step__text']">
+                        입금/지급 <strong>금액을 정산</strong>합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconDeposit />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 3</div>
-                    <p :class="$style['step__text']">
-                      <strong>서면약정 또는 온라인약정</strong>으로 계약이
-                      진행됩니다.
-                    </p>
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 5</div>
+                      <p :class="$style['step__text']">
+                        계약사항에 대해
+                        <strong>이해하였음을 유선상 확인</strong>합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconCallMint />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconPersonalTerms />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 6</div>
+                      <p :class="$style['step__text']">
+                        <strong>재리스가 완료</strong>됩니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconCompleted />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 4</div>
-                    <p :class="$style['step__text']">
-                      입금/지급 <strong>금액을 정산</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconDeposit />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 5</div>
-                    <p :class="$style['step__text']">
-                      계약사항에 대해
-                      <strong>이해하였음을 유선상 확인</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconCallMint />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 6</div>
-                    <p :class="$style['step__text']">
-                      <strong>재렌트가 완료</strong>됩니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconCompleted />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="row-margin-block-small row-margin-bottom-none">
-          <section class="row-margin-container-medium">
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">상품안내</h3>
 
             <section class="row-margin-contents">
@@ -485,7 +496,14 @@ export default {
                   'row-margin-item',
                 ]"
               >
-                <li :class="[$style['basic-list__item'], 'text-body-4']">
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-5',
+                    'font-weight-regular',
+                    'color-gray-secondary',
+                  ]"
+                >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
                     내용연수: 운용리스 60개월, 금융리스 84개월<br />
@@ -533,7 +551,7 @@ export default {
 
             <section class="row-margin-contents">
               <h4
-                class="text-body-3 color-gray font-weight-medium row-margin-item-medium"
+                class="text-body-3 color-gray font-weight-medium row-margin-item"
               >
                 수수료
               </h4>
@@ -546,7 +564,10 @@ export default {
                   </colgroup>
                   <tbody>
                     <tr>
-                      <td>손해<br />배상금</td>
+                      <th>
+                        손해<br />
+                        배상금
+                      </th>
                       <td class="align-left">
                         <div
                           :class="[
@@ -631,6 +652,8 @@ export default {
                           <li
                             :class="[
                               $style['basic-list__item'],
+                              'text-body-5',
+                              'font-weight-regular',
                               'color-gray-secondary',
                             ]"
                           >
@@ -644,7 +667,10 @@ export default {
                       </td>
                     </tr>
                     <tr>
-                      <th>승계<br />수수료</th>
+                      <th>
+                        승계<br />
+                        수수료
+                      </th>
                       <td class="align-left">
                         <p class="text-body-1 row-margin-small">
                           운용리스, 금융리스
@@ -666,6 +692,8 @@ export default {
                           <li
                             :class="[
                               $style['basic-list__item'],
+                              'text-body-5',
+                              'font-weight-regular',
                               'color-gray-secondary',
                             ]"
                           >
@@ -692,8 +720,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-body-5',
                     'font-weight-regular',
-                    'color-gray-tertiary',
+                    'color-gray-secondary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -707,8 +736,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-body-5',
                     'font-weight-regular',
-                    'color-gray-tertiary',
+                    'color-gray-secondary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -741,8 +771,9 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-body-5',
                     'font-weight-regular',
-                    'color-gray-tertiary',
+                    'color-gray-secondary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
@@ -828,19 +859,20 @@ export default {
                   </div>
                 </li>
               </ul>
-            </section>
 
-            <div class="inline-wrap row-margin-contents">
-              <TextButton
-                :underline="true"
-                theme="secondary"
-                class="text-body-3"
-                >차량 반납 시 유의사항</TextButton
-              >
-            </div>
+              <div class="inline-wrap row-margin-contents">
+                <TextButton
+                  theme="secondary"
+                  textSize="regular"
+                  :underline="true"
+                >
+                  차량 반납 시 유의사항
+                </TextButton>
+              </div>
+            </section>
           </section>
 
-          <section class="row-margin-container-medium">
+          <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">유의사항</h3>
 
             <ul
@@ -854,7 +886,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
@@ -867,7 +900,7 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
                   'font-weight-medium',
                 ]"
               >
@@ -881,7 +914,7 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
                   'font-weight-medium',
                 ]"
               >
@@ -895,7 +928,7 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
                   'font-weight-medium',
                 ]"
               >
@@ -909,7 +942,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
@@ -922,7 +956,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
@@ -935,7 +970,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
+                  'text-body-1',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']"></div>
@@ -955,166 +991,195 @@ export default {
               </li>
             </ul>
           </section>
-        </section>
-        <!-- case : 만기후처리 -신청전 -->
-        <div class="row-margin-block">
-          <BasicButton size="regular">연장 신청</BasicButton>
         </div>
-        <!-- //case : 만기후처리 -신청전 -->
+
+        <!-- Case : 신청전 -->
+        <ButtonList>
+          <ButtonListItem>
+            <BasicButton>연장 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 신청전 -->
       </UiTabPanel>
-      <UiTabPanel name="testNavTab001_002">
-        <section>
-          <h3 class="text-title-1 font-weight-bold">만기후 반환 진행절차</h3>
-          <div :class="[$style['step'], 'row-margin-contents']">
-            <ul :class="$style['step__list']">
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 1</div>
-                    <p :class="$style['step__text']">
-                      반환 일시, 장소 등 <strong>반환정보를 등록</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconContract />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 2</div>
-                    <p :class="$style['step__text']">
-                      지정 일시, 장소에서 <strong>자동차를 반환</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconCar />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 3</div>
-                    <div :class="$style['step__text']">
-                      지정 평가기관에서
-                      <strong>반환자동차의 상태 및 성능을 평가</strong>합니다.
-                      <NoticeText class="row-margin-item"
-                        >평가결과에 따라 ‘차량평가정산금’이 발생될 수
-                        있습니다.</NoticeText
-                      >
+
+      <UiTabPanel name="My_P08_p001_tab002">
+        <div>
+          <section class="row-margin-block-small">
+            <h3 class="text-title-1 row-margin-contents">
+              만기후 반환 진행절차
+            </h3>
+
+            <div :class="$style['step']">
+              <ul :class="$style['step__list']">
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 1</div>
+                      <p :class="$style['step__text']">
+                        반환 일시, 장소 등
+                        <strong>반환정보를 등록</strong>합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconContract />
                     </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconDocumentSearch />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 2</div>
+                      <p :class="$style['step__text']">
+                        지정 일시, 장소에서
+                        <strong>자동차를 반환</strong>합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconCar />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 4</div>
-                    <p :class="$style['step__text']">
-                      반환등록 시
-                      <strong>발생 비용을 정산</strong>(입금/지급)합니다.
-                    </p>
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 3</div>
+                      <div :class="$style['step__text']">
+                        지정 평가기관에서
+                        <strong>반환자동차의 상태 및 성능을 평가</strong>합니다.
+                        <div class="row-margin-item">
+                          <NoticeText
+                            >평가결과에 따라 ‘차량평가정산금’이 발생될 수
+                            있습니다.</NoticeText
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconDocumentSearch />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconDeposit />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 4</div>
+                      <p :class="$style['step__text']">
+                        반환등록 시
+                        <strong>발생 비용을 정산</strong>(입금/지급)합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconDeposit />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 5</div>
-                    <p :class="$style['step__text']">
-                      <strong>반환처리가 완료</strong>됩니다.
-                    </p>
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 5</div>
+                      <p :class="$style['step__text']">
+                        <strong>반환처리가 완료</strong>됩니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconCompleted />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconCompleted />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <div class="row-margin-block">
-          <BasicButton size="regular">반환 신청</BasicButton>
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
+
+        <!-- Case : 신청전 -->
+        <ButtonList>
+          <ButtonListItem>
+            <BasicButton>반환 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 신청전 -->
       </UiTabPanel>
-      <UiTabPanel name="testNavTab001_003">
-        <section>
-          <h3 class="text-title-1 font-weight-bold">만기후 구매 진행절차</h3>
-          <div :class="[$style['step'], 'row-margin-contents']">
-            <ul :class="$style['step__list']">
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 1</div>
-                    <p :class="$style['step__text']">
-                      <strong>구매방법</strong>(직접/이전대행)선택 및
-                      <strong>구매정보</strong>(매도용 인감신청정보)를
-                      입력합니다.
-                    </p>
+
+      <UiTabPanel name="My_P08_p001_tab003">
+        <div>
+          <section class="row-margin-block-small">
+            <h3 class="text-title-1 row-margin-contents">
+              만기후 구매 진행절차
+            </h3>
+
+            <div :class="$style['step']">
+              <ul :class="$style['step__list']">
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 1</div>
+                      <p :class="$style['step__text']">
+                        <strong>구매방법</strong>(직접/이전대행)선택 및
+                        <strong>구매정보</strong>(매도용 인감신청정보)를
+                        입력합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconContract />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconContract />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 2</div>
+                      <p :class="$style['step__text']">
+                        구매 등록 시 발생
+                        <strong>비용을 정산</strong> (입금/지급)합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconDeposit />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 2</div>
-                    <p :class="$style['step__text']">
-                      구매 등록 시 발생
-                      <strong>비용을 정산</strong> (입금/지급)합니다.
-                    </p>
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 3</div>
+                      <p :class="$style['step__text']">
+                        차량 명의를 고객명의로
+                        <strong>소유권 이전등록</strong> 합니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconPersonalTerms />
+                    </div>
                   </div>
-                  <div :class="$style['step__icon']">
-                    <IconDeposit />
+                </li>
+                <li :class="$style['step__item']">
+                  <div :class="$style['step__inner']">
+                    <div :class="$style['step__contents']">
+                      <div :class="$style['step__badge']">STEP 4</div>
+                      <p :class="$style['step__text']">
+                        <strong>구매 처리가 완료</strong>됩니다.
+                      </p>
+                    </div>
+                    <div :class="$style['step__icon']">
+                      <IconCarCheck />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 3</div>
-                    <p :class="$style['step__text']">
-                      차량 명의를 고객명의로
-                      <strong>소유권 이전등록</strong> 합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconPersonalTerms />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 4</div>
-                    <p :class="$style['step__text']">
-                      <strong>구매 처리가 완료</strong>됩니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconCarCheck />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <div class="row-margin-block">
-          <BasicButton size="regular">구매 신청</BasicButton>
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
+
+        <!-- Case : 신청전 -->
+        <ButtonList>
+          <ButtonListItem>
+            <BasicButton>구매 신청</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 신청전 -->
       </UiTabPanel>
-    </PageContents>
-  </UiTab>
+    </UiTab>
+  </PageContents>
 </template>
 
 <style lang="scss" module>

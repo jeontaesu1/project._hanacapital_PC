@@ -10,7 +10,6 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
 import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
@@ -51,43 +50,37 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section>
-        <ul class="reset-list">
-          <li class="row-margin-contents flex-box">
-            <div class="flex-box__cell text-body-1 ellipsis flex-2">렌트카</div>
-            <div class="flex-box__cell">대기영역</div>
-          </li>
-          <li class="row-margin-contents flex-box">
-            <div class="flex-box__cell text-body-1 ellipsis flex-2">
-              오토리스
+      <ul class="reset-list">
+        <li v-for="i in 10" :key="i" class="row-margin-contents">
+          <div class="flex-box text-body-1">
+            <div class="flex-box__cell flex-1">
+              <div class="ellipsis">
+                오토리스 길어질 경우 말줄임 길어질 경우 말줄임 길어질 경우
+                말줄임
+              </div>
             </div>
-            <div class="flex-box__cell">대기영역</div>
-          </li>
-          <li class="row-margin-contents flex-box">
-            <div class="flex-box__cell text-body-1 ellipsis flex-2">
-              오토리스오토리스오토리스오토리스오토리스오토리스오토리스오토리스오토리스
+            <div class="flex-box__cell flex-box__cell--medium">
+              <strong>1,232,456,345 원</strong>
             </div>
-            <div class="flex-box__cell">대기영역</div>
-          </li>
-          <li class="row-margin-contents flex-box">
-            <div class="flex-box__cell text-body-1 ellipsis flex-2">
-              오토리스오토리스오토리스오토리스오토리스오토리스오토리스오토리스오토리스
-            </div>
-            <div class="flex-box__cell">대기영역</div>
-          </li>
-        </ul>
-        <!-- 페이징 -->
-        <PaginationNav class="row-margin-contents">
-          <PaginationNavArrow type="prev" :disabled="true" />
-          <PaginationNavNumber :active="true">1</PaginationNavNumber>
-          <PaginationNavNumber>2</PaginationNavNumber>
-          <PaginationNavNumber>3</PaginationNavNumber>
-          <PaginationNavNumber>4</PaginationNavNumber>
-          <PaginationNavNumber>5</PaginationNavNumber>
-          <PaginationNavArrow type="next" />
-        </PaginationNav>
-        <!-- //페이징 -->
-      </section>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Pagination -->
+      <PaginationNav
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Pagination -->
 
       <template v-slot:foot>
         <ButtonList

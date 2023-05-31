@@ -2,3 +2,18 @@
 @import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/basic-table.scss';
 @import '@/assets/scss/components/import/contents-list.scss';
+
+.table-contents-list {
+  .contents-list__list--quinary {
+    > .contents-list__item {
+      > .contents-list__head {
+        > .contents-list__symbol {
+          @include font-size-default(11);
+          margin-right: 12px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+}
