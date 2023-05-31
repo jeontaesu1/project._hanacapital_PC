@@ -173,7 +173,7 @@ export default {
               :selectOnly="true"
               :disabled="true"
             >
-              <FormInvalid :error="state.area002Error" :disabled="true">
+              <FormInvalid :error="state.area002Error">
                 <InputBlock :error="state.area002Error" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
@@ -249,6 +249,7 @@ export default {
                       ]"
                       title="시/군/구/명 선택하기"
                       inputId="LM_P01_l009_area002"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -262,7 +263,7 @@ export default {
               :selectOnly="true"
               :disabled="true"
             >
-              <FormInvalid :error="state.area003Error" :disabled="true">
+              <FormInvalid :error="state.area003Error">
                 <InputBlock :error="state.area003Error" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicSelect
@@ -286,6 +287,7 @@ export default {
                       ]"
                       title="읍/면/동 선택하기"
                       inputId="LM_P01_l009_area003"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                 </InputBlock>
@@ -392,7 +394,7 @@ export default {
               target="#LM_P01_l009_lease"
               :disabled="true"
             >
-              <FormInvalid :error="state.leaseError" :disabled="true">
+              <FormInvalid :error="state.leaseError">
                 <InputBlock :error="state.leaseError" :disabled="true">
                   <InputBlockCell :flexible="true">
                     <BasicInput
@@ -401,6 +403,7 @@ export default {
                       pattern="\d*"
                       title="전세가(상한가)"
                       id="LM_P01_l009_lease"
+                      :disabled="true"
                     />
                   </InputBlockCell>
                   <template v-slot:innerRight>

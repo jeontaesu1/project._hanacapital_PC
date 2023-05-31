@@ -231,7 +231,7 @@ export default {
       </section>
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>청약철회 신청하기</BasicButton>
       </ButtonListItem>

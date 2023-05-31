@@ -122,7 +122,7 @@ export default {
                 inputId="Etc_P01_p001_field001"
               />
             </InputBlockCell>
-            <InputBlockCell :flexible="true">
+            <InputBlockCell :flexible="true" margin="regular">
               <BasicSelect
                 :options="[
                   {

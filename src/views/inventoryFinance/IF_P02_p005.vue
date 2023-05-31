@@ -40,7 +40,7 @@ export default {
     <div class="row-margin-block-small row-margin-bottom-none">
       <ul class="reset-list">
         <li class="row-margin-contents">
-          <BasicBox className="row-margin-contents">
+          <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-1 font-weight-medium">
@@ -51,7 +51,7 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell">
-                <RoundStatus theme="secondary" size="large" block="true">
+                <RoundStatus theme="secondary" size="large" :block="true">
                   성공
                 </RoundStatus>
               </div>
@@ -59,7 +59,7 @@ export default {
           </BasicBox>
         </li>
         <li class="row-margin-contents">
-          <BasicBox className="row-margin-contents">
+          <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
                 <h3 class="text-body-1 font-weight-medium">
@@ -70,7 +70,7 @@ export default {
                 </p>
               </div>
               <div class="flex-box__cell">
-                <RoundStatus theme="nonary" size="large" block="true">
+                <RoundStatus theme="nonary" size="large" :block="true">
                   실패
                 </RoundStatus>
               </div>
@@ -82,17 +82,13 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="" :line="true" theme="quaternary">
+        <BasicButton :line="true" theme="quaternary">
           추가약정하기
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">대출약정완료</BasicButton>
+        <BasicButton>대출약정완료</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/inventoryFinance/IF_P02_p005.scss';
-</style>

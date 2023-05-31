@@ -4,7 +4,6 @@ import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupText from '@/components/ui/layer/PopupText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
@@ -13,7 +12,6 @@ export default {
   components: {
     UiLayer,
     PopupTitle,
-    PopupText,
     PopupButton,
     ModalPopup,
     ModalPopupHead,
@@ -30,7 +28,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" v-slot="layerSlotProps">
-    <ModalPopup :fix="true">
+    <ModalPopup>
       <template v-slot:head>
         <ModalPopupHead>
           <template v-slot:right>
@@ -40,7 +38,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <PopupText>온라인약정 영역</PopupText>
+      // 온라인약정 영역
     </ModalPopup>
   </UiLayer>
 </template>

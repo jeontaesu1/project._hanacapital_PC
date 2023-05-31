@@ -108,23 +108,21 @@ export default {
             <div :class="$style['agree-list__all-contents']">
               <ul :class="$style['agree-list__depth']">
                 <li :class="$style['agree-list__depth-item']">
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="My_p05_p004_agree_001"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>
+                        서비스 이용약관 전체동의
+                      </CheckBoxLabelText>
+                    </CheckBox>
+                  </div>
                   <div :class="$style['agree-list__depth-contents']">
                     <ul :class="$style['agree-list__list']">
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__depth-head']">
-                          <CheckBox
-                            id="My_p05_p004_agree_001"
-                            :classNames="{
-                              wrap: $style['agree-list__depth-checkbox'],
-                            }"
-                          >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              서비스 이용약관 전체동의
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                        </div>
-                      </li>
                       <li :class="$style['agree-list__item']">
                         <div :class="$style['agree-list__head']">
                           <CheckBox
@@ -379,9 +377,9 @@ export default {
       </div>
     </section>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">신청서 제출하기</BasicButton>
+        <BasicButton>신청서 제출하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

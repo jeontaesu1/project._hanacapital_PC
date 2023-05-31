@@ -37,55 +37,44 @@ export default {
       <h3 class="text-title-1 row-margin-contents">약관동의</h3>
 
       <div :class="$style['agree-list']">
-        <ul :class="$style['agree-list__container']">
-          <li :class="$style['agree-list__all']">
-            <div :class="$style['agree-list__all-contents']">
-              <ul :class="$style['agree-list__depth']">
-                <li :class="$style['agree-list__depth-item']">
-                  <div :class="$style['agree-list__depth-contents']">
-                    <ul :class="$style['agree-list__list']">
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__depth-head']">
-                          <CheckBox
-                            id="My_P02_p001_agree_001"
-                            :classNames="{
-                              wrap: $style['agree-list__depth-checkbox'],
-                            }"
-                          >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              서비스 이용약관 전체동의
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                        </div>
-                      </li>
-                      <li :class="$style['agree-list__item']">
-                        <div :class="$style['agree-list__head']">
-                          <CheckBox
-                            id="My_P02_p001_agree_001_001"
-                            :classNames="{
-                              wrap: $style['agree-list__checkbox'],
-                            }"
-                            theme="tertiary"
-                          >
-                            <CheckBoxObject />
-                            <CheckBoxLabelText>
-                              개인정보 수집·이용 동의
-                            </CheckBoxLabelText>
-                          </CheckBox>
-                          <div :class="$style['agree-list__right']">
-                            <button
-                              type="button"
-                              :class="$style['agree-list__link']"
-                            >
-                              <span :class="$style['agree-list__link-text']">
-                                상세보기
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+        <ul :class="$style['agree-list__depth']">
+          <li :class="$style['agree-list__depth-item']">
+            <div :class="$style['agree-list__depth-head']">
+              <CheckBox
+                id="My_P02_p001_agree_001"
+                :classNames="{
+                  wrap: $style['agree-list__depth-checkbox'],
+                }"
+              >
+                <CheckBoxObject />
+                <CheckBoxLabelText>
+                  서비스 이용약관 전체동의
+                </CheckBoxLabelText>
+              </CheckBox>
+            </div>
+            <div :class="$style['agree-list__depth-contents']">
+              <ul :class="$style['agree-list__list']">
+                <li :class="$style['agree-list__item']">
+                  <div :class="$style['agree-list__head']">
+                    <CheckBox
+                      id="My_P02_p001_agree_001_001"
+                      :classNames="{
+                        wrap: $style['agree-list__checkbox'],
+                      }"
+                      theme="tertiary"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>
+                        개인정보 수집·이용 동의
+                      </CheckBoxLabelText>
+                    </CheckBox>
+                    <div :class="$style['agree-list__right']">
+                      <button type="button" :class="$style['agree-list__link']">
+                        <span :class="$style['agree-list__link-text']">
+                          상세보기
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -95,7 +84,7 @@ export default {
       </div>
     </section>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>조회하기</BasicButton>
       </ButtonListItem>

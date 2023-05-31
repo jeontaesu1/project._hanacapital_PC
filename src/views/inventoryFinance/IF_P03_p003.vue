@@ -93,6 +93,10 @@ export default {
       </KeyValue>
     </BasicBox>
 
+    <div class="row-margin-block-small row-margin-bottom-none">
+      // [공통 > 본인인증] 내용 노출
+    </div>
+
     <ButtonList>
       <ButtonListItem>
         <BasicButton :line="true" theme="quaternary">다시 계산하기</BasicButton>

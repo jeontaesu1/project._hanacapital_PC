@@ -20,8 +20,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -55,8 +53,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     BasicInput,
-    SecurityInput,
-    SecurityKeypadButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -108,93 +104,80 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <section>
-      <h3 class="text-title-1 row-margin-contents">
-        본 고객은 적법한 절차에 의해 모집한 고객임을 확인 합니다.
-      </h3>
+    <div>
+      <section>
+        <h3 class="text-title-1 row-margin-contents">
+          본 고객은 적법한 절차에 의해 모집한 고객임을 확인 합니다.
+        </h3>
 
-      <BoxCheckList
-        :classNames="{
-          wrap: 'row-margin-block-small row-margin-top-none',
-        }"
-      >
-        <BoxCheckListItem>
-          <BoxCheck
-            name="LM_P01_p001_type"
-            id="LM_P01_p001_type_001"
-            :defaultChecked="true"
-          >
-            <BoxCheckLabel>아니오</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-        <BoxCheckListItem>
-          <BoxCheck name="LM_P01_p001_type" id="LM_P01_p001_type_002">
-            <BoxCheckLabel>예</BoxCheckLabel>
-          </BoxCheck>
-        </BoxCheckListItem>
-      </BoxCheckList>
-    </section>
+        <BoxCheckList>
+          <BoxCheckListItem>
+            <BoxCheck
+              name="LM_P01_p001_type"
+              id="LM_P01_p001_type_001"
+              :defaultChecked="true"
+            >
+              <BoxCheckLabel>아니오</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck name="LM_P01_p001_type" id="LM_P01_p001_type_002">
+              <BoxCheckLabel>예</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </section>
 
-    <section class="row-margin-block-small row-margin-bottom-none">
-      <h3 class="text-title-1 row-margin-contents">고객 기본정보</h3>
+      <section class="row-margin-block-small row-margin-bottom-none">
+        <h3 class="text-title-1 row-margin-contents">고객 기본정보</h3>
 
-      <FormList>
-        <FormListItem titleText="이름" target="#LM_P01_p001_name001">
-          <FormInvalid :error="state.name001Error">
-            <InputBlock :error="state.name001Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="LM_P01_p001_name001" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+        <FormList>
+          <FormListItem titleText="이름" target="#LM_P01_p001_name001">
+            <FormInvalid :error="state.name001Error">
+              <InputBlock :error="state.name001Error">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="이름" id="LM_P01_p001_name001" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
 
-        <FormListItem titleText="주민등록번호" target="#LM_P01_p001_id001">
-          <FormInvalid :error="state.idNumber001Error">
-            <InputBlock :error="state.idNumber001Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="number"
-                  pattern="\d*"
-                  title="주민등록번호 앞 6자리"
-                  id="LM_P01_p001_id001"
-                />
-              </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                <SecurityInput
-                  title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
+          <FormListItem titleText="생년월일" target="#LM_P01_p001_id001">
+            <FormInvalid :error="state.idNumber001Error">
+              <InputBlock :error="state.idNumber001Error">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="생년월일"
+                    id="LM_P01_p001_id001"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
 
-        <FormListItem titleText="휴대폰번호" target="#LM_P01_p001_phone001">
-          <FormInvalid :error="state.phone001Error">
-            <InputBlock :error="state.phone001Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="휴대폰번호" id="LM_P01_p001_phone001" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
+          <FormListItem titleText="휴대폰번호" target="#LM_P01_p001_phone001">
+            <FormInvalid :error="state.phone001Error">
+              <InputBlock :error="state.phone001Error">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="휴대폰번호" id="LM_P01_p001_phone001" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
+      </section>
 
-      <ButtonList align="full">
+      <ButtonList>
         <ButtonListItem>
           <BasicButton theme="tertiary">신용정보조회동의(URL 발송)</BasicButton>
         </ButtonListItem>
       </ButtonList>
-    </section>
+    </div>
 
     <BasicHr theme="quaternary" className="row-margin-block" />
 
@@ -213,27 +196,16 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="주민등록번호" target="#LM_P01_p001_id002">
+        <FormListItem titleText="생년월일" target="#LM_P01_p001_id002">
           <FormInvalid :error="state.idNumber002Error">
             <InputBlock :error="state.idNumber002Error">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
-                  title="주민등록번호 앞 6자리"
+                  title="생년월일"
                   id="LM_P01_p001_id002"
                 />
-              </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                <SecurityInput
-                  title="주민등록번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -267,7 +239,7 @@ export default {
         </FormListItem>
       </FormList>
 
-      <ButtonList align="full">
+      <ButtonList>
         <ButtonListItem>
           <BasicButton :line="true">조회</BasicButton>
         </ButtonListItem>
@@ -276,78 +248,98 @@ export default {
 
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <div>
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">김하나</h3>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
+    <ul class="reset-list">
+      <!-- Case : 신용정보조회동의 완료 -->
+      <li class="row-margin-contents">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">김하나</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>생년월일</KeyValueTitle>
-            <KeyValueText>123456-2******</KeyValueText>
-          </KeyValueItem>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>생년월일</KeyValueTitle>
+              <KeyValueText>123456-2******</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>휴대폰번호</KeyValueTitle>
-            <KeyValueText>010-1234-5678</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>휴대폰번호</KeyValueTitle>
+              <KeyValueText>010-1234-5678</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>URL발송일</KeyValueTitle>
-            <KeyValueText>2022.11.09</KeyValueText>
-          </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>URL발송일</KeyValueTitle>
+              <KeyValueText>2022.11.09</KeyValueText>
+            </KeyValueItem>
 
-          <KeyValueItem>
-            <KeyValueTitle>동의일자</KeyValueTitle>
-            <KeyValueText>2022.11.09</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
+            <KeyValueItem>
+              <KeyValueTitle>동의일자</KeyValueTitle>
+              <KeyValueText>2022.11.09</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
 
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-contents',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" tagName="RouterLink" to="">
-              한도조회
-            </BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </BasicBox>
+          <ButtonList
+            :wrap="true"
+            align="center"
+            :classNames="{
+              wrap: 'row-margin-contents',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton size="regular"> 한도조회 </BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </BasicBox>
+      </li>
+      <!-- // Case : 신용정보조회동의 완료 -->
 
-      <ul class="reset-list">
-        <li v-for="i in 4" :key="i" class="row-margin-contents">
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h3 class="text-title-2 font-weight-medium">김하나</h3>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
+      <!-- Case : 신용정보조회동의 미동의 상태 -->
+      <li class="row-margin-contents">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">김하나</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
 
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>생년월일</KeyValueTitle>
-                <KeyValueText>123456-2******</KeyValueText>
-              </KeyValueItem>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>생년월일</KeyValueTitle>
+              <KeyValueText>123456-2******</KeyValueText>
+            </KeyValueItem>
 
-              <KeyValueItem>
-                <KeyValueTitle>휴대폰번호</KeyValueTitle>
-                <KeyValueText>010-1234-5678</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
-        </li>
-      </ul>
-    </div>
+            <KeyValueItem>
+              <KeyValueTitle>휴대폰번호</KeyValueTitle>
+              <KeyValueText>010-1234-5678</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </li>
+      <!-- // Case : 신용정보조회동의 미동의 상태 -->
+
+      <li v-for="i in 3" :key="i" class="row-margin-contents">
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <h3 class="text-title-2 font-weight-medium">김하나</h3>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
+
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>생년월일</KeyValueTitle>
+              <KeyValueText>123456-2******</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>휴대폰번호</KeyValueTitle>
+              <KeyValueText>010-1234-5678</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </li>
+    </ul>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/lmBlog/LM_P01_p001.scss';
-</style>

@@ -34,36 +34,16 @@ export default {
       </IllustInfoText>
     </IllustInfo>
 
-    <ButtonList
-      :wrap="true"
-      align="center"
-      :classNames="{
-        wrap: 'row-margin-block-small row-margin-bottom-none',
-      }"
-    >
+    <ButtonList :wrap="true" align="center">
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
     <section :class="[$style['notice-section'], 'row-margin-block']">
-      <h4
-        :class="[
-          $style['notice-section__title'],
-          'text-body-3 color-gray-tertiary font-weight-medium row-margin-item-medium',
-        ]"
-      >
-        유의사항
-      </h4>
+      <h4 :class="$style['notice-section__title']">유의사항</h4>
 
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          ,
-          $style['basic-list--regular-margin'],
-        ]"
-      >
+      <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">

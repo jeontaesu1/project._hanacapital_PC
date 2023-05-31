@@ -30,7 +30,7 @@ export default {
 
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

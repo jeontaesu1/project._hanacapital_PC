@@ -44,53 +44,48 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <!-- Case : 보유 상품이 있는 경우 노출 -->
-      <PageTitle>
-        청약철회권 신청 가능한 상품은 총
-        <span class="color-green">42</span>건
-      </PageTitle>
-      <!-- // Case : 보유 상품이 있는 경우 노출 -->
-
-      <!-- Case : 보유 상품이 없는 경우 노출 -->
       <PageTitle>
         청약철회권 신청 가능한 상품은 총
         <span class="color-green">0</span>건
       </PageTitle>
-      <!-- // Case : 보유 상품이 없는 경우 노출 -->
     </PageHead>
 
-    <div>
-      <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
-        <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            금융소비자 보호를 위해 대출 계약 후, 14일 동안 불이익 없이 청약
-            탈퇴할 수 있습니다. 대출 실행일 다음날부터 14일을 초과한 경우 철약
-            철회가 불가합니다. (14일째가 휴일인 경우 다음 영업일까지 가능)
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            할부금융/시설대여/연불판매 상품의 경우 청약 철회가 불가합니다.
-            (재화를 제공받지 않은 경우, 철회 가능)
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            청약철회로 안내되는 상환 금액은 신청일 기준이므로 신청일 이후에는
-            재신청을 하셔야합니다.
-          </div>
-        </li>
-        <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            5영업일 이내 대출기록이 삭제됩니다.
-          </div>
-        </li>
-      </ul>
-    </div>
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          금융소비자 보호를 위해 대출 계약 후, 14일 동안 불이익 없이 청약 탈퇴할
+          수 있습니다. 대출 실행일 다음날부터 14일을 초과한 경우 철약 철회가
+          불가합니다. (14일째가 휴일인 경우 다음 영업일까지 가능)
+        </div>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          할부금융/시설대여/연불판매 상품의 경우 청약 철회가 불가합니다. (재화를
+          제공받지 않은 경우, 철회 가능)
+        </div>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          청약철회로 안내되는 상환 금액은 신청일 기준이므로 신청일 이후에는
+          재신청을 하셔야합니다.
+        </div>
+      </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          5영업일 이내 대출기록이 삭제됩니다.
+        </div>
+      </li>
+    </ul>
 
     <!-- Case : 보유 상품이 없는 경우 노출 -->
     <div :class="$style['empty']">
@@ -167,9 +162,7 @@ export default {
               }"
             >
               <ButtonListItem>
-                <BasicButton size="regular" tagName="RouterLink" to="">
-                  철회 신청
-                </BasicButton>
+                <BasicButton size="regular">철회 신청</BasicButton>
               </ButtonListItem>
             </ButtonList>
           </BasicBox>
@@ -191,6 +184,7 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 첫번째 페이지일 때 -->
+
       <!-- Case : 중간 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" />
@@ -206,6 +200,7 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 중간 페이지일 때 -->
+
       <!-- Case : 마지막 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" />

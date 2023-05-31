@@ -45,12 +45,10 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="" :line="true">
-          서류등록 추가
-        </BasicButton>
+        <BasicButton :line="true">서류등록 추가</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

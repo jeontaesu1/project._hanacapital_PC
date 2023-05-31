@@ -51,26 +51,22 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <div>
-        <ul
-          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
-        >
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              처음 접속 하시는 고객님께서는 이용방법을 확인 후 이용하시기
-              바랍니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              다양한 브라우저(엣지, 크롬, 파이어폭스) 사용도 이용할 수 있도록
-              웹표준 준수로 개선한 서비스를 제공하고 있습니다.
-            </div>
-          </li>
-        </ul>
-      </div>
+      <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            처음 접속 하시는 고객님께서는 이용방법을 확인 후 이용하시기
+            바랍니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            다양한 브라우저(엣지, 크롬, 파이어폭스) 사용도 이용할 수 있도록
+            웹표준 준수로 개선한 서비스를 제공하고 있습니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

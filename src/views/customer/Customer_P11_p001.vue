@@ -1,5 +1,5 @@
 <script>
-//Customer_P11_p001
+// Customer_P11_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -27,10 +27,7 @@ export default {
       <PageTitle>공동인증센터</PageTitle>
     </PageHead>
 
-    <IllustObject
-      type="certification"
-      :classNames="{ wrap: 'row-margin-none' }"
-    />
+    <IllustObject type="certification" />
 
     <ButtonList
       align="full"

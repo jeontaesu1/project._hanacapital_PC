@@ -98,9 +98,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="RouterLink" to="" size="regular">
-              상담변경
-            </BasicButton>
+            <BasicButton size="regular">상담변경</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

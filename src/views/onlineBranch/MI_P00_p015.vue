@@ -20,8 +20,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
-import PartInput from '@/components/ui/form/PartInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -57,8 +55,6 @@ export default {
     FormInvalidMessage,
     BasicInput,
     BasicSelect,
-    PartInput,
-    SecurityKeypadButton,
     BasicButton,
     BasicBox,
     BasicBoxHead,
@@ -109,7 +105,7 @@ export default {
     </PageHead>
 
     <div>
-      <BasicBox>
+      <BasicBox className="row-margin-block-small">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
@@ -148,411 +144,387 @@ export default {
         </KeyValue>
       </BasicBox>
 
-      <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅰ</h3>
+      <div>
+        <section class="row-margin-block-small">
+          <h3 class="text-title-1 row-margin-contents">지정운전자 I</h3>
 
-        <FormList>
-          <FormListItem titleText="지정운전자" target="#MI_P00_p015_name001">
-            <FormInvalid :error="state.name001Error">
-              <InputBlock :error="state.name001Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="지정운전자" id="MI_P00_p015_name001" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem titleText="계약자와의 관계" :forceFocus="true">
-            <FormInvalid :error="state.relative001Error">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="MI_P00_p015_relative001"
-                    id="MI_P00_p015_relative_001_001"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>친인척</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="MI_P00_p015_relative001"
-                    id="MI_P00_p015_relative_001_002"
-                  >
-                    <BoxCheckLabel>기타</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+          <FormList>
+            <FormListItem titleText="지정운전자" target="#MI_P00_p015_name001">
+              <FormInvalid :error="state.name001Error">
+                <InputBlock :error="state.name001Error">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput title="지정운전자" id="MI_P00_p015_name001" />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <FormListItem
-            titleText="생년월일"
-            titleOptionalText="(6자리)"
-            target="#MI_P00_p015_idNumber001"
-          >
-            <FormInvalid :error="state.idNumber001Error">
-              <InputBlock :error="state.idNumber001Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="주민등록번호 앞 6자리"
-                    id="MI_P00_p015_idNumber001"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <PartInput
-                    type="number"
-                    pattern="\d*"
-                    title="주민등록번호 뒤 7자리 중 첫번째자리"
-                    :afterDot="6"
-                  />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+            <FormListItem titleText="계약자와의 관계" :forceFocus="true">
+              <FormInvalid :error="state.relative001Error">
+                <BoxCheckList>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      name="MI_P00_p015_relative001"
+                      id="MI_P00_p015_relative_001_001"
+                      :defaultChecked="true"
+                    >
+                      <BoxCheckLabel>친인척</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      name="MI_P00_p015_relative001"
+                      id="MI_P00_p015_relative_001_002"
+                    >
+                      <BoxCheckLabel>기타</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                </BoxCheckList>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <FormListItem titleText="면허번호" target="#MI_P00_p015_license001">
-            <FormInvalid :error="state.license001Error">
-              <InputBlock :error="state.license001Error">
-                <InputBlockCell>
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '서울 (11)',
-                      },
-                      {
-                        value: '2',
-                        label: '부산 (12)',
-                      },
-                      {
-                        value: '3',
-                        label: '경기 (13)',
-                      },
-                      {
-                        value: '4',
-                        label: '강원 (14)',
-                      },
-                      {
-                        value: '5',
-                        label: '충북 (15)',
-                      },
-                      {
-                        value: '6',
-                        label: '충남 (16',
-                      },
-                      {
-                        value: '7',
-                        label: '전북 (17)',
-                      },
-                      {
-                        value: '8',
-                        label: '경남 (18)',
-                      },
-                      {
-                        value: '9',
-                        label: '제주 (19)',
-                      },
-                      {
-                        value: '10',
-                        label: '대구 (20)',
-                      },
-                      {
-                        value: '11',
-                        label: '인천 (21)',
-                      },
-                      {
-                        value: '12',
-                        label: '광주 (22)',
-                      },
-                      {
-                        value: '13',
-                        label: '대전 (23)',
-                      },
-                      {
-                        value: '14',
-                        label: '울산 (24)',
-                      },
-                    ]"
-                    title="지역번호 선택하기"
-                    layerTitle="면허발급번호를 선택해 주세요"
-                    inputId="MI_P00_p015_license001"
+            <FormListItem
+              titleText="생년월일"
+              titleOptionalText="(6자리)"
+              target="#MI_P00_p015_idNumber001_button"
+            >
+              <FormInvalid :error="state.idNumber001Error">
+                <InputBlock :error="state.idNumber001Error">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="생년월일"
+                      id="MI_P00_p015_idNumber001"
+                      buttonId="MI_P00_p015_idNumber001_button"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem titleText="면허번호" target="#MI_P00_p015_license001">
+              <FormInvalid :error="state.license001Error">
+                <InputBlock :error="state.license001Error">
+                  <InputBlockCell>
+                    <BasicSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '서울 (11)',
+                        },
+                        {
+                          value: '2',
+                          label: '부산 (12)',
+                        },
+                        {
+                          value: '3',
+                          label: '경기 (13)',
+                        },
+                        {
+                          value: '4',
+                          label: '강원 (14)',
+                        },
+                        {
+                          value: '5',
+                          label: '충북 (15)',
+                        },
+                        {
+                          value: '6',
+                          label: '충남 (16)',
+                        },
+                        {
+                          value: '7',
+                          label: '전북 (17)',
+                        },
+                        {
+                          value: '8',
+                          label: '경남 (18)',
+                        },
+                        {
+                          value: '9',
+                          label: '제주 (19)',
+                        },
+                        {
+                          value: '10',
+                          label: '대구 (20)',
+                        },
+                        {
+                          value: '11',
+                          label: '인천 (21)',
+                        },
+                        {
+                          value: '12',
+                          label: '광주 (22)',
+                        },
+                        {
+                          value: '13',
+                          label: '대전 (23)',
+                        },
+                        {
+                          value: '14',
+                          label: '울산 (24)',
+                        },
+                      ]"
+                      title="면허번호 - 지역번호 선택하기"
+                      inputId="MI_P00_p015_license001"
+                      :classNames="{
+                        wrap: 'input-width-driving-license',
+                      }"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 앞 2자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell type="sub">-</InputBlockCell>
+                  <InputBlockCell
                     :classNames="{
-                      wrap: 'input-width-driving-license',
+                      cell: 'flex-2',
                     }"
-                  />
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="text"
-                    pattern="\d*"
-                    title="면허발급번호 앞 2자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell
-                  :classNames="{
-                    cell: 'flex-2',
-                  }"
-                  margin="regular"
-                >
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="면허발급번호 두번째 6자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="면허발급번호 뒤 2자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <template v-slot:right>
-                  <BasicButton size="small" theme="quaternary">
-                    확인
-                  </BasicButton>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="발급일자"
-            target="#MI_P00_p015_issue_button001"
-          >
-            <FormInvalid :error="state.issueError001">
-              <InputBlock :error="state.issueError001">
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="발급일자"
-                    id="MI_P00_p015_issue"
-                    buttonId="MI_P00_p015_issue_button001"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
-
-      <section>
-        <h3 class="text-title-1 row-margin-contents">지정운전자 Ⅱ</h3>
-
-        <FormList>
-          <FormListItem titleText="지정운전자" target="#MI_P00_p015_name002">
-            <FormInvalid :error="state.name002Error">
-              <InputBlock :error="state.name002Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="지정운전자" id="MI_P00_p015_name002" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem titleText="계약자와의 관계" :forceFocus="true">
-            <FormInvalid :error="state.relative002Error">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="MI_P00_p015_relative002"
-                    id="MI_P00_p015_relative_002_001"
-                    :defaultChecked="true"
+                    margin="regular"
                   >
-                    <BoxCheckLabel>친인척</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="MI_P00_p015_relative002"
-                    id="MI_P00_p015_relative_002_002"
-                  >
-                    <BoxCheckLabel>기타</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 두번째 6자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell type="sub">-</InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 뒤 2자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:right>
+                    <BasicButton size="small" theme="quaternary">
+                      확인
+                    </BasicButton>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <FormListItem
-            titleText="생년월일"
-            titleOptionalText="(6자리)"
-            target="#MI_P00_p015_idNumber002"
-          >
-            <FormInvalid :error="state.idNumber002Error">
-              <InputBlock :error="state.idNumber002Error">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="주민등록번호 앞 6자리"
-                    id="MI_P00_p015_idNumber002"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true">
-                  <PartInput
-                    type="number"
-                    pattern="\d*"
-                    title="주민등록번호 뒤 7자리 중 첫번째자리"
-                    :afterDot="6"
-                  />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+            <FormListItem
+              titleText="발급일자"
+              target="#MI_P00_p015_issue_button001"
+            >
+              <FormInvalid :error="state.issueError001">
+                <InputBlock :error="state.issueError001">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="발급일자"
+                      id="MI_P00_p015_issue"
+                      buttonId="MI_P00_p015_issue_button001"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </section>
 
-          <FormListItem titleText="면허번호" target="#MI_P00_p015_license002">
-            <FormInvalid :error="state.license002Error">
-              <InputBlock :error="state.license002Error">
-                <InputBlockCell>
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '서울 (11)',
-                      },
-                      {
-                        value: '2',
-                        label: '부산 (12)',
-                      },
-                      {
-                        value: '3',
-                        label: '경기 (13)',
-                      },
-                      {
-                        value: '4',
-                        label: '강원 (14)',
-                      },
-                      {
-                        value: '5',
-                        label: '충북 (15)',
-                      },
-                      {
-                        value: '6',
-                        label: '충남 (16',
-                      },
-                      {
-                        value: '7',
-                        text: '전북 (17)',
-                      },
-                      {
-                        value: '8',
-                        text: '경남 (18)',
-                      },
-                      {
-                        value: '9',
-                        text: '제주 (19)',
-                      },
-                      {
-                        value: '10',
-                        text: '대구 (20)',
-                      },
-                      {
-                        value: '11',
-                        text: '인천 (21)',
-                      },
-                      {
-                        value: '12',
-                        text: '광주 (22)',
-                      },
-                      {
-                        value: '13',
-                        text: '대전 (23)',
-                      },
-                      {
-                        value: '14',
-                        text: '울산 (24)',
-                      },
-                    ]"
-                    title="지역번호 선택하기"
-                    layerTitle="면허발급번호를 선택해 주세요"
-                    inputId="MI_P00_p015_license002"
+        <section class="row-margin-block-small">
+          <h3 class="text-title-1 row-margin-contents">지정운전자 II</h3>
+
+          <FormList>
+            <FormListItem titleText="지정운전자" target="#MI_P00_p015_name002">
+              <FormInvalid :error="state.name002Error">
+                <InputBlock :error="state.name002Error">
+                  <InputBlockCell :flexible="true">
+                    <BasicInput title="지정운전자" id="MI_P00_p015_name002" />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem titleText="계약자와의 관계" :forceFocus="true">
+              <FormInvalid :error="state.relative002Error">
+                <BoxCheckList>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      name="MI_P00_p015_relative002"
+                      id="MI_P00_p015_relative_002_001"
+                      :defaultChecked="true"
+                    >
+                      <BoxCheckLabel>친인척</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                  <BoxCheckListItem>
+                    <BoxCheck
+                      name="MI_P00_p015_relative002"
+                      id="MI_P00_p015_relative_002_002"
+                    >
+                      <BoxCheckLabel>기타</BoxCheckLabel>
+                    </BoxCheck>
+                  </BoxCheckListItem>
+                </BoxCheckList>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem
+              titleText="생년월일"
+              titleOptionalText="(6자리)"
+              target="#MI_P00_p015_idNumber002_button"
+            >
+              <FormInvalid :error="state.idNumber001Error">
+                <InputBlock :error="state.idNumber001Error">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="생년월일"
+                      id="MI_P00_p015_idNumber002"
+                      buttonId="MI_P00_p015_idNumber002_button"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+
+            <FormListItem titleText="면허번호" target="#MI_P00_p015_license002">
+              <FormInvalid :error="state.license001Error">
+                <InputBlock :error="state.license001Error">
+                  <InputBlockCell>
+                    <BasicSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '서울 (11)',
+                        },
+                        {
+                          value: '2',
+                          label: '부산 (12)',
+                        },
+                        {
+                          value: '3',
+                          label: '경기 (13)',
+                        },
+                        {
+                          value: '4',
+                          label: '강원 (14)',
+                        },
+                        {
+                          value: '5',
+                          label: '충북 (15)',
+                        },
+                        {
+                          value: '6',
+                          label: '충남 (16)',
+                        },
+                        {
+                          value: '7',
+                          label: '전북 (17)',
+                        },
+                        {
+                          value: '8',
+                          label: '경남 (18)',
+                        },
+                        {
+                          value: '9',
+                          label: '제주 (19)',
+                        },
+                        {
+                          value: '10',
+                          label: '대구 (20)',
+                        },
+                        {
+                          value: '11',
+                          label: '인천 (21)',
+                        },
+                        {
+                          value: '12',
+                          label: '광주 (22)',
+                        },
+                        {
+                          value: '13',
+                          label: '대전 (23)',
+                        },
+                        {
+                          value: '14',
+                          label: '울산 (24)',
+                        },
+                      ]"
+                      title="면허번호 - 지역번호 선택하기"
+                      inputId="MI_P00_p015_license002"
+                      :classNames="{
+                        wrap: 'input-width-driving-license',
+                      }"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 앞 2자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell type="sub">-</InputBlockCell>
+                  <InputBlockCell
                     :classNames="{
-                      wrap: 'input-width-driving-license',
+                      cell: 'flex-2',
                     }"
-                  />
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="text"
-                    pattern="\d*"
-                    title="면허발급번호 앞 2자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell
-                  :classNames="{
-                    cell: 'flex-2',
-                  }"
-                  margin="regular"
-                >
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="면허발급번호 두번째 6자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <InputBlockCell type="sub">-</InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="면허발급번호 뒤 2자리"
-                    :useDelete="false"
-                  />
-                </InputBlockCell>
-                <template v-slot:right>
-                  <BasicButton size="small" theme="quaternary">
-                    확인
-                  </BasicButton>
-                </template>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
+                    margin="regular"
+                  >
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 두번째 6자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <InputBlockCell type="sub">-</InputBlockCell>
+                  <InputBlockCell :flexible="true" margin="regular">
+                    <BasicInput
+                      type="number"
+                      pattern="\d*"
+                      title="면허번호 뒤 2자리"
+                      :useDelete="false"
+                    />
+                  </InputBlockCell>
+                  <template v-slot:right>
+                    <BasicButton size="small" theme="quaternary">
+                      확인
+                    </BasicButton>
+                  </template>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
 
-          <FormListItem
-            titleText="발급일자"
-            target="#MI_P00_p015_issue_button002"
-          >
-            <FormInvalid :error="state.issueError002">
-              <InputBlock :error="state.issueError002">
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="발급일자"
-                    id="MI_P00_p015_issue"
-                    buttonId="MI_P00_p015_issue_button002"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
-      </section>
+            <FormListItem
+              titleText="발급일자"
+              target="#MI_P00_p015_issue_button002"
+            >
+              <FormInvalid :error="state.issueError002">
+                <InputBlock :error="state.issueError002">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="발급일자"
+                      id="MI_P00_p015_issue"
+                      buttonId="MI_P00_p015_issue_button002"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+        </section>
+      </div>
 
       <div class="row-margin-container-medium">
         <CheckBox id="MI_P00_p015_sms" theme="tertiary">
@@ -566,7 +538,7 @@ export default {
       </div>
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>등록/변경 신청</BasicButton>
       </ButtonListItem>

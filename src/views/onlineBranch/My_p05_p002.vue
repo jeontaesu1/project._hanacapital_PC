@@ -122,11 +122,7 @@ export default {
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">신청사유</h3>
 
-        <BoxCheckList
-          :classNames="{
-            wrap: 'row-margin-container-medium row-margin-top-none',
-          }"
-        >
+        <BoxCheckList>
           <BoxCheckListItem>
             <BoxCheck
               name="My_p05_p002_method"
@@ -148,9 +144,8 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
 
-        <!-- Case : 신용도 상승, 소득 재산 증가 선택 시 경우 노출 -->
-        <FormList>
-          <!-- Case : 신용도 상승 선택 시 경우 노출 -->
+        <!-- Case : 신용도 상승 선택 시 경우 노출 -->
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem titleText="상세사유" :forceFocus="true">
             <FormInvalid :error="state.details001Error">
               <BoxCheckList>
@@ -183,9 +178,11 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- //Case : 신용도 상승 선택 시 경우 노출 -->
+        </FormList>
+        <!-- // Case : 신용도 상승 선택 시 경우 노출 -->
 
-          <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
+        <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
+        <FormList :classNames="{ wrap: 'row-margin-contents' }">
           <FormListItem titleText="상세사유" :forceFocus="true">
             <FormInvalid :error="state.details002Error">
               <BoxCheckList>
@@ -218,9 +215,8 @@ export default {
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
-          <!-- //Case : 소득 재산 증가 선택 시 경우 노출 -->
         </FormList>
-        <!-- // Case : 신용도 상승, 소득 재산 증가 선택 시 경우 노출 -->
+        <!-- // Case : 소득 재산 증가 선택 시 경우 노출 -->
       </section>
 
       <section class="row-margin-block-small">
@@ -322,25 +318,25 @@ export default {
       </section>
 
       <BasicBox theme="tertiary">
-        <span class="color-gray font-weight-medium">
+        <p class="text-body-1 color-gray font-weight-medium">
           본인은 상기 항목의 내용을 사실대로 기재하였고, 귀사의 신용평가
           시스템에 따른 결과에 이의를 제기하지 않겠습니다.
-        </span>
+        </p>
       </BasicBox>
 
-      <div class="row-margin-contents">
-        <h4 class="text-body-1 color-gray font-weight-medium align-right">
+      <div class="row-margin-contents align-right">
+        <p class="text-body-1 color-gray font-weight-medium">
           위 내역이 사실과 다름이 없음을 확인합니다.
-        </h4>
+        </p>
         <p
-          class="text-body-1 color-gray-tertiary font-weight-light row-margin-contents-small align-right"
+          class="text-body-1 color-gray-tertiary font-weight-light row-margin-contents-small"
         >
           2023년 01월 05일
         </p>
       </div>
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>

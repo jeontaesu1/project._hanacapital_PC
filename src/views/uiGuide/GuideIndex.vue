@@ -382,7 +382,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P02_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -404,7 +404,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P02_p003',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -459,7 +459,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P11_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1140,7 +1140,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p005',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1151,7 +1151,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p006',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1173,7 +1173,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p008',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1184,7 +1184,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p009',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1239,7 +1239,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p04_p002',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1250,7 +1250,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p04_p003',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1283,7 +1283,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p015',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1294,7 +1294,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p015a',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1305,7 +1305,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/MI_P00_p016',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1327,7 +1327,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p05_p002',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1349,7 +1349,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p05_p004',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1360,7 +1360,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p05_p005',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1371,7 +1371,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p06_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1382,7 +1382,7 @@ const datas = () => [
         depth6: '',
         path: '/online-branch/My_p06_p002',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1431,7 +1431,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/My_P02_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1453,7 +1453,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/My_P05_p011',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1463,8 +1463,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P05_p002',
-        status: 'end',
-        create: '2023.05.26',
+        status: '',
+        create: '',
         log: [],
       },
       {
@@ -1475,7 +1475,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/My_P05_p013',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1486,7 +1486,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/My_P06_p011',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1518,9 +1518,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/additional-service-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.05.31', text: '팝업추가\n- 온라인약정 팝업' }],
       },
       {
         depth2: '상담등록\nEtc_P01_p001',
@@ -1530,7 +1530,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/Etc_P01_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1541,7 +1541,7 @@ const datas = () => [
         depth6: '',
         path: '/additional-service/Etc_P01_p002',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
     ],
@@ -1601,7 +1601,7 @@ const datas = () => [
         depth6: '',
         path: '/inventory-finance/IF_P02_p005',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1611,9 +1611,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/inventory-finance-002',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.05.31',
+            text: '팝업추가\n- 중도상환 입금 예약신청 팝업(오늘 즉시 출금)',
+          },
+        ],
       },
       {
         depth2: '중도상환',
@@ -1645,7 +1650,7 @@ const datas = () => [
         depth6: '',
         path: '/inventory-finance/IF_P03_p003',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1656,7 +1661,7 @@ const datas = () => [
         depth6: '',
         path: '/inventory-finance/IF_P03_p008',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1689,7 +1694,7 @@ const datas = () => [
         depth6: '',
         path: '/inventory-finance/IF_P04_p003',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
     ],
@@ -1705,7 +1710,7 @@ const datas = () => [
         depth6: '',
         path: '/lm-blog/LM_P01_p001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1716,7 +1721,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/lm-blog-001',
         status: 'end',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
       {
@@ -1782,7 +1787,7 @@ const datas = () => [
         depth6: '',
         path: '/guide/lm-blog-002',
         status: 'partend',
-        create: '2023.05.26',
+        create: '2023.05.31',
         log: [],
       },
     ],

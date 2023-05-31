@@ -298,7 +298,7 @@ export default {
       <!-- // Case : 마지막 페이지일 때 -->
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>변경 신청</BasicButton>
       </ButtonListItem>
