@@ -177,6 +177,16 @@
     height: 800px;
   }
 
+  &--size {
+    &-regular {
+      width: 800px;
+    }
+
+    &-large {
+      width: 1240px;
+    }
+  }
+
   /*
   &--bg {
     &-secondary {
