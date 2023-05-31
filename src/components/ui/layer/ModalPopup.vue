@@ -31,6 +31,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    agreement: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const state = reactive({
@@ -95,6 +99,7 @@ export default {
       {
         [$style[`popup--bg-${bg}`]]: bg,
         [$style['popup--fix']]: fix,
+        [$style['popup--agreement']]: agreement,
       },
       customClassNames.wrap,
     ]"

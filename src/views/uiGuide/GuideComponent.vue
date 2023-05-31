@@ -3909,12 +3909,8 @@ export default {
               </div>
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <RoundStatus
-                theme="secondary"
-                size="large"
-                :classNames="{ wrap: 'display-block' }"
-              >
-                정상
+              <RoundStatus :classNames="{ wrap: 'display-block' }">
+                미신청
               </RoundStatus>
             </BasicBoxHeadRight>
           </BasicBoxHead>
