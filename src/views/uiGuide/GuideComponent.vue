@@ -69,6 +69,7 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -179,6 +180,7 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    CarThumb,
   },
 
   setup() {
