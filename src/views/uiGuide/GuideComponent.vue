@@ -45,6 +45,8 @@ import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import FilterTab from '@/components/ui/tab/FilterTab.vue';
+import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -138,6 +140,8 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    FilterTab,
+    FilterTabButton,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -3775,6 +3779,57 @@ export default {
             Tab 2
           </NavTabButton>
         </NavTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Filter Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <FilterTab :useUiTab="true">
+            <FilterTabButton link="testFilterTab001_001">Tab 1</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_002">Tab 2</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_003">Tab 3</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_004">Tab 4</FilterTabButton>
+          </FilterTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testFilterTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <FilterTab>
+          <FilterTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </FilterTabButton>
+          <FilterTabButton tagName="RouterLink" to="">Tab 2</FilterTabButton>
+
+          <FilterTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </FilterTabButton>
+          <FilterTabButton tagName="a" href="">Tab 4</FilterTabButton>
+
+          <FilterTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </FilterTabButton>
+          <FilterTabButton tagName="button" type="button">
+            Tab 6
+          </FilterTabButton>
+        </FilterTab>
       </div>
     </section>
 

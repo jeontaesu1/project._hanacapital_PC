@@ -1,0 +1,107 @@
+.filter-tab {
+  margin: 0 -20px 30px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &__inner {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 100%;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 1) 0%,
+        rgba($color-white, 1) 49.48%,
+        rgba($color-white, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0) 0%,
+        rgba($color-white, 1) 50.52%,
+        rgba($color-white, 1) 100%
+      );
+    }
+  }
+
+  &__scroller {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: none;
+      display: block;
+      width: 20px;
+    }
+  }
+
+  &__item {
+    flex: none;
+    display: flex;
+    align-items: stretch;
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    padding: 8px 15px;
+    border: 1px solid $color-gray-30;
+  }
+
+  &__text {
+    display: block;
+    @include font-size-default(15);
+    color: $color-gray-60;
+  }
+
+  &__item--active,
+  &__item:global(.is-tab-opened) {
+    .filter-tab__button {
+      border-color: $color-navy-50;
+      background-color: $color-navy-50;
+    }
+    .filter-tab__text {
+      color: $color-white;
+      font-weight: 500;
+    }
+  }
+}
