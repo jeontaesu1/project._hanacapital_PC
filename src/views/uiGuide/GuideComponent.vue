@@ -69,7 +69,7 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -86,6 +86,7 @@ import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
@@ -4147,6 +4148,7 @@ export default {
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
         <BasicBox theme="senary">// contnets</BasicBox>
+        <BasicBox theme="septenary">// contnets</BasicBox>
       </div>
     </section>
 

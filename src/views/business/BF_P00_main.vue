@@ -39,7 +39,7 @@ export default {
 
     <ul class="reset-list flex-box">
       <li class="flex-box__cell flex-1 flex-box__cell--large">
-        <BasicBox theme="quaternary">
+        <BasicBox theme="quinary">
           <div :class="$style['icon-box']">
             <div
               :class="[
@@ -77,7 +77,7 @@ export default {
         </BasicBox>
       </li>
       <li class="flex-box__cell flex-1 flex-box__cell--large">
-        <BasicBox theme="quinary">
+        <BasicBox theme="senary">
           <div :class="$style['icon-box']">
             <div
               :class="[
@@ -115,7 +115,7 @@ export default {
         </BasicBox>
       </li>
       <li class="flex-box__cell flex-1 flex-box__cell--large">
-        <BasicBox theme="senary">
+        <BasicBox theme="septenary">
           <div :class="$style['icon-box']">
             <div
               :class="[
