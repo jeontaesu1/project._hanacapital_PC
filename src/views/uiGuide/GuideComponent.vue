@@ -138,6 +138,7 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    BasicBanner,
     BasicHr,
     BasicBox,
     BasicBoxHead,
@@ -173,6 +174,7 @@ export default {
     IconDeposit,
     IconCallMint,
     IconCompleted,
+    ImgMainSample,
   },
 
   setup() {
@@ -5242,14 +5244,6 @@ export default {
             </div>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Car Thumb</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
 
