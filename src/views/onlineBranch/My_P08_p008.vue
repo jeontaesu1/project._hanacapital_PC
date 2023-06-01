@@ -135,20 +135,20 @@ export default {
               <KeyValueText>999,999 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>연장후선납금(d)</KeyValueTitle>
+              <KeyValueTitle>기납입보증금(b)</KeyValueTitle>
               <KeyValueText>999,999 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
-              <KeyValueTitle>기납입보증금(b)</KeyValueTitle>
+              <KeyValueTitle>연장후보증금(c)</KeyValueTitle>
+              <KeyValueText>999,999 원</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>연장후선납금(d)</KeyValueTitle>
               <KeyValueText>999,999 원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>인지대(e)</KeyValueTitle>
               <KeyValueText>5,000 원</KeyValueText>
-            </KeyValueItem>
-            <KeyValueItem>
-              <KeyValueTitle>연장후보증금(c)</KeyValueTitle>
-              <KeyValueText>999,999 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
           <BasicHr
@@ -168,7 +168,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">다음</BasicButton>
+        <BasicButton>다음</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

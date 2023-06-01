@@ -28,6 +28,7 @@ export default {
     CheckBoxObject,
     CheckBoxLabelText,
   },
+
   setup() {
     const layer = ref(null);
 

@@ -60,7 +60,7 @@ export default {
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>렌트기간</KeyValueTitle>
-          <KeyValueText>536개월</KeyValueText>
+          <KeyValueText>36개월</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>선납금</KeyValueTitle>
@@ -71,7 +71,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">다음</BasicButton>
+        <BasicButton>다음</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

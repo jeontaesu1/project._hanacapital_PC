@@ -62,6 +62,7 @@ export default {
     InputBlockCell,
     BasicInput,
   },
+
   setup() {
     const state = reactive({
       productTypeError: false,
@@ -276,7 +277,7 @@ export default {
         않습니다.)
       </NoticeText>
 
-      <!-- Case : 보증금 선택 시 노출 -->
+      <!-- Case : '보증금' 선택 시 노출 -->
       <FormList
         :classNames="{
           wrap: 'row-margin-contents',
@@ -357,9 +358,9 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- // Case : 보증금 선택 시 노출 -->
+      <!-- // Case : '보증금' 선택 시 노출 -->
 
-      <!-- Case : 선납금 선택 시 노출 -->
+      <!-- Case : '선납금' 선택 시 노출 -->
       <FormList
         :classNames="{
           wrap: 'row-margin-contents',
@@ -440,9 +441,9 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- // Case : 선납금 선택 시 노출 -->
+      <!-- // Case : '선납금' 선택 시 노출 -->
 
-      <!-- Case : 비율 선택 시 노출 -->
+      <!-- Case : '비율' 선택 시 노출 -->
       <FormList
         :classNames="{
           wrap: 'row-margin-contents',
@@ -469,9 +470,9 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 비율 선택 시 노출 -->
+        <!-- // Case : '비율' 선택 시 노출 -->
 
-        <!-- Case : 금액입력 선택 시 노출 -->
+        <!-- Case : '금액입력' 선택 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount002">
           <FormInvalid :error="state.paymentAmount002Error">
             <InputBlock :error="state.paymentAmount002Error">
@@ -491,10 +492,10 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 금액입력 선택 시 노출 -->
+        <!-- // Case :'금액입력' 선택 시 노출 -->
       </FormList>
 
-      <!-- Case : 보증금+선납금 선택 시 노출 -->
+      <!-- Case : '보증금+선납금' 선택 시 노출 -->
       <FormList
         :classNames="{
           wrap: 'row-margin-contents',
@@ -575,7 +576,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!-- Case : 보증금+선납금 보증금비율 비율 선택 시 노출 -->
+        <!-- Case : '보증금+선납금 보증금비율 비율' 선택 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount003">
           <FormInvalid :error="state.paymentAmount003Error">
             <InputBlock :error="state.paymentAmount003Error" :disabled="true">
@@ -597,9 +598,9 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 보증금+선납금 보증금비율 비율 선택 시 노출 -->
+        <!-- // Case : '보증금+선납금 보증금비율 비율' 선택 시 노출 -->
 
-        <!-- Case : 보증금+선납금 보증금비율 금액입력 선택 시 노출 -->
+        <!-- Case : '보증금+선납금 보증금비율 금액입력' 선택 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount004">
           <FormInvalid :error="state.paymentAmount004Error">
             <InputBlock :error="state.paymentAmount004Error">
@@ -619,7 +620,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 보증금+선납금 보증금비율 금액입력 선택 시 노출 -->
+        <!-- // Case : '보증금+선납금 보증금비율 금액입력 선택' 시 노출 -->
 
         <FormListItem titleText="선납금비율" :forceFocus="true">
           <FormInvalid :error="state.percentage004Error">
@@ -696,7 +697,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!-- Case : 보증금+선납금 선납금비율 비율 선택 시 노출 -->
+        <!-- Case : '보증금+선납금 선납금비율 비율' 선택 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount005">
           <FormInvalid :error="state.paymentAmount005Error">
             <InputBlock :error="state.paymentAmount005Error" :disabled="true">
@@ -718,9 +719,9 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 보증금+선납금 선납금비율 비율 선택 시 노출 -->
+        <!-- // Case : '보증금+선납금 선납금비율 비율' 선택 시 노출 -->
 
-        <!-- // Case : 보증금+선납금 금액입력 선택 시 노출 -->
+        <!-- Case : '보증금+선납금 금액입력 선택' 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount006">
           <FormInvalid :error="state.paymentAmount006Error">
             <InputBlock :error="state.paymentAmount006Error">
@@ -741,12 +742,12 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-      <!-- // Case : 보증금+선납금 금액입력 선택 시 노출 노출 -->
+      <!-- // Case : '보증금+선납금 금액입력 선택' 시 노출 노출 -->
     </div>
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">매회리스료 산출</BasicButton>
+        <BasicButton>매회리스료 산출</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

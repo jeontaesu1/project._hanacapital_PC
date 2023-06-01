@@ -58,6 +58,7 @@ export default {
     ButtonListItem,
     BasicButton,
   },
+
   setup() {
     const state = reactive({
       corporationNameError: false,
