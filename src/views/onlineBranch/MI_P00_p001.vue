@@ -367,11 +367,7 @@ export default {
                   </div>
                 </BasicBoxHeadLeft>
                 <BasicBoxHeadRight>
-                  <RoundStatus
-                    theme="nonary"
-                    size="large"
-                    :classNames="{ wrap: 'display-block' }"
-                  >
+                  <RoundStatus theme="nonary" size="large" :block="true">
                     연체
                   </RoundStatus>
                 </BasicBoxHeadRight>
