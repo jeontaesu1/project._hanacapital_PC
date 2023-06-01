@@ -494,7 +494,7 @@ export default {
       </div>
     </section>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>중도상환금액 조회</BasicButton>
       </ButtonListItem>

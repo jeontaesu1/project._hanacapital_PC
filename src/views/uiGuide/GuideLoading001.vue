@@ -21,7 +21,7 @@ export default {
 
       setTimeout(() => {
         store.ui.loading.hide();
-      }, 1000);
+      }, 5000);
     });
   },
 };

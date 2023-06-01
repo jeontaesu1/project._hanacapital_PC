@@ -91,7 +91,9 @@ export default {
     :style="`display: ${state.display};`"
   >
     <div :class="[$style['loading__block'], customClassNames.wrap]">
-      로딩바 (임시)
+      <div :class="[$style['loading__dot'], $style['loading__dot--1']]"></div>
+      <div :class="[$style['loading__dot'], $style['loading__dot--2']]"></div>
+      <div :class="[$style['loading__dot'], $style['loading__dot--3']]"></div>
     </div>
   </div>
 </template>
