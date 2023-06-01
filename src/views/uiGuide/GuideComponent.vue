@@ -3310,7 +3310,7 @@ export default {
                 $style['icon-box__content'],
                 'text-title-1',
                 'row-margin-item',
-                'color-white',
+                'color-black',
               ]"
             >
               <span class="color-green font-weight-bold">하나프라자</span>님은
