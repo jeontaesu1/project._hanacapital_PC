@@ -89,6 +89,8 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+import IconImg from '@/assets/images/icon/img.svg?component';
 
 export default {
   components: {
@@ -179,6 +181,8 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    IconImgColor,
+    IconImg,
   },
 
   setup() {
@@ -5046,6 +5050,159 @@ export default {
           </li>
         </ul>
         <!-- status-inquiry -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload001"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload001" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__text']">파일첨부</span>
+          </label>
+        </div>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-file']">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Inside (padding: 0 24px)</h3>
+        <div :class="[$style['upload-file'], $style['upload-file--inside']]">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
