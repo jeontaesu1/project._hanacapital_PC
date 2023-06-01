@@ -71,9 +71,7 @@ export default {
     </InputBlock>
 
     <section class="row-margin-block row-margin-bottom-none">
-      <h3 class="text-title-1 font-weight-medium row-margin-contents">
-        차량정보
-      </h3>
+      <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
       <!-- Case : [검색] 버튼 선택시 차량번호 조회 및 결과 노출 -->
       <BasicBox>

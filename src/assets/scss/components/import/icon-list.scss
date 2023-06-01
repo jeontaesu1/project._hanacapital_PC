@@ -74,6 +74,10 @@ div.icon-list__block {
     @include font-size-default(15);
     font-weight: 400;
     color: $color-gray-60;
+
+    & + .icon-list__title {
+      margin-top: 4px;
+    }
   }
 
   &__etc {

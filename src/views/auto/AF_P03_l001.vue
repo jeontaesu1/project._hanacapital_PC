@@ -65,7 +65,10 @@ export default {
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconPlayStore /></span>
               <span :class="$style['icon-list__content']">
-                <span class="display-block">아직 앱이 없으시다면</span>
+                <span
+                  :class="[$style['icon-list__text'], 'color-gray-tertiary']"
+                  >아직 앱이 없으시다면</span
+                >
                 <span :class="$style['icon-list__title']"
                   >Google Play로 이동</span
                 >
@@ -79,7 +82,10 @@ export default {
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconAppStore /></span>
               <span :class="$style['icon-list__content']">
-                <span class="display-block">아직 앱이 없으시다면</span>
+                <span
+                  :class="[$style['icon-list__text'], 'color-gray-tertiary']"
+                  >아직 앱이 없으시다면</span
+                >
                 <span :class="$style['icon-list__title']"
                   >App Store로 이동</span
                 >
