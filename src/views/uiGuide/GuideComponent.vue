@@ -5204,6 +5204,14 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">BasicBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
