@@ -76,6 +76,24 @@
     }
   }
 
+  &--medium {
+    > .basic-list__item {
+      padding-left: 0;
+      padding-right: 0;
+
+      > .basic-list__symbol {
+        &:empty {
+          min-width: 4px;
+
+          &::before {
+            width: 4px;
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+
   /*
   &--medium-margin {
     > .basic-list__item {
