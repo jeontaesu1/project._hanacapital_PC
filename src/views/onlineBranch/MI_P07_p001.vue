@@ -1030,7 +1030,6 @@ export default {
                     buttonId="MI_P07_p001_periodStartButton"
                     :max="state.maxDate"
                     v-model="state.minDate"
-                    :onChange="testInputEvent"
                   />
                 </InputBlockCell>
                 <InputBlockCell margin="regular">~</InputBlockCell>
