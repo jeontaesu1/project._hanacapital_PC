@@ -746,7 +746,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="/">매회리스료 산출</BasicButton>
+        <BasicButton tagName="RouterLink" to="">매회리스료 산출</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

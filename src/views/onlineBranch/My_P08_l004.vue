@@ -10,6 +10,9 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 
 export default {
   components: {
@@ -21,6 +24,9 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    CheckBox,
+    CheckBoxObject,
+    CheckBoxLabelText,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +46,30 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>만기후 반환 신청 확인</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <CheckBox id="My_P08_l004_agree001" theme="tertiary">
+        <CheckBoxObject />
+        <CheckBoxLabelText>
+          이용기간 중 발생된 범칙금/과태료, 기타비용 등에 대해서는 본인의
+          책임하에 부담할 것을 확약합니다.
+        </CheckBoxLabelText>
+      </CheckBox>
+      <CheckBox
+        id="My_P08_l004_agree002"
+        theme="tertiary"
+        :classNames="{
+          wrap: 'row-margin-contents',
+        }"
+      >
+        <CheckBoxObject />
+        <CheckBoxLabelText>
+          신청인(본인)은 반환 유의사항에 대해 충분한 설명을 듣고 잘 이해한 후
+          본인의 의사에 따라 반환을 신청합니다.
+        </CheckBoxLabelText>
+      </CheckBox>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +80,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">만기후 반환 신청</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
