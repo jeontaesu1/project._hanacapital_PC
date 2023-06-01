@@ -120,7 +120,7 @@ export default {
       </li>
     </ul>
 
-    <div class="row-margin-block-small">
+    <div class="row-margin-block-small row-margin-bottom-none">
       <BasicBox>
         <KeyValue :wrap="true">
           <KeyValueItem>
@@ -155,7 +155,7 @@ export default {
         </FormListItem>
       </FormList>
 
-      <section class="row-margin-block-small row-margin-bottom-none">
+      <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">반환 담당자 정보</h3>
 
         <CheckBox id="My_P08_p015_agree" theme="tertiary">
@@ -237,7 +237,7 @@ export default {
         </FormList>
       </section>
 
-      <section class="row-margin-block-small row-margin-bottom-none">
+      <section>
         <h3 class="text-title-1 row-margin-contents">반환 요청 정보</h3>
 
         <FormList>
