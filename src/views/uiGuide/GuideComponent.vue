@@ -90,6 +90,7 @@ import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 export default {
   components: {
@@ -181,6 +182,7 @@ export default {
     IconCar,
     IconDocumentSearch,
     ImgMainSample,
+    BasicBanner,
   },
 
   setup() {
@@ -5196,6 +5198,37 @@ export default {
             </div>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BasicBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <p class="text-body-2 color-gray-tertiary row-margin-mini">
+            하나금융그룹의 생활금융플랫폼!<br />
+          </p>
+          <div class="text-title-2 font-weight-medium">다이렉트 장기렌터카</div>
+        </BasicBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <BasicBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <p class="text-body-2 color-gray-tertiary row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-title-2 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
       </div>
     </section>
 
