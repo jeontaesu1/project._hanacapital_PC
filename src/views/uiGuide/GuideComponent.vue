@@ -997,6 +997,21 @@ export default {
         </TextButton>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon size medium</h3>
+        <TextButton iconSize="medium" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton iconSize="medium" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">text size regular</h3>
         <TextButton textSize="regular" theme="secondary" :iconFillAll="true">
           <template v-slot:leftIcon>
@@ -1005,6 +1020,21 @@ export default {
           Button
         </TextButton>
         <TextButton textSize="regular" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">text size medium</h3>
+        <TextButton textSize="medium" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton textSize="medium" theme="tertiary" :iconFillAll="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -1024,6 +1054,42 @@ export default {
           Button
           <template v-slot:rightIcon>
             <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          more - iconSize,textSize (medium)
+        </h3>
+
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+          >Button</TextButton
+        >
+
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+        >
+          <template v-slot:leftIcon>
+            <IconLink />
+          </template>
+          Button
+        </TextButton>
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+        >
+          Button
+          <template v-slot:rightIcon>
+            <IconLink />
           </template>
         </TextButton>
       </div>
