@@ -195,7 +195,7 @@ export default {
       <section class="row-margin-block">
         <h3 class="text-title-1 row-margin-contents">수령/수취 정보</h3>
 
-        <CheckBox id="My_P08_p020_agree001" theme="tertiary">
+        <CheckBox id="My_P08_p020_agree002" theme="tertiary">
           <CheckBoxObject />
           <CheckBoxLabelText>매도용 인감주소와 동일</CheckBoxLabelText>
         </CheckBox>
@@ -273,7 +273,7 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
-                    name="My_P08_p020_type"
+                    name="My_P08_p020_collection_type"
                     id="My_P08_p020_collection_type_002"
                   >
                     <BoxCheckLabel>퀵착불</BoxCheckLabel>

@@ -93,11 +93,11 @@ export default {
             <KeyValueText>0 원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
-            <KeyValueTitle>잔존가치(c)</KeyValueTitle>
+            <KeyValueTitle>보증금(b)</KeyValueTitle>
             <KeyValueText>99,999,999 원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
-            <KeyValueTitle>보증금(b)</KeyValueTitle>
+            <KeyValueTitle>잔존가치(c)</KeyValueTitle>
             <KeyValueText>99,999,999 원</KeyValueText>
           </KeyValueItem>
         </KeyValue>
