@@ -70,6 +70,7 @@ import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vu
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -164,6 +165,7 @@ export default {
     PaginationNavEllipsis,
     PaginationNavNumber,
     CarThumb,
+    CarEmblem,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -5213,6 +5215,14 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="1001" name="현대" />
       </div>
     </section>
 
