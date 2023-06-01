@@ -67,7 +67,7 @@
     align-items: stretch;
 
     & + & {
-      margin-left: 16px;
+      margin-left: 8px;
     }
   }
 
@@ -83,13 +83,13 @@
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    padding: 8px 15px;
+    padding: 7px 13px;
     border: 1px solid $color-gray-30;
   }
 
   &__text {
     display: block;
-    @include font-size-default(15);
+    @include font-size-default(16);
     color: $color-gray-60;
   }
 
