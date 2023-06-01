@@ -32,14 +32,12 @@ export default {
     </PageHead>
 
     <section class="row-margin-container-medium">
-      <h3 class="text-body-1 row-margin-item-group">
-        범칙금/과태료/제세공과금 납부
-      </h3>
+      <h3 class="text-body-1 row-margin-item-group">소유권 이전등록</h3>
 
       <ul
         :class="[
           $style['basic-list'],
-          $style['basic-list--regular'],
+          $style['basic-list--medium'],
           $style['basic-list--regular-margin'],
         ]"
       >
@@ -53,16 +51,24 @@ export default {
         >
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            안전한 이용을 위하여 10분 동안 거래가 없으실 경우 자동으로
-            로그아웃됩니다.
+            계약 종결 이후 10일 이내에 차량등록 명의를 고객님으로 이전
+            완료하셔야 합니다. 고객명의로 이전하는데 필요한 취·등록세등의
+            제세공과금은 고객이 부담하셔야 하며, 미이전시에는 자동차관리법에
+            의한 범칙금이 부과됩니다. (최고50만원)
           </div>
         </li>
-        <li :class="$style['basic-list__item']">
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'text-body-1',
+            'font-weight-regular',
+            'color-black',
+          ]"
+        >
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            로그인 시간을 연장하시려면
-            <strong class="color-green font-weight-medium">시간 연장</strong>
-            버튼을 선택해 주세요.
+            손님이 직접 이전하는 방법과, 이전대행업체를 통한 이전 방법이
+            있습니다. (이전대행업체 통한 이전 시 이전대행비용 발생)
           </div>
         </li>
       </ul>
