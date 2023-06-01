@@ -21,6 +21,8 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 
 export default {
   components: {
@@ -45,6 +47,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    CarEmblem,
+    BasicBoxHeadLeft,
   },
 };
 </script>
@@ -76,14 +80,22 @@ export default {
       <!-- Case : [검색] 버튼 선택시 차량번호 조회 및 결과 노출 -->
       <BasicBox>
         <BasicBoxHead>
-          <div class="flex-box">
-            <div class="flex-box flex-box__cell">
-              <h4 class="text-title-2 font-weight-medium row-margin-item">
-                쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-              </h4>
-              <UnitText rightUnit="원"><strong>23,500,000</strong></UnitText>
+          <BasicBoxHeadLeft>
+            <div class="flex-box row-margin-small">
+              <div class="flex-box__cell">
+                <CarEmblem code="1001" name="현대" />
+              </div>
+              <div class="flex-box__cell flex-box__cell--small">
+                <p class="text-body-4 font-weight-light">2020년식</p>
+              </div>
             </div>
-          </div>
+            <h4 class="text-title-2 font-weight-medium">
+              쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+            </h4>
+            <UnitText rightUnit="원" class="row-margin-item"
+              ><strong>23,500,000</strong></UnitText
+            >
+          </BasicBoxHeadLeft>
         </BasicBoxHead>
         <KeyValue :wrap="true">
           <KeyValueItem
@@ -100,14 +112,21 @@ export default {
             }"
           >
             <KeyValueTitle>사고유무</KeyValueTitle>
-            <KeyValueText>Y</KeyValueText>
-            <TextButton
-              theme="secondary"
-              :underline="true"
-              :classNames="{ wrap: 'text-body-3' }"
-            >
-              세부이력
-            </TextButton>
+            <KeyValueText>
+              <div class="flex-box justify-conten-end">
+                <div class="flex-box__cell">Y</div>
+                <div class="flex-box__cell">
+                  <TextButton
+                    theme="secondary"
+                    :underline="true"
+                    textSize="regular"
+                    :block="true"
+                  >
+                    세부이력
+                  </TextButton>
+                </div>
+              </div>
+            </KeyValueText>
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
@@ -132,5 +151,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/AF_P07_p003.scss';
+@import '@/assets/scss/views/auto/AF_P06_p002.scss';
 </style>
