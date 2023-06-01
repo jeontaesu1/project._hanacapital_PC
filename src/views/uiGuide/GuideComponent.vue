@@ -69,6 +69,7 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -160,6 +161,7 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    CarEmblem,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -5054,6 +5056,14 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         내용
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="1001" name="현대" />
       </div>
     </section>
   </div>
