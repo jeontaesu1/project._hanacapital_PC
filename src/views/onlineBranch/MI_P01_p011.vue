@@ -16,9 +16,12 @@ export default {
 <template>
   <PageContents>
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageTitle>
+        하나캐피탈 회원탈퇴를 위해<br />
+        본인인증이 필요합니다
+      </PageTitle>
     </PageHead>
 
-    // contents
+    // [공통 > 본인인증] 내용 노출
   </PageContents>
 </template>
