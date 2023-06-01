@@ -1,0 +1,29 @@
+@import '@/assets/scss/components/import/icon-list.scss';
+
+.icon-list__list {
+  display: flex;
+  justify-content: center;
+
+  .icon-list__item {
+    display: inline-block;
+    margin: 0;
+
+    & + .icon-list__item {
+      margin-left: 60px;
+    }
+  }
+}
+
+:global .reset-list li {
+  margin-left: 24px !important;
+
+  > div {
+    padding: 50px 0 40px !important;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  p {
+    height: 100px;
+  }
+}
