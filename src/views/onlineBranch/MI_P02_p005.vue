@@ -191,7 +191,7 @@ export default {
           </FormListItem>
         </FormList>
 
-        <ButtonList :classNames="{ wrap: 'row-margin-block' }">
+        <ButtonList>
           <ButtonListItem>
             <BasicButton :line="true">조회</BasicButton>
           </ButtonListItem>

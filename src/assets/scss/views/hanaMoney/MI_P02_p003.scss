@@ -1,0 +1,8 @@
+@import '@/assets/scss/components/import/agree-list.scss';
+
+.sub {
+  display: inline-block;
+  margin-left: 4px;
+  @include font-size-default(16);
+  font-weight: 400;
+}

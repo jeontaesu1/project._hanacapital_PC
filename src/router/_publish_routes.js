@@ -1232,14 +1232,14 @@ const routes = [
     component: () => import('@/views/hanaMoney/MI_P02_p002.vue'),
   },
   {
-    path: '/hana-money/MI_P02_p002a',
-    name: '/hana-money/MI_P02_p002a',
-    component: () => import('@/views/hanaMoney/MI_P02_p002a.vue'),
-  },
-  {
     path: '/hana-money/MI_P02_p003',
     name: '/hana-money/MI_P02_p003',
     component: () => import('@/views/hanaMoney/MI_P02_p003.vue'),
+  },
+  {
+    path: '/hana-money/MI_P02_p004',
+    name: '/hana-money/MI_P02_p004',
+    component: () => import('@/views/hanaMoney/MI_P02_p004.vue'),
   },
 
   // business
