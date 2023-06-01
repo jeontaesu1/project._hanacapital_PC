@@ -124,6 +124,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideOnlineBranch001.vue'),
   },
   {
+    path: '/guide/online-branch-001',
+    name: '/guide/online-branch-001',
+    component: () => import('@/views/uiGuide/GuideOnlineBranch001.vue'),
+  },
+  {
     path: '/guide/online-branch-002',
     name: '/guide/online-branch-002',
     component: () => import('@/views/uiGuide/GuideOnlineBranch002.vue'),
@@ -463,6 +468,11 @@ const routes = [
   },
 
   // online-branch
+  {
+    path: '/online-branch/MI_P00_p001',
+    name: '/online-branch/MI_P00_p001',
+    component: () => import('@/views/onlineBranch/MI_P00_p001.vue'),
+  },
   {
     path: '/online-branch/MI_P00_p002',
     name: '/online-branch/MI_P00_p002',
