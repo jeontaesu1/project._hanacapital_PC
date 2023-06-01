@@ -45,7 +45,7 @@ export default {
       <IllustInfoText>하나캐피탈을 이용해 주셔서 감사합니다.</IllustInfoText>
     </IllustInfo>
 
-    <BasicBox className="row-margin-block-small">
+    <BasicBox className="row-margin-block-small row-margin-bottom-none">
       <BasicBoxHead>
         <BasicBoxHeadLeft>
           <h3 class="text-title-2 font-weight-medium">오토리스 07호3994</h3>
@@ -84,7 +84,7 @@ export default {
 
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>
-        <BasicButton>확인</BasicButton>
+        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>
