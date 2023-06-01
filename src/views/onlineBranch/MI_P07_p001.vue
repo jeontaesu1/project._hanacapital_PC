@@ -39,6 +39,8 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import FilterTab from '@/components/ui/tab/FilterTab.vue';
+import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 
 export default {
   components: {
@@ -79,6 +81,8 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    FilterTab,
+    FilterTabButton,
   },
 
   setup() {
@@ -737,7 +741,17 @@ export default {
           조회 및 발급을 원하시는 계약을 선택하세요.
         </p>
 
-        <div class="row-margin-contents">// Radio Tab</div>
+        <FilterTab :classNames="{ wrap: 'row-margin-contents' }">
+          <FilterTabButton tagName="button" type="button" :active="true">
+            전체
+          </FilterTabButton>
+          <FilterTabButton tagName="button" type="button">
+            렌트
+          </FilterTabButton>
+          <FilterTabButton tagName="button" type="button">
+            리스
+          </FilterTabButton>
+        </FilterTab>
 
         <BoxCheckList
           align="full"
