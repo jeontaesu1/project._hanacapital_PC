@@ -1,0 +1,5 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+
+th:first-child[rowspan] {
+  border-right: 1px solid $color-gray-30;
+}
