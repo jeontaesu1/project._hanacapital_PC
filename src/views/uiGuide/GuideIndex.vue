@@ -2655,8 +2655,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/membership/MI_P03_p003a',
-        status: '',
-        create: '',
+        status: 'ing',
+        create: '2023.06.02',
         log: [],
       },
       {
