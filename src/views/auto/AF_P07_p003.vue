@@ -10,6 +10,11 @@ import PageSubText from '@/components/ui/text/PageSubText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
+import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 
 export default {
   components: {
@@ -23,6 +28,11 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BoxCheckList,
+    BoxCheckListItem,
+    BoxCheck,
+    BoxCheckObject,
+    BoxCheckLabel,
   },
 };
 </script>
@@ -43,6 +53,49 @@ export default {
         승계 신청 철회를 원하시는 경우, 체크박스를 해제해 주세요.
       </PageSubText>
     </PageHead>
+
+    <BoxCheckList align="full">
+      <BoxCheckListItem>
+        <BoxCheck
+          :contents="true"
+          type="checkbox"
+          id="AF_P07_p003_list001"
+          :defaultChecked="true"
+        >
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>오토리스 111가 1111</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+
+      <BoxCheckListItem>
+        <BoxCheck :contents="true" type="checkbox" id="AF_P07_p003_list002">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>오토리스 222나2222</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+
+      <BoxCheckListItem>
+        <BoxCheck :contents="true" type="checkbox" id="AF_P07_p003_list003">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>오토리스 333다3333</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+
+      <BoxCheckListItem>
+        <BoxCheck :contents="true" type="checkbox" id="AF_P07_p003_list004">
+          <template v-slot:left>
+            <BoxCheckObject />
+          </template>
+          <BoxCheckLabel>오토리스 11라4444</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+    </BoxCheckList>
 
     <!-- Case : 승계 가능한 차량이 없을 경우 -->
     <div :class="$style['empty']">

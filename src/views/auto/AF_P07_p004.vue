@@ -11,6 +11,8 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
+import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 export default {
   components: {
@@ -25,6 +27,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BoxCheckList,
+    BoxCheckListItem,
   },
 };
 </script>
@@ -43,40 +47,43 @@ export default {
     <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">승계 신청 대상 차량</h3>
 
-      <ul class="reset-list">
-        <li class="row-margin-item-regular">
-          <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_001">
+      <BoxCheckList align="full">
+        <BoxCheckListItem>
+          <BoxCheck :contents="true" type="checkbox" id="AF_P07_p004_list001">
             <template v-slot:left>
               <BoxCheckObject />
             </template>
-            <BoxCheckLabel>오토리스 111가1111</BoxCheckLabel>
+            <BoxCheckLabel>오토리스 111가 1111</BoxCheckLabel>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item-regular">
-          <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_002">
+        </BoxCheckListItem>
+
+        <BoxCheckListItem>
+          <BoxCheck :contents="true" type="checkbox" id="AF_P07_p004_list002">
             <template v-slot:left>
               <BoxCheckObject />
             </template>
-            <BoxCheckLabel>오토리스 111가1111</BoxCheckLabel>
+            <BoxCheckLabel>오토리스 222나2222</BoxCheckLabel>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item-regular">
-          <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_003">
+        </BoxCheckListItem>
+
+        <BoxCheckListItem>
+          <BoxCheck :contents="true" type="checkbox" id="AF_P07_p004_list003">
             <template v-slot:left>
               <BoxCheckObject />
             </template>
-            <BoxCheckLabel>오토리스 111가1111</BoxCheckLabel>
+            <BoxCheckLabel>오토리스 333다3333</BoxCheckLabel>
           </BoxCheck>
-        </li>
-        <li class="row-margin-item-regular">
-          <BoxCheck :contents="true" type="checkbox" id="testBoxCheck006_004">
+        </BoxCheckListItem>
+
+        <BoxCheckListItem>
+          <BoxCheck :contents="true" type="checkbox" id="AF_P07_p004_list004">
             <template v-slot:left>
               <BoxCheckObject />
             </template>
-            <BoxCheckLabel>오토리스 111가1111</BoxCheckLabel>
+            <BoxCheckLabel>오토리스 11라4444</BoxCheckLabel>
           </BoxCheck>
-        </li>
-      </ul>
+        </BoxCheckListItem>
+      </BoxCheckList>
     </section>
 
     <ButtonList :wrap="true" align="center">
