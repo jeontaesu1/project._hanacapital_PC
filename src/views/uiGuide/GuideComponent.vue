@@ -69,6 +69,7 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -162,6 +163,7 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    CarThumb,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -5203,6 +5205,14 @@ export default {
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
 
