@@ -593,7 +593,7 @@ export default {
           </KeyValueItem>
         </KeyValue>
 
-        <BasicHr theme="quaternary" className="row-margin-contents"></BasicHr>
+        <BasicHr theme="quaternary" className="row-margin-contents" />
 
         <KeyValue :wrap="true">
           <KeyValueItem>
