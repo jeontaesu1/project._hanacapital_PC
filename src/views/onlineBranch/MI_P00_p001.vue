@@ -123,16 +123,14 @@ export default {
     <BasicBox>
       <BasicBoxHead>
         <BasicBoxHeadLeft>
-          <UnitText
-            size="large"
-            rightUnit="원"
-            align="left"
-            verticalAlign="center"
-            >400,000</UnitText
-          >
+          <UnitText size="large" rightUnit="원" align="left">400,000</UnitText>
           <div class="text-body-3 color-gray-tertiary">당월 결제예정금액</div>
         </BasicBoxHeadLeft>
-        <BasicBoxHeadRight>ds </BasicBoxHeadRight>
+        <BasicBoxHeadRight
+          ><BasicButton inline="true" size="small" :line="true"
+            >상세보기</BasicButton
+          ></BasicBoxHeadRight
+        >
       </BasicBoxHead>
       // contents
     </BasicBox>
