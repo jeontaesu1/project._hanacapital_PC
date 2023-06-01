@@ -5071,6 +5071,7 @@ export default {
             <span :class="$style['upload-button__text']">파일첨부</span>
           </label>
         </div>
+
         <div :class="$style['upload-button']">
           <input
             type="file"
@@ -5078,6 +5079,36 @@ export default {
             :class="$style['upload-button__input']"
           />
           <label for="testUpload002" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <span :class="$style['upload-button__text']">이미지 첨부</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">disabled</h3>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload003"
+            :class="$style['upload-button__input']"
+            disabled
+          />
+          <label for="testUpload003" :class="$style['upload-button__label']">
+            <span :class="$style['upload-button__text']">파일첨부</span>
+          </label>
+        </div>
+
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload004"
+            :class="$style['upload-button__input']"
+            disabled
+          />
+          <label for="testUpload004" :class="$style['upload-button__label']">
             <span :class="$style['upload-button__img']">
               <IconImg />
             </span>

@@ -9,6 +9,28 @@
     height: 100%;
     opacity: 0;
     box-sizing: border-box;
+    cursor: pointer;
+
+    &[disabled] {
+      cursor: default;
+
+      & + .upload-button__label {
+        cursor: default;
+
+        .upload-button__img {
+          opacity: 0.5;
+        }
+
+        .upload-button__text {
+          color: $color-gray-40;
+
+          &::before {
+            background: url('@/assets/images/icon/add-disabled.svg') no-repeat
+              50% 50% / 100% 100%;
+          }
+        }
+      }
+    }
   }
 
   &__label {
