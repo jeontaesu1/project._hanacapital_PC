@@ -4,10 +4,6 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
-import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
-import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
-import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
@@ -23,7 +19,10 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -44,14 +43,12 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    PaginationNav,
-    PaginationNavArrow,
-    PaginationNavEllipsis,
-    PaginationNavNumber,
     UnitText,
     RoundStatus,
+    TextButton,
 
     ImgMainSample,
+    IconLink,
   },
 };
 </script>
@@ -280,14 +277,29 @@ export default {
     <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
-      <h3 class="text-title-1 row-margin-contents">계약 현황 리스트</h3>
+      <div class="flex-box row-margin-contents">
+        <h3 class="text-title-1 flex-1">계약 현황 리스트</h3>
+        <div>
+          <TextButton
+            iconSize="medium"
+            textSize="medium"
+            :block="true"
+            class="color-gray-tertiary"
+          >
+            더보기
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </div>
+      </div>
 
       <div class="row-margin-block row-margin-top-none">
-        <ul :class="$style['logs']">
-          <li :class="[$style['logs__item'], 'row-margin-contents-small']">
-            <div :class="$style['logs__block']">
-              <div :class="$style['logs__row']">
-                <div :class="$style['logs__contents']">
+        <ul class="reset-list">
+          <li class="row-margin-contents-small">
+            <BasicBox>
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
                   <h3 class="text-title-2 font-weight-medium">
                     오토리스 20고5678
                   </h3>
@@ -307,19 +319,8 @@ export default {
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div :class="$style['logs__right']">
-                  <button type="button" :class="$style['logs__link']">
-                    <span :class="$style['logs__link-text']">상세보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <BasicHr
-                type="contents"
-                theme="quaternary"
-                className="row-margin-contents"
-              />
+                </BasicBoxHeadLeft>
+              </BasicBoxHead>
 
               <KeyValue :wrap="true">
                 <KeyValueItem>
@@ -339,12 +340,12 @@ export default {
                   <KeyValueText>12/36</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-            </div>
+            </BasicBox>
           </li>
-          <li :class="[$style['logs__item'], 'row-margin-contents-small']">
-            <div :class="$style['logs__block']">
-              <div :class="$style['logs__row']">
-                <div :class="$style['logs__contents']">
+          <li class="row-margin-contents-small">
+            <BasicBox>
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
                   <h3 class="text-title-2 font-weight-medium">
                     오토리스 20고5678
                   </h3>
@@ -364,26 +365,17 @@ export default {
                       </li>
                     </ul>
                   </div>
-                </div>
-                <RoundStatus
-                  theme="nonary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
-                  연체
-                </RoundStatus>
-                <div :class="$style['logs__right']">
-                  <button type="button" :class="$style['logs__link']">
-                    <span :class="$style['logs__link-text']">상세보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <BasicHr
-                type="contents"
-                theme="quaternary"
-                className="row-margin-contents"
-              />
+                </BasicBoxHeadLeft>
+                <BasicBoxHeadRight>
+                  <RoundStatus
+                    theme="nonary"
+                    size="large"
+                    :classNames="{ wrap: 'display-block' }"
+                  >
+                    연체
+                  </RoundStatus>
+                </BasicBoxHeadRight>
+              </BasicBoxHead>
 
               <KeyValue :wrap="true">
                 <KeyValueItem>
@@ -403,27 +395,20 @@ export default {
                   <KeyValueText>12/36</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-            </div>
+            </BasicBox>
           </li>
-
-          <li :class="[$style['logs__item'], 'row-margin-contents-small']">
-            <div :class="$style['logs__block']">
-              <div :class="$style['logs__row']">
-                <div :class="$style['logs__contents']">
+          <li class="row-margin-contents-small">
+            <BasicBox>
+              <BasicBoxHead>
+                <BasicBoxHeadLeft>
                   <h3 class="text-title-2 font-weight-medium">현대렌탈</h3>
                   <p
                     class="text-body-3 color-gray-tertiary row-margin-item-small"
                   >
                     품목명이 노출됩니다.
                   </p>
-                </div>
-              </div>
-
-              <BasicHr
-                type="contents"
-                theme="quaternary"
-                className="row-margin-contents"
-              />
+                </BasicBoxHeadLeft>
+              </BasicBoxHead>
 
               <KeyValue :wrap="true">
                 <KeyValueItem>
@@ -443,57 +428,9 @@ export default {
                   <KeyValueText>02-1234-6789</KeyValueText>
                 </KeyValueItem>
               </KeyValue>
-            </div>
+            </BasicBox>
           </li>
         </ul>
-
-        <!-- Case : 첫번째 페이지일 때 -->
-        <PaginationNav>
-          <PaginationNavArrow type="prev" :disabled="true" />
-          <PaginationNavNumber :active="true">1</PaginationNavNumber>
-          <PaginationNavNumber>2</PaginationNavNumber>
-          <PaginationNavNumber>3</PaginationNavNumber>
-          <PaginationNavNumber>4</PaginationNavNumber>
-          <PaginationNavNumber>5</PaginationNavNumber>
-          <PaginationNavNumber>6</PaginationNavNumber>
-          <PaginationNavNumber>7</PaginationNavNumber>
-          <PaginationNavEllipsis />
-          <PaginationNavNumber>999</PaginationNavNumber>
-          <PaginationNavArrow type="next" />
-        </PaginationNav>
-        <!-- // Case : 첫번째 페이지일 때 -->
-
-        <!-- Case : 중간 페이지일 때 -->
-        <PaginationNav>
-          <PaginationNavArrow type="prev" />
-          <PaginationNavNumber>1</PaginationNavNumber>
-          <PaginationNavEllipsis />
-          <PaginationNavNumber>13</PaginationNavNumber>
-          <PaginationNavNumber>14</PaginationNavNumber>
-          <PaginationNavNumber :active="true">15</PaginationNavNumber>
-          <PaginationNavNumber>16</PaginationNavNumber>
-          <PaginationNavNumber>17</PaginationNavNumber>
-          <PaginationNavEllipsis />
-          <PaginationNavNumber>99</PaginationNavNumber>
-          <PaginationNavArrow type="next" />
-        </PaginationNav>
-        <!-- // Case : 중간 페이지일 때 -->
-
-        <!-- Case : 마지막 페이지일 때 -->
-        <PaginationNav>
-          <PaginationNavArrow type="prev" />
-          <PaginationNavNumber>1</PaginationNavNumber>
-          <PaginationNavEllipsis />
-          <PaginationNavNumber>93</PaginationNavNumber>
-          <PaginationNavNumber>94</PaginationNavNumber>
-          <PaginationNavNumber>95</PaginationNavNumber>
-          <PaginationNavNumber>96</PaginationNavNumber>
-          <PaginationNavNumber>97</PaginationNavNumber>
-          <PaginationNavNumber>98</PaginationNavNumber>
-          <PaginationNavNumber :active="true">99</PaginationNavNumber>
-          <PaginationNavArrow type="next" :disabled="true" />
-        </PaginationNav>
-        <!-- // Case : 마지막 페이지일 때 -->
       </div>
 
       <!-- case : 
