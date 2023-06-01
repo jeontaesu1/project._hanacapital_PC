@@ -453,5 +453,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/My_P04_p001.scss';
+@import '@/assets/scss/views/onlineBranch/My_p04_p001.scss';
 </style>
