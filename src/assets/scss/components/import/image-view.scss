@@ -1,6 +1,10 @@
 .image-view {
   display: block;
 
+  &--popup-full {
+    margin: -16px -30px -40px;
+  }
+
   img {
     display: block;
     max-width: 100%;
