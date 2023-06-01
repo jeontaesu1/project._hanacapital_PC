@@ -4765,18 +4765,14 @@ export default {
         <UnitText size="regular" rightUnit="원">333,389</UnitText>
       </div>
 
-      <!--
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Large</h3>
 
-        <UnitText size="large" verticalAlign="center" leftUnit="$"
+        <!-- <UnitText size="large" verticalAlign="center" leftUnit="$"
           >333,389</UnitText
-        >
-        <UnitText size="large" verticalAlign="center" rightUnit="원"
-          >333,389</UnitText
-        >
+        > -->
+        <UnitText size="large" rightUnit="원">333,389</UnitText>
       </div>
-      -->
     </section>
 
     <section class="test-section">
