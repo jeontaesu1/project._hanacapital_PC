@@ -4590,6 +4590,17 @@ export default {
                 </div>
               </div>
             </li>
+            <li :class="$style['icon-list__item']">
+              <div :class="$style['icon-list__block']">
+                <div :class="$style['icon-list__icon']"><ImgMainSample /></div>
+                <div :class="$style['icon-list__content']">
+                  <div :class="$style['icon-list__text']">
+                    결제예정금액의 자세한 내역이 궁금하시다면
+                  </div>
+                  <div :class="$style['icon-list__title']">온라인청구서</div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
