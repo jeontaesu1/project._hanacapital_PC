@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import layer from '@/views/';
+import PF_P05_l005 from '@/views/personalLoan/PF_P05_l005.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    PF_P05_l005,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,13 +41,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          온라인 약정<br />PF_P05_l005
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <PF_P05_l005 ref="layer001" />
   </PageContents>
 </template>
