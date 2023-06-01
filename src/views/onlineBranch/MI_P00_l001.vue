@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
@@ -15,6 +16,7 @@ export default {
   components: {
     UiLayer,
     PopupTitle,
+    PopupSubTitle,
     PopupButton,
     ModalPopup,
     ModalPopupHead,
@@ -40,11 +42,19 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>전자금융거래약관</PopupTitle>
+          <template v-slot:sub>
+            <PopupSubTitle>
+              온라인지점 서비스 이용을 위해서는 전자금융거래법 제 2조<br />
+              제1호에 근거하여 전자금융거래약관 동의가 필요합니다.
+            </PopupSubTitle>
+          </template>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <div :class="[$style['image-view'], 'row-margin-contents']">
+        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,15 +65,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/onlineBranch/MI_P00_l001.scss';
+</style>

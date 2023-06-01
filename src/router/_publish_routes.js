@@ -276,9 +276,9 @@ const routes = [
     component: () => import('@/views/additionalService/My_P02_p002.vue'),
   },
   {
-    path: '/additional-service/My_P05_p001',
-    name: '/additional-service/My_P05_p001',
-    component: () => import('@/views/additionalService/My_P05_p001.vue'),
+    path: '/additional-service/My_P05_p011',
+    name: '/additional-service/My_P05_p011',
+    component: () => import('@/views/additionalService/My_P05_p011.vue'),
   },
   {
     path: '/additional-service/My_P05_p002',
@@ -286,24 +286,24 @@ const routes = [
     component: () => import('@/views/additionalService/My_P05_p002.vue'),
   },
   {
-    path: '/additional-service/My_P05_p003',
-    name: '/additional-service/My_P05_p003',
-    component: () => import('@/views/additionalService/My_P05_p003.vue'),
+    path: '/additional-service/My_P05_p013',
+    name: '/additional-service/My_P05_p013',
+    component: () => import('@/views/additionalService/My_P05_p013.vue'),
   },
   {
-    path: '/additional-service/My_P06_p001',
-    name: '/additional-service/My_P06_p001',
-    component: () => import('@/views/additionalService/My_P06_p001.vue'),
+    path: '/additional-service/My_P06_p011',
+    name: '/additional-service/My_P06_p011',
+    component: () => import('@/views/additionalService/My_P06_p011.vue'),
   },
   {
-    path: '/additional-service/My_P06_p002',
-    name: '/additional-service/My_P06_p002',
-    component: () => import('@/views/additionalService/My_P06_p002.vue'),
+    path: '/additional-service/My_P06_p012',
+    name: '/additional-service/My_P06_p012',
+    component: () => import('@/views/additionalService/My_P06_p012.vue'),
   },
   {
-    path: '/additional-service/My_P06_p003',
-    name: '/additional-service/My_P06_p003',
-    component: () => import('@/views/additionalService/My_P06_p003.vue'),
+    path: '/additional-service/My_P06_p013',
+    name: '/additional-service/My_P06_p013',
+    component: () => import('@/views/additionalService/My_P06_p013.vue'),
   },
   {
     path: '/additional-service/Etc_P01_p001',
@@ -557,6 +557,11 @@ const routes = [
     path: '/online-branch/MI_P00_p015',
     name: '/online-branch/MI_P00_p015',
     component: () => import('@/views/onlineBranch/MI_P00_p015.vue'),
+  },
+  {
+    path: '/online-branch/MI_P00_p015a',
+    name: '/online-branch/MI_P00_p015a',
+    component: () => import('@/views/onlineBranch/MI_P00_p015a.vue'),
   },
   {
     path: '/online-branch/MI_P00_p016',

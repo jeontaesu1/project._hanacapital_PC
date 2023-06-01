@@ -6,12 +6,16 @@ import { useUiCommonStore } from '@/stores/ui/common';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
+    PageMainText,
+    PageSubText,
   },
   setup() {
     const store = {
@@ -43,6 +47,13 @@ export default {
 
     <PageHead>
       <PageTitle>타이틀</PageTitle>
+      <PageMainText>
+        메인 텍스트 메인 텍스트 메인 텍스트 메인 텍스트
+      </PageMainText>
+      <PageSubText>
+        서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트 서브 텍스트
+        서브 텍스트 서브 텍스트
+      </PageSubText>
     </PageHead>
 
     <div style="height: 1500px; border: 10px dotted #666">
