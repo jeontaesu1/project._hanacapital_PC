@@ -990,6 +990,7 @@ export default {
                     :minSide="true"
                     name="MI_P07_p001_period"
                     id="MI_P07_p001_period001"
+                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>1개월</BoxCheckLabel>
                   </BoxCheck>
@@ -1030,6 +1031,7 @@ export default {
                     buttonId="MI_P07_p001_periodStartButton"
                     :max="state.maxDate"
                     v-model="state.minDate"
+                    defaultValue="2022.02.17"
                   />
                 </InputBlockCell>
                 <InputBlockCell margin="regular">~</InputBlockCell>
@@ -1040,6 +1042,7 @@ export default {
                     buttonId="MI_P07_p001_periodEndButton"
                     :min="state.minDate"
                     v-model="state.maxDate"
+                    defaultValue="2022.03.17"
                   />
                 </InputBlockCell>
               </InputBlock>

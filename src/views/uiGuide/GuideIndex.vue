@@ -1903,8 +1903,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/online-branch/MI_P06_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.02',
         log: [],
       },
       {
