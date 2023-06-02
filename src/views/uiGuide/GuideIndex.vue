@@ -1323,10 +1323,10 @@ const datas = () => [
       {
         depth2: '계약정보',
         depth3: '지정운전자 등록\nMI_P00_p014',
-        depth4: '본인인증\nMI_P00_p015a',
+        depth4: '본인인증\nMI_P00_p018',
         depth5: '',
         depth6: '',
-        path: '/online-branch/MI_P00_p015a',
+        path: '/online-branch/MI_P00_p018',
         status: 'end',
         create: '2023.06.01',
         log: [],
