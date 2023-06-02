@@ -112,5 +112,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/PF_P01_p004.scss';
+@import '@/assets/scss/views/auto/AF_P07_l001.scss';
 </style>

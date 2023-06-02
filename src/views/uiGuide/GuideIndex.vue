@@ -2327,7 +2327,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/auto-001',
-        status: 'partend',
+        status: 'end',
         create: '2023.06.02',
         log: [],
       },
