@@ -86,10 +86,6 @@ import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
-import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
-import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
 
 export default {
   components: {
@@ -177,10 +173,6 @@ export default {
     IconDeposit,
     IconCallMint,
     IconCompleted,
-    IconContract,
-    IconCarCheck,
-    IconCar,
-    IconDocumentSearch,
   },
 
   setup() {
@@ -2733,6 +2725,43 @@ export default {
           </ul>
         </div>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Single</h3>
+
+        <BasicBox theme="quaternary" className="row-margin-contents">
+          <div :class="$style['agree-list']">
+            <ul
+              :class="[
+                $style['agree-list__list'],
+                $style['agree-list__list--secondary'],
+                $style['agree-list__list--secondary-no-padding'],
+              ]"
+            >
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="testagree002"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="tertiary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>재고금융 확약서</CheckBoxLabelText>
+                  </CheckBox>
+                  <div :class="$style['agree-list__right']">
+                    <button type="button" :class="$style['agree-list__link']">
+                      <span :class="$style['agree-list__link-text']">
+                        상세보기
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BasicBox>
+      </div>
     </section>
 
     <section class="test-section">
@@ -3303,17 +3332,13 @@ export default {
             <div :class="$style['icon-box__icon']">
               <IconStar />
             </div>
-            <p
-              :class="[
-                $style['icon-box__content'],
-                'text-title-1',
-                'row-margin-item',
-              ]"
-            >
-              <span class="color-green font-weight-bold">하나프라자</span>님은
-              하나캐피탈에 등록된<br />
-              <span class="font-weight-bold">정식 모집인</span>입니다
-            </p>
+            <div :class="$style['icon-box__content']">
+              <p class="text-title-1">
+                <span class="color-green font-weight-bold">하나프라자</span>님은
+                하나캐피탈에 등록된<br />
+                <span class="font-weight-bold">정식 모집인</span>입니다
+              </p>
+            </div>
           </div>
         </BasicBox>
       </div>
@@ -3323,6 +3348,7 @@ export default {
       <h2 class="test-section-title">Step Box</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+
         <div :class="$style['step']">
           <ul :class="$style['step__list']">
             <li :class="$style['step__item']">
@@ -3331,7 +3357,7 @@ export default {
                   <div :class="$style['step__badge']">STEP 1</div>
                   <p :class="$style['step__text']">
                     홈페이지/모바일(웹)을 통하여
-                    <strong>재리스 신청 및 견적</strong>을 요청합니다.
+                    <strong>재렌트 신청 및 견적을 요청</strong>합니다.
                     (신용조회동의)
                   </p>
                 </div>
@@ -3345,8 +3371,8 @@ export default {
                 <div :class="$style['step__contents']">
                   <div :class="$style['step__badge']">STEP 2</div>
                   <p :class="$style['step__text']">
-                    신청내역을 확인하여
-                    <strong>심사결과를 안내</strong>드립니다.
+                    <strong>재렌트 견적 발송 및 재렌트 상담</strong>을
+                    진행합니다.
                   </p>
                 </div>
                 <div :class="$style['step__icon']">
@@ -3405,58 +3431,6 @@ export default {
                 </div>
                 <div :class="$style['step__icon']">
                   <IconCompleted />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__badge']">STEP 1</div>
-                  <p :class="$style['step__text']">
-                    <strong>재렌트가 완료</strong>됩니다.
-                  </p>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconContract />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__badge']">STEP 1</div>
-                  <p :class="$style['step__text']">
-                    <strong>재렌트가 완료</strong>됩니다.
-                  </p>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconCarCheck />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__badge']">STEP 1</div>
-                  <p :class="$style['step__text']">
-                    <strong>재렌트가 완료</strong>됩니다.
-                  </p>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconCar />
-                </div>
-              </div>
-            </li>
-            <li :class="$style['step__item']">
-              <div :class="$style['step__inner']">
-                <div :class="$style['step__contents']">
-                  <div :class="$style['step__badge']">STEP 1</div>
-                  <p :class="$style['step__text']">
-                    <strong>재렌트가 완료</strong>됩니다.
-                  </p>
-                </div>
-                <div :class="$style['step__icon']">
-                  <IconDocumentSearch />
                 </div>
               </div>
             </li>
@@ -4013,11 +3987,7 @@ export default {
               </div>
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
-              <RoundStatus
-                theme="secondary"
-                size="large"
-                :classNames="{ wrap: 'display-block' }"
-              >
+              <RoundStatus theme="secondary" size="large" :block="true">
                 정상
               </RoundStatus>
             </BasicBoxHeadRight>
@@ -4867,6 +4837,8 @@ export default {
         </KeyValue>
       </div>
     </section>
+
+    <!--
     <section class="test-section">
       <h2 class="test-section-title">Term List</h2>
       <div class="test-section-sub">
@@ -4997,6 +4969,7 @@ export default {
         </UiAccordion>
       </div>
     </section>
+    -->
 
     <section class="test-section">
       <h2 class="test-section-title">status-inquiry</h2>

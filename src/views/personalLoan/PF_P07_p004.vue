@@ -120,7 +120,8 @@ export default {
           <TextButton
             :underline="true"
             :block="true"
-            class="text-body-4 color-gray-tertiary"
+            textSize="regular"
+            class="color-gray-tertiary"
           >
             상세내용보기
           </TextButton>
