@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupSubTitle from '@/components/ui/layer/PopupSubTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
@@ -16,6 +17,7 @@ export default {
     UiLayer,
     PopupTitle,
     PopupButton,
+    PopupSubTitle,
     ModalPopup,
     ModalPopupHead,
     BasicButton,
@@ -40,11 +42,31 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>인증서 내보내기</PopupTitle>
+          <template v-slot:sub>
+            <PopupSubTitle>
+              고객님의 인증서 내보내기를 시작합니다.
+            </PopupSubTitle>
+          </template>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            처음 접속 하시는 고객님께서는 이용방법을 확인 후 이용하시기
+            바랍니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            다양한 브라우저(엣지, 크롬, 파이어폭스) 사용도 이용할 수 있도록
+            웹표준 준수로 개선한 서비스를 제공하고 있습니다.
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,15 +77,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">인증서 내보내기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/customer/Customer_P11_l001.scss';
+</style>

@@ -49,6 +49,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    auto: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const button = ref(null);
@@ -110,10 +114,11 @@ export default {
         [$style['button--icon-only']]: (isLeftIcon || isRightIcon) && !isText,
         [$style[`button--size-${size}`]]: size,
         [$style[`button--theme-${theme}`]]: theme,
-        [$style[`button--line`]]: line,
-        [$style[`button--inline`]]: inline,
+        [$style['button--line']]: line,
+        [$style['button--inline']]: inline,
         [$style['button--disabled']]: disabledStyle,
         [$style['button--min-side']]: minSide,
+        [$style['button--auto']]: auto,
       },
       customClassNames.wrap,
     ]"

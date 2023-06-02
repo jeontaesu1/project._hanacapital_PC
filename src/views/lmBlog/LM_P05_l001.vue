@@ -10,6 +10,10 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 
 export default {
   components: {
@@ -21,6 +25,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +48,46 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>진행상태</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <KeyValue>
+        <KeyValueItem>
+          <KeyValueTitle>이름</KeyValueTitle>
+          <KeyValueText>김하나</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>상담조회일자</KeyValueTitle>
+          <KeyValueText>2021.06.24</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>상품명</KeyValueTitle>
+          <KeyValueText>행복아파트론</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>신청금액</KeyValueTitle>
+          <KeyValueText>3,000,000 원</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>대출기간</KeyValueTitle>
+          <KeyValueText>36개월</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>금리</KeyValueTitle>
+          <KeyValueText>14.60%</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>진행상태</KeyValueTitle>
+          <KeyValueText>신용동의</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +98,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">상담변경</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
