@@ -1,5 +1,5 @@
 <script>
-// MI_P03_p003a
+// MI_P03_p007
 import { reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -75,11 +75,11 @@ export default {
     </PageHead>
 
     <FormList>
-      <FormListItem titleText="이메일" target="#MI_P03_p003a_EmailId">
+      <FormListItem titleText="이메일" target="#MI_P03_p007_EmailId">
         <FormInvalid :error="state.mailError">
           <InputBlock :error="state.mailError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="이메일 아이디" id="MI_P03_p003a_EmailId" />
+              <BasicInput title="이메일 아이디" id="MI_P03_p007_EmailId" />
             </InputBlockCell>
             <InputBlockCell margin="regular">@</InputBlockCell>
             <InputBlockCell margin="regular" :flexible="true">
@@ -152,7 +152,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="사번입력"
-          target="#MI_P03_p003a_RecommenderNumber"
+          target="#MI_P03_p007_RecommenderNumber"
         >
           <FormInvalid :error="state.recommenderNumberError">
             <InputBlock :error="state.recommenderNumberError">
@@ -161,7 +161,7 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="사번입력"
-                  id="MI_P03_p003a_RecommenderNumber"
+                  id="MI_P03_p007_RecommenderNumber"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -179,7 +179,7 @@ export default {
           <li :class="$style['agree-list__depth-item']">
             <div :class="$style['agree-list__depth-head']">
               <CheckBox
-                id="MI_P03_p003aAgree001"
+                id="MI_P03_p007Agree001"
                 :classNames="{
                   wrap: $style['agree-list__depth-checkbox'],
                 }"
@@ -195,7 +195,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="MI_P03_p003aAgree001_001"
+                      id="MI_P03_p007Agree001_001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -218,7 +218,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="MI_P03_p003aAgree001_002"
+                      id="MI_P03_p007Agree001_002"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -247,7 +247,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_002_001"
+                          id="MI_P03_p007Agree001_002_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -263,7 +263,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_002_002"
+                          id="MI_P03_p007Agree001_002_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -281,7 +281,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="MI_P03_p003aAgree001_003"
+                      id="MI_P03_p007Agree001_003"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -309,7 +309,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_003_001"
+                          id="MI_P03_p007Agree001_003_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -327,7 +327,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="MI_P03_p003aAgree001_004"
+                      id="MI_P03_p007Agree001_004"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -355,7 +355,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_004_001"
+                          id="MI_P03_p007Agree001_004_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -372,7 +372,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_004_002"
+                          id="MI_P03_p007Agree001_004_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -389,7 +389,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree001_004_003"
+                          id="MI_P03_p007Agree001_004_003"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -411,7 +411,7 @@ export default {
           <li :class="$style['agree-list__depth-item']">
             <div :class="$style['agree-list__depth-head']">
               <CheckBox
-                id="MI_P03_p003aAgree002"
+                id="MI_P03_p007Agree002"
                 :classNames="{
                   wrap: $style['agree-list__depth-checkbox'],
                 }"
@@ -430,7 +430,7 @@ export default {
                 <li :class="$style['agree-list__item']">
                   <div :class="$style['agree-list__head']">
                     <CheckBox
-                      id="MI_P03_p003aAgree002_001"
+                      id="MI_P03_p007Agree002_001"
                       :classNames="{
                         wrap: $style['agree-list__checkbox'],
                       }"
@@ -458,7 +458,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree002_001_001"
+                          id="MI_P03_p007Agree002_001_001"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -475,7 +475,7 @@ export default {
                     <li :class="$style['agree-list__item']">
                       <div :class="$style['agree-list__head']">
                         <CheckBox
-                          id="MI_P03_p003aAgree002_001_002"
+                          id="MI_P03_p007Agree002_001_002"
                           :classNames="{
                             wrap: $style['agree-list__checkbox'],
                           }"
@@ -497,7 +497,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="MI_P03_p003aAgree002_001_002_001"
+                              id="MI_P03_p007Agree002_001_002_001"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -511,7 +511,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="MI_P03_p003aAgree002_001_002_002"
+                              id="MI_P03_p007Agree002_001_002_002"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -525,7 +525,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="MI_P03_p003aAgree002_001_002_003"
+                              id="MI_P03_p007Agree002_001_002_003"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -539,7 +539,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="MI_P03_p003aAgree002_001_002_004"
+                              id="MI_P03_p007Agree002_001_002_004"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -553,7 +553,7 @@ export default {
                         <li :class="$style['agree-list__item']">
                           <div :class="$style['agree-list__head']">
                             <CheckBox
-                              id="MI_P03_p003aAgree002_001_002_005"
+                              id="MI_P03_p007Agree002_001_002_005"
                               :classNames="{
                                 wrap: $style['agree-list__checkbox'],
                               }"
@@ -584,5 +584,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/membership/MI_P03_p003a.scss';
+@import '@/assets/scss/views/membership/MI_P03_p007.scss';
 </style>

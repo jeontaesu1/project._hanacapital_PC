@@ -1200,9 +1200,9 @@ const routes = [
     component: () => import('@/views/membership/MI_P03_p003.vue'),
   },
   {
-    path: '/membership/MI_P03_p003a',
-    name: '/membership/MI_P03_p003a',
-    component: () => import('@/views/membership/MI_P03_p003a.vue'),
+    path: '/membership/MI_P03_p007',
+    name: '/membership/MI_P03_p007',
+    component: () => import('@/views/membership/MI_P03_p007.vue'),
   },
   {
     path: '/membership/MI_P03_p004',
@@ -1232,14 +1232,14 @@ const routes = [
     component: () => import('@/views/hanaMoney/MI_P02_p002.vue'),
   },
   {
-    path: '/hana-money/MI_P02_p003',
-    name: '/hana-money/MI_P02_p003',
-    component: () => import('@/views/hanaMoney/MI_P02_p003.vue'),
-  },
-  {
     path: '/hana-money/MI_P02_p004',
     name: '/hana-money/MI_P02_p004',
     component: () => import('@/views/hanaMoney/MI_P02_p004.vue'),
+  },
+  {
+    path: '/hana-money/MI_P02_p003',
+    name: '/hana-money/MI_P02_p003',
+    component: () => import('@/views/hanaMoney/MI_P02_p003.vue'),
   },
 
   // business
