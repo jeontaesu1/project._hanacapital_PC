@@ -32,7 +32,7 @@ export default {
       </PageHeadRow>
     </PageHead>
 
-    // [공통 > 본인인증] 내용 노출
+    <div>// [공통 > 본인인증] 내용 노출</div>
 
     <ButtonList>
       <ButtonListItem>

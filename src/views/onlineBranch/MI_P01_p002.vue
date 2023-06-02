@@ -6,6 +6,9 @@ import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -15,6 +18,9 @@ export default {
     PageTitle,
     PageMainText,
     StepProgress,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
 };
 </script>
@@ -31,6 +37,12 @@ export default {
       <PageMainText align="left">본인인증을 진행해 주세요</PageMainText>
     </PageHead>
 
-    // [공통 > 본인인증] 내용 노출
+    <div>// [공통 > 본인인증] 내용 노출</div>
+
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
