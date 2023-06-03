@@ -276,9 +276,9 @@ const routes = [
     component: () => import('@/views/additionalService/My_P05_p011.vue'),
   },
   {
-    path: '/additional-service/My_P05_p002',
-    name: '/additional-service/My_P05_p002',
-    component: () => import('@/views/additionalService/My_P05_p002.vue'),
+    path: '/additional-service/My_P05_p012',
+    name: '/additional-service/My_P05_p012',
+    component: () => import('@/views/additionalService/My_P05_p012.vue'),
   },
   {
     path: '/additional-service/My_P05_p013',
