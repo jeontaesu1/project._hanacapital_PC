@@ -1,7 +1,5 @@
 <script>
 // AF_P07_p006
-import { reactive } from 'vue';
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -20,6 +18,9 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
@@ -43,17 +44,10 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
     CarThumb,
-  },
-
-  setup() {
-    const state = reactive({
-      carNumberError: false,
-    });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -70,62 +64,68 @@ export default {
       <PageMainText align="left">승계 대상 차량을 조회해 주세요</PageMainText>
     </PageHead>
 
-    <InputBlock>
-      <InputBlockCell :flexible="true">
-        <BasicInput
-          type="search"
-          title="차량번호 검색어"
-          placeholder="차량번호"
-        />
-      </InputBlockCell>
-      <InputBlockCell type="search">
-        <SearchButton />
-      </InputBlockCell>
-    </InputBlock>
+    <div>
+      <InputBlock>
+        <InputBlockCell :flexible="true">
+          <BasicInput
+            type="search"
+            title="차량번호 검색어"
+            placeholder="차량번호"
+          />
+        </InputBlockCell>
+        <InputBlockCell type="search">
+          <SearchButton />
+        </InputBlockCell>
+      </InputBlock>
 
-    <!-- Case : 검색 결과 없을 때 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-    </div>
-    <!-- Case : 검색 결과 없을 때 -->
+      <!-- Case : 검색 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+      </div>
+      <!-- Case : 검색 결과 없을 때 -->
 
-    <!-- Case : 검색 결과 없을 때 -->
-    <section class="row-margin-block-small">
-      <h3 class="text-title-1 row-margin-contents">차량정보</h3>
+      <!-- Case : 검색 결과 없을 때 -->
+      <section class="row-margin-block">
+        <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <div class="flex-box row-margin-mini">
-              <div class="flex-box__cell flex-box__cell--small">
-                <p class="text-body-4 font-weight-light">2020년식</p>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <div class="flex-box row-margin-mini">
+                <div class="flex-box__cell flex-box__cell--small">
+                  <p class="text-body-4 font-weight-light">2020년식</p>
+                </div>
               </div>
-            </div>
-            <h3 class="text-title-2 font-weight-regular">운용리스 11가1111</h3>
-            <p class="text-body-3 color-gray row-margin-item-small">
-              올 뉴 아반떼(CN7) 가솔린 1.6
-            </p>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <CarThumb src="/images/_dummy/car-thumb.png" />
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
-        <KeyValue margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>차대번호</KeyValueTitle>
-            <KeyValueText>KMHEL00CPYA000001</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
-    <!-- //  Case : 검색 결과 없을 때 -->
+              <h3 class="text-title-2 font-weight-regular">
+                운용리스 11가1111
+              </h3>
+              <p class="text-body-3 color-gray row-margin-item-small">
+                올 뉴 아반떼(CN7) 가솔린 1.6
+              </p>
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <CarThumb src="/images/_dummy/car-thumb.png" />
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          <KeyValue margin="regular">
+            <KeyValueItem>
+              <KeyValueTitle>차대번호</KeyValueTitle>
+              <KeyValueText>KMHEL00CPYA000001</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
+      <!-- //  Case : 검색 결과 없을 때 -->
+    </div>
+
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/PF_P02_l001.scss';
+@import '@/assets/scss/views/auto/AF_P07_p006.scss';
 </style>
