@@ -48,7 +48,7 @@ export default {
         <table>
           <colgroup>
             <col style="width: 100px" />
-            <col style="width: 100px" />
+            <col style="width: 101px" />
             <col />
             <col />
           </colgroup>
@@ -118,12 +118,12 @@ export default {
               <td>공급가액의 4%</td>
             </tr>
             <tr>
-              <th>공채매입률</th>
+              <th :class="$style['basic-table__left-line']">공채매입률</th>
               <td>배기량에 따라 4% ~ 20%</td>
               <td>없음</td>
             </tr>
             <tr>
-              <th>자동차세</th>
+              <th :class="$style['basic-table__left-line']">자동차세</th>
               <td>CC당 130~286원</td>
               <td>CC당 18~24원</td>
             </tr>
@@ -147,6 +147,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :wrap="true"
+          :col="3"
           align="center"
           :classNames="{
             wrap: 'row-margin-none',

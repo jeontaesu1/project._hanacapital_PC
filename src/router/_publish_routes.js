@@ -1108,9 +1108,24 @@ const routes = [
     component: () => import('@/views/auto/AF_P06_p003.vue'),
   },
   {
-    path: '/auto/AF_P06_p004',
-    name: '/auto/AF_P06_p004',
-    component: () => import('@/views/auto/AF_P06_p004.vue'),
+    path: '/auto/AF_P06_p004_001',
+    name: '/auto/AF_P06_p004_001',
+    component: () => import('@/views/auto/AF_P06_p004_001.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p004_002',
+    name: '/auto/AF_P06_p004_002',
+    component: () => import('@/views/auto/AF_P06_p004_002.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p004_003',
+    name: '/auto/AF_P06_p004_003',
+    component: () => import('@/views/auto/AF_P06_p004_003.vue'),
+  },
+  {
+    path: '/auto/AF_P06_p004_004',
+    name: '/auto/AF_P06_p004_004',
+    component: () => import('@/views/auto/AF_P06_p004_004.vue'),
   },
   {
     path: '/auto/AF_P06_p005',

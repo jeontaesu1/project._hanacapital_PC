@@ -73,7 +73,12 @@ export default {
           <FormInvalid :error="state.phoneError">
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="휴대전화번호" id="AF_P07_l003_phone" />
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="휴대전화번호"
+                  id="AF_P07_l003_phone"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -91,9 +96,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton tagName="RouterLink" to="" size="regular">
-              문자 메시지 (SMS)보내기
-            </BasicButton>
+            <BasicButton size="regular">문자 메시지 (SMS)보내기</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

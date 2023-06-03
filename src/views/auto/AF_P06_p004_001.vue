@@ -1,5 +1,5 @@
 <script>
-// AF_P06_p004
+// AF_P06_p004 심사 승인 대상
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
@@ -16,10 +16,6 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
-
-import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 
 export default {
   components: {
@@ -39,16 +35,12 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
-    IllustInfoText,
-    BasicHr,
-    IconCustomer,
   },
 };
 </script>
 
 <template>
   <PageContents>
-    <!-- Case : 한도조회 결과_심사 승인 대상 / 기준가격 변경시, 시스템 심사한도 노출 -->
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>심사 승인 대상입니다</IllustInfoTitle>
@@ -76,11 +68,6 @@ export default {
             <KeyValueTitle :classNames="{ title: 'color-black' }">
               차량 기준가격
             </KeyValueTitle>
-            <!-- Case : 차량 LTV 최고한도율로 인한 기준가격 변경 시 [차량 조정기준가격]으로 명칭/값 변경 -->
-            <!-- <KeyValueTitle :classNames="{ title: 'color-black' }">
-              차량 조정기준가격
-            </KeyValueTitle> -->
-            <!-- // Case : 차량 LTV 최고한도율로 인한 기준가격 변경 시 [차량 조정기준가격]으로 명칭/값 변경 -->
             <KeyValueText>
               <UnitText rightUnit="원" align="right">
                 <strong>23,500,000</strong>
@@ -90,7 +77,7 @@ export default {
         </KeyValue>
       </BasicBox>
 
-      <BasicBox className="row-margin-contents-small row-margin-bottom-none ">
+      <BasicBox className="row-margin-contents-small">
         <BasicBoxHead>
           <h4 class="text-title-2 font-weight-medium">중고차오토론</h4>
         </BasicBoxHead>
@@ -101,9 +88,6 @@ export default {
           </KeyValueItem>
           <KeyValueItem>
             <KeyValueTitle>대출신청금액</KeyValueTitle>
-            <!-- Case : 대출신청금액이 시스템 심사한도를 초과할 경우 [대출가능금액]으로 명칭/값 변경 -->
-            <!-- <KeyValueTitle>대출신청금액</KeyValueTitle> -->
-            <!-- // Case : 대출신청금액이 시스템 심사한도를 초과할 경우 [대출가능금액]으로 명칭/값 변경 -->
             <KeyValueText>1,500 만원</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
@@ -128,69 +112,9 @@ export default {
         <BasicButton>대출 신청하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
-    <!-- // Case : 한도조회 결과_심사 승인 대상 / 기준가격 변경시, 시스템 심사한도 노출 -->
-
-    <!-- Case : 한도조회결과 -->
-    <div class="row-margin-container-medium">
-      <div class="row-margin-block-small">
-        <IllustInfo>
-          <IllustObject type="fail" />
-
-          <!-- Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-          <IllustObject type="error" />
-          <!-- // Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-
-          <IllustInfoTitle>
-            고객님께서는 현재 대출진행이 어렵습니다
-          </IllustInfoTitle>
-
-          <!-- Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-          <IllustInfoTitle>지점문의 부탁드립니다</IllustInfoTitle>
-          <!-- // Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-
-          <IllustInfoText>
-            자세한 사항은 담당자 또는 하나캐피탈 고객센터로 문의주시기 바랍니다.
-          </IllustInfoText>
-        </IllustInfo>
-      </div>
-
-      <ButtonList :wrap="true" align="center">
-        <ButtonListItem>
-          <BasicButton>확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-
-      <!-- Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-      <ButtonList :wrap="true">
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">확인</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>상담요청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 한도조회 결과_시스템심사&Fraud인 경우 -->
-    </div>
-
-    <BasicHr theme="tertiary" className="row-margin-container-medium" />
-
-    <div :class="$style['icon-list']">
-      <ul :class="$style['icon-list__list']">
-        <li :class="$style['icon-list__item']">
-          <div :class="$style['icon-list__block']">
-            <div :class="$style['icon-list__icon']"><IconCustomer /></div>
-            <div :class="$style['icon-list__content']">
-              <div :class="$style['icon-list__title']">고객센터 1800-1110</div>
-              <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- // Case : 한도조회결과 -->
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/AF_P06_p004.scss';
+@import '@/assets/scss/views/auto/AF_P06_p004_001.scss';
 </style>

@@ -48,7 +48,7 @@ export default {
 
     <ButtonList align="full">
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

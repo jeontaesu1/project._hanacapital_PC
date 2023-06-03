@@ -27,6 +27,7 @@
       > tr {
         > th {
           padding: 15px 16px;
+          border-left: 1px solid $color-gray-30;
           border-bottom: 1px solid $color-gray-30;
           word-break: break-all;
           @include font-size-default(15);
@@ -72,6 +73,13 @@
           }
         }
       }
+    }
+  }
+
+  &__left-line.basic-table__left-line {
+    &,
+    &:first-child {
+      border-left: 1px solid $color-gray-30;
     }
   }
 }

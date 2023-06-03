@@ -74,10 +74,19 @@ export default {
       </InputBlockCell>
     </InputBlock>
 
-    <section class="row-margin-block row-margin-bottom-none">
+    <section class="contents-wrap row-margin-block row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
-      <!-- Case : [검색] 버튼 선택시 차량번호 조회 및 결과 노출 -->
+      <!-- Case : 승계 가능한 차량이 없을 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          승계 가능한 차량이 없습니다.<br />
+          양도인에게 승계 동의를 요청해 주세요.
+        </p>
+      </div>
+      <!-- // Case : 승계 가능한 차량이 없을 경우 -->
+
+      <!-- Case : 승계 가능한 차량이 있을 경우 -->
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
@@ -92,29 +101,21 @@ export default {
             <h4 class="text-title-2 font-weight-medium">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h4>
-            <UnitText rightUnit="원" class="row-margin-item"
-              ><strong>23,500,000</strong></UnitText
-            >
+            <div class="row-margin-item">
+              <UnitText rightUnit="원"><strong>23,500,000</strong></UnitText>
+            </div>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
         <KeyValue :wrap="true">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-1',
-            }"
-          >
+          <KeyValueItem>
             <KeyValueTitle>주행거리</KeyValueTitle>
             <KeyValueText>65,000 Km</KeyValueText>
           </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-1',
-            }"
-          >
+          <KeyValueItem>
             <KeyValueTitle>사고유무</KeyValueTitle>
             <KeyValueText>
-              <div class="flex-box justify-conten-end">
-                <div class="flex-box__cell">Y</div>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">Y</div>
                 <div class="flex-box__cell">
                   <TextButton
                     theme="secondary"
@@ -130,16 +131,7 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
-      <!-- // Case : [검색] 버튼 선택시 차량번호 조회 및 결과 노출 -->
-
-      <!-- Case : 승계 가능한 차량이 없을 경우 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">
-          승계 가능한 차량이 없습니다.<br />
-          양도인에게 승계 동의를 요청해 주세요.
-        </p>
-      </div>
-      <!-- // Case : 승계 가능한 차량이 없을 경우 -->
+      <!-- // Case : 승계 가능한 차량이 있을 경우 -->
     </section>
 
     <ButtonList>
