@@ -1,5 +1,5 @@
 <script>
-//AF_P07_p008
+// AF_P07_p008
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -122,9 +122,11 @@ export default {
       </BoxCheckList>
 
       <!-- Case : 동일 조건 승계 선택 시 노출 -->
-      <NoticeText :classNames="{ wrap: 'row-margin-contents-small' }">
-        현재 계약자의 이용 조건을 동일하게 승계합니다.
-      </NoticeText>
+      <div class="row-margin-contents-small">
+        <NoticeText>
+          현재 계약자의 이용 조건을 동일하게 승계합니다.
+        </NoticeText>
+      </div>
       <!-- //  Case : 동일 조건 승계 선택 시 노출 -->
 
       <!-- Case : 전액선납 승계 선택 시 노출 -->

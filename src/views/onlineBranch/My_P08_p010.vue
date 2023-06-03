@@ -86,7 +86,7 @@ export default {
                 title="이름"
                 id="My_P08_p010_name"
                 defaultValue="김하나"
-                disabled="true"
+                :disabled="true"
               />
             </InputBlockCell>
           </InputBlock>
@@ -107,6 +107,7 @@ export default {
                 pattern="\d*"
                 title="주민등록번호 앞 6자리"
                 id="My_P08_p010_id"
+                defaultValue="123456"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -115,7 +116,7 @@ export default {
               <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
               <SecurityInput
                 title="주민등록번호 뒤 7자리"
-                :dot="[true, true, true, false, false, false, false]"
+                :dot="[true, true, true, true, true, true, true]"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -173,9 +174,9 @@ export default {
             </InputBlockCell>
             <InputBlockCell :flexible="true" margin="regular">
               <BasicInput
-                type="number"
                 pattern="\d*"
                 title="휴대폰번호"
+                defaultValue="010-1234-5678"
                 :disabled="true"
               />
             </InputBlockCell>
@@ -197,7 +198,7 @@ export default {
                 title="사업자명"
                 id="My_P08_p010_businessName"
                 defaultValue="하나테크"
-                disabled="true"
+                :disabled="true"
               />
             </InputBlockCell>
           </InputBlock>
@@ -208,17 +209,17 @@ export default {
       <FormListItem
         titleText="사업자등록번호"
         target="#My_P08_p010_BusinessLicense"
-        disabled="true"
+        :disabled="true"
       >
         <FormInvalid :error="state.businessLicenseError">
-          <InputBlock :error="state.businessLicenseError" disabled="true">
+          <InputBlock :error="state.businessLicenseError" :disabled="true">
             <InputBlockCell :flexible="true">
               <BasicInput
                 ref="license"
                 title="사업자등록번호"
                 id="My_P08_p010_BusinessLicense"
                 defaultValue="123-12-12345"
-                disabled="true"
+                :disabled="true"
               />
             </InputBlockCell>
           </InputBlock>

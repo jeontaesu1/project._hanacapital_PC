@@ -312,7 +312,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="My_P08_p015_addressSearch"
+                  >
                     검색
                   </BasicButton>
                 </template>

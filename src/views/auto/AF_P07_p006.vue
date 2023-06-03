@@ -64,59 +64,58 @@ export default {
       <PageMainText align="left">승계 대상 차량을 조회해 주세요</PageMainText>
     </PageHead>
 
-    <div>
-      <InputBlock>
-        <InputBlockCell :flexible="true">
-          <BasicInput
-            type="search"
-            title="차량번호 검색어"
-            placeholder="차량번호"
-          />
-        </InputBlockCell>
-        <InputBlockCell type="search">
-          <SearchButton />
-        </InputBlockCell>
-      </InputBlock>
+    <InputBlock>
+      <InputBlockCell :flexible="true">
+        <BasicInput
+          type="search"
+          title="차량번호 검색어"
+          placeholder="차량번호"
+        />
+      </InputBlockCell>
+      <InputBlockCell type="search">
+        <SearchButton />
+      </InputBlockCell>
+    </InputBlock>
+
+    <!-- Case : 조회 후 노출 -->
+    <section class="contents-wrap row-margin-block row-margin-bottom-none">
+      <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
       <!-- Case : 검색 결과 없을 때 -->
       <div :class="$style['empty']">
-        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        <p :class="$style['empty__text']">
+          승계 가능한 차량이 없습니다.<br />
+          양도인에게 승계 동의를 요청해주세요.
+        </p>
       </div>
       <!-- Case : 검색 결과 없을 때 -->
 
-      <!-- Case : 검색 결과 없을 때 -->
-      <section class="row-margin-block">
-        <h3 class="text-title-1 row-margin-contents">차량정보</h3>
-
-        <BasicBox>
-          <BasicBoxHead>
-            <BasicBoxHeadLeft>
-              <div class="flex-box row-margin-mini">
-                <div class="flex-box__cell flex-box__cell--small">
-                  <p class="text-body-4 font-weight-light">2020년식</p>
-                </div>
-              </div>
-              <h3 class="text-title-2 font-weight-regular">
-                운용리스 11가1111
-              </h3>
-              <p class="text-body-3 color-gray row-margin-item-small">
-                올 뉴 아반떼(CN7) 가솔린 1.6
-              </p>
-            </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <CarThumb src="/images/_dummy/car-thumb.png" />
-            </BasicBoxHeadRight>
-          </BasicBoxHead>
-          <KeyValue margin="regular">
-            <KeyValueItem>
-              <KeyValueTitle>차대번호</KeyValueTitle>
-              <KeyValueText>KMHEL00CPYA000001</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </section>
-      <!-- //  Case : 검색 결과 없을 때 -->
-    </div>
+      <!-- Case : 검색 결과 있을 때 -->
+      <BasicBox>
+        <BasicBoxHead>
+          <BasicBoxHeadLeft>
+            <p class="text-body-4 font-weight-light row-margin-mini">
+              2020년식
+            </p>
+            <h3 class="text-title-2 font-weight-regular">운용리스 11가1111</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              올 뉴 아반떼(CN7) 가솔린 1.6
+            </p>
+          </BasicBoxHeadLeft>
+          <BasicBoxHeadRight>
+            <CarThumb src="/images/_dummy/car-thumb.png" />
+          </BasicBoxHeadRight>
+        </BasicBoxHead>
+        <KeyValue margin="regular">
+          <KeyValueItem>
+            <KeyValueTitle>차대번호</KeyValueTitle>
+            <KeyValueText>KMHEL00CPYA000001</KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+      </BasicBox>
+      <!-- // Case : 검색 결과 있을 때 -->
+    </section>
+    <!-- // Case : 조회 후 노출 -->
 
     <ButtonList>
       <ButtonListItem>

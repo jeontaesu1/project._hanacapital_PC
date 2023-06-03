@@ -70,14 +70,8 @@ export default {
       paymentAmountTypeError: false,
       percentage001Error: false,
       percentage002Error: false,
-      percentage003Error: false,
-      percentage004Error: false,
       paymentAmount001Error: false,
       paymentAmount002Error: false,
-      paymentAmount003Error: false,
-      paymentAmount004Error: false,
-      paymentAmount005Error: false,
-      paymentAmount006Error: false,
     });
     return {
       state,
@@ -157,23 +151,20 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <div class="row-margin-item-medium">
+              <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+                운용리스: 잔가를 설정하여 이용자에게 임대하는 상품<span
+                  class="color-red"
+                  >(계산서 발행)</span
+                >
+              </NoticeText>
+              <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+                금융리스: 잔가를 별도로 운영하지 않고 이용자에게 임대하는
+                상품<span class="color-red">(계산서 미발행)</span>
+              </NoticeText>
+            </div>
           </FormInvalid>
         </FormListItem>
-
-        <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-          운용리스: 잔가를 설정하여 이용자에게 임대하는 상품<span
-            class="color-red"
-            >(계산서 발행)</span
-          >
-        </NoticeText>
-        <NoticeText
-          :classNames="{ wrap: 'row-margin-contents row-margin-top-none' }"
-        >
-          금융리스: 잔가를 별도로 운영하지 않고 이용자에게 임대하는 상품<span
-            class="color-red"
-            >(계산서 미발행)</span
-          >
-        </NoticeText>
 
         <FormListItem titleText="기간 선택" :forceFocus="true">
           <FormInvalid :error="state.dateTypeError">
@@ -263,26 +254,21 @@ export default {
               </BoxCheckListItem>
             </BoxCheckList>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <div class="row-margin-item-medium">
+              <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+                보증금: 보증금을 납입하는 경우 리스료가 할인됩니다.<br />
+                (계약이 중도해지 되거나, 약정서에 기재된 채무를 전부 이행한
+                때에는 리스보증금을 반환해 드립니다.)
+              </NoticeText>
+              <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+                선납금: 리스기간 회차로 나누어 매월 리스료에 충당 (만기 시
+                반환되지 않습니다.)
+              </NoticeText>
+            </div>
           </FormInvalid>
         </FormListItem>
-      </FormList>
 
-      <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-        보증금: 보증금을 납입하는 경우 리스료가 할인됩니다.<br />
-        (계약이 중도해지 되거나, 약정서에 기재된 채무를 전부 이행한 때에는
-        리스보증금을 반환해 드립니다.)
-      </NoticeText>
-      <NoticeText>
-        선납금: 리스기간 회차로 나누어 매월 리스료에 충당 (만기 시 반환되지
-        않습니다.)
-      </NoticeText>
-
-      <!-- Case : '보증금' 선택 시 노출 -->
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
+        <!-- Case : '보증금' 선택 시 노출 -->
         <FormListItem titleText="보증금비율" :forceFocus="true">
           <FormInvalid :error="state.percentage001Error">
             <BoxCheckList :wrap="true" :col="4">
@@ -357,15 +343,31 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-      </FormList>
-      <!-- // Case : '보증금' 선택 시 노출 -->
 
-      <!-- Case : '선납금' 선택 시 노출 -->
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
+        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount001">
+          <FormInvalid :error="state.paymentAmount001Error">
+            <InputBlock :error="state.paymentAmount001Error" :disabled="true">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  pattern="\d*"
+                  title="보증금 금액"
+                  id="My_P08_p007_paymentAmount001"
+                  :useDelete="false"
+                  align="right"
+                  :disabled="true"
+                  defaultValue="10,002,120"
+                />
+              </InputBlockCell>
+              <template v-slot:innerRight>
+                <div class="text-body-1">원</div>
+              </template>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <!-- // Case : '보증금' 선택 시 노출 -->
+
+        <!-- Case : '선납금' 선택 시 노출 -->
         <FormListItem titleText="선납금비율" :forceFocus="true">
           <FormInvalid :error="state.percentage002Error">
             <BoxCheckList :wrap="true" :col="4">
@@ -440,46 +442,14 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-      </FormList>
-      <!-- // Case : '선납금' 선택 시 노출 -->
 
-      <!-- Case : '비율' 선택 시 노출 -->
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
-        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount001">
-          <FormInvalid :error="state.paymentAmount001Error">
-            <InputBlock :error="state.paymentAmount001Error" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  pattern="\d*"
-                  title="금액"
-                  id="My_P08_p007_paymentAmount001"
-                  :useDelete="false"
-                  align="right"
-                  :disabled="true"
-                  defaultValue="10,002,120"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-1">원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : '비율' 선택 시 노출 -->
-
-        <!-- Case : '금액입력' 선택 시 노출 -->
         <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount002">
           <FormInvalid :error="state.paymentAmount002Error">
             <InputBlock :error="state.paymentAmount002Error">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   pattern="\d*"
-                  title="금액"
+                  title="선납금 금액"
                   id="My_P08_p007_paymentAmount002"
                   :useDelete="false"
                   align="right"
@@ -492,257 +462,8 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case :'금액입력' 선택 시 노출 -->
+        <!-- // Case : '선납금' 선택 시 노출 -->
       </FormList>
-
-      <!-- Case : '보증금+선납금' 선택 시 노출 -->
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
-        <FormListItem titleText="보증금비율" :forceFocus="true">
-          <FormInvalid :error="state.percentage003Error">
-            <BoxCheckList :wrap="true" :col="4">
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>10%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_002"
-                >
-                  <BoxCheckLabel>20%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_003"
-                >
-                  <BoxCheckLabel>30%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_004"
-                >
-                  <BoxCheckLabel>40%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_005"
-                >
-                  <BoxCheckLabel>50%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_006"
-                >
-                  <BoxCheckLabel>60%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_007"
-                >
-                  <BoxCheckLabel>70%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage003"
-                  id="My_P08_p007_percentage003_008"
-                >
-                  <BoxCheckLabel>금액입력</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <!-- Case : '보증금+선납금 보증금비율 비율' 선택 시 노출 -->
-        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount003">
-          <FormInvalid :error="state.paymentAmount003Error">
-            <InputBlock :error="state.paymentAmount003Error" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  pattern="\d*"
-                  title="금액"
-                  id="My_P08_p007_paymentAmount003"
-                  :useDelete="false"
-                  align="right"
-                  :disabled="true"
-                  defaultValue="10,002,120"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-1">원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : '보증금+선납금 보증금비율 비율' 선택 시 노출 -->
-
-        <!-- Case : '보증금+선납금 보증금비율 금액입력' 선택 시 노출 -->
-        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount004">
-          <FormInvalid :error="state.paymentAmount004Error">
-            <InputBlock :error="state.paymentAmount004Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  pattern="\d*"
-                  title="금액"
-                  id="My_P08_p007_paymentAmount004"
-                  :useDelete="false"
-                  align="right"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-1">원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : '보증금+선납금 보증금비율 금액입력 선택' 시 노출 -->
-
-        <FormListItem titleText="선납금비율" :forceFocus="true">
-          <FormInvalid :error="state.percentage004Error">
-            <BoxCheckList :wrap="true" :col="4">
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>10%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_002"
-                >
-                  <BoxCheckLabel>20%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_003"
-                >
-                  <BoxCheckLabel>30%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_004"
-                >
-                  <BoxCheckLabel>40%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_005"
-                >
-                  <BoxCheckLabel>50%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_006"
-                >
-                  <BoxCheckLabel>60%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_007"
-                >
-                  <BoxCheckLabel>70%</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="My_P08_p007_percentage004"
-                  id="My_P08_p007_percentage004_008"
-                >
-                  <BoxCheckLabel>금액입력</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <!-- Case : '보증금+선납금 선납금비율 비율' 선택 시 노출 -->
-        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount005">
-          <FormInvalid :error="state.paymentAmount005Error">
-            <InputBlock :error="state.paymentAmount005Error" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  pattern="\d*"
-                  title="금액"
-                  id="My_P08_p007_paymentAmount005"
-                  :useDelete="false"
-                  align="right"
-                  :disabled="true"
-                  defaultValue="10,002,120"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-1">원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : '보증금+선납금 선납금비율 비율' 선택 시 노출 -->
-
-        <!-- Case : '보증금+선납금 금액입력 선택' 시 노출 -->
-        <FormListItem titleText="금액" target="#My_P08_p007_paymentAmount006">
-          <FormInvalid :error="state.paymentAmount006Error">
-            <InputBlock :error="state.paymentAmount006Error">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  pattern="\d*"
-                  title="금액"
-                  id="My_P08_p007_paymentAmount006"
-                  :useDelete="false"
-                  align="right"
-                />
-              </InputBlockCell>
-              <template v-slot:innerRight>
-                <div class="text-body-1">원</div>
-              </template>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
-      <!-- // Case : '보증금+선납금 금액입력 선택' 시 노출 노출 -->
     </div>
 
     <ButtonList>

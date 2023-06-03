@@ -111,7 +111,7 @@ export default {
     </div>
 
     <div class="row-margin-block row-margin-bottom-none">
-      <section>
+      <section class="row-margin-block">
         <h3 class="text-title-1 row-margin-contents">매수인 정보</h3>
 
         <CheckBox id="My_P08_p026_agree001" theme="tertiary">
@@ -138,7 +138,7 @@ export default {
           <FormListItem
             titleText="매도용인감 주소"
             :forceFocus="true"
-            target="#My_P08_p026_address001"
+            target="#My_P08_p026_address001Search"
           >
             <FormInvalid :error="state.address001Error">
               <InputBlock :error="state.address001Error">
@@ -150,7 +150,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="My_P08_p026_address001Search"
+                  >
                     검색
                   </BasicButton>
                 </template>
@@ -186,9 +190,13 @@ export default {
               </InputBlock>
               <!-- // DD : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <div class="flex-box row-margin-item-medium">
+                <div class="flex-box__cell">
+                  <p class="text-body-3 color-gray">매도용인감 주소</p>
+                </div>
+              </div>
             </FormInvalid>
           </FormListItem>
-          // 툴팁
         </FormList>
       </section>
 
@@ -208,7 +216,7 @@ export default {
           <FormListItem
             titleText="수령주소"
             :forceFocus="true"
-            target="#My_P08_p026_address002"
+            target="#My_P08_p026_address002Search"
           >
             <FormInvalid :error="state.address002Error">
               <InputBlock :error="state.address002Error">
@@ -220,7 +228,11 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="My_P08_p026_address002Search"
+                  >
                     검색
                   </BasicButton>
                 </template>
@@ -289,72 +301,76 @@ export default {
       <section class="row-margin-block">
         <h3 class="text-title-1 row-margin-contents">정산 정보</h3>
 
-        <BasicBox>
-          <KeyValue>
-            <!-- Case : 정산금액이 +인 경우 노출 -->
-            <KeyValueItem>
-              <KeyValueTitle>정산금액</KeyValueTitle>
-              <KeyValueText>99,999,999 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem>
-              <KeyValueTitle>입금계좌번호</KeyValueTitle>
-              <KeyValueText>
-                하나<br />
-                21556-412-94556
-              </KeyValueText>
-            </KeyValueItem>
-            <!-- // Case : 정산금액이 +인 경우 노출 -->
-
-            <!-- Case : 정산금액이 -인 경우 노출 -->
-            <KeyValueItem>
-              <KeyValueTitle>정산금액</KeyValueTitle>
-              <KeyValueText>-99,999,999 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem>
-              <KeyValueTitle>환불예정일자</KeyValueTitle>
-              <KeyValueText>2023.01.10</KeyValueText>
-            </KeyValueItem>
-            <!-- // Case : 정산금액이 -인 경우 노출 -->
-          </KeyValue>
-        </BasicBox>
-
         <!-- Case : 정산금액이 +인 경우 노출 -->
-        <FormList
-          :classNames="{
-            wrap: 'row-margin-contents row-margin-bottom-none',
-          }"
-        >
-          <FormListItem
-            titleText="입금예약일자"
-            target="#My_P08_p026_dateButton"
-          >
-            <FormInvalid :error="state.dateError">
-              <InputBlock :error="state.dateError">
-                <InputBlockCell :flexible="true">
-                  <BasicDatepicker
-                    title="입금예약일자"
-                    id="My_P08_p026_date"
-                    buttonId="My_P08_p026_dateButton"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-        </FormList>
+        <div>
+          <BasicBox>
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>정산금액</KeyValueTitle>
+                <KeyValueText>99,999,999 원</KeyValueText>
+              </KeyValueItem>
 
-        <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-          차량번호 혹은 계약자명으로 입금 부탁드립니다.
-        </NoticeText>
-        <!-- //  Case : 정산금액이 +인 경우 노출 -->
+              <KeyValueItem>
+                <KeyValueTitle>입금계좌번호</KeyValueTitle>
+                <KeyValueText>
+                  하나<br />
+                  21556-412-94556
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+
+          <FormList
+            :classNames="{
+              wrap: 'row-margin-contents',
+            }"
+          >
+            <FormListItem
+              titleText="입금예약일자"
+              target="#My_P08_p020_dateButton"
+            >
+              <FormInvalid :error="state.dateError">
+                <InputBlock :error="state.dateError">
+                  <InputBlockCell :flexible="true">
+                    <BasicDatepicker
+                      title="입금예약일자"
+                      id="My_P08_p020_date"
+                      buttonId="My_P08_p020_dateButton"
+                    />
+                  </InputBlockCell>
+                </InputBlock>
+                <FormInvalidMessage>Error Message</FormInvalidMessage>
+              </FormInvalid>
+            </FormListItem>
+          </FormList>
+
+          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+            차량번호 혹은 계약자명으로 입금 부탁드립니다.
+          </NoticeText>
+        </div>
+        <!-- // Case : 정산금액이 +인 경우 노출 -->
 
         <!-- Case : 정산금액이 -인 경우 노출 -->
-        <NoticeText :classNames="{ wrap: 'row-margin-contents-small' }">
-          환불예정일자는 회사 내부사정에 따라 변경 될 수 있습니다.
-        </NoticeText>
-        <!-- // Case : 정산금액이 -인 경우 노출 -->
+        <div>
+          <BasicBox>
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>정산금액</KeyValueTitle>
+                <KeyValueText>-99,999,999 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>환불예정일자</KeyValueTitle>
+                <KeyValueText>2023.01.10</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+
+          <NoticeText :classNames="{ wrap: 'row-margin-contents-small' }">
+            환불예정일자는 회사 내부사정에 따라 변경 될 수 있습니다.
+          </NoticeText>
+        </div>
+        <!-- //  Case : 정산금액이 -인 경우 노출 -->
       </section>
     </div>
 

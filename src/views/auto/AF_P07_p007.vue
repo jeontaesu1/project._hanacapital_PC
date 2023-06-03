@@ -61,7 +61,7 @@ export default {
         </template>
       </PageHeadRow>
       <PageMainText align="left">
-        실명 및 본인 인증을 진행해 주세요
+        리스 승계 상세정보를 확인해 주세요
       </PageMainText>
       <PageSubText align="left">
         실제 차량을 운행하는 목적으로의 승계만 가능하며 신규로 리스계약을
@@ -122,62 +122,76 @@ export default {
       </BoxCheckList>
 
       <!-- Case : 동일 조건 승계 선택 시 노출 -->
-      <NoticeText :classNames="{ wrap: 'row-margin-contents-small' }">
-        현재 계약자의 이용 조건을 동일하게 승계합니다.
-      </NoticeText>
+      <div class="row-margin-contents-small">
+        <NoticeText>
+          현재 계약자의 이용 조건을 동일하게 승계합니다.
+        </NoticeText>
 
-      <section :class="($style['notice-section'], 'row-margin-contents')">
-        <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
+        <section :class="[$style['notice-section'], 'row-margin-contents']">
+          <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
 
-        <ul
-          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
-        >
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              양수인 명의로 자동차 보험을 가입합니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              자차손해 가입은 필수이며, 질권설정금액 부족/불가 시
-              보증금/선납금을 추가 납입할 수 있습니다.
-            </div>
-          </li>
-        </ul>
-      </section>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                양수인 명의로 자동차 보험을 가입합니다.
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                자차손해 가입은 필수이며, 질권설정금액 부족/불가 시
+                보증금/선납금을 추가 납입할 수 있습니다.
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
       <!-- //  Case : 동일 조건 승계 선택 시 노출 -->
 
       <!-- Case : 전액선납 승계 선택 시 노출 -->
       <div class="row-margin-contents-small">
-        <NoticeText>심사서류가 간소화됩니다.</NoticeText>
-        <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-          전액선납 정산비용이 발생합니다.
-        </NoticeText>
-        <NoticeText>정산서는 심사 승인 이후 발송됩니다.</NoticeText>
+        <div>
+          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }"
+            >심사서류가 간소화됩니다.</NoticeText
+          >
+          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+            전액선납 정산비용이 발생합니다.
+          </NoticeText>
+          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }"
+            >정산서는 심사 승인 이후 발송됩니다.</NoticeText
+          >
+        </div>
+
+        <section :class="[$style['notice-section'], 'row-margin-contents']">
+          <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
+
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                양수인 명의로 자동차 보험을 가입해 주세요.
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                책임보험 가입 가능합니다.
+              </div>
+            </li>
+          </ul>
+        </section>
       </div>
-
-      <section :class="($style['notice-section'], 'row-margin-contents')">
-        <h3 :class="$style['notice-section__title']">보험가입 안내</h3>
-
-        <ul
-          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
-        >
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              양수인 명의로 자동차 보험을 가입해 주세요.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              책임보험 가입 가능합니다.
-            </div>
-          </li>
-        </ul>
-      </section>
       <!-- //  Case : 전액선납 승계 선택 시 노출 -->
     </section>
 

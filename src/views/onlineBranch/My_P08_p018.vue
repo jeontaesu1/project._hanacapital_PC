@@ -71,10 +71,14 @@ export default {
 
       <BasicBox className="row-margin-contents-small">
         <KeyValue verticalAlign="center">
-          <KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-title-2',
+            }"
+          >
             <KeyValueTitle
               :classNames="{
-                title: 'text-title-2 color-black font-weight-medium',
+                title: 'color-black font-weight-medium',
               }"
             >
               예상비용(입금/지급)
@@ -126,10 +130,14 @@ export default {
 
       <BasicBox className="row-margin-contents-small">
         <KeyValue verticalAlign="center">
-          <KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-title-2',
+            }"
+          >
             <KeyValueTitle
               :classNames="{
-                title: 'text-title-2 color-black font-weight-medium',
+                title: 'color-black font-weight-medium',
               }"
             >
               잔존가치

@@ -68,11 +68,16 @@ export default {
       relationshipType: false,
       name001Error: false,
       name002Error: false,
-      idNumberError: false,
+      name003Error: false,
+      idNumber001Error: false,
+      idNumber002Error: false,
+      idNumber003Error: false,
       phone001Error: false,
       phone002Error: false,
+      phone003Error: false,
       businessNameError: false,
-      businessLicenseError: false,
+      businessLicense001Error: false,
+      businessLicense002Error: false,
       birthNumberError: false,
     });
 
@@ -128,130 +133,9 @@ export default {
       </BoxCheckList>
     </section>
 
-    <div class="row-margin-container-medium">
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
-        <!-- Case : 법인사업자일 경우 노출 -->
-        <FormListItem titleText="법인명" target="#AF_P07_p009_corporationName">
-          <FormInvalid :error="state.corporationNameError">
-            <InputBlock :error="state.corporationNameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="법인명" id="AF_P07_p009_corporationName" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem
-          titleText="대표자명"
-          target="#AF_P07_p009_representativeName"
-        >
-          <FormInvalid :error="state.representativeNameError">
-            <InputBlock :error="state.representativeNameError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="대표자명"
-                  id="AF_P07_p009_representativeName"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem titleText="법인번호" target="#AF_P07_p009_businessNumber">
-          <FormInvalid :error="state.businessNumberError">
-            <InputBlock :error="state.businessNumberError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="number"
-                  pattern="\d*"
-                  title="법인번호 앞 6자리"
-                  id="AF_P07_p009_businessNumber"
-                />
-              </InputBlockCell>
-              <InputBlockCell type="sub">-</InputBlockCell>
-              <InputBlockCell :flexible="true">
-                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                <SecurityInput
-                  title="법인번호 뒤 7자리"
-                  :dot="[true, true, true, false, false, false, false]"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem titleText="연대보증인 여부" :forceFocus="true">
-          <FormInvalid :error="state.suretyError">
-            <BoxCheckList>
-              <BoxCheckListItem>
-                <BoxCheck
-                  name="AF_P07_p009_surety"
-                  id="AF_P07_p009_surety001"
-                  :defaultChecked="true"
-                >
-                  <BoxCheckLabel>개인</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck name="AF_P07_p009_surety" id="AF_P07_p009_surety002">
-                  <BoxCheckLabel>없음</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <!-- Case : 법인사업자 연대보증인 개인일 경우 노출 -->
-        <FormListItem
-          titleText="계약자와의 관계"
-          target="#AF_P07_p009_relationshipType"
-          :selectOnly="true"
-        >
-          <FormInvalid :error="state.AF_P07_p009_relationshipType">
-            <InputBlock :error="state.AF_P07_p009_relationshipType">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :options="[
-                    {
-                      value: '1',
-                      label: '최대주주',
-                    },
-                    {
-                      value: '2',
-                      label: '대주주',
-                    },
-                    {
-                      value: '3',
-                      label: '대표이사',
-                    },
-                    {
-                      value: '4',
-                      label: '무한책임 사원',
-                    },
-                  ]"
-                  title="계약자와의 관계"
-                  inputId="AF_P07_p009_relationshipType"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- // Case : 법인사업자 연대보증인 개인일 경우 노출 -->
-        <!-- // Case : 법인사업자일 경우 노출 -->
-
-        <!-- Case : 개인/개인사업자/법인사업자일 경우 노출 -->
+    <div class="row-margin-container-medium row-margin-bottom-none">
+      <!-- Case : 개인 선택시 노출 -->
+      <FormList>
         <FormListItem titleText="이름" target="#AF_P07_p009_name001">
           <FormInvalid :error="state.name001Error">
             <InputBlock :error="state.name001Error">
@@ -263,15 +147,18 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="주민등록번호" target="#AF_P07_p009_idNumber">
-          <FormInvalid :error="state.idNumberError">
-            <InputBlock :error="state.idNumberError">
+        <FormListItem
+          titleText="주민등록번호"
+          target="#AF_P07_p009_idNumber001"
+        >
+          <FormInvalid :error="state.idNumber001Error">
+            <InputBlock :error="state.idNumber001Error">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
-                  id="AF_P07_p009_idNumber"
+                  id="AF_P07_p009_idNumber001"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -338,9 +225,101 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- Case : 개인/개인사업자/법인사업자일 경우 노출 -->
+      </FormList>
+      <!-- // Case : 개인 선택시 노출 -->
 
-        <!-- Case : 개인사업자일 경우 노출 -->
+      <!-- Case : 개인사업자 선택시 노출 -->
+      <FormList>
+        <FormListItem titleText="이름" target="#AF_P07_p009_name002">
+          <FormInvalid :error="state.name002Error">
+            <InputBlock :error="state.name002Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="이름" id="AF_P07_p009_name002" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="주민등록번호"
+          target="#AF_P07_p009_idNumber002"
+        >
+          <FormInvalid :error="state.idNumber002Error">
+            <InputBlock :error="state.idNumber002Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 앞 6자리"
+                  id="AF_P07_p009_idNumber002"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
+                  title="주민등록번호 뒤 7자리"
+                  :dot="[true, true, true, false, false, false, false]"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="휴대폰번호"
+          target="#AF_P07_p009_phone002_telecom"
+        >
+          <FormInvalid :error="state.phone002Error">
+            <InputBlock :error="state.phone002Error">
+              <InputBlockCell>
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: 'SKT',
+                    },
+                    {
+                      value: '2',
+                      label: 'KT',
+                    },
+                    {
+                      value: '3',
+                      label: 'LG U+',
+                    },
+                    {
+                      value: '4',
+                      label: '알뜰폰 SKT',
+                    },
+                    {
+                      value: '5',
+                      label: '알뜰폰 KT',
+                    },
+                    {
+                      value: '6',
+                      label: '알뜰폰 LG +',
+                    },
+                  ]"
+                  title="통신사"
+                  inputId="AF_P07_p009_phone002_telecom"
+                  :classNames="{
+                    wrap: 'input-width-telecom',
+                  }"
+                />
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
         <FormListItem titleText="사업자명" target="#AF_P07_p009_businessName">
           <FormInvalid :error="state.businessNameError">
             <InputBlock :error="state.businessNameError">
@@ -353,16 +332,14 @@ export default {
         </FormListItem>
 
         <FormListItem
-          titleText="사업자번호"
-          titleOptionalText="(10자리)"
+          titleText="사업자등록번호"
           target="#AF_P07_p009_BusinessLicense"
         >
-          <FormInvalid :error="state.businessLicenseError">
-            <InputBlock :error="state.businessLicenseError">
+          <FormInvalid :error="state.businessLicense001Error">
+            <InputBlock :error="state.businessLicense001Error">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  ref="license"
-                  title="사업자번호 (10자리)"
+                  title="사업자등록번호"
                   id="AF_P07_p009_BusinessLicense"
                 />
               </InputBlockCell>
@@ -370,16 +347,243 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- // Case : 개인사업자일 경우 노출 -->
+      </FormList>
+      <!-- // Case : 개인사업자 선택시 노출 -->
+
+      <!-- Case : 법인사업자 선택시 노출 -->
+      <FormList>
+        <FormListItem titleText="법인명" target="#AF_P07_p009_corporationName">
+          <FormInvalid :error="state.corporationNameError">
+            <InputBlock :error="state.corporationNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="법인명" id="AF_P07_p009_corporationName" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="대표자명"
+          target="#AF_P07_p009_representativeName"
+        >
+          <FormInvalid :error="state.representativeNameError">
+            <InputBlock :error="state.representativeNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="대표자명"
+                  id="AF_P07_p009_representativeName"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="법인번호" target="#AF_P07_p009_businessNumber">
+          <FormInvalid :error="state.businessNumberError">
+            <InputBlock :error="state.businessNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="법인번호 앞 6자리"
+                  id="AF_P07_p009_businessNumber"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
+                  title="법인번호 뒤 7자리"
+                  :dot="[true, true, true, false, false, false, false]"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="사업자번호"
+          target="#AF_P07_p009_BusinessLicense"
+        >
+          <FormInvalid :error="state.businessLicense002Error">
+            <InputBlock :error="state.businessLicense002Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="사업자번호"
+                  id="AF_P07_p009_BusinessLicense"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="연대보증인 여부" :forceFocus="true">
+          <FormInvalid :error="state.suretyError">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  name="AF_P07_p009_surety"
+                  id="AF_P07_p009_surety001"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>개인</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck name="AF_P07_p009_surety" id="AF_P07_p009_surety002">
+                  <BoxCheckLabel>없음</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <!-- Case : 연대보증인 여부 개인 선택시 노출 -->
+        <FormListItem
+          titleText="계약자와의 관계"
+          target="#AF_P07_p009_relationshipType"
+          :selectOnly="true"
+        >
+          <FormInvalid :error="state.AF_P07_p009_relationshipType">
+            <InputBlock :error="state.AF_P07_p009_relationshipType">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '최대주주',
+                    },
+                    {
+                      value: '2',
+                      label: '대주주',
+                    },
+                    {
+                      value: '3',
+                      label: '대표이사',
+                    },
+                    {
+                      value: '4',
+                      label: '무한책임 사원',
+                    },
+                  ]"
+                  title="계약자와의 관계"
+                  inputId="AF_P07_p009_relationshipType"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem titleText="이름" target="#AF_P07_p009_name003">
+          <FormInvalid :error="state.name003Error">
+            <InputBlock :error="state.name003Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="이름" id="AF_P07_p009_name003" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="주민등록번호"
+          target="#AF_P07_p009_idNumber003"
+        >
+          <FormInvalid :error="state.idNumber003Error">
+            <InputBlock :error="state.idNumber003Error">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="주민등록번호 앞 6자리"
+                  id="AF_P07_p009_idNumber003"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
+                  title="주민등록번호 뒤 7자리"
+                  :dot="[true, true, true, false, false, false, false]"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+
+        <FormListItem
+          titleText="휴대폰번호"
+          target="#AF_P07_p009_phone003_telecom"
+        >
+          <FormInvalid :error="state.phone003Error">
+            <InputBlock :error="state.phone003Error">
+              <InputBlockCell>
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: 'SKT',
+                    },
+                    {
+                      value: '2',
+                      label: 'KT',
+                    },
+                    {
+                      value: '3',
+                      label: 'LG U+',
+                    },
+                    {
+                      value: '4',
+                      label: '알뜰폰 SKT',
+                    },
+                    {
+                      value: '5',
+                      label: '알뜰폰 KT',
+                    },
+                    {
+                      value: '6',
+                      label: '알뜰폰 LG +',
+                    },
+                  ]"
+                  title="통신사"
+                  inputId="AF_P07_p009_phone003_telecom"
+                  :classNames="{
+                    wrap: 'input-width-telecom',
+                  }"
+                />
+              </InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <!-- // Case : 연대보증인 여부 개인 선택시 노출 -->
       </FormList>
 
       <section class="row-margin-block-small row-margin-bottom-none">
-        <h3 class="text-title-1 row-margin-contents">
-          신청인 정보
-          <span class="text-body-1 font-weight-regular">
-            (심사결과 안내 및 승계상담 담당자 정보)
-          </span>
-        </h3>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell">
+            <h3 class="text-title-1">신청인 정보</h3>
+          </div>
+          <div class="flex-box__cell flex-box__cell--small">
+            <p class="text-body-1">(심사결과 안내 및 승계상담 담당자 정보)</p>
+          </div>
+        </div>
 
         <CheckBox id="AF_P07_p009_agree001" theme="tertiary">
           <CheckBoxObject />
@@ -406,7 +610,12 @@ export default {
             <FormInvalid :error="state.birthNumberError">
               <InputBlock :error="state.birthNumberError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="생년월일" id="AF_P07_p009_birth" />
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
+                    title="생년월일"
+                    id="AF_P07_p009_birth"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

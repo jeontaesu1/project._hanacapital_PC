@@ -62,10 +62,14 @@ export default {
     <div>
       <BasicBox>
         <KeyValue verticalAlign="center">
-          <KeyValueItem>
+          <KeyValueItem
+            :classNames="{
+              item: 'text-title-2',
+            }"
+          >
             <KeyValueTitle
               :classNames="{
-                title: 'text-title-2 color-black font-weight-medium',
+                title: 'color-black font-weight-medium',
               }"
             >
               매회 리스료(실납)
@@ -119,7 +123,7 @@ export default {
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">예상 정산 비용</h3>
 
-        <BasicBox className="row-margin-contents">
+        <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
               <h3 class="text-title-2 font-weight-medium">예상비용(지급)</h3>

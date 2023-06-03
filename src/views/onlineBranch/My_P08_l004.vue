@@ -51,26 +51,26 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <CheckBox id="My_P08_l004_agree001" theme="tertiary">
-        <CheckBoxObject />
-        <CheckBoxLabelText>
-          이용기간 중 발생된 범칙금/과태료, 기타비용 등에 대해서는 본인의
-          책임하에 부담할 것을 확약합니다.
-        </CheckBoxLabelText>
-      </CheckBox>
-      <CheckBox
-        id="My_P08_l004_agree002"
-        theme="tertiary"
-        :classNames="{
-          wrap: 'row-margin-contents',
-        }"
-      >
-        <CheckBoxObject />
-        <CheckBoxLabelText>
-          신청인(본인)은 반환 유의사항에 대해 충분한 설명을 듣고 잘 이해한 후
-          본인의 의사에 따라 반환을 신청합니다.
-        </CheckBoxLabelText>
-      </CheckBox>
+      <ul class="reset-list">
+        <li class="row-margin-contents">
+          <CheckBox id="My_P08_l004_agree001" theme="tertiary">
+            <CheckBoxObject />
+            <CheckBoxLabelText>
+              이용기간 중 발생된 범칙금/과태료, 기타비용 등에 대해서는 본인의
+              책임하에 부담할 것을 확약합니다.
+            </CheckBoxLabelText>
+          </CheckBox>
+        </li>
+        <li class="row-margin-contents">
+          <CheckBox id="My_P08_l004_agree002" theme="tertiary">
+            <CheckBoxObject />
+            <CheckBoxLabelText>
+              신청인(본인)은 반환 유의사항에 대해 충분한 설명을 듣고 잘 이해한
+              후 본인의 의사에 따라 반환을 신청합니다.
+            </CheckBoxLabelText>
+          </CheckBox>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList

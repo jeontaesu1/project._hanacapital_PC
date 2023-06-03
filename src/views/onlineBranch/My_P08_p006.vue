@@ -48,6 +48,7 @@ export default {
         연장 견적 신청정보를 확인해 주세요
       </PageMainText>
     </PageHead>
+
     <BasicBox>
       <KeyValue :wrap="true">
         <KeyValueItem>
