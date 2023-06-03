@@ -47,6 +47,8 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
+import RoundTab from '@/components/ui/tab/RoundTab.vue';
+import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -73,6 +75,7 @@ import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllip
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -91,6 +94,7 @@ import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -140,6 +144,8 @@ export default {
     NavTabButton,
     FilterTab,
     FilterTabButton,
+    RoundTab,
+    RoundTabButton,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -166,6 +172,7 @@ export default {
     PaginationNavNumber,
     CarThumb,
     CarEmblem,
+    BasicTooltip,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -183,6 +190,7 @@ export default {
     IconCompleted,
     IconImgColor,
     IconImg,
+    IconTooltip,
   },
 
   setup() {
@@ -3812,6 +3820,57 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Round Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <RoundTab :useUiTab="true">
+            <RoundTabButton link="testRoundTab001_001">Tab 1</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_002">Tab 2</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_003">Tab 3</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_004">Tab 4</RoundTabButton>
+          </RoundTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testRoundTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <RoundTab>
+          <RoundTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </RoundTabButton>
+          <RoundTabButton tagName="RouterLink" to="">Tab 2</RoundTabButton>
+
+          <RoundTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </RoundTabButton>
+          <RoundTabButton tagName="a" href="">Tab 4</RoundTabButton>
+
+          <RoundTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </RoundTabButton>
+          <RoundTabButton tagName="button" type="button">
+            Tab 6
+          </RoundTabButton>
+        </RoundTab>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Accordion Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5290,6 +5349,90 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">툴팁(tooltip)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip>
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">자동로그인</h3>
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--small-margin'],
+                    ]"
+                  >
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        자동로그인 설정을 위해서는 간편비밀번호, 얼굴인증,
+                        지문인증(Face ID)가 필요합니다.
+                      </div>
+                    </li>
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        보안을 위해 기기의 화면잠금 설정이 되어 있는 경우에만
+                        설정이 가능합니다.
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Bottom</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip placement="bottom">
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">정보성 알림</h3>
+                  <p :class="$style['tooltip-section__text']">
+                    상품 이용, 상환정보 등 하나캐피탈 서비스에 필요한 정보를
+                    수신합니다.
+                  </p>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Popup</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip type="popup">
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">정보성 알림</h3>
+                  <p :class="$style['tooltip-section__text']">
+                    상품 이용, 상환정보 등 하나캐피탈 서비스에 필요한 정보를
+                    수신합니다.
+                  </p>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
       </div>
     </section>
 

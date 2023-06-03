@@ -19,6 +19,9 @@ import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -41,6 +44,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BasicTooltip,
+    IconTooltip,
   },
 };
 </script>
@@ -126,7 +131,59 @@ export default {
         <BasicBox>
           <BasicBoxHead>
             <BasicBoxHeadLeft>
-              <h3 class="text-title-2 font-weight-medium">예상비용(지급)</h3>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <h3 class="text-title-2 font-weight-medium">
+                    예상비용(지급)
+                  </h3>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <BasicTooltip>
+                    <IconTooltip class="display-block" />
+                    <span class="for-a11y">(도움말)</span>
+
+                    <template v-slot:contents>
+                      <section :class="$style['tooltip-section']">
+                        <h3 :class="$style['tooltip-section__title']">
+                          예상비용(지급)
+                        </h3>
+                        <ul
+                          :class="[
+                            $style['basic-list'],
+                            $style['basic-list--small-margin'],
+                          ]"
+                        >
+                          <li
+                            :class="[$style['basic-list__item'], 'color-white']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              정산금액(a): 잔존가치-재리스원금
+                            </div>
+                          </li>
+                          <li
+                            :class="[$style['basic-list__item'], 'color-white']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              정산금액(a): 잔존가치-재리스원금
+                            </div>
+                          </li>
+                          <li
+                            :class="[$style['basic-list__item'], 'color-white']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              정산금액은 (만기일자) 기준으로 기준일자에 따라
+                              변경될 수 있습니다.
+                            </div>
+                          </li>
+                        </ul>
+                      </section>
+                    </template>
+                  </BasicTooltip>
+                </div>
+              </div>
             </BasicBoxHeadLeft>
             <BasicBoxHeadRight>
               <UnitText rightUnit="원" align="right">9,999,999</UnitText>
@@ -177,3 +234,7 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/onlineBranch/My_P08_p008.scss';
+</style>

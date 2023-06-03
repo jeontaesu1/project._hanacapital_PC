@@ -9,9 +9,11 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -24,8 +26,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BasicTooltip,
     IconImgColor,
     IconImg,
+    IconTooltip,
   },
 };
 </script>
@@ -139,6 +143,36 @@ export default {
                 :class="$style['upload-button__label']"
                 >건강보험자격득실확인서</label
               >
+              <div :class="$style['upload-button__tooltip']">
+                <BasicTooltip>
+                  <IconTooltip class="display-block" />
+                  <span class="for-a11y">(도움말)</span>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        건강보험득실확인서
+                      </h3>
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
+                        ]"
+                      >
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            재직확인을 위한 서류: 건강보험자격득실확인서,
+                            재직증명서 등
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
             </div>
           </div>
 
@@ -187,6 +221,36 @@ export default {
                 :class="$style['upload-button__label']"
                 >소득금액증명원</label
               >
+              <div :class="$style['upload-button__tooltip']">
+                <BasicTooltip>
+                  <IconTooltip class="display-block" />
+                  <span class="for-a11y">(도움말)</span>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        소득금액증명원
+                      </h3>
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
+                        ]"
+                      >
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            소득확인을 위한 서류: 소득금액증명원,
+                            원천징수영수증, 건강보험료납부확인서 등
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
             </div>
           </div>
 
@@ -235,6 +299,36 @@ export default {
                 :class="$style['upload-button__label']"
                 >기타서류</label
               >
+              <div :class="$style['upload-button__tooltip']">
+                <BasicTooltip>
+                  <IconTooltip class="display-block" />
+                  <span class="for-a11y">(도움말)</span>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        기타서류
+                      </h3>
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
+                        ]"
+                      >
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            심사를 위한 추가서류: 재산세납입증명원,
+                            전문직증빙서류 등
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
             </div>
           </div>
 
@@ -325,6 +419,36 @@ export default {
                 :class="$style['upload-button__label']"
                 >소득금액증명원</label
               >
+              <div :class="$style['upload-button__tooltip']">
+                <BasicTooltip>
+                  <IconTooltip class="display-block" />
+                  <span class="for-a11y">(도움말)</span>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <h3 :class="$style['tooltip-section__title']">
+                        소득금액증명원
+                      </h3>
+                      <ul
+                        :class="[
+                          $style['basic-list'],
+                          $style['basic-list--small-margin'],
+                        ]"
+                      >
+                        <li
+                          :class="[$style['basic-list__item'], 'color-white']"
+                        >
+                          <div :class="$style['basic-list__symbol']"></div>
+                          <div :class="$style['basic-list__content']">
+                            소득확인을 위한 서류: 소득금액증명원,
+                            원천징수영수증, 건강보험료납부확인서 등
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </div>
             </div>
           </div>
         </li>

@@ -32,6 +32,9 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -65,6 +68,8 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
+    BasicTooltip,
+    IconTooltip,
   },
 
   setup() {
@@ -193,6 +198,43 @@ export default {
               <div class="flex-box row-margin-item-medium">
                 <div class="flex-box__cell">
                   <p class="text-body-3 color-gray">매도용인감 주소</p>
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <BasicTooltip>
+                    <IconTooltip :class="$style['tooltip-icon']" />
+                    <span class="for-a11y">(도움말)</span>
+
+                    <template v-slot:contents>
+                      <section :class="$style['tooltip-section']">
+                        <h3 :class="$style['tooltip-section__title']">
+                          매도용인감주소 안내
+                        </h3>
+                        <ul
+                          :class="[
+                            $style['basic-list'],
+                            $style['basic-list--small-margin'],
+                          ]"
+                        >
+                          <li
+                            :class="[$style['basic-list__item'], 'color-white']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              개인/개인사업자 : 등본지 주소
+                            </div>
+                          </li>
+                          <li
+                            :class="[$style['basic-list__item'], 'color-white']"
+                          >
+                            <div :class="$style['basic-list__symbol']"></div>
+                            <div :class="$style['basic-list__content']">
+                              법인사업자 : 사업자 주소
+                            </div>
+                          </li>
+                        </ul>
+                      </section>
+                    </template>
+                  </BasicTooltip>
                 </div>
               </div>
             </FormInvalid>
@@ -381,3 +423,7 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/onlineBranch/My_P08_p026.scss';
+</style>
