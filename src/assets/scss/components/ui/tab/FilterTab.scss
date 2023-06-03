@@ -1,5 +1,5 @@
 .filter-tab {
-  margin: 0 -20px 30px;
+  margin: 0 0 40px;
 
   &::before,
   &::after {
@@ -7,68 +7,21 @@
     display: table;
   }
 
-  &__inner {
-    position: relative;
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 20px;
-      height: 100%;
-    }
-
-    &::before {
-      left: 0;
-      background: linear-gradient(
-        to right,
-        rgba($color-white, 1) 0%,
-        rgba($color-white, 1) 49.48%,
-        rgba($color-white, 0) 100%
-      );
-    }
-
-    &::after {
-      right: 0;
-      background: linear-gradient(
-        to right,
-        rgba($color-white, 0) 0%,
-        rgba($color-white, 1) 50.52%,
-        rgba($color-white, 1) 100%
-      );
-    }
-  }
-
-  &__scroller {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
   &__list {
     @include reset-list;
     display: flex;
     align-items: stretch;
+    flex-wrap: wrap;
     box-sizing: border-box;
-
-    &::before,
-    &::after {
-      content: '';
-      flex: none;
-      display: block;
-      width: 20px;
-    }
+    margin: -8px 0 0 -8px;
   }
 
   &__item {
     flex: none;
     display: flex;
     align-items: stretch;
-
-    & + & {
-      margin-left: 8px;
-    }
+    padding: 8px 0 0 8px;
+    box-sizing: border-box;
   }
 
   &__button {
@@ -90,6 +43,7 @@
   &__text {
     display: block;
     @include font-size-default(16);
+    font-weight: 500;
     color: $color-gray-60;
   }
 
@@ -101,7 +55,7 @@
     }
     .filter-tab__text {
       color: $color-white;
-      font-weight: 500;
+      font-weight: 700;
     }
   }
 }

@@ -61,17 +61,16 @@ export default {
               id="My_P08_p012_upload001"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload001"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']"
-                >운전면허증(운전경력증명서)</span
+              <label
+                for="My_P08_p012_upload001"
+                :class="$style['upload-button__label']"
+                >운전면허증(운전경력증명서)</label
               >
-            </label>
+            </div>
           </div>
 
           <!-- Case : 비활성화 상태일 때 -->
@@ -80,19 +79,18 @@ export default {
               type="file"
               id="My_P08_p012_upload001Disabled"
               :class="$style['upload-button__input']"
-              disabled
+              :disabled="true"
             />
-            <label
-              for="My_P08_p012_upload001Disabled"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']"
-                >운전면허증(운전경력증명서)</span
+              <label
+                for="My_P08_p012_upload001Disabled"
+                :class="$style['upload-button__label']"
+                >운전면허증(운전경력증명서)</label
               >
-            </label>
+            </div>
           </div>
           <!-- //Case : 비활성화 상태일 때 -->
 
@@ -132,17 +130,16 @@ export default {
               id="My_P08_p012_upload002"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload002"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']"
-                >건강보험자격득실확인서</span
+              <label
+                for="My_P08_p012_upload002"
+                :class="$style['upload-button__label']"
+                >건강보험자격득실확인서</label
               >
-            </label>
+            </div>
           </div>
 
           <!-- Case : 파일 첨부 후 -->
@@ -181,15 +178,16 @@ export default {
               id="My_P08_p012_upload003"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload003"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">소득금액증명원</span>
-            </label>
+              <label
+                for="My_P08_p012_upload003"
+                :class="$style['upload-button__label']"
+                >소득금액증명원</label
+              >
+            </div>
           </div>
 
           <!-- Case : 파일 첨부 후 -->
@@ -228,15 +226,16 @@ export default {
               id="My_P08_p012_upload004"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload004"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">기타서류</span>
-            </label>
+              <label
+                for="My_P08_p012_upload004"
+                :class="$style['upload-button__label']"
+                >기타서류</label
+              >
+            </div>
           </div>
 
           <!-- Case : 파일 첨부 후 -->
@@ -279,17 +278,16 @@ export default {
               id="My_P08_p012_upload005"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload005"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']"
-                >운전면허증 또는 주민등록증</span
+              <label
+                for="My_P08_p012_upload005"
+                :class="$style['upload-button__label']"
+                >운전면허증 또는 주민등록증</label
               >
-            </label>
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -299,15 +297,16 @@ export default {
               id="My_P08_p012_upload006"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload006"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">사업자등록증</span>
-            </label>
+              <label
+                for="My_P08_p012_upload006"
+                :class="$style['upload-button__label']"
+                >사업자등록증</label
+              >
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -317,15 +316,16 @@ export default {
               id="My_P08_p012_upload007"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload007"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">소득금액증명원</span>
-            </label>
+              <label
+                for="My_P08_p012_upload007"
+                :class="$style['upload-button__label']"
+                >소득금액증명원</label
+              >
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -335,17 +335,16 @@ export default {
               id="My_P08_p012_upload008"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload008"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']"
-                >부가세과세표준증명원</span
+              <label
+                for="My_P08_p012_upload008"
+                :class="$style['upload-button__label']"
+                >부가세과세표준증명원</label
               >
-            </label>
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -355,22 +354,23 @@ export default {
               id="My_P08_p012_upload009"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="My_P08_p012_upload009"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">기타서류</span>
-            </label>
+              <label
+                for="My_P08_p012_upload009"
+                :class="$style['upload-button__label']"
+                >기타서류</label
+              >
+            </div>
           </div>
         </li>
       </ul>
       <!-- //Case : 개인사업자인 경우 -->
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>

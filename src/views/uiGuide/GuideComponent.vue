@@ -5095,9 +5095,11 @@ export default {
             id="testUpload001"
             :class="$style['upload-button__input']"
           />
-          <label for="testUpload001" :class="$style['upload-button__label']">
-            <span :class="$style['upload-button__text']">파일첨부</span>
-          </label>
+          <div :class="$style['upload-button__block']">
+            <label for="testUpload001" :class="$style['upload-button__label']"
+              >파일첨부</label
+            >
+          </div>
         </div>
 
         <div :class="$style['upload-button']">
@@ -5106,12 +5108,14 @@ export default {
             id="testUpload002"
             :class="$style['upload-button__input']"
           />
-          <label for="testUpload002" :class="$style['upload-button__label']">
+          <div :class="$style['upload-button__block']">
             <span :class="$style['upload-button__img']">
               <IconImg />
             </span>
-            <span :class="$style['upload-button__text']">이미지 첨부</span>
-          </label>
+            <label for="testUpload002" :class="$style['upload-button__label']"
+              >이미지 첨부</label
+            >
+          </div>
         </div>
       </div>
 
@@ -5122,11 +5126,13 @@ export default {
             type="file"
             id="testUpload003"
             :class="$style['upload-button__input']"
-            disabled
+            :disabled="true"
           />
-          <label for="testUpload003" :class="$style['upload-button__label']">
-            <span :class="$style['upload-button__text']">파일첨부</span>
-          </label>
+          <div :class="$style['upload-button__block']">
+            <label for="testUpload003" :class="$style['upload-button__label']"
+              >파일첨부</label
+            >
+          </div>
         </div>
 
         <div :class="$style['upload-button']">
@@ -5134,14 +5140,16 @@ export default {
             type="file"
             id="testUpload004"
             :class="$style['upload-button__input']"
-            disabled
+            :disabled="true"
           />
-          <label for="testUpload004" :class="$style['upload-button__label']">
+          <div :class="$style['upload-button__block']">
             <span :class="$style['upload-button__img']">
               <IconImg />
             </span>
-            <span :class="$style['upload-button__text']">이미지 첨부</span>
-          </label>
+            <label for="testUpload004" :class="$style['upload-button__label']"
+              >이미지 첨부</label
+            >
+          </div>
         </div>
       </div>
     </section>

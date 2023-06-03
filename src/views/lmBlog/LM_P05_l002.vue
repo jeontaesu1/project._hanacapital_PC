@@ -57,15 +57,16 @@ export default {
               id="LM_P05_l002_upload001"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="LM_P05_l002_upload001"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">파일첨부</span>
-            </label>
+              <label
+                for="LM_P05_l002_upload001"
+                :class="$style['upload-button__label']"
+                >파일첨부</label
+              >
+            </div>
           </div>
 
           <!-- Case : 파일 첨부 후 -->
@@ -142,15 +143,16 @@ export default {
               id="LM_P05_l002_upload002"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="LM_P05_l002_upload002"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">파일첨부</span>
-            </label>
+              <label
+                for="LM_P05_l002_upload002"
+                :class="$style['upload-button__label']"
+                >파일첨부</label
+              >
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -160,15 +162,16 @@ export default {
               id="LM_P05_l002_upload003"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="LM_P05_l002_upload003"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">파일첨부</span>
-            </label>
+              <label
+                for="LM_P05_l002_upload003"
+                :class="$style['upload-button__label']"
+                >파일첨부</label
+              >
+            </div>
           </div>
         </li>
         <li class="row-margin-contents">
@@ -178,15 +181,16 @@ export default {
               id="LM_P05_l002_upload004"
               :class="$style['upload-button__input']"
             />
-            <label
-              for="LM_P05_l002_upload004"
-              :class="$style['upload-button__label']"
-            >
+            <div :class="$style['upload-button__block']">
               <span :class="$style['upload-button__img']">
                 <IconImg />
               </span>
-              <span :class="$style['upload-button__text']">파일첨부</span>
-            </label>
+              <label
+                for="LM_P05_l002_upload004"
+                :class="$style['upload-button__label']"
+                >파일첨부</label
+              >
+            </div>
           </div>
         </li>
       </ul>

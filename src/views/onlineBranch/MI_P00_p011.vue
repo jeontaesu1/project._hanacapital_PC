@@ -571,7 +571,7 @@ export default {
       </ButtonList>
     </div>
 
-    <BasicHr theme="quaternary" className="row-margin-block"></BasicHr>
+    <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
       <div class="flex-box">
@@ -593,7 +593,7 @@ export default {
           </KeyValueItem>
         </KeyValue>
 
-        <BasicHr theme="quaternary" className="row-margin-contents"></BasicHr>
+        <BasicHr theme="quaternary" className="row-margin-contents" />
 
         <KeyValue :wrap="true">
           <KeyValueItem>

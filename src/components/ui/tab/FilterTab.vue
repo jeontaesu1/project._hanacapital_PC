@@ -6,7 +6,6 @@ import {
   useCssModule,
   provide,
   onBeforeMount,
-  onMounted,
   watch,
 } from 'vue';
 
@@ -46,7 +45,6 @@ export default {
       },
     });
 
-    const scroller = ref(null);
     const list = ref(null);
 
     const customClassNames = computed(() => {
@@ -59,35 +57,8 @@ export default {
       return useUiTab ? UiTabList : 'ul';
     });
 
-    const scrollToActive = () => {
-      const scrollerEl = scroller.value;
-      const listEl = list.value.el || list.value;
-      const active = (() => {
-        if (list.value.el) {
-          return listEl.getElementsByClassName('is-tab-opened');
-        } else {
-          return listEl.getElementsByClassName(
-            style['filter-tab__item--active']
-          );
-        }
-      })();
-      const margin =
-        listEl.getElementsByClassName(style['filter-tab__item'])[0].offsetLeft -
-        listEl.offsetLeft;
-
-      if (!active.length) return;
-
-      const scrollLeft = active[0].offsetLeft - listEl.offsetLeft - margin;
-
-      scrollerEl.scrollLeft = scrollLeft;
-    };
-
     onBeforeMount(() => {
       state.useUiTab.value = props.useUiTab;
-    });
-
-    onMounted(() => {
-      scrollToActive();
     });
 
     watch(
@@ -103,11 +74,9 @@ export default {
     });
 
     return {
-      scroller,
       list,
       customClassNames,
       setComponent,
-      scrollToActive,
     };
   },
 };
@@ -123,20 +92,13 @@ export default {
       customClassNames.wrap,
     ]"
   >
-    <div :class="[$style['filter-tab__inner'], customClassNames.inner]">
-      <div
-        ref="scroller"
-        :class="[$style['filter-tab__scroller'], customClassNames.inner]"
-      >
-        <component
-          :is="setComponent"
-          ref="list"
-          :class="[$style['filter-tab__list'], customClassNames.list]"
-        >
-          <slot />
-        </component>
-      </div>
-    </div>
+    <component
+      :is="setComponent"
+      ref="list"
+      :class="[$style['filter-tab__list'], customClassNames.list]"
+    >
+      <slot />
+    </component>
   </div>
 </template>
 

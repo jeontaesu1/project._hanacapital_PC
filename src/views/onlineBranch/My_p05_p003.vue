@@ -49,15 +49,16 @@ export default {
           id="My_p05_p003_upload001"
           :class="$style['upload-button__input']"
         />
-        <label
-          for="My_p05_p003_upload001"
-          :class="$style['upload-button__label']"
-        >
+        <div :class="$style['upload-button__block']">
           <span :class="$style['upload-button__img']">
             <IconImg />
           </span>
-          <span :class="$style['upload-button__text']">파일첨부</span>
-        </label>
+          <label
+            for="My_p05_p003_upload001"
+            :class="$style['upload-button__label']"
+            >파일첨부</label
+          >
+        </div>
       </div>
 
       <!-- Case : 파일 첨부 후 -->
@@ -152,7 +153,7 @@ export default {
       </ul>
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>

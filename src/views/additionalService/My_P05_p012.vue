@@ -47,195 +47,193 @@ export default {
           <StepProgress :total="3" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText align="left"> 서류를 등록해주세요</PageMainText>
+      <PageMainText align="left">서류를 등록해주세요</PageMainText>
     </PageHead>
 
-    <div>
-      <section class="row-margin-block-small">
-        <div :class="$style['upload-button']">
-          <input
-            type="file"
-            id="My_P05_p012_upload001"
-            :class="$style['upload-button__input']"
-          />
+    <section>
+      <div :class="$style['upload-button']">
+        <input
+          type="file"
+          id="My_P05_p012_upload001"
+          :class="$style['upload-button__input']"
+        />
+        <div :class="$style['upload-button__block']">
+          <span :class="$style['upload-button__img']">
+            <IconImg />
+          </span>
           <label
             for="My_P05_p012_upload001"
             :class="$style['upload-button__label']"
+            >파일첨부</label
           >
-            <span :class="$style['upload-button__img']">
-              <IconImg />
-            </span>
-            <span :class="$style['upload-button__text']">파일첨부</span>
-          </label>
         </div>
+      </div>
 
-        <!-- Case : 파일 첨부 후 -->
-        <div
-          :class="[
-            $style['upload-file'],
-            $style['upload-file--inside'],
-            'row-margin-contents',
-          ]"
-        >
-          <ul :class="$style['upload-file__list']">
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="small">
-                  삭제
-                </BasicButton>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.png</div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="small">
-                  삭제
-                </BasicButton>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.gif</div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="small">
-                  삭제
-                </BasicButton>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">
-                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
-                </div>
-              </div>
-              <div :class="$style['upload-file__button']">
-                <BasicButton line="true" theme="quaternary" size="small">
-                  삭제
-                </BasicButton>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- //Case : 파일 첨부 후 -->
-
-        <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              서류등록파일은 이미지 파일만 가능합니다. (jpg, jpeg, png, gif
-              파일)
+      <!-- Case : 파일 첨부 후 -->
+      <div
+        :class="[
+          $style['upload-file'],
+          $style['upload-file--inside'],
+          'row-margin-contents',
+        ]"
+      >
+        <ul :class="$style['upload-file__list']">
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+            </div>
+            <div :class="$style['upload-file__button']">
+              <BasicButton line="true" theme="quaternary" size="small">
+                삭제
+              </BasicButton>
             </div>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              서류등록파일은 1회 접속 시 최대 5개까지 등록 가능하며 추가적인
-              서류등록을 원하실 경우 서류등록 메뉴에 재접속하여 추가등록해
-              주세요.
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.png</div>
+            </div>
+            <div :class="$style['upload-file__button']">
+              <BasicButton line="true" theme="quaternary" size="small">
+                삭제
+              </BasicButton>
             </div>
           </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              고객님께서 제출하신 서류는 본 금융거래 이외의 다른 목적으로
-              사용되지 않습니다.
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.gif</div>
+            </div>
+            <div :class="$style['upload-file__button']">
+              <BasicButton line="true" theme="quaternary" size="small">
+                삭제
+              </BasicButton>
+            </div>
+          </li>
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">
+                첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+              </div>
+            </div>
+            <div :class="$style['upload-file__button']">
+              <BasicButton line="true" theme="quaternary" size="small">
+                삭제
+              </BasicButton>
             </div>
           </li>
         </ul>
-      </section>
+      </div>
+      <!-- //Case : 파일 첨부 후 -->
 
-      <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">서류등록현황</h3>
-        <!-- Case : 등록된 서류가 있을 경우 -->
-        <div :class="$style['upload-file']">
-          <ul :class="$style['upload-file__list']">
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-                <div :class="$style['upload-file__date']">
-                  2023-05-08 18:15:44
-                </div>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-                <div :class="$style['upload-file__date']">
-                  2023-05-08 18:15:44
-                </div>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-                <div :class="$style['upload-file__date']">
-                  2023-05-08 18:15:44
-                </div>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
-                <div :class="$style['upload-file__date']">
-                  2023-05-08 18:15:44
-                </div>
-              </div>
-            </li>
-            <li :class="$style['upload-file__item']">
-              <div :class="$style['upload-file__icon']">
-                <IconImgColor />
-              </div>
-              <div :class="$style['upload-file__content']">
-                <div :class="$style['upload-file__name']">
-                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
-                </div>
-                <div :class="$style['upload-file__date']">
-                  2023-05-08 18:15:44
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- //Case : 등록된 서류가 있을 경우 -->
+      <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            서류등록파일은 이미지 파일만 가능합니다. (jpg, jpeg, png, gif 파일)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            서류등록파일은 1회 접속 시 최대 5개까지 등록 가능하며 추가적인
+            서류등록을 원하실 경우 서류등록 메뉴에 재접속하여 추가등록해 주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            고객님께서 제출하신 서류는 본 금융거래 이외의 다른 목적으로 사용되지
+            않습니다.
+          </div>
+        </li>
+      </ul>
+    </section>
 
-        <!-- Case : 등록된 서류가 없을 경우 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">현재 서류등록 내역이 없습니다.</p>
-        </div>
-        <!-- //Case : 등록된 서류가 없을 경우 -->
-      </section>
+    <section
+      class="contents-wrap row-margin-block-small row-margin-bottom-none"
+    >
+      <h3 class="text-title-1 row-margin-contents">서류등록현황</h3>
+
+      <!-- Case : 등록된 서류가 없을 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">현재 서류등록 내역이 없습니다.</p>
+      </div>
+      <!-- //Case : 등록된 서류가 없을 경우 -->
 
       <!-- Case : 등록된 서류가 있을 경우 -->
+      <div :class="$style['upload-file']">
+        <ul :class="$style['upload-file__list']">
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              <div :class="$style['upload-file__date']">
+                2023-05-08 18:15:44
+              </div>
+            </div>
+          </li>
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              <div :class="$style['upload-file__date']">
+                2023-05-08 18:15:44
+              </div>
+            </div>
+          </li>
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              <div :class="$style['upload-file__date']">
+                2023-05-08 18:15:44
+              </div>
+            </div>
+          </li>
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              <div :class="$style['upload-file__date']">
+                2023-05-08 18:15:44
+              </div>
+            </div>
+          </li>
+          <li :class="$style['upload-file__item']">
+            <div :class="$style['upload-file__icon']">
+              <IconImgColor />
+            </div>
+            <div :class="$style['upload-file__content']">
+              <div :class="$style['upload-file__name']">
+                첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+              </div>
+              <div :class="$style['upload-file__date']">
+                2023-05-08 18:15:44
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
       <!-- Case : 첫번째 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" :disabled="true" />
@@ -251,6 +249,7 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 첫번째 페이지일 때 -->
+
       <!-- Case : 중간 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" />
@@ -266,6 +265,7 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 중간 페이지일 때 -->
+
       <!-- Case : 마지막 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" />
@@ -282,9 +282,9 @@ export default {
       </PaginationNav>
       <!-- // Case : 마지막 페이지일 때 -->
       <!-- //Case : 등록된 서류가 있을 경우 -->
-    </div>
+    </section>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>서류등록</BasicButton>
       </ButtonListItem>
