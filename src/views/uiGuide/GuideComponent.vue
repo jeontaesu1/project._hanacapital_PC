@@ -4832,6 +4832,39 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Bank Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BankLogo code="002" />
+        <BankLogo code="003" />
+        <BankLogo code="004" />
+        <BankLogo code="007" />
+        <BankLogo code="011" />
+        <BankLogo code="020" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size : small</h3>
+        <BankLogo size="small" code="002" />
+        <BankLogo size="small" code="003" />
+        <BankLogo size="small" code="004" />
+        <BankLogo size="small" code="007" />
+        <BankLogo size="small" code="011" />
+        <BankLogo size="small" code="020" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Background</h3>
+        <BankLogo background="true" code="002" />
+        <BankLogo background="true" code="003" />
+        <BankLogo background="true" code="004" />
+        <BankLogo background="true" code="007" />
+        <BankLogo background="true" code="011" />
+        <BankLogo background="true" code="020" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Bank Logo List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
