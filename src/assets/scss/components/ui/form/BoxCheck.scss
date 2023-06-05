@@ -253,7 +253,7 @@
 
   &--contents {
     .box-check__block {
-      padding: 23px 19px;
+      padding: 23px;
     }
 
     .box-check__label {
@@ -263,7 +263,7 @@
     .box-check__input {
       &:checked {
         & + .box-check__block {
-          padding: 22px 18px;
+          padding: 22px;
         }
       }
     }
