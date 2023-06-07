@@ -629,6 +629,11 @@ const routes = [
     name: '/inventory-finance/IF_P06_p001',
     component: () => import('@/views/inventoryFinance/IF_P06_p001.vue'),
   },
+  {
+    path: '/inventory-finance/IF_P08_p001',
+    name: '/inventory-finance/IF_P08_p001',
+    component: () => import('@/views/inventoryFinance/IF_P08_p001.vue'),
+  },
 
   // lm-blog
   {

@@ -2713,6 +2713,17 @@ const datas = () => [
         create: '',
         log: [],
       },
+      {
+        depth2: '한도조회\nIF_P08_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/inventory-finance/IF_P08_p001',
+        status: 'end',
+        create: '2023.06.09',
+        log: [],
+      },
     ],
   },
   {
