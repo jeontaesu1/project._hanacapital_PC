@@ -90,6 +90,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
+import IconDownload from '@/assets/images/icon/download.svg?component';
 
 export default {
   components: {
@@ -181,6 +182,7 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    IconDownload,
   },
 
   setup() {
@@ -731,6 +733,12 @@ export default {
           <template v-slot:rightIcon>
             <IconAdd />
           </template>
+        </BasicButton>
+        <BasicButton tagName="a" inline="true" size="regular">
+          <template v-slot:leftIcon>
+            <IconDownload />
+          </template>
+          Button
         </BasicButton>
       </div>
 
