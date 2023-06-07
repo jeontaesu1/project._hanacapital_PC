@@ -58,6 +58,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import BasicBoxFoot from '@/components/ui/common/BasicBoxFoot.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -75,6 +76,7 @@ import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllip
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
@@ -155,6 +157,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
+    BasicBoxFoot,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -172,6 +175,7 @@ export default {
     PaginationNavNumber,
     CarThumb,
     CarEmblem,
+    ColorChip,
     BasicTooltip,
     IconAdd,
     IconPerson,
@@ -694,7 +698,7 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" size="mini">
+        <BasicButton inline="true" size="small">
           Button
           <template v-slot:rightIcon>
             <div :class="$style['loading-icon']"></div>
@@ -4118,6 +4122,59 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Box Foot</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>
+          // contents
+          <BasicBoxFoot>
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>기본차량가격</KeyValueTitle>
+                <KeyValueText> 15,500,000 원 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>옵션가격</KeyValueTitle>
+                <KeyValueText> + 1,200,000 원 </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicHr theme="tertiary" className="row-margin-contents" />
+
+            <KeyValue verticalAlign="center" margin="regular">
+              <KeyValueItem>
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'text-title-2 color-black font-weight-medium',
+                  }"
+                  >총 차량가격</KeyValueTitle
+                >
+                <KeyValueText>
+                  <UnitText rightUnit="원" align="right">
+                    <strong>16,700,000</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'text-title-2 color-black font-weight-medium',
+                  }"
+                  >월 납입금액</KeyValueTitle
+                >
+                <KeyValueText>
+                  <BasicButton inline="true" size="small">
+                    계산하기
+                  </BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBoxFoot>
+        </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Key Value Text</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5422,6 +5479,24 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ColorChip />
+        <ColorChip :colors="['244, 238, 238']" />
+        <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
+        <ColorChip
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
       </div>
     </section>
 
