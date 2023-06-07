@@ -16,6 +16,9 @@ import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import FormList from '@/components/ui/form/FormList.vue';
@@ -113,6 +116,9 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
+    RadioButton,
+    RadioButtonLabelText,
+    RadioButtonObject,
     InputBlock,
     InputBlockCell,
     FormList,
@@ -1266,6 +1272,247 @@ export default {
           <CheckBoxObject />
           <CheckBoxLabelText>Label<br />2 line label</CheckBoxLabelText>
         </CheckBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">RadioButton</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_001"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001"
+          id="testRadioButton001_002"
+          :defaultChecked="true"
+          @change="testInputEvent"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_001"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton001d"
+          id="testRadioButton001d_002"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Align Center</h3>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_001"
+          align="center"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002"
+          id="testRadioButton002_002"
+          align="center"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_001"
+          align="center"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton002d"
+          id="testRadioButton002d_002"
+          align="center"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Full</h3>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_001"
+          :full="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003"
+          id="testRadioButton003_002"
+          :full="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_001"
+          :full="true"
+          :disabled="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton003d"
+          id="testRadioButton003d_002"
+          :full="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+          <RadioButtonObject />
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Only Object</h3>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_001"
+          :onlyObject="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004"
+          id="testRadioButton004_002"
+          :onlyObject="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_001"
+          :onlyObject="true"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton004d"
+          id="testRadioButton004d_002"
+          :onlyObject="true"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">secondary</h3>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_001"
+          theme="secondary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005"
+          id="testRadioButton005_002"
+          theme="secondary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_001"
+          theme="secondary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton005d"
+          id="testRadioButton005d_002"
+          theme="secondary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">tertiary</h3>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_001"
+          theme="tertiary"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006"
+          id="testRadioButton006_002"
+          theme="tertiary"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_001"
+          theme="tertiary"
+          :disabled="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
+        <RadioButton
+          name="testRadioButton006d"
+          id="testRadioButton006d_002"
+          theme="tertiary"
+          :disabled="true"
+          :defaultChecked="true"
+        >
+          <RadioButtonObject />
+          <RadioButtonLabelText>Label<br />2 line label</RadioButtonLabelText>
+        </RadioButton>
       </div>
     </section>
 
