@@ -5507,6 +5507,11 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size : Regular</h3>
+        <CarThumb size="regular" src="/images/_dummy/car-thumb.png" />
+      </div>
     </section>
 
     <section class="test-section">
