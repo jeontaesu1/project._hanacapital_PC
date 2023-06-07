@@ -5367,6 +5367,225 @@ export default {
           </li>
         </ul>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">case 01</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <RoundStatus theme="nonary" size="large" :block="true"
+                  >연체</RoundStatus
+                >
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+
+              <div
+                :class="[
+                  $style['inline-alert'],
+                  $style['inline-alert--error'],
+                  'row-margin-contents',
+                ]"
+              >
+                <p :class="$style['inline-alert__text']">
+                  계약만기일이 90일 남았습니다. 만기후처리를 등록해 주세요.
+                </p>
+              </div>
+
+              <div :class="[$style['logs__button'], 'row-margin-contents']">
+                <ButtonList
+                  :wrap="true"
+                  align="center"
+                  :classNames="{
+                    wrap: 'row-margin-none',
+                  }"
+                >
+                  <ButtonListItem>
+                    <BasicButton size="regular" line="true"
+                      >만기안내장</BasicButton
+                    >
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton size="regular">만기후처리</BasicButton>
+                  </ButtonListItem>
+                </ButtonList>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="test-section">
@@ -5688,6 +5907,27 @@ export default {
               </template>
             </BasicTooltip>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Inline Alert</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <!-- <div :class="$style['inline-alert']">
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div>
+
+        <div
+          :class="[$style['inline-alert'], $style['inline-alert--complete']]"
+        >
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div> -->
+
+        <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
+          <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
         </div>
       </div>
     </section>
