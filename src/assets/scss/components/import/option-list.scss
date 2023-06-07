@@ -12,6 +12,14 @@
         border-top: 1px solid $color-gray-20;
       }
     }
+
+    &:first-child .option-list__block {
+      padding-top: 0;
+    }
+
+    &:last-child .option-list__block {
+      padding-bottom: 0;
+    }
   }
 
   &__block {
