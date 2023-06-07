@@ -103,12 +103,28 @@ export default {
                   AhnLab Safe Transaction를 설치해주십시오.
                 </div>
               </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+              </div>
             </li>
             <li :class="$style['contents-list__item']">
               <div :class="$style['contents-list__head']">
                 <div :class="$style['contents-list__symbol']">4</div>
                 <div :class="$style['contents-list__title']">
                   다음과 같이 설치를 진행합니다.
+                </div>
+              </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
                 </div>
               </div>
             </li>
@@ -121,18 +137,128 @@ export default {
                   표시됩니다.
                 </div>
               </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+              </div>
             </li>
           </ol>
         </div>
       </UiTabPanel>
 
-      <UiTabPanel name="Customer_P17_p001_tab002">// Tab 2 Contents</UiTabPanel>
+      <UiTabPanel name="Customer_P17_p001_tab002">
+        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+          <ol
+            :class="[
+              $style['contents-list__list'],
+              $style['contents-list__list--senary'],
+            ]"
+          >
+            <li :class="$style['contents-list__item']">
+              <div :class="[$style['contents-list__head'], 'flex-box']">
+                <div
+                  :class="[$style['contents-list__symbol'], 'flex-box__cell']"
+                >
+                  1
+                </div>
+                <div
+                  :class="[
+                    $style['contents-list__title'],
+                    'flex-box__cell flex-1',
+                  ]"
+                >
+                  다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
+                </div>
+                <div class="flex-box__cell">
+                  <BasicButton tagName="a" inline="true" size="regular">
+                    <template v-slot:leftIcon>
+                      <IconDownload />
+                    </template>
+                    공동인증서 프로그램 다운로드
+                  </BasicButton>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">2</div>
+                <div :class="$style['contents-list__title']">
+                  다음과 같이 설치를 진행 및 완료합니다.
+                </div>
+              </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </UiTabPanel>
 
-      <UiTabPanel name="Customer_P17_p001_tab003">// Tab 3 Contents</UiTabPanel>
+      <UiTabPanel name="Customer_P17_p001_tab003">
+        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+          <ol
+            :class="[
+              $style['contents-list__list'],
+              $style['contents-list__list--senary'],
+            ]"
+          >
+            <li :class="$style['contents-list__item']">
+              <div :class="[$style['contents-list__head'], 'flex-box']">
+                <div
+                  :class="[$style['contents-list__symbol'], 'flex-box__cell']"
+                >
+                  1
+                </div>
+                <div
+                  :class="[
+                    $style['contents-list__title'],
+                    'flex-box__cell flex-1',
+                  ]"
+                >
+                  다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
+                </div>
+                <div class="flex-box__cell">
+                  <BasicButton tagName="a" inline="true" size="regular">
+                    <template v-slot:leftIcon>
+                      <IconDownload />
+                    </template>
+                    증명서 발급 프로그램 다운로드
+                  </BasicButton>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">2</div>
+                <div :class="$style['contents-list__title']">
+                  다음과 같이 설치를 진행 및 완료합니다.
+                </div>
+              </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </UiTabPanel>
     </UiTab>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/additionalService/My_P06_l002.scss';
+@import '@/assets/scss/views/customer/Customer_P17_p001.scss';
 </style>

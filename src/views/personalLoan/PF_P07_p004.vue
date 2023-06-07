@@ -535,7 +535,7 @@ export default {
           </ul>
         </div>
 
-        <FormList class="row-margin-container-medium">
+        <FormList :classNames="{ wrap: 'row-margin-container-medium' }">
           <FormListItem
             titleText="주민등록번호"
             target="#PF_P07_p004_id"
