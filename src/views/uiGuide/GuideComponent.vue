@@ -2248,6 +2248,57 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 5</h3>
+
+        <BoxCheckList :wrap="true" col="5">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_005"
+            >
+              <BoxCheckLabel>Label 5</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
     </section>
 
     <section class="test-section">
