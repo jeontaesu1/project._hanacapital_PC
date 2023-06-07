@@ -308,6 +308,141 @@ const routes = [
     name: '/customer/Customer_P02_p003',
     component: () => import('@/views/customer/Customer_P02_p003.vue'),
   },
+  {
+    path: '/customer/Customer_P12_p001',
+    name: '/customer/Customer_P12_p001',
+    component: () => import('@/views/customer/Customer_P12_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P05_p001',
+    name: '/customer/Customer_P05_p001',
+    component: () => import('@/views/customer/Customer_P05_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P13_p001',
+    name: '/customer/Customer_P13_p001',
+    component: () => import('@/views/customer/Customer_P13_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P07_p001',
+    name: '/customer/Customer_P07_p001',
+    component: () => import('@/views/customer/Customer_P07_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P17_p001',
+    name: '/customer/Customer_P17_p001',
+    component: () => import('@/views/customer/Customer_P17_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P17_p002',
+    name: '/customer/Customer_P17_p002',
+    component: () => import('@/views/customer/Customer_P17_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P17_p003',
+    name: '/customer/Customer_P17_p003',
+    component: () => import('@/views/customer/Customer_P17_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P08_p001',
+    name: '/customer/Customer_P08_p001',
+    component: () => import('@/views/customer/Customer_P08_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p001',
+    name: '/customer/Customer_P14_p001',
+    component: () => import('@/views/customer/Customer_P14_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p002',
+    name: '/customer/Customer_P14_p002',
+    component: () => import('@/views/customer/Customer_P14_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p003',
+    name: '/customer/Customer_P14_p003',
+    component: () => import('@/views/customer/Customer_P14_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p004',
+    name: '/customer/Customer_P14_p004',
+    component: () => import('@/views/customer/Customer_P14_p004.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p006',
+    name: '/customer/Customer_P14_p006',
+    component: () => import('@/views/customer/Customer_P14_p006.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p001',
+    name: '/customer/Customer_P09_p001',
+    component: () => import('@/views/customer/Customer_P09_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p002',
+    name: '/customer/Customer_P09_p002',
+    component: () => import('@/views/customer/Customer_P09_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p003',
+    name: '/customer/Customer_P09_p003',
+    component: () => import('@/views/customer/Customer_P09_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p004',
+    name: '/customer/Customer_P09_p004',
+    component: () => import('@/views/customer/Customer_P09_p004.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p005',
+    name: '/customer/Customer_P09_p005',
+    component: () => import('@/views/customer/Customer_P09_p005.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p006',
+    name: '/customer/Customer_P09_p006',
+    component: () => import('@/views/customer/Customer_P09_p006.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p007',
+    name: '/customer/Customer_P09_p007',
+    component: () => import('@/views/customer/Customer_P09_p007.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p008',
+    name: '/customer/Customer_P09_p008',
+    component: () => import('@/views/customer/Customer_P09_p008.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p009',
+    name: '/customer/Customer_P09_p009',
+    component: () => import('@/views/customer/Customer_P09_p009.vue'),
+  },
+  {
+    path: '/customer/Customer_P15_p001',
+    name: '/customer/Customer_P15_p001',
+    component: () => import('@/views/customer/Customer_P15_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P15_p002',
+    name: '/customer/Customer_P15_p002',
+    component: () => import('@/views/customer/Customer_P15_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p001',
+    name: '/customer/Customer_P16_p001',
+    component: () => import('@/views/customer/Customer_P16_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p002',
+    name: '/customer/Customer_P16_p002',
+    component: () => import('@/views/customer/Customer_P16_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p003',
+    name: '/customer/Customer_P16_p003',
+    component: () => import('@/views/customer/Customer_P16_p003.vue'),
+  },
 
   // additional-service
   {
