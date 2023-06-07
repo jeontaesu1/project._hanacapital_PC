@@ -698,12 +698,6 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" size="small">
-          Button
-          <template v-slot:rightIcon>
-            <div :class="$style['loading-icon']"></div>
-          </template>
-        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -1038,6 +1032,24 @@ export default {
             <IconAdd />
           </template>
         </TextButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Loading Icon</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">Default</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div :class="$style['loading-icon']"></div>
+        </div>
       </div>
     </section>
 
@@ -4081,9 +4093,9 @@ export default {
         <BasicBox>// contnets</BasicBox>
         <BasicBox theme="secondary">// contnets</BasicBox>
         <BasicBox theme="tertiary">// contnets</BasicBox>
-        <!--
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
+        <!--
         <BasicBox theme="senary">// contnets</BasicBox>
         -->
       </div>
