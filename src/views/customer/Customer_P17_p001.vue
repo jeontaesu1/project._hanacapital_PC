@@ -86,6 +86,14 @@ export default {
                   Safe Transaction 설치를 위해 “다음”을 클릭합니다.
                 </div>
               </div>
+              <div class="row-margin-item-regular">
+                <div :class="$style['image-view']">
+                  <img
+                    src="@/assets/images/_dummy/box-detail-large.png"
+                    alt="샘플 이미지"
+                  />
+                </div>
+              </div>
             </li>
             <li :class="$style['contents-list__item']">
               <div :class="$style['contents-list__head']">
@@ -126,5 +134,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_l005.scss';
+@import '@/assets/scss/views/additionalService/My_P06_l002.scss';
 </style>
