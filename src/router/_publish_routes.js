@@ -1190,11 +1190,6 @@ const routes = [
     component: () => import('@/views/auto/AF_P01_p002.vue'),
   },
   {
-    path: '/auto/AF_P01_p003',
-    name: '/auto/AF_P01_p003',
-    component: () => import('@/views/auto/AF_P01_p003.vue'),
-  },
-  {
     path: '/auto/AF_P01_p004',
     name: '/auto/AF_P01_p004',
     component: () => import('@/views/auto/AF_P01_p004.vue'),
@@ -1203,11 +1198,6 @@ const routes = [
     path: '/auto/AF_P02_p002',
     name: '/auto/AF_P02_p002',
     component: () => import('@/views/auto/AF_P02_p002.vue'),
-  },
-  {
-    path: '/auto/AF_P02_p003',
-    name: '/auto/AF_P02_p003',
-    component: () => import('@/views/auto/AF_P02_p003.vue'),
   },
   {
     path: '/auto/AF_P02_p004',

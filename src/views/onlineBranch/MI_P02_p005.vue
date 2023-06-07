@@ -12,6 +12,7 @@ import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
+import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
@@ -48,6 +49,7 @@ export default {
     BasicHr,
     UnitText,
     BoxCheck,
+    BoxCheckObject,
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
@@ -378,6 +380,15 @@ export default {
           사용신청 시, 선택한 계약의 결제일이 2일 이내일 경우 익월 처리됩니다.
         </p>
 
+        <!-- Case : 조회할 계약이 없는 경우 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">
+            하나머니를 사용할 수 있는 계약이 없습니다.
+          </p>
+        </div>
+        <!-- //Case : 조회할 계약이 없는 경우 -->
+
+        <!-- Case : 조회할 계약이 있는 경우 -->
         <ul class="reset-list row-margin-contents">
           <li class="row-margin-contents">
             <BasicBox>
@@ -846,15 +857,294 @@ export default {
                 </p>
 
                 <ul class="reset-list row-margin-item-group">
-                  <li class="row-margin-contents"></li>
-                  <li class="row-margin-contents"></li>
-                  <li class="row-margin-contents"></li>
+                  <li class="row-margin-contents-small">
+                    <BasicBox theme="quinary">
+                      <BasicBoxHead>
+                        <BasicBoxHeadLeft>
+                          <h5 class="text-title-1 font-weight-medium">사용</h5>
+                        </BasicBoxHeadLeft>
+                      </BasicBoxHead>
+
+                      <KeyValue :wrap="true">
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청일자</KeyValueTitle>
+                          <KeyValueText>2022.02.02</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청금액</KeyValueTitle>
+                          <KeyValueText>999,999,999 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소일자</KeyValueTitle>
+                          <KeyValueText>2022.02.09</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소금액</KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            사용 후 잔액<br />
+                            (결제완료 시 머니)
+                          </KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </BasicBox>
+                  </li>
+                  <li class="row-margin-contents-small">
+                    <BoxCheck
+                      :contents="true"
+                      type="checkbox"
+                      align="top"
+                      id="MI_P02_p005_cancel002"
+                    >
+                      <template v-slot:left>
+                        <BoxCheckObject />
+                      </template>
+                      <BoxCheckLabel>
+                        <span class="for-a11y">선택</span>
+                      </BoxCheckLabel>
+
+                      <h5 class="text-title-1 font-weight-medium">사용</h5>
+
+                      <BasicHr
+                        theme="quaternary"
+                        className="row-margin-contents"
+                      />
+
+                      <KeyValue :wrap="true">
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청일자</KeyValueTitle>
+                          <KeyValueText>2022.02.02</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청금액</KeyValueTitle>
+                          <KeyValueText>999,999,999 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소일자</KeyValueTitle>
+                          <KeyValueText>2022.02.09</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소금액</KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            사용 후 잔액<br />
+                            (결제완료 시 머니)
+                          </KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </BoxCheck>
+                  </li>
+                  <li class="row-margin-contents-small">
+                    <BoxCheck
+                      :contents="true"
+                      type="checkbox"
+                      align="top"
+                      id="MI_P02_p005_cancel003"
+                    >
+                      <template v-slot:left>
+                        <BoxCheckObject />
+                      </template>
+                      <BoxCheckLabel>
+                        <span class="for-a11y">선택</span>
+                      </BoxCheckLabel>
+
+                      <h5 class="text-title-1 font-weight-medium">사용</h5>
+
+                      <BasicHr
+                        theme="quaternary"
+                        className="row-margin-contents"
+                      />
+
+                      <KeyValue :wrap="true">
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청일자</KeyValueTitle>
+                          <KeyValueText>2022.02.02</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청금액</KeyValueTitle>
+                          <KeyValueText>999,999,999 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소일자</KeyValueTitle>
+                          <KeyValueText>2022.02.09</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소금액</KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            사용 후 잔액<br />
+                            (결제완료 시 머니)
+                          </KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </BoxCheck>
+                  </li>
+                  <li class="row-margin-contents-small">
+                    <BoxCheck
+                      :contents="true"
+                      type="checkbox"
+                      align="top"
+                      id="MI_P02_p005_cancel004"
+                    >
+                      <template v-slot:left>
+                        <BoxCheckObject />
+                      </template>
+                      <BoxCheckLabel>
+                        <span class="for-a11y">선택</span>
+                      </BoxCheckLabel>
+
+                      <h5 class="text-title-1 font-weight-medium">사용</h5>
+
+                      <BasicHr
+                        theme="quaternary"
+                        className="row-margin-contents"
+                      />
+
+                      <KeyValue :wrap="true">
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청일자</KeyValueTitle>
+                          <KeyValueText>2022.02.02</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청금액</KeyValueTitle>
+                          <KeyValueText>999,999,999 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소일자</KeyValueTitle>
+                          <KeyValueText>2022.02.09</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소금액</KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            사용 후 잔액<br />
+                            (결제완료 시 머니)
+                          </KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </BoxCheck>
+                  </li>
+                  <li class="row-margin-contents-small">
+                    <BoxCheck
+                      :contents="true"
+                      type="checkbox"
+                      align="top"
+                      id="MI_P02_p005_cancel005"
+                    >
+                      <template v-slot:left>
+                        <BoxCheckObject />
+                      </template>
+                      <BoxCheckLabel>
+                        <span class="for-a11y">선택</span>
+                      </BoxCheckLabel>
+
+                      <h5 class="text-title-1 font-weight-medium">사용</h5>
+
+                      <BasicHr
+                        theme="quaternary"
+                        className="row-margin-contents"
+                      />
+
+                      <KeyValue :wrap="true">
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청일자</KeyValueTitle>
+                          <KeyValueText>2022.02.02</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용신청금액</KeyValueTitle>
+                          <KeyValueText>999,999,999 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소일자</KeyValueTitle>
+                          <KeyValueText>2022.02.09</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>사용취소금액</KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>
+                            사용 후 잔액<br />
+                            (결제완료 시 머니)
+                          </KeyValueTitle>
+                          <KeyValueText>0 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </BoxCheck>
+                  </li>
                 </ul>
+
+                <div class="inline-wrap align-right row-margin-contents-small">
+                  <BasicButton size="small" theme="tertiary" inline="true">
+                    사용 취소
+                  </BasicButton>
+                </div>
               </BasicBox>
               <!-- //Case : 취소 항목이 있는 경우 -->
             </BasicBox>
           </li>
         </ul>
+
+        <!-- Case : 첫번째 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" :disabled="true" />
+          <PaginationNavNumber :active="true">1</PaginationNavNumber>
+          <PaginationNavNumber>2</PaginationNavNumber>
+          <PaginationNavNumber>3</PaginationNavNumber>
+          <PaginationNavNumber>4</PaginationNavNumber>
+          <PaginationNavNumber>5</PaginationNavNumber>
+          <PaginationNavNumber>6</PaginationNavNumber>
+          <PaginationNavNumber>7</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>999</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 첫번째 페이지일 때 -->
+
+        <!-- Case : 중간 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>13</PaginationNavNumber>
+          <PaginationNavNumber>14</PaginationNavNumber>
+          <PaginationNavNumber :active="true">15</PaginationNavNumber>
+          <PaginationNavNumber>16</PaginationNavNumber>
+          <PaginationNavNumber>17</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>99</PaginationNavNumber>
+          <PaginationNavArrow type="next" />
+        </PaginationNav>
+        <!-- // Case : 중간 페이지일 때 -->
+
+        <!-- Case : 마지막 페이지일 때 -->
+        <PaginationNav>
+          <PaginationNavArrow type="prev" />
+          <PaginationNavNumber>1</PaginationNavNumber>
+          <PaginationNavEllipsis />
+          <PaginationNavNumber>93</PaginationNavNumber>
+          <PaginationNavNumber>94</PaginationNavNumber>
+          <PaginationNavNumber>95</PaginationNavNumber>
+          <PaginationNavNumber>96</PaginationNavNumber>
+          <PaginationNavNumber>97</PaginationNavNumber>
+          <PaginationNavNumber>98</PaginationNavNumber>
+          <PaginationNavNumber :active="true">99</PaginationNavNumber>
+          <PaginationNavArrow type="next" :disabled="true" />
+        </PaginationNav>
+        <!-- // Case : 마지막 페이지일 때 -->
+        <!-- //Case : 조회할 계약이 있는 경우 -->
       </section>
       <!-- //Case : 하나머니 사용/취소 탭 -->
     </div>
