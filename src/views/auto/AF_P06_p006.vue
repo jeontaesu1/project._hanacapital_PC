@@ -117,11 +117,7 @@ export default {
         </BasicBoxHeadLeft>
       </BasicBoxHead>
       <KeyValue verticalAlign="center">
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-1',
-          }"
-        >
+        <KeyValueItem>
           <KeyValueTitle :classNames="{ title: 'color-black' }">
             차량 가격
           </KeyValueTitle>
@@ -136,16 +132,20 @@ export default {
 
     <div class="row-margin-container-medium row-margin-bottom-none">
       <FormList>
-        <FormListItem titleText="차량구입금액" target="#AF_P06_p006_carAmount">
+        <FormListItem
+          titleText="차량구입금액"
+          :require="true"
+          target="#AF_P06_p006_carAmount"
+        >
           <FormInvalid :error="state.carAmountError">
             <InputBlock :error="state.carAmountError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
                   :useDelete="false"
-                  type="number"
                   pattern="\d*"
                   title="차량구입금액"
+                  placeholder="매매계약서상 매매금액을 입력해 주세요."
                   id="AF_P06_p006_carAmount"
                 />
               </InputBlockCell>
@@ -154,7 +154,11 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText align="right">천오백삼십만원</FormHelpText>
+            <!-- Case : 차량구입금액 입력 시 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }"
+              >천오백삼십만원</FormHelpText
+            >
+            <!-- // Case : 차량구입금액 입력 시 노출 -->
           </FormInvalid>
         </FormListItem>
 
@@ -165,9 +169,9 @@ export default {
                 <BasicInput
                   align="right"
                   :useDelete="false"
-                  type="number"
                   pattern="\d*"
                   title="대출신청금액"
+                  placeholder="최소 대출금액은 200만원 입니다."
                   id="AF_P06_p006_loanAmount"
                 />
               </InputBlockCell>
@@ -176,23 +180,23 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText align="right">천삼백만원</FormHelpText>
+            <!-- Case : 대출신청금액 입력 시 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }"
+              >천삼백만원</FormHelpText
+            >
+            <!-- // Case : 대출신청금액 입력 시 노출 -->
+
+            <NoticeText
+              :classNames="{
+                wrap: 'row-margin-item-medium',
+              }"
+            >
+              대출신청금액은 차량 기준가격과 차량구입비용을 초과할 수 없습니다.
+            </NoticeText>
           </FormInvalid>
         </FormListItem>
 
-        <NoticeText
-          :classNames="{
-            wrap: 'row-margin-item-medium row-margin-bottom-none',
-          }"
-        >
-          대출신청금액은 차량 기준가격과 차량구입비용을 초과할 수 없습니다.
-        </NoticeText>
-
-        <FormListItem
-          titleText="대출신청기간"
-          :forceFocus="true"
-          class="row-margin-contents"
-        >
+        <FormListItem titleText="대출신청기간" :forceFocus="true">
           <FormInvalid :error="state.typeError">
             <BoxCheckList>
               <BoxCheckListItem>
@@ -233,6 +237,7 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>

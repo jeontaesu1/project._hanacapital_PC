@@ -41,7 +41,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          사고이력조회_요약정보 팝업<br />AF_P06_l002
+          사고이력조회<br />AF_P06_l002<br />AF_P06_l003
         </BasicButton>
       </ButtonListItem>
     </ButtonList>

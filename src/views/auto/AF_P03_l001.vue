@@ -60,7 +60,6 @@ export default {
 
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
-          <!-- Case : Android -->
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconPlayStore /></span>
@@ -75,9 +74,6 @@ export default {
               </span>
             </button>
           </li>
-          <!-- // Case : Android -->
-
-          <!-- Case : IOS -->
           <li :class="$style['icon-list__item']">
             <button type="button" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"><IconAppStore /></span>
@@ -92,7 +88,6 @@ export default {
               </span>
             </button>
           </li>
-          <!-- // Case : IOS -->
         </ul>
       </div>
     </ModalPopup>

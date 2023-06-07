@@ -204,11 +204,7 @@ export default {
         <!-- //Case : 리스일 경우 -->
       </section>
 
-      <BasicHr
-        theme="secondary"
-        type="popup"
-        className="row-margin-block"
-      ></BasicHr>
+      <BasicHr theme="secondary" type="popup" className="row-margin-block" />
 
       <section>
         <h3 class="text-big-3 row-margin-contents">만기처리 안내</h3>
@@ -478,10 +474,7 @@ export default {
         </section>
       </section>
 
-      <BasicHr
-        theme="quaternary"
-        className="row-margin-container-medium"
-      ></BasicHr>
+      <BasicHr theme="quaternary" className="row-margin-container-medium" />
 
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">

@@ -29,9 +29,9 @@ export default {
       <IllustObject type="complete" />
       <IllustInfoTitle>대출신청이 접수 되었습니다</IllustInfoTitle>
 
-      <!-- Case : 시스템심사&Fraud인 경우 -->
+      <!-- Case : 시스템심사 & Fraud인 경우 -->
       <IllustInfoTitle>전화상담신청이 완료되었습니다</IllustInfoTitle>
-      <!-- // Case : 시스템심사&Fraud인 경우 -->
+      <!-- // Case : 시스템심사 & Fraud인 경우 -->
 
       <IllustInfoText>
         고객님 감사합니다.<br />

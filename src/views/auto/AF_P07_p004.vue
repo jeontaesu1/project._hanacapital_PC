@@ -40,12 +40,12 @@ export default {
       <IllustInfoTitle>승계 신청이 완료되었습니다</IllustInfoTitle>
       <IllustInfoText>
         승계 신청 URL을 발송하고 싶으시면, 아래 승계 동의 된 차량을 선택한 후<br />
-        ‘승계 신청URL 전송“ 버튼을 선택해주세요.
+        "승계 신청URL 전송" 버튼을 선택해주세요.
       </IllustInfoText>
     </IllustInfo>
 
     <section class="row-margin-block-small row-margin-bottom-none">
-      <h3 class="text-title-1 row-margin-contents">승계 신청 대상 차량</h3>
+      <h3 class="text-title-1 row-margin-contents">승계 동의 차량</h3>
 
       <BoxCheckList align="full">
         <BoxCheckListItem>
@@ -86,7 +86,7 @@ export default {
       </BoxCheckList>
     </section>
 
-    <ButtonList :wrap="true" align="center">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton theme="tertiary">승계 신청 URL 전송</BasicButton>
       </ButtonListItem>

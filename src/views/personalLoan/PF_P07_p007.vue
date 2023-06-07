@@ -131,13 +131,14 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <!-- Case : 전문금융소비자 선택시 노출 -->
+            <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
+              전문금융소비자 : 국가기관, 한국은행, 금융회사, 상시근로자 5인 이상
+              법인·조합·단체, 대출모집인, SPC 등
+            </NoticeText>
+            <!-- //Case : 전문금융소비자 선택시 노출 -->
           </FormInvalid>
-          <!-- Case : 전문금융소비자 선택시 노출 -->
-          <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-            전문금융소비자 : 국가기관, 한국은행, 금융회사, 상시근로자 5인 이상
-            법인·조합·단체, 대출모집인, SPC 등
-          </NoticeText>
-          <!-- //Case : 전문금융소비자 선택시 노출 -->
         </FormListItem>
 
         <FormListItem
@@ -204,7 +205,10 @@ export default {
           <FormInvalid :error="state.usageInputError">
             <InputBlock :error="state.usageInputError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="자금용도" id="PF_P07_p007_PurposeInput" />
+                <BasicInput
+                  title="자금용도 직접 입력"
+                  id="PF_P07_p007_PurposeInput"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -212,7 +216,7 @@ export default {
         </FormListItem>
         <!-- //Case : 자금용도 - '기타' 항목 선택 시 노출 -->
 
-        <!-- Case :  일반금융소비자 선택 시 노출 -->
+        <!-- Case : 일반금융소비자 선택 시 노출 -->
         <FormListItem
           titleText="연령"
           target="#PF_P07_p007_age"
@@ -302,17 +306,18 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- //Case :  일반금융소비자 선택 시 노출 -->
+        <!-- // Case : 일반금융소비자 선택 시 노출 -->
 
-        <!-- Case :  전문금융소비자 선택 시 노출 -->
+        <!-- Case : 전문금융소비자 선택 시 노출 -->
         <FormListItem titleText="업력" target="#PF_P07_p007_careerPeriod">
           <FormInvalid :error="state.careerError">
             <InputBlock :error="state.careerError">
               <InputBlockCell :flexible="true">
                 <BasicInput
                   align="right"
-                  :useDelete="false"
+                  type="number"
                   pattern="\d*"
+                  :useDelete="false"
                   title="업력"
                   id="PF_P07_p007_careerPeriod"
                 />
@@ -429,7 +434,7 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!--// Case :  전문금융소비자 선택 시 노출 -->
+        <!-- // Case : 전문금융소비자 선택 시 노출 -->
 
         <FormListItem
           titleText="고정지출"
@@ -502,7 +507,7 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <!-- Case :  일반금융소비자 선택 시 노출 -->
+        <!-- Case : 일반금융소비자 선택 시 노출 -->
         <FormListItem
           titleText="신용점수"
           target="#PF_P07_p007_creditScore"
@@ -522,9 +527,9 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- //Case :  일반금융소비자 선택 시 노출 -->
+        <!-- // Case : 일반금융소비자 선택 시 노출 -->
 
-        <!-- Case :  전문금융소비자 선택 시 노출 -->
+        <!-- Case : 전문금융소비자 선택 시 노출 -->
         <FormListItem titleText="신용평가사" :forceFocus="true">
           <FormInvalid :error="state.creditRatingAgencyError">
             <BoxCheckList>
@@ -583,12 +588,13 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- //Case :  전문금융소비자 선택 시 노출 -->
+        <!-- // Case : 전문금융소비자 선택 시 노출 -->
       </FormList>
     </section>
 
     <section class="row-margin-block-small row-margin-bottom-none">
       <h2 class="text-title-1">적합성·적정성 확인</h2>
+
       <BasicBox className="row-margin-contents">
         <ol
           :class="[
@@ -655,21 +661,21 @@ export default {
       </CheckBox>
 
       <div class="row-margin-contents-small row-margin-bottom-none">
-        <div
+        <p
           class="text-body-1 color-gray-tertiary font-weight-light align-right"
         >
           2021년 09월 23일
-        </div>
-        <div class="text-body-1 align-right row-margin-item-group">
+        </p>
+        <p class="text-body-1 align-right row-margin-item-group">
           신청인(또는 연대보증인) 김하나 (서명/인)
-        </div>
+        </p>
       </div>
 
       <BasicBox theme="tertiary" class="row-margin-container-medium">
-        <div class="text-body-2 color-gray font-weight-medium">
+        <p class="text-body-2 color-gray font-weight-medium">
           본 확인서는 [금융소비자 보호에 관한 법률] 제 17조 및 제 18조에 따라
           작성되었습니다.
-        </div>
+        </p>
       </BasicBox>
     </section>
 

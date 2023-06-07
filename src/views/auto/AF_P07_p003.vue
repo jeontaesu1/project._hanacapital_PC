@@ -54,6 +54,16 @@ export default {
       </PageSubText>
     </PageHead>
 
+    <!-- Case : 승계 가능한 차량이 없을 경우 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">
+        승계 가능한 차량이 없습니다.<br />
+        양도인에게 승계 동의를 요청해 주세요.
+      </p>
+    </div>
+    <!-- // Case : 승계 가능한 차량이 없을 경우 -->
+
+    <!-- Case : 승계 가능한 차량이 있을 경우 -->
     <BoxCheckList align="full">
       <BoxCheckListItem>
         <BoxCheck
@@ -96,15 +106,7 @@ export default {
         </BoxCheck>
       </BoxCheckListItem>
     </BoxCheckList>
-
-    <!-- Case : 승계 가능한 차량이 없을 경우 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">
-        승계 가능한 차량이 없습니다.<br />
-        양도인에게 승계 동의를 요청해 주세요.
-      </p>
-    </div>
-    <!-- // Case : 승계 가능한 차량이 없을 경우 -->
+    <!-- // Case : 승계 가능한 차량이 있을 경우 -->
 
     <ButtonList>
       <ButtonListItem>
