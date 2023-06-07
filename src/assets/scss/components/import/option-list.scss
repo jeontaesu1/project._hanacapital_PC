@@ -1,0 +1,30 @@
+.option-list {
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    & + & {
+      &::before {
+        content: '';
+        display: block;
+        margin-left: 34px;
+        border-top: 1px solid $color-gray-20;
+      }
+    }
+  }
+
+  &__block {
+    display: block;
+    padding: 24px 0;
+  }
+
+  &__left {
+    flex: none;
+  }
+
+  &__right {
+    flex: 1;
+    min-width: 0;
+  }
+}
