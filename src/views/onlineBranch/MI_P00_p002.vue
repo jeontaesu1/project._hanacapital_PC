@@ -1582,7 +1582,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
@@ -1648,7 +1648,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
@@ -1714,7 +1714,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
@@ -1780,7 +1780,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
@@ -1859,7 +1859,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
@@ -1905,7 +1905,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
 
@@ -1960,7 +1960,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
 
@@ -2011,7 +2011,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
 
@@ -2082,7 +2082,7 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>결제일자</KeyValueTitle>
+              <KeyValueTitle>결제일</KeyValueTitle>
               <KeyValueText>05일</KeyValueText>
             </KeyValueItem>
           </KeyValue>
