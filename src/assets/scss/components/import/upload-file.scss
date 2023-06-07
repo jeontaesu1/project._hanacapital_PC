@@ -1,0 +1,63 @@
+.upload-file {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: flex;
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__icon {
+    flex: none;
+
+    svg {
+      display: block;
+      width: 48px;
+      height: 48px;
+    }
+
+    & + .upload-file__content {
+      margin-left: 16px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+    margin-top: 11px;
+
+    & + .upload-file__button {
+      margin-left: 16px;
+    }
+  }
+
+  &__name {
+    @include font-size-default(18);
+    color: $color-black;
+
+    & + .upload-file__date {
+      margin-top: 6px;
+    }
+  }
+
+  &__date {
+    @include font-size-default(15);
+    color: $color-gray-60;
+  }
+
+  &__button {
+    flex: none;
+    margin-top: 4px;
+  }
+
+  &--inside {
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+}

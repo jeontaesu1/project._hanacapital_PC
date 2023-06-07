@@ -45,6 +45,10 @@ import UiTabButton from '@/components/ui/tab/UiTabButton.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import FilterTab from '@/components/ui/tab/FilterTab.vue';
+import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
+import RoundTab from '@/components/ui/tab/RoundTab.vue';
+import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -70,6 +74,9 @@ import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vu
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -87,6 +94,9 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+import IconImg from '@/assets/images/icon/img.svg?component';
+import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 
 export default {
   components: {
@@ -134,6 +144,10 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    FilterTab,
+    FilterTabButton,
+    RoundTab,
+    RoundTabButton,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -159,6 +173,9 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    CarThumb,
+    CarEmblem,
+    BasicTooltip,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -175,6 +192,9 @@ export default {
     IconCallMint,
     IconCompleted,
     ImgMainSample,
+    IconImgColor,
+    IconImg,
+    IconTooltip,
   },
 
   setup() {
@@ -3940,6 +3960,108 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Filter Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <FilterTab :useUiTab="true">
+            <FilterTabButton link="testFilterTab001_001">Tab 1</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_002">Tab 2</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_003">Tab 3</FilterTabButton>
+            <FilterTabButton link="testFilterTab001_004">Tab 4</FilterTabButton>
+          </FilterTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testFilterTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testFilterTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <FilterTab>
+          <FilterTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </FilterTabButton>
+          <FilterTabButton tagName="RouterLink" to="">Tab 2</FilterTabButton>
+
+          <FilterTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </FilterTabButton>
+          <FilterTabButton tagName="a" href="">Tab 4</FilterTabButton>
+
+          <FilterTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </FilterTabButton>
+          <FilterTabButton tagName="button" type="button">
+            Tab 6
+          </FilterTabButton>
+        </FilterTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Round Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <RoundTab :useUiTab="true">
+            <RoundTabButton link="testRoundTab001_001">Tab 1</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_002">Tab 2</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_003">Tab 3</RoundTabButton>
+            <RoundTabButton link="testRoundTab001_004">Tab 4</RoundTabButton>
+          </RoundTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testRoundTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testRoundTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <RoundTab>
+          <RoundTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </RoundTabButton>
+          <RoundTabButton tagName="RouterLink" to="">Tab 2</RoundTabButton>
+
+          <RoundTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </RoundTabButton>
+          <RoundTabButton tagName="a" href="">Tab 4</RoundTabButton>
+
+          <RoundTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </RoundTabButton>
+          <RoundTabButton tagName="button" type="button">
+            Tab 6
+          </RoundTabButton>
+        </RoundTab>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Accordion Base</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5248,6 +5370,198 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Upload Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload001"
+            :class="$style['upload-button__input']"
+          />
+          <div :class="$style['upload-button__block']">
+            <label for="testUpload001" :class="$style['upload-button__label']"
+              >파일첨부</label
+            >
+          </div>
+        </div>
+
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload002"
+            :class="$style['upload-button__input']"
+          />
+          <div :class="$style['upload-button__block']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <label for="testUpload002" :class="$style['upload-button__label']"
+              >이미지 첨부</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">disabled</h3>
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload003"
+            :class="$style['upload-button__input']"
+            :disabled="true"
+          />
+          <div :class="$style['upload-button__block']">
+            <label for="testUpload003" :class="$style['upload-button__label']"
+              >파일첨부</label
+            >
+          </div>
+        </div>
+
+        <div :class="$style['upload-button']">
+          <input
+            type="file"
+            id="testUpload004"
+            :class="$style['upload-button__input']"
+            :disabled="true"
+          />
+          <div :class="$style['upload-button__block']">
+            <span :class="$style['upload-button__img']">
+              <IconImg />
+            </span>
+            <label for="testUpload004" :class="$style['upload-button__label']"
+              >이미지 첨부</label
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Upload File List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['upload-file']">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Inside (padding: 0 24px)</h3>
+        <div :class="[$style['upload-file'], $style['upload-file--inside']]">
+          <ul :class="$style['upload-file__list']">
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+              </div>
+              <div :class="$style['upload-file__button']">
+                <BasicButton line="true" theme="quaternary" size="small">
+                  삭제
+                </BasicButton>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+            <li :class="$style['upload-file__item']">
+              <div :class="$style['upload-file__icon']">
+                <IconImgColor />
+              </div>
+              <div :class="$style['upload-file__content']">
+                <div :class="$style['upload-file__name']">
+                  첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                </div>
+                <div :class="$style['upload-file__date']">
+                  2023-05-08 18:15:44
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">BasicBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5275,6 +5589,106 @@ export default {
           </p>
           <h3 class="text-title-2 font-weight-medium">다이렉트 장기렌터카</h3>
         </BasicBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Thumb</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarThumb src="/images/_dummy/car-thumb.png" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Car Emblem</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">툴팁(tooltip)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip>
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">자동로그인</h3>
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--small-margin'],
+                    ]"
+                  >
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        자동로그인 설정을 위해서는 간편비밀번호, 얼굴인증,
+                        지문인증(Face ID)가 필요합니다.
+                      </div>
+                    </li>
+                    <li :class="[$style['basic-list__item'], 'color-white']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        보안을 위해 기기의 화면잠금 설정이 되어 있는 경우에만
+                        설정이 가능합니다.
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Bottom</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip placement="bottom">
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">정보성 알림</h3>
+                  <p :class="$style['tooltip-section__text']">
+                    상품 이용, 상환정보 등 하나캐피탈 서비스에 필요한 정보를
+                    수신합니다.
+                  </p>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Popup</h3>
+        <div class="inline-wrap align-center">
+          <div class="inline-block">
+            <BasicTooltip type="popup">
+              <IconTooltip class="display-block" />
+              <span class="for-a11y">(도움말)</span>
+
+              <template v-slot:contents>
+                <section :class="$style['tooltip-section']">
+                  <h3 :class="$style['tooltip-section__title']">정보성 알림</h3>
+                  <p :class="$style['tooltip-section__text']">
+                    상품 이용, 상환정보 등 하나캐피탈 서비스에 필요한 정보를
+                    수신합니다.
+                  </p>
+                </section>
+              </template>
+            </BasicTooltip>
+          </div>
+        </div>
       </div>
     </section>
 

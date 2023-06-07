@@ -40,11 +40,59 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>승계 유의사항을 확인해주세요</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <div>
+        <section class="row-margin-contents">
+          <h3 class="text-body-1 row-margin-item-group">
+            승계효력 및 차량인계시점
+          </h3>
+          <p class="text-body-3 color-gray-tertiary">
+            하나캐피탈에서 최종 승계 완료 후 승계 계약자의 효력이 발생됩니다.
+            승계 완료 이후 차량 인계 해주세요.
+          </p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-1 row-margin-item-group">
+            차량상태 점검 및 확인
+          </h3>
+          <p class="text-body-3 color-gray-tertiary">
+            사고 유무, 약정주행거리/실제주행거리, 차량 상태는 승계 당사자간
+            확인해주세요. 차량상태 미확인으로 인한 책임은 이용자에게 있습니다.
+          </p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-1 row-margin-item-group">비용정산</h3>
+          <p class="text-body-3 color-gray-tertiary">
+            승계 금액을 제외한 거래 정산(보증금/선납금)은 승계 당사자간
+            정산해주세요.
+          </p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-1 row-margin-item-group">
+            승계 후 첫 도래 원리금
+          </h3>
+          <p class="text-body-3 color-gray-tertiary">
+            승계 후 첫 도래 원리금(리스료/렌트료)은 일할 계산 금액이 아닌 원리금
+            계산 전체 금액이 청구됩니다.
+            <span class="color-green">
+              차량 인도시점 원리금 일괄 정산은 당사자간 정산</span
+            >해 주세요.
+          </p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-1 row-margin-item-group">자동차세(오토리스)</h3>
+          <p class="text-body-3 color-gray-tertiary">
+            자동차세는 승계 시점 당사자간 정산 완료해주세요.
+          </p>
+        </section>
+      </div>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +103,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">네, 모두 확인했습니다</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
