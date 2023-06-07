@@ -12,6 +12,7 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
+import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
@@ -22,7 +23,6 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 
 export default {
   components: {
@@ -38,6 +38,7 @@ export default {
     SearchButton,
     BasicBox,
     BasicBoxHead,
+    BasicBoxHeadLeft,
     UnitText,
     KeyValue,
     KeyValueItem,
@@ -48,7 +49,6 @@ export default {
     ButtonListItem,
     BasicButton,
     CarEmblem,
-    BasicBoxHeadLeft,
   },
 };
 </script>

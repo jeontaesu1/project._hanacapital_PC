@@ -75,6 +75,7 @@ export default {
     const state = reactive({
       carAmountError: false,
       loanAmountError: false,
+      typeError: false,
     });
 
     return {
@@ -122,7 +123,7 @@ export default {
           }"
         >
           <KeyValueTitle :classNames="{ title: 'color-black' }">
-            차량 조정기준가격
+            차량 가격
           </KeyValueTitle>
           <KeyValueText>
             <UnitText rightUnit="원" align="right">

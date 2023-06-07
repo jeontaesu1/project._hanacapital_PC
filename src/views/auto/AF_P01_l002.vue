@@ -111,7 +111,6 @@ export default {
               <td>고객 보험 요율(보험 경력 유지)</td>
               <td>렌터카사 보험 요율</td>
             </tr>
-            <!--  -->
             <tr>
               <th rowspan="3">각종세금</th>
               <th>취득세</th>
@@ -128,7 +127,6 @@ export default {
               <td>CC당 130~286원</td>
               <td>CC당 18~24원</td>
             </tr>
-            <!--  -->
             <tr>
               <th colspan="2">주행제한거리</th>
               <td>주행거리 약정 (예 : 4만 km)</td>
