@@ -178,6 +178,10 @@
     }
   }
 
+  &__list--secondary-no-padding {
+    padding: 0;
+  }
+
   &__list--tertiary {
     padding: 16px 0 0 22px;
     display: flex;
@@ -195,6 +199,14 @@
 
       > .agree-list__head {
         padding: 0;
+
+        .agree-list__link {
+          background-size: 16px 16px;
+        }
+
+        .agree-list__right {
+          min-height: 24px;
+        }
       }
     }
   }

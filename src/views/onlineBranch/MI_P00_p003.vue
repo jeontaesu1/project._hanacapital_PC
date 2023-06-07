@@ -68,7 +68,7 @@ export default {
       </li>
     </ul>
 
-    <section class="row-margin-block-small">
+    <div class="row-margin-block-small">
       <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
@@ -97,6 +97,7 @@ export default {
               <BasicBoxHeadRight>
                 <TextButton
                   :underline="true"
+                  :block="true"
                   :classNames="{
                     wrap: 'color-gray-tertiary',
                   }"
@@ -158,7 +159,39 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 첫번째 페이지일 때 -->
-    </section>
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
+    </div>
   </PageContents>
 </template>
 

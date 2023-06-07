@@ -1,0 +1,13 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/division-info.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.application {
+  padding: 23px 19px;
+}
+
+.application-contents {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid $color-gray-20;
+}

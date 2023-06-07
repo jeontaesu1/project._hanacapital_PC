@@ -5,6 +5,7 @@ import { ref } from 'vue';
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
+import PopupText from '@/components/ui/layer/PopupText.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -16,6 +17,7 @@ export default {
     UiLayer,
     PopupTitle,
     PopupButton,
+    PopupText,
     ModalPopup,
     ModalPopupHead,
     BasicButton,
@@ -40,11 +42,99 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>
+            주민 등록법 제21조(벌칙)<br />
+            제 2항 9호(시행일 2006.09.24)
+          </PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <PopupText>
+        2006년 9월 25일부터 개정된 주민 등록법에 의해 타인의 주민등록번호를
+        도용하여 온라인 회원 가입을 하는 등 아래와 같이 다른 사람의
+        주민등록번호를 부정사용하는 경우 3년 이하의 징역 또는 1천만원 이하의
+        벌금이 부과될 수 있습니다.
+      </PopupText>
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--normal-margin'],
+          'row-margin-item-group',
+        ]"
+      >
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'color-black',
+            'font-weight-regular',
+            'text-body-3',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']">-</div>
+          <div :class="$style['basic-list__content']">
+            다른 사람의 주민등록번호를 도용하여 인터넷 회원으로 가입하는 행위
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'color-black',
+            'font-weight-regular',
+            'text-body-3',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']">-</div>
+          <div :class="$style['basic-list__content']">
+            다른 사람의 주민등록번호를 재산상의 이익을 위하여 부정 사용하는 행위
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'color-black',
+            'font-weight-regular',
+            'text-body-3',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']">-</div>
+          <div :class="$style['basic-list__content']">
+            다른 사람의 주민등록번호를 게임등의 목적으로 사고 파는 행위
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'color-black',
+            'font-weight-regular',
+            'text-body-3',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']">-</div>
+          <div :class="$style['basic-list__content']">
+            다른 사람의 주민등록번호를 수집하여 유출시키는 행위
+          </div>
+        </li>
+        <li
+          :class="[
+            $style['basic-list__item'],
+            'color-black',
+            'font-weight-regular',
+            'text-body-3',
+          ]"
+        >
+          <div :class="$style['basic-list__symbol']">-</div>
+          <div :class="$style['basic-list__content']">
+            수집 목적 달성 후에도 주민등록번호를 파기하지 않고 보관하는 행위
+          </div>
+        </li>
+      </ul>
+      <PopupText>
+        타인의 주민등록번호 도용 및 부정적 사용은 범죄행위이므로, 개정
+        주민등록법 확인 후 불이익이 발생하지 않도록 주의 부탁드립니다. 또한,
+        타인의 주민등록번호를 도용하여 회원가입 및 예약을 하시는 분들은 지금
+        즉시 타인의 명의도용을 중단하여 주시기 바랍니다.
+      </PopupText>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,15 +145,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/PF_P07_l001.scss';
+</style>

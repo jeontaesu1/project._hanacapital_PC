@@ -7,9 +7,11 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import InputBlock from '@/components/ui/form/InputBlock.vue';
+import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
+import BasicInput from '@/components/ui/form/BasicInput.vue';
+import SearchButton from '@/components/ui/button/SearchButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -18,9 +20,11 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
+    InputBlock,
+    InputBlockCell,
+    BasicInput,
+    SearchButton,
+    BasicHr,
   },
   setup() {
     const layer = ref(null);
@@ -40,30 +44,68 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>아파트 검색</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <InputBlock>
+        <InputBlockCell :flexible="true">
+          <BasicInput
+            type="search"
+            title="아파트 검색어"
+            placeholder="동(읍/면) 또는 아파트 이름 입력"
+          />
+        </InputBlockCell>
+        <InputBlockCell type="search">
+          <SearchButton />
+        </InputBlockCell>
+      </InputBlock>
 
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+      <!-- Case : 검색 후 노출 -->
+
+      <BasicHr
+        className="row-margin-container-medium"
+        theme="secondary"
+        type="popup"
+      />
+
+      <!-- Case : 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+      </div>
+      <!-- Case : 결과 없을 때 -->
+
+      <!-- Case : 결과 있을 때 -->
+      <ul :class="$style['search-list']">
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+        <li :class="$style['search-list__item']">
+          <button type="button" :class="$style['search-list__link']">
+            <span :class="$style['search-list__text']">
+              서울특별시 강남구 <mark>역삼동</mark> 자자<mark>자이</mark>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <!-- // Case : 결과 있을 때 -->
+
+      <!-- // Case : 검색 후 노출 -->
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/personalLoan/PF_P02_l001.scss';
+</style>

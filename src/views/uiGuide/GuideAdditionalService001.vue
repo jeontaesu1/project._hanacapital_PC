@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import layer from '@/views/';
+import My_P06_l001 from '@/views/additionalService/My_P06_l001.vue';
+import My_P06_l002 from '@/views/additionalService/My_P06_l002.vue';
 
 export default {
   components: {
@@ -14,18 +15,25 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    My_P06_l001,
+    My_P06_l002,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
+      layer001.value.layer.open(e.target);
+    };
+    const layer002Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -41,13 +49,17 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          온라인약정 팝업<br />My_P06_l001
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          온라인약정 이용가이드<br />My_P06_l002
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <My_P06_l001 ref="layer001" />
+    <My_P06_l002 ref="layer002" />
   </PageContents>
 </template>

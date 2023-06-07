@@ -101,16 +101,16 @@ export default {
       </li>
     </ul>
 
-    <section class="row-margin-block-small">
-      <!-- Case : 근저당설정 조회 가능한 계약 없는 경우 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">
-          근저당설정조회 가능한 계약이 없습니다.
-        </p>
-      </div>
-      <!-- // Case : 근저당설정 조회 가능한 계약 없는 경우 -->
+    <!-- Case : 근저당설정 조회 가능한 계약 없는 경우 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">
+        근저당설정조회 가능한 계약이 없습니다.
+      </p>
+    </div>
+    <!-- // Case : 근저당설정 조회 가능한 계약 없는 경우 -->
 
-      <!-- Case : 근저당설정 조회 가능한 계약 있는 경우 -->
+    <!-- Case : 근저당설정 조회 가능한 계약 있는 경우 -->
+    <div>
       <ul class="reset-list">
         <!-- Case : 종료 -->
         <li class="row-margin-contents">
@@ -133,12 +133,7 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
-                  종료
-                </RoundStatus>
+                <RoundStatus size="large" :block="true"> 종료 </RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -195,11 +190,7 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="nonary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
+                <RoundStatus theme="nonary" size="large" :block="true">
                   연체
                 </RoundStatus>
               </BasicBoxHeadRight>
@@ -257,11 +248,7 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="nonary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
+                <RoundStatus theme="nonary" size="large" :block="true">
                   연체
                 </RoundStatus>
               </BasicBoxHeadRight>
@@ -318,11 +305,7 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="nonary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
+                <RoundStatus theme="nonary" size="large" :block="true">
                   연체
                 </RoundStatus>
               </BasicBoxHeadRight>
@@ -379,11 +362,7 @@ export default {
                 </div>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus
-                  theme="nonary"
-                  size="large"
-                  :classNames="{ wrap: 'display-block' }"
-                >
+                <RoundStatus theme="nonary" size="large" :block="true">
                   연체
                 </RoundStatus>
               </BasicBoxHeadRight>
@@ -436,11 +415,43 @@ export default {
         <PaginationNavArrow type="next" />
       </PaginationNav>
       <!-- // Case : 첫번째 페이지일 때 -->
-      <!-- // Case : 근저당설정 조회 가능한 계약 있는 경우 -->
-    </section>
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
+    </div>
+    <!-- // Case : 근저당설정 조회 가능한 계약 있는 경우 -->
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/My_P04_p001.scss';
+@import '@/assets/scss/views/onlineBranch/My_p04_p001.scss';
 </style>
