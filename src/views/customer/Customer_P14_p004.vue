@@ -9,7 +9,6 @@ import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -22,7 +21,6 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
-    BasicBox,
   },
 };
 </script>
@@ -111,13 +109,11 @@ export default {
       <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
 
       <!-- Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
-      <BasicBox theme="tertiary">
-        <div :class="$style['empty']">
-          <p :class="[$style['empty__text'], 'font-weight-light']">
-            고객님의 정보로 이용된 내역이 없습니다
-          </p>
-        </div>
-      </BasicBox>
+      <div>
+        <p :class="$style['not-table']">
+          고객님의 정보로 이용된 내역이 없습니다
+        </p>
+      </div>
       <!-- // Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
 
       <section class="row-margin-container-medium">
