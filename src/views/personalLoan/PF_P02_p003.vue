@@ -185,6 +185,7 @@ export default {
 
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">아파트 정보</h3>
+
         <FormList>
           <FormListItem
             titleText="아파트 정보"
@@ -204,8 +205,9 @@ export default {
                     size="small"
                     theme="tertiary"
                     id="PF_P02_p003_apartmentInfo"
-                    >아파트 검색</BasicButton
                   >
+                    아파트 검색
+                  </BasicButton>
                 </template>
               </InputBlock>
               <!-- Case: 주소 검색 및 입력 후 노출 -->
@@ -227,14 +229,26 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: '85㎡',
+                        label: '59㎡',
                       },
                       {
                         value: '2',
-                        label: '100㎡',
+                        label: '72㎡',
+                      },
+                      {
+                        value: '3',
+                        label: '74㎡',
+                      },
+                      {
+                        value: '4',
+                        label: '84㎡',
+                      },
+                      {
+                        value: '5',
+                        label: '85㎡',
                       },
                     ]"
-                    title="통신사"
+                    title="아파트 평형"
                     inputId="PF_P02_p003_apartmentInfo"
                     :classNames="{
                       wrap: 'input-width-telecom',
@@ -259,8 +273,9 @@ export default {
               <InputBlock :error="state.setAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="PF_P02_p003_amount"
+                    type="number"
                     pattern="\d*"
+                    id="PF_P02_p003_amount"
                     title="부동산 설정금액 (선택)"
                     :useDelete="false"
                     align="right"
@@ -364,6 +379,7 @@ export default {
                 </BoxCheckListItem>
               </BoxCheckList>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
               <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
                 주민등록등본 주소와 아파트 주소가 일치하면 ‘예‘, 다르면
                 ‘아니오’를 선택해주세요.
@@ -374,7 +390,7 @@ export default {
       </section>
     </div>
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>

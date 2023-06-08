@@ -276,7 +276,7 @@ export default {
                     },
                   ]"
                   title="연식 선택하기"
-                  id="AF_P06_p003_year"
+                  inputId="AF_P06_p003_year"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -312,7 +312,7 @@ export default {
                     },
                   ]"
                   title="엔진타입 선택하기"
-                  id="AF_P06_p003_engineType"
+                  inputId="AF_P06_p003_engineType"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -423,10 +423,10 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+        <BasicButton :line="true" theme="quaternary">재선택</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton>확인</BasicButton>
+        <BasicButton>다음</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

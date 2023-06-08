@@ -90,12 +90,9 @@ export default {
           <StepProgress :total="3" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText align="left">
-        실명 및 본인 인증을 진행해 주세요
-      </PageMainText>
+      <PageMainText align="left">고객정보를 입력해 주세요</PageMainText>
       <PageSubText align="left">
-        대출상담 및 한도 조회를 위한 신용정보 조회는<br />
-        개인신용평점에 영향을 주지 않습니다.
+        실제 정보와 상이할 경우 한도 및 금리가 달라질 수 있습니다.
       </PageSubText>
     </PageHead>
 
@@ -191,6 +188,8 @@ export default {
               <InputBlock :error="state.businessNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
+                    pattern="\d*"
                     title="사업자번호"
                     id="PF_P09_p003_businessNumber"
                   />
@@ -315,7 +314,7 @@ export default {
                         label: '100㎡',
                       },
                     ]"
-                    title="평형"
+                    title="아파트 평형"
                     inputId="PF_P09_p003_apartmentInfo"
                     :classNames="{
                       wrap: 'input-width-telecom',
@@ -340,8 +339,9 @@ export default {
               <InputBlock :error="state.setAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="PF_P09_p003_amount"
+                    type="number"
                     pattern="\d*"
+                    id="PF_P09_p003_amount"
                     title="부동산 설정금액 (선택)"
                     :useDelete="false"
                     align="right"
@@ -457,8 +457,9 @@ export default {
               <InputBlock :error="state.limitAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    id="PF_P09_p003_limitAmount"
+                    type="number"
                     pattern="\d*"
+                    id="PF_P09_p003_limitAmount"
                     title="희망한도"
                     :useDelete="false"
                     align="right"

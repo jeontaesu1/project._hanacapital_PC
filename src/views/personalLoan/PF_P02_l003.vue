@@ -71,11 +71,11 @@ export default {
           <div :class="$style['basic-table']">
             <table>
               <colgroup>
-                <col style="width: 86px" />
-                <col style="width: 90px" />
-                <col style="width: 83px" />
+                <col style="width: 87px" />
+                <col style="width: 91px" />
+                <col style="width: 84px" />
                 <col />
-                <col style="width: 79px" />
+                <col style="width: 80px" />
               </colgroup>
               <thead>
                 <tr>
@@ -120,11 +120,11 @@ export default {
           <div :class="$style['basic-table']">
             <table>
               <colgroup>
-                <col style="width: 79px" />
+                <col style="width: 80px" />
                 <col style="width: 91px" />
                 <col style="width: 132px" />
                 <col />
-                <col style="width: 92px" />
+                <col style="width: 93px" />
               </colgroup>
               <thead>
                 <tr>
@@ -138,7 +138,7 @@ export default {
               <tbody>
                 <tr>
                   <td>3</td>
-                  <td>근저당권 설정</td>
+                  <td>근저당권<br />설정</td>
                   <td>2021년2월5일 제4845호</td>
                   <td>
                     채권최고금액 금330,000,000원<br />
@@ -148,7 +148,7 @@ export default {
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>근저당권 설정</td>
+                  <td>근저당권<br />설정</td>
                   <td>2021년2월5일 제4845호</td>
                   <td>
                     채권최고금액 금330,000,000원<br />
@@ -169,11 +169,11 @@ export default {
           <div :class="$style['basic-table']">
             <table>
               <colgroup>
-                <col style="width: 79px" />
+                <col style="width: 80px" />
                 <col style="width: 91px" />
                 <col style="width: 132px" />
                 <col />
-                <col style="width: 92px" />
+                <col style="width: 93px" />
               </colgroup>
               <thead>
                 <tr>
@@ -187,7 +187,7 @@ export default {
               <tbody>
                 <tr>
                   <td>3</td>
-                  <td>근저당권 설정</td>
+                  <td>근저당권<br />설정</td>
                   <td>2021년2월5일 제4845호</td>
                   <td>
                     채권최고금액 금330,000,000원<br />
@@ -211,6 +211,7 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :wrap="true"
+          col="3"
           align="center"
           :classNames="{
             wrap: 'row-margin-none',
@@ -226,5 +227,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/AF_P01_l002.scss';
+@import '@/assets/scss/views/personalLoan/PF_P02_l003.scss';
 </style>

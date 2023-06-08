@@ -62,7 +62,7 @@ export default {
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>경과이자</KeyValueTitle>
-          <KeyValueText>0 원</KeyValueText>
+          <KeyValueText>86,670 원</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>선수금 (환급금액)</KeyValueTitle>

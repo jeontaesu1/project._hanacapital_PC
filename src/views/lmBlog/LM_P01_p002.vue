@@ -33,6 +33,11 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
+import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
+import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
+import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
 
 export default {
   components: {
@@ -67,6 +72,11 @@ export default {
     BasicHr,
     ButtonList,
     ButtonListItem,
+    UiAccordion,
+    UiAccordionItem,
+    UiAccordionOpener,
+    BasicBox,
+    UiAccordionLayer,
   },
 
   setup() {
@@ -459,13 +469,14 @@ export default {
             </div>
 
             <!-- Case : 입력후_부동산 기록사항 없을때 -->
-            <BasicBox theme="tertiary" className="align-center">
+            <!-- <BasicBox theme="tertiary" className="align-center">
               <div
                 class="text-body-3 color-gray-quaternary font-weight-light row-margin-item"
               >
                 기록사항 없음
               </div>
-            </BasicBox>
+            </BasicBox> -->
+            // 도원님이작업하신거 가져오기
             <!-- // Case : 입력후_부동산 기록사항 없을때 -->
           </div>
 
@@ -538,7 +549,7 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">아파트 정보</h3>
+        <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
         <FormList>
           <FormListItem titleText="차량번호" target="#LM_P01_p002_carNumber">
@@ -556,6 +567,75 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
+
+        <UiAccordion
+          :classNames="{
+            wrap: [$style['select-list__list'], 'row-margin-contents'],
+          }"
+        >
+          <UiAccordionItem :classNames="{ item: $style['select-list__item'] }">
+            <div :class="$style['select-list__head']">
+              <div :class="[$style['select-list__title'], 'text-body-1']">
+                대출가능 차량 기준안내
+              </div>
+              <div :class="$style['select-list__right']">
+                <UiAccordionOpener
+                  :classNames="{ button: $style['select-list__opener'] }"
+                />
+              </div>
+            </div>
+
+            <UiAccordionLayer>
+              <div :class="$style['select-list__contents']">
+                <KeyValue>
+                  <KeyValueItem>
+                    <KeyValueTitle>차량명의</KeyValueTitle>
+                    <KeyValueText>본인명의(공동명의 제외)</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>소유기간</KeyValueTitle>
+                    <KeyValueText>3개월 이상 소유</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>차종</KeyValueTitle>
+                    <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>차량연식</KeyValueTitle>
+                    <KeyValueText>출고 이후 10년 이내</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>차량가격</KeyValueTitle>
+                    <KeyValueText>
+                      500만원 이상(당사 차량 시세 가격 기준)
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>차량압류 및 설정</KeyValueTitle>
+                    <KeyValueText>
+                      차량 압류 및 설정 내역이 있을 경우 해지 후 대출 가능
+                    </KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+
+                <ul class="reset-list row-margin-contents">
+                  <li class="row-margin-item-medium">
+                    <NoticeText>
+                      차량 조회 결과(사고금액, 침수/도난/전손여부)에 따라 대출
+                      제한이 될 수 있습니다.
+                    </NoticeText>
+                  </li>
+                  <li class="row-margin-item-medium">
+                    <NoticeText>
+                      차량 압류/설정 여부는 자동차민원
+                      대국민포털(https://ecar.go.kr)에서 조회 가능합니다.
+                    </NoticeText>
+                  </li>
+                </ul>
+              </div>
+            </UiAccordionLayer>
+          </UiAccordionItem>
+        </UiAccordion>
       </section>
 
       <section class="row-margin-block-small">
