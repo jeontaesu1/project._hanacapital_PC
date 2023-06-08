@@ -3433,123 +3433,25 @@ export default {
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">icon 라지 사이즈</h3>
-
-        <ul class="reset-list flex-box align-items-start">
-          <li class="flex-box__cell flex-1 flex-box__cell--large">
-            <BasicBox theme="quinary">
-              <div :class="$style['icon-box']">
-                <div
-                  :class="[
-                    $style['icon-box__icon'],
-                    $style['icon-box__icon--large'],
-                  ]"
-                >
-                  <ImgMainSample />
-                </div>
-                <dl class="reset-list row-margin-item-group">
-                  <dt
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-big-3',
-                      'font-weight-bold',
-                      'color-white',
-                    ]"
-                  >
-                    의료기할부
-                  </dt>
-                  <dd
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-body-1',
-                      'row-margin-item',
-                      'font-weight-regular',
-                      'color-white',
-                    ]"
-                  >
-                    병/의원 및 의료법인대상<br />
-                    의료기기, 의료소모품 구입자금 대출
-                  </dd>
-                </dl>
-              </div>
-            </BasicBox>
-          </li>
-          <li class="flex-box__cell flex-1 flex-box__cell--large">
-            <BasicBox theme="senary">
-              <div :class="$style['icon-box']">
-                <div
-                  :class="[
-                    $style['icon-box__icon'],
-                    $style['icon-box__icon--large'],
-                  ]"
-                >
-                  <ImgMainSample />
-                </div>
-                <dl class="reset-list row-margin-item-group">
-                  <dt
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-big-3',
-                      'font-weight-bold',
-                      'color-white',
-                    ]"
-                  >
-                    의료기리스
-                  </dt>
-                  <dd
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-body-1',
-                      'row-margin-item',
-                      'font-weight-regular',
-                      'color-white',
-                    ]"
-                  >
-                    의료장비, 의료기관 전용<br />
-                    금융리스
-                  </dd>
-                </dl>
-              </div>
-            </BasicBox>
-          </li>
-          <li class="flex-box__cell flex-1 flex-box__cell--large">
-            <BasicBox theme="septenary">
-              <div :class="$style['icon-box']">
-                <div
-                  :class="[
-                    $style['icon-box__icon'],
-                    $style['icon-box__icon--large'],
-                  ]"
-                >
-                  <ImgMainSample />
-                </div>
-                <dl class="reset-list row-margin-item-group">
-                  <dt
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-big-3',
-                      'font-weight-bold',
-                      'color-white',
-                    ]"
-                  >
-                    산업재리스
-                  </dt>
-                  <dd
-                    :class="[
-                      $style['icon-box__content'],
-                      'text-body-1',
-                      'row-margin-item',
-                      'font-weight-regular',
-                      'color-white',
-                    ]"
-                  >
-                    각종 시설, 기계 등<br />
-                    산업설비 전문 리스
-                  </dd>
-                </dl>
-              </div>
-            </BasicBox>
-          </li>
-        </ul>
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div
+              :class="[
+                $style['icon-box__icon'],
+                $style['icon-box__icon--large'],
+              ]"
+            >
+              <ImgMainSample />
+            </div>
+            <div :class="$style['icon-box__content']">
+              <p class="text-title-1">
+                <span class="color-green font-weight-bold">하나프라자</span>님은
+                하나캐피탈에 등록된<br />
+                <span class="font-weight-bold">정식 모집인</span>입니다
+              </p>
+            </div>
+          </div>
+        </BasicBox>
       </div>
     </section>
 
