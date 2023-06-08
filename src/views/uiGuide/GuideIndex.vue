@@ -375,6 +375,17 @@ const datas = () => [
     depth1: '고객센터',
     datas: [
       {
+        depth2: 'FAQ\nCustomer_P00_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/Customer_P00_p001',
+        status: 'end',
+        create: '2023.06.09',
+        log: [],
+      },
+      {
         depth2: 'FAQ\nCustomer_P01_p001',
         depth3: '',
         depth4: '',

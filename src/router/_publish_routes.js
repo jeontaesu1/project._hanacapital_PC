@@ -294,6 +294,11 @@ const routes = [
     component: () => import('@/views/customer/Customer_P11_p001.vue'),
   },
   {
+    path: '/customer/Customer_P00_p001',
+    name: '/customer/Customer_P00_p001',
+    component: () => import('@/views/customer/Customer_P00_p001.vue'),
+  },
+  {
     path: '/customer/Customer_P01_p001',
     name: '/customer/Customer_P01_p001',
     component: () => import('@/views/customer/Customer_P01_p001.vue'),

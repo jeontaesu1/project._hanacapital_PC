@@ -75,6 +75,7 @@ import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vu
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
@@ -155,6 +156,7 @@ export default {
     UiAccordionLayer,
     UiAccordionOpener,
     BasicBanner,
+    EventBanner,
     BasicHr,
     BasicBox,
     BasicBoxHead,
@@ -5745,6 +5747,100 @@ export default {
           </p>
           <h3 class="text-title-2 font-weight-medium">다이렉트 장기렌터카</h3>
         </BasicBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">EventBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
       </div>
     </section>
 
