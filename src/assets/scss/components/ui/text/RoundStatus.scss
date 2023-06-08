@@ -6,6 +6,7 @@
   @include font-size-default(11);
   font-weight: 500;
   color: $color-gray-70;
+  text-align: center;
   border: 1px solid $color-gray-20;
   background-color: $color-gray-20;
 
@@ -73,7 +74,6 @@
 
   &--block {
     display: block;
-    text-align: center;
   }
 
   &--size {
