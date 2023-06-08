@@ -73,4 +73,12 @@
       }
     }
   }
+
+  &--col-5 {
+    .box-check-list {
+      &__item {
+        width: 20%;
+      }
+    }
+  }
 }
