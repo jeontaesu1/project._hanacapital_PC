@@ -9,6 +9,7 @@ import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -21,6 +22,7 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BasicBox,
   },
 };
 </script>
@@ -59,6 +61,7 @@ export default {
         </li>
       </ul>
 
+      <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
       <section class="row-margin-container-medium">
         <h3 class="text-body-1 row-margin-item-group">정보 이용 현황</h3>
 
@@ -105,15 +108,26 @@ export default {
           </table>
         </div>
       </section>
+      <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
+
+      <!-- Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
+      <BasicBox theme="tertiary">
+        <div :class="$style['empty']">
+          <p :class="[$style['empty__text'], 'font-weight-light']">
+            고객님의 정보로 이용된 내역이 없습니다
+          </p>
+        </div>
+      </BasicBox>
+      <!-- // Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
 
       <section class="row-margin-container-medium">
         <h3 class="text-body-1 row-margin-item-group">정보 제공 현황</h3>
 
         <p class="text-body-1 font-weight-regular">
           최근 3년간 고객님의 개인정보를 마케팅 목적으로 다른 회사에 제공할 수
-          있도록 다음과 같이 동의 받은 사실이 있습니다. 당사의 마케팅을 원치
-          않는 경우 [정보이용·제공 동의 철회] 버튼을 클릭하거나,
-          고객센터(1800-1110)를 통해 철회할 수 있습니다.
+          있도록 다음과 같이 동의 받은 사실이 있습니다.<br />
+          당사의 마케팅을 원치 않는 경우 [정보이용·제공 동의 철회] 버튼을
+          클릭하거나, 고객센터(1800-1110)를 통해 철회할 수 있습니다.
         </p>
 
         <p class="text-body-1 font-weight-regular row-margin-item-medium">
@@ -129,8 +143,8 @@ export default {
 
         <p class="text-body-1 font-weight-regular">
           고객님은 당사에 본인의 개인(신용)정보 이용 및 제공 사실의 통지를
-          요청하실 수 있습니다. 당사 손님상담센터(1800-1110)로 신청하여 주시기
-          바랍니다.
+          요청하실 수 있습니다.<br />
+          당사 손님상담센터(1800-1110)로 신청하여 주시기 바랍니다.
         </p>
       </section>
 
@@ -140,11 +154,12 @@ export default {
         </h3>
 
         <p class="text-body-1 font-weight-regular">
-          현재 손님께서 동의한 마케팅 수신정보 채널이 선택되어 있습니다.
+          현재 손님께서 동의한 마케팅 수신정보 채널이 선택되어 있습니다.<br />
           마케팅을 원하지 않는 경우, 철회 채널을 선택하시고 [정보이용·제공 동의
-          철회] 버튼을 클릭하세요. 마케팅 수신정보 철회 시, 이후부터 손님의
-          정보가 더 이상 제공되지 않습니다. 이미 전달된 정보는 각 고객사에
-          별도로 철회를 요청해야 합니다.
+          철회] 버튼을 클릭하세요.<br />
+          마케팅 수신정보 철회 시, 이후부터 손님의 정보가 더 이상 제공되지
+          않습니다.<br />
+          이미 전달된 정보는 각 고객사에 별도로 철회를 요청해야 합니다.
         </p>
 
         <section class="row-margin-contents">
@@ -153,50 +168,26 @@ export default {
           </h4>
 
           <ul class="reset-list flex-box">
-            <li class="flex-box__cell flex-box__cell">
-              <CheckBox
-                id="Customer_P14_p004_agree001"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
+            <li class="flex-box__cell">
+              <CheckBox id="Customer_P14_p004_agree001" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>전화</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li class="flex-box__cell flex-box__cell">
-              <CheckBox
-                id="Customer_P14_p004_agree002"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
+            <li class="flex-box__cell">
+              <CheckBox id="Customer_P14_p004_agree002" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>SMS</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li class="flex-box__cell flex-box__cell">
-              <CheckBox
-                id="Customer_P14_p004_agree003"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
+            <li class="flex-box__cell">
+              <CheckBox id="Customer_P14_p004_agree003" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>우편</CheckBoxLabelText>
               </CheckBox>
             </li>
-            <li class="flex-box__cell flex-box__cell">
-              <CheckBox
-                id="Customer_P14_p004_agree004"
-                :classNames="{
-                  wrap: $style['agree-list__checkbox'],
-                }"
-                theme="quinary"
-              >
+            <li class="flex-box__cell">
+              <CheckBox id="Customer_P14_p004_agree004" theme="quinary">
                 <CheckBoxObject />
                 <CheckBoxLabelText>이메일</CheckBoxLabelText>
               </CheckBox>
@@ -206,16 +197,12 @@ export default {
       </section>
     </div>
 
-    <ButtonList>
+    <ButtonList :wrap="true" align="center" :col="4">
       <ButtonListItem>
-        <BasicButton inline="true" :line="true"
-          >정보이용·제공 동의 철회</BasicButton
-        >
+        <BasicButton :line="true">정보이용·제공 동의 철회</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton inline="true" :line="true"
-          >정보이용·제공 내역 출력</BasicButton
-        >
+        <BasicButton :line="true">정보이용·제공 내역 출력</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>
