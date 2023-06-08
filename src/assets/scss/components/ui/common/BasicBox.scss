@@ -19,21 +19,11 @@
     }
 
     &-quinary {
-      padding: 40px 23px 44px;
-      border-color: $color-green-40;
-      background-color: $color-green-40;
-    }
-
-    &-senary {
-      padding: 40px 23px 44px;
-      border-color: $color-blue-50;
-      background-color: $color-blue-50;
-    }
-
-    &-septenary {
-      padding: 40px 23px 44px;
-      border-color: $color-navy-50;
-      background-color: $color-navy-50;
+      height: 100%;
+      padding: 40px 23px;
+      border-color: $color-navy-05;
+      background-color: $color-navy-05;
+      box-sizing: border-box;
     }
   }
 }

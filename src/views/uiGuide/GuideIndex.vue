@@ -3741,6 +3741,22 @@ const datas = () => [
     ],
   },
   {
+    depth1: '제휴광장',
+    datas: [
+      {
+        depth2: '메인\nPartner_P00_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/affiliate-plaza/Partner_P00_p001',
+        status: 'end',
+        create: '2023.06.01',
+        log: [],
+      },
+    ],
+  },
+  {
     depth1: '에이전트 홈페이지 (영업용)',
     datas: [
       {

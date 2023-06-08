@@ -1,11 +1,8 @@
 <script>
-// BF_P00_main
-
+// Partner_P00_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
-import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
@@ -15,9 +12,7 @@ export default {
   components: {
     PageContents,
     PageHead,
-    PageHeadRow,
     PageTitle,
-    PageMainText,
     BasicBox,
     TextButton,
 
@@ -29,17 +24,9 @@ export default {
 <template>
   <PageContents size="wide">
     <PageHead>
-      <PageHeadRow>
-        <PageTitle> 기업을 위한 최적의 자금 대출! </PageTitle>
-        <PageMainText
-          align="center"
-          :classNames="{ wrap: 'text-title-2 font-weight-regular' }"
-        >
-          기업 재무상태와 담보 종류에 맞춘 대출이 가능합니다.<br />
-          하나캐피탈 기업금융이 여러분의 성공비지니스를 지원해드립니다.
-        </PageMainText>
-      </PageHeadRow>
+      <PageTitle>제휴광장</PageTitle>
     </PageHead>
+
     <div :class="$style['main-card-list']">
       <ul :class="$style['main-card-list__list']">
         <li :class="$style['main-card-list__item']">
@@ -62,7 +49,7 @@ export default {
                     'font-weight-bold',
                   ]"
                 >
-                  의료기할부
+                  재고금융
                 </dt>
                 <dd
                   :class="[
@@ -73,8 +60,8 @@ export default {
                     'color-gray-secondary',
                   ]"
                 >
-                  병/의원 및 의료법인대상<br />
-                  의료기기, 의료소모품 구입자금 대출
+                  하나캐피탈 재고금융 협약한<br />
+                  매매상사전용 페이지입니다.
                 </dd>
               </dl>
               <div class="row-margin-contents-small">
@@ -108,7 +95,7 @@ export default {
                     'font-weight-bold',
                   ]"
                 >
-                  의료기리스
+                  대출상담사
                 </dt>
                 <dd
                   :class="[
@@ -119,8 +106,7 @@ export default {
                     'color-gray-secondary',
                   ]"
                 >
-                  의료장비, 의료기관 전용<br />
-                  금융리스
+                  하나캐피탈 대출상담사<br />전용 페이지로 이동합니다.
                 </dd>
               </dl>
               <div class="row-margin-contents-small">
@@ -154,7 +140,7 @@ export default {
                     'font-weight-bold',
                   ]"
                 >
-                  산업재리스
+                  에이전트
                 </dt>
                 <dd
                   :class="[
@@ -165,8 +151,7 @@ export default {
                     'color-gray-secondary',
                   ]"
                 >
-                  각종 시설, 기계 등<br />
-                  산업설비 전문 리스
+                  AG 및 판매점<br />전용 페이지로 이동합니다.
                 </dd>
               </dl>
               <div class="row-margin-contents-small">
@@ -186,5 +171,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/business/BF_P00_main.scss';
+@import '@/assets/scss/views/affiliatePlaza/Partner_P00_p001.scss';
 </style>

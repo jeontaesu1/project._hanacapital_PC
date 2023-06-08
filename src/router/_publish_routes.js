@@ -1884,6 +1884,11 @@ const routes = [
     name: '/agent/Agent_P10_p004',
     component: () => import('@/views/agent/Agent_P10_p004.vue'),
   },
+  {
+    path: '/affiliate-plaza/Partner_P00_p001',
+    name: '/affiliate-plaza/Partner_P00_p001',
+    component: () => import('@/views/affiliatePlaza/Partner_P00_p001.vue'),
+  },
 ];
 
 export default routes;
