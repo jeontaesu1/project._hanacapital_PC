@@ -535,9 +535,9 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P08_p001',
-        status: '',
-        create: '',
-        log: [],
+        status: 'partend',
+        create: '2023.06.09',
+        log: [{ date: '2023.06.01', text: '약관상세 대기' }],
       },
       {
         depth2: '개인정보이용현황',
