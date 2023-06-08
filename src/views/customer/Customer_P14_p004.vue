@@ -59,18 +59,18 @@ export default {
         </li>
       </ul>
 
-      <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
       <section class="row-margin-container-medium">
         <h3 class="text-body-1 row-margin-item-group">정보 이용 현황</h3>
 
-        <p class="text-body-1 font-weight-regular">
+        <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
+        <p class="text-body-1 font-weight-regular row-margin-item-group">
           고객님은 현재 우리 하나캐피탈의 마케팅 영업대상이며, 조회되는 내용은
           다음과 같습니다. 당사의 마케팅을 원치 않는 경우 [정보이용 · 제공 동의
           철회] 버튼을 클릭하거나, 고객센터(1800-1111)을 통해 철회할 수
           있습니다.
         </p>
 
-        <div :class="[$style['basic-table'], 'row-margin-item-group']">
+        <div :class="$style['basic-table']">
           <table>
             <colgroup>
               <col style="width: 120px" />
@@ -105,16 +105,16 @@ export default {
             </tbody>
           </table>
         </div>
-      </section>
-      <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
+        <!-- // Case : 정보이용·제공 사실 조회 완료 시 노출 -->
 
-      <!-- Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
-      <div>
-        <p :class="$style['not-table']">
-          고객님의 정보로 이용된 내역이 없습니다
-        </p>
-      </div>
-      <!-- // Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
+        <!-- Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
+        <div>
+          <p :class="$style['not-table']">
+            고객님의 정보로 이용된 내역이 없습니다
+          </p>
+        </div>
+        <!-- // Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
+      </section>
 
       <section class="row-margin-container-medium">
         <h3 class="text-body-1 row-margin-item-group">정보 제공 현황</h3>

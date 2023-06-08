@@ -7,7 +7,6 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
-import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -36,7 +35,6 @@ export default {
     PageHead,
     PageTitle,
     PageHeadRow,
-    PageMainText,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -86,13 +84,10 @@ export default {
   <PageContents>
     <PageHead>
       <PageHeadRow>
-        <PageTitle>정보이용·제공 조회</PageTitle>
-        <PageMainText
-          align="center"
-          :classNames="{ wrap: 'text-title-2 font-weight-regular' }"
-        >
-          정보 이용·제공 현황을 조회시 본인 인증이 필요합니다
-        </PageMainText>
+        <PageTitle>
+          정보 이용·제공 현황을 조회시<br />
+          본인 인증이 필요합니다
+        </PageTitle>
       </PageHeadRow>
     </PageHead>
 
