@@ -2341,6 +2341,17 @@ const datas = () => [
       },
       {
         depth2: '중도상환',
+        depth3: '중도상환 시뮬레이션\nIF_P02_p007',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/inventory-finance/IF_P02_p007',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
+        depth2: '중도상환',
         depth3: '조회결과 및 신청\nIF_P03_p003',
         depth4: '',
         depth5: '',

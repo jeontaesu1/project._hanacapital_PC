@@ -1,0 +1,16 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+
+.padding-item-group {
+  padding: 23px 19px;
+}
+
+.opener {
+  width: 24px;
+  height: 24px;
+}
+
+.contents {
+  margin-top: 24px;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 24px;
+}
