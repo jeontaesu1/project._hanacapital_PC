@@ -589,7 +589,3 @@ export default {
     </FormList>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p002.scss';
-</style>

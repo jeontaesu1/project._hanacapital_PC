@@ -37,6 +37,7 @@ import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import TextProgress from '@/components/ui/progress/TextProgress.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
@@ -136,6 +137,7 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     StepProgress,
+    TextProgress,
     RoundStatus,
     NoticeText,
     UiTab,
@@ -2310,6 +2312,41 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <StepProgress :total="4" :current="1" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">TextProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+        />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+          :cancel="true"
+        />
       </div>
     </section>
 
@@ -5820,13 +5857,13 @@ export default {
 
         <!-- <div :class="$style['inline-alert']">
           <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
-        </div>
+        </div> -->
 
         <div
           :class="[$style['inline-alert'], $style['inline-alert--complete']]"
         >
           <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
-        </div> -->
+        </div>
 
         <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
           <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
