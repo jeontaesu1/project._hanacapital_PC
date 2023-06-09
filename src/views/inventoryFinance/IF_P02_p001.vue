@@ -315,7 +315,7 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <ButtonList :wrap="true" class="row-margin-contents">
+            <ButtonList :wrap="true" align="center" class="row-margin-contents">
               <ButtonListItem>
                 <BasicButton size="regular" theme="quaternary"
                   >정보수정</BasicButton

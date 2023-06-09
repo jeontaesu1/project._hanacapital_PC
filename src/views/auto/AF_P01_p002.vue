@@ -364,9 +364,11 @@ export default {
           </FormListItem>
         </FormList>
 
-        <div class="flex-box justify-conten-center row-margin-contents">
-          <CarThumb size="regular" src="/images/_dummy/car-thumb.png" />
-        </div>
+        <BasicBox theme="tertiary" className="row-margin-contents">
+          <div class="flex-box justify-conten-center row-margin-contents">
+            <CarThumb size="regular" src="/images/_dummy/car-thumb.png" />
+          </div>
+        </BasicBox>
       </section>
 
       <section class="row-margin-block-small">
@@ -1479,13 +1481,13 @@ export default {
           >
         </li>
       </ul>
-    </div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>렌터카 신청</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>렌터카 신청</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
     <!-- Case : 렌터카 신청 버튼 선택 시 노출 -->
     <BasicHr theme="tertiary" className="row-margin-block" />
@@ -1887,13 +1889,13 @@ export default {
           </ul>
         </div>
       </section>
-    </div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>신청</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>신청</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
     <!-- //Case : 렌터카 신청 버튼 선택 시 노출 -->
   </PageContents>
 </template>

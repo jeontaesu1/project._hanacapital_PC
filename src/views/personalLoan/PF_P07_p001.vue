@@ -51,9 +51,15 @@ export default {
     </PageHead>
 
     <div>
-      <BasicBox theme="quaternary" :class="[$style['box']]">
+      <BasicBox>
         <div :class="$style['agree-list']">
-          <ul :class="[$style['agree-list__list']]">
+          <ul
+            :class="[
+              $style['agree-list__list'],
+              $style['agree-list__list--secondary'],
+              $style['agree-list__list--secondary-no-padding'],
+            ]"
+          >
             <li :class="$style['agree-list__item']">
               <div :class="$style['agree-list__head']">
                 <CheckBox
@@ -189,7 +195,7 @@ export default {
         </section>
       </section>
 
-      <!-- Case : 다음 버튼 선택 시 노출 -->
+      <!-- Case : 동의 후 다음 버튼 선택 시 노출 -->
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">
           대출신청 진행할 증권사 선택
@@ -199,8 +205,8 @@ export default {
           <BoxCheckListItem v-for="i in 9" :key="i">
             <BoxCheck
               :contents="true"
-              name="PF_P07_p001_backSelect"
-              :id="`PF_P07_p001_backSelect${i}`"
+              name="PF_P07_p001_bankSelect"
+              :id="`PF_P07_p001_bankSelect${i}`"
             >
               <div class="flex-box">
                 <div class="flex-box__cell">
@@ -227,10 +233,10 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </section>
-      <!-- //Case : 다음 버튼 선택 시 노출 -->
+      <!-- //Case : 동의 후 다음 버튼 선택 시 노출 -->
     </div>
 
-    <ButtonList :wrap="true" align="center">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>

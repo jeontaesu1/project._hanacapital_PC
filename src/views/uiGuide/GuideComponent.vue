@@ -3064,7 +3064,7 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Single</h3>
 
-        <BasicBox theme="quaternary" className="row-margin-contents">
+        <BasicBox className="row-margin-contents">
           <div :class="$style['agree-list']">
             <ul
               :class="[

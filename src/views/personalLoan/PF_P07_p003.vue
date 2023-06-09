@@ -57,118 +57,111 @@ export default {
     <div>
       <section>
         <div :class="$style['agree-list']">
-          <ul :class="$style['agree-list__container']">
-            <li :class="$style['agree-list__all']">
-              <div :class="$style['agree-list__all-contents']">
-                <ul :class="$style['agree-list__depth']">
-                  <li :class="$style['agree-list__depth-item']">
-                    <div :class="$style['agree-list__depth-head']">
-                      <div :class="$style['agree-list__depth-title']">
-                        하나증권 계좌를 개설하셨나요?
+          <ul :class="$style['agree-list__depth']">
+            <li :class="$style['agree-list__depth-item']">
+              <div :class="$style['agree-list__depth-head']">
+                <div :class="$style['agree-list__depth-title']">
+                  하나증권 계좌를 개설하셨나요?
+                </div>
+              </div>
+            </li>
+            <li :class="$style['agree-list__depth-item']">
+              <div :class="$style['agree-list__depth-head']">
+                <div :class="$style['agree-list__depth-title']">
+                  공동인증서는 보유하고 계신가요?
+                </div>
+              </div>
+              <div :class="$style['agree-list__depth-contents']">
+                <ul :class="$style['agree-list__list']">
+                  <li :class="$style['agree-list__item']">
+                    <div :class="$style['agree-list__head']">
+                      <CheckBox
+                        id="PF_P07_p003_agree001_001"
+                        :classNames="{
+                          wrap: $style['agree-list__checkbox'],
+                        }"
+                        theme="tertiary"
+                      >
+                        <CheckBoxObject />
+                        <CheckBoxLabelText
+                          >공동인증서 관련 약관 이용 동의</CheckBoxLabelText
+                        >
+                      </CheckBox>
+                      <div :class="$style['agree-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['agree-list__link']"
+                        >
+                          <span :class="$style['agree-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </li>
-                  <li :class="$style['agree-list__depth-item']">
-                    <div :class="$style['agree-list__depth-head']">
-                      <div :class="$style['agree-list__depth-title']">
-                        공동인증서는 보유하고 계신가요?
+                </ul>
+              </div>
+            </li>
+            <li :class="$style['agree-list__depth-item']">
+              <div :class="$style['agree-list__depth-head']">
+                <div :class="$style['agree-list__depth-title']">
+                  하나증권 인증서는 설치하셨나요?
+                </div>
+              </div>
+              <div :class="$style['agree-list__depth-contents']">
+                <ul :class="$style['agree-list__list']">
+                  <li :class="$style['agree-list__item']">
+                    <div :class="$style['agree-list__head']">
+                      <CheckBox
+                        id="PF_P07_p003_agree002_001"
+                        :classNames="{
+                          wrap: $style['agree-list__checkbox'],
+                        }"
+                        theme="tertiary"
+                      >
+                        <CheckBoxObject />
+                        <CheckBoxLabelText
+                          >하나증권 인증서 관련 약관 이용
+                          동의</CheckBoxLabelText
+                        >
+                      </CheckBox>
+                      <div :class="$style['agree-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['agree-list__link']"
+                        >
+                          <span :class="$style['agree-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
                       </div>
-                    </div>
-                    <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
-                        <li :class="$style['agree-list__item']">
-                          <div :class="$style['agree-list__head']">
-                            <CheckBox
-                              id="PF_P07_p003_agree001_001"
-                              :classNames="{
-                                wrap: $style['agree-list__checkbox'],
-                              }"
-                              theme="tertiary"
-                            >
-                              <CheckBoxObject />
-                              <CheckBoxLabelText
-                                >공동인증서 관련 약관 이용
-                                동의</CheckBoxLabelText
-                              >
-                            </CheckBox>
-                            <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
                     </div>
                   </li>
-                  <li :class="$style['agree-list__depth-item']">
-                    <div :class="$style['agree-list__depth-head']">
-                      <div :class="$style['agree-list__depth-title']">
-                        하나증권 인증서는 설치하셨나요?
+                  <li :class="$style['agree-list__item']">
+                    <div :class="$style['agree-list__head']">
+                      <CheckBox
+                        id="PF_P07_p003_agree002_002"
+                        :classNames="{
+                          wrap: $style['agree-list__checkbox'],
+                        }"
+                        theme="tertiary"
+                      >
+                        <CheckBoxObject />
+                        <CheckBoxLabelText
+                          >개인(신용)정보 필수적 제공 동의(공공
+                          마이데이터)</CheckBoxLabelText
+                        >
+                      </CheckBox>
+                      <div :class="$style['agree-list__right']">
+                        <button
+                          type="button"
+                          :class="$style['agree-list__link']"
+                        >
+                          <span :class="$style['agree-list__link-text']">
+                            상세보기
+                          </span>
+                        </button>
                       </div>
-                    </div>
-                    <div :class="$style['agree-list__depth-contents']">
-                      <ul :class="$style['agree-list__list']">
-                        <li :class="$style['agree-list__item']">
-                          <div :class="$style['agree-list__head']">
-                            <CheckBox
-                              id="PF_P07_p003_agree002_001"
-                              :classNames="{
-                                wrap: $style['agree-list__checkbox'],
-                              }"
-                              theme="tertiary"
-                            >
-                              <CheckBoxObject />
-                              <CheckBoxLabelText
-                                >하나증권 인증서 관련 약관 이용
-                                동의</CheckBoxLabelText
-                              >
-                            </CheckBox>
-                            <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </li>
-                        <li :class="$style['agree-list__item']">
-                          <div :class="$style['agree-list__head']">
-                            <CheckBox
-                              id="PF_P07_p003_agree002_002"
-                              :classNames="{
-                                wrap: $style['agree-list__checkbox'],
-                              }"
-                              theme="tertiary"
-                            >
-                              <CheckBoxObject />
-                              <CheckBoxLabelText
-                                >개인(신용)정보 필수적 제공 동의(공공
-                                마이데이터)</CheckBoxLabelText
-                              >
-                            </CheckBox>
-                            <div :class="$style['agree-list__right']">
-                              <button
-                                type="button"
-                                :class="$style['agree-list__link']"
-                              >
-                                <span :class="$style['agree-list__link-text']">
-                                  상세보기
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
                     </div>
                   </li>
                 </ul>
@@ -178,7 +171,7 @@ export default {
         </div>
       </section>
 
-      <section class="row-margin-block-small">
+      <div class="row-margin-block-small">
         <BasicBox theme="tertiary">
           <ul class="reset-list">
             <li class="row-margin-contents-small">
@@ -246,7 +239,7 @@ export default {
             </li>
           </ul>
         </BasicBox>
-      </section>
+      </div>
     </div>
 
     <ButtonList>

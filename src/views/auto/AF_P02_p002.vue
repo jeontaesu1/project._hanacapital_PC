@@ -1460,13 +1460,13 @@ export default {
           >
         </li>
       </ul>
-    </div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>리스 신청</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>리스 신청</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
     <!-- Case : 리스 신청 버튼 선택 시 노출 -->
     <BasicHr theme="tertiary" className="row-margin-block" />
@@ -1895,13 +1895,13 @@ export default {
           </ul>
         </div>
       </section>
-    </div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>신청</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>신청</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
     <!-- //Case : 리스 신청 버튼 선택 시 노출 -->
   </PageContents>
 </template>

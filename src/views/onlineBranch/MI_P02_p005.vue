@@ -104,292 +104,294 @@ export default {
       <PageTitle>하나머니</PageTitle>
     </PageHead>
 
-    <div>
-      <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">
-          <span class="color-green">김하나</span>님의 하나머니 정보
-        </h3>
+    <section class="row-margin-block-small row-margin-top-none">
+      <h3 class="text-title-1 row-margin-contents">
+        <span class="color-green">김하나</span>님의 하나머니 정보
+      </h3>
 
-        <BasicBox>
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              <h4 class="text-title-2 font-weight-medium">사용가능 하나머니</h4>
-              <p class="text-body-3 font-weight-light row-margin-small">
-                사용 신청할 수 있는 하나머니입니다.
-              </p>
-            </div>
-            <div class="flex-box__cell">
-              <UnitText rightUnit="원"
-                ><strong class="color-green">35,000</strong></UnitText
-              >
-            </div>
+      <BasicBox>
+        <section class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-title-2 font-weight-medium">사용가능 하나머니</h4>
+            <p class="text-body-3 font-weight-light row-margin-small">
+              사용 신청할 수 있는 하나머니입니다.
+            </p>
           </div>
-
-          <BasicHr theme="quaternary" className="row-margin-contents" />
-
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              <h4 class="text-title-2 font-weight-medium">가용예정 머니</h4>
-              <p class="text-body-3 font-weight-light row-margin-small">
-                사용가능 머니로 전환 예정인 하나머니입니다.
-              </p>
-            </div>
-            <div class="flex-box__cell">
-              <UnitText rightUnit="원"
-                ><strong class="color-green">5,000</strong></UnitText
-              >
-            </div>
-          </div>
-
-          <BasicHr theme="quaternary" className="row-margin-contents" />
-
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              <h4 class="text-title-2 font-weight-medium">익월소멸예정 머니</h4>
-              <p class="text-body-3 font-weight-light row-margin-small">
-                유효기간 종료로 익월 소멸 예정인 하나머니입니다.
-              </p>
-            </div>
-            <div class="flex-box__cell">
-              <UnitText rightUnit="원"
-                ><strong class="color-green">0</strong></UnitText
-              >
-            </div>
-          </div>
-        </BasicBox>
-      </section>
-
-      <div class="row-margin-block-small">
-        <BoxCheckList>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="MI_P02_p005_chk"
-              id="MI_P02_p005_chk001"
-              :defaultChecked="true"
+          <div class="flex-box__cell">
+            <UnitText rightUnit="원"
+              ><strong class="color-green">35,000</strong></UnitText
             >
-              <BoxCheckLabel>내역조회</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-          <BoxCheckListItem>
-            <BoxCheck
-              :minSide="true"
-              name="MI_P02_p005_chk"
-              id="MI_P02_p005_chk002"
-            >
-              <BoxCheckLabel>하나머니 사용/취소</BoxCheckLabel>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-
-        <!-- Case : 내역조회 탭 -->
-        <div class="row-margin-container-medium">
-          <FormList>
-            <FormListItem
-              titleText="조회기간"
-              target="#MI_P02_p005_dateStartButton"
-            >
-              <FormInvalid :error="state.dateError">
-                <InputBlock :error="state.dateError">
-                  <InputBlockCell :flexible="true">
-                    <BasicDatepicker
-                      title="조회기간 시작 날짜"
-                      id="MI_P02_p005_dateStart"
-                      buttonId="MI_P02_p005_dateStartButton"
-                      :max="state.dateMaxDate"
-                      v-model="state.dateMinDate"
-                    />
-                  </InputBlockCell>
-                  <InputBlockCell margin="regular">~</InputBlockCell>
-                  <InputBlockCell :flexible="true" margin="regular">
-                    <BasicDatepicker
-                      title="조회기간 종료 날짜"
-                      id="MI_P02_p005_dateEnd"
-                      buttonId="MI_P02_p005_dateEndButton"
-                      :min="state.dateMinDate"
-                      v-model="state.dateMaxDate"
-                    />
-                  </InputBlockCell>
-                </InputBlock>
-                <FormInvalidMessage>Error Message</FormInvalidMessage>
-                <FormHelpText>조회기간은 최대 1년까지 가능합니다.</FormHelpText>
-              </FormInvalid>
-            </FormListItem>
-          </FormList>
-
-          <ButtonList>
-            <ButtonListItem>
-              <BasicButton :line="true">조회</BasicButton>
-            </ButtonListItem>
-          </ButtonList>
-
-          <!-- Case : 조회버튼 클릭시 노출 -->
-          <BasicHr theme="quaternary" className="row-margin-block" />
-
-          <div :class="$style['basic-table']">
-            <table>
-              <colgroup>
-                <col style="width: 120px" />
-                <col style="width: 80px" />
-                <col />
-                <col style="width: 128px" />
-                <col style="width: 80px" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>일자</th>
-                  <th>구분</th>
-                  <th>머니유형</th>
-                  <th>제휴사</th>
-                  <th>금액</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2022-08-29</td>
-                  <td>적립</td>
-                  <td>이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>2022-08-29</td>
-                  <td>적립</td>
-                  <td>1Q 럭키볼 이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>151</td>
-                </tr>
-                <tr>
-                  <td>2022-07-27</td>
-                  <td>적립</td>
-                  <td>하나머니 매장결제 이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>88</td>
-                </tr>
-                <tr>
-                  <td>2022-06-15</td>
-                  <td>사용</td>
-                  <td>계좌번호 입력 송금(당행)</td>
-                  <td>하나은행</td>
-                  <td>9,993</td>
-                </tr>
-                <tr>
-                  <td>2022-05-12</td>
-                  <td>사용</td>
-                  <td>(하나카드)즉시결제사용</td>
-                  <td>하나머니_카드</td>
-                  <td>300</td>
-                </tr>
-                <tr>
-                  <td>2022-04-29</td>
-                  <td>적립</td>
-                  <td>이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>4</td>
-                </tr>
-                <tr>
-                  <td>2022-04-29</td>
-                  <td>적립</td>
-                  <td>1Q 럭키볼 이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>151</td>
-                </tr>
-                <tr>
-                  <td>2022-03-27</td>
-                  <td>적립</td>
-                  <td>하나머니 매장결제 이벤트 적립</td>
-                  <td>하나머니</td>
-                  <td>88</td>
-                </tr>
-                <tr>
-                  <td>2022-02-15</td>
-                  <td>사용</td>
-                  <td>계좌번호 입력 송금(당행)</td>
-                  <td>하나은행</td>
-                  <td>9,993</td>
-                </tr>
-                <tr>
-                  <td>2022-01-12</td>
-                  <td>사용</td>
-                  <td>(하나카드)즉시결제사용</td>
-                  <td>하나머니_카드</td>
-                  <td>300</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
-          <!-- //Case : 조회버튼 클릭시 노출 -->
+        </section>
 
-          <!-- Case : 첫번째 페이지일 때 -->
-          <PaginationNav>
-            <PaginationNavArrow type="prev" :disabled="true" />
-            <PaginationNavNumber :active="true">1</PaginationNavNumber>
-            <PaginationNavNumber>2</PaginationNavNumber>
-            <PaginationNavNumber>3</PaginationNavNumber>
-            <PaginationNavNumber>4</PaginationNavNumber>
-            <PaginationNavNumber>5</PaginationNavNumber>
-            <PaginationNavNumber>6</PaginationNavNumber>
-            <PaginationNavNumber>7</PaginationNavNumber>
-            <PaginationNavEllipsis />
-            <PaginationNavNumber>999</PaginationNavNumber>
-            <PaginationNavArrow type="next" />
-          </PaginationNav>
-          <!-- // Case : 첫번째 페이지일 때 -->
+        <BasicHr theme="quaternary" className="row-margin-contents" />
 
-          <!-- Case : 중간 페이지일 때 -->
-          <PaginationNav>
-            <PaginationNavArrow type="prev" />
-            <PaginationNavNumber>1</PaginationNavNumber>
-            <PaginationNavEllipsis />
-            <PaginationNavNumber>13</PaginationNavNumber>
-            <PaginationNavNumber>14</PaginationNavNumber>
-            <PaginationNavNumber :active="true">15</PaginationNavNumber>
-            <PaginationNavNumber>16</PaginationNavNumber>
-            <PaginationNavNumber>17</PaginationNavNumber>
-            <PaginationNavEllipsis />
-            <PaginationNavNumber>99</PaginationNavNumber>
-            <PaginationNavArrow type="next" />
-          </PaginationNav>
-          <!-- // Case : 중간 페이지일 때 -->
+        <section class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-title-2 font-weight-medium">가용예정 머니</h4>
+            <p class="text-body-3 font-weight-light row-margin-small">
+              사용가능 머니로 전환 예정인 하나머니입니다.
+            </p>
+          </div>
+          <div class="flex-box__cell">
+            <UnitText rightUnit="원"
+              ><strong class="color-green">5,000</strong></UnitText
+            >
+          </div>
+        </section>
 
-          <!-- Case : 마지막 페이지일 때 -->
-          <PaginationNav>
-            <PaginationNavArrow type="prev" />
-            <PaginationNavNumber>1</PaginationNavNumber>
-            <PaginationNavEllipsis />
-            <PaginationNavNumber>93</PaginationNavNumber>
-            <PaginationNavNumber>94</PaginationNavNumber>
-            <PaginationNavNumber>95</PaginationNavNumber>
-            <PaginationNavNumber>96</PaginationNavNumber>
-            <PaginationNavNumber>97</PaginationNavNumber>
-            <PaginationNavNumber>98</PaginationNavNumber>
-            <PaginationNavNumber :active="true">99</PaginationNavNumber>
-            <PaginationNavArrow type="next" :disabled="true" />
-          </PaginationNav>
-          <!-- // Case : 마지막 페이지일 때 -->
-        </div>
-        <!-- //Case : 내역조회 탭 -->
-      </div>
+        <BasicHr theme="quaternary" className="row-margin-contents" />
 
-      <!-- Case : 하나머니 사용/취소 탭 -->
-      <section class="row-margin-block-small">
-        <h3 class="text-title-1">계약 선택</h3>
-        <p
-          class="text-body-1 font-weight-light color-gray-secondary row-margin-small"
+        <section class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <h4 class="text-title-2 font-weight-medium">익월소멸예정 머니</h4>
+            <p class="text-body-3 font-weight-light row-margin-small">
+              유효기간 종료로 익월 소멸 예정인 하나머니입니다.
+            </p>
+          </div>
+          <div class="flex-box__cell">
+            <UnitText rightUnit="원"
+              ><strong class="color-green">0</strong></UnitText
+            >
+          </div>
+        </section>
+      </BasicBox>
+    </section>
+
+    <BoxCheckList
+      :classNames="{ wrap: 'row-margin-container-medium row-margin-top-none' }"
+    >
+      <BoxCheckListItem>
+        <BoxCheck
+          :minSide="true"
+          name="MI_P02_p005_chk"
+          id="MI_P02_p005_chk001"
+          :defaultChecked="true"
         >
-          사용신청 시, 선택한 계약의 결제일이 2일 이내일 경우 익월 처리됩니다.
-        </p>
+          <BoxCheckLabel>내역조회</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+      <BoxCheckListItem>
+        <BoxCheck
+          :minSide="true"
+          name="MI_P02_p005_chk"
+          id="MI_P02_p005_chk002"
+        >
+          <BoxCheckLabel>하나머니 사용/취소</BoxCheckLabel>
+        </BoxCheck>
+      </BoxCheckListItem>
+    </BoxCheckList>
 
-        <!-- Case : 조회할 계약이 없는 경우 -->
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">
-            하나머니를 사용할 수 있는 계약이 없습니다.
+    <!-- Case : 내역조회 선택 시 노출 -->
+    <div>
+      <FormList>
+        <FormListItem
+          titleText="조회기간"
+          target="#MI_P02_p005_dateStartButton"
+        >
+          <FormInvalid :error="state.dateError">
+            <InputBlock :error="state.dateError">
+              <InputBlockCell :flexible="true">
+                <BasicDatepicker
+                  title="조회기간 시작 날짜"
+                  id="MI_P02_p005_dateStart"
+                  buttonId="MI_P02_p005_dateStartButton"
+                  :max="state.dateMaxDate"
+                  v-model="state.dateMinDate"
+                />
+              </InputBlockCell>
+              <InputBlockCell margin="regular">~</InputBlockCell>
+              <InputBlockCell :flexible="true" margin="regular">
+                <BasicDatepicker
+                  title="조회기간 종료 날짜"
+                  id="MI_P02_p005_dateEnd"
+                  buttonId="MI_P02_p005_dateEndButton"
+                  :min="state.dateMinDate"
+                  v-model="state.dateMaxDate"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>조회기간은 최대 1년까지 가능합니다.</FormHelpText>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
+
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton :line="true">조회</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+
+      <!-- Case : 조회버튼 클릭시 노출 -->
+      <BasicHr theme="quaternary" className="row-margin-block" />
+
+      <div :class="$style['basic-table']">
+        <table>
+          <colgroup>
+            <col style="width: 120px" />
+            <col style="width: 80px" />
+            <col />
+            <col style="width: 129px" />
+            <col style="width: 80px" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>일자</th>
+              <th>구분</th>
+              <th>머니유형</th>
+              <th>제휴사</th>
+              <th>금액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022-08-29</td>
+              <td>적립</td>
+              <td>이벤트 적립</td>
+              <td>하나머니</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>2022-08-29</td>
+              <td>적립</td>
+              <td>1Q 럭키볼 이벤트 적립</td>
+              <td>하나머니</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <td>2022-07-27</td>
+              <td>적립</td>
+              <td>하나머니 매장결제 이벤트 적립</td>
+              <td>하나머니</td>
+              <td>88</td>
+            </tr>
+            <tr>
+              <td>2022-06-15</td>
+              <td>사용</td>
+              <td>계좌번호 입력 송금(당행)</td>
+              <td>하나은행</td>
+              <td>9,993</td>
+            </tr>
+            <tr>
+              <td>2022-05-12</td>
+              <td>사용</td>
+              <td>(하나카드)즉시결제사용</td>
+              <td>하나머니_카드</td>
+              <td>300</td>
+            </tr>
+            <tr>
+              <td>2022-04-29</td>
+              <td>적립</td>
+              <td>이벤트 적립</td>
+              <td>하나머니</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>2022-04-29</td>
+              <td>적립</td>
+              <td>1Q 럭키볼 이벤트 적립</td>
+              <td>하나머니</td>
+              <td>151</td>
+            </tr>
+            <tr>
+              <td>2022-03-27</td>
+              <td>적립</td>
+              <td>하나머니 매장결제 이벤트 적립</td>
+              <td>하나머니</td>
+              <td>88</td>
+            </tr>
+            <tr>
+              <td>2022-02-15</td>
+              <td>사용</td>
+              <td>계좌번호 입력 송금(당행)</td>
+              <td>하나은행</td>
+              <td>9,993</td>
+            </tr>
+            <tr>
+              <td>2022-01-12</td>
+              <td>사용</td>
+              <td>(하나카드)즉시결제사용</td>
+              <td>하나머니_카드</td>
+              <td>300</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- //Case : 조회버튼 클릭시 노출 -->
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
+    </div>
+    <!-- //Case : 내역조회 선택 시 노출 -->
+
+    <!-- Case : 하나머니 사용/취소 선택 시 노출 -->
+    <div class="contents-wrap">
+      <!-- Case : 조회할 계약이 없는 경우 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          하나머니를 사용할 수 있는 계약이 없습니다.
+        </p>
+      </div>
+      <!-- //Case : 조회할 계약이 없는 경우 -->
+
+      <!-- Case : 조회할 계약이 있는 경우 -->
+      <section>
+        <div class="row-margin-contents">
+          <h3 class="text-title-1">계약 선택</h3>
+          <p
+            class="text-body-1 font-weight-light color-gray-secondary row-margin-small"
+          >
+            사용신청 시, 선택한 계약의 결제일이 2일 이내일 경우 익월 처리됩니다.
           </p>
         </div>
-        <!-- //Case : 조회할 계약이 없는 경우 -->
 
-        <!-- Case : 조회할 계약이 있는 경우 -->
-        <ul class="reset-list row-margin-contents">
+        <ul class="reset-list">
           <li class="row-margin-contents">
             <BasicBox>
               <BasicBoxHead>
@@ -1144,10 +1146,10 @@ export default {
           <PaginationNavArrow type="next" :disabled="true" />
         </PaginationNav>
         <!-- // Case : 마지막 페이지일 때 -->
-        <!-- //Case : 조회할 계약이 있는 경우 -->
       </section>
-      <!-- //Case : 하나머니 사용/취소 탭 -->
+      <!-- //Case : 조회할 계약이 있는 경우 -->
     </div>
+    <!-- //Case : 하나머니 사용/취소 선택 시 노출 -->
   </PageContents>
 </template>
 
