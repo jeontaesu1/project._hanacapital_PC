@@ -79,6 +79,8 @@ import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
+import SelectTable from '@/components/ui/table/SelectTable.vue';
+import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -179,6 +181,8 @@ export default {
     CarThumb,
     CarEmblem,
     BasicTooltip,
+    SelectTable,
+    SelectTableRow,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -5020,6 +5024,60 @@ export default {
           </table>
         </div>
         <!-- // table -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">SelectTable</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 142px" />
+            <col style="width: 800px" />
+            <col style="width: 180px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow :initialActive="true">
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
       </div>
     </section>
 
