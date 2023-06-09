@@ -42,11 +42,9 @@
 }
 
 .customer-link-list {
-  &__list {
-    display: flex;
-    @include reset-list;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  @include reset-list;
+  flex-wrap: wrap;
 
   &__item {
     flex: none;

@@ -31,7 +31,6 @@ export default {
   <PageContents size="wide">
     <section>
       <h3 class="text-big-3 row-margin-contents">상담 · 문의</h3>
-
       <div :class="[$style['icon-list'], $style['icon-list__customer']]">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
@@ -39,9 +38,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">고객센터 ARS 안내</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   빠른 연결을 위해 고객센터 상담 번호를<br />안내해드리겠습니다.
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -50,9 +49,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">고객 상담</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   문의 주신 내용에 대해<br />빠른 시간 내 답변 드리겠습니다
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -61,9 +60,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">전자민원접수</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   불편했던 점을 말씀해주세요.<br />신속히 개선하도록 하겠습니다.
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -75,7 +74,6 @@ export default {
 
     <section>
       <h3 class="text-big-3 row-margin-contents">자주 찾는 메뉴</h3>
-
       <div :class="[$style['icon-list'], $style['icon-list__customer']]">
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
@@ -83,9 +81,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">FAQ</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   찾고 싶은 단어나 문장을<br />검색해보세요.
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -94,9 +92,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">지점 안내</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   지점 방문이 필요하실 경우<br />하나캐피탈 지점을 확인하세요.
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -105,9 +103,9 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">인증센터</div>
-                <div :class="$style['icon-list__text']">
+                <p :class="$style['icon-list__text']">
                   PC와 스마트폰에서<br />인증서를 사용해보세요.
-                </div>
+                </p>
               </div>
             </div>
           </li>
@@ -147,32 +145,34 @@ export default {
                 <div :class="$style['icon-list__icon']"><IconCustomer /></div>
                 <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">보안센터</div>
-                  <div class="row-margin-item-medium">
-                    <TextButton
-                      iconSize="medium"
-                      textSize="medium"
-                      :block="true"
-                      class="color-gray-tertiary"
-                    >
-                      프로그램 설치 안내
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
-                  </div>
-                  <div>
-                    <TextButton
-                      iconSize="medium"
-                      textSize="medium"
-                      :block="true"
-                      class="color-gray-tertiary"
-                    >
-                      프로그램 삭제 안내
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
-                  </div>
+                  <ul class="reset-list row-margin-item-medium">
+                    <li class="row-margin-item-medium">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        프로그램 설치 안내
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                    <li>
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        프로그램 삭제 안내
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </li>
@@ -183,32 +183,34 @@ export default {
                   <div :class="$style['icon-list__title']">
                     개인정보이용 현황
                   </div>
-                  <div class="row-margin-item-medium">
-                    <TextButton
-                      iconSize="medium"
-                      textSize="medium"
-                      :block="true"
-                      class="color-gray-tertiary"
-                    >
-                      개인정보열람 청구
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
-                  </div>
-                  <div>
-                    <TextButton
-                      iconSize="medium"
-                      textSize="medium"
-                      :block="true"
-                      class="color-gray-tertiary"
-                    >
-                      정보이용 · 제공 조회
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
-                  </div>
+                  <ul class="reset-list row-margin-item-medium">
+                    <li class="row-margin-item-medium">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        개인정보열람 청구
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                    <li>
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        정보이용 · 제공 조회
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </li>
@@ -238,62 +240,60 @@ export default {
                 <div :class="$style['icon-list__icon']"><IconCustomer /></div>
                 <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">금융소비자보호</div>
-                  <div :class="$style['customer-link-list']">
-                    <ul :class="$style['customer-link-list__list']">
-                      <li :class="$style['customer-link-list__item']">
-                        <TextButton
-                          iconSize="medium"
-                          textSize="medium"
-                          :block="true"
-                          class="color-gray-tertiary"
-                        >
-                          금융소비자보호헌장
-                          <template v-slot:rightIcon>
-                            <IconLink />
-                          </template>
-                        </TextButton>
-                      </li>
-                      <li :class="$style['customer-link-list__item']">
-                        <TextButton
-                          iconSize="medium"
-                          textSize="medium"
-                          :block="true"
-                          class="color-gray-tertiary"
-                        >
-                          금융소비자보호조직
-                          <template v-slot:rightIcon>
-                            <IconLink />
-                          </template>
-                        </TextButton>
-                      </li>
-                      <li :class="$style['customer-link-list__item']">
-                        <TextButton
-                          iconSize="medium"
-                          textSize="medium"
-                          :block="true"
-                          class="color-gray-tertiary"
-                        >
-                          금융소비자보호체계
-                          <template v-slot:rightIcon>
-                            <IconLink />
-                          </template>
-                        </TextButton>
-                      </li>
-                      <li :class="$style['customer-link-list__item']">
-                        <TextButton
-                          iconSize="medium"
-                          textSize="medium"
-                          :block="true"
-                          class="color-gray-tertiary"
-                        >
-                          금융소비자보호웹진
-                          <template v-slot:rightIcon>
-                            <IconLink />
-                          </template>
-                        </TextButton>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul :class="$style['customer-link-list']">
+                    <li :class="$style['customer-link-list__item']">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        금융소비자보호헌장
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                    <li :class="$style['customer-link-list__item']">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        금융소비자보호조직
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                    <li :class="$style['customer-link-list__item']">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        금융소비자보호체계
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                    <li :class="$style['customer-link-list__item']">
+                      <TextButton
+                        iconSize="medium"
+                        textSize="medium"
+                        :block="true"
+                        class="color-gray-tertiary"
+                      >
+                        금융소비자보호웹진
+                        <template v-slot:rightIcon>
+                          <IconLink />
+                        </template>
+                      </TextButton>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </li>
