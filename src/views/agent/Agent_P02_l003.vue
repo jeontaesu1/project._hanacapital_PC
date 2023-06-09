@@ -7,6 +7,7 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
@@ -15,6 +16,7 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
+    BasicButton,
   },
   setup() {
     const layer = ref(null);
@@ -86,7 +88,14 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">상환스케쥴</h3>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-title-1">상환스케쥴</h3>
+          </div>
+          <BasicButton inline="true" theme="quaternary" size="small">
+            인쇄하기
+          </BasicButton>
+        </div>
 
         <div :class="$style['basic-table']">
           <table>
@@ -109,7 +118,7 @@ export default {
                 <th>① 매회납부금</th>
                 <th>② 기타금액</th>
                 <th>납부금액(①+②)</th>
-                <th>납부금액(①+②)</th>
+                <th>미회수원금</th>
               </tr>
               <tr>
                 <td>1</td>

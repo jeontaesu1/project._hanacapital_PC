@@ -469,14 +469,7 @@ export default {
             </div>
 
             <!-- Case : 입력후_부동산 기록사항 없을때 -->
-            <!-- <BasicBox theme="tertiary" className="align-center">
-              <div
-                class="text-body-3 color-gray-quaternary font-weight-light row-margin-item"
-              >
-                기록사항 없음
-              </div>
-            </BasicBox> -->
-            // 도원님이작업하신거 가져오기
+            <div :class="$style['not-table']">기록사항 없음</div>
             <!-- // Case : 입력후_부동산 기록사항 없을때 -->
           </div>
 
@@ -868,6 +861,7 @@ export default {
               <InputBlock :error="state.buisnessLicenseError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    pattern="\d*"
                     title="사업자등록번호"
                     id="LM_P01_p002_buisnessLicense"
                   />

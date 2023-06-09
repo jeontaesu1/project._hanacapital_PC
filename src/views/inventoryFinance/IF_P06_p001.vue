@@ -167,7 +167,7 @@ export default {
 
     <BasicHr theme="quaternary" type="contents" className="row-margin-block" />
 
-    <section class="row-margin-block-small row-margin-top-none">
+    <section>
       <h4 class="text-title-1 row-margin-contents">조회이력</h4>
 
       <FormList>
@@ -245,11 +245,7 @@ export default {
       </FormList>
     </section>
 
-    <ButtonList
-      :classNames="{
-        wrap: 'row-margin-none',
-      }"
-    >
+    <ButtonList>
       <ButtonListItem>
         <BasicButton line="true">조회</BasicButton>
       </ButtonListItem>
@@ -331,5 +327,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/inventoryFinance/IF_P05_p001.scss';
+@import '@/assets/scss/views/inventoryFinance/IF_P06_p001.scss';
 </style>

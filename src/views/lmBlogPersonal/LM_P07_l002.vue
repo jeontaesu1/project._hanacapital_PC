@@ -137,5 +137,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/uiGuide/GuideComponentModule.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LM_P07_l002.scss';
 </style>

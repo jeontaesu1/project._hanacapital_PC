@@ -99,7 +99,12 @@ export default {
           <FormInvalid :error="state.phoneError">
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="휴대폰번호" id="LM_P07_l005_phone" />
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="휴대폰번호"
+                  id="LM_P07_l005_phone"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -205,5 +210,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/lmBlog/LM_P07_l005.scss';
+@import '@/assets/scss/views/lmBlogPersonal/LM_P07_l005.scss';
 </style>
