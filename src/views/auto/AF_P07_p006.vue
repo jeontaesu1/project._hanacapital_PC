@@ -1,7 +1,5 @@
 <script>
 // AF_P07_p006
-import { reactive } from 'vue';
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -20,6 +18,9 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
@@ -43,17 +44,10 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
     CarThumb,
-  },
-
-  setup() {
-    const state = reactive({
-      carNumberError: false,
-    });
-
-    return {
-      state,
-    };
   },
 };
 </script>
@@ -83,26 +77,28 @@ export default {
       </InputBlockCell>
     </InputBlock>
 
-    <!-- Case : 검색 결과 없을 때 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
-    </div>
-    <!-- Case : 검색 결과 없을 때 -->
-
-    <!-- Case : 검색 결과 없을 때 -->
-    <section class="row-margin-block-small">
+    <!-- Case : 조회 후 노출 -->
+    <section class="contents-wrap row-margin-block row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
+      <!-- Case : 검색 결과 없을 때 -->
+      <div :class="$style['empty']">
+        <p :class="$style['empty__text']">
+          승계 가능한 차량이 없습니다.<br />
+          양도인에게 승계 동의를 요청해주세요.
+        </p>
+      </div>
+      <!-- Case : 검색 결과 없을 때 -->
+
+      <!-- Case : 검색 결과 있을 때 -->
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <div class="flex-box row-margin-mini">
-              <div class="flex-box__cell flex-box__cell--small">
-                <p class="text-body-4 font-weight-light">2020년식</p>
-              </div>
-            </div>
+            <p class="text-body-4 font-weight-light row-margin-mini">
+              2020년식
+            </p>
             <h3 class="text-title-2 font-weight-regular">운용리스 11가1111</h3>
-            <p class="text-body-3 color-gray row-margin-item-small">
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
               올 뉴 아반떼(CN7) 가솔린 1.6
             </p>
           </BasicBoxHeadLeft>
@@ -111,21 +107,24 @@ export default {
           </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValue margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
+          <KeyValueItem>
             <KeyValueTitle>차대번호</KeyValueTitle>
             <KeyValueText>KMHEL00CPYA000001</KeyValueText>
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
+      <!-- // Case : 검색 결과 있을 때 -->
     </section>
-    <!-- //  Case : 검색 결과 없을 때 -->
+    <!-- // Case : 조회 후 노출 -->
+
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/personalLoan/PF_P02_l001.scss';
+@import '@/assets/scss/views/auto/AF_P07_p006.scss';
 </style>

@@ -14,6 +14,8 @@ import My_p06_p003 from '@/views/onlineBranch/My_p06_p003.vue';
 import My_P08_l001 from '@/views/onlineBranch/My_P08_l001.vue';
 import My_P08_l002 from '@/views/onlineBranch/My_P08_l002.vue';
 import My_P08_l003 from '@/views/onlineBranch/My_P08_l003.vue';
+import My_P08_l004 from '@/views/onlineBranch/My_P08_l004.vue';
+import My_P08_l005 from '@/views/onlineBranch/My_P08_l005.vue';
 
 export default {
   components: {
@@ -29,6 +31,8 @@ export default {
     My_P08_l001,
     My_P08_l002,
     My_P08_l003,
+    My_P08_l004,
+    My_P08_l005,
   },
   setup() {
     const layer001 = ref(null);
@@ -39,6 +43,8 @@ export default {
     const layer006 = ref(null);
     const layer007 = ref(null);
     const layer008 = ref(null);
+    const layer009 = ref(null);
+    const layer010 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -64,6 +70,12 @@ export default {
     const layer008Open = (e = {}) => {
       layer008.value.layer.open(e.target);
     };
+    const layer009Open = (e = {}) => {
+      layer009.value.layer.open(e.target);
+    };
+    const layer010Open = (e = {}) => {
+      layer010.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -74,6 +86,8 @@ export default {
       layer006,
       layer007,
       layer008,
+      layer009,
+      layer010,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -82,6 +96,8 @@ export default {
       layer006Open,
       layer007Open,
       layer008Open,
+      layer009Open,
+      layer010Open,
     };
   },
 };
@@ -135,6 +151,16 @@ export default {
           만기후처리 변경 방법선택_리스<br />My_P08_l003
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer009Open">
+          반환 신청 확인<br />My_P08_l004
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer010Open">
+          구매 신청 확인<br />My_P08_l005
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <MI_P00_l004 ref="layer001" />
@@ -145,5 +171,7 @@ export default {
     <My_P08_l001 ref="layer006" />
     <My_P08_l002 ref="layer007" />
     <My_P08_l003 ref="layer008" />
+    <My_P08_l004 ref="layer009" />
+    <My_P08_l005 ref="layer010" />
   </PageContents>
 </template>

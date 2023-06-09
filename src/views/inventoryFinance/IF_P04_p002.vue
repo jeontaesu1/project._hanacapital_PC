@@ -227,10 +227,7 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <BasicHr
-              theme="quaternary"
-              className="row-margin-contents"
-            ></BasicHr>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
             <KeyValue :wrap="true">
               <KeyValueItem>
@@ -403,7 +400,7 @@ export default {
             </KeyValueItem>
           </KeyValue>
 
-          <BasicHr theme="quaternary" className="row-margin-contents"></BasicHr>
+          <BasicHr theme="quaternary" className="row-margin-contents" />
 
           <KeyValue :wrap="true">
             <KeyValueItem>
@@ -444,7 +441,7 @@ export default {
 
       <div class="row-margin-block">// [공통 > 본인인증] 내용 노출</div>
 
-      <ButtonList align="full">
+      <ButtonList>
         <ButtonListItem>
           <BasicButton>만기연장 신청하기</BasicButton>
         </ButtonListItem>

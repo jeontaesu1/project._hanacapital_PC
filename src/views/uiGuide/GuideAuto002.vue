@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import layer from '@/views/';
+import AF_P03_l001 from '@/views/auto/AF_P03_l001.vue';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    AF_P03_l001,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,13 +41,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          앱 설치 안내팝업<br />AF_P03_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <AF_P03_l001 ref="layer001" />
   </PageContents>
 </template>
