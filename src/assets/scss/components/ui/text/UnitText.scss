@@ -60,18 +60,17 @@
     }
   }
 
-  /*
   &--size-large {
     .unit-text__left,
     .unit-text__right {
+      margin-bottom: 5px;
       @include font-size-head(18);
-      font-weight: 500;
+      font-weight: 700;
     }
 
     .unit-text__val {
-      @include font-size-head(28);
-      font-weight: 900;
+      @include font-size-head(32);
+      font-weight: 700;
     }
   }
-  */
 }

@@ -40,6 +40,7 @@ import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
+import TextProgress from '@/components/ui/progress/TextProgress.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
@@ -77,6 +78,8 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
@@ -99,6 +102,7 @@ import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
@@ -144,6 +148,7 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     StepProgress,
+    TextProgress,
     RoundStatus,
     NoticeText,
     UiTab,
@@ -160,6 +165,8 @@ export default {
     UiAccordionItem,
     UiAccordionLayer,
     UiAccordionOpener,
+    BasicBanner,
+    EventBanner,
     BasicHr,
     BasicBox,
     BasicBoxHead,
@@ -202,6 +209,7 @@ export default {
     IconDeposit,
     IconCallMint,
     IconCompleted,
+    ImgMainSample,
     IconImgColor,
     IconImg,
     IconTooltip,
@@ -1013,6 +1021,21 @@ export default {
         </TextButton>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon size medium</h3>
+        <TextButton iconSize="medium" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton iconSize="medium" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">text size regular</h3>
         <TextButton textSize="regular" theme="secondary" :iconFillAll="true">
           <template v-slot:leftIcon>
@@ -1021,6 +1044,21 @@ export default {
           Button
         </TextButton>
         <TextButton textSize="regular" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">text size medium</h3>
+        <TextButton textSize="medium" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton textSize="medium" theme="tertiary" :iconFillAll="true">
           Button
           <template v-slot:rightIcon>
             <IconAdd />
@@ -1040,6 +1078,42 @@ export default {
           Button
           <template v-slot:rightIcon>
             <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          more - iconSize,textSize (medium)
+        </h3>
+
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+          >Button</TextButton
+        >
+
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+        >
+          <template v-slot:leftIcon>
+            <IconLink />
+          </template>
+          Button
+        </TextButton>
+        <TextButton
+          iconSize="medium"
+          textSize="medium"
+          :block="true"
+          class="color-gray-tertiary"
+        >
+          Button
+          <template v-slot:rightIcon>
+            <IconLink />
           </template>
         </TextButton>
       </div>
@@ -2562,6 +2636,41 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">TextProgress</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+        />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <TextProgress
+          :steps="[
+            '본인인증',
+            '계약자정보',
+            '금융조건',
+            '면허정보',
+            '약관동의',
+            '본인인증',
+            'ARS',
+          ]"
+          :current="1"
+          :cancel="true"
+        />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Agree List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -3768,6 +3877,29 @@ export default {
           </div>
         </BasicBox>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon 라지 사이즈</h3>
+        <BasicBox>
+          <div :class="$style['icon-box']">
+            <div
+              :class="[
+                $style['icon-box__icon'],
+                $style['icon-box__icon--large'],
+              ]"
+            >
+              <ImgMainSample />
+            </div>
+            <div :class="$style['icon-box__content']">
+              <p class="text-title-1">
+                <span class="color-green font-weight-bold">하나프라자</span>님은
+                하나캐피탈에 등록된<br />
+                <span class="font-weight-bold">정식 모집인</span>입니다
+              </p>
+            </div>
+          </div>
+        </BasicBox>
+      </div>
     </section>
 
     <section class="test-section">
@@ -4487,9 +4619,7 @@ export default {
         <BasicBox theme="tertiary">// contnets</BasicBox>
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
-        <!--
         <BasicBox theme="senary">// contnets</BasicBox>
-        -->
       </div>
     </section>
 
@@ -5016,6 +5146,17 @@ export default {
                 </div>
               </div>
             </li>
+            <li :class="$style['icon-list__item']">
+              <div :class="$style['icon-list__block']">
+                <div :class="$style['icon-list__icon']"><ImgMainSample /></div>
+                <div :class="$style['icon-list__content']">
+                  <div :class="$style['icon-list__text']">
+                    결제예정금액의 자세한 내역이 궁금하시다면
+                  </div>
+                  <div :class="$style['icon-list__title']">온라인청구서</div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -5180,18 +5321,14 @@ export default {
         <UnitText size="regular" rightUnit="원">333,389</UnitText>
       </div>
 
-      <!--
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Large</h3>
 
-        <UnitText size="large" verticalAlign="center" leftUnit="$"
+        <!-- <UnitText size="large" verticalAlign="center" leftUnit="$"
           >333,389</UnitText
-        >
-        <UnitText size="large" verticalAlign="center" rightUnit="원"
-          >333,389</UnitText
-        >
+        > -->
+        <UnitText size="large" rightUnit="원">333,389</UnitText>
       </div>
-      -->
     </section>
 
     <section class="test-section">
@@ -5733,6 +5870,252 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Box Link (logs)</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ul :class="$style['logs']">
+          <li v-for="i in 2" :key="i" :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="$style['logs__title']">정비</h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button
+                    type="button"
+                    :class="$style['logs__link']"
+                    @click="layer001Open"
+                  >
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">case 01</h3>
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <RoundStatus theme="nonary" size="large" :block="true"
+                  >연체</RoundStatus
+                >
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 class="text-title-2 font-weight-medium">
+                    오토리스 20고5678
+                  </h3>
+                  <div
+                    :class="[$style['division-info'], 'row-margin-item-small']"
+                  >
+                    <ul :class="$style['division-info__list']">
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          BMW 435d
+                        </div>
+                      </li>
+                      <li :class="$style['division-info__item']">
+                        <div class="text-body-3 color-gray-tertiary">
+                          L99999999999999
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>결제예정금액</KeyValueTitle>
+                  <KeyValueText class="color-green">6,265,200 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>이용기간</KeyValueTitle>
+                  <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제일</KeyValueTitle>
+                  <KeyValueText>05일</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>결제회차</KeyValueTitle>
+                  <KeyValueText>12/36</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+
+              <div
+                :class="[
+                  $style['inline-alert'],
+                  $style['inline-alert--error'],
+                  'row-margin-contents',
+                ]"
+              >
+                <p :class="$style['inline-alert__text']">
+                  계약만기일이 90일 남았습니다. 만기후처리를 등록해 주세요.
+                </p>
+              </div>
+
+              <div :class="[$style['logs__button'], 'row-margin-contents']">
+                <ButtonList
+                  :wrap="true"
+                  align="center"
+                  :classNames="{
+                    wrap: 'row-margin-none',
+                  }"
+                >
+                  <ButtonListItem>
+                    <BasicButton size="regular" line="true"
+                      >만기안내장</BasicButton
+                    >
+                  </ButtonListItem>
+                  <ButtonListItem>
+                    <BasicButton size="regular">만기후처리</BasicButton>
+                  </ButtonListItem>
+                </ButtonList>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Upload Button</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5925,6 +6308,131 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">BasicBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <p class="text-body-2 color-gray-tertiary row-margin-mini">
+            하나금융그룹의 생활금융플랫폼!<br />
+          </p>
+          <div class="text-title-2 font-weight-medium">다이렉트 장기렌터카</div>
+        </BasicBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <BasicBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <p class="text-body-2 color-gray-tertiary row-margin-mini">
+            비용NO! 보험NO! 내 차OK!
+          </p>
+          <h3 class="text-title-2 font-weight-medium">다이렉트 장기렌터카</h3>
+        </BasicBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">EventBanner</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          thumb="/images/_dummy/banner-money-up.png"
+          @click="() => {}"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">RouterLink</h3>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+
+        <EventBanner
+          tagName="RouterLink"
+          to=""
+          thumb="/images/_dummy/banner-money-up.png"
+          :disabledStyle="true"
+        >
+          <div class="inline-wrap row-margin-item-regular">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h3 class="text-body-1 font-weight-medium ellipsis">
+            에코플러스 자동차보험
+          </h3>
+          <p class="text-body-4 color-gray row-margin-small multi-ellipsis">
+            보험 가입하면 주유권 3만원 제공<br />(신규 30만원)
+          </p>
+          <p
+            class="text-body-5 color-gray font-weight-light row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Car Thumb</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -6043,6 +6551,27 @@ export default {
               </template>
             </BasicTooltip>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Inline Alert</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <!-- <div :class="$style['inline-alert']">
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div> -->
+
+        <div
+          :class="[$style['inline-alert'], $style['inline-alert--complete']]"
+        >
+          <p :class="$style['inline-alert__text']">인증이 완료되었습니다.</p>
+        </div>
+
+        <div :class="[$style['inline-alert'], $style['inline-alert--error']]">
+          <p :class="$style['inline-alert__text']">인증이 실패하였습니다.</p>
         </div>
       </div>
     </section>

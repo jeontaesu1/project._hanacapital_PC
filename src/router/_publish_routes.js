@@ -264,6 +264,11 @@ const routes = [
 
   // customer
   {
+    path: '/customer/Customer_P00_p001',
+    name: '/customer/Customer_P00_p001',
+    component: () => import('@/views/customer/Customer_P00_p001.vue'),
+  },
+  {
     path: '/customer/Customer_P03_p001',
     name: '/customer/Customer_P03_p001',
     component: () => import('@/views/customer/Customer_P03_p001.vue'),
@@ -624,6 +629,11 @@ const routes = [
     name: '/inventory-finance/IF_P06_p001',
     component: () => import('@/views/inventoryFinance/IF_P06_p001.vue'),
   },
+  {
+    path: '/inventory-finance/IF_P08_p001',
+    name: '/inventory-finance/IF_P08_p001',
+    component: () => import('@/views/inventoryFinance/IF_P08_p001.vue'),
+  },
 
   // lm-blog
   {
@@ -670,6 +680,11 @@ const routes = [
   },
 
   // online-branch
+  {
+    path: '/online-branch/MI_P00_p001',
+    name: '/online-branch/MI_P00_p001',
+    component: () => import('@/views/onlineBranch/MI_P00_p001.vue'),
+  },
   {
     path: '/online-branch/MI_P00_p002',
     name: '/online-branch/MI_P00_p002',
@@ -1853,6 +1868,11 @@ const routes = [
     path: '/agent/Agent_P10_p004',
     name: '/agent/Agent_P10_p004',
     component: () => import('@/views/agent/Agent_P10_p004.vue'),
+  },
+  {
+    path: '/affiliate-plaza/Partner_P00_p001',
+    name: '/affiliate-plaza/Partner_P00_p001',
+    component: () => import('@/views/affiliatePlaza/Partner_P00_p001.vue'),
   },
 ];
 

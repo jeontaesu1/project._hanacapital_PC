@@ -1,0 +1,54 @@
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/notice-list.scss';
+
+.icon-list {
+  &__customer {
+    .icon-list {
+      &__item {
+        display: inline-block;
+        width: 380px;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+.customer-layout {
+  display: flex;
+  justify-content: space-between;
+
+  &__section {
+    width: 560px;
+  }
+}
+.homepage-user-guide {
+  .icon-list {
+    &__list {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+    }
+    &__item {
+      width: 270px;
+      margin: 0 0 0 20px;
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.customer-link-list {
+  display: flex;
+  @include reset-list;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: none;
+    width: 174px;
+    margin-top: 12px;
+  }
+}
