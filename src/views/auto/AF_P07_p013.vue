@@ -37,7 +37,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">오토승계</PageTitle>
         <template v-slot:right>
-          <StepProgress :total="3" :current="1" />
+          <StepProgress :total="6" :current="3" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">

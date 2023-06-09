@@ -128,6 +128,16 @@ export default {
               부담한 근저당권 비용 / 인지세 등 제세공과금 / 보증료 / 보험료 /
               제3자에게 지급한 자동화기기 이용수수료 등
             </p>
+
+            <ul :class="$style['basic-list']">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  철회기간(14일)내 원리금 및 부대비용 미반환시 철회는
+                  불가능하며, 신청내용은 자동 취소됩니다.
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="row-margin-container-medium">
@@ -271,5 +281,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/customer/Customer_P09_p007.scss';
+@import '@/assets/scss/views/customer/Customer_P09_p008.scss';
 </style>
