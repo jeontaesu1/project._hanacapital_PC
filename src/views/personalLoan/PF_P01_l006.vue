@@ -101,11 +101,6 @@ export default {
                 <template v-slot:innerRight>
                   <div class="text-body-3 color-red">00:00</div>
                 </template>
-                <template v-slot:right>
-                  <BasicButton size="small" theme="quaternary">
-                    재요청
-                  </BasicButton>
-                </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
