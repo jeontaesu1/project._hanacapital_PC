@@ -1,0 +1,11 @@
+@import '@/assets/scss/components/import/agree-list.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.link-button {
+  @include reset-button;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px 0;
+  background: url('@/assets/images/icon/link.svg') no-repeat 50% 50% / 100% 100%;
+}

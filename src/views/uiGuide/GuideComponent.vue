@@ -61,6 +61,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import BasicBoxFoot from '@/components/ui/common/BasicBoxFoot.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -78,6 +79,7 @@ import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllip
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
+import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
@@ -163,6 +165,7 @@ export default {
     BasicBoxHead,
     BasicBoxHeadLeft,
     BasicBoxHeadRight,
+    BasicBoxFoot,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -180,6 +183,7 @@ export default {
     PaginationNavNumber,
     CarThumb,
     CarEmblem,
+    ColorChip,
     BasicTooltip,
     SelectTable,
     SelectTableRow,
@@ -704,12 +708,6 @@ export default {
           </template>
           Button
         </BasicButton>
-        <BasicButton inline="true" size="mini">
-          Button
-          <template v-slot:rightIcon>
-            <div :class="$style['loading-icon']"></div>
-          </template>
-        </BasicButton>
         <BasicButton tagName="a" inline="true" disabledStyle="true">
           Button
           <template v-slot:rightIcon>
@@ -1044,6 +1042,24 @@ export default {
             <IconAdd />
           </template>
         </TextButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Loading Icon</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">Default</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div :class="$style['loading-icon']"></div>
+        </div>
       </div>
     </section>
 
@@ -2483,6 +2499,57 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
       </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Wrap - col 5</h3>
+
+        <BoxCheckList :wrap="true" col="5">
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_001"
+            >
+              <BoxCheckLabel>Label 1</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_002"
+            >
+              <BoxCheckLabel>Label 2</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_003"
+            >
+              <BoxCheckLabel>Label 3</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_004"
+            >
+              <BoxCheckLabel>Label 4</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+          <BoxCheckListItem>
+            <BoxCheck
+              :minSide="true"
+              name="testBoxCheckList006"
+              id="testBoxCheckList006_005"
+            >
+              <BoxCheckLabel>Label 5</BoxCheckLabel>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
+      </div>
     </section>
 
     <section class="test-section">
@@ -3047,7 +3114,7 @@ export default {
             <div :class="$style['contents-list__head']">
               <div :class="$style['contents-list__symbol']">1</div>
               <div :class="$style['contents-list__title']">
-                신규/추가대출 문의
+                2022년형 가솔린 1.0
               </div>
               <div :class="$style['contents-list__right']">
                 <UiAccordionOpener
@@ -3550,6 +3617,96 @@ export default {
             </li>
           </ol>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Select List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+      </div>
+      <UiAccordion :classNames="{ wrap: $style['select-list__list'] }">
+        <UiAccordionItem :classNames="{ item: $style['select-list__item'] }">
+          <div :class="$style['select-list__head']">
+            <div :class="$style['select-list__title']">Title</div>
+            <div :class="$style['select-list__right']">
+              <UiAccordionOpener
+                :classNames="{ button: $style['select-list__opener'] }"
+              />
+            </div>
+          </div>
+
+          <UiAccordionLayer>
+            <div :class="$style['select-list__contents']">//Contents</div>
+          </UiAccordionLayer>
+        </UiAccordionItem>
+        <UiAccordionItem :classNames="{ item: $style['select-list__item'] }">
+          <div :class="$style['select-list__head']">
+            <div :class="$style['select-list__title']">Title</div>
+            <div :class="$style['select-list__right']">
+              <UiAccordionOpener
+                :classNames="{ button: $style['select-list__opener'] }"
+              />
+            </div>
+          </div>
+
+          <UiAccordionLayer>
+            <div :class="$style['select-list__contents']">//Contents</div>
+          </UiAccordionLayer>
+        </UiAccordionItem>
+      </UiAccordion>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Option List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+      </div>
+      <div :class="$style['option-list']">
+        <ul :class="$style['option-list__list']">
+          <li :class="$style['option-list__item']">
+            <div :class="$style['option-list__block']">
+              <CheckBox id="testOptionList_001" theme="secondary" :full="true">
+                <CheckBoxObject />
+                <CheckBoxLabelText>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1">
+                      <span class="text-title-2 font-weight-medium"
+                        >현대 스마트센스</span
+                      >
+                    </span>
+                    <span class="flex-box__cell">
+                      <UnitText size="regular" rightUnit="원" align="right">
+                        <strong>+ 700,000</strong>
+                      </UnitText>
+                    </span>
+                  </span>
+                </CheckBoxLabelText>
+              </CheckBox>
+            </div>
+          </li>
+          <li :class="$style['option-list__item']">
+            <div :class="$style['option-list__block']">
+              <CheckBox id="testOptionList_002" theme="secondary" :full="true">
+                <CheckBoxObject />
+                <CheckBoxLabelText>
+                  <span class="flex-box">
+                    <span class="flex-box__cell flex-1">
+                      <span class="text-title-2 font-weight-medium"
+                        >액티비 플러스</span
+                      >
+                    </span>
+                    <span class="flex-box__cell">
+                      <UnitText size="regular" rightUnit="원" align="right">
+                        <strong>+ 500,000</strong>
+                      </UnitText>
+                    </span>
+                  </span>
+                </CheckBoxLabelText>
+              </CheckBox>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -4328,9 +4485,9 @@ export default {
         <BasicBox>// contnets</BasicBox>
         <BasicBox theme="secondary">// contnets</BasicBox>
         <BasicBox theme="tertiary">// contnets</BasicBox>
-        <!--
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
+        <!--
         <BasicBox theme="senary">// contnets</BasicBox>
         -->
       </div>
@@ -4364,6 +4521,59 @@ export default {
             </BasicBoxHeadRight>
           </BasicBoxHead>
           // contents
+        </BasicBox>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Box Foot</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BasicBox>
+          // contents
+          <BasicBoxFoot>
+            <KeyValue>
+              <KeyValueItem>
+                <KeyValueTitle>기본차량가격</KeyValueTitle>
+                <KeyValueText> 15,500,000 원 </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>옵션가격</KeyValueTitle>
+                <KeyValueText> + 1,200,000 원 </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicHr theme="tertiary" className="row-margin-contents" />
+
+            <KeyValue verticalAlign="center" margin="regular">
+              <KeyValueItem>
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'text-title-2 color-black font-weight-medium',
+                  }"
+                  >총 차량가격</KeyValueTitle
+                >
+                <KeyValueText>
+                  <UnitText rightUnit="원" align="right">
+                    <strong>16,700,000</strong>
+                  </UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle
+                  :classNames="{
+                    title: 'text-title-2 color-black font-weight-medium',
+                  }"
+                  >월 납입금액</KeyValueTitle
+                >
+                <KeyValueText>
+                  <BasicButton inline="true" size="small">
+                    계산하기
+                  </BasicButton>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBoxFoot>
         </BasicBox>
       </div>
     </section>
@@ -5137,6 +5347,39 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Bank Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <BankLogo code="002" />
+        <BankLogo code="003" />
+        <BankLogo code="004" />
+        <BankLogo code="007" />
+        <BankLogo code="011" />
+        <BankLogo code="020" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size : small</h3>
+        <BankLogo size="small" code="002" />
+        <BankLogo size="small" code="003" />
+        <BankLogo size="small" code="004" />
+        <BankLogo size="small" code="007" />
+        <BankLogo size="small" code="011" />
+        <BankLogo size="small" code="020" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Background</h3>
+        <BankLogo background="true" code="002" />
+        <BankLogo background="true" code="003" />
+        <BankLogo background="true" code="004" />
+        <BankLogo background="true" code="007" />
+        <BankLogo background="true" code="011" />
+        <BankLogo background="true" code="020" />
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Bank Logo List</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -5260,6 +5503,46 @@ export default {
             <KeyValueText>123-456-78901234-1234567890-12345</KeyValueText>
           </KeyValueItem>
         </KeyValue>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Radio Select</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BoxCheckList :wrap="true">
+          <BoxCheckListItem v-for="i in 2" :key="i">
+            <BoxCheck
+              :contents="true"
+              type="checkbox"
+              name="testBankRadioSelect"
+              :id="`testBankRadioSelect${i}`"
+            >
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <BankLogo code="081" background="true" />
+                </div>
+
+                <div class="flex-box__cell flex-box__cell--medium flex-1">
+                  <div
+                    class="text-body-3 color-gray font-weight-light row-margin-mini"
+                  >
+                    하나증권
+                  </div>
+                  <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
+                    >하나 & 스탁론 Ⅰ</BoxCheckLabel
+                  >
+                  <div
+                    class="text-body-2 color-gray-secondary row-margin-mini ellipsis"
+                  >
+                    토마토파트너
+                  </div>
+                </div>
+              </div>
+            </BoxCheck>
+          </BoxCheckListItem>
+        </BoxCheckList>
       </div>
     </section>
 
@@ -5647,6 +5930,11 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size : Regular</h3>
+        <CarThumb size="regular" src="/images/_dummy/car-thumb.png" />
+      </div>
     </section>
 
     <section class="test-section">
@@ -5654,6 +5942,24 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <CarEmblem code="1001" name="현대" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Color Chip</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ColorChip />
+        <ColorChip :colors="['244, 238, 238']" />
+        <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
+        <ColorChip
+          :colors="[
+            '244, 238, 238',
+            '225, 213, 213',
+            '66, 83, 82',
+            '155, 171, 170',
+          ]"
+        />
       </div>
     </section>
 

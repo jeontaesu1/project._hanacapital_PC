@@ -956,11 +956,6 @@ const routes = [
     component: () => import('@/views/onlineBranch/MI_P02_p005.vue'),
   },
   {
-    path: '/online-branch/MI_P02_p006',
-    name: '/online-branch/MI_P02_p006',
-    component: () => import('@/views/onlineBranch/MI_P02_p006.vue'),
-  },
-  {
     path: '/online-branch/MI_P01_p001',
     name: '/online-branch/MI_P01_p001',
     component: () => import('@/views/onlineBranch/MI_P01_p001.vue'),
@@ -1330,11 +1325,6 @@ const routes = [
     component: () => import('@/views/auto/AF_P01_p002.vue'),
   },
   {
-    path: '/auto/AF_P01_p003',
-    name: '/auto/AF_P01_p003',
-    component: () => import('@/views/auto/AF_P01_p003.vue'),
-  },
-  {
     path: '/auto/AF_P01_p004',
     name: '/auto/AF_P01_p004',
     component: () => import('@/views/auto/AF_P01_p004.vue'),
@@ -1343,11 +1333,6 @@ const routes = [
     path: '/auto/AF_P02_p002',
     name: '/auto/AF_P02_p002',
     component: () => import('@/views/auto/AF_P02_p002.vue'),
-  },
-  {
-    path: '/auto/AF_P02_p003',
-    name: '/auto/AF_P02_p003',
-    component: () => import('@/views/auto/AF_P02_p003.vue'),
   },
   {
     path: '/auto/AF_P02_p004',

@@ -3,7 +3,9 @@ import { computed } from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
-  img: '',
+  inner: '',
+  cell: '',
+  icon: '',
 });
 
 export default {
@@ -14,25 +16,13 @@ export default {
         return defaultClassNames();
       },
     },
-    type: {
-      Type: String,
-      default: 'bank',
-    },
     size: {
       Type: String,
       default: null,
     },
-    code: {
-      Type: String,
-      default: null,
-    },
-    name: {
-      Type: String,
-      default: null,
-    },
-    background: {
-      Type: Boolean,
-      default: false,
+    colors: {
+      Type: Array,
+      default: [],
     },
   },
   setup(props) {
@@ -51,23 +41,25 @@ export default {
 <template>
   <span
     :class="[
-      $style['bank-logo'],
+      $style['color-chip'],
+      $style[`color-chip--length-${colors.length}`],
       {
-        [$style['bank-logo--background']]: background,
-        [$style[`bank-logo--size-${size}`]]: size,
+        [$style[`color-chip--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"
   >
-    <img
-      v-if="code"
-      :src="`/images/${type}-logo/${code}.svg`"
-      :alt="name"
-      :class="[$style['bank-logo__img'], customClassNames.img]"
-    />
+    <span :class="[$style['color-chip__inner'], customClassNames.inner]">
+      <span
+        v-for="(item, i) in colors"
+        :key="i"
+        :class="[$style['color-chip__cell'], customClassNames.cell]"
+        :style="`background: rgb(${item});`"
+      />
+    </span>
   </span>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/imageData/BankLogo.scss';
+@import '@/assets/scss/components/ui/imageData/ColorChip.scss';
 </style>
