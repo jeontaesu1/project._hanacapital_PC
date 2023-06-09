@@ -75,49 +75,47 @@ export default {
     </PageHead>
 
     <FormList>
-      <FormList>
-        <FormListItem titleText="신규 비밀번호" target="#MI_P01_p001_password">
-          <FormInvalid :error="state.passwordError">
-            <InputBlock :error="state.passwordError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="password"
-                  title="신규 비밀번호"
-                  id="MI_P01_p001_password"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-            <FormHelpText>
-              비밀번호 8~16자리(영문/숫자/특수문자 혼합)
-            </FormHelpText>
-          </FormInvalid>
-        </FormListItem>
+      <FormListItem titleText="신규 비밀번호" target="#MI_P01_p001_password">
+        <FormInvalid :error="state.passwordError">
+          <InputBlock :error="state.passwordError">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="password"
+                title="신규 비밀번호"
+                id="MI_P01_p001_password"
+              />
+            </InputBlockCell>
+            <InputBlockCell>
+              <SecurityKeypadButton />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>
+            비밀번호 8~16자리(영문/숫자/특수문자 혼합)
+          </FormHelpText>
+        </FormInvalid>
+      </FormListItem>
 
-        <FormListItem
-          titleText="신규 비밀번호 확인"
-          target="#MI_P01_p001_passwordConfirm"
-        >
-          <FormInvalid :error="state.passwordConfirmError">
-            <InputBlock :error="state.passwordConfirmError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  type="password"
-                  title="신규 비밀번호 확인"
-                  id="MI_P01_p001_passwordConfirm"
-                />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
+      <FormListItem
+        titleText="신규 비밀번호 확인"
+        target="#MI_P01_p001_passwordConfirm"
+      >
+        <FormInvalid :error="state.passwordConfirmError">
+          <InputBlock :error="state.passwordConfirmError">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="password"
+                title="신규 비밀번호 확인"
+                id="MI_P01_p001_passwordConfirm"
+              />
+            </InputBlockCell>
+            <InputBlockCell>
+              <SecurityKeypadButton />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
     </FormList>
 
     <ButtonList>

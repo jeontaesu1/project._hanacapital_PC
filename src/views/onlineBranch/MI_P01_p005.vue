@@ -77,7 +77,13 @@ export default {
       <PageMainText align="left">주소지를 변경해 주세요</PageMainText>
     </PageHead>
 
-    <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+      ]"
+    >
       <li :class="[$style['basic-list__item'], 'font-weight-regular']">
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">

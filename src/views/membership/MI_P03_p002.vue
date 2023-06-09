@@ -57,9 +57,7 @@ export default {
       :classNames="{ wrap: 'row-margin-block row-margin-top-none' }"
     >
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to=""
-          >하나캐피탈 멤버십 가입하기</BasicButton
-        >
+        <BasicButton>하나캐피탈 멤버십 가입하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
 
@@ -76,12 +74,12 @@ export default {
         <NavTabButton link="MI_P03_p002_tab005">부동산 시세조회</NavTabButton>
       </NavTab>
 
-      <!-- 무료 보험 서비스 -->
+      <!-- Case : 무료 보험 서비스 -->
       <UiTabPanel name="MI_P03_p002_tab001">
         <PageMainText
           align="left"
           :classNames="{
-            wrap: 'row-margin-contents',
+            wrap: 'font-weight-bold row-margin-contents',
           }"
         >
           '교통상해사망/교통상해후유장해보험’ 서비스를 하나캐피탈 멤버십
@@ -111,8 +109,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
@@ -144,13 +142,13 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
                 <div :class="$style['basic-list__content']">
-                  2021년 8월 11일 이후 멤버십 회원에 한해 최초 1회 제공 (탈회 및
+                  2021년 8월 11일 이후 멤버십 회원에 한해 최초 1회 제공 (탈퇴 및
                   중복가입 시 제공불가)
                 </div>
               </li>
@@ -158,8 +156,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
@@ -172,8 +170,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
@@ -229,13 +227,13 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
                 <div :class="$style['basic-list__content']">
-                  멤버십 탈회 시 탈회일 기준 보험서비스 해지
+                  멤버십 탈퇴 시 탈퇴일 기준 보험서비스 해지
                 </div>
               </li>
             </ul>
@@ -262,16 +260,16 @@ export default {
           </p>
         </section>
       </UiTabPanel>
-      <!-- // 무료 보험 서비스 -->
+      <!-- //Case : 무료 보험 서비스 -->
 
-      <!-- 금리우대 서비스 -->
+      <!-- Case : 금리우대 서비스 -->
       <UiTabPanel name="MI_P03_p002_tab002">
         <div class="row-margin-contents">
           <RoundStatus theme="secondary" size="large">모바일 전용</RoundStatus>
           <PageMainText
             align="left"
             :classNames="{
-              wrap: 'row-margin-item-group',
+              wrap: 'font-weight-bold row-margin-item-group',
             }"
           >
             하나캐피탈 멤버십 회원이 신용대출 상품 이용 시 금리 우대를 제공하는
@@ -324,8 +322,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
@@ -360,8 +358,8 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'text-body-4',
-                  'font-weight-regular',
                   'color-gray-secondary',
+                  'font-weight-regular',
                 ]"
               >
                 <div :class="$style['basic-list__symbol']">※</div>
@@ -386,9 +384,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -399,9 +397,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -412,9 +410,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -425,9 +423,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -441,9 +439,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -460,8 +458,8 @@ export default {
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
                       'text-body-3',
+                      'color-black',
                       'font-weight-regular',
                     ]"
                   >
@@ -473,8 +471,8 @@ export default {
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
                       'text-body-3',
+                      'color-black',
                       'font-weight-regular',
                     ]"
                   >
@@ -487,8 +485,8 @@ export default {
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
                       'text-body-3',
+                      'color-black',
                       'font-weight-regular',
                     ]"
                   >
@@ -508,8 +506,8 @@ export default {
                           :class="[
                             $style['basic-list__item'],
                             'text-body-4',
-                            'font-weight-regular',
                             'color-gray-secondary',
+                            'font-weight-regular',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">※</div>
@@ -522,8 +520,8 @@ export default {
                           :class="[
                             $style['basic-list__item'],
                             'text-body-4',
-                            'font-weight-regular',
                             'color-gray-secondary',
+                            'font-weight-regular',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">※</div>
@@ -536,8 +534,8 @@ export default {
                           :class="[
                             $style['basic-list__item'],
                             'text-body-4',
-                            'font-weight-regular',
                             'color-gray-secondary',
+                            'font-weight-regular',
                           ]"
                         >
                           <div :class="$style['basic-list__symbol']">※</div>
@@ -555,9 +553,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -570,9 +568,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -592,8 +590,8 @@ export default {
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
                       'text-body-3',
+                      'color-black',
                       'font-weight-regular',
                     ]"
                   >
@@ -605,8 +603,8 @@ export default {
                   <li
                     :class="[
                       $style['basic-list__item'],
-                      'color-black',
                       'text-body-3',
+                      'color-black',
                       'font-weight-regular',
                     ]"
                   >
@@ -634,9 +632,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -647,9 +645,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-medium',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -661,9 +659,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-medium',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -675,9 +673,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-medium',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -689,9 +687,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -703,9 +701,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -717,9 +715,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -731,9 +729,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -745,9 +743,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -759,9 +757,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -773,9 +771,9 @@ export default {
             <li
               :class="[
                 $style['basic-list__item'],
+                'text-title-2',
                 'color-black',
                 'font-weight-regular',
-                'text-title-2',
               ]"
             >
               <div :class="$style['basic-list__symbol']"></div>
@@ -807,14 +805,14 @@ export default {
           </ul>
         </section>
       </UiTabPanel>
-      <!-- // 금리우대 서비스 -->
+      <!-- //Case : 금리우대 서비스 -->
 
       <!-- 생활가전 렌탈료 할인 서비스 -->
       <UiTabPanel name="MI_P03_p002_tab003">
         <PageMainText
           align="left"
           :classNames="{
-            wrap: 'row-margin-contents',
+            wrap: 'font-weight-bold row-margin-contents',
           }"
         >
           하나캐피탈 제휴처 렌탈 시 렌탈료 할인을 제공하는 혜택 서비스
@@ -933,16 +931,16 @@ export default {
           </ul>
         </div>
       </UiTabPanel>
-      <!-- // 생활가전 렌탈료 할인 서비스 -->
+      <!-- //Case : 생활가전 렌탈료 할인 서비스 -->
 
-      <!-- 자동차 시세조회 -->
+      <!-- Case : 자동차 시세조회 -->
       <UiTabPanel name="MI_P03_p002_tab004">
         <div class="row-margin-contents">
           <RoundStatus theme="secondary" size="large">모바일 전용</RoundStatus>
           <PageMainText
             align="left"
             :classNames="{
-              wrap: 'row-margin-item-group',
+              wrap: 'font-weight-bold row-margin-item-group',
             }"
           >
             매월 업데이트 되는 차량정보로 내 차 시세조회가 가능한 혜택 서비스
@@ -979,7 +977,7 @@ export default {
               제공기간
             </h4>
 
-            <p class="text-title-2">멤버십 탈회 시까지</p>
+            <p class="text-title-2">멤버십 탈퇴 시까지</p>
           </section>
 
           <section class="row-margin-contents">
@@ -1013,16 +1011,16 @@ export default {
           </section>
         </div>
       </UiTabPanel>
-      <!-- // 자동차 시세조회 -->
+      <!-- //Case : 자동차 시세조회 -->
 
-      <!-- 부동산 시세조회 -->
+      <!-- Case : 부동산 시세조회 -->
       <UiTabPanel name="MI_P03_p002_tab005">
         <div class="row-margin-contents">
           <RoundStatus theme="secondary" size="large">모바일 전용</RoundStatus>
           <PageMainText
             align="left"
             :classNames="{
-              wrap: 'row-margin-item-group',
+              wrap: 'font-weight-bold row-margin-item-group',
             }"
           >
             매주 업데이트 되는 부동산 시세조회를 무료로 이용할 수 있는 혜택
@@ -1060,7 +1058,7 @@ export default {
               제공기간
             </h4>
 
-            <p class="text-title-2">멤버십 탈회 시까지</p>
+            <p class="text-title-2">멤버십 탈퇴 시까지</p>
           </section>
 
           <section class="row-margin-contents">
@@ -1097,7 +1095,7 @@ export default {
           </section>
         </div>
       </UiTabPanel>
-      <!-- // 부동산 시세조회 -->
+      <!-- //Case : 부동산 시세조회 -->
     </UiTab>
   </PageContents>
 </template>

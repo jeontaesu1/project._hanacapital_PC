@@ -1,5 +1,5 @@
 <script>
-// MI_P02_p004
+// MI_P02_p003
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
@@ -36,7 +36,7 @@ export default {
 
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to="">확인</BasicButton>
+        <BasicButton>확인</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

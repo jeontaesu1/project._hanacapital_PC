@@ -82,9 +82,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton tagName="RouterLink" to=""
-          >네, 모두 확인했습니다</BasicButton
-        >
+        <BasicButton>네, 모두 확인했습니다</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

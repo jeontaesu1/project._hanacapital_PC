@@ -60,7 +60,7 @@ export default {
           id="MI_P01_p004_type002"
         >
           <BoxCheckLabel>하나캐피탈</BoxCheckLabel>
-          <div :class="[$style['division-info'], 'row-margin-item-regular']">
+          <div :class="[$style['division-info'], 'row-margin-item-small']">
             <ul :class="$style['division-info__list']">
               <li :class="$style['division-info__item']">
                 <div class="text-body-3 color-gray">123-45-67890</div>
@@ -76,7 +76,7 @@ export default {
           id="MI_P01_p004_type003"
         >
           <BoxCheckLabel>하나캐피탈</BoxCheckLabel>
-          <div :class="[$style['division-info'], 'row-margin-item-regular']">
+          <div :class="[$style['division-info'], 'row-margin-item-small']">
             <ul :class="$style['division-info__list']">
               <li :class="$style['division-info__item']">
                 <div class="text-body-3 color-gray">123-45-67890</div>

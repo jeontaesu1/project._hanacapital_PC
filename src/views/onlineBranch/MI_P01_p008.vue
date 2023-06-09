@@ -45,15 +45,15 @@ export default {
 
   setup() {
     const state = reactive({
-      phoneError001: false,
-      phoneError002: false,
-      phoneError003: false,
-      phoneError004: false,
-      phoneError005: false,
-      phoneError006: false,
-      phoneError007: false,
-      phoneError008: false,
-      phoneError009: false,
+      phoneError: false,
+      housePhoneError: false,
+      officePhoneError: false,
+      ceoOfficePhoneError: false,
+      ceoPhoneError: false,
+      managerOfficePhoneError001: false,
+      managerOfficePhoneError002: false,
+      managerPhoneError001: false,
+      managerPhoneError002: false,
     });
 
     return {
@@ -76,7 +76,13 @@ export default {
     </PageHead>
 
     <div>
-      <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--regular-margin'],
+        ]"
+      >
         <li :class="[$style['basic-list__item'], 'font-weight-regular']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -123,15 +129,15 @@ export default {
       :classNames="{ wrap: 'row-margin-block-small row-margin-bottom-none' }"
     >
       <!-- case : 개인 회원일 경우 노출 -->
-      <FormListItem titleText="휴대전화" target="#MI_P01_p008_phone001">
-        <FormInvalid :error="state.phone001Error">
-          <InputBlock :error="state.phone001Error">
+      <FormListItem titleText="휴대전화" target="#MI_P01_p008_phone">
+        <FormInvalid :error="state.phoneError">
+          <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="휴대전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone001"
+                id="MI_P01_p008_phone"
               />
             </InputBlockCell>
           </InputBlock>
@@ -139,15 +145,15 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="자택전화" target="#MI_P01_p008_phone002">
-        <FormInvalid :error="state.phone002Error">
-          <InputBlock :error="state.phone002Error">
+      <FormListItem titleText="자택전화" target="#MI_P01_p008_housePhone">
+        <FormInvalid :error="state.housePhoneError">
+          <InputBlock :error="state.housePhoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="자택전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone002"
+                id="MI_P01_p008_housePhone"
               />
             </InputBlockCell>
           </InputBlock>
@@ -155,15 +161,15 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="직장전화" target="#MI_P01_p008_phone003">
-        <FormInvalid :error="state.phone003Error">
-          <InputBlock :error="state.phone003Error">
+      <FormListItem titleText="직장전화" target="#MI_P01_p008_officePhone">
+        <FormInvalid :error="state.officePhoneError">
+          <InputBlock :error="state.officePhoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="직장전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone003"
+                id="MI_P01_p008_officePhone"
               />
             </InputBlockCell>
           </InputBlock>
@@ -173,15 +179,18 @@ export default {
       <!-- // case : 개인 회원일 경우 노출 -->
 
       <!-- Case : 개인사업자/법인사업자일 경우 노출 -->
-      <FormListItem titleText="대표자 사무실" target="#MI_P01_p008_phone004">
-        <FormInvalid :error="state.phone004Error">
-          <InputBlock :error="state.phone004Error">
+      <FormListItem
+        titleText="대표자 사무실"
+        target="#MI_P01_p008_ceoOfficePhone"
+      >
+        <FormInvalid :error="state.ceoOfficePhoneError">
+          <InputBlock :error="state.ceoOfficePhoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="대표자 사무실"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone004"
+                id="MI_P01_p008_ceoOfficePhone"
               />
             </InputBlockCell>
           </InputBlock>
@@ -189,15 +198,15 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="대표자 휴대전화" target="#MI_P01_p008_phone005">
-        <FormInvalid :error="state.phone005Error">
-          <InputBlock :error="state.phone005Error">
+      <FormListItem titleText="대표자 휴대전화" target="#MI_P01_p008_ceoPhone">
+        <FormInvalid :error="state.ceoPhoneError">
+          <InputBlock :error="state.ceoPhoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="대표자 휴대전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone005"
+                id="MI_P01_p008_ceoPhone"
               />
             </InputBlockCell>
           </InputBlock>
@@ -205,15 +214,18 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="담당자1 사무실" target="#MI_P01_p008_phone006">
-        <FormInvalid :error="state.phone006Error">
-          <InputBlock :error="state.phone006Error">
+      <FormListItem
+        titleText="담당자1 사무실"
+        target="#MI_P01_p008_managerOfficePhone001"
+      >
+        <FormInvalid :error="state.managerOfficePhoneError001">
+          <InputBlock :error="state.managerOfficePhoneError001">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자1 사무실"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone006"
+                id="MI_P01_p008_managerOfficePhone001"
               />
             </InputBlockCell>
           </InputBlock>
@@ -221,15 +233,18 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="담당자1 휴대전화" target="#MI_P01_p008_phone007">
-        <FormInvalid :error="state.phone007Error">
-          <InputBlock :error="state.phone007Error">
+      <FormListItem
+        titleText="담당자1 휴대전화"
+        target="#MI_P01_p008_managerPhone001"
+      >
+        <FormInvalid :error="state.managerPhoneError001">
+          <InputBlock :error="state.managerPhoneError001">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자1 휴대전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone007"
+                id="MI_P01_p008_managerPhone001"
               />
             </InputBlockCell>
           </InputBlock>
@@ -237,15 +252,18 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="담당자2 사무실" target="#MI_P01_p008_phone008">
-        <FormInvalid :error="state.phone008Error">
-          <InputBlock :error="state.phone008Error">
+      <FormListItem
+        titleText="담당자2 사무실"
+        target="#MI_P01_p008_managerOfficePhone002"
+      >
+        <FormInvalid :error="state.managerOfficePhoneError002">
+          <InputBlock :error="state.managerOfficePhoneError002">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자2 사무실"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone008"
+                id="MI_P01_p008_managerOfficePhone002"
               />
             </InputBlockCell>
           </InputBlock>
@@ -253,15 +271,18 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="담당자2 휴대전화" target="#MI_P01_p008_phone009">
-        <FormInvalid :error="state.phone009Error">
-          <InputBlock :error="state.phone009Error">
+      <FormListItem
+        titleText="담당자2 휴대전화"
+        target="#MI_P01_p008_managerPhone002"
+      >
+        <FormInvalid :error="state.managerPhoneError002">
+          <InputBlock :error="state.managerPhoneError002">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자2 휴대전화"
                 type="number"
                 pattern="\d*"
-                id="MI_P01_p008_phone009"
+                id="MI_P01_p008_managerPhone002"
               />
             </InputBlockCell>
           </InputBlock>
