@@ -157,6 +157,15 @@
     }
   }
 
+  &__contents {
+    padding: 0 19px 24px 53px;
+
+    &::before {
+      content: '';
+      display: table;
+    }
+  }
+
   &__list--secondary {
     padding: 0 19px 24px 53px;
 
@@ -214,5 +223,10 @@
         }
       }
     }
+  }
+
+  &__list--tertiary-no-padding {
+    padding: 0;
+    margin: -8px 0 0 -8px;
   }
 }
