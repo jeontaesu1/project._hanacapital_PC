@@ -48,7 +48,6 @@ export default {
           :contents="true"
           name="MI_P01_p004_type"
           id="MI_P01_p004_type001"
-          :defaultChecked="true"
         >
           <BoxCheckLabel>홍길동</BoxCheckLabel>
         </BoxCheck>
@@ -90,16 +89,12 @@ export default {
       </BoxCheckListItem>
     </BoxCheckList>
 
-    <ButtonList :wrap="true" align="center">
+    <ButtonList>
       <ButtonListItem>
-        <BasicButton :line="true" tagName="RouterLink" to=""
-          >주소지변경</BasicButton
-        >
+        <BasicButton :line="true">주소지변경</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton :line="true" tagName="RouterLink" to=""
-          >연락처변경</BasicButton
-        >
+        <BasicButton :line="true">연락처변경</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

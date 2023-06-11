@@ -126,12 +126,14 @@ export default {
 
     <div>
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">대출 정보 입력</h3>
-        <p class="text-body-1 color-gray-secondary font-weight-light">
-          이자 및 만기관련 내용을 서면통보하지 않습니다.
-        </p>
+        <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">대출 정보 입력</h3>
+          <p class="text-body-1 color-gray-secondary font-weight-light">
+            이자 및 만기관련 내용을 서면통보하지 않습니다.
+          </p>
+        </div>
 
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <FormList>
           <FormListItem
             titleText="이름"
             target="#PF_P07_p005_Name001"
@@ -174,7 +176,7 @@ export default {
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
                     title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
+                    :dot="[true, true, true, true, true, true, true]"
                     :disabled="true"
                   />
                 </InputBlockCell>
@@ -310,11 +312,15 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '본인',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="실제 소유자 확인"
@@ -329,12 +335,14 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">거래유형</h3>
-        <p class="text-body-1 color-gray-secondary font-weight-light">
-          자세한 내용은 계좌운용규칙을 참고하여 주시기 바랍니다.
-        </p>
+        <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">거래유형</h3>
+          <p class="text-body-1 color-gray-secondary font-weight-light">
+            자세한 내용은 계좌운용규칙을 참고하여 주시기 바랍니다.
+          </p>
+        </div>
 
-        <BasicBox className="row-margin-contents">
+        <BasicBox>
           <KeyValue :wrap="true">
             <KeyValueItem>
               <KeyValueTitle>계좌담보평가액</KeyValueTitle>
@@ -369,11 +377,11 @@ export default {
         </BasicBox>
       </section>
 
-      <!-- DD : 대출 정보 입력 항목 입력 완료 후 다음 버튼 클릭 시 노출  -->
+      <!-- Case : 대출 정보 입력 및 다음 버튼 클릭 시 노출 -->
       <section class="row-margin-block-small">
-        <h3 class="text-title-1">손님정보</h3>
+        <h3 class="text-title-1 row-margin-contents">손님정보</h3>
 
-        <FormList :classNames="{ wrap: 'row-margin-contents' }">
+        <FormList>
           <FormListItem
             titleText="고객구분"
             target="#PF_P07_p005_Customer"
@@ -403,7 +411,6 @@ export default {
                     :minSide="true"
                     name="PF_P07_p005_incomeType"
                     id="PF_P07_p005_incomeType001"
-                    :defaultChecked="true"
                   >
                     <BoxCheckLabel>급여소득자</BoxCheckLabel>
                   </BoxCheck>
@@ -475,7 +482,7 @@ export default {
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
                     title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, false, false, false, false]"
+                    :dot="[true, true, true, true, true, true, true]"
                     :disabled="true"
                   />
                 </InputBlockCell>
@@ -503,12 +510,16 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P07_p005_address001Search"
+                  >
                     주소검색
                   </BasicButton>
                 </template>
               </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <!-- Case : 주소 검색 및 입력 후 노출 -->
               <InputBlock
                 :error="state.address001Error"
                 :classNames="{
@@ -537,7 +548,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <!-- // Case : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
@@ -558,12 +569,16 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P07_p005_address002Search"
+                  >
                     주소검색
                   </BasicButton>
                 </template>
               </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <!-- Case : 주소 검색 및 입력 후 노출 -->
               <InputBlock
                 :error="state.address002Error"
                 :classNames="{
@@ -592,7 +607,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <!-- // Case : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
@@ -606,6 +621,7 @@ export default {
               <InputBlock :error="state.telephoneError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="자택전화번호"
                     id="PF_P07_p005_telephone"
@@ -625,6 +641,7 @@ export default {
               <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="휴대전화번호"
                     id="PF_P07_p005_phone"
@@ -722,11 +739,11 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '미혼',
                       },
                       {
                         value: '2',
-                        label: 'option 2',
+                        label: '기혼',
                       },
                     ]"
                     title="결혼여부"
@@ -751,11 +768,15 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '없음',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="가족동거사항"
@@ -890,11 +911,15 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '6개월 이하',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="거주년수"
@@ -919,11 +944,15 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '석사',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="학력"
@@ -936,9 +965,9 @@ export default {
           </FormListItem>
         </FormList>
       </section>
-      <!-- // DD : 대출 정보 입력 항목 입력 완료 후 다음 버튼 클릭 시 노출  -->
+      <!-- // Case : 대출 정보 입력 및 다음 버튼 클릭 시 노출 -->
 
-      <!-- DD : 손님정보 항목 입력 완료 후 다음 버튼 클릭 시 노출  -->
+      <!-- Case : 손님정보 입력 및 다음 버튼 클릭 시 노출 -->
       <section class="row-margin-block-small">
         <h3 class="text-title-1">직장 정보 입력</h3>
 
@@ -977,7 +1006,6 @@ export default {
             titleText="직군/직장"
             target="#PF_P07_p005_jobGroup"
             :require="true"
-            :selectOnly="true"
           >
             <FormInvalid :error="state.jobGroupError">
               <InputBlock :error="state.jobGroupError">
@@ -986,27 +1014,35 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '행정',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="직군"
                     inputId="PF_P07_p005_jobGroup"
                   />
                 </InputBlockCell>
-                <InputBlockCell :flexible="true">
+                <InputBlockCell :flexible="true" margin="regular">
                   <BasicSelect
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '기타',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="직장"
@@ -1021,7 +1057,6 @@ export default {
             titleText="직종/직위"
             target="#PF_P07_p005_jobCategory"
             :require="true"
-            :selectOnly="true"
           >
             <FormInvalid :error="state.jobCategoryError">
               <InputBlock :error="state.jobCategoryError">
@@ -1030,27 +1065,35 @@ export default {
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '사무',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="직종"
                     inputId="PF_P07_p005_jobCategory"
                   />
                 </InputBlockCell>
-                <InputBlockCell :flexible="true">
+                <InputBlockCell :flexible="true" margin="regular">
                   <BasicSelect
                     :options="[
                       {
                         value: '1',
-                        label: 'option 1',
+                        label: '사원',
                       },
                       {
                         value: '2',
                         label: 'option 2',
+                      },
+                      {
+                        value: '3',
+                        label: 'option 3',
                       },
                     ]"
                     title="직위"
@@ -1139,6 +1182,7 @@ export default {
               <InputBlock :error="state.telephone002Error">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="직장전화번호"
                     id="PF_P07_p005_telephone002"
@@ -1158,6 +1202,7 @@ export default {
               <InputBlock :error="state.faxError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="직장팩스번호"
                     id="PF_P07_p005_fax"
@@ -1184,12 +1229,16 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary">
+                  <BasicButton
+                    size="small"
+                    theme="tertiary"
+                    id="PF_P07_p005_address003Search"
+                  >
                     주소검색
                   </BasicButton>
                 </template>
               </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <!-- Case : 주소 검색 및 입력 후 노출 -->
               <InputBlock
                 :error="state.address003Error"
                 :classNames="{
@@ -1218,7 +1267,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <!-- // Case : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
@@ -1262,9 +1311,10 @@ export default {
           </FormListItem>
         </FormList>
       </section>
-      <!-- // DD : 손님정보 항목 입력 완료 후 다음 버튼 클릭 시 노출  -->
+      <!-- // Case : 손님정보 입력 및 다음 버튼 클릭 시 노출 -->
     </div>
 
+    <!-- Case : 손님정보 입력 및 다음 버튼 클릭 시 노출 -->
     <ul
       :class="[
         $style['basic-list'],
@@ -1301,8 +1351,9 @@ export default {
         </div>
       </li>
     </ul>
+    <!-- // Case : 손님정보 입력 및 다음 버튼 클릭 시 노출 -->
 
-    <ButtonList align="full">
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>

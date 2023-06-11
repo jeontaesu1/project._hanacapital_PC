@@ -128,14 +128,13 @@ export default {
     <FormList
       :classNames="{ wrap: 'row-margin-block-small row-margin-bottom-none' }"
     >
-      <!-- case : 개인 회원일 경우 노출 -->
+      <!-- Case : 개인 회원일 경우 노출 -->
       <FormListItem titleText="휴대전화" target="#MI_P01_p008_phone">
         <FormInvalid :error="state.phoneError">
           <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="휴대전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_phone"
               />
@@ -151,7 +150,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="자택전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_housePhone"
               />
@@ -167,7 +165,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="직장전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_officePhone"
               />
@@ -176,7 +173,7 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // case : 개인 회원일 경우 노출 -->
+      <!-- // Case : 개인 회원일 경우 노출 -->
 
       <!-- Case : 개인사업자/법인사업자일 경우 노출 -->
       <FormListItem
@@ -188,7 +185,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="대표자 사무실"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_ceoOfficePhone"
               />
@@ -204,7 +200,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="대표자 휴대전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_ceoPhone"
               />
@@ -223,7 +218,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자1 사무실"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_managerOfficePhone001"
               />
@@ -242,7 +236,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자1 휴대전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_managerPhone001"
               />
@@ -261,7 +254,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자2 사무실"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_managerOfficePhone002"
               />
@@ -280,7 +272,6 @@ export default {
             <InputBlockCell :flexible="true">
               <BasicInput
                 title="담당자2 휴대전화"
-                type="number"
                 pattern="\d*"
                 id="MI_P01_p008_managerPhone002"
               />

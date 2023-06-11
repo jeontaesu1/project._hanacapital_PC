@@ -19,17 +19,19 @@
   &__title {
     position: absolute;
     z-index: 10;
-    top: 32px;
+    top: 28px;
     left: 0;
     display: flex;
     align-items: center;
     width: 100%;
+    padding: 4px 0 10px;
     @include font-size-head(20);
     min-height: #{$line-height-head}em;
     font-weight: 400;
     color: $color-gray-60;
     cursor: pointer;
-    transition: transform 0.2s, font-size 0.2s, line-height 0.2s, color 0.2s;
+    transition: transform 0.2s, font-size 0.2s, line-height 0.2s, color 0.2s,
+      padding 0.2s;
 
     &-text {
       display: block;
@@ -78,10 +80,12 @@
   &__item--error.form__item--focus {
     .form__title {
       z-index: auto;
+      padding-top: 0;
+      padding-bottom: 0;
       @include font-size-default(13);
       min-height: #{$line-height-default}em;
       font-weight: 500;
-      transform: translateY(-32px);
+      transform: translateY(-28px);
 
       &-optional {
         @include font-size-default(12);

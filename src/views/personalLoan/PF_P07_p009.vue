@@ -71,7 +71,7 @@ export default {
           신청금액 - 취급수수료 0% - (인지대x50%) = 실입금액
         </NoticeText>
 
-        <BasicHr theme="tertiary" className="row-margin-contents" />
+        <BasicHr theme="quaternary" className="row-margin-contents" />
 
         <KeyValue :wrap="true">
           <KeyValueItem>

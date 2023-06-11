@@ -144,16 +144,16 @@ export default {
     </FormList>
 
     <section class="row-margin-block-small row-margin-bottom-none">
-      <div class="flex-box align-items-end">
+      <div class="flex-box align-items-end row-margin-contents">
         <div class="flex-box__cell">
           <h3 class="text-title-1">추천인 입력</h3>
         </div>
         <div class="flex-box__cell flex-box__cell--small">
-          <span class="text-body-1">(선택)</span>
+          <div :class="['text-body-1', $style['sub']]">(선택)</div>
         </div>
       </div>
 
-      <FormList :classNames="{ wrap: 'row-margin-contents' }">
+      <FormList>
         <FormListItem
           titleText="사번입력"
           target="#MI_P03_p007_RecommenderNumber"

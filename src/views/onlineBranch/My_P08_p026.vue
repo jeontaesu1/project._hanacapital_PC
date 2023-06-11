@@ -164,7 +164,7 @@ export default {
                   </BasicButton>
                 </template>
               </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <!-- Case : 주소 검색 및 입력 후 노출 -->
               <InputBlock
                 :error="state.address001Error"
                 :classNames="{
@@ -193,7 +193,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <!-- // Case : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
               <div class="flex-box row-margin-item-medium">
                 <div class="flex-box__cell">
@@ -279,7 +279,7 @@ export default {
                   </BasicButton>
                 </template>
               </InputBlock>
-              <!-- DD : 주소 검색 및 입력 후 노출 -->
+              <!-- Case : 주소 검색 및 입력 후 노출 -->
               <InputBlock
                 :error="state.address002Error"
                 :classNames="{
@@ -308,7 +308,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // DD : 주소 검색 및 입력 후 노출 -->
+              <!-- // Case : 주소 검색 및 입력 후 노출 -->
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>

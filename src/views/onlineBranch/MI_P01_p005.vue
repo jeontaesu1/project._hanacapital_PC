@@ -120,7 +120,7 @@ export default {
     </ul>
 
     <FormList :classNames="{ wrap: 'row-margin-block-small' }">
-      <!-- case : 개인 회원일 경우 노출 -->
+      <!-- Case : 개인 회원일 경우 노출 -->
       <FormListItem
         titleText="등본지"
         target="#MI_P01_p005_addressSerach001Button"
@@ -410,7 +410,7 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
-      <!-- // case : 개인 회원일 경우 노출 -->
+      <!-- // Case : 개인 회원일 경우 노출 -->
 
       <!-- Case : 개인사업자/법인사업자일 경우 노출 -->
       <FormListItem
@@ -706,12 +706,14 @@ export default {
     </FormList>
 
     <section>
-      <h3 class="text-title-1 row-margin-small">이메일 변경</h3>
-      <p class="text-body-1 color-gray-secondary font-weight-light">
-        E-Mail 주소를 확인하고 변경할 수 있습니다.
-      </p>
+      <div class="row-margin-contents">
+        <h3 class="text-title-1 row-margin-small">이메일 변경</h3>
+        <p class="text-body-1 color-gray-secondary font-weight-light">
+          E-Mail 주소를 확인하고 변경할 수 있습니다.
+        </p>
+      </div>
 
-      <FormList :classNames="{ wrap: 'row-margin-contents' }">
+      <FormList>
         <FormListItem
           titleText="이메일"
           titleOptionalText="(선택)"
