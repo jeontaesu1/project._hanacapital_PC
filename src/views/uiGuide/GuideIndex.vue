@@ -823,19 +823,6 @@ const datas = () => [
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
-        depth3: '팝업',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/guide/personal-loan-001',
-        status: 'end',
-        create: '2023.05.26',
-        log: [
-          { date: '2023.06.01', text: '팝업 추가\n- 온라인 약정\n- 1원 인증' },
-        ],
-      },
-      {
-        depth2: 'e하나신용대출\nPF_P01_p001',
         depth3: '한도조회',
         depth4: '본인인증\nPF_P01_p002',
         depth5: '',
