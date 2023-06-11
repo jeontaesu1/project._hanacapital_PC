@@ -25,7 +25,7 @@ export default {
       Type: Number,
       default: 0,
     },
-    cancel: {
+    disabled: {
       Type: Boolean,
       default: false,
     },
@@ -48,7 +48,7 @@ export default {
     :class="[
       $style['progress'],
       {
-        [$style['progress--cancel']]: cancel,
+        [$style['progress--disabled']]: disabled,
       },
       customClassNames.wrap,
     ]"

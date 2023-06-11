@@ -48,166 +48,97 @@ export default {
     <div>
       <IllustInfo>
         <IllustObject type="complete" />
-        <IllustInfoTitle> 승계 신청이 완료되었습니다 </IllustInfoTitle>
+        <IllustInfoTitle>승계 신청이 완료되었습니다</IllustInfoTitle>
         <IllustInfoText>
           심사결과는 등록하신 휴대폰 번호로 문자(SMS)안내 드리겠습니다.
         </IllustInfoText>
       </IllustInfo>
-      <ul class="reset-list row-margin-block-small">
-        <li class="row-margin-block-small">
-          <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <p class="text-body-4 font-weight-light row-margin-mini">
-                  2020년식
-                </p>
-                <h3 class="text-title-2 font-weight-medium">
-                  운용리스 11가1111
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <CarThumb src="/images/_dummy/car-thumb.png" />
-              </BasicBoxHeadRight>
-            </BasicBoxHead>
-            <KeyValue margin="regular">
-              <KeyValueItem
-                :classNames="{
-                  item: 'text-body-1',
-                }"
-              >
-                <KeyValueTitle>차대번호</KeyValueTitle>
-                <KeyValueText>KMHEL00CPYA000001</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
-        </li>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">차량정보</h3>
 
-        <li class="row-margin-block-small">
-          <h3 class="text-title-1 row-margin-contents">리스 조건</h3>
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <p class="text-body-4 font-weight-light row-margin-mini">
+                2020년식
+              </p>
+              <h3 class="text-title-2 font-weight-medium">운용리스 11가1111</h3>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+              </p>
+            </BasicBoxHeadLeft>
+            <BasicBoxHeadRight>
+              <CarThumb src="/images/_dummy/car-thumb.png" />
+            </BasicBoxHeadRight>
+          </BasicBoxHead>
+          <KeyValue margin="regular">
+            <KeyValueItem>
+              <KeyValueTitle>차대번호</KeyValueTitle>
+              <KeyValueText>KMHEL00CPYA000001</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
 
-          <!-- Case : 양수인 신청완료_리스_  신청인=양수인인 경우,전액선납 승계 시 노출 -->
-          <ul :class="$style['logs']">
-            <li :class="$style['logs__item']">
-              <div :class="$style['logs__block']">
-                <div :class="$style['logs__row']">
-                  <div :class="$style['logs__contents']">
-                    <h4 class="text-body-1 font-weight-medium">운용리스</h4>
-                  </div>
-                  <div :class="$style['logs__right']">
-                    <button type="button" :class="$style['logs__link']">
-                      <span :class="$style['logs__link-text']">상세보기</span>
-                    </button>
-                  </div>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">리스 조건</h3>
+
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div :class="$style['logs__block']">
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <!-- Case : 리스 -->
+                  <h4 class="text-body-1 font-weight-medium">운용리스</h4>
+                  <!-- // Case : 리스 -->
+
+                  <!-- Case : 렌트 -->
+                  <h4 class="text-body-1 font-weight-medium">렌터카</h4>
+                  <!-- // Case : 렌트 -->
                 </div>
-
-                <BasicHr
-                  type="contents"
-                  theme="quaternary"
-                  className="row-margin-contents-small"
-                />
-
-                <KeyValue :wrap="true">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle>월 리스료</KeyValueTitle>
-                    <KeyValueText>500,000 원</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle>잔여기간</KeyValueTitle>
-                    <KeyValueText>00개월</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle
-                      >승계 수수료<br />
-                      (인지대 포함)</KeyValueTitle
-                    >
-                    <KeyValueText>5,000,000 원</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
-              </div>
-            </li>
-          </ul>
-          <!-- // Case : 양수인 신청완료_리스_  신청인=양수인인 경우,전액선납 승계 시 노출 -->
-          <!-- Case : 양수인 신청완료_렌트 노출-->
-          <ul :class="$style['logs']">
-            <li :class="$style['logs__item']">
-              <div :class="$style['logs__block']">
-                <div :class="$style['logs__row']">
-                  <div :class="$style['logs__contents']">
-                    <h4 class="text-body-1 font-weight-medium">렌터카</h4>
-                  </div>
-                  <div :class="$style['logs__right']">
-                    <button type="button" :class="$style['logs__link']">
-                      <span :class="$style['logs__link-text']">상세보기</span>
-                    </button>
-                  </div>
+                <div :class="$style['logs__right']">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
                 </div>
-
-                <BasicHr
-                  type="contents"
-                  theme="quaternary"
-                  className="row-margin-contents-small"
-                />
-
-                <KeyValue :wrap="true">
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle>월 렌트료</KeyValueTitle>
-                    <KeyValueText>500,000 원</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle>잔여기간</KeyValueTitle>
-                    <KeyValueText>00개월</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem
-                    :classNames="{
-                      item: 'text-body-1',
-                    }"
-                  >
-                    <KeyValueTitle
-                      >승계 수수료<br />(인지대 포함)</KeyValueTitle
-                    >
-                    <KeyValueText>5,000,000 원</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
               </div>
-            </li>
-          </ul>
-          <!-- // Case : 양수인 신청완료_렌트 노출 -->
-        </li>
 
-        <li class="row-margin-block-small">
-          <h3 class="text-title-1 row-margin-contents">승계 조건</h3>
-          <!-- Case : 신청인=양수인인 경우 -->
+              <BasicHr
+                type="contents"
+                theme="quaternary"
+                className="row-margin-contents-small"
+              />
+
+              <KeyValue :wrap="true">
+                <KeyValueItem>
+                  <KeyValueTitle>월 리스료</KeyValueTitle>
+                  <KeyValueText>500,000 원</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle>잔여기간</KeyValueTitle>
+                  <KeyValueText>00개월</KeyValueText>
+                </KeyValueItem>
+
+                <KeyValueItem>
+                  <KeyValueTitle
+                    >승계 수수료<br />
+                    (인지대 포함)</KeyValueTitle
+                  >
+                  <KeyValueText>5,000,000 원</KeyValueText>
+                </KeyValueItem>
+              </KeyValue>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">승계 조건</h3>
+
+        <!-- Case : 리스 - 신청인 양수인인 경우 -->
+        <div>
           <BasicBox>
             <h4 class="text-body-1 font-weight-regular row-margin-item-medium">
               동일한 조건으로 승계 희망
@@ -216,38 +147,38 @@ export default {
               현재 계약자의 이용 조건을 동일하게 승계합니다.
             </p>
           </BasicBox>
-          <h3
-            :class="[
-              $style['notice-section__title'],
-              'row-margin-contents-small',
-              'row-margin-bottom-none',
-            ]"
+
+          <section
+            :class="[$style['notice-section'], 'row-margin-contents-small']"
           >
-            보험가입 안내
-          </h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-              'row-margin-item-medium',
-            ]"
-          >
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                양수인명의로 자동차 보험을 가입합니다.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                자차손해 가입은 필수이며, 질권설정금액 부족/불가 시
-                보증금/선납금을 추가 납입할 수 있습니다.
-              </div>
-            </li>
-          </ul>
-          <!-- //Case : 신청인=양수인인 경우 -->
-          <!-- Case : 전액선납 승계 선택 시 -->
+            <h4 :class="$style['notice-section__title']">보험가입 안내</h4>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular-margin'],
+              ]"
+            >
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  양수인 명의로 자동차 보험을 가입합니다.
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  자차손해 가입은 필수이며, 질권설정금액 부족/불가 시
+                  보증금/선납금을 추가 납입할 수 있습니다.
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- // Case : 리스 - 신청인 양수인인 경우 -->
+
+        <!-- Case : 리스 - 전액선납 승계 선택 시 -->
+        <div>
           <BasicBox>
             <h4 class="text-body-1 font-weight-regular row-margin-item-medium">
               전액선납 승계 희망
@@ -259,37 +190,19 @@ export default {
                 $style['basic-list--regular-margin'],
               ]"
             >
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'text-body-3',
-                  'font-weight-regular',
-                ]"
-              >
+              <li :class="[$style['basic-list__item'], 'font-weight-regular']">
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   심사서류가 간소화됩니다.
                 </div>
               </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'text-body-3',
-                  'font-weight-regular',
-                ]"
-              >
+              <li :class="[$style['basic-list__item'], 'font-weight-regular']">
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   전액선납 정산비용이 발생합니다.
                 </div>
               </li>
-              <li
-                :class="[
-                  $style['basic-list__item'],
-                  'text-body-3',
-                  'font-weight-regular',
-                ]"
-              >
+              <li :class="[$style['basic-list__item'], 'font-weight-regular']">
                 <div :class="$style['basic-list__symbol']"></div>
                 <div :class="$style['basic-list__content']">
                   정산서는 심사 승인 이후 발송됩니다.
@@ -297,37 +210,37 @@ export default {
               </li>
             </ul>
           </BasicBox>
-          <h3
-            :class="[
-              $style['notice-section__title'],
-              'row-margin-contents-small',
-              'row-margin-bottom-none',
-            ]"
+
+          <section
+            :class="[$style['notice-section'], 'row-margin-contents-small']"
           >
-            보험가입 안내
-          </h3>
-          <ul
-            :class="[
-              $style['basic-list'],
-              $style['basic-list--regular-margin'],
-              'row-margin-item-medium',
-            ]"
-          >
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                양수인명의로 자동차 보험을 가입합니다.
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                책임보험 가입 가능합니다.
-              </div>
-            </li>
-          </ul>
-          <!-- //Case : 전액선납 승계 선택 시 -->
-          <!-- Case : 신청완료_렌트 -->
+            <h4 :class="$style['notice-section__title']">보험가입 안내</h4>
+
+            <ul
+              :class="[
+                $style['basic-list'],
+                $style['basic-list--regular-margin'],
+              ]"
+            >
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  양수인 명의로 자동차 보험을 가입해주세요.
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  책임보험 가입 가능합니다.
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- // Case : 리스 - 전액선납 승계 선택 시 -->
+
+        <!-- Case : 렌트 -->
+        <div>
           <BasicBox>
             <h4 class="text-body-1 font-weight-regular row-margin-item-medium">
               동일한 조건으로 승계 희망
@@ -336,10 +249,11 @@ export default {
               현재 계약자의 이용 조건을 동일하게 승계합니다.
             </p>
           </BasicBox>
-          <!-- Case : 신청완료_렌트 -->
-        </li>
-      </ul>
+        </div>
+        <!-- // Case : 렌트 -->
+      </section>
     </div>
+
     <ButtonList :wrap="true" align="center">
       <ButtonListItem>
         <BasicButton>확인</BasicButton>

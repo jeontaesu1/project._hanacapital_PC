@@ -141,4 +141,43 @@
       transition: opacity 0.2s;
     }
   }
+
+  &--wrap {
+    &::before {
+      content: '';
+      display: table;
+    }
+
+    .form {
+      &__list {
+        margin: -24px 0 0 -24px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        flex: none;
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 24px;
+        margin-top: 24px;
+      }
+
+      &__title {
+        left: 24px;
+      }
+    }
+  }
+
+  /*
+  &--col {
+    &-3 {
+      .form {
+        &__item {
+          width: 33.333333%;
+        }
+      }
+    }
+  }
+  */
 }

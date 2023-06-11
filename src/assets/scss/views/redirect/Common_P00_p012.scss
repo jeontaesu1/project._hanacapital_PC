@@ -1,29 +1,64 @@
 @import '@/assets/scss/components/import/icon-list.scss';
 
-.icon-list__list {
-  display: flex;
-  justify-content: center;
+.icon-list {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
 
-  .icon-list__item {
-    display: inline-block;
-    margin: 0;
-
-    & + .icon-list__item {
+  &__item {
+    & + & {
+      margin-top: 0;
       margin-left: 60px;
     }
   }
 }
 
-:global .reset-list li {
-  margin-left: 24px !important;
+.guide {
+  ::before {
+    content: '';
+    display: table;
+  }
 
-  > div {
-    padding: 50px 0 40px !important;
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: -24px 0 0 -24px;
+  }
+
+  &__item {
+    flex: none;
+    width: 25%;
     box-sizing: border-box;
+    padding: 24px 0 0 24px;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__block {
+    flex: 1;
+    min-width: 0;
+    background-color: $color-gray-05;
+    border-radius: 20px;
+    padding: 50px 20px 40px;
     text-align: center;
   }
 
-  p {
-    height: 100px;
+  &__title {
+    margin: 0;
+    @include font-size-head(20);
+    font-weight: 500;
+    min-height: #{$line-height-head * 3}em;
+  }
+
+  &__img {
+    margin-top: 6px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 }

@@ -4,7 +4,6 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
@@ -15,9 +14,7 @@ export default {
     PageHead,
     PageSubText,
     PageTitle,
-    BasicBox,
     TextButton,
-
     ImgMainSample,
   },
 };
@@ -33,232 +30,133 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <div :class="$style['main-card-list']">
-      <ul :class="$style['main-card-list__list']">
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  오토론
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  저렴한 금리,<br />간편한 이용
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+    <div :class="[$style['product-list'], $style['product-list--col-5']]">
+      <ul :class="$style['product-list__list']">
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">오토론</h3>
+            <p :class="$style['product-list__text']">
+              저렴한 금리,<br />
+              간편한 이용
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  다이렉트<br />장기렌터카
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  비용 NO! 보험 NO! <br />내차 OK!
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">
+              다이렉트<br />
+              장기렌터카
+            </h3>
+            <p :class="$style['product-list__text']">
+              비용 NO! 보험 NO!<br />
+              내차 OK!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  다이렉트 <br />오토리스
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  다양한 혜택, <br />편리한 내차 이용
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">
+              다이렉트<br />
+              오토리스
+            </h3>
+            <p :class="$style['product-list__text']">
+              다양한 혜택,<br />
+              편리한 내차 이용
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  중고차 오토론
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  차별화된 <br />중고차 구입 방법!
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">중고차 오토론</h3>
+            <p :class="$style['product-list__text']">
+              차별화된<br />
+              중고차 구입 방법!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  오토할부
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  차량 대금 <br />분할 납부!
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">오토할부</h3>
+            <p :class="$style['product-list__text']">
+              차량 대금<br />
+              분할 납부!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

@@ -92,12 +92,14 @@ export default {
     </PageHead>
 
     <div>
+      <!-- Case : 2개 이상일 경우 노출 탭 노출 -->
       <NavTab>
         <NavTabButton tagName="button" type="button" :active="true"
           >재고금융</NavTabButton
         >
         <NavTabButton tagName="button" type="button">재고금융Ⅱ</NavTabButton>
       </NavTab>
+      <!-- // Case : 2개 이상일 경우 노출 탭 노출 -->
 
       <section>
         <BasicBox>

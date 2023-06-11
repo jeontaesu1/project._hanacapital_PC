@@ -1,12 +1,10 @@
 <script>
 // BF_P00_main
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
@@ -18,9 +16,7 @@ export default {
     PageHeadRow,
     PageTitle,
     PageMainText,
-    BasicBox,
     TextButton,
-
     ImgMainSample,
   },
 };
@@ -40,145 +36,80 @@ export default {
         </PageMainText>
       </PageHeadRow>
     </PageHead>
-    <div :class="$style['main-card-list']">
-      <ul :class="$style['main-card-list__list']">
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  의료기할부
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  병/의원 및 의료법인대상<br />
-                  의료기기, 의료소모품 구입자금 대출
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+
+    <div :class="[$style['product-list'], $style['product-list--col-3']]">
+      <ul :class="$style['product-list__list']">
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">의료기할부</h3>
+            <p :class="$style['product-list__text']">
+              병/의원 및 의료법인대상<br />
+              의료기기, 의료소모품 구입자금 대출
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  의료기리스
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  의료장비, 의료기관 전용<br />
-                  금융리스
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">의료기리스</h3>
+            <p :class="$style['product-list__text']">
+              의료장비, 의료기관 전용<br />
+              금융리스
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
-        <li :class="$style['main-card-list__item']">
-          <BasicBox theme="quinary">
-            <div :class="$style['icon-box']">
-              <div
-                :class="[
-                  $style['icon-box__icon'],
-                  $style['icon-box__icon--large'],
-                  'row-margin-item-group',
-                ]"
-              >
-                <ImgMainSample />
-              </div>
-              <dl class="reset-list">
-                <dt
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-big-3',
-                    'font-weight-bold',
-                  ]"
-                >
-                  산업재리스
-                </dt>
-                <dd
-                  :class="[
-                    $style['icon-box__content'],
-                    'text-body-1',
-                    'row-margin-item',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  각종 시설, 기계 등<br />
-                  산업설비 전문 리스
-                </dd>
-              </dl>
-              <div class="row-margin-contents-small">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  class="text-body-3"
-                  >자세히보기</TextButton
-                >
-              </div>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
             </div>
-          </BasicBox>
+            <h3 :class="$style['product-list__title']">산업재리스</h3>
+            <p :class="$style['product-list__text']">
+              각종 시설, 기계 등<br />
+              산업설비 전문 리스
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

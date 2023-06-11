@@ -111,6 +111,10 @@ body,
       margin-left: 16px;
     }
 
+    & + &--medium-regular {
+      margin-left: 12px;
+    }
+
     & + &--regular {
       margin-left: 10px;
     }
@@ -238,7 +242,7 @@ body,
 
 .text-caption-1.text-caption-1 {
   margin: 0;
-  @include font-size-head(11);
+  @include font-size-default(11);
 }
 
 // font-weight
@@ -312,6 +316,20 @@ body,
   &--line-3 {
     -webkit-line-clamp: 3;
     max-height: #{$line-height-default * 3}em;
+  }
+
+  &.text-title-1,
+  &.text-title-2,
+  &.text-big-1,
+  &.text-big-2,
+  &.text-big-3 {
+    max-height: #{$line-height-head * 2}em;
+
+    .multi-ellipsis {
+      &--line-3 {
+        max-height: #{$line-height-head * 3}em;
+      }
+    }
   }
 }
 

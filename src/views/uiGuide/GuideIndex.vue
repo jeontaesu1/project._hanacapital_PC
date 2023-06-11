@@ -2424,8 +2424,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P02_p002',
-        status: 'end',
-        create: '2023.06.09',
+        status: 'ing',
+        create: '',
         log: [],
       },
       {
@@ -3439,6 +3439,22 @@ const datas = () => [
     ],
   },
   {
+    depth1: '제휴광장',
+    datas: [
+      {
+        depth2: '메인\nPartner_P00_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/affiliate-plaza/Partner_P00_p001',
+        status: 'end',
+        create: '2023.06.09',
+        log: [],
+      },
+    ],
+  },
+  {
     depth1: '회사소개',
     datas: [
       {
@@ -3725,22 +3741,6 @@ const datas = () => [
         path: '/company/Company_P05_p005',
         status: '',
         create: '',
-        log: [],
-      },
-    ],
-  },
-  {
-    depth1: '제휴광장',
-    datas: [
-      {
-        depth2: '메인\nPartner_P00_p001',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/affiliate-plaza/Partner_P00_p001',
-        status: 'end',
-        create: '2023.06.09',
         log: [],
       },
     ],

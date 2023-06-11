@@ -1,0 +1,11 @@
+.detail {
+  padding: 40px 20px 60px;
+  border-top: 2px solid $color-gray-60;
+  border-bottom: 1px solid $color-gray-20;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+}
