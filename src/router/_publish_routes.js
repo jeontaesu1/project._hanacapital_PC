@@ -344,11 +344,6 @@ const routes = [
     component: () => import('@/views/customer/Customer_P17_p002.vue'),
   },
   {
-    path: '/customer/Customer_P17_p003',
-    name: '/customer/Customer_P17_p003',
-    component: () => import('@/views/customer/Customer_P17_p003.vue'),
-  },
-  {
     path: '/customer/Customer_P08_p001',
     name: '/customer/Customer_P08_p001',
     component: () => import('@/views/customer/Customer_P08_p001.vue'),
