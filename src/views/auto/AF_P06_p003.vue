@@ -29,6 +29,8 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import SelectTable from '@/components/ui/table/SelectTable.vue';
+import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 
 export default {
   components: {
@@ -59,6 +61,8 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    SelectTable,
+    SelectTableRow,
   },
 
   setup() {
@@ -381,9 +385,47 @@ export default {
       </FormList>
 
       <!-- Case : 조회버튼 선택 시 노출 -->
-      <div class="row-margin-block row-margin-bottom-none">
-        // 셀렉트 테이블 대기
-      </div>
+      <SelectTable :classNames="{ wrap: 'row-margin-block' }">
+        <template v-slot:colgroup>
+          <col style="width: 142px" />
+          <col />
+          <col style="width: 180px" />
+        </template>
+
+        <template v-slot:head>
+          <tr>
+            <th>제조사</th>
+            <th>모델명</th>
+            <th>차량 금액</th>
+          </tr>
+        </template>
+
+        <SelectTableRow :initialActive="true">
+          <td>푸조</td>
+          <td>508(2세대) SW 1.5 블루 HDi</td>
+          <td>43,100,000 원</td>
+        </SelectTableRow>
+        <SelectTableRow>
+          <td>포르쉐</td>
+          <td>718 박스터(3세대) GTS 40</td>
+          <td>108,200,000 원</td>
+        </SelectTableRow>
+        <SelectTableRow>
+          <td>포르쉐</td>
+          <td>718 박스터(3세대)S 2.5</td>
+          <td>88,400,000 원</td>
+        </SelectTableRow>
+        <SelectTableRow>
+          <td>포르쉐</td>
+          <td>718 박스터(3세대)S 2.5</td>
+          <td>88,400,000 원</td>
+        </SelectTableRow>
+        <SelectTableRow>
+          <td>포르쉐</td>
+          <td>718 박스터(3세대)S 2.5</td>
+          <td>88,400,000 원</td>
+        </SelectTableRow>
+      </SelectTable>
       <!-- //Case : 조회버튼 선택 시 노출 -->
 
       <ButtonList align="full">
