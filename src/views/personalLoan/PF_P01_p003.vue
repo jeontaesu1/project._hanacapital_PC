@@ -344,6 +344,7 @@ export default {
               <InputBlock :error="state.businessNumberError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    pattern="\d*"
                     title="사업자번호"
                     id="PF_P01_p003_businessNumber"
                   />

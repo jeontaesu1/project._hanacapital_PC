@@ -321,6 +321,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="동"
@@ -331,6 +333,8 @@ export default {
                       </InputBlockCell>
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="호"
@@ -349,6 +353,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="동"
@@ -367,6 +373,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="호"
@@ -656,6 +664,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="동"
@@ -666,6 +676,8 @@ export default {
                       </InputBlockCell>
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="호"
@@ -684,6 +696,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="동"
@@ -702,6 +716,8 @@ export default {
                     >
                       <InputBlockCell :flexible="true">
                         <BasicInput
+                          type="number"
+                          pattern="\d*"
                           align="right"
                           :useDelete="false"
                           title="호"

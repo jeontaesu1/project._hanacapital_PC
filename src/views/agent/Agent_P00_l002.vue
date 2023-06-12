@@ -12,6 +12,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import IconImg from '@/assets/images/icon/img.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 
 export default {
   components: {
@@ -24,6 +25,7 @@ export default {
     ButtonList,
     ButtonListItem,
     IconImg,
+    IconImgColor,
   },
   setup() {
     const layer = ref(null);
@@ -47,7 +49,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <section class="row-margin-block-small">
+      <div class="row-margin-block-small">
         <div :class="$style['basic-table']">
           <table>
             <colgroup>
@@ -70,10 +72,10 @@ export default {
         <div :class="$style['empty']">
           <p :class="$style['empty__text']">조회된 내용이 없습니다.</p>
         </div>
-      </section>
+      </div>
 
       <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+        <li class="row-margin-container-medium">
           <div :class="$style['upload-button']">
             <input
               type="file"
@@ -87,7 +89,152 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >이미지 첨부</label
+                >파일 첨부</label
+              >
+            </div>
+          </div>
+
+          <div
+            :class="[
+              $style['upload-file'],
+              $style['upload-file--inside'],
+              'row-margin-contents',
+            ]"
+          >
+            <ul :class="$style['upload-file__list']">
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.png</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.gif</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">
+                    첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                  </div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="Agent_P00_l002_upload"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="Agent_P00_l002_upload"
+                :class="$style['upload-button__label']"
+                >파일 첨부</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="Agent_P00_l002_upload"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="Agent_P00_l002_upload"
+                :class="$style['upload-button__label']"
+                >파일 첨부</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="Agent_P00_l002_upload"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="Agent_P00_l002_upload"
+                :class="$style['upload-button__label']"
+                >파일 첨부</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="Agent_P00_l002_upload"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="Agent_P00_l002_upload"
+                :class="$style['upload-button__label']"
+                >파일 첨부</label
               >
             </div>
           </div>

@@ -219,7 +219,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">확인</BasicButton>
+            <BasicButton size="regular">서류등록</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

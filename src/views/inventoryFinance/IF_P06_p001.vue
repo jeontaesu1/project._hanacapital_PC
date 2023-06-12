@@ -165,7 +165,7 @@ export default {
       </li>
     </ul>
 
-    <BasicHr theme="quaternary" type="contents" className="row-margin-block" />
+    <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
       <h4 class="text-title-1 row-margin-contents">조회이력</h4>
@@ -243,15 +243,15 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
+
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton line="true">조회</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
     </section>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton line="true">조회</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
-
-    <BasicHr theme="quaternary" type="contents" className="row-margin-block" />
+    <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
       <h4 class="text-title-1 row-margin-contents">종료건 확인</h4>
@@ -303,6 +303,7 @@ export default {
         </li>
       </ul>
 
+      <!-- Case : 첫번째 페이지일 때 -->
       <PaginationNav>
         <PaginationNavArrow type="prev" :disabled="true" />
         <PaginationNavNumber :active="true">1</PaginationNavNumber>
@@ -313,9 +314,42 @@ export default {
         <PaginationNavNumber>6</PaginationNavNumber>
         <PaginationNavNumber>7</PaginationNavNumber>
         <PaginationNavEllipsis />
-        <PaginationNavNumber>25</PaginationNavNumber>
+        <PaginationNavNumber>999</PaginationNavNumber>
         <PaginationNavArrow type="next" />
       </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
 
       <!-- Case : 조회결과 없을 시 -->
       <div :class="$style['empty']">

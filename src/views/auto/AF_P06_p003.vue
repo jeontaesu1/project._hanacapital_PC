@@ -97,13 +97,25 @@ export default {
         $style['basic-list--regular-margin'],
       ]"
     >
-      <li :class="[$style['basic-list__item'], 'text-body-3']">
+      <li
+        :class="[
+          $style['basic-list__item'],
+          'text-body-3',
+          'font-weight-regular',
+        ]"
+      >
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
           한도조회만 하는 경우, 고객님의 신용도에 전혀 영향이 없습니다.
         </div>
       </li>
-      <li :class="[$style['basic-list__item'], 'text-body-3']">
+      <li
+        :class="[
+          $style['basic-list__item'],
+          'text-body-3',
+          'font-weight-regular',
+        ]"
+      >
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
           상품용 차량이 아닐 경우, 대출진행이 불가합니다.
@@ -111,7 +123,7 @@ export default {
       </li>
     </ul>
 
-    <section class="row-margin-block-small">
+    <div class="row-margin-block-small">
       <NavTab>
         <NavTabButton tagName="button" type="button" :active="true">
           국산차
@@ -367,15 +379,17 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-    </section>
+    </div>
 
-    <section>// 셀렉트 테이블 대기</section>
+    <div>
+      <div>// 셀렉트 테이블 대기</div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton :line="true">조회하기</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton :line="true">조회</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
 
     <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-small">차량번호 조회 결과</h3>
