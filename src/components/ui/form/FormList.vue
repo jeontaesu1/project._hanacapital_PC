@@ -14,6 +14,14 @@ export default {
         return defaultClassNames();
       },
     },
+    wrap: {
+      Type: Boolean,
+      default: false,
+    },
+    col: {
+      Type: Number,
+      default: 2,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -31,7 +39,16 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['form'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['form'],
+      {
+        [$style['form--wrap']]: wrap,
+        [$style[`form--col-${col}`]]: wrap && col > 2,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <dl :class="[$style['form__list'], customClassNames.list]">
       <slot />
     </dl>

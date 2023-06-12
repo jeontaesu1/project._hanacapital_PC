@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import MI_P06_l001 from '../onlineBranch/MI_P06_l001.vue';
+import MI_P06_l001 from '@/views/onlineBranch/MI_P06_l001.vue';
 
 export default {
   components: {

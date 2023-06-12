@@ -1,0 +1,47 @@
+.latest-list {
+  border-top: 2px solid $color-gray-60;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-gray-30;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 21px 20px 20px;
+  }
+
+  &__cell {
+    flex: none;
+
+    & + & {
+      margin-left: 20px;
+    }
+
+    &--title {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+    @include font-size-default(16);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__date {
+    display: block;
+    @include font-size-default(14);
+    color: $color-gray-70;
+  }
+}

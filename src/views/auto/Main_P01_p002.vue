@@ -2,23 +2,167 @@
 // Main_P01_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
+import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
     PageContents,
     PageHead,
+    PageSubText,
     PageTitle,
+    TextButton,
+    ImgMainSample,
   },
 };
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="wide">
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageTitle>다이렉트 오토금융</PageTitle>
+      <PageSubText>
+        지금 바로 하나캐피탈이 제공하는 오토금융을 이용하시고,<br />
+        최고의 만족을 누리세요.
+      </PageSubText>
     </PageHead>
 
-    // contents
+    <div :class="[$style['product-list'], $style['product-list--col-5']]">
+      <ul :class="$style['product-list__list']">
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
+            </div>
+            <h3 :class="$style['product-list__title']">오토론</h3>
+            <p :class="$style['product-list__text']">
+              저렴한 금리,<br />
+              간편한 이용
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </li>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
+            </div>
+            <h3 :class="$style['product-list__title']">
+              다이렉트<br />
+              장기렌터카
+            </h3>
+            <p :class="$style['product-list__text']">
+              비용 NO! 보험 NO!<br />
+              내차 OK!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </li>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
+            </div>
+            <h3 :class="$style['product-list__title']">
+              다이렉트<br />
+              오토리스
+            </h3>
+            <p :class="$style['product-list__text']">
+              다양한 혜택,<br />
+              편리한 내차 이용
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </li>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
+            </div>
+            <h3 :class="$style['product-list__title']">중고차 오토론</h3>
+            <p :class="$style['product-list__text']">
+              차별화된<br />
+              중고차 구입 방법!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </li>
+        <li :class="$style['product-list__item']">
+          <div :class="$style['product-list__block']">
+            <div :class="$style['product-list__icon']">
+              <ImgMainSample />
+            </div>
+            <h3 :class="$style['product-list__title']">오토할부</h3>
+            <p :class="$style['product-list__text']">
+              차량 대금<br />
+              분할 납부!
+            </p>
+            <div :class="$style['product-list__link']">
+              <TextButton
+                theme="secondary"
+                :underline="true"
+                textSize="regular"
+                tagName="RouterLink"
+                to=""
+                :classNames="{ wrap: $style['product-list__link-button'] }"
+              >
+                바로가기
+              </TextButton>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/auto/Main_P01_p002.scss';
+</style>

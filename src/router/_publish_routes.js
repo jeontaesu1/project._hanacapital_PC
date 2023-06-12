@@ -264,6 +264,11 @@ const routes = [
 
   // customer
   {
+    path: '/customer/Customer_P00_p001',
+    name: '/customer/Customer_P00_p001',
+    component: () => import('@/views/customer/Customer_P00_p001.vue'),
+  },
+  {
     path: '/customer/Customer_P03_p001',
     name: '/customer/Customer_P03_p001',
     component: () => import('@/views/customer/Customer_P03_p001.vue'),
@@ -307,6 +312,136 @@ const routes = [
     path: '/customer/Customer_P02_p003',
     name: '/customer/Customer_P02_p003',
     component: () => import('@/views/customer/Customer_P02_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P12_p001',
+    name: '/customer/Customer_P12_p001',
+    component: () => import('@/views/customer/Customer_P12_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P05_p001',
+    name: '/customer/Customer_P05_p001',
+    component: () => import('@/views/customer/Customer_P05_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P13_p001',
+    name: '/customer/Customer_P13_p001',
+    component: () => import('@/views/customer/Customer_P13_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P07_p001',
+    name: '/customer/Customer_P07_p001',
+    component: () => import('@/views/customer/Customer_P07_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P17_p001',
+    name: '/customer/Customer_P17_p001',
+    component: () => import('@/views/customer/Customer_P17_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P17_p002',
+    name: '/customer/Customer_P17_p002',
+    component: () => import('@/views/customer/Customer_P17_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P08_p001',
+    name: '/customer/Customer_P08_p001',
+    component: () => import('@/views/customer/Customer_P08_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p001',
+    name: '/customer/Customer_P14_p001',
+    component: () => import('@/views/customer/Customer_P14_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p002',
+    name: '/customer/Customer_P14_p002',
+    component: () => import('@/views/customer/Customer_P14_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p003',
+    name: '/customer/Customer_P14_p003',
+    component: () => import('@/views/customer/Customer_P14_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p004',
+    name: '/customer/Customer_P14_p004',
+    component: () => import('@/views/customer/Customer_P14_p004.vue'),
+  },
+  {
+    path: '/customer/Customer_P14_p006',
+    name: '/customer/Customer_P14_p006',
+    component: () => import('@/views/customer/Customer_P14_p006.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p001',
+    name: '/customer/Customer_P09_p001',
+    component: () => import('@/views/customer/Customer_P09_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p002',
+    name: '/customer/Customer_P09_p002',
+    component: () => import('@/views/customer/Customer_P09_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p003',
+    name: '/customer/Customer_P09_p003',
+    component: () => import('@/views/customer/Customer_P09_p003.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p004',
+    name: '/customer/Customer_P09_p004',
+    component: () => import('@/views/customer/Customer_P09_p004.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p005',
+    name: '/customer/Customer_P09_p005',
+    component: () => import('@/views/customer/Customer_P09_p005.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p006',
+    name: '/customer/Customer_P09_p006',
+    component: () => import('@/views/customer/Customer_P09_p006.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p007',
+    name: '/customer/Customer_P09_p007',
+    component: () => import('@/views/customer/Customer_P09_p007.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p008',
+    name: '/customer/Customer_P09_p008',
+    component: () => import('@/views/customer/Customer_P09_p008.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p009',
+    name: '/customer/Customer_P09_p009',
+    component: () => import('@/views/customer/Customer_P09_p009.vue'),
+  },
+  {
+    path: '/customer/Customer_P15_p001',
+    name: '/customer/Customer_P15_p001',
+    component: () => import('@/views/customer/Customer_P15_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P15_p002',
+    name: '/customer/Customer_P15_p002',
+    component: () => import('@/views/customer/Customer_P15_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p001',
+    name: '/customer/Customer_P16_p001',
+    component: () => import('@/views/customer/Customer_P16_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p002',
+    name: '/customer/Customer_P16_p002',
+    component: () => import('@/views/customer/Customer_P16_p002.vue'),
+  },
+  {
+    path: '/customer/Customer_P16_p003',
+    name: '/customer/Customer_P16_p003',
+    component: () => import('@/views/customer/Customer_P16_p003.vue'),
   },
 
   // additional-service
@@ -494,6 +629,11 @@ const routes = [
     name: '/inventory-finance/IF_P06_p001',
     component: () => import('@/views/inventoryFinance/IF_P06_p001.vue'),
   },
+  {
+    path: '/inventory-finance/IF_P08_p001',
+    name: '/inventory-finance/IF_P08_p001',
+    component: () => import('@/views/inventoryFinance/IF_P08_p001.vue'),
+  },
 
   // lm-blog
   {
@@ -540,6 +680,11 @@ const routes = [
   },
 
   // online-branch
+  {
+    path: '/online-branch/MI_P00_p001',
+    name: '/online-branch/MI_P00_p001',
+    component: () => import('@/views/onlineBranch/MI_P00_p001.vue'),
+  },
   {
     path: '/online-branch/MI_P00_p002',
     name: '/online-branch/MI_P00_p002',
@@ -824,11 +969,6 @@ const routes = [
     path: '/online-branch/MI_P02_p005',
     name: '/online-branch/MI_P02_p005',
     component: () => import('@/views/onlineBranch/MI_P02_p005.vue'),
-  },
-  {
-    path: '/online-branch/MI_P02_p006',
-    name: '/online-branch/MI_P02_p006',
-    component: () => import('@/views/onlineBranch/MI_P02_p006.vue'),
   },
   {
     path: '/online-branch/MI_P01_p001',
@@ -1200,11 +1340,6 @@ const routes = [
     component: () => import('@/views/auto/AF_P01_p002.vue'),
   },
   {
-    path: '/auto/AF_P01_p003',
-    name: '/auto/AF_P01_p003',
-    component: () => import('@/views/auto/AF_P01_p003.vue'),
-  },
-  {
     path: '/auto/AF_P01_p004',
     name: '/auto/AF_P01_p004',
     component: () => import('@/views/auto/AF_P01_p004.vue'),
@@ -1213,11 +1348,6 @@ const routes = [
     path: '/auto/AF_P02_p002',
     name: '/auto/AF_P02_p002',
     component: () => import('@/views/auto/AF_P02_p002.vue'),
-  },
-  {
-    path: '/auto/AF_P02_p003',
-    name: '/auto/AF_P02_p003',
-    component: () => import('@/views/auto/AF_P02_p003.vue'),
   },
   {
     path: '/auto/AF_P02_p004',
@@ -1387,9 +1517,9 @@ const routes = [
     component: () => import('@/views/membership/MI_P03_p003.vue'),
   },
   {
-    path: '/membership/MI_P03_p003a',
-    name: '/membership/MI_P03_p003a',
-    component: () => import('@/views/membership/MI_P03_p003a.vue'),
+    path: '/membership/MI_P03_p007',
+    name: '/membership/MI_P03_p007',
+    component: () => import('@/views/membership/MI_P03_p007.vue'),
   },
   {
     path: '/membership/MI_P03_p004',
@@ -1419,9 +1549,9 @@ const routes = [
     component: () => import('@/views/hanaMoney/MI_P02_p002.vue'),
   },
   {
-    path: '/hana-money/MI_P02_p002a',
-    name: '/hana-money/MI_P02_p002a',
-    component: () => import('@/views/hanaMoney/MI_P02_p002a.vue'),
+    path: '/hana-money/MI_P02_p004',
+    name: '/hana-money/MI_P02_p004',
+    component: () => import('@/views/hanaMoney/MI_P02_p004.vue'),
   },
   {
     path: '/hana-money/MI_P02_p003',
@@ -1738,6 +1868,13 @@ const routes = [
     path: '/agent/Agent_P10_p004',
     name: '/agent/Agent_P10_p004',
     component: () => import('@/views/agent/Agent_P10_p004.vue'),
+  },
+
+  // affiliate-plaza
+  {
+    path: '/affiliate-plaza/Partner_P00_p001',
+    name: '/affiliate-plaza/Partner_P00_p001',
+    component: () => import('@/views/affiliatePlaza/Partner_P00_p001.vue'),
   },
 ];
 

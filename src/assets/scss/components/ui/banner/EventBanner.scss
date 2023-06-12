@@ -1,0 +1,54 @@
+.banner {
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: $color-navy-05;
+  display: flex;
+  align-items: center;
+
+  &__contents {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__thumb {
+    flex: none;
+    margin: -30px -30px -30px 30px;
+
+    &-img {
+      width: 160px;
+      height: 200px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+
+    &-text {
+      @include for-a11y;
+    }
+  }
+
+  &--disabled {
+    .banner {
+      &__contents,
+      &__thumb {
+        opacity: 0.4;
+      }
+    }
+  }
+}

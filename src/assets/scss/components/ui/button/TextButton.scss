@@ -79,11 +79,20 @@
         height: 16px;
       }
     }
+    &-medium {
+      .button__icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 
   &--text {
     &-regular {
       @include font-size-button(14);
+    }
+    &-medium {
+      @include font-size-button(16);
     }
   }
 

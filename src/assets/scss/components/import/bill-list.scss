@@ -1,0 +1,83 @@
+.bill-list {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__head {
+    display: flex;
+  }
+
+  &__title + &__amount {
+    margin-left: 16px;
+  }
+
+  &__title {
+    @include font-size-default(16);
+    font-weight: 400;
+  }
+
+  &__amount {
+    flex: 1;
+    min-width: 0;
+    @include font-size-default(16);
+    font-weight: 700;
+    text-align: right;
+  }
+
+  &__head + &__contents {
+    margin-top: 4px;
+  }
+
+  &__contents {
+    display: flex;
+
+    & + & {
+      margin-top: 2px;
+    }
+
+    &-left,
+    &-right {
+      flex: 1;
+      min-width: 0;
+    }
+
+    &-right {
+      text-align: right;
+
+      .bill-list__sub-item {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__sub {
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      display: flex;
+      @include font-size-default(13);
+      color: $color-gray-80;
+      font-weight: 300;
+
+      & + & {
+        margin-top: 2px;
+      }
+    }
+
+    &-key {
+      flex: none;
+      margin-right: 4px;
+    }
+
+    &-value {
+      flex: 0 1 auto;
+      min-width: 0;
+      margin: 0;
+    }
+  }
+}

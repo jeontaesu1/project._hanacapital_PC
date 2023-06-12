@@ -65,6 +65,11 @@
       padding: 23px 19px;
     }
 
+    &-title {
+      @include font-size-head(18);
+      font-weight: 500;
+    }
+
     &-checkbox {
       flex: 0 1 auto;
       min-width: 0;
@@ -152,6 +157,15 @@
     }
   }
 
+  &__contents {
+    padding: 0 19px 24px 53px;
+
+    &::before {
+      content: '';
+      display: table;
+    }
+  }
+
   &__list--secondary {
     padding: 0 19px 24px 53px;
 
@@ -209,5 +223,10 @@
         }
       }
     }
+  }
+
+  &__list--tertiary-no-padding {
+    padding: 0;
+    margin: -8px 0 0 -8px;
   }
 }

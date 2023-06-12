@@ -21,7 +21,6 @@ import SearchButton from '@/components/ui/button/SearchButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {

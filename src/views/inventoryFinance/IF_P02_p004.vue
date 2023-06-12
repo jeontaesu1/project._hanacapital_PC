@@ -140,7 +140,7 @@ export default {
         </li>
       </ul>
 
-      <BasicBox theme="quaternary" className="row-margin-contents">
+      <BasicBox className="row-margin-contents">
         <div :class="$style['agree-list']">
           <ul
             :class="[

@@ -1,0 +1,12 @@
+@import '@/assets/scss/components/import/empty.scss';
+@import '@/assets/scss/components/import/inline-alert.scss';
+
+.layer {
+  margin: 0 -23px;
+}
+
+.contents {
+  margin: 24px 23px 0;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 24px;
+}
