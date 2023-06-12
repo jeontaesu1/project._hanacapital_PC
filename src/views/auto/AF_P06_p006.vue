@@ -236,6 +236,15 @@ export default {
                   <BoxCheckLabel>60개월</BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :minSide="true"
+                  name="AF_P06_p006_BoxCheckList001"
+                  id="AF_P06_p006_BoxCheckList001_005"
+                >
+                  <BoxCheckLabel>72개월</BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
             </BoxCheckList>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>

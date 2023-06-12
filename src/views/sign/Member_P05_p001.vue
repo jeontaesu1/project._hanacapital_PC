@@ -344,6 +344,117 @@ export default {
                           </li>
                         </ul>
                       </li>
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="agree_002_004"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText
+                              >개인(신용)정보 필수적 제공
+                              동의</CheckBoxLabelText
+                            >
+                          </CheckBox>
+                        </div>
+                        <ul
+                          :class="[
+                            $style['agree-list__list'],
+                            $style['agree-list__list--secondary'],
+                          ]"
+                        >
+                          <li :class="$style['agree-list__item']">
+                            <div :class="$style['agree-list__head']">
+                              <CheckBox
+                                id="agree_002_004_001"
+                                :classNames="{
+                                  wrap: $style['agree-list__checkbox'],
+                                }"
+                                theme="quinary"
+                              >
+                                <CheckBoxObject />
+                                <CheckBoxLabelText
+                                  >개인(신용)정보 필수적 제공
+                                  (신용정보회사)</CheckBoxLabelText
+                                >
+                              </CheckBox>
+                              <div :class="$style['agree-list__right']">
+                                <button
+                                  type="button"
+                                  :class="$style['agree-list__link']"
+                                >
+                                  <span
+                                    :class="$style['agree-list__link-text']"
+                                  >
+                                    상세보기
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                          <li :class="$style['agree-list__item']">
+                            <div :class="$style['agree-list__head']">
+                              <CheckBox
+                                id="agree_002_004_002"
+                                :classNames="{
+                                  wrap: $style['agree-list__checkbox'],
+                                }"
+                                theme="quinary"
+                              >
+                                <CheckBoxObject />
+                                <CheckBoxLabelText
+                                  >개인(신용)정보 필수적 제공
+                                  (하나손해보험㈜)</CheckBoxLabelText
+                                >
+                              </CheckBox>
+                              <div :class="$style['agree-list__right']">
+                                <button
+                                  type="button"
+                                  :class="$style['agree-list__link']"
+                                >
+                                  <span
+                                    :class="$style['agree-list__link-text']"
+                                  >
+                                    상세보기
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                          <li :class="$style['agree-list__item']">
+                            <div :class="$style['agree-list__head']">
+                              <CheckBox
+                                id="agree_002_004_003"
+                                :classNames="{
+                                  wrap: $style['agree-list__checkbox'],
+                                }"
+                                theme="quinary"
+                              >
+                                <CheckBoxObject />
+                                <CheckBoxLabelText
+                                  >고유식별번호 필수적 수집·이용
+                                  (하나손해보험㈜)</CheckBoxLabelText
+                                >
+                              </CheckBox>
+                              <div :class="$style['agree-list__right']">
+                                <button
+                                  type="button"
+                                  :class="$style['agree-list__link']"
+                                >
+                                  <span
+                                    :class="$style['agree-list__link-text']"
+                                  >
+                                    상세보기
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </div>
                 </li>
