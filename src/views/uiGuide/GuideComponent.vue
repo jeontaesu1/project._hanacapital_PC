@@ -107,6 +107,10 @@ import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
+import IconMoney from '@/assets/images/icon/money.svg?component';
+import IconRate from '@/assets/images/icon/rate.svg?component';
+import IconDate from '@/assets/images/icon/date.svg?component';
+import IconCommision from '@/assets/images/icon/commission.svg?component';
 
 export default {
   components: {
@@ -215,6 +219,10 @@ export default {
     IconImgColor,
     IconImg,
     IconTooltip,
+    IconMoney,
+    IconRate,
+    IconDate,
+    IconCommision,
   },
 
   setup() {
@@ -5399,6 +5407,54 @@ export default {
                     (36개월 기준)
                   </div>
                 </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Small</h3>
+        <div
+          :class="[$style['product-detail'], $style['product-detail--small']]"
+        >
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconMoney />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">최대한도</div>
+                <div :class="$style['product-detail__desc']">1억원</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconRate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9~18.9%</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconDate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">기간</div>
+                <div :class="$style['product-detail__desc']">12~120개월</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconCommision />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">
+                  중도상환수수료
+                </div>
+                <div :class="$style['product-detail__desc']">0원</div>
               </div>
             </li>
           </ul>

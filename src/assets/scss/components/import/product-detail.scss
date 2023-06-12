@@ -50,4 +50,48 @@
       color: $color-gray-80;
     }
   }
+
+  &--small {
+    .product-detail {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -24px;
+        margin-left: -16px;
+      }
+
+      &__item {
+        width: 50%;
+        margin-top: 0;
+        padding-top: 24px;
+        padding-left: 16px;
+        box-sizing: border-box;
+      }
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+      }
+
+      &__block {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      &__title {
+        flex: none;
+        margin-right: 6px;
+        color: $color-gray-70;
+      }
+
+      &__desc {
+        flex: 1;
+        min-width: 0;
+        @include font-size-default(14);
+        font-weight: 500;
+      }
+    }
+  }
 }
