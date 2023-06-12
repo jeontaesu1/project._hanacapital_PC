@@ -1,5 +1,5 @@
 .basic-table {
-  border-top: 1px solid $color-gray-60;
+  border-top: 2px solid $color-gray-60;
 
   > table {
     @include reset-table;
@@ -7,7 +7,7 @@
     > thead {
       > tr {
         > th {
-          padding: 11px 0;
+          padding: 13px 0;
           border-left: 1px solid $color-gray-30;
           border-bottom: 1px solid $color-gray-30;
           word-break: break-all;
