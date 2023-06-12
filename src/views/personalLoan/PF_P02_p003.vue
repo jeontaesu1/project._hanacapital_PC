@@ -309,7 +309,7 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <!-- DD : 등기부등본 조회 버튼 클릭시 노출 -->
+          <!-- DD : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
           <div class="row-margin-container-medium">
             <h3 class="text-body-1 row-margin-item-group">부동산설정정보</h3>
 
@@ -353,7 +353,7 @@ export default {
             </h3>
             <p class="text-body-3">철근콘크리트조60.69㎡</p>
           </div>
-          <!-- // DD : 등기부등본 조회 버튼 클릭시 노출 -->
+          <!-- // DD : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
 
           <FormListItem titleText="소유지 거주여부" :forceFocus="true">
             <FormInvalid :error="state.residenceError">
