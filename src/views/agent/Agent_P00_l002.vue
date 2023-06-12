@@ -89,11 +89,12 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일 첨부</label
+                >파일첨부</label
               >
             </div>
           </div>
 
+          <!-- Case : 파일 첨부 후 -->
           <div
             :class="[
               $style['upload-file'],
@@ -158,6 +159,7 @@ export default {
               </li>
             </ul>
           </div>
+          <!-- //Case : 파일 첨부 후 -->
         </li>
 
         <li>
@@ -174,7 +176,7 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일 첨부</label
+                >파일첨부</label
               >
             </div>
           </div>
@@ -194,7 +196,7 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일 첨부</label
+                >파일첨부</label
               >
             </div>
           </div>
@@ -214,7 +216,7 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일 첨부</label
+                >파일첨부</label
               >
             </div>
           </div>
@@ -234,7 +236,7 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일 첨부</label
+                >파일첨부</label
               >
             </div>
           </div>

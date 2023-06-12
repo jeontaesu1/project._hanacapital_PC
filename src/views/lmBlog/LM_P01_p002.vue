@@ -360,7 +360,7 @@ export default {
                   />
                 </InputBlockCell>
               </InputBlock>
-              <!-- // Case: 주소 검색 및 입력 후 노출 -->
+              <!-- //Case: 주소 검색 및 입력 후 노출 -->
 
               <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
                 본인 소유 또는 배우자 공동소유만 대출진행 가능합니다.
@@ -432,7 +432,7 @@ export default {
           </FormListItem>
         </FormList>
 
-        <!-- DD : 등기부등본 조회 버튼 클릭시 노출 -->
+        <!-- Case :  등기부등본 조회 버튼 클릭시 노출 -->
         <section class="row-margin-container-medium">
           <h4 class="text-body-1 row-margin-item-group">부동산설정정보</h4>
 
@@ -469,18 +469,18 @@ export default {
             </table>
           </div>
 
-          <!-- Case : 입력후_부동산 기록사항 없을때 -->
+          <!-- Case : 부동산 기록사항 없을 때 -->
           <div :class="$style['not-table']">기록사항 없음</div>
-          <!-- // Case : 입력후_부동산 기록사항 없을때 -->
+          <!-- //Case : 부동산 기록사항 없을 때 -->
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-body-1 row-margin-item-group">
+          <h4 class="text-body-1 row-margin-item-group">
             표제부(전유 부분의 건물의 표시) 건물내역
-          </h3>
+          </h4>
           <p class="text-body-3">철근콘크리트조60.69㎡</p>
         </section>
-        <!-- // DD : 등기부등본 조회 버튼 클릭시 노출 -->
+        <!-- //Case : 등기부등본 조회 버튼 클릭시 노출 -->
 
         <FormList>
           <FormListItem titleText="소유지 거주여부" :forceFocus="true">

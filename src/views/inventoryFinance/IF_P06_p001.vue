@@ -168,7 +168,7 @@ export default {
     <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
-      <h4 class="text-title-1 row-margin-contents">조회이력</h4>
+      <h3 class="text-title-1 row-margin-contents">조회이력</h3>
 
       <FormList>
         <FormListItem titleText="차량번호" target="#IF_P06_p001_carNumber">
@@ -254,7 +254,7 @@ export default {
     <BasicHr theme="quaternary" className="row-margin-block" />
 
     <section>
-      <h4 class="text-title-1 row-margin-contents">종료건 확인</h4>
+      <h3 class="text-title-1 row-margin-contents">종료건 확인</h3>
 
       <ul class="reset-list">
         <li v-for="i in 5" :key="i" class="row-margin-contents-small">

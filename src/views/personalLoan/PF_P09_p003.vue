@@ -127,6 +127,7 @@ export default {
             <InputBlock :error="state.idNumberError" :disabled="true">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
                   pattern="\d*"
                   title="주민등록번호 앞 6자리"
                   id="PF_P09_p003_idNumber"
@@ -373,9 +374,9 @@ export default {
           </FormListItem>
         </FormList>
 
-        <!-- DD : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
+        <!-- Case : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
         <section class="row-margin-container-medium">
-          <h3 class="text-body-1 row-margin-item-group">부동산설정정보</h3>
+          <h4 class="text-body-1 row-margin-item-group">부동산설정정보</h4>
 
           <div :class="$style['basic-table']">
             <table>
@@ -412,12 +413,12 @@ export default {
         </section>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-body-1 row-margin-item-group">
+          <h4 class="text-body-1 row-margin-item-group">
             표제부(전유 부분의 건물의 표시) 건물내역
-          </h3>
+          </h4>
           <p class="text-body-3">철근콘크리트조60.69㎡</p>
         </section>
-        <!-- // DD : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
+        <!-- //Case :  등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
 
         <FormList>
           <FormListItem titleText="소유지 거주여부" :forceFocus="true">
@@ -456,7 +457,6 @@ export default {
               <InputBlock :error="state.limitAmountError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
-                    type="number"
                     pattern="\d*"
                     id="PF_P09_p003_limitAmount"
                     title="희망한도"
@@ -480,11 +480,11 @@ export default {
         <BasicButton>다음</BasicButton>
       </ButtonListItem>
 
-      <!-- Case : 아파트 정보 영역 부분에서 노출 -->
+      <!-- Case :  등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
-      <!-- // Case : 아파트 정보 영역 부분에서 노출 -->
+      <!-- //Case :  등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
     </ButtonList>
   </PageContents>
 </template>

@@ -379,15 +379,23 @@ export default {
           </FormInvalid>
         </FormListItem>
       </FormList>
-    </div>
 
-    <div>
-      <div>// 셀렉트 테이블 대기</div>
+      <!-- Case : 조회버튼 선택 시 노출 -->
+      <div class="row-margin-block row-margin-bottom-none">
+        // 셀렉트 테이블 대기
+      </div>
+      <!-- //Case : 조회버튼 선택 시 노출 -->
 
-      <ButtonList>
+      <ButtonList align="full">
         <ButtonListItem>
           <BasicButton :line="true">조회</BasicButton>
         </ButtonListItem>
+
+        <!-- Case : 조회버튼 선택 시 노출 -->
+        <ButtonListItem>
+          <BasicButton>다음</BasicButton>
+        </ButtonListItem>
+        <!-- //Case : 조회버튼 선택 시 노출 -->
       </ButtonList>
     </div>
 

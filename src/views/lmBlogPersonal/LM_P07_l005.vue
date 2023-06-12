@@ -100,7 +100,6 @@ export default {
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
-                  type="number"
                   pattern="\d*"
                   title="휴대폰번호"
                   id="LM_P07_l005_phone"
