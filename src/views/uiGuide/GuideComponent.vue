@@ -4620,6 +4620,77 @@ export default {
           </ul>
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Horizontal</h3>
+
+        <div :class="[$style['step'], $style['step--horizontal']]">
+          <ul :class="$style['step__list']">
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 1</div>
+                  <p :class="$style['step__text']">
+                    <strong>입사지원서 작성</strong>후<br />
+                    홈페이지 상에 <strong>On-Line 등록</strong>해<br />
+                    접수를 진행합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPhone />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 2</div>
+                  <p :class="$style['step__text']">
+                    입사지원서를 토대로<br />
+                    <strong>지원자의 기본능력을<br />평가</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconSend />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 3</div>
+                  <p :class="$style['step__text']">
+                    서류전형 합격자들을<br />
+                    대상으로<br />
+                    <strong>면접을 진행</strong>합니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconPersonalTerms />
+                </div>
+              </div>
+            </li>
+            <li :class="$style['step__item']">
+              <div :class="$style['step__inner']">
+                <div :class="$style['step__contents']">
+                  <div :class="$style['step__badge']">STEP 4</div>
+                  <p :class="$style['step__text']">
+                    면접을 전 후하여 회사에서 지정한<br />
+                    병원의 종합검진으로
+                    <strong
+                      >건강진단 결과가 나온 이후 회사규정에 따라<br />
+                      최종 합격 여부가 결정</strong
+                    >됩니다.
+                  </p>
+                </div>
+                <div :class="$style['step__icon']">
+                  <IconDeposit />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="test-section">
