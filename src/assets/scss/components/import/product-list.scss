@@ -53,6 +53,14 @@
       background-color: $color-navy-50;
     }
 
+    &--septenary {
+      background-color: $color-gray-05;
+    }
+
+    &--octonary {
+      background-color: $color-white;
+    }
+
     &--flex-column {
       display: flex;
       flex-direction: column;
@@ -62,6 +70,10 @@
         margin-bottom: 20px;
       }
     }
+  }
+
+  div.product-list__block {
+    cursor: default;
   }
 
   &__icon {

@@ -5294,6 +5294,7 @@ export default {
         <BasicHr theme="secondary" className="row-margin-contents" />
         <BasicHr theme="tertiary" className="row-margin-contents" />
         <BasicHr theme="quaternary" className="row-margin-contents" />
+        <BasicHr theme="quinary" className="row-margin-contents" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Popup</h3>
@@ -5313,6 +5314,7 @@ export default {
           type="popup"
           className="row-margin-contents"
         />
+        <BasicHr theme="quinary" type="popup" className="row-margin-contents" />
       </div>
     </section>
 
@@ -7945,6 +7947,34 @@ export default {
                 </p>
                 <div :class="$style['product-list__etc']">모바일전용</div>
               </RouterLink>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--septenary'],
+                ]"
+              >
+                <h3 :class="$style['product-list__title']">타이틀</h3>
+                <p :class="$style['product-list__text']">
+                  텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                  텍스트 텍스트 텍스트
+                </p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
+                ]"
+              >
+                <h3 :class="$style['product-list__title']">타이틀</h3>
+                <p :class="$style['product-list__text']">
+                  텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                  텍스트 텍스트 텍스트
+                </p>
+              </div>
             </li>
           </ul>
         </div>
