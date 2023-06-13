@@ -5294,6 +5294,7 @@ export default {
         <BasicHr theme="secondary" className="row-margin-contents" />
         <BasicHr theme="tertiary" className="row-margin-contents" />
         <BasicHr theme="quaternary" className="row-margin-contents" />
+        <BasicHr theme="quinary" className="row-margin-contents" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Popup</h3>
@@ -5313,6 +5314,7 @@ export default {
           type="popup"
           className="row-margin-contents"
         />
+        <BasicHr theme="quinary" type="popup" className="row-margin-contents" />
       </div>
     </section>
 
