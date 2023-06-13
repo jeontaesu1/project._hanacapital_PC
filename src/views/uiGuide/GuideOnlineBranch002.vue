@@ -6,6 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import MI_P00_l003 from '@/views/onlineBranch/MI_P00_l003.vue';
 import MI_P00_l004 from '@/views/onlineBranch/MI_P00_l004.vue';
 import MI_P00_l005 from '@/views/onlineBranch/MI_P00_l005.vue';
 import MI_P00_l006 from '@/views/onlineBranch/MI_P00_l006.vue';
@@ -23,6 +24,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    MI_P00_l003,
     MI_P00_l004,
     MI_P00_l005,
     MI_P00_l006,
@@ -45,6 +47,7 @@ export default {
     const layer008 = ref(null);
     const layer009 = ref(null);
     const layer010 = ref(null);
+    const layer011 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -76,6 +79,9 @@ export default {
     const layer010Open = (e = {}) => {
       layer010.value.layer.open(e.target);
     };
+    const layer011Open = (e = {}) => {
+      layer011.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -88,6 +94,7 @@ export default {
       layer008,
       layer009,
       layer010,
+      layer011,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -98,6 +105,7 @@ export default {
       layer008Open,
       layer009Open,
       layer010Open,
+      layer011Open,
     };
   },
 };
@@ -111,6 +119,11 @@ export default {
       }"
       align="full"
     >
+      <ButtonListItem>
+        <BasicButton @click="layer011Open">
+          계약 상세정보<br />MI_P00_l003
+        </BasicButton>
+      </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer001Open">
           자동이체 계좌 유의사항<br />MI_P00_l004
@@ -163,6 +176,7 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
+    <MI_P00_l003 ref="layer011" />
     <MI_P00_l004 ref="layer001" />
     <MI_P00_l005 ref="layer002" />
     <MI_P00_l006 ref="layer003" />
