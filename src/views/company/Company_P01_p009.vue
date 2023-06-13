@@ -27,18 +27,19 @@ export default {
       <PageTitle>하나금융그룹</PageTitle>
     </PageHead>
 
-    <UiTab v-slot="tabSlotProps">
+    <UiTab>
       <NavTab :useUiTab="true">
         <NavTabButton link="Company_P01_p009001_001">비전과 미션</NavTabButton>
         <NavTabButton link="Company_P01_p009001_002">핵심가치</NavTabButton>
         <NavTabButton link="Company_P01_p009001_003">관계사</NavTabButton>
       </NavTab>
 
-      <p>Active : {{ tabSlotProps.activeName }}</p>
-
       <UiTabPanel name="Company_P01_p009001_001">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img
+            src="@/assets/images/_dummy/box-detail-wide-full.png"
+            alt="샘플 이미지"
+          />
         </div>
       </UiTabPanel>
 
