@@ -29,12 +29,12 @@ export default {
 
     <UiTab>
       <NavTab :useUiTab="true">
-        <NavTabButton link="Company_P01_p009001_001">비전과 미션</NavTabButton>
-        <NavTabButton link="Company_P01_p009001_002">핵심가치</NavTabButton>
-        <NavTabButton link="Company_P01_p009001_003">관계사</NavTabButton>
+        <NavTabButton link="Company_P01_p009_001">비전과 미션</NavTabButton>
+        <NavTabButton link="Company_P01_p009_002">핵심가치</NavTabButton>
+        <NavTabButton link="Company_P01_p009_003">관계사</NavTabButton>
       </NavTab>
 
-      <UiTabPanel name="Company_P01_p009001_001">
+      <UiTabPanel name="Company_P01_p009_001">
         <div :class="$style['image-view']">
           <img
             src="@/assets/images/_dummy/box-detail-wide-full.png"
@@ -43,13 +43,39 @@ export default {
         </div>
       </UiTabPanel>
 
-      <UiTabPanel name="Company_P01_p009001_002">// Tab 2 Contents</UiTabPanel>
+      <UiTabPanel name="Company_P01_p009_002">
+        <section>
+          <h3 class="text-big-1 row-margin-contents-group">
+            <span class="color-green">POWER</span> on Integrity
+          </h3>
+          <p class="text-title-2 font-weight-regular">
+            하나금융그룹은 하나인만의 생각하는 방식, 창조적이고 강력한
+            기업문화를 가지고 있습니다.<br />
+            하나인들이 공유하고 실천하는 핵심가치는 기업 활동에 있어서
+            가치판단과 행동의 기준이 되는 가장 소중한 무형자산입니다.
+          </p>
 
-      <UiTabPanel name="Company_P01_p009001_003">// Tab 3 Contents</UiTabPanel>
+          <div :class="[$style['image-view'], 'row-margin-block-small']">
+            <img
+              src="@/assets/images/_dummy/box-detail-wide-full.png"
+              alt="샘플 이미지"
+            />
+          </div>
+        </section>
+      </UiTabPanel>
+
+      <UiTabPanel name="Company_P01_p009_003">
+        <div :class="$style['image-view']">
+          <img
+            src="@/assets/images/_dummy/box-detail-wide-full.png"
+            alt="샘플 이미지"
+          />
+        </div>
+      </UiTabPanel>
     </UiTab>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/hanaMoney/MI_P02_p001.scss';
+@import '@/assets/scss/views/company/Company_P01_p009.scss';
 </style>
