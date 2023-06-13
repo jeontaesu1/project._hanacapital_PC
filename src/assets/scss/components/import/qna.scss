@@ -1,0 +1,81 @@
+.qna {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+    border-bottom: 1px solid $color-gray-30;
+    box-sizing: border-box;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    padding: 21px 20px;
+  }
+
+  &__symbol {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    @include font-size-default(16);
+    font-weight: 500;
+    text-align: center;
+    color: $color-navy-50;
+    border-radius: 50%;
+    background-color: rgba($color-navy-50, 0.1);
+    box-sizing: border-box;
+
+    &--answer {
+      color: $color-gray-60;
+      background-color: $color-gray-20;
+    }
+  }
+
+  &__cell {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__opener {
+    position: static;
+
+    &::before {
+      padding: 0;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+  }
+
+  &__right {
+    flex: none;
+    display: flex;
+    margin-left: auto;
+    padding-left: 20px;
+    align-items: center;
+  }
+
+  &__contents {
+    display: flex;
+    padding: 21px 20px;
+    background-color: $color-gray-05;
+    box-sizing: border-box;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(18);
+    color: $color-gray-80;
+  }
+}
