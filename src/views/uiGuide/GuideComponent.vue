@@ -6860,6 +6860,35 @@ export default {
           </li>
         </ul>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          Secondary (padding: 23px 19px / radius: 12px / arrow size : 24px)
+        </h3>
+        <ul :class="$style['logs']">
+          <li v-for="i in 2" :key="i" :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--secondary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-1']">정비</h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <button
+                    type="button"
+                    :class="$style['logs__link']"
+                    @click="layer001Open"
+                  >
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">금융 리스트</h3>
         <ul :class="$style['logs']">
