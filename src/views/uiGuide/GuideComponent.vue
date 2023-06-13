@@ -7948,6 +7948,34 @@ export default {
                 <div :class="$style['product-list__etc']">모바일전용</div>
               </RouterLink>
             </li>
+            <li :class="$style['product-list__item']">
+              <div
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--septenary'],
+                ]"
+              >
+                <h3 :class="$style['product-list__title']">타이틀</h3>
+                <p :class="$style['product-list__text']">
+                  텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                  텍스트 텍스트 텍스트
+                </p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
+                ]"
+              >
+                <h3 :class="$style['product-list__title']">타이틀</h3>
+                <p :class="$style['product-list__text']">
+                  텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트 텍스트
+                  텍스트 텍스트 텍스트
+                </p>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
