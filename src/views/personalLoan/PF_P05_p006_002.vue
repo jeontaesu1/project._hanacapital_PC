@@ -33,7 +33,7 @@ export default {
       </IllustInfoTitle>
     </IllustInfo>
 
-    <BasicHr theme="tertiary" class="row-margin-block" />
+    <BasicHr theme="tertiary" className="row-margin-block" />
 
     <div>
       <section class="row-margin-block-small">
