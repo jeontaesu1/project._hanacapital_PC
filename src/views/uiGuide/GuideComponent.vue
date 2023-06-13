@@ -111,6 +111,11 @@ import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
 import IconCommision from '@/assets/images/icon/commission.svg?component';
+import IconMembershipDriver from '@/assets/images/icon/membership-driver.svg?component';
+import IconMembershipCrown from '@/assets/images/icon/membership-crown.svg?component';
+import IconMembershipRate from '@/assets/images/icon/membership-rate.svg?component';
+import IconMembershipCar from '@/assets/images/icon/membership-car.svg?component';
+import IconMembershipBuilding from '@/assets/images/icon/membership-building.svg?component';
 
 export default {
   components: {
@@ -223,6 +228,11 @@ export default {
     IconRate,
     IconDate,
     IconCommision,
+    IconMembershipDriver,
+    IconMembershipCrown,
+    IconMembershipRate,
+    IconMembershipCar,
+    IconMembershipBuilding,
   },
 
   setup() {
@@ -7815,6 +7825,126 @@ export default {
                   </TextButton>
                 </div>
               </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Color</h3>
+
+        <div :class="[$style['product-list'], $style['product-list--col-5']]">
+          <ul :class="$style['product-list__list']">
+            <li :class="$style['product-list__item']">
+              <RouterLink
+                to=""
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--secondary'],
+                  $style['product-list__block--flex-column'],
+                ]"
+              >
+                <div :class="$style['product-list__icon']">
+                  <IconMembershipDriver />
+                </div>
+                <h3 :class="[$style['product-list__title'], 'color-white']">
+                  무료 보험 서비스
+                </h3>
+                <p :class="[$style['product-list__text'], 'color-white']">
+                  '교통상해사망/교통상해후유장해보험’ 서비스를 하나캐피탈 멤버십
+                  회원에게는 무료 제공하는 서비스
+                </p>
+              </RouterLink>
+            </li>
+
+            <li :class="$style['product-list__item']">
+              <RouterLink
+                to=""
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--tertiary'],
+                  $style['product-list__block--flex-column'],
+                ]"
+              >
+                <div :class="$style['product-list__icon']">
+                  <IconMembershipCrown />
+                </div>
+                <h3 :class="[$style['product-list__title'], 'color-white']">
+                  금리우대 서비스
+                </h3>
+                <p :class="[$style['product-list__text'], 'color-white']">
+                  하나캐피탈 멤버십 회원이 신용대출 상품 이용 시 금리 우대를
+                  제공하는 혜택 서비스
+                </p>
+                <div :class="$style['product-list__etc']">모바일전용</div>
+              </RouterLink>
+            </li>
+
+            <li :class="$style['product-list__item']">
+              <RouterLink
+                to=""
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--quaternary'],
+                  $style['product-list__block--flex-column'],
+                ]"
+              >
+                <div :class="$style['product-list__icon']">
+                  <IconMembershipRate />
+                </div>
+                <h3 :class="[$style['product-list__title'], 'color-white']">
+                  생활가전 렌탈료<br />
+                  할인 서비스
+                </h3>
+                <p :class="[$style['product-list__text'], 'color-white']">
+                  하나캐피탈 제휴처 렌탈 시 렌탈료 할인을 제공하는 혜택 서비스
+                </p>
+              </RouterLink>
+            </li>
+
+            <li :class="$style['product-list__item']">
+              <RouterLink
+                to=""
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--quinary'],
+                  $style['product-list__block--flex-column'],
+                ]"
+              >
+                <div :class="$style['product-list__icon']">
+                  <IconMembershipCar />
+                </div>
+                <h3 :class="[$style['product-list__title'], 'color-white']">
+                  자동차 시세조회
+                </h3>
+                <p :class="[$style['product-list__text'], 'color-white']">
+                  매월 업데이트되는 차량정보로 내 차 시세조회가 가능한 혜택
+                  서비스
+                </p>
+                <div :class="$style['product-list__etc']">모바일전용</div>
+              </RouterLink>
+            </li>
+
+            <li :class="$style['product-list__item']">
+              <RouterLink
+                to=""
+                :class="[
+                  $style['product-list__block'],
+                  $style['product-list__block--senary'],
+                  $style['product-list__block--flex-column'],
+                ]"
+              >
+                <div :class="$style['product-list__icon']">
+                  <IconMembershipBuilding />
+                </div>
+                <h3 :class="[$style['product-list__title'], 'color-white']">
+                  부동산 시세조회
+                </h3>
+                <p :class="[$style['product-list__text'], 'color-white']">
+                  매주 업데이트되는 부동산 시세조회를 무료로 이용할 수 있는 혜택
+                  서비스
+                </p>
+                <div :class="$style['product-list__etc']">모바일전용</div>
+              </RouterLink>
             </li>
           </ul>
         </div>
