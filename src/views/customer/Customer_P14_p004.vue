@@ -63,56 +63,56 @@ export default {
         <h3 class="text-body-1 row-margin-item-group">정보 이용 현황</h3>
 
         <!-- Case : 정보이용·제공 사실 조회 완료 시 노출 -->
-        <p class="text-body-1 font-weight-regular row-margin-item-group">
-          고객님은 현재 우리 하나캐피탈의 마케팅 영업대상이며, 조회되는 내용은
-          다음과 같습니다. 당사의 마케팅을 원치 않는 경우 [정보이용 · 제공 동의
-          철회] 버튼을 클릭하거나, 고객센터(1800-1111)을 통해 철회할 수
-          있습니다.
-        </p>
+        <div>
+          <p class="text-body-1 font-weight-regular row-margin-item-group">
+            고객님은 현재 우리 하나캐피탈의 마케팅 영업대상이며, 조회되는 내용은
+            다음과 같습니다. 당사의 마케팅을 원치 않는 경우 [정보이용 · 제공
+            동의 철회] 버튼을 클릭하거나, 고객센터(1800-1111)을 통해 철회할 수
+            있습니다.
+          </p>
 
-        <div :class="$style['basic-table']">
-          <table>
-            <colgroup>
-              <col style="width: 120px" />
-              <col style="width: 120px" />
-              <col style="width: 120px" />
-              <col style="width: 240px" />
-              <col style="width: 240px" />
-              <col />
-            </colgroup>
-            <thead>
-              <tr>
-                <th rowspan="2">동의일자</th>
-                <th rowspan="2">이용일자</th>
-                <th rowspan="2">이용주체</th>
-                <th colspan="2">동의내용</th>
-                <th rowspan="2">보유 및 이용기간</th>
-              </tr>
-              <tr>
-                <th :class="$style['basic-table__left-line']">이용목적</th>
-                <th>이용항목</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2011.11.11</td>
-                <td>2011.11.11</td>
-                <td>CRM사업팀</td>
-                <td>마케팅 목적 TM 및 SMS 발송</td>
-                <td>성명, 금융거래내역, 핸드폰번호</td>
-                <td>금융거래 종료일 또는 마케팅 동의철회일까지</td>
-              </tr>
-            </tbody>
-          </table>
+          <div :class="$style['basic-table']">
+            <table>
+              <colgroup>
+                <col style="width: 120px" />
+                <col style="width: 120px" />
+                <col style="width: 120px" />
+                <col style="width: 240px" />
+                <col style="width: 240px" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">동의일자</th>
+                  <th rowspan="2">이용일자</th>
+                  <th rowspan="2">이용주체</th>
+                  <th colspan="2">동의내용</th>
+                  <th rowspan="2">보유 및 이용기간</th>
+                </tr>
+                <tr>
+                  <th :class="$style['basic-table__left-line']">이용목적</th>
+                  <th>이용항목</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2011.11.11</td>
+                  <td>2011.11.11</td>
+                  <td>CRM사업팀</td>
+                  <td>마케팅 목적 TM 및 SMS 발송</td>
+                  <td>성명, 금융거래내역, 핸드폰번호</td>
+                  <td>금융거래 종료일 또는 마케팅 동의철회일까지</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <!-- // Case : 정보이용·제공 사실 조회 완료 시 노출 -->
 
         <!-- Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
-        <div>
-          <p :class="$style['not-table']">
-            고객님의 정보로 이용된 내역이 없습니다
-          </p>
-        </div>
+        <p :class="$style['not-table']">
+          고객님의 정보로 이용된 내역이 없습니다
+        </p>
         <!-- // Case : 정보이용·제공 사실 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
       </section>
 
@@ -163,32 +163,72 @@ export default {
             동의채널
           </h4>
 
-          <ul class="reset-list flex-box">
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p004_agree001" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>전화</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p004_agree002" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>SMS</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p004_agree003" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>우편</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p004_agree004" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>이메일</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-          </ul>
+          <div :class="$style['agree-list']">
+            <ul
+              :class="[
+                $style['agree-list__list'],
+                $style['agree-list__list--tertiary'],
+                $style['agree-list__list--tertiary-no-padding'],
+              ]"
+            >
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p004_agree001"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>전화</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p004_agree002"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>SMS</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p004_agree003"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>우편</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p004_agree004"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>이메일</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+            </ul>
+          </div>
         </section>
       </section>
     </div>

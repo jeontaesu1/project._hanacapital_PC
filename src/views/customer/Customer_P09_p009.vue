@@ -31,7 +31,7 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <section class="row-margin-container-medium">
+    <section>
       <h3 class="text-body-1 row-margin-item-group">중도상환수수료 면제기준</h3>
 
       <ul

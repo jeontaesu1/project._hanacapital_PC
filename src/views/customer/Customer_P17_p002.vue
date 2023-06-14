@@ -27,7 +27,7 @@ export default {
       <PageTitle>프로그램 삭제 안내</PageTitle>
     </PageHead>
 
-    <UiTab :classNames="{ wrap: 'row-margin-block' }">
+    <UiTab>
       <NavTab :useUiTab="true">
         <NavTabButton link="Customer_P17_p002_tab001">
           보안 프로그램 삭제
@@ -41,7 +41,7 @@ export default {
       </NavTab>
 
       <UiTabPanel name="Customer_P17_p002_tab001">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -59,7 +59,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -70,7 +70,7 @@ export default {
       </UiTabPanel>
 
       <UiTabPanel name="Customer_P17_p002_tab002">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -88,7 +88,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default {
       </UiTabPanel>
 
       <UiTabPanel name="Customer_P17_p002_tab003">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -117,7 +117,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>

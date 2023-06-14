@@ -34,15 +34,17 @@ export default {
     </PageHead>
 
     <div>
-      <section class="contents-wrap row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">대상대출상품</h3>
-
-        <p class="font-weight-light text-body-1 color-gray-secondary">
-          차주의 신용상태가 금리에 영향을 주지 않는, 아래와 같은 대출을 제외한
-          모든 대출 상품
-        </p>
-
+      <section class="row-margin-block-small">
         <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">대상대출상품</h3>
+
+          <p class="font-weight-light text-body-1 color-gray-secondary">
+            차주의 신용상태가 금리에 영향을 주지 않는, 아래와 같은 대출을 제외한
+            모든 대출 상품
+          </p>
+        </div>
+
+        <div>
           <section class="row-margin-container-medium">
             <h3 class="text-body-1 row-margin-item-group">
               금리인하 요구 대상이 아닌 대출
@@ -308,29 +310,31 @@ export default {
                 </div>
               </li>
             </ul>
-
-            <NoticeText
-              :classNames="{
-                wrap: 'row-margin-container-medium',
-              }"
-            >
-              금리인하요구 가능 대표 상품은 당사 약정서명 기준이며, 계약체결시
-              개발 대출약정 내용에 따라 다를 수 있으니 자세한 사항은
-              고객센터(1800-1110)로 문의 바랍니다.
-            </NoticeText>
           </section>
+
+          <NoticeText
+            :classNames="{
+              wrap: 'row-margin-container-medium',
+            }"
+          >
+            금리인하요구 가능 대표 상품은 당사 약정서명 기준이며, 계약체결시
+            개발 대출약정 내용에 따라 다를 수 있으니 자세한 사항은
+            고객센터(1800-1110)로 문의 바랍니다.
+          </NoticeText>
         </div>
       </section>
 
-      <section class="contents-wrap row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">신청사유</h3>
-
-        <p class="font-weight-light text-body-1 color-gray-secondary">
-          대출 등 여신거래 기간 중 아래의 경우 등 신용상태가 개선이 나타났다고
-          인정되는 경우 금리인하요구가 가능함
-        </p>
-
+      <section class="row-margin-block-small">
         <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">신청사유</h3>
+
+          <p class="font-weight-light text-body-1 color-gray-secondary">
+            대출 등 여신거래 기간 중 아래의 경우 등 신용상태가 개선이 나타났다고
+            인정되는 경우 금리인하요구가 가능함
+          </p>
+        </div>
+
+        <div>
           <section class="row-margin-container-medium">
             <h3 class="text-body-1 row-margin-item-group">가계대출</h3>
 
@@ -472,20 +476,16 @@ export default {
         </div>
       </section>
 
-      <section class="contents-wrap row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">신청방법 및 결과통지</h3>
+      <section class="row-margin-block-small">
+        <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">신청방법 및 결과통지</h3>
 
-        <p class="font-weight-light text-body-1 color-gray-secondary">
-          채널별 신청방법은 아래와 같음
-        </p>
+          <p class="font-weight-light text-body-1 color-gray-secondary">
+            채널별 신청방법은 아래와 같음
+          </p>
+        </div>
 
-        <div
-          :class="[
-            $style['basic-table'],
-            'row-margin-contents',
-            'row-margin-bottom-none',
-          ]"
-        >
+        <div :class="$style['basic-table']">
           <table>
             <colgroup>
               <col style="width: 260px" />
@@ -514,7 +514,7 @@ export default {
           </table>
         </div>
 
-        <ul class="reset-list row-margin-contents-small row-margin-bottom-none">
+        <ul class="reset-list row-margin-contents-small">
           <li class="row-margin-item-medium">
             <NoticeText>
               신청사유 증명을 위한 별도의 증빙서류 제출이 필요하며, 제출방법은

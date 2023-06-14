@@ -32,7 +32,7 @@ export default {
       <PageTitle>프로그램 설치 안내</PageTitle>
     </PageHead>
 
-    <UiTab :classNames="{ wrap: 'row-margin-block' }">
+    <UiTab>
       <NavTab :useUiTab="true">
         <NavTabButton link="Customer_P17_p001_tab001">
           보안 프로그램 설치
@@ -46,7 +46,7 @@ export default {
       </NavTab>
 
       <UiTabPanel name="Customer_P17_p001_tab001">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -54,27 +54,32 @@ export default {
             ]"
           >
             <li :class="$style['contents-list__item']">
-              <div :class="[$style['contents-list__head'], 'flex-box']">
-                <div
-                  :class="[$style['contents-list__symbol'], 'flex-box__cell']"
-                >
-                  1
-                </div>
-                <div
-                  :class="[
-                    $style['contents-list__title'],
-                    'flex-box__cell flex-1',
-                  ]"
-                >
-                  다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
-                </div>
-                <div class="flex-box__cell">
-                  <BasicButton tagName="a" inline="true" size="regular">
-                    <template v-slot:leftIcon>
-                      <IconDownload />
-                    </template>
-                    보안 프로그램 다운로드
-                  </BasicButton>
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="[$style['contents-list__title'], 'flex-1']">
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
+                    </div>
+                    <div class="flex-box__cell">
+                      <BasicButton
+                        size="regular"
+                        tagName="a"
+                        href="/foo/bar.pdf"
+                        download
+                      >
+                        <template v-slot:leftIcon>
+                          <IconDownload />
+                        </template>
+                        보안 프로그램 다운로드
+                      </BasicButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -89,7 +94,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -106,7 +111,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -122,7 +127,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -140,7 +145,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -151,7 +156,7 @@ export default {
       </UiTabPanel>
 
       <UiTabPanel name="Customer_P17_p001_tab002">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -159,27 +164,32 @@ export default {
             ]"
           >
             <li :class="$style['contents-list__item']">
-              <div :class="[$style['contents-list__head'], 'flex-box']">
-                <div
-                  :class="[$style['contents-list__symbol'], 'flex-box__cell']"
-                >
-                  1
-                </div>
-                <div
-                  :class="[
-                    $style['contents-list__title'],
-                    'flex-box__cell flex-1',
-                  ]"
-                >
-                  다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
-                </div>
-                <div class="flex-box__cell">
-                  <BasicButton tagName="a" inline="true" size="regular">
-                    <template v-slot:leftIcon>
-                      <IconDownload />
-                    </template>
-                    공동인증서 프로그램 다운로드
-                  </BasicButton>
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="[$style['contents-list__title'], 'flex-1']">
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
+                    </div>
+                    <div class="flex-box__cell">
+                      <BasicButton
+                        size="regular"
+                        tagName="a"
+                        href="/foo/bar.pdf"
+                        download
+                      >
+                        <template v-slot:leftIcon>
+                          <IconDownload />
+                        </template>
+                        공동인증서 프로그램 다운로드
+                      </BasicButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -193,7 +203,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>
@@ -204,7 +214,7 @@ export default {
       </UiTabPanel>
 
       <UiTabPanel name="Customer_P17_p001_tab003">
-        <div :class="[$style['contents-list'], 'row-margin-container-medium']">
+        <div :class="$style['contents-list']">
           <ol
             :class="[
               $style['contents-list__list'],
@@ -212,27 +222,32 @@ export default {
             ]"
           >
             <li :class="$style['contents-list__item']">
-              <div :class="[$style['contents-list__head'], 'flex-box']">
-                <div
-                  :class="[$style['contents-list__symbol'], 'flex-box__cell']"
-                >
-                  1
-                </div>
-                <div
-                  :class="[
-                    $style['contents-list__title'],
-                    'flex-box__cell flex-1',
-                  ]"
-                >
-                  다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
-                </div>
-                <div class="flex-box__cell">
-                  <BasicButton tagName="a" inline="true" size="regular">
-                    <template v-slot:leftIcon>
-                      <IconDownload />
-                    </template>
-                    증명서 발급 프로그램 다운로드
-                  </BasicButton>
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="[$style['contents-list__title'], 'flex-1']">
+                  <div class="flex-box">
+                    <div class="flex-box__cell flex-1">
+                      다음 아이콘을 클릭하여 설치 파일을 다운로드 합니다.
+                    </div>
+                    <div class="flex-box__cell">
+                      <BasicButton
+                        size="regular"
+                        tagName="a"
+                        href="/foo/bar.pdf"
+                        download
+                      >
+                        <template v-slot:leftIcon>
+                          <IconDownload />
+                        </template>
+                        증명서 발급 프로그램 다운로드
+                      </BasicButton>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -246,7 +261,7 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-large.png"
+                    src="@/assets/images/_dummy/box-detail-2.png"
                     alt="샘플 이미지"
                   />
                 </div>

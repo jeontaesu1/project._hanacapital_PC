@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
+import PopupText from '@/components/ui/layer/PopupText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
@@ -16,6 +17,7 @@ export default {
   components: {
     UiLayer,
     PopupTitle,
+    PopupText,
     PopupButton,
     ModalPopup,
     ModalPopupHead,
@@ -49,18 +51,16 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <p class="text-body-1 font-weight-regular">
+      <PopupText>
         손님의 동의하에 승계 후 이용자 또는 승계 후 이용자로부터 위임을 받은
         신청인에게 승계 계약관련 차량/금융정보가 제공됩니다. 관련 정보 제공
         동의는 승계절차 완료 또는 계약종결시점 종료되며, 중도에 정보제공동의
         철회가 가능합니다.
-      </p>
+      </PopupText>
 
-      <p class="text-body-1 font-weight-regular row-margin-item-group">
-        승계 계약관련 정보제공에 동의하십니까?
-      </p>
+      <PopupText>승계 계약관련 정보제공에 동의하십니까?</PopupText>
 
-      <NoticeText>
+      <NoticeText :classNames="{ wrap: 'row-margin-item-group' }">
         정보제공 동의를 거부하실 수 있으나, 거부 시 승계진행이 불가할 수
         있습니다.
       </NoticeText>

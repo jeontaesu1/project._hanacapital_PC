@@ -32,10 +32,10 @@ export default {
     </PageHead>
 
     <div>
-      <section class="contents-wrap row-margin-block-small">
-        <h3 class="text-title-1 row-margin-small">행사요건</h3>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">행사요건</h3>
 
-        <div class="row-margin-contents">
+        <div>
           <section class="row-margin-container-medium">
             <h3 class="text-body-1 row-margin-item-group">적용대상</h3>
 
@@ -93,7 +93,6 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
                   'font-weight-regular',
                 ]"
               >
@@ -107,7 +106,6 @@ export default {
                 :class="[
                   $style['basic-list__item'],
                   'color-black',
-                  'text-body-3',
                   'font-weight-regular',
                 ]"
               >
@@ -177,22 +175,22 @@ export default {
                 </div>
               </li>
             </ul>
-
-            <NoticeText
-              :classNames="{
-                wrap: 'row-margin-container-medium',
-              }"
-            >
-              청약 철회가 완료된 이후에는 철회취소가 불가능합니다.
-            </NoticeText>
           </section>
+
+          <NoticeText
+            :classNames="{
+              wrap: 'row-margin-container-medium',
+            }"
+          >
+            청약 철회가 완료된 이후에는 철회취소가 불가능합니다.
+          </NoticeText>
         </div>
       </section>
 
-      <section class="contents-wrap row-margin-block-small">
-        <h3 class="text-title-1">신청방법 및 필요서류</h3>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">신청방법 및 필요서류</h3>
 
-        <div class="row-margin-contents">
+        <div>
           <section>
             <h3 class="text-body-1 row-margin-item-group">신청방법</h3>
 

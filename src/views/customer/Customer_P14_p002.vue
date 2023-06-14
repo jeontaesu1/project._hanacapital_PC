@@ -121,7 +121,6 @@ export default {
                   title="휴대폰번호 첫번째 3자리"
                   id="Customer_P14_p002_phone_telecom"
                   defaultValue="010"
-                  :useDelete="false"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -130,7 +129,6 @@ export default {
                   type="number"
                   pattern="\d*"
                   title="휴대폰번호 첫번째 4자리"
-                  :useDelete="false"
                 />
               </InputBlockCell>
               <InputBlockCell type="sub">-</InputBlockCell>
@@ -138,8 +136,7 @@ export default {
                 <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                 <SecurityInput
                   title="휴대폰번호 세번째 4자리"
-                  :dot="[true, true, true, true]"
-                  :useDelete="false"
+                  :dot="[true, true, false, false]"
                 />
               </InputBlockCell>
               <InputBlockCell>
@@ -336,34 +333,37 @@ export default {
             </div>
           </li>
         </ul>
-      </section>
 
-      <section class="row-margin-container-medium">
-        <h4 class="row-margin-item-group">-아래-</h4>
+        <section class="row-margin-container-medium">
+          <h4 class="text-body-1 row-margin-item-group">-아래-</h4>
 
-        <p class="text-body-1 font-weight-regular row-margin-item-medium">
-          성명, 주민등록번호, 주민등록증 발급일, 연락처(휴대폰, 자택, 직장),
-          주소(자택,직장), 이메일, 직장명, 부서, 직위, 성별, 국적, 운전면허번호,
-          여권번호, 외국인등록번호 등
-        </p>
+          <p class="text-body-1 font-weight-regular row-margin-item-medium">
+            성명, 주민등록번호, 주민등록증 발급일, 연락처(휴대폰, 자택, 직장),
+            주소(자택,직장), 이메일, 직장명, 부서, 직위, 성별, 국적,
+            운전면허번호, 여권번호, 외국인등록번호 등
+          </p>
 
-        <ul
-          :class="[$style['basic-list'], $style['basic-list--regular-margin']]"
-        >
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              정보주체의 금융거래 정보, 신용도 판단 정보, 신용거래 능력 정보 및
-              공공기관 정보 등은 열람 대상에서 제외 됩니다.
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              개인정보 열람 청구 시 수수료가 부과됩니다.
-            </div>
-          </li>
-        </ul>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                정보주체의 금융거래 정보, 신용도 판단 정보, 신용거래 능력 정보
+                및 공공기관 정보 등은 열람 대상에서 제외 됩니다.
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인정보 열람 청구 시 수수료가 부과됩니다.
+              </div>
+            </li>
+          </ul>
+        </section>
       </section>
     </div>
 

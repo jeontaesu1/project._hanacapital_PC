@@ -503,7 +503,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P13_p001',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -525,7 +525,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P17_p001',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -536,7 +536,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P17_p002',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -569,7 +569,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P14_p002',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -580,7 +580,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P14_p003',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -591,7 +591,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P14_p004',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -602,7 +602,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P14_p006',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -613,7 +613,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p001',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -624,7 +624,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p002',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -635,7 +635,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p003',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -679,7 +679,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p007',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -690,7 +690,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p008',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -701,7 +701,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P09_p009',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -723,7 +723,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P15_p002',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -734,7 +734,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P16_p001',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -756,7 +756,7 @@ const datas = () => [
         depth6: '',
         path: '/customer/Customer_P16_p003',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {
@@ -3159,7 +3159,7 @@ const datas = () => [
         status: 'end',
         create: '2023.06.02',
         log: [
-          { date: '2023.06.09', text: '팝업 추가\n- 승계 정보 제공 동의 팝업' },
+          { date: '2023.06.14', text: '팝업 추가\n- 승계 정보 제공 동의 팝업' },
         ],
       },
       {
@@ -3214,7 +3214,7 @@ const datas = () => [
         depth6: '',
         path: '/auto/AF_P07_p013',
         status: 'end',
-        create: '2023.06.09',
+        create: '2023.06.14',
         log: [],
       },
       {

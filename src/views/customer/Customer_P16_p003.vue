@@ -76,7 +76,6 @@ export default {
                 theme="secondary"
                 :underline="true"
                 :block="true"
-                :classNames="{ wrap: $style['right-button'] }"
               >
                 바로가기
               </TextButton>

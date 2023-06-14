@@ -31,10 +31,10 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <div :class="$style['flex-basic-wrap']">
-      <div :class="$style['flex-basic-list']">
-        <section :class="$style['flex-basic-item']">
-          <BasicBox theme="tertiary" :class="$style['flex-basic-box']">
+    <div :class="$style['section-group']">
+      <div :class="$style['section-group__list']">
+        <section :class="$style['section-group__item']">
+          <BasicBox theme="tertiary" :class="$style['section-group__box']">
             <h3 class="text-title-2 font-weight-medium row-margin-item">
               금융소비자보호 규정
             </h3>
@@ -74,8 +74,8 @@ export default {
           </BasicBox>
         </section>
 
-        <section :class="$style['flex-basic-item']">
-          <BasicBox theme="tertiary" :class="$style['flex-basic-box']">
+        <section :class="$style['section-group__item']">
+          <BasicBox theme="tertiary" :class="$style['section-group__box']">
             <h3 class="text-title-2 font-weight-medium row-margin-item">
               민원처리프로세스
             </h3>
@@ -105,7 +105,6 @@ export default {
                         $style['basic-list__item'],
                         'color-gray-tertiary',
                         'text-body-4',
-                        'font-weight-light',
                       ]"
                     >
                       <div :class="$style['basic-list__symbol']">-</div>
@@ -121,8 +120,8 @@ export default {
           </BasicBox>
         </section>
 
-        <section :class="$style['flex-basic-item']">
-          <BasicBox theme="tertiary" :class="$style['flex-basic-box']">
+        <section :class="$style['section-group__item']">
+          <BasicBox theme="tertiary" :class="$style['section-group__box']">
             <h3 class="text-title-2 font-weight-medium row-margin-item">
               상품개발프로세스
             </h3>
@@ -147,8 +146,8 @@ export default {
           </BasicBox>
         </section>
 
-        <section :class="$style['flex-basic-item']">
-          <BasicBox theme="tertiary" :class="$style['flex-basic-box']">
+        <section :class="$style['section-group__item']">
+          <BasicBox theme="tertiary" :class="$style['section-group__box']">
             <h3 class="text-title-2 font-weight-medium row-margin-item">
               상품판매준칙
             </h3>
@@ -190,8 +189,13 @@ export default {
           </BasicBox>
         </section>
 
-        <section :class="$style['flex-basic-item-last']">
-          <BasicBox theme="tertiary" :class="$style['flex-basic-box']">
+        <section
+          :class="[
+            $style['section-group__item'],
+            $style['section-group__item--full'],
+          ]"
+        >
+          <BasicBox theme="tertiary" :class="$style['section-group__box']">
             <h3 class="text-title-2 font-weight-medium row-margin-item">
               민원사무처리 지침
             </h3>

@@ -61,54 +61,53 @@ export default {
       </li>
     </ul>
 
-    <!-- Case : 조회 결과 있을 경우 -->
-    <div
-      :class="[
-        $style['basic-table'],
-        'row-margin-block-small',
-        'row-margin-bottom-none',
-      ]"
-    >
-      <table>
-        <colgroup>
-          <col style="width: 160px" />
-          <col style="width: 240px" />
-          <col />
-          <col />
-          <col style="width: 100px" />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>제공회사</th>
-            <th>제공받은 회사</th>
-            <th>제공목적</th>
-            <th>제공항목</th>
-            <th>제공년도</th>
-            <th>비고</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>하나캐피탈</td>
-            <td>하나카드</td>
-            <td>제공목적노출</td>
-            <td>제공항목 노출</td>
-            <td>2023</td>
-            <td>비고노출</td>
-          </tr>
-          <tr>
-            <td>하나캐피탈</td>
-            <td>하나카드</td>
-            <td>제공목적노출</td>
-            <td>제공항목 노출</td>
-            <td>YYYY</td>
-            <td>비고노출</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row-margin-block-small row-margin-bottom-none">
+      <!-- Case : 조회 결과 있을 때 -->
+      <div :class="$style['basic-table']">
+        <table>
+          <colgroup>
+            <col style="width: 160px" />
+            <col style="width: 240px" />
+            <col />
+            <col />
+            <col style="width: 100px" />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>제공회사</th>
+              <th>제공받은 회사</th>
+              <th>제공목적</th>
+              <th>제공항목</th>
+              <th>제공년도</th>
+              <th>비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>하나캐피탈</td>
+              <td>하나카드</td>
+              <td>제공목적노출</td>
+              <td>제공항목 노출</td>
+              <td>2023</td>
+              <td>비고노출</td>
+            </tr>
+            <tr>
+              <td>하나캐피탈</td>
+              <td>하나카드</td>
+              <td>제공목적노출</td>
+              <td>제공항목 노출</td>
+              <td>YYYY</td>
+              <td>비고노출</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- // Case : 조회 결과 있을 때 -->
+
+      <!-- Case : 조회 결과 없을 때 -->
+      <!-- // Case : 조회 결과 없을 때 -->
     </div>
-    <!-- // Case : 조회 결과 있을 경우 -->
 
     <ButtonList :wrap="true" align="center" :col="4">
       <ButtonListItem>

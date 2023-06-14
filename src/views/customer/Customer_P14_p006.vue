@@ -103,11 +103,9 @@ export default {
         <!-- // Case : 동의 현황 조회 완료 시 노출 -->
 
         <!-- Case : 동의 현황 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
-        <div>
-          <p :class="$style['not-table']">
-            고객님의 정보로 이용된 내역이 없습니다
-          </p>
-        </div>
+        <p :class="$style['not-table']">
+          고객님의 정보로 이용된 내역이 없습니다
+        </p>
         <!-- // Case : 동의 현황 조회 완료_철회 선택 시 내역 없는 경우 노출 -->
       </section>
 
@@ -130,32 +128,72 @@ export default {
             동의채널
           </h4>
 
-          <ul class="reset-list flex-box">
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p006_agree001" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>전화</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p006_agree002" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>SMS</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p006_agree003" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>우편</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-            <li class="flex-box__cell">
-              <CheckBox id="Customer_P14_p006_agree004" theme="quinary">
-                <CheckBoxObject />
-                <CheckBoxLabelText>이메일</CheckBoxLabelText>
-              </CheckBox>
-            </li>
-          </ul>
+          <div :class="$style['agree-list']">
+            <ul
+              :class="[
+                $style['agree-list__list'],
+                $style['agree-list__list--tertiary'],
+                $style['agree-list__list--tertiary-no-padding'],
+              ]"
+            >
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p006_agree001"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>전화</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p006_agree002"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>SMS</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p006_agree003"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>우편</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+              <li :class="$style['agree-list__item']">
+                <div :class="$style['agree-list__head']">
+                  <CheckBox
+                    id="Customer_P14_p006_agree004"
+                    :classNames="{
+                      wrap: $style['agree-list__checkbox'],
+                    }"
+                    theme="quinary"
+                  >
+                    <CheckBoxObject />
+                    <CheckBoxLabelText>이메일</CheckBoxLabelText>
+                  </CheckBox>
+                </div>
+              </li>
+            </ul>
+          </div>
         </section>
       </section>
 

@@ -3813,6 +3813,21 @@ export default {
                 </div>
               </div>
             </li>
+            <li :class="$style['contents-list__item']">
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">9</div>
+                <div :class="$style['contents-list__title']">
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬
+                </div>
+              </div>
+            </li>
           </ol>
         </div>
       </div>
@@ -3859,6 +3874,21 @@ export default {
                 <div :class="$style['contents-list__title']">
                   ‘공동인증서 가져오기’ 버튼을 선택하시면 PC로 인증서 내보내기가
                   완료됩니다.
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">4</div>
+                <div :class="$style['contents-list__title']">
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬
                 </div>
               </div>
             </li>

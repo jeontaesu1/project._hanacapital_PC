@@ -18,6 +18,10 @@
     padding: 15px;
     border: 1px solid $color-gray-30;
     border-radius: 8px;
+
+    &--vertical-center {
+      align-items: center;
+    }
   }
 
   &__symbol {
@@ -201,6 +205,12 @@
           @include font-size-default(16);
           font-weight: 400;
         }
+
+        &--vertical-center {
+          .contents-list__symbol {
+            margin-top: 0;
+          }
+        }
       }
     }
   }
@@ -231,6 +241,12 @@
         .contents-list__right {
           @include font-size-default(16);
           font-weight: 400;
+        }
+
+        &--vertical-center {
+          .contents-list__symbol {
+            margin-top: 0;
+          }
         }
       }
     }

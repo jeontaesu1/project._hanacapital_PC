@@ -118,7 +118,7 @@ export default {
             피싱(Phishing) 이란?
           </h3>
 
-          <p class="text-body-3 font-weight-regular color-gray-tertiary">
+          <p class="text-body-3 color-gray-tertiary">
             개인정보(Private data)와 낚시(Fishing)의 합성어로 불특정 다수에게
             메일을 발송하거나 인터넷 대출 광고 등을 통해 위장된 사이트로 접속을
             유인하거나 PC에 침투한바이러스에 의해 금융사이트 접속 시
@@ -194,7 +194,7 @@ export default {
             보이스피싱이란?
           </h3>
 
-          <p class="text-body-3 font-weight-regular color-gray-tertiary">
+          <p class="text-body-3 color-gray-tertiary">
             전화를 통해 불법적으로 개인 정보를 빼내서 범죄에 사용하는 범죄를
             뜻하며, 주로 사람들이 쉽게 믿을 수 있는 금융기관이나 공공기관을
             사칭해 주민등록번호, 신용카드번호, 은행계좌번호 등을 알아내고 현금을
