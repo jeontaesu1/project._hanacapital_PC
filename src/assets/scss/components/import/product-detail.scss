@@ -52,6 +52,11 @@
   }
 
   &--small {
+    &::before {
+      content: '';
+      display: table;
+    }
+
     .product-detail {
       &__list {
         display: flex;

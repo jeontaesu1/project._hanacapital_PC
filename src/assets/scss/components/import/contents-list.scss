@@ -86,7 +86,7 @@
   &__list--secondary {
     > .contents-list__item {
       & + .contents-list__item {
-        margin-top: 0;
+        margin-top: 8px;
       }
 
       > .contents-list__head {
@@ -152,13 +152,13 @@
   &__list--quaternary {
     > .contents-list__item {
       & + .contents-list__item {
-        margin-top: 0;
+        margin-top: 4px;
       }
 
       > .contents-list__head {
         border: none;
         border-radius: 0;
-        padding: 6px 0;
+        padding: 8px 0;
         color: $color-gray-70;
 
         .contents-list__symbol {
