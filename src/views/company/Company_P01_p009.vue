@@ -51,7 +51,7 @@ export default {
           <h3 class="text-big-1 row-margin-contents-group">
             <span class="color-green">POWER</span> on Integrity
           </h3>
-          <p class="text-title-2 font-weight-regular">
+          <p class="text-title-2">
             하나금융그룹은 하나인만의 생각하는 방식, 창조적이고 강력한
             기업문화를 가지고 있습니다.<br />
             하나인들이 공유하고 실천하는 핵심가치는 기업 활동에 있어서

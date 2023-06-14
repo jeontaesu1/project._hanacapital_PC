@@ -238,7 +238,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-list'], 'row-margin-item-medium']"
+                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[
@@ -299,7 +299,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-list'], 'row-margin-item-medium']"
+                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[
@@ -361,7 +361,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-list'], 'row-margin-item-medium']"
+                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[
