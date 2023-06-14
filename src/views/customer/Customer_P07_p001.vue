@@ -67,7 +67,13 @@ export default {
     </section>
 
     <section class="row-margin-block-small">
-      <div :class="[$style['contents-list'], $style['contents-list--col-4']]">
+      <div
+        :class="[
+          $style['contents-list'],
+          $style['contents-list--wrap'],
+          $style['contents-list--col-4'],
+        ]"
+      >
         <UiAccordion
           tagName="ol"
           :classNames="{ wrap: $style['contents-list__list'] }"
