@@ -81,17 +81,210 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">
+        <h4 class="text-title-1 row-margin-contents">
           민원 접수/처리 프로세스 안내
-        </h3>
+        </h4>
+
+        <div
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--wrap'],
+            $style['contents-list--col-3'],
+          ]"
+        >
+          <ol
+            :class="[
+              $style['contents-list__list'],
+              $style['contents-list__list--senary'],
+            ]"
+          >
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="$style['contents-list__title']">
+                  고객(민원)접수
+                </div>
+              </div>
+
+              <div
+                :class="[
+                  $style['contents-list__depth-3'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">홈페이지</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">내방접수</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      고객센터(유선)
+                    </div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      우편 접수 등
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">2</div>
+                <div :class="$style['contents-list__title']">
+                  민원처리 (전담부서)
+                </div>
+              </div>
+
+              <div
+                :class="[
+                  $style['contents-list__depth-3'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      사실관계조사
+                    </div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">원인규명</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">결과통지</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">3</div>
+                <div :class="$style['contents-list__title']">
+                  민원처리 (발생부서)
+                </div>
+              </div>
+
+              <div
+                :class="[
+                  $style['contents-list__depth-3'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">사실확인</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      민원해결노력
+                    </div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      제도개선요청
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">4</div>
+                <div :class="$style['contents-list__title']">민원회신</div>
+              </div>
+
+              <div
+                :class="[
+                  $style['contents-list__depth-3'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      전화, 메일 등 고객이 원하는 채널로 안내(접수 후 14영업일
+                      내)
+                    </div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      관련 근거 제시
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">5</div>
+                <div :class="$style['contents-list__title']">사후관리</div>
+              </div>
+
+              <div
+                :class="[
+                  $style['contents-list__depth-3'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <ul
+                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                >
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">직원교육</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">원인분석</div>
+                  </li>
+                  <li :class="[$style['basic-list__item'], 'text-body-4']">
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">제도개선</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">약관동의</h3>
+        <h4 class="text-title-1 row-margin-contents">약관동의</h4>
+
+        <div>// 약관 UI 대기</div>
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">민원 내용 입력</h3>
+        <h4 class="text-title-1 row-margin-contents">민원 내용 입력</h4>
 
         <FormList>
           <FormListItem titleText="이름" target="#Customer_P15_p001_name">
@@ -252,3 +445,7 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/customer/Customer_P15_p001.scss';
+</style>

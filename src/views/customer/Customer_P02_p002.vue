@@ -91,35 +91,40 @@ export default {
                 :options="[
                   {
                     value: '1',
-                    label: '정보 변경',
+                    label: '선택',
                   },
                   {
                     value: '2',
-                    label: '제증명발급',
+                    label: '정보 변경',
                   },
                   {
                     value: '3',
-                    label: '상환문의',
+                    label: '제증명발급',
                   },
                   {
                     value: '4',
-                    label: '기타문의',
+                    label: '상환문의',
                   },
                   {
                     value: '5',
-                    label: '홈페이지관련',
+                    label: '기타문의',
                   },
                   {
                     value: '6',
-                    label: '채용관련',
+                    label: '홈페이지관련',
                   },
                   {
                     value: '7',
+                    label: '채용관련',
+                  },
+                  {
+                    value: '8',
                     label: '청약철회신청',
                   },
                 ]"
                 title="문의분야"
                 inputId="Customer_P02_p002_type"
+                defaultValue="1"
               />
             </InputBlockCell>
           </InputBlock>
