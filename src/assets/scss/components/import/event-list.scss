@@ -1,0 +1,21 @@
+.event-list {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: -24px 0 0 -24px;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    padding: 24px 0 0 24px;
+    width: 33.333333%;
+  }
+}

@@ -51,4 +51,10 @@
       }
     }
   }
+
+  &--thumb-fit {
+    .banner__thumb {
+      margin-left: 0;
+    }
+  }
 }
