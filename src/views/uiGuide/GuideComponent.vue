@@ -7124,6 +7124,50 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Board Search Bar</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-search-bar']">
+          <InputBlock>
+            <InputBlockCell>
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '전체',
+                  },
+                  {
+                    value: '2',
+                    label: '제목',
+                  },
+                  {
+                    value: '3',
+                    label: '내용',
+                  },
+                ]"
+                title="검색 조건 선택"
+                defaultValue="1"
+                :classNames="{
+                  wrap: 'input-width-category',
+                }"
+              />
+            </InputBlockCell>
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="search"
+                title="게시물 검색어"
+                placeholder="검색어 입력"
+              />
+            </InputBlockCell>
+            <InputBlockCell type="search">
+              <SearchButton />
+            </InputBlockCell>
+          </InputBlock>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Board</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
@@ -7135,7 +7179,7 @@ export default {
               <col />
               <col style="width: 117px" />
               <col style="width: 64px" />
-              <col style="width: 110px" />
+              <col style="width: 103px" />
               <col style="width: 120px" />
               <col style="width: 80px" />
             </colgroup>
@@ -7155,7 +7199,11 @@ export default {
                 </td>
                 <td></td>
                 <td></td>
-                <td>관리자</td>
+                <td>
+                  <RoundStatus theme="secondary" size="large"
+                    >진행중</RoundStatus
+                  >
+                </td>
                 <td>2022.08.30</td>
                 <td>23</td>
               </tr>
@@ -7188,7 +7236,9 @@ export default {
                   </div>
                 </td>
                 <td><IconFile /></td>
-                <td>관리자</td>
+                <td>
+                  <RoundStatus size="large">마감</RoundStatus>
+                </td>
                 <td>2022.08.30</td>
                 <td>23</td>
               </tr>
@@ -7205,7 +7255,9 @@ export default {
                 </td>
                 <td></td>
                 <td></td>
-                <td>관리자</td>
+                <td>
+                  <RoundStatus size="large">마감</RoundStatus>
+                </td>
                 <td>2022.08.30</td>
                 <td>23</td>
               </tr>
