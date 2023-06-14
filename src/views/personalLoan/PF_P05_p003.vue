@@ -90,7 +90,7 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <FormList class="row-margin-contents">
+    <FormList :classNames="{ wrap: 'row-margin-contents' }">
       <FormListItem
         titleText="이름"
         :disabled="true"
