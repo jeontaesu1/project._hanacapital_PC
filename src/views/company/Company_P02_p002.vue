@@ -29,7 +29,7 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <div :class="[$style['bg'], 'align-center']">
+    <section :class="[$style['bg'], 'align-center']">
       <h3 class="text-big-3 row-margin-small">
         이 모든 질문에 "예"라고 답할 수 있으면 행하십시오.
       </h3>
@@ -105,7 +105,7 @@ export default {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
 
     <div class="row-margin-block">
       <section class="row-margin-block-small">

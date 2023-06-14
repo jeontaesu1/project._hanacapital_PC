@@ -2736,7 +2736,12 @@ const datas = () => [
         path: '/guide/lm-blog-001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.06.16',
+            text: '팝업추가\n- 차량조회 팝업',
+          },
+        ],
       },
       {
         depth2: '대출상담\nLM_P01_p001',
@@ -2832,8 +2837,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/lm-blog-personal-001',
-        status: 'partend',
-        create: '2023.06.16',
+        status: '',
+        create: '',
         log: [],
       },
       {

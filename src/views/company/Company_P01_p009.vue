@@ -34,6 +34,7 @@ export default {
         <NavTabButton link="Company_P01_p009_003">관계사</NavTabButton>
       </NavTab>
 
+      <!-- 비전과 미션 -->
       <UiTabPanel name="Company_P01_p009_001">
         <div :class="$style['image-view']">
           <img
@@ -42,7 +43,9 @@ export default {
           />
         </div>
       </UiTabPanel>
+      <!-- // 비전과 미션 -->
 
+      <!-- 핵심가치 -->
       <UiTabPanel name="Company_P01_p009_002">
         <section>
           <h3 class="text-big-1 row-margin-contents-group">
@@ -63,7 +66,9 @@ export default {
           </div>
         </section>
       </UiTabPanel>
+      <!-- // 핵심가치 -->
 
+      <!-- 관계사 -->
       <UiTabPanel name="Company_P01_p009_003">
         <div :class="$style['image-view']">
           <img
@@ -72,6 +77,7 @@ export default {
           />
         </div>
       </UiTabPanel>
+      <!-- // 관계사 -->
     </UiTab>
   </PageContents>
 </template>

@@ -6,7 +6,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import LM_P01_l007 from '@/views/lmBlog/LM_P01_l007.vue';
+// import layer from '@/views/';
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    LM_P01_l007,
+    // layer,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,11 +41,13 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          차량조회 팝업<br />LM_P01_l008
+          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <LM_P01_l007 ref="layer001" />
+    <!--
+    <layer ref="layer001" />
+    -->
   </PageContents>
 </template>
