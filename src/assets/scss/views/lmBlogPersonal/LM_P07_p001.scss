@@ -1,0 +1,73 @@
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/agree-list.scss';
+
+.ars-layout {
+  display: flex;
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+
+    & + & {
+      margin-left: 20px;
+    }
+
+    &--fixed-width {
+      flex: none;
+      width: 413px;
+    }
+
+    &--stretch {
+      display: flex;
+      flex-direction: column;
+
+      > .ars-layout {
+        flex: 1;
+        min-height: 0;
+
+        .ars-layout__box {
+          height: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  &__box {
+    width: 413px;
+    height: 100%;
+    padding: 39px 23px;
+    border: 1px solid $color-gray-30;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    &--secondary {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: auto;
+      height: auto;
+      padding: 23px;
+      border: 1px solid $color-gray-20;
+      border-radius: 10px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    padding: 16px;
+    border-radius: 50%;
+    background-color: $color-gray-10;
+    box-sizing: border-box;
+  }
+}
+
+.agree-wrap {
+  margin-top: auto;
+
+  &__inner {
+    margin-top: 40px;
+  }
+}

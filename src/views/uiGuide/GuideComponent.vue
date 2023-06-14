@@ -6862,9 +6862,7 @@ export default {
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">
-          Secondary (padding: 23px 19px / radius: 12px / arrow size : 24px)
-        </h3>
+        <h3 class="test-section-sub-title">Secondary</h3>
         <ul :class="$style['logs']">
           <li v-for="i in 2" :key="i" :class="$style['logs__item']">
             <div
