@@ -3776,7 +3776,13 @@ export default {
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Col - 4</h3>
-        <div :class="[$style['contents-list'], $style['contents-list--col-4']]">
+        <div
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--wrap'],
+            $style['contents-list--col-4'],
+          ]"
+        >
           <UiAccordion
             tagName="ol"
             :classNames="{ wrap: $style['contents-list__list'] }"
@@ -4250,6 +4256,100 @@ export default {
           </UiAccordion>
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Col - 3</h3>
+        <div
+          :class="[
+            $style['contents-list'],
+            $style['contents-list--wrap'],
+            $style['contents-list--col-3'],
+          ]"
+        >
+          <ol
+            :class="[
+              $style['contents-list__list'],
+              $style['contents-list__list--quinary'],
+            ]"
+          >
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="$style['contents-list__title']">
+                  대출약정서 Set
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">2</div>
+                <div :class="$style['contents-list__title']">인감증명서</div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">3</div>
+                <div :class="$style['contents-list__title']">신분증 사본</div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">4</div>
+                <div :class="$style['contents-list__title']">
+                  자동이체결제 통장사본
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">5</div>
+                <div :class="$style['contents-list__title']">
+                  임대차계약서 사본
+                </div>
+              </div>
+              <div
+                :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
+              >
+                <p class="text-body-2 font-weight-regular color-gray-tertiary">
+                  민영건설은 HUG(주택도시보증공사) 가입증 추가 첨부
+                </p>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">6</div>
+                <div :class="$style['contents-list__title']">
+                  주민등록등/초본
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">7</div>
+                <div :class="$style['contents-list__title']">
+                  금융거래확인서
+                </div>
+              </div>
+              <div
+                :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
+              >
+                <p class="text-body-2 font-weight-regular color-gray-tertiary">
+                  대환대출 시
+                </p>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">8</div>
+                <div :class="$style['contents-list__title']">
+                  소득증빙서류 등
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Contents</h3>
         <div :class="$style['contents-list']">
