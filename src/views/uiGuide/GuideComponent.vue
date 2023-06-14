@@ -6651,12 +6651,12 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <EventBanner thumb="/images/_dummy/img-area.png" @click="() => {}">
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6664,7 +6664,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6675,12 +6675,12 @@ export default {
           @click="() => {}"
           :disabledStyle="true"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6688,7 +6688,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6703,12 +6703,12 @@ export default {
           thumb="/images/_dummy/img-area.png"
           @click="() => {}"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6716,7 +6716,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6729,12 +6729,12 @@ export default {
           @click="() => {}"
           :disabledStyle="true"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6742,7 +6742,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6756,12 +6756,12 @@ export default {
           thumb="/images/_dummy/img-area.png"
           @click="() => {}"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6769,7 +6769,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -7097,14 +7097,14 @@ export default {
                 thumb="/images/_dummy/img-area.png"
                 @click="() => {}"
               >
-                <div class="inline-wrap row-margin-item">
+                <div class="inline-wrap row-margin-item-medium">
                   <RoundStatus size="small" theme="duodenary"
                     >진행중</RoundStatus
                   >
                 </div>
-                <h3 class="text-title-1 font-weight-medium ellipsis">
+                <h4 class="text-title-1 font-weight-medium ellipsis">
                   타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-                </h3>
+                </h4>
                 <p
                   class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
                 >
@@ -7112,7 +7112,7 @@ export default {
                   노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
                 </p>
                 <p
-                  class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+                  class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
                 >
                   2022.12.01 ~ 2022.12.31
                 </p>
