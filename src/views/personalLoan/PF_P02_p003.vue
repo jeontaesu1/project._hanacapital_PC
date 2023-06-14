@@ -182,6 +182,15 @@ export default {
       </FormListItem>
     </FormList>
 
+    <!-- Case : 다음 누른 후 비노출 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 다음 누른 후 비노출 -->
+
+    <!-- Case : 다음 누른 후 노출 -->
     <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">아파트 정보</h3>
 
@@ -248,10 +257,11 @@ export default {
                     },
                   ]"
                   title="아파트 평형"
-                  inputId="PF_P02_p003_apartmentInfo"
+                  inputId="PF_P02_p003_apartmentInfoArea"
                   :classNames="{
-                    wrap: 'input-width-telecom',
+                    wrap: 'input-width-area',
                   }"
+                  defaultValue="1"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -294,67 +304,73 @@ export default {
                 </NoticeText>
               </div>
               <div class="flex-box__cell flex-box__cell--medium">
-                <TextButton
-                  theme="secondary"
-                  :underline="true"
-                  :block="true"
-                  textSize="regular"
-                >
-                  등기부등본 조회
-                </TextButton>
+                <div :class="$style['text-button']">
+                  <TextButton
+                    theme="secondary"
+                    :underline="true"
+                    :block="true"
+                    textSize="regular"
+                  >
+                    등기부등본 조회
+                  </TextButton>
+                </div>
               </div>
             </div>
           </FormInvalid>
+
+          <!-- Case :  등기부등본 조회 버튼 클릭시 노출 -->
+          <div :class="$style['estate-setting-info']">
+            <section class="row-margin-container-medium">
+              <h4 class="text-body-1 row-margin-item-group">부동산설정정보</h4>
+
+              <div :class="$style['basic-table']">
+                <table>
+                  <colgroup>
+                    <col style="width: 80px" />
+                    <col style="width: 120px" />
+                    <col style="width: 131px" />
+                    <col />
+                    <col style="width: 92px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>순위번호</th>
+                      <th>등기목적</th>
+                      <th>접수정보</th>
+                      <th>주요등기사항</th>
+                      <th>대상소유자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>3</td>
+                      <td>근저당권설정</td>
+                      <td>2021년2월5일 제4845호</td>
+                      <td>
+                        채권최고금액<br />금330,000,000원<br />
+                        근저당권자 주식회사<br />국민은행
+                      </td>
+                      <td>박지혜</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Case : 부동산 기록사항 없을 때 -->
+              <div :class="$style['not-table']">기록사항 없음</div>
+              <!-- //Case : 부동산 기록사항 없을 때 -->
+            </section>
+
+            <section class="row-margin-container-medium">
+              <h4 class="text-body-1 row-margin-item-group">
+                표제부(전유 부분의 건물의 표시) 건물내역
+              </h4>
+              <p class="text-body-3">철근콘크리트조60.69㎡</p>
+            </section>
+          </div>
+          <!-- //Case : 등기부등본 조회 버튼 클릭시 노출 -->
         </FormListItem>
-      </FormList>
 
-      <!-- Case : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
-      <section class="row-margin-container-medium">
-        <h4 class="text-body-1 row-margin-item-group">부동산설정정보</h4>
-
-        <div :class="$style['basic-table']">
-          <table>
-            <colgroup>
-              <col style="width: 80px" />
-              <col style="width: 120px" />
-              <col style="width: 131px" />
-              <col style="width: 181px" />
-              <col />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>순위번호</th>
-                <th>등기목적</th>
-                <th>접수정보</th>
-                <th>주요등기사항</th>
-                <th>대상소유자</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>3</td>
-                <td>근저당권설정</td>
-                <td>2021년2월5일 제4845호</td>
-                <td>
-                  채권최고금액<br />금330,000,000원<br />
-                  근저당권자 주식회사<br />국민은행
-                </td>
-                <td>박지혜</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="row-margin-container-medium">
-        <h4 class="text-body-1 row-margin-item-group">
-          표제부(전유 부분의 건물의 표시) 건물내역
-        </h4>
-        <p class="text-body-3">철근콘크리트조60.69㎡</p>
-      </section>
-      <!-- //Case : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
-
-      <FormList>
         <FormListItem titleText="소유지 거주여부" :forceFocus="true">
           <FormInvalid :error="state.residenceError">
             <BoxCheckList>
@@ -389,17 +405,12 @@ export default {
       </FormList>
     </section>
 
-    <ButtonList align="full">
-      <ButtonListItem>
-        <BasicButton>다음</BasicButton>
-      </ButtonListItem>
-
-      <!-- Case : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
-      <!-- //Case : 등기부등본 확인 팝업 내 [확인] 선택 시 노출 -->
     </ButtonList>
+    <!-- // Case : 다음 누른 후 노출 -->
   </PageContents>
 </template>
 

@@ -18,9 +18,9 @@ export default {
     ButtonList,
     ButtonListItem,
     PF_P02_l001,
+    PF_P02_l002,
     PF_P02_l003,
     PF_P02_l004,
-    PF_P02_l002,
   },
   setup() {
     const layer001 = ref(null);
@@ -79,7 +79,7 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
-        <BasicButton @click="layer002Open">
+        <BasicButton @click="layer004Open">
           온라인 약정<br />PF_P02_l004
         </BasicButton>
       </ButtonListItem>

@@ -92,9 +92,11 @@ export default {
           <div class="flex-box__cell flex-1">
             <h3 class="text-title-1">상환스케쥴</h3>
           </div>
-          <BasicButton inline="true" theme="quaternary" size="small">
-            인쇄하기
-          </BasicButton>
+          <div class="flex-box__cell">
+            <BasicButton theme="quaternary" size="small">
+              인쇄하기
+            </BasicButton>
+          </div>
         </div>
 
         <div :class="$style['basic-table']">

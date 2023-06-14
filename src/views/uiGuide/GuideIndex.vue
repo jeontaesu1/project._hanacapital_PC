@@ -982,7 +982,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/personal-loan-002',
-        status: 'partend',
+        status: 'end',
         create: '2023.05.26',
         log: [
           {
@@ -3078,7 +3078,7 @@ const datas = () => [
         depth6: '',
         path: '/auto/AF_P06_p003',
         status: 'end',
-        create: '2023.06.12',
+        create: '2023.06.14',
         log: [],
       },
       {

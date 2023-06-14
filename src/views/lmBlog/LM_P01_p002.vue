@@ -353,10 +353,11 @@ export default {
                       },
                     ]"
                     title="평형"
-                    inputId="LM_P01_p002_apartmentInfo"
+                    inputId="LM_P01_p002_apartmentInfoArea"
                     :classNames="{
-                      wrap: 'input-width-telecom',
+                      wrap: 'input-width-area',
                     }"
+                    defaultValue="1"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -381,7 +382,7 @@ export default {
                 />
               </InputBlockCell>
               <template v-slot:innerRight>
-                <div class="text-body-3">만원</div>
+                <div class="text-body-1 font-weight-medium">만원</div>
               </template>
             </InputBlock>
           </FormListItem>
@@ -418,77 +419,80 @@ export default {
                   </NoticeText>
                 </div>
                 <div class="flex-box__cell flex-box__cell--medium">
-                  <TextButton
-                    theme="secondary"
-                    :underline="true"
-                    :block="true"
-                    textSize="regular"
-                  >
-                    등기부등본 조회
-                  </TextButton>
+                  <div :class="$style['text-button']">
+                    <TextButton
+                      theme="secondary"
+                      :underline="true"
+                      :block="true"
+                      textSize="regular"
+                    >
+                      등기부등본 조회
+                    </TextButton>
+                  </div>
                 </div>
               </div>
             </FormInvalid>
+
+            <!-- Case :  등기부등본 조회 버튼 클릭시 노출 -->
+            <div :class="$style['estate-setting-info']">
+              <section class="row-margin-container-medium">
+                <h4 class="text-body-1 row-margin-item-group">
+                  부동산설정정보
+                </h4>
+
+                <div :class="$style['basic-table']">
+                  <table>
+                    <colgroup>
+                      <col style="width: 80px" />
+                      <col style="width: 120px" />
+                      <col style="width: 131px" />
+                      <col />
+                      <col style="width: 92px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>순위번호</th>
+                        <th>등기목적</th>
+                        <th>접수정보</th>
+                        <th>주요등기사항</th>
+                        <th>대상소유자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>3</td>
+                        <td>근저당권설정</td>
+                        <td>2021년2월5일 제4845호</td>
+                        <td>
+                          채권최고금액<br />금330,000,000원<br />
+                          근저당권자 주식회사<br />국민은행
+                        </td>
+                        <td>박지혜</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Case : 부동산 기록사항 없을 때 -->
+                <div :class="$style['not-table']">기록사항 없음</div>
+                <!-- //Case : 부동산 기록사항 없을 때 -->
+              </section>
+
+              <section class="row-margin-container-medium">
+                <h4 class="text-body-1 row-margin-item-group">
+                  표제부(전유 부분의 건물의 표시) 건물내역
+                </h4>
+                <p class="text-body-3">철근콘크리트조60.69㎡</p>
+              </section>
+            </div>
+            <!-- //Case : 등기부등본 조회 버튼 클릭시 노출 -->
           </FormListItem>
-        </FormList>
 
-        <!-- Case :  등기부등본 조회 버튼 클릭시 노출 -->
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-1 row-margin-item-group">부동산설정정보</h4>
-
-          <div :class="$style['basic-table']">
-            <table>
-              <colgroup>
-                <col style="width: 80px" />
-                <col style="width: 120px" />
-                <col style="width: 131px" />
-                <col style="width: 181px" />
-                <col />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>순위번호</th>
-                  <th>등기목적</th>
-                  <th>접수정보</th>
-                  <th>주요등기사항</th>
-                  <th>대상소유자</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>3</td>
-                  <td>근저당권설정</td>
-                  <td>2021년2월5일 제4845호</td>
-                  <td>
-                    채권최고금액<br />금330,000,000원<br />
-                    근저당권자 주식회사<br />국민은행
-                  </td>
-                  <td>박지혜</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Case : 부동산 기록사항 없을 때 -->
-          <div :class="$style['not-table']">기록사항 없음</div>
-          <!-- //Case : 부동산 기록사항 없을 때 -->
-        </section>
-
-        <section class="row-margin-container-medium">
-          <h4 class="text-body-1 row-margin-item-group">
-            표제부(전유 부분의 건물의 표시) 건물내역
-          </h4>
-          <p class="text-body-3">철근콘크리트조60.69㎡</p>
-        </section>
-        <!-- //Case : 등기부등본 조회 버튼 클릭시 노출 -->
-
-        <FormList>
           <FormListItem titleText="소유지 거주여부" :forceFocus="true">
             <FormInvalid :error="state.residenceError">
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
-                    :minSide="true"
                     name="LM_P01_p002_residence"
                     id="LM_P01_p002_residence01"
                   >
@@ -497,7 +501,6 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
-                    :minSide="true"
                     name="LM_P01_p002_residence"
                     id="LM_P01_p002_residence02"
                     :defaultChecked="true"
@@ -519,7 +522,6 @@ export default {
               <BoxCheckList>
                 <BoxCheckListItem>
                   <BoxCheck
-                    :minSide="true"
                     name="LM_P01_p002_setting"
                     id="LM_P01_p002_setting01"
                     :defaultChecked="true"
@@ -529,7 +531,6 @@ export default {
                 </BoxCheckListItem>
                 <BoxCheckListItem>
                   <BoxCheck
-                    :minSide="true"
                     name="LM_P01_p002_setting"
                     id="LM_P01_p002_setting02"
                   >
@@ -565,70 +566,72 @@ export default {
 
         <UiAccordion
           :classNames="{
-            wrap: [$style['select-list__list'], 'row-margin-contents'],
+            wrap: 'row-margin-contents',
           }"
         >
-          <UiAccordionItem :classNames="{ item: $style['select-list__item'] }">
-            <div :class="$style['select-list__head']">
-              <div :class="[$style['select-list__title'], 'text-body-1']">
-                대출가능 차량 기준안내
+          <UiAccordionItem>
+            <BasicBox>
+              <div class="flex-box">
+                <div class="flex-box__cell flex-1">
+                  <h4 class="text-body-1 font-weight-medium">
+                    대출가능 차량 기준안내
+                  </h4>
+                </div>
+                <div class="flex-box__cell">
+                  <UiAccordionOpener />
+                </div>
               </div>
-              <div :class="$style['select-list__right']">
-                <UiAccordionOpener
-                  :classNames="{ button: $style['select-list__opener'] }"
-                />
-              </div>
-            </div>
 
-            <UiAccordionLayer>
-              <div :class="$style['select-list__contents']">
-                <KeyValue>
-                  <KeyValueItem>
-                    <KeyValueTitle>차량명의</KeyValueTitle>
-                    <KeyValueText>본인명의(공동명의 제외)</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem>
-                    <KeyValueTitle>소유기간</KeyValueTitle>
-                    <KeyValueText>3개월 이상 소유</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem>
-                    <KeyValueTitle>차종</KeyValueTitle>
-                    <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem>
-                    <KeyValueTitle>차량연식</KeyValueTitle>
-                    <KeyValueText>출고 이후 10년 이내</KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem>
-                    <KeyValueTitle>차량가격</KeyValueTitle>
-                    <KeyValueText>
-                      500만원 이상(당사 차량 시세 가격 기준)
-                    </KeyValueText>
-                  </KeyValueItem>
-                  <KeyValueItem>
-                    <KeyValueTitle>차량압류 및 설정</KeyValueTitle>
-                    <KeyValueText>
-                      차량 압류 및 설정 내역이 있을 경우 해지 후 대출 가능
-                    </KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
+              <UiAccordionLayer>
+                <div :class="$style['accordion-contents']">
+                  <KeyValue>
+                    <KeyValueItem>
+                      <KeyValueTitle>차량명의</KeyValueTitle>
+                      <KeyValueText>본인명의(공동명의 제외)</KeyValueText>
+                    </KeyValueItem>
+                    <KeyValueItem>
+                      <KeyValueTitle>소유기간</KeyValueTitle>
+                      <KeyValueText>3개월 이상 소유</KeyValueText>
+                    </KeyValueItem>
+                    <KeyValueItem>
+                      <KeyValueTitle>차종</KeyValueTitle>
+                      <KeyValueText>국산/수입 승용, RV, 승합</KeyValueText>
+                    </KeyValueItem>
+                    <KeyValueItem>
+                      <KeyValueTitle>차량연식</KeyValueTitle>
+                      <KeyValueText>출고 이후 10년 이내</KeyValueText>
+                    </KeyValueItem>
+                    <KeyValueItem>
+                      <KeyValueTitle>차량가격</KeyValueTitle>
+                      <KeyValueText>
+                        500만원 이상(당사 차량 시세 가격 기준)
+                      </KeyValueText>
+                    </KeyValueItem>
+                    <KeyValueItem>
+                      <KeyValueTitle>차량압류 및 설정</KeyValueTitle>
+                      <KeyValueText>
+                        차량 압류 및 설정 내역이 있을 경우 해지 후 대출 가능
+                      </KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
 
-                <ul class="reset-list row-margin-contents">
-                  <li class="row-margin-item-medium">
-                    <NoticeText>
-                      차량 조회 결과(사고금액, 침수/도난/전손여부)에 따라 대출
-                      제한이 될 수 있습니다.
-                    </NoticeText>
-                  </li>
-                  <li class="row-margin-item-medium">
-                    <NoticeText>
-                      차량 압류/설정 여부는 자동차민원
-                      대국민포털(https://ecar.go.kr)에서 조회 가능합니다.
-                    </NoticeText>
-                  </li>
-                </ul>
-              </div>
-            </UiAccordionLayer>
+                  <ul class="reset-list row-margin-contents">
+                    <li class="row-margin-item-medium">
+                      <NoticeText>
+                        차량 조회 결과(사고금액, 침수/도난/전손여부)에 따라 대출
+                        제한이 될 수 있습니다.
+                      </NoticeText>
+                    </li>
+                    <li class="row-margin-item-medium">
+                      <NoticeText>
+                        차량 압류/설정 여부는 자동차민원
+                        대국민포털(https://ecar.go.kr)에서 조회 가능합니다.
+                      </NoticeText>
+                    </li>
+                  </ul>
+                </div>
+              </UiAccordionLayer>
+            </BasicBox>
           </UiAccordionItem>
         </UiAccordion>
       </section>
@@ -826,7 +829,7 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-3 font-weight-medium">만원</div>
+                  <div class="text-body-1 font-weight-medium">만원</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -914,7 +917,7 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
-                  <div class="text-body-3 font-weight-medium">만원</div>
+                  <div class="text-body-1 font-weight-medium">만원</div>
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

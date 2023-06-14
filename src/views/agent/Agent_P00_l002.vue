@@ -250,13 +250,13 @@ export default {
           'row-margin-container-medium',
         ]"
       >
-        <li :class="[$style['basic-list__item'], 'text-body-3']">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
             서류등록 파일은 이미지 파일만 가능합니다. (jpg, jpeg, png, gif 파일)
           </div>
         </li>
-        <li :class="[$style['basic-list__item'], 'text-body-3']">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
             서류등록 파일은 1회 접속 시 최대 5개까지 등록 가능하며 추가적인
@@ -264,7 +264,7 @@ export default {
             해주시기 바랍니다.
           </div>
         </li>
-        <li :class="[$style['basic-list__item'], 'text-body-3']">
+        <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
             고객님께서 제출하신 서류는 본 금융 거래 이외의 다른 목적으로

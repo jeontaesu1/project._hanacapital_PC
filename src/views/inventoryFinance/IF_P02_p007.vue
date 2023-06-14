@@ -56,8 +56,8 @@ export default {
           <KeyValueText>7,400,000 원</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle>잔여기간</KeyValueTitle>
-          <KeyValueText>00개월</KeyValueText>
+          <KeyValueTitle>비용</KeyValueTitle>
+          <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>경과이자</KeyValueTitle>
@@ -65,7 +65,7 @@ export default {
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>선수금 (환급금액)</KeyValueTitle>
-          <KeyValueText>00개월</KeyValueText>
+          <KeyValueText>0 원</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
           <KeyValueTitle>중도상환 수수료</KeyValueTitle>

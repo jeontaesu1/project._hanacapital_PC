@@ -56,8 +56,8 @@ export default {
       </NoticeText>
 
       <BasicBox>
-        <div class="text-body-3 color-green">집합건물</div>
-        <p class="row-margin-item">
+        <p class="text-body-3 color-green row-margin-item">집합건물</p>
+        <p class="text-body-1">
           부산광역시 동구 범일동 830-100 삼익아파트 제15층 제1501호
         </p>
       </BasicBox>

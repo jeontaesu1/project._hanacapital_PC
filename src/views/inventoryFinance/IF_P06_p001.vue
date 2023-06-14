@@ -70,7 +70,9 @@ export default {
   setup() {
     const state = reactive({
       carNumberError: false,
-      dayError: false,
+      dateError: false,
+      dateMinDate: '2022.02.17',
+      dateMaxDate: '2022.03.17',
     });
 
     return {
@@ -183,7 +185,7 @@ export default {
         </FormListItem>
 
         <FormListItem titleText="조회기간" :forceFocus="true">
-          <FormInvalid :error="state.dayError">
+          <FormInvalid :error="state.dateError">
             <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
               <BoxCheckListItem>
                 <BoxCheck
@@ -222,12 +224,14 @@ export default {
                 </BoxCheck>
               </BoxCheckListItem>
             </BoxCheckList>
-            <InputBlock :error="state.dayError">
+            <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
                 <BasicDatepicker
                   title="조회기간 시작 날짜"
                   id="IF_P06_p001_start"
                   buttonId="IF_P06_p001_startButton"
+                  :max="state.dateMaxDate"
+                  v-model="state.dateMinDate"
                 />
               </InputBlockCell>
               <InputBlockCell margin="regular">~</InputBlockCell>
@@ -236,6 +240,8 @@ export default {
                   title="조회기간 종료 날짜"
                   id="IF_P06_p001_start_end"
                   buttonId="IF_P06_p001_start_endButton"
+                  :min="state.dateMinDate"
+                  v-model="state.dateMaxDate"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -253,7 +259,8 @@ export default {
 
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <section>
+    <!-- Case : 조회 후 노출 -->
+    <section class="contents-wrap">
       <h3 class="text-title-1 row-margin-contents">종료건 확인</h3>
 
       <ul class="reset-list">
@@ -357,6 +364,7 @@ export default {
       </div>
       <!-- // Case : 조회결과 없을 시 -->
     </section>
+    <!-- // Case : 조회 후 노출 -->
   </PageContents>
 </template>
 

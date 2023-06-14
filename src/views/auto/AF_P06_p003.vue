@@ -127,12 +127,20 @@ export default {
       </li>
     </ul>
 
-    <div class="row-margin-block-small">
+    <div class="row-margin-block-small row-margin-bottom-none">
+      <!-- Case : 조회 버튼 누른 후 :disabled="true" 로 변경 : start -->
       <NavTab>
-        <NavTabButton tagName="button" type="button" :active="true">
+        <NavTabButton
+          tagName="button"
+          type="button"
+          :active="true"
+          :disabled="false"
+        >
           국산차
         </NavTabButton>
-        <NavTabButton tagName="button" type="button">수입차</NavTabButton>
+        <NavTabButton tagName="button" type="button" :disabled="false"
+          >수입차</NavTabButton
+        >
       </NavTab>
 
       <FormList>
@@ -140,9 +148,10 @@ export default {
           titleText="브랜드"
           target="#AF_P06_p003_brand"
           :selectOnly="true"
+          :disabled="false"
         >
           <FormInvalid :error="state.brandError">
-            <InputBlock :error="state.brandError">
+            <InputBlock :error="state.brandError" :disabled="false">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -165,6 +174,7 @@ export default {
                   ]"
                   title="브랜드 선택하기"
                   inputId="AF_P06_p003_brand"
+                  :disabled="false"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -176,9 +186,10 @@ export default {
           titleText="모델명"
           target="#AF_P06_p003_model"
           :selectOnly="true"
+          :disabled="false"
         >
           <FormInvalid :error="state.modelError">
-            <InputBlock :error="state.modelError">
+            <InputBlock :error="state.modelError" :disabled="false">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -197,6 +208,7 @@ export default {
                   ]"
                   title="모델명 선택하기"
                   inputId="AF_P06_p003_model"
+                  :disabled="false"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -208,9 +220,10 @@ export default {
           titleText="연식"
           target="#AF_P06_p003_year"
           :selectOnly="true"
+          :disabled="false"
         >
           <FormInvalid :error="state.yearError">
-            <InputBlock :error="state.yearError">
+            <InputBlock :error="state.yearError" :disabled="false">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -293,6 +306,7 @@ export default {
                   ]"
                   title="연식 선택하기"
                   inputId="AF_P06_p003_year"
+                  :disabled="false"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -304,9 +318,10 @@ export default {
           titleText="엔진타입"
           target="#AF_P06_p003_engineType"
           :selectOnly="true"
+          :disabled="false"
         >
           <FormInvalid :error="state.engineTypeError">
-            <InputBlock :error="state.engineTypeError">
+            <InputBlock :error="state.engineTypeError" :disabled="false">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -329,6 +344,7 @@ export default {
                   ]"
                   title="엔진타입 선택하기"
                   inputId="AF_P06_p003_engineType"
+                  :disabled="false"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -340,9 +356,10 @@ export default {
           titleText="세부모델"
           target="#AF_P06_p003_detail"
           :selectOnly="true"
+          :disabled="false"
         >
           <FormInvalid :error="state.detailError">
-            <InputBlock :error="state.detailError">
+            <InputBlock :error="state.detailError" :disabled="false">
               <InputBlockCell :flexible="true">
                 <BasicSelect
                   :options="[
@@ -365,6 +382,7 @@ export default {
                   ]"
                   title="세부모델 선택하기"
                   inputId="AF_P06_p003_detail"
+                  :disabled="false"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -372,20 +390,41 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="차량번호" target="#AF_P06_p003_carNumber">
+        <FormListItem
+          titleText="차량번호"
+          target="#AF_P06_p003_carNumber"
+          :disabled="false"
+        >
           <FormInvalid :error="state.carNumberError">
-            <InputBlock :error="state.carNumberError">
+            <InputBlock :error="state.carNumberError" :disabled="false">
               <InputBlockCell :flexible="true">
-                <BasicInput title="차량번호" id="AF_P06_p003_carNumber" />
+                <BasicInput
+                  title="차량번호"
+                  id="AF_P06_p003_carNumber"
+                  :disabled="false"
+                />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
       </FormList>
+      <!-- // Case : 조회 버튼 누른 후 :disabled="true" 로 변경 : end -->
 
-      <!-- Case : 조회버튼 선택 시 노출 -->
-      <SelectTable :classNames="{ wrap: 'row-margin-block' }">
+      <!-- Case : 조회 후 비노출 -->
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton :line="true">조회</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 조회 후 비노출 -->
+
+      <!-- Case : 조회 후 노출 -->
+      <!-- Case : 차량 선택 후 :disabled="true" 로 변경 : start -->
+      <SelectTable
+        :classNames="{ wrap: 'row-margin-block-small' }"
+        :disabled="false"
+      >
         <template v-slot:colgroup>
           <col style="width: 142px" />
           <col />
@@ -400,91 +439,95 @@ export default {
           </tr>
         </template>
 
-        <SelectTableRow :initialActive="true">
+        <SelectTableRow :initialActive="true" :disabled="false">
           <td>푸조</td>
           <td>508(2세대) SW 1.5 블루 HDi</td>
           <td>43,100,000 원</td>
         </SelectTableRow>
-        <SelectTableRow>
+        <SelectTableRow :disabled="false">
           <td>포르쉐</td>
           <td>718 박스터(3세대) GTS 40</td>
           <td>108,200,000 원</td>
         </SelectTableRow>
-        <SelectTableRow>
+        <SelectTableRow :disabled="false">
           <td>포르쉐</td>
           <td>718 박스터(3세대)S 2.5</td>
           <td>88,400,000 원</td>
         </SelectTableRow>
-        <SelectTableRow>
+        <SelectTableRow :disabled="false">
           <td>포르쉐</td>
           <td>718 박스터(3세대)S 2.5</td>
           <td>88,400,000 원</td>
         </SelectTableRow>
-        <SelectTableRow>
+        <SelectTableRow :disabled="false">
           <td>포르쉐</td>
           <td>718 박스터(3세대)S 2.5</td>
           <td>88,400,000 원</td>
         </SelectTableRow>
       </SelectTable>
-      <!-- //Case : 조회버튼 선택 시 노출 -->
+      <!-- // Case : 차량 선택 후 :disabled="true" 로 변경 : end -->
+      <!-- // Case : 조회 후 노출 -->
 
-      <ButtonList align="full">
-        <ButtonListItem>
-          <BasicButton :line="true">조회</BasicButton>
-        </ButtonListItem>
-
-        <!-- Case : 조회버튼 선택 시 노출 -->
+      <!-- Case : 차량 선택 후 비노출 -->
+      <ButtonList>
         <ButtonListItem>
           <BasicButton>다음</BasicButton>
         </ButtonListItem>
-        <!-- //Case : 조회버튼 선택 시 노출 -->
       </ButtonList>
+      <!-- // Case : 차량 선택 후 비노출 -->
+
+      <!-- Case : 차량 선택 후 노출 -->
+      <section class="row-margin-block-small">
+        <div class="row-margin-contents">
+          <h3 class="text-title-1 row-margin-small">차량번호 조회 결과</h3>
+          <p class="text-body-1 color-gray-secondary font-weight-light">
+            선택한 차량과 입력한 차량번호의 차량이 맞는지 확인해 주세요.
+          </p>
+        </div>
+
+        <BasicBox>
+          <BasicBoxHead>
+            <BasicBoxHeadLeft>
+              <div class="flex-box row-margin-small">
+                <div class="flex-box__cell">
+                  <CarEmblem code="1001" name="현대" />
+                </div>
+                <div class="flex-box__cell flex-box__cell--small">
+                  <p class="text-body-4 font-weight-light">2020년식</p>
+                </div>
+              </div>
+              <h4 class="text-title-2 font-weight-medium">16노2109</h4>
+              <div
+                class="text-body-3 color-gray-tertiary row-margin-item-small"
+              >
+                쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+              </div>
+            </BasicBoxHeadLeft>
+          </BasicBoxHead>
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>배기량</KeyValueTitle>
+              <KeyValueText>2967cc</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>사고이력(내차피해)</KeyValueTitle>
+              <KeyValueText>0회 / 0회</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>전손/침수/도난</KeyValueTitle>
+              <KeyValueText>X/X/X</KeyValueText>
+            </KeyValueItem>
+            <KeyValueItem>
+              <KeyValueTitle>사고이력(타차가해)</KeyValueTitle>
+              <KeyValueText>0회 / 0회</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </BasicBox>
+      </section>
+      <!-- // Case : 차량 선택 후 노출 -->
     </div>
 
-    <section class="row-margin-block-small row-margin-bottom-none">
-      <h3 class="text-title-1 row-margin-small">차량번호 조회 결과</h3>
-      <p class="text-body-1 color-gray-secondary font-weight-light">
-        선택한 차량과 입력한 차량번호의 차량이 맞는지 확인해 주세요.
-      </p>
-
-      <BasicBox className="row-margin-contents">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <div class="flex-box row-margin-small">
-              <div class="flex-box__cell">
-                <CarEmblem code="1001" name="현대" />
-              </div>
-              <div class="flex-box__cell flex-box__cell--small">
-                <p class="text-body-4 font-weight-light">2020년식</p>
-              </div>
-            </div>
-            <h4 class="text-title-2 font-weight-medium">16노2109</h4>
-            <div class="text-body-3 color-gray-tertiary row-margin-item-small">
-              쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-            </div>
-          </BasicBoxHeadLeft>
-        </BasicBoxHead>
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>배기량</KeyValueTitle>
-            <KeyValueText>2967cc</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>사고이력(내차피해)</KeyValueTitle>
-            <KeyValueText>0회 / 0회</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>전손/침수/도난</KeyValueTitle>
-            <KeyValueText>X/X/X</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>사고이력(타차가해)</KeyValueTitle>
-            <KeyValueText>0회 / 0회</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
-
+    <!-- Case : 차량 선택 후 노출 -->
     <ButtonList>
       <ButtonListItem>
         <BasicButton :line="true" theme="quaternary">재선택</BasicButton>
@@ -493,6 +536,7 @@ export default {
         <BasicButton>다음</BasicButton>
       </ButtonListItem>
     </ButtonList>
+    <!-- // Case : 차량 선택 후 노출 -->
   </PageContents>
 </template>
 

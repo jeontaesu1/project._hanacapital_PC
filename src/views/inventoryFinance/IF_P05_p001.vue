@@ -86,13 +86,13 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>실행금액</KeyValueTitle>
-              <KeyValueText>2,000,000 원</KeyValueText>
+              <KeyValueTitle>실행건수</KeyValueTitle>
+              <KeyValueText>N 건</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>실행건수</KeyValueTitle>
-              <KeyValueText>N 건</KeyValueText>
+              <KeyValueTitle>실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -123,13 +123,13 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>실행금액</KeyValueTitle>
-              <KeyValueText>2,000,000 원</KeyValueText>
+              <KeyValueTitle>실행건수</KeyValueTitle>
+              <KeyValueText>N 건</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem>
-              <KeyValueTitle>실행건수</KeyValueTitle>
-              <KeyValueText>N 건</KeyValueText>
+              <KeyValueTitle>실행금액</KeyValueTitle>
+              <KeyValueText>2,000,000 원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -145,7 +145,7 @@ export default {
         <InputBlockCell :flexible="true">
           <BasicInput
             type="search"
-            title="차량번호 입력"
+            title="차량번호 검색어"
             placeholder="차량번호 입력"
           />
         </InputBlockCell>
@@ -167,7 +167,8 @@ export default {
 
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <section>
+    <!-- Case : 조회 후 노출 -->
+    <section class="contents-wrap">
       <h3 class="text-title-1 row-margin-contents">계약내역</h3>
 
       <ul class="reset-list">
@@ -269,6 +270,7 @@ export default {
       </div>
       <!-- // Case : 조회결과 없을 시 -->
     </section>
+    <!-- // Case : 조회 후 노출 -->
   </PageContents>
 </template>
 

@@ -39,7 +39,10 @@ export default {
       </template>
 
       <div :class="$style['image-view']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+        <img
+          src="@/assets/images/_dummy/box-detail-full.png"
+          alt="샘플 이미지"
+        />
       </div>
     </ModalPopup>
   </UiLayer>
