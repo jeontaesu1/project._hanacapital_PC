@@ -37,9 +37,12 @@ export default {
             <div :class="$style['icon-box__content']">
               <p class="text-title-1">하나의 행복! 개인금융</p>
               <p class="text-title-1">
-                손님의 Value Network Partner로서 하나캐피탈이 있습니다. 전문직
-                종사자, 직장인, 공무원, 교사 등 개인손님을 대상으로 한 신용대출,
-                스탁론, 내구재할부 등 개인대출을 신속하게 제공해드립니다.
+                손님의 Value Network Partner로서<br />
+                하나캐피탈이 있습니다. <br />
+                전문직 종사자, 직장인, 공무원, 교사 등<br />
+                개인손님을 대상으로 한 신용대출, 스탁론,<br />
+                내구재할부 등 <br />
+                개인대출을 신속하게 제공해드립니다.
               </p>
             </div>
           </div>
