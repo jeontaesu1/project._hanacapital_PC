@@ -5,6 +5,7 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import LM_P07_l001 from '../lmBlogPersonal/LM_P07_l001.vue';
 
 // import layer from '@/views/';
 
@@ -14,7 +15,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    LM_P07_l001,
   },
   setup() {
     const layer001 = ref(null);
@@ -41,13 +42,11 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          상품안내 팝업<br />LM_P07_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <LM_P07_l001 ref="layer001" />
   </PageContents>
 </template>

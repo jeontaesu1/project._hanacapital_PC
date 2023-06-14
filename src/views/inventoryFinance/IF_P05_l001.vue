@@ -11,6 +11,9 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
+import IconImg from '@/assets/images/icon/img.svg?component';
+import IconImgColor from '@/assets/images/icon/img-color.svg?component';
+
 export default {
   components: {
     UiLayer,
@@ -21,6 +24,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    IconImg,
+    IconImgColor,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +45,170 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>구비서류 추가등록</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <ul class="reset-list">
+        <li class="row-margin-container-medium">
+          <div :class="[$style['upload-button'], 'row-margin-contents']">
+            <input
+              type="file"
+              id="IF_P05_l001_upload001"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="IF_P05_l001_upload001"
+                :class="$style['upload-button__label']"
+                >차량사진(앞)</label
+              >
+            </div>
+          </div>
+
+          <div :class="[$style['upload-file'], $style['upload-file--inside']]">
+            <ul :class="$style['upload-file__list']">
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.jpg</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.png</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">첨부파일명.gif</div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+              <li :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">
+                    첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                  </div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="IF_P05_l001_upload002"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="IF_P05_l001_upload002"
+                :class="$style['upload-button__label']"
+                >차량사진(뒤)</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="IF_P05_l001_upload003"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="IF_P05_l001_upload003"
+                :class="$style['upload-button__label']"
+                >자동차등록증</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="IF_P05_l001_upload004"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="IF_P05_l001_upload004"
+                :class="$style['upload-button__label']"
+                >자동차등록원부</label
+              >
+            </div>
+          </div>
+        </li>
+
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
+            <input
+              type="file"
+              id="IF_P05_l001_upload005"
+              :class="$style['upload-button__input']"
+            />
+            <div :class="$style['upload-button__block']">
+              <span :class="$style['upload-button__img']">
+                <IconImg />
+              </span>
+              <label
+                for="IF_P05_l001_upload005"
+                :class="$style['upload-button__label']"
+                >기타서류</label
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,15 +219,14 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">서류등록</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/inventoryFinance/IF_P05_l001.scss';
+</style>
