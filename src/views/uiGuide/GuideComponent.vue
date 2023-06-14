@@ -6688,7 +6688,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/banner-money-up.png"
-          @click="() => {}"
         >
           <p class="text-body-2 color-gray-tertiary row-margin-mini">
             하나금융그룹의 생활금융플랫폼!<br />
@@ -6754,7 +6753,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/img-area.png"
-          @click="() => {}"
         >
           <div class="inline-wrap row-margin-item">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
@@ -6779,7 +6777,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/img-area.png"
-          @click="() => {}"
           :disabledStyle="true"
         >
           <div class="inline-wrap row-margin-item">

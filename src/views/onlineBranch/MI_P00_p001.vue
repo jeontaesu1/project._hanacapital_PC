@@ -21,6 +21,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
@@ -47,6 +48,7 @@ export default {
     UnitText,
     RoundStatus,
     TextButton,
+    BasicBanner,
     IconCustomer,
     IconLink,
   },
@@ -355,7 +357,20 @@ export default {
     </section>
 
     <!-- Cass : 법인, 멤버십가입 유무 확인 -->
-    <div class="row-margin-block">// 배너 영역 내용 확인 후 진행 예정</div>
+    <div class="row-margin-block">
+      <!-- 하드 코딩 배너 -->
+      <BasicBanner
+        tagName="RouterLink"
+        to="/hana-money/MI_P02_p002"
+        thumb="/images/banner/banner-money-up.png"
+      >
+        <p class="text-body-2 color-gray-tertiary row-margin-mini">
+          하나금융그룹의 생활금융플랫폼!<br />
+        </p>
+        <p class="text-title-2 font-weight-medium">하나머니 가입하기</p>
+      </BasicBanner>
+      <!-- // 하드 코딩 배너 -->
+    </div>
     <!-- // Cass : 법인, 멤버십가입 유무 확인 -->
   </PageContents>
 </template>
