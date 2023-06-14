@@ -1,5 +1,5 @@
 <script>
-// PF_P02_l002
+// LM_P01_l003
 import { ref, reactive } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -108,17 +108,17 @@ export default {
 
         <UiTab>
           <NavTab :useUiTab="true" type="popup">
-            <NavTabButton link="PF_P02_l002_tab001">소재지번</NavTabButton>
-            <NavTabButton link="PF_P02_l002_tab002">도로명주소</NavTabButton>
-            <NavTabButton link="PF_P02_l002_tab003">고유번호</NavTabButton>
+            <NavTabButton link="LM_P01_l003_tab001">소재지번</NavTabButton>
+            <NavTabButton link="LM_P01_l003_tab002">도로명주소</NavTabButton>
+            <NavTabButton link="LM_P01_l003_tab003">고유번호</NavTabButton>
           </NavTab>
 
           <!-- 소재지번 -->
-          <UiTabPanel name="PF_P02_l002_tab001">
+          <UiTabPanel name="LM_P01_l003_tab001">
             <FormList>
               <FormListItem
                 titleText="부동산 구분"
-                target="#PF_P02_l002_method01"
+                target="#LM_P01_l003_method01"
                 :disabled="true"
               >
                 <FormInvalid :error="state.addressError001_001">
@@ -129,7 +129,7 @@ export default {
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="부동산 구분"
-                        id="PF_P02_l002_method01"
+                        id="LM_P01_l003_method01"
                         defaultValue="집합건물"
                         :disabled="true"
                       />
@@ -141,7 +141,7 @@ export default {
 
               <FormListItem
                 titleText="시/도"
-                target="#PF_P02_l002_area001"
+                target="#LM_P01_l003_area001"
                 :selectOnly="true"
               >
                 <FormInvalid :error="state.addressError001_002">
@@ -219,7 +219,7 @@ export default {
                           },
                         ]"
                         title="시/도 선택하기"
-                        inputId="PF_P02_l002_area001"
+                        inputId="LM_P01_l003_area001"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -227,11 +227,11 @@ export default {
                 </FormInvalid>
               </FormListItem>
 
-              <FormListItem titleText="리/동" target="#PF_P02_l002_area001_002">
+              <FormListItem titleText="리/동" target="#LM_P01_l003_area001_002">
                 <FormInvalid :error="state.addressError001_003">
                   <InputBlock :error="state.addressError001_003">
                     <InputBlockCell :flexible="true">
-                      <BasicInput title="리/동" id="PF_P02_l002_area001_002" />
+                      <BasicInput title="리/동" id="LM_P01_l003_area001_002" />
                     </InputBlockCell>
                   </InputBlock>
                   <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -244,8 +244,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_address001_003"
-                        id="PF_P02_l002_address001_003_001"
+                        name="LM_P01_l003_address001_003"
+                        id="LM_P01_l003_address001_003_001"
                       >
                         <BoxCheckLabel>지번</BoxCheckLabel>
                       </BoxCheck>
@@ -253,8 +253,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_address001_003"
-                        id="PF_P02_l002_address001_003_002"
+                        name="LM_P01_l003_address001_003"
+                        id="LM_P01_l003_address001_003_002"
                       >
                         <BoxCheckLabel>건물명칭</BoxCheckLabel>
                       </BoxCheck>
@@ -268,7 +268,7 @@ export default {
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="지번/건물명칭"
-                        id="PF_P02_l002_address001_003_name"
+                        id="LM_P01_l003_address001_003_name"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -284,8 +284,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail1"
-                        id="PF_P02_l002_addressDetail1_001"
+                        name="LM_P01_l003_addressDetail1"
+                        id="LM_P01_l003_addressDetail1_001"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>
@@ -293,8 +293,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail1"
-                        id="PF_P02_l002_addressDetail1_002"
+                        name="LM_P01_l003_addressDetail1"
+                        id="LM_P01_l003_addressDetail1_002"
                       >
                         <BoxCheckLabel>동</BoxCheckLabel>
                       </BoxCheck>
@@ -302,8 +302,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail1"
-                        id="PF_P02_l002_addressDetail1_003"
+                        name="LM_P01_l003_addressDetail1"
+                        id="LM_P01_l003_addressDetail1_003"
                       >
                         <BoxCheckLabel>호</BoxCheckLabel>
                       </BoxCheck>
@@ -381,11 +381,11 @@ export default {
           <!-- // 소재지번 -->
 
           <!-- 도로명주소 -->
-          <UiTabPanel name="PF_P02_l002_tab002">
+          <UiTabPanel name="LM_P01_l003_tab002">
             <FormList>
               <FormListItem
                 titleText="부동산 구분"
-                target="#PF_P02_l002_method02"
+                target="#LM_P01_l003_method02"
                 :disabled="true"
               >
                 <FormInvalid :error="state.addressError002_001">
@@ -396,7 +396,7 @@ export default {
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="부동산 구분"
-                        id="PF_P02_l002_method02"
+                        id="LM_P01_l003_method02"
                         defaultValue="집합건물"
                         :disabled="true"
                       />
@@ -408,7 +408,7 @@ export default {
 
               <FormListItem
                 titleText="시/도"
-                target="#PF_P02_l002_area002_001"
+                target="#LM_P01_l003_area002_001"
                 :selectOnly="true"
               >
                 <FormInvalid :error="state.addressError002_002">
@@ -486,7 +486,7 @@ export default {
                           },
                         ]"
                         title="시/도 선택하기"
-                        inputId="PF_P02_l002_area002_001"
+                        inputId="LM_P01_l003_area002_001"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -496,7 +496,7 @@ export default {
 
               <FormListItem
                 titleText="시/군/구"
-                target="#PF_P02_l002_area002_002"
+                target="#LM_P01_l003_area002_002"
                 :selectOnly="true"
               >
                 <FormInvalid :error="state.addressError002_003">
@@ -574,7 +574,7 @@ export default {
                           },
                         ]"
                         title="시/군/구 선택하기"
-                        inputId="PF_P02_l002_area002_002"
+                        inputId="LM_P01_l003_area002_002"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -583,12 +583,12 @@ export default {
 
               <FormListItem
                 titleText="도로명"
-                target="#PF_P02_l002_area002_003"
+                target="#LM_P01_l003_area002_003"
               >
                 <FormInvalid :error="state.addressError002_004">
                   <InputBlock :error="state.addressError002_004">
                     <InputBlockCell :flexible="true">
-                      <BasicInput title="도로명" id="PF_P02_l002_area002_003" />
+                      <BasicInput title="도로명" id="LM_P01_l003_area002_003" />
                     </InputBlockCell>
                   </InputBlock>
                   <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -597,14 +597,14 @@ export default {
 
               <FormListItem
                 titleText="도로명/건물번호"
-                target="#PF_P02_l002_area002_004"
+                target="#LM_P01_l003_area002_004"
               >
                 <FormInvalid :error="state.addressError002_005">
                   <InputBlock :error="state.addressError002_005">
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="도로명/건물번호"
-                        id="PF_P02_l002_area002_004"
+                        id="LM_P01_l003_area002_004"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -618,8 +618,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_address002_005"
-                        id="PF_P02_l002_address002_005_001"
+                        name="LM_P01_l003_address002_005"
+                        id="LM_P01_l003_address002_005_001"
                       >
                         <BoxCheckLabel>지번</BoxCheckLabel>
                       </BoxCheck>
@@ -627,8 +627,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_address002_005"
-                        id="PF_P02_l002_address002_005_002"
+                        name="LM_P01_l003_address002_005"
+                        id="LM_P01_l003_address002_005_002"
                       >
                         <BoxCheckLabel>건물명칭</BoxCheckLabel>
                       </BoxCheck>
@@ -642,7 +642,7 @@ export default {
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="지번/건물명칭"
-                        id="PF_P02_l002_address002_005_name"
+                        id="LM_P01_l003_address002_005_name"
                       />
                     </InputBlockCell>
                   </InputBlock>
@@ -658,8 +658,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail2"
-                        id="PF_P02_l002_addressDetail2_001"
+                        name="LM_P01_l003_addressDetail2"
+                        id="LM_P01_l003_addressDetail2_001"
                       >
                         <BoxCheckLabel>동+호</BoxCheckLabel>
                       </BoxCheck>
@@ -667,8 +667,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail2"
-                        id="PF_P02_l002_addressDetail2_002"
+                        name="LM_P01_l003_addressDetail2"
+                        id="LM_P01_l003_addressDetail2_002"
                       >
                         <BoxCheckLabel>동</BoxCheckLabel>
                       </BoxCheck>
@@ -676,8 +676,8 @@ export default {
                     <BoxCheckListItem>
                       <BoxCheck
                         :minSide="true"
-                        name="PF_P02_l002_addressDetail2"
-                        id="PF_P02_l002_addressDetail2_003"
+                        name="LM_P01_l003_addressDetail2"
+                        id="LM_P01_l003_addressDetail2_003"
                       >
                         <BoxCheckLabel>호</BoxCheckLabel>
                       </BoxCheck>
@@ -755,18 +755,18 @@ export default {
           <!-- // 도로명주소 -->
 
           <!-- 고유번호 -->
-          <UiTabPanel name="PF_P02_l002_tab003">
+          <UiTabPanel name="LM_P01_l003_tab003">
             <FormList>
               <FormListItem
                 titleText="부동산 고유번호"
-                target="#PF_P02_l002_method03"
+                target="#LM_P01_l003_method03"
               >
                 <FormInvalid :error="state.addressError003_001">
                   <InputBlock :error="state.addressError003_001">
                     <InputBlockCell :flexible="true">
                       <BasicInput
                         title="부동산 고유번호"
-                        id="PF_P02_l002_method03"
+                        id="LM_P01_l003_method03"
                       />
                     </InputBlockCell>
                   </InputBlock>
