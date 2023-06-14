@@ -23,12 +23,9 @@
 
     .flex-basic-item {
       padding: 60px 0 0 60px;
-      flex: none;
       width: 33.333333%;
       min-width: 0;
       box-sizing: border-box;
-      display: flex;
-      align-items: stretch;
     }
   }
 }
