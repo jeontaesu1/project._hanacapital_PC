@@ -1,24 +1,27 @@
 @import '@/assets/scss/components/import/basic-list.scss';
 
-.flex-basic-wrap {
+.section-group {
   &::before {
     content: '';
     display: table;
   }
 
-  .flex-basic-list {
+  &__list {
     margin: -60px 0 0 -60px;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
     display: flex;
     align-items: stretch;
+  }
 
-    .flex-basic-item {
-      padding: 60px 0 0 60px;
-      width: 33.333333%;
-      min-width: 0;
-      box-sizing: border-box;
-    }
+  &__item {
+    flex: none;
+    width: 33.333333%;
+    padding: 60px 0 0 60px;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
   }
 }

@@ -43,9 +43,9 @@ export default {
 
     <BasicHr type="contents" theme="quaternary" />
 
-    <div :class="[$style['flex-basic-wrap'], 'row-margin-block']">
-      <div :class="$style['flex-basic-list']">
-        <div :class="$style['flex-basic-item']">
+    <div :class="[$style['section-group'], 'row-margin-block']">
+      <div :class="$style['section-group__list']">
+        <div :class="$style['section-group__item']">
           <section>
             <h3 class="text-title-1 row-margin-contents">임직원에 대한 인권</h3>
 
@@ -142,7 +142,7 @@ export default {
           </section>
         </div>
 
-        <div :class="$style['flex-basic-item']">
+        <div :class="$style['section-group__item']">
           <section>
             <h3 class="text-title-1 row-margin-contents">손님에 대한 인권</h3>
 
@@ -213,7 +213,7 @@ export default {
           </section>
         </div>
 
-        <div :class="$style['flex-basic-item']">
+        <div :class="$style['section-group__item']">
           <section>
             <h3 class="text-title-1 row-margin-contents">
               주주/투자자에 대한 인권
@@ -272,7 +272,7 @@ export default {
           </section>
         </div>
 
-        <div :class="$style['flex-basic-item']">
+        <div :class="$style['section-group__item']">
           <section>
             <h3 class="text-title-1 row-margin-contents">
               협력회사에 대한 인권
@@ -330,7 +330,7 @@ export default {
           </section>
         </div>
 
-        <div :class="$style['flex-basic-item']">
+        <div :class="$style['section-group__item']">
           <section>
             <h3 class="text-title-1 row-margin-contents">
               지역사회에 대한 인권

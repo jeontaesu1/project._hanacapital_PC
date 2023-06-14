@@ -140,9 +140,9 @@ export default {
         이해관계자 구분 및 인권 이슈
       </h3>
 
-      <div :class="$style['flex-basic-wrap']">
-        <div :class="$style['flex-basic-list']">
-          <div :class="$style['flex-basic-item']">
+      <div :class="$style['section-group']">
+        <div :class="$style['section-group__list']">
+          <div :class="$style['section-group__item']">
             <section>
               <h3 class="text-title-1 row-margin-contents">임직원</h3>
 
@@ -209,7 +209,7 @@ export default {
             </section>
           </div>
 
-          <div :class="$style['flex-basic-item']">
+          <div :class="$style['section-group__item']">
             <section>
               <h3 class="text-title-1 row-margin-contents">손님</h3>
 
@@ -276,7 +276,7 @@ export default {
             </section>
           </div>
 
-          <div :class="$style['flex-basic-item']">
+          <div :class="$style['section-group__item']">
             <section>
               <h3 class="text-title-1 row-margin-contents">주주/투자자</h3>
 
@@ -330,7 +330,7 @@ export default {
             </section>
           </div>
 
-          <div :class="$style['flex-basic-item']">
+          <div :class="$style['section-group__item']">
             <section>
               <h3 class="text-title-1 row-margin-contents">협력회사</h3>
 
@@ -384,7 +384,7 @@ export default {
             </section>
           </div>
 
-          <div :class="$style['flex-basic-item']">
+          <div :class="$style['section-group__item']">
             <section>
               <h3 class="text-title-1 row-margin-contents">지역사회</h3>
 
