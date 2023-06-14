@@ -36,6 +36,10 @@ export default {
       Type: Boolean,
       default: true,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const selectTable = inject('selectTable', {});
@@ -81,6 +85,14 @@ export default {
       }
     };
 
+    const click = () => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
+      toggle();
+    };
+
     onMounted(() => {
       if (selectTable && selectTable.itemsAdd) {
         state.key = selectTable.itemsAdd({
@@ -106,6 +118,7 @@ export default {
       select,
       unSelect,
       toggle,
+      click,
     };
   },
 };
@@ -114,15 +127,16 @@ export default {
 <template>
   <tr
     ref="row"
-    tabindex="0"
+    :tabindex="disabled ? '-1' : '0'"
     :class="[
       {
         'is-selected': state.selected,
+        'is-disabled': disabled,
       },
     ]"
     @click="
       () => {
-        if (action) toggle();
+        if (action) click();
       }
     "
   >

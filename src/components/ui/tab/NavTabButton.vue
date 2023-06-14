@@ -31,6 +31,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const styleModule = inject('navTabStyleModule');
@@ -56,11 +60,25 @@ export default {
         : tagName;
     });
 
+    const itemDisabled = computed(() => {
+      const { useUiTab } = navTab;
+      const { disabled } = props;
+      return (useUiTab.value && disabled) || null;
+    });
+
+    const buttonDisabled = computed(() => {
+      const { useUiTab } = navTab;
+      const { tagName, disabled } = props;
+      return useUiTab.value ? null : tagName === 'button' ? disabled : null;
+    });
+
     return {
       styleModule,
       customClassNames,
       setItemComponent,
       setButtonComponent,
+      itemDisabled,
+      buttonDisabled,
     };
   },
 };
@@ -73,16 +91,19 @@ export default {
       styleModule['nav-tab__item'],
       {
         [styleModule['nav-tab__item--active']]: active,
+        [styleModule['nav-tab__item--disabled']]: disabled,
       },
       customClassNames.item,
     ]"
     :link="link"
+    :disabled="itemDisabled"
   >
     <component
       :is="setButtonComponent"
       v-bind="$attrs"
       :class="[styleModule['nav-tab__button'], customClassNames.button]"
       :title="active ? '선택 됨' : null"
+      :disabled="buttonDisabled"
     >
       <span :class="[styleModule['nav-tab__text'], customClassNames.text]">
         <slot />
