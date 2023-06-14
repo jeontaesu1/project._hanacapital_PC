@@ -2694,7 +2694,7 @@ export default {
         />
       </div>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">disabled</h3>
+        <h3 class="test-section-sub-title">Default</h3>
         <TextProgress
           :steps="[
             '본인인증',
