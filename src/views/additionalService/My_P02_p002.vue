@@ -1196,7 +1196,7 @@ export default {
               <TextProgress
                 :steps="['접수', '상담 및 심사', '계약', '실행']"
                 :current="2"
-                :cancel="true"
+                :disabled="true"
               />
               <div
                 :class="[
@@ -1607,7 +1607,7 @@ export default {
               <TextProgress
                 :steps="['접수', '상담 및 심사', '계약', '실행']"
                 :current="3"
-                :cancel="true"
+                :disabled="true"
               />
               <div
                 :class="[
