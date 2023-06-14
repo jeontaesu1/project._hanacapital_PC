@@ -1,0 +1,50 @@
+.history {
+  display: block;
+
+  &__item {
+    display: flex;
+
+    & + & {
+      margin-top: 40px;
+    }
+  }
+
+  &__year {
+    @include font-size-head(20);
+    font-weight: 700;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  &__detail {
+    margin-left: 40px;
+
+    &-list {
+      @include reset-list;
+    }
+
+    &-item {
+      display: flex;
+
+      & + & {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__month {
+    width: 34px;
+    color: $color-gray-60;
+  }
+
+  &__contents {
+    margin-left: 40px;
+
+    &-row {
+      & + & {
+        margin-top: 12px;
+      }
+    }
+  }
+}

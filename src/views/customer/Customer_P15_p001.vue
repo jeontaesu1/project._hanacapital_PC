@@ -65,21 +65,21 @@ export default {
       <PageTitle>전자민원접수</PageTitle>
     </PageHead>
 
-    <div class="row-margin-block-small row-margin-top-none">
-      <div class="text-big-3 font-weight-bold">민원신청·처리절차</div>
-      <p
-        class="text-title-2 color-gray-secondary font-weight-light row-margin-small"
-      >
-        하나캐피탈은 신속한 소비자피해 구제와 민원처리를 위한 민원시스템을
-        운영하여 소비자보호에 앞장서겠습니다.<br />
-        민원이란 회사에 대하여 이의신청, 진정, 건의, 질의 및 기타 특정한 행위를
-        요하는 의사표시를 하는 것으로서 금융업무와 관련한<br />
-        당사 귀책사유로 인한 피해가 발생했을 경우 소비자피해보상을 신청할 수
-        있습니다.
-      </p>
-    </div>
-
     <div>
+      <section class="row-margin-block-small">
+        <h3 class="text-big-3 font-weight-bold row-margin-small">
+          민원신청·처리절차
+        </h3>
+        <p class="text-title-2 color-gray-secondary font-weight-light">
+          하나캐피탈은 신속한 소비자피해 구제와 민원처리를 위한 민원시스템을
+          운영하여 소비자보호에 앞장서겠습니다.<br />
+          민원이란 회사에 대하여 이의신청, 진정, 건의, 질의 및 기타 특정한
+          행위를 요하는 의사표시를 하는 것으로서 금융업무와 관련한<br />
+          당사 귀책사유로 인한 피해가 발생했을 경우 소비자피해보상을 신청할 수
+          있습니다.
+        </p>
+      </section>
+
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">
           민원 접수/처리 프로세스 안내
@@ -244,9 +244,11 @@ export default {
         <BasicButton>다음</BasicButton>
       </ButtonListItem>
 
+      <!-- Case : 약관동의 내 [다음] 선택 시 노출 -->
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
+      <!-- // Case : 약관동의 내 [다음] 선택 시 노출 -->
     </ButtonList>
   </PageContents>
 </template>

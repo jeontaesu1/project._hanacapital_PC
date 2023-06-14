@@ -33,9 +33,8 @@ export default {
         </p>
         <p class="row-margin-item-group">
           하나금융그룹의 하나캐피탈은 ‘함께 성장하며 행복을 나누는 금융’ 이라는
-          그룹의 미션과<br />
-          같이 모두의 행복 가치를 높이기 위해 손님이 필요로 하는 금융서비스를
-          제공하고자 끊임없이 노력해왔습니다.
+          그룹의 미션과 같이 모두의 행복 가치를 높이기 위해 손님이 필요로 하는
+          금융서비스를 제공하고자 끊임없이 노력해왔습니다.
         </p>
         <p class="row-margin-item-group">
           모든 임직원이 도덕성과 책임감을 바탕으로 손님과 함께 성장하며 행복을
@@ -58,7 +57,7 @@ export default {
         </div>
       </div>
 
-      <div class="flex-box__cell">
+      <div :class="$style['flex-left']">
         <div :class="$style['image-view']">
           <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
         </div>
