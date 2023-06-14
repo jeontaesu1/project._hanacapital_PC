@@ -22,6 +22,7 @@
   }
 
   &__block {
+    @include reset-button;
     position: relative;
     flex: 1;
     min-width: 0;
@@ -30,6 +31,49 @@
     border-radius: 12px;
     background-color: $color-navy-05;
     text-align: center;
+    text-decoration: none;
+
+    &--secondary {
+      background-color: $color-green-40;
+    }
+
+    &--tertiary {
+      background-color: $color-orange-60;
+    }
+
+    &--quaternary {
+      background-color: $color-blue-40;
+    }
+
+    &--quinary {
+      background-color: $color-purple-60;
+    }
+
+    &--senary {
+      background-color: $color-navy-50;
+    }
+
+    &--septenary {
+      background-color: $color-gray-05;
+    }
+
+    &--octonary {
+      background-color: $color-white;
+    }
+
+    &--flex-column {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+
+      .product-list__text {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  div.product-list__block {
+    cursor: default;
   }
 
   &__icon {
@@ -74,6 +118,18 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0);
     }
+  }
+
+  &__etc {
+    display: block;
+    margin: auto -24px 0 -24px;
+    padding: 10px;
+    @include font-size-default(14);
+    color: $color-white;
+    font-weight: 400;
+    text-align: center;
+    background-color: rgba($color-white, 0.25);
+    box-sizing: border-box;
   }
 
   &--col {
