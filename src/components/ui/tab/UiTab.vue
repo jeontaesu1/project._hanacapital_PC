@@ -99,42 +99,46 @@ export default {
 
     const prev = () => {
       const key = state.activeName.value;
-      const i = state.buttons.findIndex((item) => item.key === key);
+      const aliveButtons = state.buttons.filter((item) => !item.disabled);
+      const i = aliveButtons.findIndex((item) => item.key === key);
       const prevIndex = (() => {
         const result = i - 1;
 
         if (result < 0) {
-          return state.buttons.length - 1;
+          return aliveButtons.length - 1;
         } else {
           return result;
         }
       })();
 
-      open(state.buttons[prevIndex].key);
+      open(aliveButtons[prevIndex].key);
     };
 
     const next = () => {
       const key = state.activeName.value;
-      const i = state.buttons.findIndex((item) => item.key === key);
+      const aliveButtons = state.buttons.filter((item) => !item.disabled);
+      const i = aliveButtons.findIndex((item) => item.key === key);
       const nextIndex = (() => {
         const result = i + 1;
 
-        if (result >= state.buttons.length) {
+        if (result >= aliveButtons.length) {
           return 0;
         } else {
           return result;
         }
       })();
 
-      open(state.buttons[nextIndex].key);
+      open(aliveButtons[nextIndex].key);
     };
 
     const start = () => {
-      open(state.buttons[0].key);
+      const aliveButtons = state.buttons.filter((item) => !item.disabled);
+      open(aliveButtons[0].key);
     };
 
     const end = () => {
-      open(state.buttons[state.buttons.length].key);
+      const aliveButtons = state.buttons.filter((item) => !item.disabled);
+      open(aliveButtons[aliveButtons.length - 1].key);
     };
 
     onMounted(() => {

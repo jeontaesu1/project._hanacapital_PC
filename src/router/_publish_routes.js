@@ -590,6 +590,11 @@ const routes = [
     component: () => import('@/views/inventoryFinance/IF_P03_p002.vue'),
   },
   {
+    path: '/inventory-finance/IF_P02_p007',
+    name: '/inventory-finance/IF_P02_p007',
+    component: () => import('@/views/inventoryFinance/IF_P02_p007.vue'),
+  },
+  {
     path: '/inventory-finance/IF_P03_p003',
     name: '/inventory-finance/IF_P03_p003',
     component: () => import('@/views/inventoryFinance/IF_P03_p003.vue'),

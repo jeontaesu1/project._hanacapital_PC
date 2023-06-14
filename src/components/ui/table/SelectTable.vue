@@ -9,6 +9,7 @@ const defaultClassNames = () => ({
   bodyScroll: '',
   caption: '',
   table: '',
+  disabled: '',
 });
 
 export default {
@@ -37,6 +38,10 @@ export default {
     caption: {
       Type: String,
       default: null,
+    },
+    disabled: {
+      Type: Boolean,
+      default: false,
     },
     onSelected: {
       Type: Function,
@@ -194,7 +199,14 @@ export default {
 
 <template>
   <div
-    :class="[$style['select-table'], customClassNames.wrap]"
+    :class="[
+      $style['select-table'],
+      {
+        [$style['select-table--disabled']]: disabled,
+        [customClassNames.disabled]: disabled,
+      },
+      customClassNames.wrap,
+    ]"
     role="table"
     :aria-label="label"
     :aria-describedby="captionId"

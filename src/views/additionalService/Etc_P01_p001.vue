@@ -186,7 +186,12 @@ export default {
         <FormInvalid :error="state.phoneError">
           <InputBlock :error="state.phoneError">
             <InputBlockCell :flexible="true">
-              <BasicInput title="연락처" id="Etc_P01_p001_phone" />
+              <BasicInput
+                type="number"
+                pattern="\d*"
+                title="연락처"
+                id="Etc_P01_p001_phone"
+              />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

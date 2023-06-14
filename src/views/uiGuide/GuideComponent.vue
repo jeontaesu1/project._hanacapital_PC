@@ -3813,6 +3813,21 @@ export default {
                 </div>
               </div>
             </li>
+            <li :class="$style['contents-list__item']">
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">9</div>
+                <div :class="$style['contents-list__title']">
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬
+                </div>
+              </div>
+            </li>
           </ol>
         </div>
       </div>
@@ -3859,6 +3874,21 @@ export default {
                 <div :class="$style['contents-list__title']">
                   ‘공동인증서 가져오기’ 버튼을 선택하시면 PC로 인증서 내보내기가
                   완료됩니다.
+                </div>
+              </div>
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div
+                :class="[
+                  $style['contents-list__head'],
+                  $style['contents-list__head--vertical-center'],
+                ]"
+              >
+                <div :class="$style['contents-list__symbol']">4</div>
+                <div :class="$style['contents-list__title']">
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬<br />
+                  수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬 수직 중앙 정렬
                 </div>
               </div>
             </li>
@@ -4192,6 +4222,47 @@ export default {
         <h3 class="test-section-sub-title">Regular</h3>
 
         <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-black', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li
+            :class="[$style['basic-list__item'], 'color-green', 'text-body-3']"
+          >
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="[$style['basic-list__item'], 'color-red', 'text-body-3']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Medium</h3>
+
+        <ul :class="[$style['basic-list'], $style['basic-list--medium']]">
           <li :class="[$style['basic-list__item'], 'text-body-3']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -6617,7 +6688,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/banner-money-up.png"
-          @click="() => {}"
         >
           <p class="text-body-2 color-gray-tertiary row-margin-mini">
             하나금융그룹의 생활금융플랫폼!<br />
@@ -6683,7 +6753,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/img-area.png"
-          @click="() => {}"
         >
           <div class="inline-wrap row-margin-item">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
@@ -6708,7 +6777,6 @@ export default {
           tagName="RouterLink"
           to=""
           thumb="/images/_dummy/img-area.png"
-          @click="() => {}"
           :disabledStyle="true"
         >
           <div class="inline-wrap row-margin-item">

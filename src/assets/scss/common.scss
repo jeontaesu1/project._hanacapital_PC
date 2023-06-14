@@ -183,6 +183,9 @@ body,
 
 // input-width
 .input-width {
+  &-area {
+    width: 200px;
+  }
   &-telecom {
     width: 180px;
   }

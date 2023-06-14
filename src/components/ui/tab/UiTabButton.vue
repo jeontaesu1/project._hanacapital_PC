@@ -17,6 +17,10 @@ export default {
       Type: String,
       required: true,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const styleModule = inject('uiTabStyleModule', {});
@@ -34,18 +38,30 @@ export default {
     });
 
     const open = (isFocus) => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       if (isFocus) {
         button.value.focus();
       }
     };
 
     const click = () => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       if (uiTab.open) {
         uiTab.open(props.link);
       }
     };
 
     const keydown = (e) => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       const { keyCode } = e;
 
       if ([13, 32, 35, 36, 37, 38, 39, 40].indexOf(keyCode) > -1) {
@@ -54,6 +70,10 @@ export default {
     };
 
     const keyup = (e) => {
+      const { disabled } = props;
+
+      if (disabled) return;
+
       const { keyCode } = e;
 
       switch (keyCode) {
@@ -84,6 +104,7 @@ export default {
       if (uiTab && uiTab.buttonsAdd) {
         uiTab.buttonsAdd({
           key: props.link,
+          disabled: props.disabled,
           open,
         });
       }
@@ -100,6 +121,15 @@ export default {
       (cur, pre) => {
         uiTab.buttonsUpdate(pre, {
           key: cur,
+        });
+      }
+    );
+
+    watch(
+      () => props.disabled,
+      (cur) => {
+        uiTab.buttonsUpdate(props.link, {
+          disabled: cur,
         });
       }
     );
@@ -128,10 +158,11 @@ export default {
       customClassNames.button,
     ]"
     role="tab"
-    :tabindex="isActive === link ? '0' : '-1'"
+    :tabindex="isActive === link && !disabled ? '0' : '-1'"
     :aria-selected="isActive === link ? 'true' : 'false'"
     :aria-controls="`${link}_panel`"
     :id="`${link}_tab`"
+    :aria-disabled="disabled"
     @click="click"
     @keydown="keydown"
     @keyup="keyup"

@@ -1,5 +1,5 @@
 <script>
-// LM_P01_l001
+// LM_P01_l008
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
@@ -10,6 +10,11 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import KeyValue from '@/components/ui/text/KeyValue.vue';
+import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
+import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
+import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import NoticeText from '@/components/ui/text/NoticeText.vue';
 
 export default {
   components: {
@@ -21,6 +26,11 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    KeyValue,
+    KeyValueItem,
+    KeyValueTitle,
+    KeyValueText,
+    NoticeText,
   },
   setup() {
     const layer = ref(null);
@@ -40,11 +50,31 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>차량조회</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <KeyValue>
+        <KeyValueItem>
+          <KeyValueTitle>차량등록번호</KeyValueTitle>
+          <KeyValueText>12321421312312</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>차량명</KeyValueTitle>
+          <KeyValueText>쏘나타</KeyValueText>
+        </KeyValueItem>
+
+        <KeyValueItem>
+          <KeyValueTitle>모델 연식</KeyValueTitle>
+          <KeyValueText>2021년</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
+        해당 차량은 선순위 설정내역이 확인되어 선순위 설정을 하나캐피탈로
+        대환하는 조건으로 진행이 가능합니다.
+      </NoticeText>
 
       <template v-slot:foot>
         <ButtonList
@@ -55,12 +85,7 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">확인</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
