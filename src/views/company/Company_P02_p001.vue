@@ -44,9 +44,9 @@ export default {
             <p
               :class="[
                 $style['product-list__text'],
-                'font-weight-light',
                 'text-body-3',
                 'color-black',
+                'font-weight-light',
               ]"
             >
               도덕성과 책임감을 바탕으로<br />
@@ -75,9 +75,9 @@ export default {
             <p
               :class="[
                 $style['product-list__text'],
-                'font-weight-light',
                 'text-body-3',
                 'color-black',
+                'font-weight-light',
               ]"
             >
               원칙과 법규를 준수하고<br />
@@ -107,9 +107,9 @@ export default {
             <p
               :class="[
                 $style['product-list__text'],
-                'font-weight-light',
                 'text-body-3',
                 'color-black',
+                'font-weight-light',
               ]"
             >
               “내가 회사를 대표한다”는 생각으로 행동하며<br />

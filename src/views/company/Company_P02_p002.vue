@@ -21,7 +21,7 @@ export default {
       <PageTitle>윤리강령</PageTitle>
       <PageMainText
         :classNames="{
-          wrap: 'font-weight-regular text-title-2',
+          wrap: 'text-title-2 font-weight-regular',
         }"
       >
         함께 성장하며 행복을 나누는 금융을 실현하기 위해 윤리적 가치를
@@ -33,7 +33,7 @@ export default {
       <h3 class="text-big-3 row-margin-small">
         이 모든 질문에 "예"라고 답할 수 있으면 행하십시오.
       </h3>
-      <p class="text-title-2 font-weight-light color-gray-secondary">
+      <p class="text-title-2 color-gray-secondary font-weight-light">
         스스로 판단하기 어려운 사항은<br />
         윤리 또는 준법담당 부서에 의견을 물을 수 있습니다.
       </p>

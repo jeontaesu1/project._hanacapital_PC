@@ -21,7 +21,7 @@ export default {
       <PageTitle>인권선언문 구성체계</PageTitle>
       <PageMainText
         :classNames="{
-          wrap: 'font-weight-regular text-title-2',
+          wrap: 'text-title-2 font-weight-regular',
         }"
       >
         하나금융그룹은 기업의 사회적 책임을 충실히 이행하고 모든 이해관계자와의
@@ -65,8 +65,8 @@ export default {
                 :class="[
                   $style['product-list__text'],
                   'font-weight-light',
-                  'text-body-3',
                   'color-black',
+                  'text-body-3',
                 ]"
               >
                 하나금융 그룹의 미션 제시를 통한 ‘인권경영’ 표현
@@ -94,8 +94,8 @@ export default {
                 :class="[
                   $style['product-list__text'],
                   'font-weight-light',
-                  'text-body-3',
                   'color-black',
+                  'text-body-3',
                 ]"
               >
                 Code One을 통해 그룹 인권경영 실천기준 제시
@@ -123,8 +123,8 @@ export default {
                 :class="[
                   $style['product-list__text'],
                   'font-weight-light',
-                  'text-body-3',
                   'color-black',
+                  'text-body-3',
                 ]"
               >
                 그룹 의 모든 이해관계자의 인권보호 및 존중의지 선언
@@ -157,8 +157,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -170,8 +170,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -183,8 +183,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -196,8 +196,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -224,8 +224,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -237,8 +237,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -250,8 +250,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -263,8 +263,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -291,8 +291,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -304,8 +304,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -317,8 +317,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -345,8 +345,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -358,8 +358,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -371,8 +371,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -399,8 +399,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -412,8 +412,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
@@ -425,8 +425,8 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-1',
-                    'font-weight-regular',
                     'color-black',
+                    'font-weight-regular',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>

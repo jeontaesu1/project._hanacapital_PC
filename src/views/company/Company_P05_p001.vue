@@ -36,7 +36,7 @@ export default {
       <h3 class="text-big-3 row-margin-small">
         핵심가치 <span class="color-green">INTEGRITY</span>
       </h3>
-      <p class="text-title-2 font-weight-light color-gray-secondary">
+      <p class="text-title-2 color-gray-secondary font-weight-light">
         구체적으로는 Integrity와 5가지 핵심가치를 바탕으로 성과리더십,
         조직리더십, 혁신리더십을 실현하는 리더를 뜻합니다.
       </p>
@@ -68,9 +68,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-light',
                   'text-body-3',
                   'color-black',
+                  'font-weight-light',
                 ]"
               >
                 열정
@@ -96,9 +96,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-light',
                   'text-body-3',
                   'color-black',
+                  'font-weight-light',
                 ]"
               >
                 열린마음
@@ -124,9 +124,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-light',
                   'text-body-3',
                   'color-black',
+                  'font-weight-light',
                 ]"
               >
                 전문성
@@ -152,9 +152,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-light',
                   'text-body-3',
                   'color-black',
+                  'font-weight-light',
                 ]"
               >
                 존경과 배려
@@ -180,9 +180,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-light',
                   'text-body-3',
                   'color-black',
+                  'font-weight-light',
                 ]"
               >
                 손님 우선
@@ -227,10 +227,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-regular',
                   'text-body-3',
-                  'color-black',
                   'color-gray-tertiary',
+                  'font-weight-regular',
                 ]"
               >
                 스스로 도전적인 목표를 부여하고 이를 달성하기 위한<br />
@@ -288,10 +287,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-regular',
                   'text-body-3',
-                  'color-black',
                   'color-gray-tertiary',
+                  'font-weight-regular',
                 ]"
               >
                 원활한 커뮤니케이션을 바탕으로 조직내<br />
@@ -349,10 +347,9 @@ export default {
               <p
                 :class="[
                   $style['product-list__text'],
-                  'font-weight-regular',
                   'text-body-3',
-                  'color-black',
                   'color-gray-tertiary',
+                  'font-weight-regular',
                 ]"
               >
                 경영 환경 변화에 대한 명확한 통찰력을 바탕으로<br />
