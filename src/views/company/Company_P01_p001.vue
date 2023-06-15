@@ -97,7 +97,7 @@ export default {
                 </div>
                 <div :class="$style['logs__right']">
                   <RouterLink
-                    to="/company/Company_P03_p001	"
+                    to="/company/Company_P03_p001"
                     :class="$style['logs__link']"
                   >
                     <span :class="$style['logs__link-text']">상세보기</span>
@@ -122,7 +122,7 @@ export default {
                 </div>
                 <div :class="$style['logs__right']">
                   <RouterLink
-                    to="/company/Company_P01_p009	"
+                    to="/company/Company_P01_p009"
                     :class="$style['logs__link']"
                   >
                     <span :class="$style['logs__link-text']">상세보기</span>
