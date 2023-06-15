@@ -20,6 +20,7 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 
 export default {
   components: {
@@ -41,10 +42,12 @@ export default {
     BasicInput,
     FormInvalidMessage,
     BasicTextarea,
+    FormHelpText,
   },
 
   setup() {
     const state = reactive({
+      typeError: false,
       nameError: false,
       birthNumberError: false,
       phoneError: false,
@@ -85,49 +88,51 @@ export default {
           target="#Customer_P02_p002_type"
           :selectOnly="true"
         >
-          <InputBlock :disabled="true">
-            <InputBlockCell :flexible="true">
-              <BasicSelect
-                :options="[
-                  {
-                    value: '1',
-                    label: '선택',
-                  },
-                  {
-                    value: '2',
-                    label: '정보 변경',
-                  },
-                  {
-                    value: '3',
-                    label: '제증명발급',
-                  },
-                  {
-                    value: '4',
-                    label: '상환문의',
-                  },
-                  {
-                    value: '5',
-                    label: '기타문의',
-                  },
-                  {
-                    value: '6',
-                    label: '홈페이지관련',
-                  },
-                  {
-                    value: '7',
-                    label: '채용관련',
-                  },
-                  {
-                    value: '8',
-                    label: '청약철회신청',
-                  },
-                ]"
-                title="문의분야"
-                inputId="Customer_P02_p002_type"
-                defaultValue="1"
-              />
-            </InputBlockCell>
-          </InputBlock>
+          <FormInvalid :error="state.typeError">
+            <InputBlock :error="state.typeError">
+              <InputBlockCell :flexible="true">
+                <BasicSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '선택',
+                    },
+                    {
+                      value: '2',
+                      label: '정보 변경',
+                    },
+                    {
+                      value: '3',
+                      label: '제증명발급',
+                    },
+                    {
+                      value: '4',
+                      label: '상환문의',
+                    },
+                    {
+                      value: '5',
+                      label: '기타문의',
+                    },
+                    {
+                      value: '6',
+                      label: '홈페이지관련',
+                    },
+                    {
+                      value: '7',
+                      label: '채용관련',
+                    },
+                    {
+                      value: '8',
+                      label: '청약철회신청',
+                    },
+                  ]"
+                  title="문의분야"
+                  inputId="Customer_P02_p002_type"
+                  defaultValue="1"
+                />
+              </InputBlockCell>
+            </InputBlock>
+          </FormInvalid>
         </FormListItem>
 
         <FormListItem titleText="이름" target="#Customer_P02_p002_name">
@@ -154,6 +159,7 @@ export default {
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>숫자만 입력해 주세요. (예:900123)</FormHelpText>
           </FormInvalid>
         </FormListItem>
 

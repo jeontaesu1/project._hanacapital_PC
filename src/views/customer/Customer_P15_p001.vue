@@ -67,16 +67,14 @@ export default {
 
     <div>
       <section class="row-margin-block-small">
-        <h3 class="text-big-3 font-weight-bold row-margin-small">
-          민원신청·처리절차
-        </h3>
+        <h3 class="text-big-3 row-margin-small">민원신청·처리절차</h3>
 
         <p class="text-title-2 color-gray-secondary font-weight-light">
           하나캐피탈은 신속한 소비자피해 구제와 민원처리를 위한 민원시스템을
           운영하여 소비자보호에 앞장서겠습니다.<br />
           민원이란 회사에 대하여 이의신청, 진정, 건의, 질의 및 기타 특정한
-          행위를 요하는 의사표시를 하는 것으로서 금융업무와 관련한<br />
-          당사 귀책사유로 인한 피해가 발생했을 경우 소비자피해보상을 신청할 수
+          행위를 요하는 의사표시를 하는 것으로서 금융업무와 관련한 당사
+          귀책사유로 인한 피해가 발생했을 경우 소비자피해보상을 신청할 수
           있습니다.
         </p>
       </section>
@@ -316,7 +314,7 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem titleText="연락처" target="#Customer_P15_p001_phone">
+          <FormListItem titleText="연락처" target="#Customer_P15_p001_phone1">
             <FormInvalid :error="state.phoneError">
               <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
@@ -426,8 +424,8 @@ export default {
 
           <BasicTextarea
             :error="state.counselingError"
-            titleText="상담신청내용"
-            title="상담신청내용"
+            titleText="민원접수내용"
+            title="민원접수내용"
           />
         </FormList>
       </section>

@@ -10,14 +10,14 @@
   }
 
   &__year {
+    margin: 0;
     @include font-size-head(20);
     font-weight: 700;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
   }
 
   &__detail {
+    flex: 1;
+    min-width: 0;
     margin-left: 40px;
 
     &-list {
@@ -34,11 +34,13 @@
   }
 
   &__month {
-    width: 34px;
+    min-width: 34px;
     color: $color-gray-60;
   }
 
   &__contents {
+    flex: 1;
+    min-width: 0;
     margin-left: 40px;
 
     &-row {

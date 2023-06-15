@@ -1,5 +1,16 @@
 @import '@/assets/scss/components/import/image-view.scss';
 
-.flex-left {
-  margin-left: 60px;
+.ceo-layout {
+  display: flex;
+
+  &__item {
+    & + & {
+      margin-left: 60px;
+    }
+
+    &--flexible {
+      flex: 1;
+      min-width: 0;
+    }
+  }
 }
