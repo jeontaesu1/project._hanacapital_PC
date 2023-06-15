@@ -4,6 +4,8 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
+import PageMainText from '@/components/ui/text/PageMainText.vue';
+import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -13,6 +15,8 @@ export default {
     PageHead,
     PageTitle,
     PageHeadRow,
+    StepProgress,
+    PageMainText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -24,11 +28,15 @@ export default {
   <PageContents>
     <PageHead>
       <PageHeadRow>
-        <PageTitle>
-          개인정보 열람 청구를 위해<br />
-          약관동의 및 본인확인이 필요합니다
-        </PageTitle>
+        <PageTitle align="left">개인정보 열람 청구</PageTitle>
+        <template v-slot:right>
+          <StepProgress :total="3" :current="1" />
+        </template>
       </PageHeadRow>
+      <PageMainText align="left">
+        개인정보 열람 청구를 위해<br />
+        약관동의 및 본인확인이 필요합니다
+      </PageMainText>
     </PageHead>
 
     <!-- Case : 다음 버튼 누른 후 비활성화 -->
