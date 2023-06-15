@@ -32,11 +32,6 @@ export default {
 
       <div :class="[$style['basic-table'], 'row-margin-contents-small']">
         <table>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-          </colgroup>
           <thead>
             <tr>
               <th>신용평가사</th>

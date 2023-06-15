@@ -24,12 +24,6 @@ export default {
 
       <div :class="[$style['basic-table'], 'row-margin-contents-small']">
         <table>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
           <thead>
             <tr>
               <th>과목</th>
