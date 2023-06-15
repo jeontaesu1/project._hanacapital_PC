@@ -70,6 +70,7 @@ export default {
         <h3 class="text-big-3 font-weight-bold row-margin-small">
           민원신청·처리절차
         </h3>
+
         <p class="text-title-2 color-gray-secondary font-weight-light">
           하나캐피탈은 신속한 소비자피해 구제와 민원처리를 위한 민원시스템을
           운영하여 소비자보호에 앞장서겠습니다.<br />

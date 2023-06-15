@@ -326,17 +326,15 @@ export default {
               <ul :class="$style['history__detail-list']">
                 <li :class="$style['history__detail-item']">
                   <div :class="$style['history__month']">4월</div>
-                  <div :class="$style['history__flex']">
-                    <div :class="$style['history__contents']">
-                      <div :class="$style['history__contents-row']">
-                        ㈜하나금융지주 자회사 편입
-                      </div>
-                      <div :class="$style['history__contents-row']">
-                        유상증자 (납입자본금 611억)
-                      </div>
-                      <div :class="$style['history__contents-row']">
-                        신용등급 상향 (회사채 A0, CP A20)
-                      </div>
+                  <div :class="$style['history__contents']">
+                    <div :class="$style['history__contents-row']">
+                      ㈜하나금융지주 자회사 편입
+                    </div>
+                    <div :class="$style['history__contents-row']">
+                      유상증자 (납입자본금 611억)
+                    </div>
+                    <div :class="$style['history__contents-row']">
+                      신용등급 상향 (회사채 A0, CP A20)
                     </div>
                   </div>
                 </li>
@@ -350,14 +348,12 @@ export default {
               <ul :class="$style['history__detail-list']">
                 <li :class="$style['history__detail-item']">
                   <div :class="$style['history__month']">11월</div>
-                  <div :class="$style['history__flex']">
-                    <div :class="$style['history__contents']">
-                      <div :class="$style['history__contents-row']">
-                        유상증자 (납입자본금 432억)
-                      </div>
-                      <div :class="$style['history__contents-row']">
-                        신용등급 상향 (회사채 A-, CP A2-)
-                      </div>
+                  <div :class="$style['history__contents']">
+                    <div :class="$style['history__contents-row']">
+                      유상증자 (납입자본금 432억)
+                    </div>
+                    <div :class="$style['history__contents-row']">
+                      신용등급 상향 (회사채 A-, CP A2-)
                     </div>
                   </div>
                 </li>
