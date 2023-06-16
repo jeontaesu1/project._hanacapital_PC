@@ -744,8 +744,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P16_p002',
-        status: 'ing',
-        create: '',
+        status: 'end',
+        create: '2023.06.16',
         log: [],
       },
       {

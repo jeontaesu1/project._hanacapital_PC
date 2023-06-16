@@ -1,5 +1,7 @@
 <script>
 // IF_P05_p001
+import { reactive } from 'vue';
+
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -10,10 +12,13 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import FormList from '@/components/ui/form/FormList.vue';
+import FormListItem from '@/components/ui/form/FormListItem.vue';
+import FormInvalid from '@/components/ui/form/FormInvalid.vue';
+import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SearchButton from '@/components/ui/button/SearchButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -35,10 +40,13 @@ export default {
     KeyValueTitle,
     KeyValueText,
     BasicHr,
+    FormList,
+    FormListItem,
+    FormInvalid,
+    FormInvalidMessage,
     InputBlock,
     InputBlockCell,
     BasicInput,
-    SearchButton,
     ButtonList,
     ButtonListItem,
     BasicButton,
@@ -47,6 +55,15 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+  },
+  setup() {
+    const state = reactive({
+      carNumberError: false,
+    });
+
+    return {
+      state,
+    };
   },
 };
 </script>
@@ -141,18 +158,18 @@ export default {
     <section>
       <h3 class="text-title-1 row-margin-contents">구비서류 추가등록</h3>
 
-      <InputBlock>
-        <InputBlockCell :flexible="true">
-          <BasicInput
-            type="search"
-            title="차량번호 검색어"
-            placeholder="차량번호 입력"
-          />
-        </InputBlockCell>
-        <InputBlockCell type="search">
-          <SearchButton />
-        </InputBlockCell>
-      </InputBlock>
+      <FormList>
+        <FormListItem titleText="차량번호" target="#IF_P05_p001_carNumber">
+          <FormInvalid :error="state.carNumberError">
+            <InputBlock :error="state.carNumberError">
+              <InputBlockCell :flexible="true">
+                <BasicInput title="차량번호" id="IF_P05_p001_carNumber" />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+      </FormList>
 
       <ButtonList
         :classNames="{

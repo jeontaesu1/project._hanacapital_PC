@@ -80,7 +80,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
   },
-
   setup() {
     const state = reactive({
       carNumberError: false,

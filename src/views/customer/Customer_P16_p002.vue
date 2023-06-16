@@ -106,6 +106,11 @@ export default {
       <!-- // Case : 조회 결과 있을 때 -->
 
       <!-- Case : 조회 결과 없을 때 -->
+      <div :class="[$style['empty'], $style['empty--secondary']]">
+        <p :class="$style['empty__text']">
+          고객님의 정보로 제공된 내역이 없습니다.
+        </p>
+      </div>
       <!-- // Case : 조회 결과 없을 때 -->
     </div>
 
