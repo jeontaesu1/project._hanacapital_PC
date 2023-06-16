@@ -358,7 +358,7 @@ export default {
 
     <!-- Cass : 법인, 멤버십가입 유무 확인 -->
     <div class="row-margin-block">
-      <!-- 하드 코딩 배너 -->
+      <!-- DD : 하드 코딩 배너 -->
       <BasicBanner
         tagName="RouterLink"
         to="/hana-money/MI_P02_p002"
@@ -369,7 +369,7 @@ export default {
         </p>
         <p class="text-title-2 font-weight-medium">하나머니 가입하기</p>
       </BasicBanner>
-      <!-- // 하드 코딩 배너 -->
+      <!-- // DD : 하드 코딩 배너 -->
     </div>
     <!-- // Cass : 법인, 멤버십가입 유무 확인 -->
   </PageContents>

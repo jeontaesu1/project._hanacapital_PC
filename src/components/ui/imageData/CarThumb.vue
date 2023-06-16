@@ -1,6 +1,8 @@
 <script>
 import { computed } from 'vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   img: '',
@@ -29,8 +31,19 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const imgSrc = computed(() => {
+      const { src = '' } = props;
+
+      if (src.match(/^\//)) {
+        return BASE_URL + src.replace(/^\//, '');
+      } else {
+        return src;
+      }
+    });
+
     return {
       customClassNames,
+      imgSrc,
     };
   },
 };
@@ -48,7 +61,7 @@ export default {
   >
     <img
       v-if="src"
-      :src="src"
+      :src="imgSrc"
       alt=""
       :class="[$style['car-thumb__img'], customClassNames.img]"
     />
