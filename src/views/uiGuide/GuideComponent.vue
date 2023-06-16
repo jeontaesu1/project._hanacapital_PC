@@ -52,6 +52,8 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
+import LineTab from '@/components/ui/tab/LineTab.vue';
+import LineTabButton from '@/components/ui/tab/LineTabButton.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
@@ -87,6 +89,7 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -107,6 +110,8 @@ import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
+import IconFile from '@/assets/images/icon/file.svg?component';
+import IconMap from '@/assets/images/icon/map.svg?component';
 
 export default {
   components: {
@@ -161,6 +166,8 @@ export default {
     NavTabButton,
     FilterTab,
     FilterTabButton,
+    LineTab,
+    LineTabButton,
     RoundTab,
     RoundTabButton,
     UiAccordion,
@@ -196,6 +203,7 @@ export default {
     BasicTooltip,
     SelectTable,
     SelectTableRow,
+    DownloadButton,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -215,6 +223,8 @@ export default {
     IconImgColor,
     IconImg,
     IconTooltip,
+    IconFile,
+    IconMap,
   },
 
   setup() {
@@ -1118,6 +1128,20 @@ export default {
             <IconLink />
           </template>
         </TextButton>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Download Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">Default</h3>
+
+        <DownloadButton />
+        <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <DownloadButton theme="secondary" />
       </div>
     </section>
 
@@ -4546,6 +4570,55 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Line Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <LineTab :useUiTab="true">
+            <LineTabButton link="testLineTab001_001">Tab 1</LineTabButton>
+            <LineTabButton link="testLineTab001_002">Tab 2</LineTabButton>
+            <LineTabButton link="testLineTab001_003">Tab 3</LineTabButton>
+            <LineTabButton link="testLineTab001_004">Tab 4</LineTabButton>
+          </LineTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testLineTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <LineTab>
+          <LineTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </LineTabButton>
+          <LineTabButton tagName="RouterLink" to="">Tab 2</LineTabButton>
+
+          <LineTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </LineTabButton>
+          <LineTabButton tagName="a" href="">Tab 4</LineTabButton>
+
+          <LineTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </LineTabButton>
+          <LineTabButton tagName="button" type="button"> Tab 6 </LineTabButton>
+        </LineTab>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Round Tab</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Tab Base 이용시</h3>
@@ -5128,6 +5201,13 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+
+        <div :class="[$style['empty'], $style['empty--secondary']]">
           <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
         </div>
       </div>
@@ -6703,12 +6783,12 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <EventBanner thumb="/images/_dummy/img-area.png" @click="() => {}">
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6716,7 +6796,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6727,12 +6807,12 @@ export default {
           @click="() => {}"
           :disabledStyle="true"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6740,7 +6820,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6754,12 +6834,12 @@ export default {
           to=""
           thumb="/images/_dummy/img-area.png"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6767,7 +6847,7 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -6779,12 +6859,12 @@ export default {
           thumb="/images/_dummy/img-area.png"
           :disabledStyle="true"
         >
-          <div class="inline-wrap row-margin-item">
+          <div class="inline-wrap row-margin-item-medium">
             <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
           </div>
-          <h3 class="text-title-1 font-weight-medium ellipsis">
+          <h4 class="text-title-1 font-weight-medium ellipsis">
             타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-          </h3>
+          </h4>
           <p
             class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
           >
@@ -6792,7 +6872,34 @@ export default {
             최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
           </p>
           <p
-            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item"
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+          >
+            2022.12.01 ~ 2022.12.31
+          </p>
+        </EventBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">thumbFit (이미지 margin-left: 0)</h3>
+
+        <EventBanner
+          :thumbFit="true"
+          thumb="/images/_dummy/img-area.png"
+          @click="() => {}"
+        >
+          <div class="inline-wrap row-margin-item-medium">
+            <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+          </div>
+          <h4 class="text-title-1 font-weight-medium ellipsis">
+            타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
+          </h4>
+          <p
+            class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+          >
+            설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출
+            최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
+          </p>
+          <p
+            class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
           >
             2022.12.01 ~ 2022.12.31
           </p>
@@ -7104,6 +7211,413 @@ export default {
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Event List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['event-list']">
+          <ul :class="$style['event-list__list']">
+            <li v-for="i in 5" :key="i" :class="$style['event-list__item']">
+              <EventBanner
+                :thumbFit="true"
+                thumb="/images/_dummy/img-area.png"
+                @click="() => {}"
+              >
+                <div class="inline-wrap row-margin-item-medium">
+                  <RoundStatus size="small" theme="duodenary"
+                    >진행중</RoundStatus
+                  >
+                </div>
+                <h4 class="text-title-1 font-weight-medium ellipsis">
+                  타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
+                </h4>
+                <p
+                  class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+                >
+                  설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명
+                  노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
+                </p>
+                <p
+                  class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+                >
+                  2022.12.01 ~ 2022.12.31
+                </p>
+              </EventBanner>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board Search Bar</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-search-bar']">
+          <InputBlock>
+            <InputBlockCell>
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '전체',
+                  },
+                  {
+                    value: '2',
+                    label: '제목',
+                  },
+                  {
+                    value: '3',
+                    label: '내용',
+                  },
+                ]"
+                title="검색 조건 선택"
+                defaultValue="1"
+                :classNames="{
+                  wrap: 'input-width-category',
+                }"
+              />
+            </InputBlockCell>
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                type="search"
+                title="게시물 검색어"
+                placeholder="검색어 입력"
+              />
+            </InputBlockCell>
+            <InputBlockCell type="search">
+              <SearchButton />
+            </InputBlockCell>
+          </InputBlock>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- table -->
+        <div :class="$style['board']">
+          <table>
+            <colgroup>
+              <col style="width: 67px" />
+              <col />
+              <col style="width: 117px" />
+              <col style="width: 64px" />
+              <col style="width: 103px" />
+              <col style="width: 120px" />
+              <col style="width: 80px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="font-weight-light">3</span>
+                </td>
+                <td>
+                  <button type="button" :class="$style['board__link']">
+                    <span :class="[$style['board__link-text'], 'ellipsis']">
+                      게시물 제목 게시물 제목 최대 1줄 노출 게시물 제목 최대 1줄
+                      노출 게시물 제목 최대 1줄 노출 게시물 제목 최대 1줄 노출
+                      게시물 제목 최대 1줄 노출
+                    </span>
+                  </button>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <RoundStatus theme="secondary" size="large"
+                    >진행중</RoundStatus
+                  >
+                </td>
+                <td>2022.08.30</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="font-weight-light">2</span>
+                </td>
+                <td class="align-left">
+                  <a href="" :class="$style['board__link']">
+                    <span :class="$style['board__link-text']">
+                      게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물
+                      제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                      게시물 제목 게시물 제목 게시물 제목
+                    </span>
+                  </a>
+                </td>
+                <td>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <DownloadButton
+                        theme="secondary"
+                        tagName="a"
+                        href="/foo/bar.pdf"
+                        download
+                      />
+                    </div>
+                    <div class="flex-box__cell flex-box__cell--mini">
+                      <div class="color-black font-weight-medium">다운로드</div>
+                    </div>
+                  </div>
+                </td>
+                <td><IconFile /></td>
+                <td>
+                  <RoundStatus size="large">마감</RoundStatus>
+                </td>
+                <td>2022.08.30</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="font-weight-light">1</span>
+                </td>
+                <td class="align-left">
+                  <RouterLink to="" :class="$style['board__link']">
+                    <span :class="$style['board__link-text']">
+                      게시물 제목
+                    </span>
+                  </RouterLink>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <RoundStatus size="large">마감</RoundStatus>
+                </td>
+                <td>2022.08.30</td>
+                <td>23</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- // table -->
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Board Detail</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['board-detail']">
+          <div :class="$style['board-detail__head']">
+            <h4 :class="$style['board-detail__title']">
+              게시물 제목 글자 수 제한 없이 길어지게 될 경우 줄바꿈 처리되어서
+              보여집니다. 두 줄일 경우 줄바꿈 처리되어서 이렇게 보여집니다.
+            </h4>
+            <div :class="$style['board-detail__info']">
+              <div :class="$style['board-detail__info-item']">관리자</div>
+              <div :class="$style['board-detail__info-item']">2022.08.30</div>
+              <div :class="$style['board-detail__info-item']">23</div>
+            </div>
+          </div>
+
+          <section :class="$style['board-detail__contents']">
+            //게시물 내용 노출 (글자수 제한 없음)
+          </section>
+
+          <div :class="$style['board-detail__foot']">
+            <ul class="reset-list">
+              <li class="row-margin-contents-small">
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <div class="text-body-3 font-weight-medium">
+                      하나캐피탈 ESG채권 투자자 안내문.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+              <li class="row-margin-contents-small">
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <div class="text-body-3 font-weight-medium">
+                      하나캐피탈 ESG채권 투자자 안내문.pdf
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Map</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['map']">
+          <UiAccordion :classNames="{ wrap: $style['map__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">본사</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">인천 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    인천 남구 미추홀대로 694 7층 (주안동,교보생명보험빌딩)
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">서초 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 서초구 방배로 131 3층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">강남 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 강남구 선릉로 704 5층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">부산 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    부산 수영구 광남로 80 신화빌딩 8층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
         </div>
       </div>
     </section>
