@@ -557,8 +557,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P14_p001',
-        status: 'ing',
-        create: '',
+        status: 'partend',
+        create: '2023.06.16',
         log: [],
       },
       {
@@ -3566,8 +3566,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/Company_P02_p002',
-        status: 'ing',
-        create: '',
+        status: 'partend',
+        create: '2023.06.16',
         log: [],
       },
       {
@@ -3588,8 +3588,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/Company_P02_p004',
-        status: 'ing',
-        create: '',
+        status: 'partend',
+        create: '2023.06.16',
         log: [],
       },
       {
@@ -3687,8 +3687,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/Company_P05_p001',
-        status: 'ing',
-        create: '',
+        status: 'partend',
+        create: '2023.06.16',
         log: [],
       },
       {

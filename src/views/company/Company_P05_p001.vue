@@ -21,7 +21,7 @@ export default {
       <PageTitle>인재상</PageTitle>
       <PageMainText
         :classNames="{
-          wrap: 'font-weight-regular text-title-2',
+          wrap: 'text-title-2 font-weight-regular',
         }"
       >
         <span class="color-green font-weight-medium">
@@ -56,7 +56,7 @@ export default {
                 $style['product-list__block--octonary'],
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -64,7 +64,7 @@ export default {
                 ]"
               >
                 PASSION
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -84,7 +84,7 @@ export default {
                 $style['product-list__block--octonary'],
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -92,7 +92,7 @@ export default {
                 ]"
               >
                 OPENNESS
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -112,7 +112,7 @@ export default {
                 $style['product-list__block--octonary'],
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -120,7 +120,7 @@ export default {
                 ]"
               >
                 EXCELLENCE
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -140,7 +140,7 @@ export default {
                 $style['product-list__block--octonary'],
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -148,7 +148,7 @@ export default {
                 ]"
               >
                 RESPECT
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -168,7 +168,7 @@ export default {
                 $style['product-list__block--octonary'],
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -176,7 +176,7 @@ export default {
                 ]"
               >
                 WITH CUSTOMER
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -215,7 +215,7 @@ export default {
                 'align-left',
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -223,7 +223,7 @@ export default {
                 ]"
               >
                 성과 리더십
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -237,7 +237,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
+                :class="[$style['basic-list-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[
@@ -275,7 +275,7 @@ export default {
                 'align-left',
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -283,7 +283,7 @@ export default {
                 ]"
               >
                 조직 리더십
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -297,7 +297,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
+                :class="[$style['basic-list-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[
@@ -335,7 +335,7 @@ export default {
                 'align-left',
               ]"
             >
-              <h3
+              <h4
                 :class="[
                   $style['product-list__title'],
                   'text-title-2',
@@ -343,7 +343,7 @@ export default {
                 ]"
               >
                 혁신 리더십
-              </h3>
+              </h4>
               <p
                 :class="[
                   $style['product-list__text'],
@@ -358,7 +358,7 @@ export default {
               </p>
 
               <div
-                :class="[$style['flex-basic-wrap'], 'row-margin-item-medium']"
+                :class="[$style['basic-list-wrap'], 'row-margin-item-medium']"
               >
                 <ul
                   :class="[

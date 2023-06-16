@@ -9,6 +9,7 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+
 export default {
   components: {
     PageContents,
@@ -39,9 +40,7 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <!-- Case : 다음 버튼 누른 후 비활성화 -->
     // 약관 UI 대기
-    <!-- // Case : 다음 버튼 누른 후 비활성화 -->
 
     <!-- Case : 다음 버튼 누른 후 노출 -->
     <div class="row-margin-block-small row-margin-bottom-none">
