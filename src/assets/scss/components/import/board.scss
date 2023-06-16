@@ -1,0 +1,45 @@
+.board {
+  border-top: 2px solid $color-gray-60;
+
+  > table {
+    @include reset-table;
+
+    > tbody {
+      > tr {
+        > th,
+        > td {
+          padding: 21px 20px;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          vertical-align: middle;
+          @include font-size-default(14);
+          color: $color-gray-70;
+          font-weight: 400;
+          text-align: center;
+
+          &::before {
+            content: '';
+            display: table;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  &__link-text {
+    display: block;
+    @include font-size-default(16);
+    color: $color-black;
+    font-weight: 500;
+    margin: -21px -20px;
+    padding: 21px 20px;
+  }
+}

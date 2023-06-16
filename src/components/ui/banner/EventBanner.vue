@@ -42,6 +42,10 @@ export default {
       Type: String,
       default: null,
     },
+    thumbFit: {
+      Type: Boolean,
+      default: false,
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -92,6 +96,7 @@ export default {
     :class="[
       $style['banner'],
       {
+        [$style['banner--thumb-fit']]: thumbFit,
         [$style['banner--disabled']]: disabled || disabledStyle,
       },
       customClassNames.wrap,
