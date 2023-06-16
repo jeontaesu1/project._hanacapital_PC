@@ -1,0 +1,52 @@
+.history {
+  display: block;
+
+  &__item {
+    display: flex;
+
+    & + & {
+      margin-top: 40px;
+    }
+  }
+
+  &__year {
+    margin: 0;
+    @include font-size-head(20);
+    font-weight: 700;
+  }
+
+  &__detail {
+    flex: 1;
+    min-width: 0;
+    margin-left: 40px;
+
+    &-list {
+      @include reset-list;
+    }
+
+    &-item {
+      display: flex;
+
+      & + & {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__month {
+    min-width: 34px;
+    color: $color-gray-60;
+  }
+
+  &__contents {
+    flex: 1;
+    min-width: 0;
+    margin-left: 40px;
+
+    &-row {
+      & + & {
+        margin-top: 12px;
+      }
+    }
+  }
+}
