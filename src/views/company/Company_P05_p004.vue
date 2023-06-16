@@ -77,94 +77,98 @@ export default {
       </InputBlock>
     </div>
 
-    <div>
-      <!-- table -->
-      <div :class="$style['board']">
-        <table>
-          <colgroup>
-            <col style="width: 67px" />
-            <col />
-            <col style="width: 103px" />
-            <col style="width: 120px" />
-          </colgroup>
-          <tbody>
-            <tr v-for="i in 10" :key="i">
-              <td>
-                <span class="color-black font-weight-light">{{ i }}</span>
-              </td>
-              <td>
-                <RouterLink
-                  to="/company/Company_P05_p005"
-                  :class="$style['board__link']"
-                >
-                  <span :class="[$style['board__link-text'], 'ellipsis']">
-                    채용공고
-                  </span>
-                </RouterLink>
-              </td>
-              <td>
-                <!-- Case : 공고 진행중 일 경우 -->
-                <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-                <!-- // Case : 공고 진행중 일 경우 -->
-                <!-- Case : 공고 마감 일 경우 -->
-                <RoundStatus size="large">마감</RoundStatus>
-                <!-- // Case : 공고 마감 일 경우 -->
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- // table -->
-
-      <!-- Case : 첫번째 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" :disabled="true" />
-        <PaginationNavNumber :active="true">1</PaginationNavNumber>
-        <PaginationNavNumber>2</PaginationNavNumber>
-        <PaginationNavNumber>3</PaginationNavNumber>
-        <PaginationNavNumber>4</PaginationNavNumber>
-        <PaginationNavNumber>5</PaginationNavNumber>
-        <PaginationNavNumber>6</PaginationNavNumber>
-        <PaginationNavNumber>7</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>999</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 첫번째 페이지일 때 -->
-
-      <!-- Case : 중간 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>13</PaginationNavNumber>
-        <PaginationNavNumber>14</PaginationNavNumber>
-        <PaginationNavNumber :active="true">15</PaginationNavNumber>
-        <PaginationNavNumber>16</PaginationNavNumber>
-        <PaginationNavNumber>17</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>99</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 중간 페이지일 때 -->
-
-      <!-- Case : 마지막 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>93</PaginationNavNumber>
-        <PaginationNavNumber>94</PaginationNavNumber>
-        <PaginationNavNumber>95</PaginationNavNumber>
-        <PaginationNavNumber>96</PaginationNavNumber>
-        <PaginationNavNumber>97</PaginationNavNumber>
-        <PaginationNavNumber>98</PaginationNavNumber>
-        <PaginationNavNumber :active="true">99</PaginationNavNumber>
-        <PaginationNavArrow type="next" :disabled="true" />
-      </PaginationNav>
-      <!-- // Case : 마지막 페이지일 때 -->
+    <!-- Case : 검색 결과 없을 경우 -->
+    <div :class="[$style['empty'], $style['empty--secondary']]">
+      <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
     </div>
+    <!-- // Case : 검색 결과 없을 경우 -->
+
+    <!-- Case : 결과 있을 경우 -->
+    <div :class="$style['board']">
+      <table>
+        <colgroup>
+          <col style="width: 67px" />
+          <col />
+          <col style="width: 103px" />
+          <col style="width: 120px" />
+        </colgroup>
+        <tbody>
+          <tr v-for="i in 10" :key="i">
+            <td>
+              <span class="color-black font-weight-light">{{ i }}</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+              <!-- Case : 공고 마감 일 경우 -- >
+              <RoundStatus size="large">마감</RoundStatus>
+              < !-- // Case : 공고 마감 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Case : 첫번째 페이지일 때 -->
+    <PaginationNav>
+      <PaginationNavArrow type="prev" :disabled="true" />
+      <PaginationNavNumber :active="true">1</PaginationNavNumber>
+      <PaginationNavNumber>2</PaginationNavNumber>
+      <PaginationNavNumber>3</PaginationNavNumber>
+      <PaginationNavNumber>4</PaginationNavNumber>
+      <PaginationNavNumber>5</PaginationNavNumber>
+      <PaginationNavNumber>6</PaginationNavNumber>
+      <PaginationNavNumber>7</PaginationNavNumber>
+      <PaginationNavEllipsis />
+      <PaginationNavNumber>999</PaginationNavNumber>
+      <PaginationNavArrow type="next" />
+    </PaginationNav>
+    <!-- // Case : 첫번째 페이지일 때 -->
+
+    <!-- Case : 중간 페이지일 때 -->
+    <PaginationNav>
+      <PaginationNavArrow type="prev" />
+      <PaginationNavNumber>1</PaginationNavNumber>
+      <PaginationNavEllipsis />
+      <PaginationNavNumber>13</PaginationNavNumber>
+      <PaginationNavNumber>14</PaginationNavNumber>
+      <PaginationNavNumber :active="true">15</PaginationNavNumber>
+      <PaginationNavNumber>16</PaginationNavNumber>
+      <PaginationNavNumber>17</PaginationNavNumber>
+      <PaginationNavEllipsis />
+      <PaginationNavNumber>99</PaginationNavNumber>
+      <PaginationNavArrow type="next" />
+    </PaginationNav>
+    <!-- // Case : 중간 페이지일 때 -->
+
+    <!-- Case : 마지막 페이지일 때 -->
+    <PaginationNav>
+      <PaginationNavArrow type="prev" />
+      <PaginationNavNumber>1</PaginationNavNumber>
+      <PaginationNavEllipsis />
+      <PaginationNavNumber>93</PaginationNavNumber>
+      <PaginationNavNumber>94</PaginationNavNumber>
+      <PaginationNavNumber>95</PaginationNavNumber>
+      <PaginationNavNumber>96</PaginationNavNumber>
+      <PaginationNavNumber>97</PaginationNavNumber>
+      <PaginationNavNumber>98</PaginationNavNumber>
+      <PaginationNavNumber :active="true">99</PaginationNavNumber>
+      <PaginationNavArrow type="next" :disabled="true" />
+    </PaginationNav>
+    <!-- // Case : 마지막 페이지일 때 -->
+    <!-- // Case : 결과 있을 경우 -->
   </PageContents>
 </template>
 
