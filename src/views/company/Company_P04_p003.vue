@@ -40,9 +40,261 @@ export default {
             <col style="width: 120px" />
           </colgroup>
           <tbody>
-            <tr v-for="i in 10" :key="i">
+            <tr>
               <td>
-                <span class="color-black font-weight-light">{{ i }}</span>
+                <span class="color-black font-weight-light">10</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">9</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">8</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">7</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">6</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">5</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">4</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">3</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">2</span>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                  <span :class="$style['board__link-text']">
+                    대주주에 대한 신용공여 공시
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <DownloadButton
+                      theme="secondary"
+                      tagName="a"
+                      href="/foo/bar.pdf"
+                      download
+                    />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--mini">
+                    <div class="color-black font-weight-medium">다운로드</div>
+                  </div>
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="color-black font-weight-light">1</span>
               </td>
               <td>
                 <a href="/foo/bar.pdf" :class="$style['board__link']" download>

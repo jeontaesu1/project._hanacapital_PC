@@ -66,9 +66,144 @@ export default {
           <col style="width: 120px" />
         </colgroup>
         <tbody>
-          <tr v-for="i in 10" :key="i">
+          <tr>
             <td>
-              <span class="color-black font-weight-light">{{ i }}</span>
+              <span class="color-black font-weight-light">10</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">9</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">8</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">7</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">6</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">5</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">4</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">3</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">2</span>
+            </td>
+            <td>
+              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
+                <span :class="$style['board__link-text']">
+                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
+                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
+                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+                </span>
+              </a>
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">1</span>
             </td>
             <td>
               <a href="/foo/bar.pdf" :class="$style['board__link']" download>

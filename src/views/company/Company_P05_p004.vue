@@ -93,9 +93,9 @@ export default {
           <col style="width: 120px" />
         </colgroup>
         <tbody>
-          <tr v-for="i in 10" :key="i">
+          <tr>
             <td>
-              <span class="color-black font-weight-light">{{ i }}</span>
+              <span class="color-black font-weight-light">10</span>
             </td>
             <td>
               <RouterLink
@@ -111,9 +111,195 @@ export default {
               <!-- Case : 공고 진행중 일 경우 -->
               <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
               <!-- // Case : 공고 진행중 일 경우 -->
-              <!-- Case : 공고 마감 일 경우 -- >
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">9</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 마감 일 경우 -->
               <RoundStatus size="large">마감</RoundStatus>
-              < !-- // Case : 공고 마감 일 경우 -->
+              <!-- // Case : 공고 마감 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">8</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">7</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">6</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">5</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">4</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">3</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">2</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
+            </td>
+            <td>2022.08.30</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="color-black font-weight-light">1</span>
+            </td>
+            <td>
+              <RouterLink
+                to="/company/Company_P05_p005"
+                :class="$style['board__link']"
+              >
+                <span :class="[$style['board__link-text'], 'ellipsis']">
+                  채용공고
+                </span>
+              </RouterLink>
+            </td>
+            <td>
+              <!-- Case : 공고 진행중 일 경우 -->
+              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
+              <!-- // Case : 공고 진행중 일 경우 -->
             </td>
             <td>2022.08.30</td>
           </tr>
