@@ -1,0 +1,20 @@
+.download-list {
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    font-size: 0;
+    line-height: 0;
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__icon.download-list__icon {
+    *:first-child {
+      fill: $color-gray-50;
+    }
+  }
+}

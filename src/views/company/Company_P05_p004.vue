@@ -64,7 +64,7 @@ export default {
             }"
           />
         </InputBlockCell>
-        <InputBlockCell :flexible="true">
+        <InputBlockCell :flexible="true" margin="regular">
           <BasicInput
             type="search"
             title="게시물 검색어"
@@ -84,276 +84,124 @@ export default {
     <!-- // Case : 검색 결과 없을 경우 -->
 
     <!-- Case : 결과 있을 경우 -->
-    <div :class="$style['board']">
-      <table>
-        <colgroup>
-          <col style="width: 67px" />
-          <col />
-          <col style="width: 103px" />
-          <col style="width: 120px" />
-        </colgroup>
-        <tbody>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">10</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
+    <div>
+      <div :class="$style['board']">
+        <table>
+          <colgroup>
+            <col style="width: 67px" />
+            <col />
+            <col style="width: 103px" />
+            <col style="width: 120px" />
+          </colgroup>
+          <tbody>
+            <tr v-for="i in 5" :key="i">
+              <td>
+                <span :class="$style['board__num']">
+                  {{ 101 - i }}
                 </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">9</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
+              </td>
+              <td>
+                <RouterLink
+                  to="/company/Company_P05_p005"
+                  :class="$style['board__link']"
+                >
+                  <span :class="$style['board__title']">
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                  </span>
+                </RouterLink>
+              </td>
+              <td>
+                <div :class="$style['board__status']">
+                  <!-- Case : 공고 진행중 일 경우 -->
+                  <RoundStatus theme="secondary" size="large"
+                    >진행중</RoundStatus
+                  >
+                  <!-- // Case : 공고 진행중 일 경우 -->
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+            <tr v-for="i in 5" :key="i">
+              <td>
+                <span :class="$style['board__num']">
+                  {{ 96 - i }}
                 </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 마감 일 경우 -->
-              <RoundStatus size="large">마감</RoundStatus>
-              <!-- // Case : 공고 마감 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">8</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">7</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">6</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">5</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">4</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">3</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">2</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">1</span>
-            </td>
-            <td>
-              <RouterLink
-                to="/company/Company_P05_p005"
-                :class="$style['board__link']"
-              >
-                <span :class="[$style['board__link-text'], 'ellipsis']">
-                  채용공고
-                </span>
-              </RouterLink>
-            </td>
-            <td>
-              <!-- Case : 공고 진행중 일 경우 -->
-              <RoundStatus theme="secondary" size="large">진행중</RoundStatus>
-              <!-- // Case : 공고 진행중 일 경우 -->
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td>
+                <RouterLink
+                  to="/company/Company_P05_p005"
+                  :class="$style['board__link']"
+                >
+                  <span :class="$style['board__title']">
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                  </span>
+                </RouterLink>
+              </td>
+              <td>
+                <div :class="$style['board__status']">
+                  <!-- Case : 공고 마감 일 경우 -->
+                  <RoundStatus size="large">마감</RoundStatus>
+                  <!-- // Case : 공고 마감 일 경우 -->
+                </div>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
     </div>
-
-    <!-- Case : 첫번째 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" :disabled="true" />
-      <PaginationNavNumber :active="true">1</PaginationNavNumber>
-      <PaginationNavNumber>2</PaginationNavNumber>
-      <PaginationNavNumber>3</PaginationNavNumber>
-      <PaginationNavNumber>4</PaginationNavNumber>
-      <PaginationNavNumber>5</PaginationNavNumber>
-      <PaginationNavNumber>6</PaginationNavNumber>
-      <PaginationNavNumber>7</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>999</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 첫번째 페이지일 때 -->
-
-    <!-- Case : 중간 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>13</PaginationNavNumber>
-      <PaginationNavNumber>14</PaginationNavNumber>
-      <PaginationNavNumber :active="true">15</PaginationNavNumber>
-      <PaginationNavNumber>16</PaginationNavNumber>
-      <PaginationNavNumber>17</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>99</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 중간 페이지일 때 -->
-
-    <!-- Case : 마지막 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>93</PaginationNavNumber>
-      <PaginationNavNumber>94</PaginationNavNumber>
-      <PaginationNavNumber>95</PaginationNavNumber>
-      <PaginationNavNumber>96</PaginationNavNumber>
-      <PaginationNavNumber>97</PaginationNavNumber>
-      <PaginationNavNumber>98</PaginationNavNumber>
-      <PaginationNavNumber :active="true">99</PaginationNavNumber>
-      <PaginationNavArrow type="next" :disabled="true" />
-    </PaginationNav>
-    <!-- // Case : 마지막 페이지일 때 -->
     <!-- // Case : 결과 있을 경우 -->
   </PageContents>
 </template>

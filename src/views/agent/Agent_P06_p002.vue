@@ -6,7 +6,9 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
 
 export default {
   components: {
@@ -16,7 +18,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    DownloadButton,
+    TextButton,
+    IconDownloadSmall,
   },
 };
 </script>
@@ -29,42 +32,59 @@ export default {
 
     <div :class="$style['board-detail']">
       <div :class="$style['board-detail__head']">
-        <h3 :class="$style['board-detail__title']">게시물 제목</h3>
-        <div :class="$style['board-detail__info']">
-          <div :class="$style['board-detail__info-item']">관리자</div>
-          <div :class="$style['board-detail__info-item']">2022.08.30</div>
-          <div :class="$style['board-detail__info-item']">23</div>
+        <div
+          :class="[
+            $style['board-detail__head-cell'],
+            $style['board-detail__head-cell--title'],
+          ]"
+        >
+          <h3 :class="$style['board-detail__title']">게시물 제목</h3>
         </div>
+        <div :class="$style['board-detail__head-cell']">관리자</div>
+        <div :class="$style['board-detail__head-cell']">2022.08.30</div>
+        <div :class="$style['board-detail__head-cell']">23</div>
       </div>
 
       <section :class="$style['board-detail__contents']">
-        //게시물 내용 노출 (글자수 제한 없음)
+        // 게시물 내용 노출
       </section>
 
+      <!-- Case : 첨부 파일 없을시 비노출 -->
       <div :class="$style['board-detail__foot']">
-        <ul class="reset-list">
-          <li class="row-margin-contents-small">
-            <div class="flex-box">
-              <div class="flex-box__cell">
-                <div class="text-body-3 font-weight-medium">첨부파일.pdf</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--mini">
-                <DownloadButton tagName="a" href="/foo/bar.pdf" download />
-              </div>
-            </div>
-          </li>
-          <li class="row-margin-contents-small">
-            <div class="flex-box">
-              <div class="flex-box__cell">
-                <div class="text-body-3 font-weight-medium">첨부파일.pdf</div>
-              </div>
-              <div class="flex-box__cell flex-box__cell--mini">
-                <DownloadButton tagName="a" href="/foo/bar.pdf" download />
-              </div>
-            </div>
-          </li>
-        </ul>
+        <div :class="$style['download-list']">
+          <ul :class="$style['download-list__list']">
+            <li :class="$style['download-list__item']">
+              <TextButton
+                iconSize="large"
+                textSize="regular"
+                tagName="a"
+                href="/foo/bar.pdf"
+                download
+              >
+                첨부파일.pdf
+                <template v-slot:rightIcon>
+                  <IconDownloadSmall :class="$style['download-list__icon']" />
+                </template>
+              </TextButton>
+            </li>
+            <li :class="$style['download-list__item']">
+              <TextButton
+                iconSize="large"
+                textSize="regular"
+                tagName="a"
+                href="/foo/bar.pdf"
+                download
+              >
+                첨부파일.pdf
+                <template v-slot:rightIcon>
+                  <IconDownloadSmall :class="$style['download-list__icon']" />
+                </template>
+              </TextButton>
+            </li>
+          </ul>
+        </div>
       </div>
+      <!-- // Case : 첨부 파일 없을시 비노출 -->
     </div>
 
     <ButtonList

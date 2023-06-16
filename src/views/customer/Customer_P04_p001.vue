@@ -61,83 +61,117 @@ export default {
     <!-- // Case : 검색 결과 없을 경우 -->
 
     <!-- Case : 결과 있을 경우 -->
-    <div :class="$style['event-list']">
-      <ul :class="$style['event-list__list']">
-        <li v-for="i in 12" :key="i" :class="$style['event-list__item']">
-          <EventBanner
-            :thumbFit="true"
-            thumb="/images/_dummy/img-area.png"
-            @click="() => {}"
-          >
-            <div class="inline-wrap row-margin-item-medium">
-              <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
-            </div>
-            <h4 class="text-title-1 font-weight-medium ellipsis">
-              타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-            </h4>
-            <p
-              class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+    <div>
+      <div :class="$style['event-list']">
+        <ul :class="$style['event-list__list']">
+          <li v-for="i in 8" :key="i" :class="$style['event-list__item']">
+            <!-- Case : 진행중 -->
+            <EventBanner
+              thumb="/images/_dummy/img-area.png"
+              :thumbFit="true"
+              tagName="RouterLink"
+              to="/customer/Customer_P04_p002"
             >
-              설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출
-              최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
-            </p>
-            <p
-              class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+              <div class="inline-wrap row-margin-item-medium">
+                <RoundStatus size="small" theme="duodenary">진행중</RoundStatus>
+              </div>
+              <h3 class="text-title-1 font-weight-medium ellipsis">
+                타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
+              </h3>
+              <p
+                class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+              >
+                설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명
+                노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
+              </p>
+              <p
+                class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+              >
+                2022.12.01 ~ 2022.12.31
+              </p>
+            </EventBanner>
+            <!-- // Case : 진행중 -->
+          </li>
+          <li v-for="i in 4" :key="i" :class="$style['event-list__item']">
+            <!-- Case : 종료 -->
+            <EventBanner
+              thumb="/images/_dummy/img-area.png"
+              :thumbFit="true"
+              tagName="RouterLink"
+              to="/customer/Customer_P04_p002"
+              :disabledStyle="true"
             >
-              2022.12.01 ~ 2022.12.31
-            </p>
-          </EventBanner>
-        </li>
-      </ul>
+              <div class="inline-wrap row-margin-item-medium">
+                <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+              </div>
+              <h3 class="text-title-1 font-weight-medium ellipsis">
+                타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
+              </h3>
+              <p
+                class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+              >
+                설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명
+                노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
+              </p>
+              <p
+                class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+              >
+                2022.12.01 ~ 2022.12.31
+              </p>
+            </EventBanner>
+            <!-- // Case : 종료 -->
+          </li>
+        </ul>
+      </div>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
     </div>
-
-    <!-- Case : 첫번째 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" :disabled="true" />
-      <PaginationNavNumber :active="true">1</PaginationNavNumber>
-      <PaginationNavNumber>2</PaginationNavNumber>
-      <PaginationNavNumber>3</PaginationNavNumber>
-      <PaginationNavNumber>4</PaginationNavNumber>
-      <PaginationNavNumber>5</PaginationNavNumber>
-      <PaginationNavNumber>6</PaginationNavNumber>
-      <PaginationNavNumber>7</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>999</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 첫번째 페이지일 때 -->
-
-    <!-- Case : 중간 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>13</PaginationNavNumber>
-      <PaginationNavNumber>14</PaginationNavNumber>
-      <PaginationNavNumber :active="true">15</PaginationNavNumber>
-      <PaginationNavNumber>16</PaginationNavNumber>
-      <PaginationNavNumber>17</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>99</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 중간 페이지일 때 -->
-
-    <!-- Case : 마지막 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>93</PaginationNavNumber>
-      <PaginationNavNumber>94</PaginationNavNumber>
-      <PaginationNavNumber>95</PaginationNavNumber>
-      <PaginationNavNumber>96</PaginationNavNumber>
-      <PaginationNavNumber>97</PaginationNavNumber>
-      <PaginationNavNumber>98</PaginationNavNumber>
-      <PaginationNavNumber :active="true">99</PaginationNavNumber>
-      <PaginationNavArrow type="next" :disabled="true" />
-    </PaginationNav>
-    <!-- // Case : 마지막 페이지일 때 -->
     <!-- // Case : 결과 있을 경우 -->
   </PageContents>
 </template>

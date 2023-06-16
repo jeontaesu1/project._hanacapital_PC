@@ -6,21 +6,15 @@
 
     > tbody {
       > tr {
-        > th,
         > td {
-          padding: 21px 20px;
+          padding: 20px;
           border-bottom: 1px solid $color-gray-30;
           word-break: break-all;
           vertical-align: middle;
           @include font-size-default(14);
-          color: $color-gray-70;
           font-weight: 400;
+          color: $color-gray-70;
           text-align: center;
-
-          &::before {
-            content: '';
-            display: table;
-          }
         }
       }
     }
@@ -31,15 +25,41 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    box-sizing: content-box;
     width: 100%;
-    text-align: left;
+    padding: 20px;
+    margin: -20px;
   }
-  &__link-text {
+
+  &__num {
+    display: block;
+    font-weight: 300;
+    color: $color-black;
+  }
+
+  &__title {
     display: block;
     @include font-size-default(16);
-    color: $color-black;
     font-weight: 500;
-    margin: -21px -20px;
-    padding: 21px 20px;
+    color: $color-black;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--multi {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      max-height: #{$line-height-default * 2}em;
+    }
+  }
+
+  &__status {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    margin: -4px 0;
   }
 }

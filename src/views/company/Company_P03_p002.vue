@@ -27,14 +27,19 @@ export default {
 
     <div :class="$style['board-detail']">
       <div :class="$style['board-detail__head']">
-        <h3 :class="$style['board-detail__title']">게시물 제목</h3>
-        <div :class="$style['board-detail__info']">
-          <div :class="$style['board-detail__info-item']">2022.08.30</div>
+        <div
+          :class="[
+            $style['board-detail__head-cell'],
+            $style['board-detail__head-cell--title'],
+          ]"
+        >
+          <h3 :class="$style['board-detail__title']">게시물 제목</h3>
         </div>
+        <div :class="$style['board-detail__head-cell']">2022.08.30</div>
       </div>
 
       <section :class="$style['board-detail__contents']">
-        //게시물 내용 노출 (글자수 제한 없음)
+        // 게시물 내용 노출
       </section>
     </div>
 

@@ -68,8 +68,8 @@ export default {
       }
     );
 
-    provide('lineTabStyleModule', style);
-    provide('lineTab', {
+    provide('subTabStyleModule', style);
+    provide('subTab', {
       useUiTab: state.useUiTab,
     });
 
@@ -85,9 +85,9 @@ export default {
 <template>
   <div
     :class="[
-      $style['line-tab'],
+      $style['sub-tab'],
       {
-        [$style[`line-tab--size-${size}`]]: size,
+        [$style[`sub-tab--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"
@@ -95,7 +95,7 @@ export default {
     <component
       :is="setComponent"
       ref="list"
-      :class="[$style['line-tab__list'], customClassNames.list]"
+      :class="[$style['sub-tab__list'], customClassNames.list]"
     >
       <slot />
     </component>
@@ -103,5 +103,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/tab/LineTab.scss';
+@import '@/assets/scss/components/ui/tab/SubTab.scss';
 </style>

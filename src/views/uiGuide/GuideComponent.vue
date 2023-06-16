@@ -52,8 +52,8 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
-import LineTab from '@/components/ui/tab/LineTab.vue';
-import LineTabButton from '@/components/ui/tab/LineTabButton.vue';
+import SubTab from '@/components/ui/tab/SubTab.vue';
+import SubTabButton from '@/components/ui/tab/SubTabButton.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
@@ -89,7 +89,6 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
-import DownloadButton from '@/components/ui/button/DownloadButton.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -106,11 +105,9 @@ import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
-import IconFile from '@/assets/images/icon/file.svg?component';
 import IconMap from '@/assets/images/icon/map.svg?component';
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -121,6 +118,9 @@ import IconMembershipCrown from '@/assets/images/icon/membership-crown.svg?compo
 import IconMembershipRate from '@/assets/images/icon/membership-rate.svg?component';
 import IconMembershipCar from '@/assets/images/icon/membership-car.svg?component';
 import IconMembershipBuilding from '@/assets/images/icon/membership-building.svg?component';
+import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
+
+import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
@@ -175,8 +175,8 @@ export default {
     NavTabButton,
     FilterTab,
     FilterTabButton,
-    LineTab,
-    LineTabButton,
+    SubTab,
+    SubTabButton,
     RoundTab,
     RoundTabButton,
     UiAccordion,
@@ -212,7 +212,6 @@ export default {
     BasicTooltip,
     SelectTable,
     SelectTableRow,
-    DownloadButton,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -228,11 +227,9 @@ export default {
     IconDeposit,
     IconCallMint,
     IconCompleted,
-    ImgMainSample,
     IconImgColor,
     IconImg,
     IconTooltip,
-    IconFile,
     IconMap,
     IconMoney,
     IconRate,
@@ -243,6 +240,8 @@ export default {
     IconMembershipRate,
     IconMembershipCar,
     IconMembershipBuilding,
+    IconDownloadSmall,
+    ImgMainSample,
   },
 
   setup() {
@@ -1066,6 +1065,21 @@ export default {
         </TextButton>
       </div>
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">icon size large</h3>
+        <TextButton iconSize="large" theme="secondary" :iconFillAll="true">
+          <template v-slot:leftIcon>
+            <IconAdd />
+          </template>
+          Button
+        </TextButton>
+        <TextButton iconSize="large" theme="tertiary" :iconFillAll="true">
+          Button
+          <template v-slot:rightIcon>
+            <IconAdd />
+          </template>
+        </TextButton>
+      </div>
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">text size regular</h3>
         <TextButton textSize="regular" theme="secondary" :iconFillAll="true">
           <template v-slot:leftIcon>
@@ -1110,56 +1124,6 @@ export default {
             <IconAdd />
           </template>
         </TextButton>
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">
-          more - iconSize,textSize (medium)
-        </h3>
-
-        <TextButton
-          iconSize="medium"
-          textSize="medium"
-          :block="true"
-          class="color-gray-tertiary"
-          >Button</TextButton
-        >
-
-        <TextButton
-          iconSize="medium"
-          textSize="medium"
-          :block="true"
-          class="color-gray-tertiary"
-        >
-          <template v-slot:leftIcon>
-            <IconLink />
-          </template>
-          Button
-        </TextButton>
-        <TextButton
-          iconSize="medium"
-          textSize="medium"
-          :block="true"
-          class="color-gray-tertiary"
-        >
-          Button
-          <template v-slot:rightIcon>
-            <IconLink />
-          </template>
-        </TextButton>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Download Button</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sun-title">Default</h3>
-
-        <DownloadButton />
-        <DownloadButton tagName="a" href="/foo/bar.pdf" download />
-      </div>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Secondary</h3>
-        <DownloadButton theme="secondary" />
       </div>
     </section>
 
@@ -5261,55 +5225,6 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Line Tab</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
-
-        <UiTab v-slot="tabSlotProps">
-          <LineTab :useUiTab="true">
-            <LineTabButton link="testLineTab001_001">Tab 1</LineTabButton>
-            <LineTabButton link="testLineTab001_002">Tab 2</LineTabButton>
-            <LineTabButton link="testLineTab001_003">Tab 3</LineTabButton>
-            <LineTabButton link="testLineTab001_004">Tab 4</LineTabButton>
-          </LineTab>
-
-          <p>Active : {{ tabSlotProps.activeName }}</p>
-
-          <UiTabPanel name="testLineTab001_001">// Tab 1 Contents</UiTabPanel>
-
-          <UiTabPanel name="testLineTab001_002">// Tab 2 Contents</UiTabPanel>
-
-          <UiTabPanel name="testLineTab001_003">// Tab 3 Contents</UiTabPanel>
-
-          <UiTabPanel name="testLineTab001_004">// Tab 4 Contents</UiTabPanel>
-        </UiTab>
-      </div>
-
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">
-          탭 기능 없이 단순 링크이거나 버튼 일 때
-        </h3>
-
-        <LineTab>
-          <LineTabButton tagName="RouterLink" to="" :active="true">
-            Tab 1
-          </LineTabButton>
-          <LineTabButton tagName="RouterLink" to="">Tab 2</LineTabButton>
-
-          <LineTabButton tagName="a" href="" :active="true">
-            Tab 3
-          </LineTabButton>
-          <LineTabButton tagName="a" href="">Tab 4</LineTabButton>
-
-          <LineTabButton tagName="button" type="button" :active="true">
-            Tab 5
-          </LineTabButton>
-          <LineTabButton tagName="button" type="button"> Tab 6 </LineTabButton>
-        </LineTab>
-      </div>
-    </section>
-
-    <section class="test-section">
       <h2 class="test-section-title">Round Tab</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Tab Base 이용시</h3>
@@ -5357,6 +5272,55 @@ export default {
             Tab 6
           </RoundTabButton>
         </RoundTab>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Sub Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <SubTab :useUiTab="true">
+            <SubTabButton link="testSubTab001_001">Tab 1</SubTabButton>
+            <SubTabButton link="testSubTab001_002">Tab 2</SubTabButton>
+            <SubTabButton link="testSubTab001_003">Tab 3</SubTabButton>
+            <SubTabButton link="testSubTab001_004">Tab 4</SubTabButton>
+          </SubTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testSubTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testSubTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testSubTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testSubTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <SubTab>
+          <SubTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </SubTabButton>
+          <SubTabButton tagName="RouterLink" to="">Tab 2</SubTabButton>
+
+          <SubTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </SubTabButton>
+          <SubTabButton tagName="a" href="">Tab 4</SubTabButton>
+
+          <SubTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </SubTabButton>
+          <SubTabButton tagName="button" type="button"> Tab 6 </SubTabButton>
+        </SubTab>
       </div>
     </section>
 
@@ -7828,12 +7792,16 @@ export default {
 
         <div :class="$style['qna']">
           <UiAccordion :classNames="{ wrap: $style['qna__list'] }">
-            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
+            <UiAccordionItem
+              v-for="i in 5"
+              :key="i"
+              :classNames="{ item: $style['qna__item'] }"
+            >
               <div :class="$style['qna__head']">
                 <div :class="$style['qna__symbol']">Q</div>
                 <div :class="$style['qna__cell']">
                   <h3 :class="$style['qna__title']">
-                    하나캐피탈 멤버십 가입은 어떻게 하나요?
+                    [신차할부(오토론)] 신차할부 오토론이란?
                   </h3>
                 </div>
                 <div :class="$style['qna__right']">
@@ -7844,7 +7812,7 @@ export default {
               </div>
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
+                <div :class="$style['qna__answer']">
                   <div
                     :class="[
                       $style['qna__symbol'],
@@ -7854,116 +7822,12 @@ export default {
                     A
                   </div>
                   <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
-                      하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
-                      이용 및 관심있으신 손님이시면 누구나 가입가능하며,
-                      홈페이지 및 모바일에서 멤버십 가입하기를 통해 가입하실 수
-                      있습니다.
-                    </p>
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
-              <div :class="$style['qna__head']">
-                <div :class="$style['qna__symbol']">Q</div>
-                <div :class="$style['qna__cell']">
-                  <h3 :class="$style['qna__title']">
-                    하나캐피탈 멤버십 가입 시 연회비나 기타비용이 들어가나요?
-                  </h3>
-                </div>
-                <div :class="$style['qna__right']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['qna__opener'] }"
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
-                  <div
-                    :class="[
-                      $style['qna__symbol'],
-                      $style['qna__symbol--answer'],
-                    ]"
-                  >
-                    A
-                  </div>
-                  <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
-                      하나캐피탈 멤버십은 손님들께 전액 무료로 제공되는 서비스로
-                      추가비용이 발생하지 않습니다.
-                    </p>
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
-              <div :class="$style['qna__head']">
-                <div :class="$style['qna__symbol']">Q</div>
-                <div :class="$style['qna__cell']">
-                  <h3 :class="$style['qna__title']">
-                    보험 서비스는 직접 신청해야만 하나요?
-                  </h3>
-                </div>
-                <div :class="$style['qna__right']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['qna__opener'] }"
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
-                  <div
-                    :class="[
-                      $style['qna__symbol'],
-                      $style['qna__symbol--answer'],
-                    ]"
-                  >
-                    A
-                  </div>
-                  <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
-                      네. 사고 시 하나손해보험 고객센터로 직접 접수해주셔야
-                      보상이 가능합니다.
-                    </p>
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem :classNames="{ item: $style['qna__item'] }">
-              <div :class="$style['qna__head']">
-                <div :class="$style['qna__symbol']">Q</div>
-                <div :class="$style['qna__cell']">
-                  <h3 :class="$style['qna__title']">
-                    하나캐피탈 멤버십 탈회는 어떻게 해야하나요?
-                  </h3>
-                </div>
-                <div :class="$style['qna__right']">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['qna__opener'] }"
-                  />
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
-                  <div
-                    :class="[
-                      $style['qna__symbol'],
-                      $style['qna__symbol--answer'],
-                    ]"
-                  >
-                    A
-                  </div>
-                  <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
-                      탈회를 원하실 경우, 고객센터(1800-1110) 또는 하나캐피탈
-                      홈페이지 및 WEB/APP을 통해 편리하게 처리 가능합니다.<br />
-                      단, 탈회 즉시 모든 멤버십 서비스를 이용할 수 없으니
-                      신중하게 생각하시길 바랍니다.
-                    </p>
+                    <section :class="$style['qna__contents']">
+                      // 내용 노출<br />
+                      차량을 구매할 목적으로 당사에서 대출 받고, 일정기간 동안
+                      원금과 이자가 포함된 원리금을 매월 일정하게 납부하는 대출
+                      상품입니다
+                    </section>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -8291,20 +8155,22 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['event-list']">
           <ul :class="$style['event-list__list']">
-            <li v-for="i in 5" :key="i" :class="$style['event-list__item']">
+            <li v-for="i in 3" :key="i" :class="$style['event-list__item']">
+              <!-- Case : 진행중 -->
               <EventBanner
-                :thumbFit="true"
                 thumb="/images/_dummy/img-area.png"
-                @click="() => {}"
+                :thumbFit="true"
+                tagName="RouterLink"
+                to="/customer/Customer_P04_p002"
               >
                 <div class="inline-wrap row-margin-item-medium">
                   <RoundStatus size="small" theme="duodenary"
                     >진행중</RoundStatus
                   >
                 </div>
-                <h4 class="text-title-1 font-weight-medium ellipsis">
+                <h3 class="text-title-1 font-weight-medium ellipsis">
                   타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
-                </h4>
+                </h3>
                 <p
                   class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
                 >
@@ -8317,6 +8183,36 @@ export default {
                   2022.12.01 ~ 2022.12.31
                 </p>
               </EventBanner>
+              <!-- // Case : 진행중 -->
+            </li>
+            <li v-for="i in 2" :key="i" :class="$style['event-list__item']">
+              <!-- Case : 종료 -->
+              <EventBanner
+                thumb="/images/_dummy/img-area.png"
+                :thumbFit="true"
+                tagName="RouterLink"
+                to="/customer/Customer_P04_p002"
+                :disabledStyle="true"
+              >
+                <div class="inline-wrap row-margin-item-medium">
+                  <RoundStatus size="small" theme="duodenary">종료</RoundStatus>
+                </div>
+                <h3 class="text-title-1 font-weight-medium ellipsis">
+                  타이틀 노출 최대 1줄 타이틀 노출 최대 1줄 타이틀 노출 최대 1줄
+                </h3>
+                <p
+                  class="text-body-1 font-weight-light row-margin-small multi-ellipsis"
+                >
+                  설명 노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄 설명
+                  노출 최대 2줄 설명 노출 최대 2줄 설명 노출 최대 2줄
+                </p>
+                <p
+                  class="text-body-3 font-weight-light color-gray-tertiary row-margin-item-medium"
+                >
+                  2022.12.01 ~ 2022.12.31
+                </p>
+              </EventBanner>
+              <!-- // Case : 종료 -->
             </li>
           </ul>
         </div>
@@ -8352,7 +8248,7 @@ export default {
                 }"
               />
             </InputBlockCell>
-            <InputBlockCell :flexible="true">
+            <InputBlockCell :flexible="true" margin="regular">
               <BasicInput
                 type="search"
                 title="게시물 검색어"
@@ -8368,95 +8264,40 @@ export default {
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Board</h2>
+      <h2 class="test-section-title">Board list</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!-- table -->
+
         <div :class="$style['board']">
           <table>
             <colgroup>
               <col style="width: 67px" />
               <col />
-              <col style="width: 117px" />
-              <col style="width: 64px" />
               <col style="width: 103px" />
               <col style="width: 120px" />
               <col style="width: 80px" />
             </colgroup>
             <tbody>
-              <tr>
+              <tr v-for="i in 5" :key="i">
                 <td>
-                  <span class="font-weight-light">3</span>
+                  <span :class="$style['board__num']">
+                    {{ 101 - i }}
+                  </span>
                 </td>
                 <td>
-                  <button type="button" :class="$style['board__link']">
-                    <span :class="[$style['board__link-text'], 'ellipsis']">
-                      게시물 제목 게시물 제목 최대 1줄 노출 게시물 제목 최대 1줄
-                      노출 게시물 제목 최대 1줄 노출 게시물 제목 최대 1줄 노출
-                      게시물 제목 최대 1줄 노출
-                    </span>
-                  </button>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                  <RoundStatus theme="secondary" size="large"
-                    >진행중</RoundStatus
-                  >
-                </td>
-                <td>2022.08.30</td>
-                <td>23</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="font-weight-light">2</span>
-                </td>
-                <td class="align-left">
-                  <a href="" :class="$style['board__link']">
-                    <span :class="$style['board__link-text']">
+                  <RouterLink to="" :class="$style['board__link']">
+                    <span :class="$style['board__title']">
                       게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물
                       제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
-                      게시물 제목 게시물 제목 게시물 제목
-                    </span>
-                  </a>
-                </td>
-                <td>
-                  <div class="flex-box">
-                    <div class="flex-box__cell">
-                      <DownloadButton
-                        theme="secondary"
-                        tagName="a"
-                        href="/foo/bar.pdf"
-                        download
-                      />
-                    </div>
-                    <div class="flex-box__cell flex-box__cell--mini">
-                      <div class="color-black font-weight-medium">다운로드</div>
-                    </div>
-                  </div>
-                </td>
-                <td><IconFile /></td>
-                <td>
-                  <RoundStatus size="large">마감</RoundStatus>
-                </td>
-                <td>2022.08.30</td>
-                <td>23</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="font-weight-light">1</span>
-                </td>
-                <td class="align-left">
-                  <RouterLink to="" :class="$style['board__link']">
-                    <span :class="$style['board__link-text']">
-                      게시물 제목
+                      게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물
+                      제목 게시물 제목
                     </span>
                   </RouterLink>
                 </td>
-                <td></td>
-                <td></td>
                 <td>
-                  <RoundStatus size="large">마감</RoundStatus>
+                  <div :class="$style['board__status']">
+                    <RoundStatus size="large">마감</RoundStatus>
+                  </div>
                 </td>
                 <td>2022.08.30</td>
                 <td>23</td>
@@ -8464,7 +8305,6 @@ export default {
             </tbody>
           </table>
         </div>
-        <!-- // table -->
       </div>
     </section>
 
@@ -8474,213 +8314,121 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
         <div :class="$style['board-detail']">
           <div :class="$style['board-detail__head']">
-            <h4 :class="$style['board-detail__title']">
-              게시물 제목 글자 수 제한 없이 길어지게 될 경우 줄바꿈 처리되어서
-              보여집니다. 두 줄일 경우 줄바꿈 처리되어서 이렇게 보여집니다.
-            </h4>
-            <div :class="$style['board-detail__info']">
-              <div :class="$style['board-detail__info-item']">관리자</div>
-              <div :class="$style['board-detail__info-item']">2022.08.30</div>
-              <div :class="$style['board-detail__info-item']">23</div>
+            <div
+              :class="[
+                $style['board-detail__head-cell'],
+                $style['board-detail__head-cell--title'],
+              ]"
+            >
+              <h3 :class="$style['board-detail__title']">게시물 제목</h3>
             </div>
+            <div :class="$style['board-detail__head-cell']">관리자</div>
+            <div :class="$style['board-detail__head-cell']">2022.08.30</div>
+            <div :class="$style['board-detail__head-cell']">23</div>
           </div>
 
           <section :class="$style['board-detail__contents']">
-            //게시물 내용 노출 (글자수 제한 없음)
+            // 게시물 내용 노출
           </section>
 
+          <!-- Case : 첨부 파일 없을시 비노출 -->
           <div :class="$style['board-detail__foot']">
-            <ul class="reset-list">
-              <li class="row-margin-contents-small">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <div class="text-body-3 font-weight-medium">
-                      하나캐피탈 ESG채권 투자자 안내문.pdf
-                    </div>
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
-                  </div>
-                </div>
-              </li>
-              <li class="row-margin-contents-small">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <div class="text-body-3 font-weight-medium">
-                      하나캐피탈 ESG채권 투자자 안내문.pdf
-                    </div>
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <DownloadButton tagName="a" href="/foo/bar.pdf" download />
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <div :class="$style['download-list']">
+              <ul :class="$style['download-list__list']">
+                <li :class="$style['download-list__item']">
+                  <TextButton
+                    iconSize="large"
+                    textSize="regular"
+                    tagName="a"
+                    href="/foo/bar.pdf"
+                    download
+                  >
+                    첨부파일.pdf
+                    <template v-slot:rightIcon>
+                      <IconDownloadSmall
+                        :class="$style['download-list__icon']"
+                      />
+                    </template>
+                  </TextButton>
+                </li>
+                <li :class="$style['download-list__item']">
+                  <TextButton
+                    iconSize="large"
+                    textSize="regular"
+                    tagName="a"
+                    href="/foo/bar.pdf"
+                    download
+                  >
+                    첨부파일.pdf
+                    <template v-slot:rightIcon>
+                      <IconDownloadSmall
+                        :class="$style['download-list__icon']"
+                      />
+                    </template>
+                  </TextButton>
+                </li>
+              </ul>
+            </div>
           </div>
+          <!-- // Case : 첨부 파일 없을시 비노출 -->
         </div>
       </div>
     </section>
 
     <section class="test-section">
-      <h2 class="test-section-title">Map</h2>
+      <h2 class="test-section-title">Maps</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <div :class="$style['map']">
-          <UiAccordion :classNames="{ wrap: $style['map__list'] }">
+        <div :class="$style['maps']">
+          <UiAccordion :classNames="{ wrap: $style['maps__list'] }">
             <UiAccordionItem
-              :classNames="{ item: $style['map__item'] }"
+              v-for="i in 5"
+              :key="i"
+              :classNames="{ item: $style['maps__item'] }"
               v-slot="accordionItemSlotProps"
             >
-              <div :class="$style['map__head']">
-                <div :class="$style['map__name']">본사</div>
-                <div :class="$style['map__cell']">
-                  <p :class="$style['map__title']">
+              <div :class="$style['maps__head']">
+                <div
+                  :class="[
+                    $style['maps__head-cell'],
+                    $style['maps__head-cell--branch'],
+                  ]"
+                >
+                  본사
+                </div>
+                <div
+                  :class="[
+                    $style['maps__head-cell'],
+                    $style['maps__head-cell--title'],
+                  ]"
+                >
+                  <div :class="$style['maps__title']">
                     서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
-                  </p>
-                </div>
-                <div :class="$style['map__right']">
-                  <button
-                    type="button"
-                    :class="$style['map__opener']"
-                    @click="accordionItemSlotProps.toggle"
-                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
-                  >
-                    <IconMap :class="$style['map__opener-icon']" />
-                    <span :class="$style['map__opener-text']">지도보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
-                <div :class="$style['map__contents']">
-                  <div style="height: 100%; background-color: #f7f7f7">
-                    // 지도 영역
                   </div>
                 </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem
-              :classNames="{ item: $style['map__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['map__head']">
-                <div :class="$style['map__name']">인천 지점</div>
-                <div :class="$style['map__cell']">
-                  <p :class="$style['map__title']">
-                    인천 남구 미추홀대로 694 7층 (주안동,교보생명보험빌딩)
-                  </p>
-                </div>
-                <div :class="$style['map__right']">
-                  <button
-                    type="button"
-                    :class="$style['map__opener']"
+                <div
+                  :class="[
+                    $style['maps__head-cell'],
+                    $style['maps__head-cell--opener'],
+                  ]"
+                >
+                  <TextButton
+                    iconSize="large"
+                    textSize="regular"
                     @click="accordionItemSlotProps.toggle"
                     :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                    :classNames="{ wrap: $style['maps__opener'] }"
                   >
-                    <IconMap :class="$style['map__opener-icon']" />
-                    <span :class="$style['map__opener-text']">지도보기</span>
-                  </button>
+                    <template v-slot:leftIcon>
+                      <IconMap :class="$style['maps__opener-icon']" />
+                    </template>
+                    지도보기
+                  </TextButton>
                 </div>
               </div>
 
-              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
-                <div :class="$style['map__contents']">
-                  <div style="height: 100%; background-color: #f7f7f7">
-                    // 지도 영역
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem
-              :classNames="{ item: $style['map__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['map__head']">
-                <div :class="$style['map__name']">서초 지점</div>
-                <div :class="$style['map__cell']">
-                  <p :class="$style['map__title']">
-                    서울 서초구 방배로 131 3층
-                  </p>
-                </div>
-                <div :class="$style['map__right']">
-                  <button
-                    type="button"
-                    :class="$style['map__opener']"
-                    @click="accordionItemSlotProps.toggle"
-                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
-                  >
-                    <IconMap :class="$style['map__opener-icon']" />
-                    <span :class="$style['map__opener-text']">지도보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
-                <div :class="$style['map__contents']">
-                  <div style="height: 100%; background-color: #f7f7f7">
-                    // 지도 영역
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem
-              :classNames="{ item: $style['map__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['map__head']">
-                <div :class="$style['map__name']">강남 지점</div>
-                <div :class="$style['map__cell']">
-                  <p :class="$style['map__title']">
-                    서울 강남구 선릉로 704 5층
-                  </p>
-                </div>
-                <div :class="$style['map__right']">
-                  <button
-                    type="button"
-                    :class="$style['map__opener']"
-                    @click="accordionItemSlotProps.toggle"
-                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
-                  >
-                    <IconMap :class="$style['map__opener-icon']" />
-                    <span :class="$style['map__opener-text']">지도보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
-                <div :class="$style['map__contents']">
-                  <div style="height: 100%; background-color: #f7f7f7">
-                    // 지도 영역
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-            <UiAccordionItem
-              :classNames="{ item: $style['map__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['map__head']">
-                <div :class="$style['map__name']">부산 지점</div>
-                <div :class="$style['map__cell']">
-                  <p :class="$style['map__title']">
-                    부산 수영구 광남로 80 신화빌딩 8층
-                  </p>
-                </div>
-                <div :class="$style['map__right']">
-                  <button
-                    type="button"
-                    :class="$style['map__opener']"
-                    @click="accordionItemSlotProps.toggle"
-                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
-                  >
-                    <IconMap :class="$style['map__opener-icon']" />
-                    <span :class="$style['map__opener-text']">지도보기</span>
-                  </button>
-                </div>
-              </div>
-
-              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
-                <div :class="$style['map__contents']">
+              <UiAccordionLayer>
+                <div :class="$style['maps__area']">
                   <div style="height: 100%; background-color: #f7f7f7">
                     // 지도 영역
                   </div>

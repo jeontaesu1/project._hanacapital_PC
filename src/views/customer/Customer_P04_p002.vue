@@ -28,7 +28,7 @@ export default {
     </PageHead>
 
     <div>
-      <div :class="[$style['image-view'], 'row-margin-container-medium']">
+      <div :class="$style['image-view']">
         <img
           src="@/assets/images/_dummy/box-detail-large.png"
           alt="샘플 이미지"
@@ -39,7 +39,7 @@ export default {
         :wrap="true"
         align="center"
         :classNames="{
-          wrap: 'row-margin-none',
+          wrap: 'row-margin-container-medium',
         }"
       >
         <ButtonListItem>

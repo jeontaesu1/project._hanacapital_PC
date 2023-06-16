@@ -33,8 +33,8 @@ export default {
     },
   },
   setup(props) {
-    const styleModule = inject('lineTabStyleModule');
-    const lineTab = inject('lineTab', {});
+    const styleModule = inject('subTabStyleModule');
+    const subTab = inject('subTab', {});
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -42,12 +42,12 @@ export default {
     });
 
     const setItemComponent = computed(() => {
-      const { useUiTab } = lineTab;
+      const { useUiTab } = subTab;
       return useUiTab.value ? UiTabButton : 'li';
     });
 
     const setButtonComponent = computed(() => {
-      const { useUiTab } = lineTab;
+      const { useUiTab } = subTab;
       const { tagName } = props;
       return useUiTab.value
         ? 'div'
@@ -70,9 +70,9 @@ export default {
   <component
     :is="setItemComponent"
     :class="[
-      styleModule['line-tab__item'],
+      styleModule['sub-tab__item'],
       {
-        [styleModule['line-tab__item--active']]: active,
+        [styleModule['sub-tab__item--active']]: active,
       },
       customClassNames.item,
     ]"
@@ -81,10 +81,10 @@ export default {
     <component
       :is="setButtonComponent"
       v-bind="$attrs"
-      :class="[styleModule['line-tab__button'], customClassNames.button]"
+      :class="[styleModule['sub-tab__button'], customClassNames.button]"
       :title="active ? '선택 됨' : null"
     >
-      <span :class="[styleModule['line-tab__text'], customClassNames.text]">
+      <span :class="[styleModule['sub-tab__text'], customClassNames.text]">
         <slot />
       </span>
     </component>

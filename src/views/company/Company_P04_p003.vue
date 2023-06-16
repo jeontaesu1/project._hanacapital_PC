@@ -7,7 +7,9 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
-import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
 
 export default {
   components: {
@@ -18,7 +20,8 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
-    DownloadButton,
+    TextButton,
+    IconDownloadSmall,
   },
 };
 </script>
@@ -30,7 +33,6 @@ export default {
     </PageHead>
 
     <div>
-      <!-- table -->
       <div :class="$style['board']">
         <table>
           <colgroup>
@@ -40,282 +42,43 @@ export default {
             <col style="width: 120px" />
           </colgroup>
           <tbody>
-            <tr>
+            <tr v-for="i in 10" :key="i">
               <td>
-                <span class="color-black font-weight-light">10</span>
+                <span :class="$style['board__num']">
+                  {{ 101 - i }}
+                </span>
               </td>
               <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
+                <a href="/foo/bar.pdf" download :class="$style['board__link']">
+                  <span
+                    :class="[
+                      $style['board__title'],
+                      $style['board__title--multi'],
+                    ]"
+                  >
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
                   </span>
                 </a>
               </td>
               <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">9</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">8</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">7</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">6</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">5</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">4</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">3</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">2</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
-                </div>
-              </td>
-              <td>2022.08.30</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="color-black font-weight-light">1</span>
-              </td>
-              <td>
-                <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                  <span :class="$style['board__link-text']">
-                    대주주에 대한 신용공여 공시
-                  </span>
-                </a>
-              </td>
-              <td>
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <DownloadButton
-                      theme="secondary"
-                      tagName="a"
-                      href="/foo/bar.pdf"
-                      download
-                    />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--mini">
-                    <div class="color-black font-weight-medium">다운로드</div>
-                  </div>
+                <div class="inline-wrap">
+                  <TextButton
+                    iconSize="large"
+                    textSize="regular"
+                    theme="quinary"
+                    tagName="a"
+                    href="/foo/bar.pdf"
+                    download
+                  >
+                    <template v-slot:leftIcon>
+                      <IconDownloadSmall />
+                    </template>
+                    다운로드
+                  </TextButton>
                 </div>
               </td>
               <td>2022.08.30</td>
@@ -323,7 +86,6 @@ export default {
           </tbody>
         </table>
       </div>
-      <!-- // table -->
 
       <!-- Case : 첫번째 페이지일 때 -->
       <PaginationNav>

@@ -85,6 +85,12 @@
         height: 18px;
       }
     }
+    &-large {
+      .button__icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &--text {
@@ -134,6 +140,8 @@
       }
     }
     &-quinary {
+      @include button-theme($color-black);
+
       &:hover,
       &:active,
       &:focus-visible {

@@ -57,217 +57,91 @@ export default {
     <!-- // Case : 검색 결과 없을 경우 -->
 
     <!-- Case : 결과 있을 경우 -->
-    <!-- table -->
-    <div :class="$style['board']">
-      <table>
-        <colgroup>
-          <col style="width: 67px" />
-          <col />
-          <col style="width: 120px" />
-        </colgroup>
-        <tbody>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">10</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
+    <div>
+      <div :class="$style['board']">
+        <table>
+          <colgroup>
+            <col style="width: 67px" />
+            <col />
+            <col style="width: 120px" />
+          </colgroup>
+          <tbody>
+            <tr v-for="i in 10" :key="i">
+              <td>
+                <span :class="$style['board__num']">
+                  {{ 101 - i }}
                 </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">9</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">8</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">7</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">6</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">5</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">4</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">3</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">2</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">1</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  건강한금융생활정보가이드 제2호 글자 수 제한 없이 길어지게 될
-                  경우 줄바꿈 처리되어서 보여집니다. 표기되는 내용이 두 줄일
-                  경우 이렇게 줄바꿈 처리되어 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" download :class="$style['board__link']">
+                  <span
+                    :class="[
+                      $style['board__title'],
+                      $style['board__title--multi'],
+                    ]"
+                  >
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                  </span>
+                </a>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
     </div>
-    <!-- // table -->
-
-    <!-- Case : 첫번째 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" :disabled="true" />
-      <PaginationNavNumber :active="true">1</PaginationNavNumber>
-      <PaginationNavNumber>2</PaginationNavNumber>
-      <PaginationNavNumber>3</PaginationNavNumber>
-      <PaginationNavNumber>4</PaginationNavNumber>
-      <PaginationNavNumber>5</PaginationNavNumber>
-      <PaginationNavNumber>6</PaginationNavNumber>
-      <PaginationNavNumber>7</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>999</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 첫번째 페이지일 때 -->
-
-    <!-- Case : 중간 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>13</PaginationNavNumber>
-      <PaginationNavNumber>14</PaginationNavNumber>
-      <PaginationNavNumber :active="true">15</PaginationNavNumber>
-      <PaginationNavNumber>16</PaginationNavNumber>
-      <PaginationNavNumber>17</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>99</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 중간 페이지일 때 -->
-
-    <!-- Case : 마지막 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>93</PaginationNavNumber>
-      <PaginationNavNumber>94</PaginationNavNumber>
-      <PaginationNavNumber>95</PaginationNavNumber>
-      <PaginationNavNumber>96</PaginationNavNumber>
-      <PaginationNavNumber>97</PaginationNavNumber>
-      <PaginationNavNumber>98</PaginationNavNumber>
-      <PaginationNavNumber :active="true">99</PaginationNavNumber>
-      <PaginationNavArrow type="next" :disabled="true" />
-    </PaginationNav>
-    <!-- // Case : 마지막 페이지일 때 -->
     <!-- // Case : 결과 있을 경우 -->
   </PageContents>
 </template>

@@ -11,7 +11,9 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
-import DownloadButton from '@/components/ui/button/DownloadButton.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
+
+import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
 
 export default {
   components: {
@@ -26,7 +28,8 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
-    DownloadButton,
+    TextButton,
+    IconDownloadSmall,
   },
 };
 </script>
@@ -59,366 +62,110 @@ export default {
     <!-- // Case : 검색 결과 없을 경우 -->
 
     <!-- Case : 결과 있을 경우 -->
-    <div :class="$style['board']">
-      <table>
-        <colgroup>
-          <col style="width: 67px" />
-          <col />
-          <col style="width: 117px" />
-          <col style="width: 120px" />
-        </colgroup>
-        <tbody>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">10</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
+
+    <div>
+      <div :class="$style['board']">
+        <table>
+          <colgroup>
+            <col style="width: 67px" />
+            <col />
+            <col style="width: 117px" />
+            <col style="width: 120px" />
+          </colgroup>
+          <tbody>
+            <tr v-for="i in 10" :key="i">
+              <td>
+                <span :class="$style['board__num']">
+                  {{ 101 - i }}
                 </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
+              </td>
+              <td>
+                <a href="/foo/bar.pdf" download :class="$style['board__link']">
+                  <span
+                    :class="[
+                      $style['board__title'],
+                      $style['board__title--multi'],
+                    ]"
+                  >
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                    게시물 제목 게시물 제목 게시물 제목 게시물 제목 게시물 제목
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="inline-wrap">
+                  <TextButton
+                    iconSize="large"
+                    textSize="regular"
+                    theme="quinary"
                     tagName="a"
                     href="/foo/bar.pdf"
                     download
-                  />
+                  >
+                    <template v-slot:leftIcon>
+                      <IconDownloadSmall />
+                    </template>
+                    다운로드
+                  </TextButton>
                 </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">9</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">8</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">7</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">6</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">5</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">4</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">3</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">2</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="color-black font-weight-light">1</span>
-            </td>
-            <td>
-              <a href="/foo/bar.pdf" :class="$style['board__link']" download>
-                <span :class="$style['board__link-text']">
-                  [금융소비자보호법 권리] 위법계약해지 신청서 글자 수 제한 없이
-                  길어지게 될 경우 줄바꿈 처리되어서 보여집니다. 두 줄일 경우
-                  이렇게 보여집니다.
-                </span>
-              </a>
-            </td>
-            <td>
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <DownloadButton
-                    theme="secondary"
-                    tagName="a"
-                    href="/foo/bar.pdf"
-                    download
-                  />
-                </div>
-                <div class="flex-box__cell flex-box__cell--mini">
-                  <div class="color-black font-weight-medium">다운로드</div>
-                </div>
-              </div>
-            </td>
-            <td>2022.08.30</td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td>2022.08.30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
     </div>
-
-    <!-- Case : 첫번째 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" :disabled="true" />
-      <PaginationNavNumber :active="true">1</PaginationNavNumber>
-      <PaginationNavNumber>2</PaginationNavNumber>
-      <PaginationNavNumber>3</PaginationNavNumber>
-      <PaginationNavNumber>4</PaginationNavNumber>
-      <PaginationNavNumber>5</PaginationNavNumber>
-      <PaginationNavNumber>6</PaginationNavNumber>
-      <PaginationNavNumber>7</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>999</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 첫번째 페이지일 때 -->
-
-    <!-- Case : 중간 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>13</PaginationNavNumber>
-      <PaginationNavNumber>14</PaginationNavNumber>
-      <PaginationNavNumber :active="true">15</PaginationNavNumber>
-      <PaginationNavNumber>16</PaginationNavNumber>
-      <PaginationNavNumber>17</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>99</PaginationNavNumber>
-      <PaginationNavArrow type="next" />
-    </PaginationNav>
-    <!-- // Case : 중간 페이지일 때 -->
-
-    <!-- Case : 마지막 페이지일 때 -->
-    <PaginationNav>
-      <PaginationNavArrow type="prev" />
-      <PaginationNavNumber>1</PaginationNavNumber>
-      <PaginationNavEllipsis />
-      <PaginationNavNumber>93</PaginationNavNumber>
-      <PaginationNavNumber>94</PaginationNavNumber>
-      <PaginationNavNumber>95</PaginationNavNumber>
-      <PaginationNavNumber>96</PaginationNavNumber>
-      <PaginationNavNumber>97</PaginationNavNumber>
-      <PaginationNavNumber>98</PaginationNavNumber>
-      <PaginationNavNumber :active="true">99</PaginationNavNumber>
-      <PaginationNavArrow type="next" :disabled="true" />
-    </PaginationNav>
-    <!-- // Case : 마지막 페이지일 때 -->
     <!-- // Case : 결과 있을 경우 -->
   </PageContents>
 </template>
