@@ -27,7 +27,12 @@ export default {
 
     <div :class="$style['ceo-layout']">
       <div :class="$style['ceo-layout__item']">
-        <div :class="$style['ceo-layout__item--flexible']">
+        <div
+          :class="[
+            $style['ceo-layout__item'],
+            $style['ceo-layout__item--flexible'],
+          ]"
+        >
           <p class="row-margin-item-group">
             하나캐피탈을 사랑하고 성원해주시는 손님 여러분!<br />
             안녕하십니까? 대표이사 박승오입니다.

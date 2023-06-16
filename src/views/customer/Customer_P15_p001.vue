@@ -319,6 +319,7 @@ export default {
               <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="연락처 첫번째 3자리"
                     id="Customer_P15_p001_phone1"
@@ -328,6 +329,7 @@ export default {
                 <InputBlockCell type="sub">-</InputBlockCell>
                 <InputBlockCell :flexible="true">
                   <BasicInput
+                    type="number"
                     pattern="\d*"
                     title="연락처 두번째 4자리"
                     id="Customer_P15_p001_phone2"
@@ -436,11 +438,11 @@ export default {
         <BasicButton>다음</BasicButton>
       </ButtonListItem>
 
-      <!-- Case : 약관동의 내 [다음] 선택 시 노출 -->
+      <!-- Case : 동의 후 다음 버튼 선택 시 노출 -->
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
-      <!-- // Case : 약관동의 내 [다음] 선택 시 노출 -->
+      <!-- // Case : 동의 후 다음 버튼 선택 시 노출 -->
     </ButtonList>
   </PageContents>
 </template>
