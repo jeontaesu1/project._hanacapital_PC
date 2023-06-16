@@ -52,6 +52,8 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import FilterTab from '@/components/ui/tab/FilterTab.vue';
 import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
+import LineTab from '@/components/ui/tab/LineTab.vue';
+import LineTabButton from '@/components/ui/tab/LineTabButton.vue';
 import RoundTab from '@/components/ui/tab/RoundTab.vue';
 import RoundTabButton from '@/components/ui/tab/RoundTabButton.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
@@ -109,6 +111,7 @@ import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
 import IconFile from '@/assets/images/icon/file.svg?component';
+import IconMap from '@/assets/images/icon/map.svg?component';
 
 export default {
   components: {
@@ -163,6 +166,8 @@ export default {
     NavTabButton,
     FilterTab,
     FilterTabButton,
+    LineTab,
+    LineTabButton,
     RoundTab,
     RoundTabButton,
     UiAccordion,
@@ -219,6 +224,7 @@ export default {
     IconImg,
     IconTooltip,
     IconFile,
+    IconMap,
   },
 
   setup() {
@@ -4493,6 +4499,55 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Line Tab</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Tab Base 이용시</h3>
+
+        <UiTab v-slot="tabSlotProps">
+          <LineTab :useUiTab="true">
+            <LineTabButton link="testLineTab001_001">Tab 1</LineTabButton>
+            <LineTabButton link="testLineTab001_002">Tab 2</LineTabButton>
+            <LineTabButton link="testLineTab001_003">Tab 3</LineTabButton>
+            <LineTabButton link="testLineTab001_004">Tab 4</LineTabButton>
+          </LineTab>
+
+          <p>Active : {{ tabSlotProps.activeName }}</p>
+
+          <UiTabPanel name="testLineTab001_001">// Tab 1 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_002">// Tab 2 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_003">// Tab 3 Contents</UiTabPanel>
+
+          <UiTabPanel name="testLineTab001_004">// Tab 4 Contents</UiTabPanel>
+        </UiTab>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">
+          탭 기능 없이 단순 링크이거나 버튼 일 때
+        </h3>
+
+        <LineTab>
+          <LineTabButton tagName="RouterLink" to="" :active="true">
+            Tab 1
+          </LineTabButton>
+          <LineTabButton tagName="RouterLink" to="">Tab 2</LineTabButton>
+
+          <LineTabButton tagName="a" href="" :active="true">
+            Tab 3
+          </LineTabButton>
+          <LineTabButton tagName="a" href="">Tab 4</LineTabButton>
+
+          <LineTabButton tagName="button" type="button" :active="true">
+            Tab 5
+          </LineTabButton>
+          <LineTabButton tagName="button" type="button"> Tab 6 </LineTabButton>
+        </LineTab>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Round Tab</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Tab Base 이용시</h3>
@@ -5075,6 +5130,13 @@ export default {
         <h3 class="test-section-sub-title">Default</h3>
 
         <div :class="$style['empty']">
+          <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
+        </div>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+
+        <div :class="[$style['empty'], $style['empty--secondary']]">
           <p :class="$style['empty__text']">검색된 결과가 없습니다.</p>
         </div>
       </div>
@@ -7317,6 +7379,177 @@ export default {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Map</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <div :class="$style['map']">
+          <UiAccordion :classNames="{ wrap: $style['map__list'] }">
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">본사</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">인천 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    인천 남구 미추홀대로 694 7층 (주안동,교보생명보험빌딩)
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">서초 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 서초구 방배로 131 3층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">강남 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    서울 강남구 선릉로 704 5층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+            <UiAccordionItem
+              :classNames="{ item: $style['map__item'] }"
+              v-slot="accordionItemSlotProps"
+            >
+              <div :class="$style['map__head']">
+                <div :class="$style['map__name']">부산 지점</div>
+                <div :class="$style['map__cell']">
+                  <p :class="$style['map__title']">
+                    부산 수영구 광남로 80 신화빌딩 8층
+                  </p>
+                </div>
+                <div :class="$style['map__right']">
+                  <button
+                    type="button"
+                    :class="$style['map__opener']"
+                    @click="accordionItemSlotProps.toggle"
+                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
+                  >
+                    <IconMap :class="$style['map__opener-icon']" />
+                    <span :class="$style['map__opener-text']">지도보기</span>
+                  </button>
+                </div>
+              </div>
+
+              <UiAccordionLayer :classNames="{ layer: $style['map__layer'] }">
+                <div :class="$style['map__contents']">
+                  <div style="height: 100%; background-color: #f7f7f7">
+                    // 지도 영역
+                  </div>
+                </div>
+              </UiAccordionLayer>
+            </UiAccordionItem>
+          </UiAccordion>
         </div>
       </div>
     </section>
