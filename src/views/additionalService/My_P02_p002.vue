@@ -71,7 +71,7 @@ export default {
     <div>
       <UiAccordion>
         <!-- Case : 접수 -->
-        <UiAccordionItem class="row-margin-contents">
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -83,9 +83,7 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
@@ -94,60 +92,124 @@ export default {
               </div>
               <div class="flex-box__cell flex-box__cell--medium-regular">
                 <RoundStatus theme="undenary" size="large" :block="true"
-                  >심사완료</RoundStatus
+                  >접수</RoundStatus
                 >
               </div>
               <div class="flex-box__cell flex-box__cell--medium-regular">
                 <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer :classNames="{ layer: $style['layer'] }">
+
+            <BasicHr theme="quaternary" className="row-margin-contents" />
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="0"
+                />
+              </div>
+            </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </UiAccordionItem>
+        <!-- // Case : 접수 -->
+
+        <!-- Case : 상담 및 심사 - 상담 및 심사중 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
+          <BasicBox>
+            <div class="flex-box">
+              <div class="flex-box__cell flex-1">
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <CarEmblem code="1001" name="현대" />
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--small">
+                    <p class="text-body-4 font-weight-light">2020년식</p>
+                  </div>
+                </div>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                </p>
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >상담 및 심사중</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
+              </div>
+            </div>
+
+            <BasicHr theme="quaternary" className="row-margin-contents" />
+
+            <UiAccordionLayer>
               <div :class="$style['contents']">
                 <TextProgress
                   :steps="['접수', '상담 및 심사', '계약', '실행']"
                   :current="1"
                 />
 
-                <div
-                  :class="[
-                    $style['inline-alert'],
-                    $style['inline-alert--complete'],
-                    'row-margin-contents',
-                  ]"
-                >
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
                   <p :class="$style['inline-alert__text']">
                     상담 및 심사가 진행 중에 있습니다.
                   </p>
                 </div>
-
-                <KeyValue :wrap="true">
-                  <KeyValueItem>
-                    <KeyValueTitle>상담번호</KeyValueTitle>
-                    <KeyValueText>7894561234567</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>신청일자</KeyValueTitle>
-                    <KeyValueText>2022.12.26</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>신청금액</KeyValueTitle>
-                    <KeyValueText>24,990,000 원</KeyValueText>
-                  </KeyValueItem>
-
-                  <KeyValueItem>
-                    <KeyValueTitle>승인한도</KeyValueTitle>
-                    <KeyValueText>24,990,000 원</KeyValueText>
-                  </KeyValueItem>
-                </KeyValue>
               </div>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <!-- // Case : 접수 -->
+        <!-- // Case : 상담 및 심사 - 상담 및 심사중 -->
 
-        <UiAccordionItem class="row-margin-contents">
+        <!-- Case : 상담 및 심사 - 심사완료 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -159,9 +221,7 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
@@ -177,49 +237,51 @@ export default {
                 <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="1"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  상담 및 심사가 진행 중에 있습니다.
-                </p>
+
+            <BasicHr theme="quaternary" className="row-margin-contents" />
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="1"
+                />
+
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    심사가 완료되었습니다.
+                  </p>
+                </div>
               </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 상담 및 심사 - 심사완료 -->
+
+        <!-- Case : 계약 - 계약준비중 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -231,55 +293,68 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약준비중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >계약준비중</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="2"
+                />
 
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    계약 체결을 위해 준비 중에 있습니다.<br />
+                    준비가 완료 되는대로, 계약 진행 예정입니다.
+                  </p>
+                </div>
+              </div>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 계약 - 계약준비중 -->
+
+        <!-- Case : 계약 - 계약진행중 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -291,55 +366,68 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >접수</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >계약진행중</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="2"
+                />
 
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    계약이 진행 중에 있습니다.<br />
+                    전자약정을 하시면 보다 빠른 진행이 가능합니다.
+                  </p>
+                </div>
+              </div>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 계약 - 계약진행중 -->
+
+        <!-- Case : 계약 - 계약완료 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -351,71 +439,67 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >접수</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >계약완료</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="0"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  상담 및 심사가 진행 중에 있습니다.
-                </p>
+
+            <BasicHr theme="quaternary" className="row-margin-contents" />
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="2"
+                />
+
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    계약 체결이 완료되었습니다.
+                  </p>
+                </div>
               </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 계약 - 계약완료 -->
+
+        <!-- Case : 계약 - 취소 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -427,55 +511,74 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >상담 및 심사중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="nonary" size="large" :block="true"
+                  >취소</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="2"
+                  :disabled="true"
+                />
 
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
+                <div
+                  :class="[
+                    $style['inline-alert'],
+                    $style['inline-alert--error'],
+                    'row-margin-contents',
+                  ]"
+                >
+                  <p :class="$style['inline-alert__text']">
+                    계약이 취소되었습니다.
+                  </p>
+                </div>
+              </div>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 계약 - 취소 -->
+
+        <!-- Case : 실행 - 차량출고중 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -487,71 +590,69 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >상담 및 심사중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >차량출고중</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="1"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  상담 및 심사가 진행 중에 있습니다.
-                </p>
+
+            <BasicHr theme="quaternary" className="row-margin-contents" />
+
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="3"
+                />
+
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    차량 출고 중에 있습니다.<br />
+                    차량 출고 및 등록이 완료 되는대로 고객님께 차량을 인도드릴
+                    예정입니다.
+                  </p>
+                </div>
               </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 실행 - 차량출고중 -->
+
+        <!-- Case : 실행 - 완료 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -563,55 +664,67 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >심사완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="undenary" size="large" :block="true"
+                  >완료</RoundStatus
+                >
+              </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="3"
+                />
 
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
+                <div :class="[$style['inline-alert'], 'row-margin-contents']">
+                  <p :class="$style['inline-alert__text']">
+                    차량 출고가 완료되었습니다.
+                  </p>
+                </div>
+              </div>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
+        <!-- // Case : 실행 - 완료 -->
+
+        <!-- Case : 실행 - 취소 -->
+        <UiAccordionItem :classNames="{ item: 'row-margin-contents' }">
           <BasicBox>
             <div class="flex-box">
               <div class="flex-box__cell flex-1">
@@ -623,1028 +736,71 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
+                <h3 class="text-title-2 font-weight-medium">오토리스</h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
                   쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
                 </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >심사완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="1"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  심사가 완료되었습니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <RoundStatus theme="nonary" size="large" :block="true"
+                  >취소</RoundStatus
                 >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
               </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약준비중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
+              <div class="flex-box__cell flex-box__cell--medium-regular">
+                <UiAccordionOpener />
               </div>
             </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
+            <BasicHr theme="quaternary" className="row-margin-contents" />
 
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
+            <UiAccordionLayer>
+              <div :class="$style['contents']">
+                <TextProgress
+                  :steps="['접수', '상담 및 심사', '계약', '실행']"
+                  :current="3"
+                  :disabled="true"
+                />
 
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                <div
+                  :class="[
+                    $style['inline-alert'],
+                    $style['inline-alert--error'],
+                    'row-margin-contents',
+                  ]"
                 >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약준비중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
+                  <p :class="$style['inline-alert__text']">
+                    계약이 취소되었습니다.
+                  </p>
                 </div>
               </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="2"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  계약 체결을 위해 준비 중에 있습니다.<br />준비가 완료
-                  되는대로, 계약 진행 예정입니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
             </UiAccordionLayer>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>상담번호</KeyValueTitle>
+                <KeyValueText>7894561234567</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청일자</KeyValueTitle>
+                <KeyValueText>2022.12.26</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>신청금액</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>승인한도</KeyValueTitle>
+                <KeyValueText>24,990,000 원</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
           </BasicBox>
         </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약진행중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약진행중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="2"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  계약이 진행 중에 있습니다.<br />전자약정을 하시면 보다 빠른
-                  진행이 가능합니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >계약완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="2"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  계약 체결이 완료되었습니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="nonary" size="large" :block="true"
-                      >취소</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="nonary" size="large" :block="true"
-                      >취소</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="2"
-                :cancel="true"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--error'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  계약이 취소되었습니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >차량출고중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >차량출고중</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="3"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  차량 출고 중에 있습니다.<br />
-                  차량 출고 및 등록이 완료 되는대로 고객님께 차량을 인도드릴
-                  예정입니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="undenary" size="large" :block="true"
-                      >완료</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="3"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--complete'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  차량 출고가 완료되었습니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="nonary" size="large" :block="true"
-                      >취소</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
-        <UiAccordionItem class="row-margin-contents">
-          <BasicBox>
-            <div class="flex-box">
-              <div class="flex-box__cell flex-1">
-                <div class="flex-box row-margin-small">
-                  <div class="flex-box__cell">
-                    <CarEmblem code="1001" name="현대" />
-                  </div>
-                  <div class="flex-box__cell flex-box__cell--small">
-                    <p class="text-body-4 font-weight-light">2020년식</p>
-                  </div>
-                </div>
-                <h3 class="text-title-2 font-weight-medium">
-                  오토리스 20고5678
-                </h3>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
-                </p>
-              </div>
-              <div class="flex-box__cell">
-                <div class="flex-box">
-                  <div class="flex-box__cell">
-                    <RoundStatus theme="nonary" size="large" :block="true"
-                      >취소</RoundStatus
-                    >
-                  </div>
-                  <div class="flex-box__cell">
-                    <UiAccordionOpener />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UiAccordionLayer class="row-margin-contents">
-              <BasicHr theme="quaternary" class="row-margin-contents" />
-              <TextProgress
-                :steps="['접수', '상담 및 심사', '계약', '실행']"
-                :current="3"
-                :cancel="true"
-              />
-              <div
-                :class="[
-                  $style['inline-alert'],
-                  $style['inline-alert--error'],
-                  'row-margin-contents',
-                ]"
-              >
-                <p :class="$style['inline-alert__text']">
-                  계약이 취소되었습니다.
-                </p>
-              </div>
-
-              <KeyValue :wrap="true">
-                <KeyValueItem>
-                  <KeyValueTitle>상담번호</KeyValueTitle>
-                  <KeyValueText>7894561234567</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청일자</KeyValueTitle>
-                  <KeyValueText>2022.12.26</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>신청금액</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-
-                <KeyValueItem>
-                  <KeyValueTitle>승인한도</KeyValueTitle>
-                  <KeyValueText>24,990,000 원</KeyValueText>
-                </KeyValueItem>
-              </KeyValue>
-            </UiAccordionLayer>
-          </BasicBox>
-        </UiAccordionItem>
+        <!-- // Case : 실행 - 취소 -->
       </UiAccordion>
 
       <!-- Case : 첫번째 페이지일 때 -->

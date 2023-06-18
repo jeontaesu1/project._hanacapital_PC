@@ -2420,8 +2420,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P02_p002',
-        status: 'ing',
-        create: '',
+        status: 'end',
+        create: '2023.06.16',
         log: [],
       },
       {

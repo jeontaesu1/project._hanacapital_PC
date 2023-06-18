@@ -3,7 +3,7 @@
   padding: 16px 20px 16px 42px;
   border-radius: 10px;
   @include font-size-default(14);
-  background-color: rgba($color-green-50, 0.06);
+  background-color: rgba($color-navy-50, 0.06);
 
   &::before {
     content: '';
@@ -13,13 +13,13 @@
     left: 20px;
     width: 16px;
     height: #{$line-height-default}em;
-    background: url('@/assets/images/icon/important.svg') no-repeat 50% 50% /
+    background: url('@/assets/images/icon/complete.svg') no-repeat 50% 50% /
       100% auto;
   }
 
   &__text {
     margin: 0;
-    color: $color-green-50;
+    color: $color-navy-50;
   }
 
   &--error {
@@ -31,18 +31,6 @@
 
     .inline-alert__text {
       color: $color-semantic-essential;
-    }
-  }
-
-  &--complete {
-    background-color: rgba($color-navy-50, 0.06);
-
-    &::before {
-      background-image: url('@/assets/images/icon/complete.svg');
-    }
-
-    .inline-alert__text {
-      color: $color-navy-50;
     }
   }
 }
