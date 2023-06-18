@@ -89,6 +89,7 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import UiScroller from '@/components/ui/common/UiScroller.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -212,6 +213,7 @@ export default {
     BasicTooltip,
     SelectTable,
     SelectTableRow,
+    UiScroller,
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -5502,7 +5504,6 @@ export default {
         <BasicHr theme="secondary" className="row-margin-contents" />
         <BasicHr theme="tertiary" className="row-margin-contents" />
         <BasicHr theme="quaternary" className="row-margin-contents" />
-        <BasicHr theme="quinary" className="row-margin-contents" />
       </div>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Popup</h3>
@@ -5522,7 +5523,6 @@ export default {
           type="popup"
           className="row-margin-contents"
         />
-        <BasicHr theme="quinary" type="popup" className="row-margin-contents" />
       </div>
     </section>
 
@@ -8436,6 +8436,76 @@ export default {
               </UiAccordionLayer>
             </UiAccordionItem>
           </UiAccordion>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">UiScroller</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <UiScroller :style="{ height: '200px' }">
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+          내용 내용 내용 내용<br />
+        </UiScroller>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Agree Box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['agree-box']">
+          <div :class="$style['agree-box__block']">
+            <div :class="$style['agree-box__head']">
+              <CheckBox id="Customer_P15_p001_agree" theme="tertiary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>개인정보 수집·이용 동의</CheckBoxLabelText>
+              </CheckBox>
+            </div>
+            <div :class="$style['agree-box__contents']">
+              <UiScroller :classNames="{ wrap: $style['agree-box__scroller'] }">
+                <section :class="$style['agree-box__data']">
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                </section>
+              </UiScroller>
+            </div>
+          </div>
         </div>
       </div>
     </section>

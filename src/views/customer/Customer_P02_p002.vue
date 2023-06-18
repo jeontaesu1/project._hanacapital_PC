@@ -21,6 +21,10 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import UiScroller from '@/components/ui/common/UiScroller.vue';
 
 export default {
   components: {
@@ -43,6 +47,10 @@ export default {
     FormInvalidMessage,
     BasicTextarea,
     FormHelpText,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
+    UiScroller,
   },
 
   setup() {
@@ -76,7 +84,38 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <div>// 약관 UI 대기</div>
+    <div :class="$style['agree-box']">
+      <div :class="$style['agree-box__block']">
+        <div :class="$style['agree-box__head']">
+          <CheckBox id="Customer_P02_p002_agree" theme="tertiary">
+            <CheckBoxObject />
+            <CheckBoxLabelText>개인정보 수집·이용 동의</CheckBoxLabelText>
+          </CheckBox>
+        </div>
+        <div :class="$style['agree-box__contents']">
+          <UiScroller :classNames="{ wrap: $style['agree-box__scroller'] }">
+            <section :class="$style['agree-box__data']">
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+              // 약관 상세 노출 (관리자 등록)<br />
+            </section>
+          </UiScroller>
+        </div>
+      </div>
+    </div>
 
     <!-- Case : 다음 누른 후 비노출 -->
     <ButtonList>
@@ -275,3 +314,7 @@ export default {
     <!-- // Case : 다음 누른 후 노출 -->
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/customer/Customer_P02_p002.scss';
+</style>

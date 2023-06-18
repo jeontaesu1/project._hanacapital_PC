@@ -20,6 +20,10 @@ import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import UiScroller from '@/components/ui/common/UiScroller.vue';
 
 export default {
   components: {
@@ -41,6 +45,10 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    CheckBox,
+    CheckBoxLabelText,
+    CheckBoxObject,
+    UiScroller,
   },
 
   setup() {
@@ -279,7 +287,38 @@ export default {
       <section class="row-margin-block-small">
         <h4 class="text-title-1 row-margin-contents">약관동의</h4>
 
-        <div>// 약관 UI 대기</div>
+        <div :class="$style['agree-box']">
+          <div :class="$style['agree-box__block']">
+            <div :class="$style['agree-box__head']">
+              <CheckBox id="Customer_P15_p001_agree" theme="tertiary">
+                <CheckBoxObject />
+                <CheckBoxLabelText>개인정보 수집·이용 동의</CheckBoxLabelText>
+              </CheckBox>
+            </div>
+            <div :class="$style['agree-box__contents']">
+              <UiScroller :classNames="{ wrap: $style['agree-box__scroller'] }">
+                <section :class="$style['agree-box__data']">
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                  // 약관 상세 노출 (관리자 등록)<br />
+                </section>
+              </UiScroller>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Case : 다음 누른 후 비노출 -->
