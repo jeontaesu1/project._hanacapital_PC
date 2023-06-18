@@ -1,0 +1,31 @@
+@import '@/assets/scss/components/import/product-list.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.bg {
+  padding: 80px 0px;
+  box-sizing: border-box;
+  background-color: $color-gray-15;
+}
+
+.basic-list-wrap {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  .basic-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -12px 0 0 0px;
+  }
+
+  .basic-list__item {
+    width: 50%;
+    padding: 12px 0 0 12px;
+    box-sizing: border-box;
+
+    & + .basic-list__item {
+      margin: 0;
+    }
+  }
+}

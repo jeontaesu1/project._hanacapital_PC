@@ -121,7 +121,9 @@ export default {
             :underline="true"
             :block="true"
             textSize="regular"
-            class="color-gray-tertiary"
+            :classNames="{
+              wrap: 'color-gray-tertiary',
+            }"
           >
             상세내용보기
           </TextButton>

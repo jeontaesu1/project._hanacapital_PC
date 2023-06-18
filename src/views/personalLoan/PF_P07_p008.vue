@@ -115,7 +115,11 @@ export default {
         바랍니다.
       </div>
 
-      <BoxCheckList :wrap="true" :col="3" class="row-margin-contents">
+      <BoxCheckList
+        :wrap="true"
+        :col="3"
+        :classNames="{ wrap: 'row-margin-contents' }"
+      >
         <BoxCheckListItem>
           <BoxCheck
             :minSide="true"

@@ -72,7 +72,7 @@ export default {
               건강보험공단 및 국민연금공단, 국세청 로그인 후 아래의 소득관련
               서류를 자동으로 제출합니다.
             </PopupSubTitle>
-            <PopupSubTitle class="row-margin-item">
+            <PopupSubTitle :classNames="{ subTitle: 'row-margin-item' }">
               (자격득실확인서 및 보험료 납부확인서, 소득금액증명원)
             </PopupSubTitle>
           </template>
