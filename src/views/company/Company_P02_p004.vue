@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <PageContents size="wide">
+  <PageContents size="full">
     <PageHead>
       <PageTitle>인권선언문 구성체계</PageTitle>
       <PageMainText
@@ -40,102 +40,65 @@ export default {
     </PageHead>
 
     <section :class="$style['bg']">
-      <h3 class="text-big-3 row-margin-contents">인권선언문 구성원리</h3>
+      <div :class="[$style['contents'], 'align-center']">
+        <h3 class="text-big-3 row-margin-contents">인권선언문 구성원리</h3>
 
-      <div :class="[$style['product-list'], $style['product-list--col-3']]">
-        <ul :class="$style['product-list__list']">
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h3
+        <div :class="[$style['product-list'], $style['product-list--col-3']]">
+          <ul :class="$style['product-list__list']">
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                기업이념의 최상위 개념으로<br />
-                기업의 존재이유와 궁극적 목적 제시
-              </h3>
-              <p
+                <h3 class="text-title-2 row-margin-item">
+                  기업이념의 최상위 개념으로<br />
+                  기업의 존재이유와 궁극적 목적 제시
+                </h3>
+                <p class="text-body-3 font-weight-light">
+                  하나금융 그룹의 미션 제시를 통한 ‘인권경영’ 표현
+                </p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__text'],
-                  'font-weight-light',
-                  'color-black',
-                  'text-body-3',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                하나금융 그룹의 미션 제시를 통한 ‘인권경영’ 표현
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h3
+                <h3 class="text-title-2 row-margin-item">
+                  미션을 구체적으로 실천하기 위한<br />
+                  의사결정의 원칙 및 행동기준
+                </h3>
+                <p class="text-body-3 font-weight-light">
+                  Code One을 통해 그룹 인권경영 실천기준 제시
+                </p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                미션을 구체적으로 실천하기 위한<br />
-                의사결정의 원칙 및 행동기준
-              </h3>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'font-weight-light',
-                  'color-black',
-                  'text-body-3',
-                ]"
-              >
-                Code One을 통해 그룹 인권경영 실천기준 제시
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h3
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                국제인권 기준 (세계인권선언,<br />
-                기업과 인권 이행지침)의 지지와 준수
-              </h3>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'font-weight-light',
-                  'color-black',
-                  'text-body-3',
-                ]"
-              >
-                그룹 의 모든 이해관계자의 인권보호 및 존중의지 선언
-              </p>
-            </div>
-          </li>
-        </ul>
+                <h3 class="text-title-2 row-margin-item">
+                  국제인권 기준 (세계인권선언,<br />
+                  기업과 인권 이행지침)의 지지와 준수
+                </h3>
+                <p class="text-body-3 font-weight-light">
+                  그룹 의 모든 이해관계자의 인권보호 및 존중의지 선언
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="row-margin-block">
+    <section :class="[$style['contents'], 'row-margin-block']">
       <h3 class="text-big-3 row-margin-contents">
         이해관계자 구분 및 인권 이슈
       </h3>

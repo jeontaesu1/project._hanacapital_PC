@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <PageContents size="wide">
+  <PageContents size="full">
     <PageHead>
       <PageTitle>인재상</PageTitle>
       <PageMainText
@@ -32,168 +32,85 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <section :class="[$style['bg'], 'align-center']">
-      <h3 class="text-big-3 row-margin-small">
-        핵심가치 <span class="color-green">INTEGRITY</span>
-      </h3>
-      <p class="text-title-2 color-gray-secondary font-weight-light">
-        구체적으로는 Integrity와 5가지 핵심가치를 바탕으로 성과리더십,
-        조직리더십, 혁신리더십을 실현하는 리더를 뜻합니다.
-      </p>
+    <section :class="$style['bg']">
+      <div :class="[$style['contents'], 'align-center']">
+        <h3 class="text-big-3 row-margin-small">
+          핵심가치 <span class="color-green">INTEGRITY</span>
+        </h3>
+        <p class="text-title-2 color-gray-secondary font-weight-light">
+          구체적으로는 Integrity와 5가지 핵심가치를 바탕으로 성과리더십,
+          조직리더십, 혁신리더십을 실현하는 리더를 뜻합니다.
+        </p>
 
-      <div
-        :class="[
-          $style['product-list'],
-          $style['product-list--col-5'],
-          'row-margin-contents',
-        ]"
-      >
-        <ul :class="$style['product-list__list']">
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+        <div
+          :class="[
+            $style['product-list'],
+            $style['product-list--col-5'],
+            'row-margin-contents',
+          ]"
+        >
+          <ul :class="$style['product-list__list']">
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                PASSION
-              </h4>
-              <p
+                <h4 class="text-title-2 row-margin-item">PASSION</h4>
+                <p class="text-body-3 font-weight-light">열정</p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-black',
-                  'font-weight-light',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                열정
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+                <h4 class="text-title-2 row-margin-item">OPENNESS</h4>
+                <p class="text-body-3 font-weight-light">열린마음</p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                OPENNESS
-              </h4>
-              <p
+                <h4 class="text-title-2 row-margin-item">EXCELLENCE</h4>
+                <p class="text-body-3 font-weight-light">전문성</p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-black',
-                  'font-weight-light',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                열린마음
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+                <h4 class="text-title-2 row-margin-item">RESPECT</h4>
+                <p class="text-body-3 font-weight-light">존경과 배려</p>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                EXCELLENCE
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-black',
-                  'font-weight-light',
-                ]"
-              >
-                전문성
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                RESPECT
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-black',
-                  'font-weight-light',
-                ]"
-              >
-                존경과 배려
-              </p>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                WITH CUSTOMER
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-black',
-                  'font-weight-light',
-                ]"
-              >
-                손님 우선
-              </p>
-            </div>
-          </li>
-        </ul>
+                <h4 class="text-title-2 row-margin-item">WITH CUSTOMER</h4>
+                <p class="text-body-3 font-weight-light">손님 우선</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="row-margin-block">
+    <section :class="[$style['contents'], 'row-margin-block']">
       <h3 class="text-big-3 row-margin-small">하나인재상</h3>
       <p class="text-title-2 font-weight-light color-gray-secondary">
         비전달성을 위한 전문 역량과 리더십을 겸비한 리더
@@ -215,23 +132,8 @@ export default {
                 'align-left',
               ]"
             >
-              <h4
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                성과 리더십
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-gray-tertiary',
-                  'font-weight-regular',
-                ]"
-              >
+              <h4 class="text-title-2 row-margin-item">성과 리더십</h4>
+              <p class="text-body-3 color-gray-tertiary">
                 스스로 도전적인 목표를 부여하고 이를 달성하기 위한<br />
                 강한 의지와 실행력을 갖는 것
               </p>
@@ -275,23 +177,8 @@ export default {
                 'align-left',
               ]"
             >
-              <h4
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                조직 리더십
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-gray-tertiary',
-                  'font-weight-regular',
-                ]"
-              >
+              <h4 class="text-title-2 row-margin-item">조직 리더십</h4>
+              <p class="text-body-3 color-gray-tertiary">
                 원활한 커뮤니케이션을 바탕으로 조직내<br />
                 신뢰의 공동체 문화를 형성하여 이끌어 가는 것
               </p>
@@ -335,23 +222,8 @@ export default {
                 'align-left',
               ]"
             >
-              <h4
-                :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
-                ]"
-              >
-                혁신 리더십
-              </h4>
-              <p
-                :class="[
-                  $style['product-list__text'],
-                  'text-body-3',
-                  'color-gray-tertiary',
-                  'font-weight-regular',
-                ]"
-              >
+              <h4 class="text-title-2 row-margin-item">혁신 리더십</h4>
+              <p class="text-body-3 color-gray-tertiary">
                 경영 환경 변화에 대한 명확한 통찰력을 바탕으로<br />
                 조직이 나아갈 방향을 구체적으로 제시하며 이를 구성원들과 함께
                 공유하는 것

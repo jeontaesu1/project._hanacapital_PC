@@ -3,8 +3,12 @@
 
 .bg {
   padding: 80px 0px;
-  box-sizing: border-box;
   background-color: $color-gray-15;
+}
+
+.contents {
+  width: $contents-width-wide;
+  margin: 0 auto;
 }
 
 .basic-list-wrap {

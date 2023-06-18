@@ -40,18 +40,26 @@ export default {
       </PageMainText>
     </PageHead>
 
-    // 약관 UI 대기
+    <div>// 약관 UI 대기</div>
 
-    <!-- Case : 다음 버튼 누른 후 노출 -->
+    <!-- Case : 다음 누른 후 비노출 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 다음 누른 후 비노출 -->
+
+    <!-- Case : 다음 누른 후 노출 -->
     <div class="row-margin-block-small row-margin-bottom-none">
       // [공통 > 본인인증] 내용 노출
     </div>
-    <!-- // Case : 다음 버튼 누른 후 노출 -->
 
     <ButtonList>
       <ButtonListItem>
         <BasicButton>다음</BasicButton>
       </ButtonListItem>
     </ButtonList>
+    <!-- // Case : 다음 누른 후 노출 -->
   </PageContents>
 </template>

@@ -263,9 +263,7 @@ export default {
         />
       </FormList>
     </section>
-    <!-- // Case : 다음 누른 후 노출 -->
 
-    <!-- Case : 다음 누른 후 노출 -->
     <ButtonList>
       <ButtonListItem>
         <BasicButton line="true">대출관련 상담신청</BasicButton>

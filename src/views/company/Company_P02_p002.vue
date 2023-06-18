@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-  <PageContents size="wide">
+  <PageContents size="full">
     <PageHead>
       <PageTitle>윤리강령</PageTitle>
       <PageMainText
@@ -29,85 +29,69 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <section :class="[$style['bg'], 'align-center']">
-      <h3 class="text-big-3 row-margin-small">
-        이 모든 질문에 "예"라고 답할 수 있으면 행하십시오.
-      </h3>
-      <p class="text-title-2 color-gray-secondary font-weight-light">
-        스스로 판단하기 어려운 사항은<br />
-        윤리 또는 준법담당 부서에 의견을 물을 수 있습니다.
-      </p>
+    <section :class="$style['bg']">
+      <div :class="[$style['contents'], 'align-center']">
+        <h3 class="text-big-3 row-margin-small">
+          이 모든 질문에 "예"라고 답할 수 있으면 행하십시오.
+        </h3>
+        <p class="text-title-2 color-gray-secondary font-weight-light">
+          스스로 판단하기 어려운 사항은<br />
+          윤리 또는 준법담당 부서에 의견을 물을 수 있습니다.
+        </p>
 
-      <div
-        :class="[
-          $style['product-list'],
-          $style['product-list--col-3'],
-          'row-margin-contents',
-        ]"
-      >
-        <ul :class="$style['product-list__list']">
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+        <div
+          :class="[
+            $style['product-list'],
+            $style['product-list--col-3'],
+            'row-margin-contents',
+          ]"
+        >
+          <ul :class="$style['product-list__list']">
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                내 결정이 Code One에<br />
-                부합하는가?
-              </h4>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+                <div class="text-title-2">
+                  내 결정이 Code One에<br />
+                  부합하는가?
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                내 행동이 다른 임직원이나<br />
-                언론에 공개 되어도 문제가 없겠는가?
-              </h4>
-            </div>
-          </li>
-          <li :class="$style['product-list__item']">
-            <div
-              :class="[
-                $style['product-list__block'],
-                $style['product-list__block--octonary'],
-              ]"
-            >
-              <h4
+                <div class="text-title-2">
+                  내 행동이 다른 임직원이나<br />
+                  언론에 공개 되어도 문제가 없겠는가?
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-list__item']">
+              <div
                 :class="[
-                  $style['product-list__title'],
-                  'text-title-2',
-                  'row-margin-item',
+                  $style['product-list__block'],
+                  $style['product-list__block--octonary'],
                 ]"
               >
-                다른 사람이 이 자리에 있더라도<br />
-                똑같은 판단을 내리겠는가?
-              </h4>
-            </div>
-          </li>
-        </ul>
+                <div class="text-title-2">
+                  다른 사람이 이 자리에 있더라도<br />
+                  똑같은 판단을 내리겠는가?
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <div class="row-margin-block">
+    <div :class="[$style['contents'], 'row-margin-block']">
       <section class="row-margin-block-small">
         <h3 class="text-big-3 row-margin-contents">제 1장 임직원의 자세</h3>
 

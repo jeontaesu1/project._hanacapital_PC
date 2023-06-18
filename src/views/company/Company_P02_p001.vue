@@ -32,23 +32,8 @@ export default {
               $style['product-list__block--septenary'],
             ]"
           >
-            <h3
-              :class="[
-                $style['product-list__title'],
-                'text-title-2',
-                'row-margin-item',
-              ]"
-            >
-              하나인은
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'text-body-3',
-                'color-black',
-                'font-weight-light',
-              ]"
-            >
+            <h3 class="text-title-2 row-margin-item">하나인은</h3>
+            <p class="text-body-3 font-weight-light">
               도덕성과 책임감을 바탕으로<br />
               함께 성장하며 행복을 나누는<br />
               금융을 실현하기 위해<br />
@@ -63,23 +48,8 @@ export default {
               $style['product-list__block--septenary'],
             ]"
           >
-            <h3
-              :class="[
-                $style['product-list__title'],
-                'text-title-2',
-                'row-margin-item',
-              ]"
-            >
-              하나인은
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'text-body-3',
-                'color-black',
-                'font-weight-light',
-              ]"
-            >
+            <h3 class="text-title-2 row-margin-item">하나인은</h3>
+            <p class="text-body-3 font-weight-light">
               원칙과 법규를 준수하고<br />
               공과 사를 명확히 구분하며<br />
               손님을 포함한 모든 이해관계자를<br />
@@ -95,23 +65,8 @@ export default {
               $style['product-list__block--septenary'],
             ]"
           >
-            <h3
-              :class="[
-                $style['product-list__title'],
-                'text-title-2',
-                'row-margin-item',
-              ]"
-            >
-              하나인은
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'text-body-3',
-                'color-black',
-                'font-weight-light',
-              ]"
-            >
+            <h3 class="text-title-2 row-margin-item">하나인은</h3>
+            <p class="text-body-3 font-weight-light">
               “내가 회사를 대표한다”는 생각으로 행동하며<br />
               성숙한 시민으로서의 소임을 다해<br />
               구성원, 손님 및 사회로부터 신뢰받는<br />
