@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <PageContents c>
+  <PageContents size="wide">
     <template v-slot:head>contents head</template>
 
     <PageHead>

@@ -4,13 +4,11 @@
   display: flex;
 
   &__item {
+    flex: 1;
+    min-width: 0;
+
     & + & {
       margin-left: 60px;
-    }
-
-    &--flexible {
-      flex: 1;
-      min-width: 0;
     }
   }
 }

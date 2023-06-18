@@ -20,9 +20,13 @@ export default {
     </PageHead>
 
     <div>
-      <div class="text-body-1 color-gray-tertiary align-right">(단위:억원)</div>
+      <div
+        class="text-body-1 color-gray-tertiary align-right row-margin-contents-small"
+      >
+        (단위:억원)
+      </div>
 
-      <div :class="[$style['basic-table'], 'row-margin-contents-small']">
+      <div :class="$style['basic-table']">
         <table>
           <thead>
             <tr>

@@ -26,11 +26,13 @@ export default {
     </PageHead>
 
     <div>
-      <div class="text-body-1 color-gray-tertiary align-right">
+      <div
+        class="text-body-1 color-gray-tertiary align-right row-margin-contents-small"
+      >
         (2020년 12월 기준)
       </div>
 
-      <div :class="[$style['basic-table'], 'row-margin-contents-small']">
+      <div :class="$style['basic-table']">
         <table>
           <thead>
             <tr>

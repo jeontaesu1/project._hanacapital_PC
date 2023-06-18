@@ -78,7 +78,16 @@ export default {
 
     <div>// 약관 UI 대기</div>
 
-    <section class="row-margin-block-small">
+    <!-- Case : 다음 누른 후 비노출 -->
+    <ButtonList>
+      <ButtonListItem>
+        <BasicButton>다음</BasicButton>
+      </ButtonListItem>
+    </ButtonList>
+    <!-- // Case : 다음 누른 후 비노출 -->
+
+    <!-- Case : 다음 누른 후 노출 -->
+    <section class="row-margin-block-small row-margin-bottom-none">
       <h3 class="text-title-1 row-margin-contents">상담 내용 입력</h3>
 
       <FormList>
@@ -95,43 +104,39 @@ export default {
                   :options="[
                     {
                       value: '1',
-                      label: '선택',
-                    },
-                    {
-                      value: '2',
                       label: '정보 변경',
                     },
                     {
-                      value: '3',
+                      value: '2',
                       label: '제증명발급',
                     },
                     {
-                      value: '4',
+                      value: '3',
                       label: '상환문의',
                     },
                     {
-                      value: '5',
+                      value: '4',
                       label: '기타문의',
                     },
                     {
-                      value: '6',
+                      value: '5',
                       label: '홈페이지관련',
                     },
                     {
-                      value: '7',
+                      value: '6',
                       label: '채용관련',
                     },
                     {
-                      value: '8',
+                      value: '7',
                       label: '청약철회신청',
                     },
                   ]"
                   title="문의분야"
                   inputId="Customer_P02_p002_type"
-                  defaultValue="1"
                 />
               </InputBlockCell>
             </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
 
@@ -258,15 +263,10 @@ export default {
         />
       </FormList>
     </section>
+    <!-- // Case : 다음 누른 후 노출 -->
 
+    <!-- Case : 다음 누른 후 노출 -->
     <ButtonList>
-      <ButtonListItem>
-        <BasicButton>다음</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
-
-    <!-- Case : 서비스 이용약관 내 [다음] 선택 시 노출 -->
-    <ButtonList :wrap="true">
       <ButtonListItem>
         <BasicButton line="true">대출관련 상담신청</BasicButton>
       </ButtonListItem>
@@ -274,6 +274,6 @@ export default {
         <BasicButton>민원접수</BasicButton>
       </ButtonListItem>
     </ButtonList>
-    <!-- // Case : 서비스 이용약관 내 [다음] 선택 시 노출 -->
+    <!-- // Case : 다음 누른 후 노출 -->
   </PageContents>
 </template>

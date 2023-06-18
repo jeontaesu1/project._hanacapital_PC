@@ -282,6 +282,15 @@ export default {
         <div>// 약관 UI 대기</div>
       </section>
 
+      <!-- Case : 다음 누른 후 비노출 -->
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>다음</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+      <!-- // Case : 다음 누른 후 비노출 -->
+
+      <!-- Case : 다음 누른 후 노출 -->
       <section class="row-margin-block-small">
         <h4 class="text-title-1 row-margin-contents">민원 내용 입력</h4>
 
@@ -321,7 +330,7 @@ export default {
                   <BasicInput
                     type="number"
                     pattern="\d*"
-                    title="연락처 첫번째 3자리"
+                    title="연락처 국번"
                     id="Customer_P15_p001_phone1"
                     :useDelete="false"
                   />
@@ -331,16 +340,17 @@ export default {
                   <BasicInput
                     type="number"
                     pattern="\d*"
-                    title="연락처 두번째 4자리"
+                    title="연락처 중간 번호"
                     id="Customer_P15_p001_phone2"
                     :useDelete="false"
                   />
                 </InputBlockCell>
                 <InputBlockCell type="sub">-</InputBlockCell>
                 <InputBlockCell :flexible="true">
+                  <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
                   <SecurityInput
-                    title="연락처 세번째 4자리"
-                    :dot="[true, true, true, true]"
+                    title="연락처 뒷 번호"
+                    :dot="[true, true, false, false]"
                   />
                 </InputBlockCell>
                 <InputBlockCell>
@@ -431,19 +441,16 @@ export default {
           />
         </FormList>
       </section>
+      <!-- // Case : 다음 누른 후 노출 -->
     </div>
 
-    <ButtonList align="full">
-      <ButtonListItem>
-        <BasicButton>다음</BasicButton>
-      </ButtonListItem>
-
-      <!-- Case : 동의 후 다음 버튼 선택 시 노출 -->
+    <!-- Case : 다음 누른 후 노출 -->
+    <ButtonList>
       <ButtonListItem>
         <BasicButton>확인</BasicButton>
       </ButtonListItem>
-      <!-- // Case : 동의 후 다음 버튼 선택 시 노출 -->
     </ButtonList>
+    <!-- // Case : 다음 누른 후 노출 -->
   </PageContents>
 </template>
 

@@ -10,6 +10,7 @@
   }
 
   &__year {
+    flex: none;
     margin: 0;
     @include font-size-head(20);
     font-weight: 700;
@@ -34,6 +35,7 @@
   }
 
   &__month {
+    flex: none;
     min-width: 34px;
     color: $color-gray-60;
   }
