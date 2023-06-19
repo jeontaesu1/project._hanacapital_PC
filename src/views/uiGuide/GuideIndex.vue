@@ -3164,6 +3164,17 @@ const datas = () => [
         log: [],
       },
       {
+        depth2: '중고차 오토론\nAF_P06_p001',
+        depth3: '한도조회',
+        depth4: '상담요청\nAF_P06_p008',
+        depth5: '',
+        depth6: '',
+        path: '/auto/AF_P06_p008',
+        status: '',
+        create: '',
+        log: [],
+      },
+      {
         depth2: '오토승계\nAF_P07_p001',
         depth3: '',
         depth4: '',
