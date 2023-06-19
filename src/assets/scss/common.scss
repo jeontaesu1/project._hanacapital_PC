@@ -183,17 +183,18 @@ body,
 
 // input-width
 .input-width {
+  &-area {
+    width: 200px;
+  }
   &-telecom {
     width: 180px;
+  }
+  &-category {
+    width: 160px;
   }
   &-driving-license {
     width: 140px;
   }
-  /*
-  &-category {
-    width: 100px;
-  }
-  */
 }
 
 // text

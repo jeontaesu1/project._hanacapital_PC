@@ -80,7 +80,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
   },
-
   setup() {
     const state = reactive({
       carNumberError: false,
@@ -295,7 +294,11 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <ButtonList :wrap="true" align="center" class="row-margin-contents">
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{ wrap: 'row-margin-contents' }"
+            >
               <ButtonListItem>
                 <BasicButton size="regular">중도상환 신청</BasicButton>
               </ButtonListItem>
@@ -378,7 +381,11 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <ButtonList :wrap="true" align="center" class="row-margin-contents">
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{ wrap: 'row-margin-contents' }"
+            >
               <ButtonListItem>
                 <BasicButton size="regular">중도상환 신청</BasicButton>
               </ButtonListItem>

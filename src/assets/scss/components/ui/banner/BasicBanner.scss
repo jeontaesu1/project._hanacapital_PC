@@ -10,11 +10,15 @@
   &__contents {
     flex: 1;
     min-width: 0;
+    position: relative;
+    z-index: 10;
   }
 
   &__thumb {
     flex: none;
     margin: -24px -24px -24px 20px;
+    position: relative;
+    z-index: 0;
 
     &-img {
       width: 124px;
@@ -32,6 +36,7 @@
     @include reset-button;
     display: block;
     position: absolute;
+    z-index: 20;
     top: 0;
     left: 0;
     width: 100%;

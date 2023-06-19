@@ -2,6 +2,8 @@
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   contents: '',
@@ -40,6 +42,10 @@ export default {
       Type: String,
       default: null,
     },
+    thumbFit: {
+      Type: Boolean,
+      default: false,
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -65,10 +71,21 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const imgSrc = computed(() => {
+      const { thumb = '' } = props;
+
+      if (thumb.match(/^\//)) {
+        return BASE_URL + thumb.replace(/^\//, '');
+      } else {
+        return thumb;
+      }
+    });
+
     return {
       setComponent,
       setType,
       customClassNames,
+      imgSrc,
     };
   },
 };
@@ -79,6 +96,7 @@ export default {
     :class="[
       $style['banner'],
       {
+        [$style['banner--thumb-fit']]: thumbFit,
         [$style['banner--disabled']]: disabled || disabledStyle,
       },
       customClassNames.wrap,
@@ -96,7 +114,7 @@ export default {
     >
       <div :class="[$style['banner__thumb-img'], customClassNames.thumbImg]">
         <img
-          :src="thumb"
+          :src="imgSrc"
           @error="
             (e) => {
               e.target.parentNode.classList.add('is-error');

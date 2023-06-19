@@ -31,33 +31,41 @@
 
   &--align {
     &-left {
-      .key-value__value {
-        text-align: left;
+      > .key-value__list {
+        > .key-value__item {
+          > .key-value__value {
+            text-align: left;
+          }
+        }
       }
     }
   }
 
   &--vertical-align {
     &-center {
-      .key-value__item {
-        align-items: center;
+      > .key-value__list {
+        > .key-value__item {
+          align-items: center;
+        }
       }
     }
   }
 
   &--direction {
     &-vertical {
-      .key-value__item {
-        display: block;
+      > .key-value__list {
+        > .key-value__item {
+          display: block;
 
-        .key-value__key {
-          margin-right: 0;
-          @include font-size-default(14);
-        }
+          > .key-value__key {
+            margin-right: 0;
+            @include font-size-default(14);
+          }
 
-        .key-value__value {
-          margin-top: 8px;
-          text-align: left;
+          > .key-value__value {
+            margin-top: 8px;
+            text-align: left;
+          }
         }
       }
     }
@@ -69,14 +77,12 @@
       display: table;
     }
 
-    .key-value {
-      &__list {
-        margin: -16px 0 0 -30px;
-        display: flex;
-        flex-wrap: wrap;
-      }
+    > .key-value__list {
+      margin: -16px 0 0 -30px;
+      display: flex;
+      flex-wrap: wrap;
 
-      &__item {
+      > .key-value__item {
         flex: none;
         width: 50%;
         padding: 16px 0 0 30px;
@@ -101,21 +107,21 @@
 
   &--margin {
     &-small {
-      .key-value__item {
-        & + .key-value__item {
-          margin-top: 6px;
+      > .key-value__list {
+        > .key-value__item {
+          & + .key-value__item {
+            margin-top: 6px;
+          }
         }
       }
 
       /* 디자인 정의가 아직 없어서 주석처리
       &.key-value--wrap {
-        .key-value {
-          &__list {
-            margin-top: -6px;
-            margin-left: -16px;
-          }
+        > .key-value__list {
+          margin-top: -6px;
+          margin-left: -16px;
 
-          &__item {
+          > .key-value__item {
             padding-top: 6px;
             padding-left: 16px;
 
@@ -128,21 +134,21 @@
       */
     }
     &-regular {
-      .key-value__item {
-        & + .key-value__item {
-          margin-top: 24px;
+      > .key-value__list {
+        > .key-value__item {
+          & + .key-value__item {
+            margin-top: 24px;
+          }
         }
       }
 
       /* 디자인 정의가 아직 없어서 주석처리
       &.key-value--wrap {
-        .key-value {
-          &__list {
-            margin-top: -24px;
-            margin-left: -40px;
-          }
+        > .key-value__list {
+          margin-top: -24px;
+          margin-left: -40px;
 
-          &__item {
+          > .key-value__item {
             padding-top: 24px;
             padding-left: 40px;
 
@@ -158,20 +164,32 @@
 
   &--size {
     &-small {
-      .key-value__key {
-        width: 34px;
+      > .key-value__list {
+        > .key-value__item {
+          > .key-value__key {
+            width: 34px;
+          }
+        }
       }
     }
 
     &-regular {
-      .key-value__key {
-        width: 48px;
+      > .key-value__list {
+        > .key-value__item {
+          > .key-value__key {
+            width: 48px;
+          }
+        }
       }
     }
 
     &-medium {
-      .key-value__key {
-        width: 72px;
+      > .key-value__list {
+        > .key-value__item {
+          > .key-value__key {
+            width: 72px;
+          }
+        }
       }
     }
   }

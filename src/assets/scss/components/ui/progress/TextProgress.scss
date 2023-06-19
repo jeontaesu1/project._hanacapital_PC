@@ -1,5 +1,5 @@
 .progress {
-  margin: 0 0 24px;
+  display: block;
 
   &__list {
     @include reset-list;

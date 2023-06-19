@@ -3,22 +3,66 @@
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
 };
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="wide">
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageTitle>사회공헌</PageTitle>
     </PageHead>
 
-    // contents
+    <div :class="$style['board-detail']">
+      <div :class="$style['board-detail__head']">
+        <div
+          :class="[
+            $style['board-detail__head-cell'],
+            $style['board-detail__head-cell--title'],
+          ]"
+        >
+          <h3 :class="$style['board-detail__title']">게시물 제목</h3>
+        </div>
+        <div :class="$style['board-detail__head-cell']">2022.08.30</div>
+      </div>
+
+      <section :class="$style['board-detail__contents']">
+        // 게시물 내용 노출
+      </section>
+    </div>
+
+    <ButtonList
+      :wrap="true"
+      align="center"
+      :classNames="{
+        wrap: 'row-margin-block-small',
+      }"
+    >
+      <ButtonListItem>
+        <BasicButton
+          :line="true"
+          theme="quaternary"
+          tagName="RouterLink"
+          to="/company/Company_P03_p003"
+          >목록</BasicButton
+        >
+      </ButtonListItem>
+    </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/company/Company_P03_p004.scss';
+</style>

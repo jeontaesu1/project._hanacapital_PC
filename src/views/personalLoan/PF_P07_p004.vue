@@ -121,7 +121,9 @@ export default {
             :underline="true"
             :block="true"
             textSize="regular"
-            class="color-gray-tertiary"
+            :classNames="{
+              wrap: 'color-gray-tertiary',
+            }"
           >
             상세내용보기
           </TextButton>
@@ -535,7 +537,7 @@ export default {
           </ul>
         </div>
 
-        <FormList class="row-margin-container-medium">
+        <FormList :classNames="{ wrap: 'row-margin-container-medium' }">
           <FormListItem
             titleText="주민등록번호"
             target="#PF_P07_p004_id"

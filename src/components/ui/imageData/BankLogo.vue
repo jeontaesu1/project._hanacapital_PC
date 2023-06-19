@@ -1,6 +1,8 @@
 <script>
 import { computed } from 'vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   img: '',
@@ -42,6 +44,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       customClassNames,
     };
   },
@@ -61,7 +64,7 @@ export default {
   >
     <img
       v-if="code"
-      :src="`/images/${type}-logo/${code}.svg`"
+      :src="`${BASE_URL}images/${type}-logo/${code}.svg`"
       :alt="name"
       :class="[$style['bank-logo__img'], customClassNames.img]"
     />

@@ -1,6 +1,8 @@
 <script>
 import { computed } from 'vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   img: '',
@@ -34,6 +36,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       customClassNames,
     };
   },
@@ -52,7 +55,7 @@ export default {
   >
     <img
       v-if="code"
-      :src="`/images/car-emblem/${code}.svg`"
+      :src="`${BASE_URL}images/car-emblem/${code}.svg`"
       :alt="name"
       :class="[$style['car-emblem__img'], customClassNames.img]"
     />

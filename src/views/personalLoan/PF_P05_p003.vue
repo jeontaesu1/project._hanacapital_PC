@@ -90,7 +90,7 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <FormList class="row-margin-contents">
+    <FormList :classNames="{ wrap: 'row-margin-contents' }">
       <FormListItem
         titleText="이름"
         :disabled="true"
@@ -256,6 +256,7 @@ export default {
             <InputBlock :error="state.businessNumberError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  pattern="\d*"
                   title="사업자번호"
                   id="PF_P05_p003_businessNumber"
                 />

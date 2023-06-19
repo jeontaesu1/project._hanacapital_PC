@@ -132,6 +132,27 @@
     }
   }
 
+  &__item--disabled {
+    .nav-tab__button {
+      cursor: default;
+    }
+
+    .nav-tab__text {
+      color: $color-gray-40;
+    }
+
+    &.nav-tab__item--active,
+    &.nav-tab__item:global(.is-tab-opened) {
+      &::before {
+        background-color: $color-gray-60;
+      }
+
+      .nav-tab__text {
+        color: $color-gray-60;
+      }
+    }
+  }
+
   &__scroller {
     > :global(.simplebar-track) {
       background: none;

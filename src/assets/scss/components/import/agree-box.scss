@@ -1,0 +1,31 @@
+.agree-box {
+  display: block;
+
+  &__block {
+    border: 1px solid $color-gray-20;
+    border-radius: 10px;
+    padding: 23px 19px;
+    box-sizing: border-box;
+  }
+
+  &__head + &__contents {
+    margin-top: 12px;
+  }
+
+  &__contents {
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  &__scroller {
+    height: 200px;
+  }
+
+  &__data {
+    &::before,
+    &::after {
+      content: '';
+      display: table;
+    }
+  }
+}

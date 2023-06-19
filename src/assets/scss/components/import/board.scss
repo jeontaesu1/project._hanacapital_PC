@@ -1,0 +1,65 @@
+.board {
+  border-top: 2px solid $color-gray-60;
+
+  > table {
+    @include reset-table;
+
+    > tbody {
+      > tr {
+        > td {
+          padding: 20px;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          vertical-align: middle;
+          @include font-size-default(14);
+          font-weight: 400;
+          color: $color-gray-70;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-sizing: content-box;
+    width: 100%;
+    padding: 20px;
+    margin: -20px;
+  }
+
+  &__num {
+    display: block;
+    font-weight: 300;
+    color: $color-black;
+  }
+
+  &__title {
+    display: block;
+    @include font-size-default(16);
+    font-weight: 500;
+    color: $color-black;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--multi {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      max-height: #{$line-height-default * 2}em;
+    }
+  }
+
+  &__status {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    margin: -4px 0;
+  }
+}

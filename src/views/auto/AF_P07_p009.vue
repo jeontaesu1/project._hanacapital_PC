@@ -415,6 +415,7 @@ export default {
             <InputBlock :error="state.businessLicense002Error">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  pattern="\d*"
                   title="사업자번호"
                   id="AF_P07_p009_BusinessLicense"
                 />

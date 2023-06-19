@@ -1,0 +1,73 @@
+.sub-tab {
+  margin: 0 0 40px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: -6px 0 0 -12px;
+  }
+
+  &__item {
+    flex: none;
+    display: flex;
+    align-items: stretch;
+    padding: 6px 0 0 25px;
+    box-sizing: border-box;
+    position: relative;
+
+    &:first-child {
+      padding-left: 12px;
+    }
+
+    & + & {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        width: 1px;
+        height: 12px;
+        margin-top: -3px;
+        background-color: $color-gray-30;
+      }
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    display: block;
+    @include font-size-default(16);
+    font-weight: 500;
+    color: $color-gray-60;
+  }
+
+  &__item--active,
+  &__item:global(.is-tab-opened) {
+    .sub-tab__text {
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+}

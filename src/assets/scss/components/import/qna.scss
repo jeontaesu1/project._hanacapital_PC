@@ -1,20 +1,23 @@
 .qna {
-  display: block;
+  border-top: 2px solid $color-gray-60;
 
   &__list {
     @include reset-list;
   }
 
   &__item {
-    display: block;
     border-bottom: 1px solid $color-gray-30;
-    box-sizing: border-box;
+  }
+
+  &__cell {
+    flex: 1;
+    min-width: 0;
   }
 
   &__head {
     position: relative;
     display: flex;
-    padding: 21px 20px;
+    padding: 20px;
   }
 
   &__symbol {
@@ -36,9 +39,12 @@
     }
   }
 
-  &__cell {
-    flex: 1;
-    min-width: 0;
+  &__right {
+    flex: none;
+    display: flex;
+    margin-left: auto;
+    padding-left: 20px;
+    align-items: center;
   }
 
   &__opener {
@@ -58,24 +64,20 @@
     font-weight: 500;
   }
 
-  &__right {
-    flex: none;
+  &__answer {
     display: flex;
-    margin-left: auto;
-    padding-left: 20px;
-    align-items: center;
+    padding: 20px;
+    background-color: $color-gray-05;
   }
 
   &__contents {
-    display: flex;
-    padding: 21px 20px;
-    background-color: $color-gray-05;
-    box-sizing: border-box;
-  }
-
-  &__text {
-    margin: 0;
-    @include font-size-default(18);
+    @include font-size-head(18);
     color: $color-gray-80;
+
+    &::before,
+    &::after {
+      content: '';
+      display: table;
+    }
   }
 }
