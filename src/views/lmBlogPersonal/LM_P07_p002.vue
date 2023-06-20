@@ -1,5 +1,7 @@
 <script>
 // LM_P07_p002
+import { RouterLink } from 'vue-router';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
@@ -11,6 +13,7 @@ import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 
 export default {
   components: {
+    RouterLink,
     PageContents,
     TextButton,
     BasicHr,
@@ -32,50 +35,29 @@ export default {
         ]"
       >
         <div :class="$style['ars-layout__box']">
-          <div class="align-center">
-            <div class="text-body-3 row-margin-item-group">
-              하나캐피탈 대출상담사
-            </div>
-
-            <div :class="$style['ars-layout__icon']">
+          <div :class="$style['name-card']">
+            <p :class="$style['name-card__top-text']">하나캐피탈 대출상담사</p>
+            <div :class="$style['name-card__icon']">
               <IconCustomer />
             </div>
-
-            <div class="row-margin-contents row-margin-bottom-none">
-              <h3 class="text-big-3 font-weight-medium">김하나</h3>
-              <div class="text-body-1 color-gray-quaternary row-margin-mini">
-                hanakim@capital
-              </div>
-            </div>
-
-            <div class="row-margin-contents-small">
-              <TextButton
-                tagName="a"
-                href="tel:010-1234-5678"
-                theme="secondary"
-                :iconFillAll="true"
-              >
+            <p :class="$style['name-card__name']">김하나</p>
+            <p :class="$style['name-card__mail']">hanakim@capital</p>
+            <div :class="$style['name-card__tel']">
+              <TextButton tagName="span" :classNames="{ wrap: 'color-green' }">
                 <template v-slot:leftIcon>
                   <IconCall />
                 </template>
                 010-1234-5678
               </TextButton>
-
-              <div
-                class="flex-box justify-conten-center row-margin-item-medium"
-              >
-                <div class="flex-box__cell">
-                  <span class="font-weight-light color-gray-secondary"
-                    >여신금융협회 등록번호</span
-                  >
-                </div>
-                <div class="flex-box__cell flex-box__cell--small">
-                  <span class="font-weight-light color-gray-secondary"
-                    >1000024254</span
-                  >
-                </div>
-              </div>
             </div>
+            <p :class="$style['name-card__number']">
+              <span :class="$style['name-card__number-item']">
+                여신금융협회 등록번호
+              </span>
+              <span :class="$style['name-card__number-item']">
+                1000024254
+              </span>
+            </p>
           </div>
 
           <BasicHr theme="tertiary" className="row-margin-container-medium" />
@@ -137,20 +119,26 @@ export default {
       >
         <div :class="$style['menu-list']">
           <div :class="$style['menu-list__item']">
-            <button type="button" :class="$style['menu-list__block']">
+            <RouterLink
+              to="/lm-blog/LM_P02_p001"
+              :class="$style['menu-list__block']"
+            >
               <div :class="$style['menu-list__icon']">
                 <IconConsultation />
               </div>
               <div :class="$style['menu-list__title']">빠른 대출 상담</div>
-            </button>
+            </RouterLink>
           </div>
           <div :class="$style['menu-list__item']">
-            <button type="button" :class="$style['menu-list__block']">
+            <RouterLink
+              to="/lm-blog/LM_P03_p001"
+              :class="$style['menu-list__block']"
+            >
               <div :class="$style['menu-list__icon']">
                 <IconSms />
               </div>
               <div :class="$style['menu-list__title']">SMS 상담</div>
-            </button>
+            </RouterLink>
           </div>
         </div>
 
@@ -163,7 +151,11 @@ export default {
               ]"
             >
               <h3 class="text-title-1 row-margin-contents">지점안내</h3>
-              <div :class="$style['map']">// 지도영역</div>
+              <div :class="$style['map']">
+                <div style="height: 100%; background-color: gray">
+                  // 지도영역
+                </div>
+              </div>
             </div>
           </div>
         </div>

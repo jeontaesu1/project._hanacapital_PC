@@ -8002,7 +8002,6 @@ export default {
                 :class="[
                   $style['product-list__block'],
                   $style['product-list__block--secondary'],
-                  $style['product-list__block--flex-column'],
                 ]"
               >
                 <div :class="$style['product-list__icon']">
@@ -8024,7 +8023,6 @@ export default {
                 :class="[
                   $style['product-list__block'],
                   $style['product-list__block--tertiary'],
-                  $style['product-list__block--flex-column'],
                 ]"
               >
                 <div :class="$style['product-list__icon']">
@@ -8037,7 +8035,11 @@ export default {
                   하나캐피탈 멤버십 회원이 신용대출 상품 이용 시 금리 우대를
                   제공하는 혜택 서비스
                 </p>
-                <div :class="$style['product-list__etc']">모바일전용</div>
+                <div :class="$style['product-list__bottom']">
+                  <p :class="$style['product-list__bottom-label']">
+                    모바일전용
+                  </p>
+                </div>
               </RouterLink>
             </li>
 
@@ -8047,7 +8049,6 @@ export default {
                 :class="[
                   $style['product-list__block'],
                   $style['product-list__block--quaternary'],
-                  $style['product-list__block--flex-column'],
                 ]"
               >
                 <div :class="$style['product-list__icon']">
@@ -8069,7 +8070,6 @@ export default {
                 :class="[
                   $style['product-list__block'],
                   $style['product-list__block--quinary'],
-                  $style['product-list__block--flex-column'],
                 ]"
               >
                 <div :class="$style['product-list__icon']">
@@ -8082,7 +8082,11 @@ export default {
                   매월 업데이트되는 차량정보로 내 차 시세조회가 가능한 혜택
                   서비스
                 </p>
-                <div :class="$style['product-list__etc']">모바일전용</div>
+                <div :class="$style['product-list__bottom']">
+                  <p :class="$style['product-list__bottom-label']">
+                    모바일전용
+                  </p>
+                </div>
               </RouterLink>
             </li>
 
@@ -8092,7 +8096,6 @@ export default {
                 :class="[
                   $style['product-list__block'],
                   $style['product-list__block--senary'],
-                  $style['product-list__block--flex-column'],
                 ]"
               >
                 <div :class="$style['product-list__icon']">
@@ -8105,7 +8108,11 @@ export default {
                   매주 업데이트되는 부동산 시세조회를 무료로 이용할 수 있는 혜택
                   서비스
                 </p>
-                <div :class="$style['product-list__etc']">모바일전용</div>
+                <div :class="$style['product-list__bottom']">
+                  <p :class="$style['product-list__bottom-label']">
+                    모바일전용
+                  </p>
+                </div>
               </RouterLink>
             </li>
             <li :class="$style['product-list__item']">
@@ -8498,6 +8505,36 @@ export default {
               </UiScroller>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Name Card</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['name-card']">
+          <p :class="$style['name-card__top-text']">하나캐피탈 대출상담사</p>
+          <div :class="$style['name-card__icon']">
+            <IconCustomer />
+          </div>
+          <p :class="$style['name-card__name']">김하나</p>
+          <p :class="$style['name-card__mail']">hanakim@capital</p>
+          <div :class="$style['name-card__tel']">
+            <TextButton tagName="span" :classNames="{ wrap: 'color-green' }">
+              <template v-slot:leftIcon>
+                <IconCall />
+              </template>
+              010-1234-5678
+            </TextButton>
+          </div>
+          <p :class="$style['name-card__number']">
+            <span :class="$style['name-card__number-item']">
+              여신금융협회 등록번호
+            </span>
+            <span :class="$style['name-card__number-item']"> 1000024254 </span>
+          </p>
         </div>
       </div>
     </section>

@@ -18,6 +18,11 @@
   }
 }
 
+div.button,
+span.button {
+  cursor: default;
+}
+
 .button {
   @include reset-button;
   box-sizing: border-box;
@@ -155,5 +160,9 @@
 
   &:global(.color-gray-tertiary) {
     @include button-theme($color-gray-70);
+  }
+
+  &:global(.color-green) {
+    @include button-theme($color-green-50);
   }
 }

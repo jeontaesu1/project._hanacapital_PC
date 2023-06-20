@@ -66,7 +66,7 @@ export default {
       </ul>
     </section>
 
-    <section class="row-margin-block-small">
+    <div class="row-margin-block-small">
       <div
         :class="[
           $style['contents-list'],
@@ -512,7 +512,7 @@ export default {
           </li>
         </UiAccordion>
       </div>
-    </section>
+    </div>
   </PageContents>
 </template>
 

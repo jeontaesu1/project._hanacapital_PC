@@ -1,0 +1,60 @@
+.name-card {
+  text-align: center;
+
+  &__top-text {
+    margin: 0 0 16px;
+    @include font-size-default(14);
+  }
+
+  &__icon {
+    box-sizing: border-box;
+    width: 68px;
+    height: 68px;
+    padding: 16px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background-color: $color-gray-10;
+
+    svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    @include font-size-head(24);
+    font-weight: 500;
+  }
+
+  &__mail {
+    margin: 2px 0 0;
+    @include font-size-default(16);
+    color: $color-gray-90;
+  }
+
+  &__tel {
+    font-size: 0;
+    line-height: 0;
+    margin: 20px 0 0;
+  }
+
+  &__number {
+    margin: 12px 0 0;
+    display: flex;
+    justify-content: center;
+
+    &-item {
+      display: block;
+      flex: none;
+      @include font-size-default(14);
+      font-weight: 300;
+      color: $color-gray-80;
+
+      & + & {
+        margin-left: 4px;
+      }
+    }
+  }
+}

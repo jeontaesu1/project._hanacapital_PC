@@ -6,7 +6,6 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import UiAccordion from '@/components/ui/accordion/UiAccordion.vue';
 import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
@@ -29,7 +28,6 @@ export default {
     PageHead,
     PageTitle,
     PageSubText,
-    BasicHr,
     UiAccordion,
     UiAccordionItem,
     UiAccordionLayer,
@@ -65,7 +63,6 @@ export default {
               :class="[
                 $style['product-list__block'],
                 $style['product-list__block--secondary'],
-                $style['product-list__block--flex-column'],
               ]"
             >
               <div :class="$style['product-list__icon']">
@@ -87,7 +84,6 @@ export default {
               :class="[
                 $style['product-list__block'],
                 $style['product-list__block--tertiary'],
-                $style['product-list__block--flex-column'],
               ]"
             >
               <div :class="$style['product-list__icon']">
@@ -100,7 +96,9 @@ export default {
                 하나캐피탈 멤버십 회원이 신용대출 상품 이용 시 금리 우대를
                 제공하는 혜택 서비스
               </p>
-              <div :class="$style['product-list__etc']">모바일전용</div>
+              <div :class="$style['product-list__bottom']">
+                <p :class="$style['product-list__bottom-label']">모바일전용</p>
+              </div>
             </RouterLink>
           </li>
 
@@ -110,7 +108,6 @@ export default {
               :class="[
                 $style['product-list__block'],
                 $style['product-list__block--quaternary'],
-                $style['product-list__block--flex-column'],
               ]"
             >
               <div :class="$style['product-list__icon']">
@@ -132,7 +129,6 @@ export default {
               :class="[
                 $style['product-list__block'],
                 $style['product-list__block--quinary'],
-                $style['product-list__block--flex-column'],
               ]"
             >
               <div :class="$style['product-list__icon']">
@@ -144,7 +140,9 @@ export default {
               <p :class="[$style['product-list__text'], 'color-white']">
                 매월 업데이트되는 차량정보로 내 차 시세조회가 가능한 혜택 서비스
               </p>
-              <div :class="$style['product-list__etc']">모바일전용</div>
+              <div :class="$style['product-list__bottom']">
+                <p :class="$style['product-list__bottom-label']">모바일전용</p>
+              </div>
             </RouterLink>
           </li>
 
@@ -154,7 +152,6 @@ export default {
               :class="[
                 $style['product-list__block'],
                 $style['product-list__block--senary'],
-                $style['product-list__block--flex-column'],
               ]"
             >
               <div :class="$style['product-list__icon']">
@@ -167,7 +164,9 @@ export default {
                 매주 업데이트되는 부동산 시세조회를 무료로 이용할 수 있는 혜택
                 서비스
               </p>
-              <div :class="$style['product-list__etc']">모바일전용</div>
+              <div :class="$style['product-list__bottom']">
+                <p :class="$style['product-list__bottom-label']">모바일전용</p>
+              </div>
             </RouterLink>
           </li>
         </ul>
@@ -175,7 +174,6 @@ export default {
 
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">Q&A</h3>
-        <BasicHr theme="quinary" />
 
         <div :class="$style['qna']">
           <UiAccordion :classNames="{ wrap: $style['qna__list'] }">
@@ -195,7 +193,7 @@ export default {
               </div>
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
+                <div :class="$style['qna__answer']">
                   <div
                     :class="[
                       $style['qna__symbol'],
@@ -205,12 +203,12 @@ export default {
                     A
                   </div>
                   <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
+                    <section :class="$style['qna__contents']">
                       하나캐피탈 회원가입은 성별 나이 특정제한 없이 하나캐피탈
                       이용 및 관심있으신 손님이시면 누구나 가입가능하며,
                       홈페이지 및 모바일에서 멤버십 가입하기를 통해 가입하실 수
                       있습니다.
-                    </p>
+                    </section>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -231,7 +229,7 @@ export default {
               </div>
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
+                <div :class="$style['qna__answer']">
                   <div
                     :class="[
                       $style['qna__symbol'],
@@ -241,10 +239,10 @@ export default {
                     A
                   </div>
                   <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
+                    <section :class="$style['qna__contents']">
                       하나캐피탈 멤버십은 손님들께 전액 무료로 제공되는 서비스로
                       추가비용이 발생하지 않습니다.
-                    </p>
+                    </section>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -265,7 +263,7 @@ export default {
               </div>
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
+                <div :class="$style['qna__answer']">
                   <div
                     :class="[
                       $style['qna__symbol'],
@@ -275,10 +273,10 @@ export default {
                     A
                   </div>
                   <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
+                    <section :class="$style['qna__contents']">
                       네. 사고 시 하나손해보험 고객센터로 직접 접수해주셔야
                       보상이 가능합니다.
-                    </p>
+                    </section>
                   </div>
                 </div>
               </UiAccordionLayer>
@@ -299,7 +297,7 @@ export default {
               </div>
 
               <UiAccordionLayer :classNames="{ layer: $style['qna__layer'] }">
-                <div :class="$style['qna__contents']">
+                <div :class="$style['qna__answer']">
                   <div
                     :class="[
                       $style['qna__symbol'],
@@ -309,12 +307,12 @@ export default {
                     A
                   </div>
                   <div :class="$style['qna__cell']">
-                    <p :class="$style['qna__text']">
+                    <section :class="$style['qna__contents']">
                       탈회를 원하실 경우, 고객센터(1800-1110) 또는 하나캐피탈
                       홈페이지 및 WEB/APP을 통해 편리하게 처리 가능합니다.<br />
                       단, 탈회 즉시 모든 멤버십 서비스를 이용할 수 없으니
                       신중하게 생각하시길 바랍니다.
-                    </p>
+                    </section>
                   </div>
                 </div>
               </UiAccordionLayer>

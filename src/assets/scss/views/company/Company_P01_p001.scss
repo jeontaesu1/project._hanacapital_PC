@@ -1,2 +1,28 @@
 @import '@/assets/scss/components/import/image-view.scss';
 @import '@/assets/scss/components/import/logs.scss';
+
+.logs-wrap {
+  margin-top: 60px;
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  .logs {
+    margin: -20px 0 0 -20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      flex: none;
+      box-sizing: border-box;
+      padding: 20px 0 0 20px;
+      width: 25%;
+
+      & + .logs__item {
+        margin: 0;
+      }
+    }
+  }
+}
