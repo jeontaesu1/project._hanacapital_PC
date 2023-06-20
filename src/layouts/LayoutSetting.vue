@@ -90,7 +90,12 @@ export default {
     };
     const layout = computed(() => {
       const { layout } = route.meta;
-      return layout ? layouts[layout] : layouts['DefaultLayout'];
+
+      if (route.name) {
+        return layout ? layouts[layout] : layouts['DefaultLayout'];
+      } else {
+        return NoneLayout;
+      }
     });
 
     return {
