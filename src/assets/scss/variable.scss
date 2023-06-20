@@ -1,6 +1,10 @@
 // min page width
 $page-min-width: 1515px;
 
+// contents width
+$contents-width-default: 600px;
+$contents-width-wide: 1200px;
+
 // font
 $font-default: '맑은고딕', 'Malgun Gothic', '돋움', Dotum, 'Apple Gothic',
   sans-serif;
@@ -68,6 +72,11 @@ $color-pink-60: #f54298;
 $color-pink-70: #f32a8b;
 $color-pink-80: #f2117d;
 $color-pink-90: #d70a6c;
+
+$color-orange-60: #ff963d;
+$color-orange-80: #ec700f;
+
+$color-purple-60: #5647d8;
 
 // line-height
 $line-height-default: 1.5;

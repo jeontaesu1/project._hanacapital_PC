@@ -295,7 +295,7 @@ export default {
               <ButtonList
                 :wrap="true"
                 align="center"
-                class="row-margin-contents"
+                :classNames="{ wrap: 'row-margin-contents' }"
               >
                 <ButtonListItem>
                   <BasicButton size="regular">만기연장 신청</BasicButton>
@@ -382,7 +382,7 @@ export default {
               <ButtonList
                 :wrap="true"
                 align="center"
-                class="row-margin-contents"
+                :classNames="{ wrap: 'row-margin-contents' }"
               >
                 <ButtonListItem>
                   <BasicButton size="regular">만기연장 신청</BasicButton>

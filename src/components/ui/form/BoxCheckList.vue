@@ -50,7 +50,7 @@ export default {
       {
         [$style[`box-check-list--align-${align}`]]: align,
         [$style['box-check-list--wrap']]: wrap,
-        [$style[`box-check-list--col-${col}`]]: wrap,
+        [$style[`box-check-list--col-${col}`]]: wrap && col > 2,
       },
       customClassNames.wrap,
     ]"

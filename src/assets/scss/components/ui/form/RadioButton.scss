@@ -1,0 +1,238 @@
+.radio {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+
+  &__input {
+    @include reset-input-check;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: flex-start;
+    vertical-align: top;
+    @include font-size-head(18);
+
+    .radio__input[disabled] + & {
+      cursor: default;
+    }
+  }
+
+  &__object {
+    flex: none;
+    display: flex;
+    align-items: center;
+    min-height: #{$line-height-head}em;
+
+    &-inner {
+      flex: none;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      box-sizing: border-box;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin: -12px 0 0 -12px;
+        border: 1px solid $color-gray-30;
+        border-radius: 50%;
+        box-sizing: border-box;
+        outline: 0 solid rgba($color-navy-50, 0);
+        background-color: rgba($color-white, 1);
+        transition: border-color 0.2s, background-color 0.2s, outline 0.2s;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background-color: rgba($color-white, 0);
+        transition: background-color 0.2s;
+      }
+
+      .radio__input:checked + .radio__label & {
+        &::before {
+          border-color: $color-navy-50;
+          background-color: $color-navy-50;
+        }
+
+        &::after {
+          background-color: rgba($color-white, 1);
+        }
+      }
+
+      .radio__input:focus + .radio__label & {
+        &::before {
+          outline: 4px solid rgba($color-navy-50, 0.08);
+        }
+      }
+
+      .radio__input:active + .radio__label & {
+        &::before {
+          outline: 4px solid rgba($color-navy-50, 0.2);
+        }
+      }
+
+      .radio__input[disabled] + .radio__label & {
+        &::before {
+          border-color: $color-gray-30;
+          background-color: $color-gray-20;
+        }
+
+        &::after {
+          background-color: rgba($color-gray-40, 0);
+        }
+      }
+
+      .radio__input[disabled]:checked + .radio__label & {
+        &::after {
+          background-color: rgba($color-gray-40, 1);
+        }
+      }
+
+      .radio__input[disabled]:active + .radio__label & {
+        &::before {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    font-weight: 500;
+
+    .radio__input[disabled] + .radio__label & {
+      color: $color-gray-40;
+    }
+  }
+
+  &__object + &__text,
+  &__text + &__object {
+    margin-left: 10px;
+  }
+
+  &--align {
+    &-center {
+      .radio__label {
+        align-items: center;
+      }
+    }
+  }
+
+  &--only-object {
+    .radio__object {
+      min-height: 0;
+    }
+
+    .radio__text {
+      @include for-a11y;
+    }
+
+    .radio__object + .radio__text,
+    .radio__text + .radio__object {
+      margin-left: 0;
+    }
+  }
+
+  &--full {
+    .radio__label {
+      display: flex;
+    }
+  }
+
+  &--theme {
+    &-secondary {
+      .radio__object {
+        &-inner {
+          &::before {
+            border-color: $color-white;
+            background-color: rgba($color-black, 0.2);
+          }
+
+          &::after {
+            background-color: rgba($color-white, 0);
+          }
+        }
+      }
+
+      .radio__input:checked + .radio__label .radio__object-inner {
+        &::before {
+          border-color: $color-navy-50;
+          background-color: $color-navy-50;
+        }
+
+        &::after {
+          background-color: rgba($color-white, 1);
+        }
+      }
+
+      .radio__input[disabled] + .radio__label .radio__object-inner {
+        opacity: 0.5;
+
+        &::before {
+          border-color: $color-white;
+          background-color: rgba($color-black, 0.2);
+        }
+
+        &::after {
+          background-color: rgba($color-white, 0);
+        }
+      }
+
+      .radio__input[disabled]:checked + .radio__label .radio__object-inner {
+        &::after {
+          background-color: rgba($color-white, 1);
+        }
+      }
+    }
+
+    &-tertiary {
+      .radio__object {
+        &-inner {
+          &::before {
+            width: 18px;
+            height: 18px;
+            margin: -9px 0 0 -9px;
+          }
+
+          &::after {
+            width: 8px;
+            height: 8px;
+            margin: -4px 0 0 -4px;
+          }
+        }
+      }
+
+      .radio__label {
+        @include font-size-default(16);
+      }
+
+      .radio__text {
+        font-weight: 400;
+      }
+
+      .radio__object + .radio__text,
+      .radio__text + .radio__object {
+        margin-left: 6px;
+      }
+    }
+  }
+}

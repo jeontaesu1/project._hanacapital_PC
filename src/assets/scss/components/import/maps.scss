@@ -1,0 +1,68 @@
+.maps {
+  border-top: 2px solid $color-gray-60;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-gray-30;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+
+    &-cell {
+      flex: none;
+      padding: 20px;
+      box-sizing: border-box;
+      @include font-size-default(16);
+      color: $color-gray-70;
+
+      &--title {
+        flex: 1;
+        min-width: 0;
+      }
+
+      &--branch {
+        width: 110px;
+      }
+
+      &--opener {
+        width: 140px;
+        font-size: 0;
+        line-height: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    color: $color-black;
+  }
+
+  &__opener {
+    color: $color-black;
+  }
+
+  &__area {
+    height: 400px;
+  }
+
+  &__item:global(.is-accordion-opened) {
+    .maps {
+      &__opener {
+        color: $color-green-50;
+
+        &-icon {
+          * {
+            fill: $color-green-50;
+          }
+        }
+      }
+    }
+  }
+}

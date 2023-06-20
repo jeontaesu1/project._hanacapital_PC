@@ -33,7 +33,7 @@ export default {
       <IllustInfoText>하나캐피탈을 이용해주셔서 감사합니다.</IllustInfoText>
     </IllustInfo>
 
-    <BasicHr theme="tertiary" class="row-margin-block" />
+    <BasicHr theme="tertiary" className="row-margin-block" />
 
     <div>
       <section class="row-margin-block-small">

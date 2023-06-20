@@ -1,0 +1,17 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/not-table.scss';
+
+.text-button {
+  margin-top: 2px;
+}
+
+.estate-setting-info {
+  margin-top: 24px;
+  padding: 40px 0;
+}
+
+.accordion-contents {
+  margin-top: 24px;
+  border-top: 1px solid $color-gray-20;
+  padding-top: 24px;
+}

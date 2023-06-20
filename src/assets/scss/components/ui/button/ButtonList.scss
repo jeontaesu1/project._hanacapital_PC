@@ -2,9 +2,7 @@
   margin-top: 80px;
 
   &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    @include reset-list;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
@@ -79,18 +77,20 @@
     }
   }
 
-  &--col-3 {
-    .buttons {
-      &__item {
-        width: 33.333333%;
+  &--col {
+    &-3 {
+      .buttons {
+        &__item {
+          width: 33.333333%;
+        }
       }
     }
-  }
 
-  &--col-4 {
-    .buttons {
-      &__item {
-        width: 25%;
+    &-4 {
+      .buttons {
+        &__item {
+          width: 25%;
+        }
       }
     }
   }

@@ -1,0 +1,14 @@
+@import '@/assets/scss/components/import/image-view.scss';
+
+.ceo-layout {
+  display: flex;
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+
+    & + & {
+      margin-left: 60px;
+    }
+  }
+}

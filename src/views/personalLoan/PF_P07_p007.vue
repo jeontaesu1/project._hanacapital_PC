@@ -671,7 +671,7 @@ export default {
         </p>
       </div>
 
-      <BasicBox theme="tertiary" class="row-margin-container-medium">
+      <BasicBox theme="tertiary" className="row-margin-container-medium">
         <p class="text-body-2 color-gray font-weight-medium">
           본 확인서는 [금융소비자 보호에 관한 법률] 제 17조 및 제 18조에 따라
           작성되었습니다.

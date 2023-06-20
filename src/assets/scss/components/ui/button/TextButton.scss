@@ -79,11 +79,26 @@
         height: 16px;
       }
     }
+    &-medium {
+      .button__icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &-large {
+      .button__icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &--text {
     &-regular {
       @include font-size-button(14);
+    }
+    &-medium {
+      @include font-size-button(16);
     }
   }
 
@@ -125,6 +140,8 @@
       }
     }
     &-quinary {
+      @include button-theme($color-black);
+
       &:hover,
       &:active,
       &:focus-visible {

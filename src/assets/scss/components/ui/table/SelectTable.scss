@@ -1,0 +1,135 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+
+.basic-table {
+  border-top: none;
+
+  > table {
+    > tbody {
+      > tr {
+        &[tabindex='0'],
+        > td[tabindex='0'] {
+          cursor: pointer;
+        }
+
+        &:global(.is-selected) {
+          > td {
+            background-color: rgba($color-navy-50, 0.08);
+          }
+        }
+
+        &:last-child {
+          > td {
+            border-bottom: none;
+          }
+        }
+
+        &:global(.is-disabled) {
+          > td {
+            color: $color-gray-40;
+          }
+
+          &:global(.is-selected) {
+            > td {
+              background-color: $color-gray-05;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-table {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 264px;
+  border-top: 1px solid $color-gray-60;
+  border-bottom: 1px solid $color-gray-30;
+
+  &__caption {
+    @include for-a11y;
+  }
+
+  &__head {
+    flex: none;
+    overflow: hidden;
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+
+    &-scroll {
+      flex: 1;
+      min-height: 0;
+
+      > :global(.simplebar-track) {
+        background: none;
+
+        :global(.simplebar-scrollbar) {
+          &::before {
+            top: 2px;
+            bottom: 2px;
+            left: 2px;
+            right: 2px;
+            border-radius: 2px;
+            background: $color-gray-40;
+          }
+
+          &:global(.simplebar-visible) {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:global(.simplebar-horizontal) {
+          height: 8px;
+
+          :global(.simplebar-scrollbar) {
+            top: 0;
+            height: 100%;
+
+            &::before {
+              left: 2px;
+              right: 2px;
+              top: 2px;
+              bottom: 2px;
+              height: auto;
+            }
+          }
+        }
+
+        &:global(.simplebar-vertical) {
+          width: 8px;
+
+          :global(.simplebar-scrollbar) {
+            &::before {
+              top: 2px;
+              bottom: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    .basic-table {
+      > table {
+        > thead {
+          > tr {
+            > th {
+              color: $color-gray-40;
+            }
+          }
+        }
+      }
+    }
+  }
+}

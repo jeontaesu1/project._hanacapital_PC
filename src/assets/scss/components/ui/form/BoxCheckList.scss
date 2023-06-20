@@ -58,18 +58,28 @@
     }
   }
 
-  &--col-3 {
-    .box-check-list {
-      &__item {
-        width: 33.333333%;
+  &--col {
+    &-3 {
+      .box-check-list {
+        &__item {
+          width: 33.333333%;
+        }
       }
     }
-  }
 
-  &--col-4 {
-    .box-check-list {
-      &__item {
-        width: 25%;
+    &-4 {
+      .box-check-list {
+        &__item {
+          width: 25%;
+        }
+      }
+    }
+
+    &-5 {
+      .box-check-list {
+        &__item {
+          width: 20%;
+        }
       }
     }
   }

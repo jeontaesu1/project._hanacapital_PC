@@ -1,0 +1,30 @@
+.section-group {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    margin: -20px 0 0 -20px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    flex: none;
+    width: 50%;
+    padding: 20px 0 0 20px;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__box {
+    flex: 1;
+    min-width: 0;
+  }
+}

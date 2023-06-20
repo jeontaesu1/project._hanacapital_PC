@@ -28,7 +28,7 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 64px;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 12px 20px;
   @include font-size-button(20);
   font-weight: 700;
@@ -80,7 +80,6 @@
   &--size {
     &-regular {
       min-height: 52px;
-      border-radius: 10px;
       padding: 8px 16px;
       @include font-size-button(18);
       font-weight: 500;

@@ -14,8 +14,8 @@ import My_p06_p003 from '@/views/onlineBranch/My_p06_p003.vue';
 import My_P08_l001 from '@/views/onlineBranch/My_P08_l001.vue';
 import My_P08_l002 from '@/views/onlineBranch/My_P08_l002.vue';
 import My_P08_l003 from '@/views/onlineBranch/My_P08_l003.vue';
-import My_P08_l004 from '../onlineBranch/My_P08_l004.vue';
-import My_P08_l005 from '../onlineBranch/My_P08_l005.vue';
+import My_P08_l004 from '@/views/onlineBranch/My_P08_l004.vue';
+import My_P08_l005 from '@/views/onlineBranch/My_P08_l005.vue';
 
 export default {
   components: {

@@ -1,6 +1,8 @@
 <script>
 import { computed } from 'vue';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const defaultClassNames = () => ({
   wrap: '',
   img: '',
@@ -30,6 +32,10 @@ export default {
       Type: String,
       default: null,
     },
+    background: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -38,6 +44,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       customClassNames,
     };
   },
@@ -49,6 +56,7 @@ export default {
     :class="[
       $style['bank-logo'],
       {
+        [$style['bank-logo--background']]: background,
         [$style[`bank-logo--size-${size}`]]: size,
       },
       customClassNames.wrap,
@@ -56,7 +64,7 @@ export default {
   >
     <img
       v-if="code"
-      :src="`/images/${type}-logo/${code}.svg`"
+      :src="`${BASE_URL}images/${type}-logo/${code}.svg`"
       :alt="name"
       :class="[$style['bank-logo__img'], customClassNames.img]"
     />

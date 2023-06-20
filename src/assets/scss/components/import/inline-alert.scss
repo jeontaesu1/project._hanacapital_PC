@@ -1,0 +1,36 @@
+.inline-alert {
+  position: relative;
+  padding: 16px 20px 16px 42px;
+  border-radius: 10px;
+  @include font-size-default(14);
+  background-color: rgba($color-navy-50, 0.06);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 16px;
+    height: #{$line-height-default}em;
+    background: url('@/assets/images/icon/complete.svg') no-repeat 50% 50% /
+      100% auto;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-navy-50;
+  }
+
+  &--error {
+    background-color: rgba($color-semantic-essential, 0.06);
+
+    &::before {
+      background-image: url('@/assets/images/icon/text-error.svg');
+    }
+
+    .inline-alert__text {
+      color: $color-semantic-essential;
+    }
+  }
+}

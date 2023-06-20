@@ -14,11 +14,20 @@ export default {
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="wide">
     <PageHead>
-      <PageTitle>타이틀</PageTitle>
+      <PageTitle>하나머니</PageTitle>
     </PageHead>
 
-    // contents
+    <div :class="$style['image-view']">
+      <img
+        src="@/assets/images/_dummy/box-detail-large.png"
+        alt="샘플 이미지"
+      />
+    </div>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/hanaMoney/MI_P02_p001.scss';
+</style>
