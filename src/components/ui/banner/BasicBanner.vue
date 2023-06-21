@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -42,6 +42,10 @@ export default {
       Type: String,
       default: null,
     },
+    action: {
+      Type: Boolean,
+      default: true,
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -52,6 +56,8 @@ export default {
     },
   },
   setup(props) {
+    const slideStyleModule = inject('basicBannerSlideStyleModule', {});
+
     const setComponent = computed(() => {
       const { tagName } = props;
       return tagName === 'RouterLink' ? RouterLink : tagName;
@@ -78,6 +84,7 @@ export default {
     });
 
     return {
+      slideStyleModule,
       setComponent,
       setType,
       customClassNames,
@@ -94,6 +101,7 @@ export default {
       {
         [$style['banner--disabled']]: disabled || disabledStyle,
       },
+      slideStyleModule['banner__block'],
       customClassNames.wrap,
     ]"
     :style="{
@@ -105,9 +113,19 @@ export default {
     </div>
     <div
       v-if="thumb"
-      :class="[$style['banner__thumb'], customClassNames.thumb]"
+      :class="[
+        $style['banner__thumb'],
+        slideStyleModule['banner__thumb'],
+        customClassNames.thumb,
+      ]"
     >
-      <div :class="[$style['banner__thumb-img'], customClassNames.thumbImg]">
+      <div
+        :class="[
+          $style['banner__thumb-img'],
+          slideStyleModule['banner__thumb-img'],
+          customClassNames.thumbImg,
+        ]"
+      >
         <img
           :src="imgSrc"
           @error="
@@ -120,7 +138,7 @@ export default {
     </div>
     <component
       :is="setComponent"
-      v-if="!disabled"
+      v-if="!disabled && action"
       v-bind="$attrs"
       :type="setType"
       :class="[$style['banner__button'], customClassNames.button]"

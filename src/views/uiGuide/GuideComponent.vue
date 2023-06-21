@@ -1,6 +1,8 @@
 <script>
 import { ref, reactive } from 'vue';
 import { RouterLink } from 'vue-router';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -83,6 +85,7 @@ import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllip
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
+import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
@@ -120,11 +123,15 @@ import IconMembershipRate from '@/assets/images/icon/membership-rate.svg?compone
 import IconMembershipCar from '@/assets/images/icon/membership-car.svg?component';
 import IconMembershipBuilding from '@/assets/images/icon/membership-building.svg?component';
 import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
+import IconCall from '@/assets/images/icon/call.svg?component';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
+
     RouterLink,
     BasicButton,
     ButtonList,
@@ -186,6 +193,7 @@ export default {
     UiAccordionOpener,
     BasicBanner,
     EventBanner,
+    BasicBannerSlide,
     BasicHr,
     BasicBox,
     BasicBoxHead,
@@ -214,6 +222,7 @@ export default {
     SelectTable,
     SelectTableRow,
     UiScroller,
+
     IconAdd,
     IconPerson,
     IconBuilding,
@@ -243,6 +252,8 @@ export default {
     IconMembershipCar,
     IconMembershipBuilding,
     IconDownloadSmall,
+    IconCall,
+
     ImgMainSample,
   },
 
@@ -294,6 +305,7 @@ export default {
     };
 
     return {
+      modules: [Pagination, A11y],
       state,
       layerTest001,
       layerTest002,
@@ -7623,6 +7635,109 @@ export default {
             2022.12.01 ~ 2022.12.31
           </p>
         </EventBanner>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">BasicBannerSlide</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <BasicBannerSlide>
+          <Swiper :modules="modules" :pagination="{ clickable: true }">
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                :action="false"
+              >
+                <h3 class="text-title-1 row-margin-small">
+                  원큐자동차담보대출
+                </h3>
+                <p class="text-body-1 font-weight-light">
+                  자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                  대출이 가능한 금융서비스 입니다.
+                </p>
+                <div class="inline-wrap row-margin-contents-small">
+                  <TextButton
+                    textSize="medium"
+                    iconSize="medium"
+                    tagName="span"
+                    :classNames="{ wrap: 'color-gray-tertiary' }"
+                  >
+                    자세히보기
+                    <template v-slot:rightIcon>
+                      <IconLink />
+                    </template>
+                  </TextButton>
+                </div>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="RouterLink"
+                to=""
+              >
+                <h3 class="text-title-1 row-margin-small">
+                  원큐자동차담보대출
+                </h3>
+                <p class="text-body-1 font-weight-light">
+                  자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                  대출이 가능한 금융서비스 입니다.
+                </p>
+                <div class="inline-wrap row-margin-contents-small">
+                  <TextButton
+                    textSize="medium"
+                    iconSize="medium"
+                    tagName="span"
+                    :classNames="{ wrap: 'color-gray-tertiary' }"
+                  >
+                    자세히보기
+                    <template v-slot:rightIcon>
+                      <IconLink />
+                    </template>
+                  </TextButton>
+                </div>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <BasicBanner
+                thumb="/images/_dummy/banner-001.png"
+                tagName="a"
+                href=""
+              >
+                <h3 class="text-title-1 row-margin-small">
+                  원큐자동차담보대출
+                </h3>
+                <p class="text-body-1 font-weight-light">
+                  자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                  대출이 가능한 금융서비스 입니다.
+                </p>
+                <div class="inline-wrap row-margin-contents-small">
+                  <TextButton
+                    textSize="medium"
+                    iconSize="medium"
+                    tagName="span"
+                    :classNames="{ wrap: 'color-gray-tertiary' }"
+                  >
+                    자세히보기
+                    <template v-slot:rightIcon>
+                      <IconLink />
+                    </template>
+                  </TextButton>
+                </div>
+              </BasicBanner>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </BasicBannerSlide>
       </div>
     </section>
 

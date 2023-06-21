@@ -1,6 +1,8 @@
 <script>
 // LM_P07_p001
 import { reactive } from 'vue';
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -19,12 +21,17 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
+import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
+    Swiper,
+    SwiperSlide,
     PageContents,
     TextButton,
     BasicHr,
@@ -42,8 +49,11 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BasicBanner,
+    BasicBannerSlide,
     IconCustomer,
     IconCall,
+    IconLink,
   },
   setup() {
     const state = reactive({
@@ -55,6 +65,7 @@ export default {
     });
 
     return {
+      modules: [Pagination, A11y],
       state,
     };
   },
@@ -155,7 +166,105 @@ export default {
         ]"
       >
         <div class="row-margin-contents-small">
-          // 배너 영역 내용 확인 후 진행 예정
+          <!-- DD : 관리자 등록 배너 -->
+          <BasicBannerSlide>
+            <Swiper :modules="modules" :pagination="{ clickable: true }">
+              <!-- Case : 링크 기능 없을 때 -->
+              <SwiperSlide>
+                <BasicBanner
+                  thumb="/images/_dummy/banner-001.png"
+                  :action="false"
+                >
+                  <h3 class="text-title-1 row-margin-small ellipsis">
+                    원큐자동차담보대출 타이틀 텍스트 최대 한줄 노출 타이틀
+                    텍스트 최대 한줄 노출
+                  </h3>
+                  <p class="text-body-1 font-weight-light multi-ellipsis">
+                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                    대출이 가능한 금융서비스 입니다. 설명 텍스트 최대 두줄 노출
+                    설명 텍스트 최대 두줄 노출
+                  </p>
+                  <div class="inline-wrap row-margin-contents-small">
+                    <TextButton
+                      textSize="medium"
+                      iconSize="medium"
+                      tagName="span"
+                      :classNames="{ wrap: 'color-gray-tertiary' }"
+                    >
+                      자세히보기
+                      <template v-slot:rightIcon>
+                        <IconLink />
+                      </template>
+                    </TextButton>
+                  </div>
+                </BasicBanner>
+              </SwiperSlide>
+              <!-- //Case : 링크 기능 없을 때 -->
+
+              <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+              <SwiperSlide>
+                <BasicBanner
+                  thumb="/images/_dummy/banner-001.png"
+                  tagName="RouterLink"
+                  to=""
+                >
+                  <h3 class="text-title-1 row-margin-small">
+                    원큐자동차담보대출
+                  </h3>
+                  <p class="text-body-1 font-weight-light">
+                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                    대출이 가능한 금융서비스 입니다.
+                  </p>
+                  <div class="inline-wrap row-margin-contents-small">
+                    <TextButton
+                      textSize="medium"
+                      iconSize="medium"
+                      tagName="span"
+                      :classNames="{ wrap: 'color-gray-tertiary' }"
+                    >
+                      자세히보기
+                      <template v-slot:rightIcon>
+                        <IconLink />
+                      </template>
+                    </TextButton>
+                  </div>
+                </BasicBanner>
+              </SwiperSlide>
+              <!-- // Case : 링크 기능 있을 때 -->
+
+              <!-- Case : 링크 기능 있을 때 (a tag) -->
+              <SwiperSlide>
+                <BasicBanner
+                  thumb="/images/_dummy/banner-001.png"
+                  tagName="a"
+                  href=""
+                >
+                  <h3 class="text-title-1 row-margin-small">
+                    원큐자동차담보대출
+                  </h3>
+                  <p class="text-body-1 font-weight-light">
+                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
+                    대출이 가능한 금융서비스 입니다.
+                  </p>
+                  <div class="inline-wrap row-margin-contents-small">
+                    <TextButton
+                      textSize="medium"
+                      iconSize="medium"
+                      tagName="span"
+                      :classNames="{ wrap: 'color-gray-tertiary' }"
+                    >
+                      자세히보기
+                      <template v-slot:rightIcon>
+                        <IconLink />
+                      </template>
+                    </TextButton>
+                  </div>
+                </BasicBanner>
+              </SwiperSlide>
+              <!-- // Case : 링크 기능 있을 때 (a tag) -->
+            </Swiper>
+          </BasicBannerSlide>
+          <!-- // DD : 관리자 등록 배너 -->
         </div>
 
         <div :class="$style['ars-layout']">
