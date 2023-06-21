@@ -208,31 +208,6 @@ const routes = [
     name: '/guide/main-001',
     component: () => import('@/views/uiGuide/GuideMain001.vue'),
   },
-  {
-    path: '/guide/agent-001',
-    name: '/guide/agent-001',
-    component: () => import('@/views/uiGuide/GuideAgent001.vue'),
-  },
-  {
-    path: '/guide/agent-002',
-    name: '/guide/agent-002',
-    component: () => import('@/views/uiGuide/GuideAgent002.vue'),
-  },
-  {
-    path: '/guide/agent-003',
-    name: '/guide/agent-003',
-    component: () => import('@/views/uiGuide/GuideAgent003.vue'),
-  },
-  {
-    path: '/guide/agent-004',
-    name: '/guide/agent-004',
-    component: () => import('@/views/uiGuide/GuideAgent004.vue'),
-  },
-  {
-    path: '/guide/agent-005',
-    name: '/guide/agent-005',
-    component: () => import('@/views/uiGuide/GuideAgent005.vue'),
-  },
 
   // main
   {
