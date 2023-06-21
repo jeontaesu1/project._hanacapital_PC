@@ -1,26 +1,41 @@
 @import '@/assets/scss/components/import/product-list.scss';
 
 .nation {
+  display: flex;
+  align-items: center;
   border-radius: 20px;
-  padding: 22px 30px;
+  padding: 25px 30px;
+  background-color: $color-navy-05;
+
+  &__contents {
+    flex: 1;
+    min-width: 0;
+  }
 
   &__sub {
     font-weight: 300;
     @include font-size-default(16);
+    margin-bottom: 4px;
   }
+
   &__title {
-    margin-top: 4px;
     font-weight: 700;
     @include font-size-default(20);
   }
 
-  &.finance01 {
-    background: #f4f6fa url('@/assets/images/contents/img_micro_finance01.png')
-      no-repeat right 30px top 22px/55px;
-  }
+  &__icon {
+    flex: none;
+    display: block;
+    width: 144px;
+    height: 106px;
+    margin: -25px -30px -25px 0;
+    background: no-repeat 50% 50% / 100% 100%;
 
-  &.finance02 {
-    background: #f4f6fa url('@/assets/images/contents/img_micro_finance02.png')
-      no-repeat right 30px top 22px/55px;
+    &--001 {
+      background-image: url('@/assets/images/contents/sinarmas-finance.png');
+    }
+    &--002 {
+      background-image: url('@/assets/images/contents/micro-finance.png');
+    }
   }
 }

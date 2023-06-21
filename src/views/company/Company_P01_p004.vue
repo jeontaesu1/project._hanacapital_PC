@@ -9,6 +9,8 @@ import IconPersonal from '@/assets/images/icon/personal-finance.svg?component';
 import IconAuto from '@/assets/images/icon/car-check.svg?component';
 import IconCorporate from '@/assets/images/icon/corporate-finance.svg?component';
 import IconGlobal from '@/assets/images/icon/global-finance.svg?component';
+import ImgSinarmas from '@/assets/images/contents/sinarmas-finance.svg?component';
+import ImgMicro from '@/assets/images/contents/micro-finance.svg?component';
 
 export default {
   components: {
@@ -21,6 +23,8 @@ export default {
     IconAuto,
     IconCorporate,
     IconGlobal,
+    ImgSinarmas,
+    ImgMicro,
   },
 };
 </script>
@@ -49,17 +53,8 @@ export default {
             <div :class="$style['product-list__icon']">
               <IconPersonal />
             </div>
-            <h3 :class="[$style['product-list__title'], 'text-title-2']">
-              하나의 행복! 개인금융
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'color-gray-tertiary',
-                'text-body-3',
-                'row-margin-item',
-              ]"
-            >
+            <h3 class="text-title-2">하나의 행복! 개인금융</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item">
               손님의 Value Network Partner로서<br />
               하나캐피탈이 있습니다. <br />
               전문직 종사자, 직장인, 공무원, 교사 등<br />
@@ -79,17 +74,8 @@ export default {
             <div :class="$style['product-list__icon']">
               <IconAuto />
             </div>
-            <h3 :class="[$style['product-list__title'], 'text-title-2']">
-              하나의 젊음! 오토금융
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'color-gray-tertiary',
-                'text-body-3',
-                'row-margin-item',
-              ]"
-            >
+            <h3 class="text-title-2">하나의 젊음! 오토금융</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item">
               수입차 구입이 부담스러우신가요?<br />
               지금 타시는 차를 부담없이<br />
               바꾸고 싶으신가요?<br />
@@ -110,17 +96,8 @@ export default {
             <div :class="$style['product-list__icon']">
               <IconCorporate />
             </div>
-            <h3 :class="[$style['product-list__title'], 'text-title-2']">
-              하나의 만족! 기업금융
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'color-gray-tertiary',
-                'text-body-3',
-                'row-margin-item',
-              ]"
-            >
+            <h3 class="text-title-2">하나의 만족! 기업금융</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item">
               기업대출, 대체투자, 의료기 리스 등 하나캐피탈의 금융전문가가<br />
               상담해 드립니다.<br />
               기업 재무상태와 담보 종류에<br />
@@ -140,17 +117,8 @@ export default {
             <div :class="$style['product-list__icon']">
               <IconGlobal />
             </div>
-            <h3 :class="[$style['product-list__title'], 'text-title-2']">
-              하나의 드림! 글로벌금융
-            </h3>
-            <p
-              :class="[
-                $style['product-list__text'],
-                'color-gray-tertiary',
-                'text-body-3',
-                'row-margin-item',
-              ]"
-            >
+            <h3 class="text-title-2">하나의 드림! 글로벌금융</h3>
+            <p class="text-body-3 color-gray-tertiary row-margin-item">
               하나캐피탈은 국내를 넘어<br />
               글로벌 손님과 함께 성장하며 행복을 나누고자 동남아시아 중심으로<br />
               글로벌 진출을 하고 있습니다.<br />
@@ -168,15 +136,25 @@ export default {
       <h3 class="text-title-1 row-margin-contents">글로벌금융 서비스</h3>
       <ul class="reset-list flex-box">
         <li class="flex-box__cell flex-1">
-          <div :class="[$style['nation'], $style['finance01']]">
-            <div :class="$style['nation__sub']">SINARMAS HANA FINANCE</div>
-            <div :class="$style['nation__title']">인도네시아</div>
+          <div :class="$style['nation']">
+            <div :class="$style['nation__contents']">
+              <div :class="$style['nation__sub']">SINARMAS HANA FINANCE</div>
+              <div :class="$style['nation__title']">인도네시아</div>
+            </div>
+            <div
+              :class="[$style['nation__icon'], $style['nation__icon--001']]"
+            ></div>
           </div>
         </li>
         <li class="flex-box__cell flex-box__cell--large flex-1">
-          <div :class="[$style['nation'], $style['finance02']]">
-            <div :class="$style['nation__sub']">HANA MICRO FINANCE</div>
-            <div :class="$style['nation__title']">미얀마</div>
+          <div :class="$style['nation']">
+            <div :class="$style['nation__contents']">
+              <div :class="$style['nation__sub']">HANA MICRO FINANCE</div>
+              <div :class="$style['nation__title']">미얀마</div>
+            </div>
+            <div
+              :class="[$style['nation__icon'], $style['nation__icon--002']]"
+            ></div>
           </div>
         </li>
       </ul>

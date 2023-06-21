@@ -6699,7 +6699,7 @@ export default {
                 <div class="flex-box__cell flex-box__cell--mini">국민</div>
               </div>
             </KeyValueTitle>
-            <KeyValueText> 123-456-78901234 </KeyValueText>
+            <KeyValueText>123-456-78901234</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
             <KeyValueTitle>
@@ -6710,7 +6710,7 @@ export default {
                 <div class="flex-box__cell flex-box__cell--mini">농협</div>
               </div>
             </KeyValueTitle>
-            <KeyValueText> 123-456-78901234 </KeyValueText>
+            <KeyValueText>123-456-78901234</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
             <KeyValueTitle>
@@ -6721,7 +6721,7 @@ export default {
                 <div class="flex-box__cell flex-box__cell--mini">우리</div>
               </div>
             </KeyValueTitle>
-            <KeyValueText> 123-456-78901234 </KeyValueText>
+            <KeyValueText>123-456-78901234</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
             <KeyValueTitle>
@@ -6732,7 +6732,7 @@ export default {
                 <div class="flex-box__cell flex-box__cell--mini">하나</div>
               </div>
             </KeyValueTitle>
-            <KeyValueText> 123-456-78901234 </KeyValueText>
+            <KeyValueText>123-456-78901234</KeyValueText>
           </KeyValueItem>
           <KeyValueItem>
             <KeyValueTitle>

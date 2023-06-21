@@ -2,44 +2,38 @@
 @import '@/assets/scss/components/import/basic-table.scss';
 @import '@/assets/scss/components/import/empty.scss';
 
-.payment-request {
-  &__list {
-    @include reset-list;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: -24px 0 0 -24px;
-  }
-
-  &__item {
-    flex: auto;
-    min-width: 50%;
-    width: 50%;
-    padding: 24px 0 0 24px;
-    box-sizing: border-box;
-
-    &:last-child {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-    }
-
-    > div {
-      height: 100%;
-      box-sizing: border-box;
-    }
-
-    svg {
-      * {
-        &:first-child {
-          fill: $color-navy-50;
-        }
-      }
-    }
-  }
+.accordion-contents {
+  margin-top: 20px;
 }
 
-.fine-date {
-  width: 578px;
+.section-layout {
+  display: flex;
+  align-items: stretch;
+
+  &__col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    & + & {
+      margin-left: 24px;
+    }
+  }
+
+  &__row {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__box {
+    flex: 1;
+  }
 }

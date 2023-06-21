@@ -1591,6 +1591,10 @@ const datas = () => [
             date: '2023.06.02',
             text: '팝업 추가\n- 반환 신청 확인\n- 구매 신청 확인',
           },
+          {
+            date: '2023.06.21',
+            text: '팝업 추가\n- 계약 상세정보',
+          },
         ],
       },
       {
@@ -1897,9 +1901,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/online-branch-003',
-        status: '',
-        create: '',
-        log: [],
+        status: 'end',
+        create: '2023.06.21',
+        log: [
+          {
+            date: '2023.06.21',
+            text: '/guide/online-branch-002 에 있는 팝업 일부 옮김',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -3522,8 +3531,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/Company_P01_p004',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {
@@ -3742,8 +3751,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/company/Company_P05_p003',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.21',
         log: [],
       },
       {

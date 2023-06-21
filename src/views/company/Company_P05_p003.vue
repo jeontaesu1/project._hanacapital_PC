@@ -32,11 +32,11 @@ export default {
     </PageHead>
     <UiTab>
       <NavTab :useUiTab="true">
-        <NavTabButton link="testNavTab001_001">인사제도</NavTabButton>
-        <NavTabButton link="testNavTab001_002">복리후생</NavTabButton>
+        <NavTabButton link="Company_P05_p003_tab001">인사제도</NavTabButton>
+        <NavTabButton link="Company_P05_p003_tab002">복리후생</NavTabButton>
       </NavTab>
 
-      <UiTabPanel name="testNavTab001_001">
+      <UiTabPanel name="Company_P05_p003_tab001">
         <div :class="[$style['product-list'], $style['product-list--col-3']]">
           <ul :class="$style['product-list__list']">
             <li :class="$style['product-list__item']">
@@ -54,17 +54,8 @@ export default {
                 >
                   <ImgMainSample />
                 </div>
-                <h3 :class="[$style['product-list__title'], 'text-title-2']">
-                  평가제도
-                </h3>
-                <p
-                  :class="[
-                    $style['product-list__text'],
-                    'color-gray-tertiary',
-                    'text-body-3',
-                    'row-margin-item',
-                  ]"
-                >
+                <h3 class="text-title-2">평가제도</h3>
+                <p class="text-body-3 color-gray-tertiary row-margin-item">
                   해당 직무와 관련한 업무 수행을 근거로 하며,<br />
                   사원 개개인의 핵심 역량과 성과, 업적에 대한<br />
                   직무 수행 능력 평가를 정확하게 실시하여<br />
@@ -89,17 +80,8 @@ export default {
                 >
                   <ImgMainSample />
                 </div>
-                <h3 :class="[$style['product-list__title'], 'text-title-2']">
-                  승진제도
-                </h3>
-                <p
-                  :class="[
-                    $style['product-list__text'],
-                    'color-gray-tertiary',
-                    'text-body-3',
-                    'row-margin-item',
-                  ]"
-                >
+                <h3 class="text-title-2">승진제도</h3>
+                <p class="text-body-3 color-gray-tertiary row-margin-item">
                   합리적이고 공정하게 평가된 결과를 바탕으로 하여<br />
                   직무 년수 등에 구애 받지 않고<br />
                   개인의 능력에 따라 승진할 수 있는<br />
@@ -124,17 +106,8 @@ export default {
                 >
                   <ImgMainSample />
                 </div>
-                <h3 :class="[$style['product-list__title'], 'text-title-2']">
-                  HR포인트제도
-                </h3>
-                <p
-                  :class="[
-                    $style['product-list__text'],
-                    'color-gray-tertiary',
-                    'text-body-3',
-                    'row-margin-item',
-                  ]"
-                >
+                <h3 class="text-title-2">HR포인트제도</h3>
+                <p class="text-body-3 color-gray-tertiary row-margin-item">
                   사내활동 등 직원의 꾸준한 노력에 대해<br />
                   HR포인트를 부여하며,<br />
                   사내활동의 적극적인 참여를 유도하여<br />
@@ -149,11 +122,9 @@ export default {
         </div>
       </UiTabPanel>
 
-      <UiTabPanel name="testNavTab001_002">
+      <UiTabPanel name="Company_P05_p003_tab002">
         <div class="row-margin-block-small">
-          <h3 class="text-big-3 row-margin-small">
-            최고의 고객만족은 최고의 직원만족부터!
-          </h3>
+          <h3 class="text-big-3">최고의 고객만족은 최고의 직원만족부터!</h3>
           <p class="text-title-2 font-weight-light row-margin-small">
             다양한 복리후생을 통해 하나캐피탈 직원으로서의 자부심을 느낄 수
             있도록 지원하고 있습니다.
