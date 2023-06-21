@@ -1,0 +1,45 @@
+@import '@/assets/scss/components/import/division-info.scss';
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.payment-request {
+  &__list {
+    @include reset-list;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: -24px 0 0 -24px;
+  }
+
+  &__item {
+    flex: auto;
+    min-width: 50%;
+    width: 50%;
+    padding: 24px 0 0 24px;
+    box-sizing: border-box;
+
+    &:last-child {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    > div {
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    svg {
+      * {
+        &:first-child {
+          fill: $color-navy-50;
+        }
+      }
+    }
+  }
+}
+
+.fine-date {
+  width: 578px;
+}

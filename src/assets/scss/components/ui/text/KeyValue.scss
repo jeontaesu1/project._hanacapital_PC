@@ -95,15 +95,31 @@
     }
   }
 
-  /*
   &--col-3 {
+    &::before {
+      content: '';
+      display: table;
+    }
+
     .key-value {
+      &__list {
+        margin: -16px 0 0 -30px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       &__item {
+        flex: none;
         width: 33.333333%;
+        padding: 16px 0 0 30px;
+        box-sizing: border-box;
+
+        & + .key-value__item {
+          margin-top: 0;
+        }
       }
     }
   }
-  */
 
   &--margin {
     &-small {

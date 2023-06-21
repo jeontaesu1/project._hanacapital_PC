@@ -63,6 +63,12 @@
     &--octonary {
       background-color: $color-white;
     }
+
+    &--nonary {
+      border: 1px solid $color-gray-20;
+      background-color: $color-white;
+      padding: 39px 23px;
+    }
   }
 
   div.product-list__block {

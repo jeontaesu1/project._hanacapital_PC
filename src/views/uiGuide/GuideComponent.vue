@@ -2714,7 +2714,7 @@ export default {
             'ARS',
           ]"
           :current="1"
-          :cancel="true"
+          :disabled="true"
         />
       </div>
     </section>
