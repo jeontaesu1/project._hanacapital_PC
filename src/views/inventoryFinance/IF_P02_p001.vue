@@ -243,7 +243,11 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <ButtonList :wrap="true" align="center" class="row-margin-contents">
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{ wrap: 'row-margin-contents' }"
+            >
               <ButtonListItem>
                 <BasicButton size="regular" theme="tertiary"
                   >정보입력</BasicButton
@@ -317,7 +321,11 @@ export default {
               </KeyValueItem>
             </KeyValue>
 
-            <ButtonList :wrap="true" align="center" class="row-margin-contents">
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{ wrap: 'row-margin-contents' }"
+            >
               <ButtonListItem>
                 <BasicButton size="regular" theme="quaternary"
                   >정보수정</BasicButton
