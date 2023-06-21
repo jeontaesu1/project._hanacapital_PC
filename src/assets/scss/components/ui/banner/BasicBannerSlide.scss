@@ -2,15 +2,21 @@
   display: block;
 
   &__block {
-    padding: 30px 30px 58px;
+    &.banner__block {
+      padding: 30px 30px 58px;
+    }
   }
 
   &__thumb {
-    margin: -30px -30px -58px 30px;
+    &.banner__thumb {
+      margin: -30px -30px -58px 30px;
+    }
 
     &-img {
-      width: 160px;
-      height: 206px;
+      &.banner__thumb-img {
+        width: 160px;
+        height: 206px;
+      }
     }
   }
 
