@@ -237,8 +237,8 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <UiAccordion>
-              <UiAccordionItem>
+            <UiAccordion tagName="div">
+              <UiAccordionItem tagName="div">
                 <KeyValue :wrap="true" :col="3">
                   <KeyValueItem>
                     <KeyValueTitle>이번회차금액</KeyValueTitle>
@@ -299,8 +299,8 @@ export default {
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
-            <UiAccordion>
-              <UiAccordionItem>
+            <UiAccordion tagName="div">
+              <UiAccordionItem tagName="div">
                 <KeyValue :wrap="true" :col="3">
                   <KeyValueItem>
                     <KeyValueTitle>이번회차금액</KeyValueTitle>
