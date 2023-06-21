@@ -9,8 +9,6 @@ import IconPersonal from '@/assets/images/icon/personal-finance.svg?component';
 import IconAuto from '@/assets/images/icon/car-check.svg?component';
 import IconCorporate from '@/assets/images/icon/corporate-finance.svg?component';
 import IconGlobal from '@/assets/images/icon/global-finance.svg?component';
-import ImgSinarmas from '@/assets/images/contents/sinarmas-finance.svg?component';
-import ImgMicro from '@/assets/images/contents/micro-finance.svg?component';
 
 export default {
   components: {
@@ -23,8 +21,6 @@ export default {
     IconAuto,
     IconCorporate,
     IconGlobal,
-    ImgSinarmas,
-    ImgMicro,
   },
 };
 </script>
