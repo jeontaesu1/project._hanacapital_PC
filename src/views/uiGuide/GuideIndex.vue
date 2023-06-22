@@ -2939,7 +2939,12 @@ const datas = () => [
         path: '/guide/auto-001',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.06.23',
+            text: '팝업 추가\n- 모바일 진행 URL 전송 팝업',
+          },
+        ],
       },
       {
         depth2: '다이렉트 장기렌터카\nAF_P01_p001',
@@ -3179,8 +3184,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P06_p008',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.23',
         log: [],
       },
       {
