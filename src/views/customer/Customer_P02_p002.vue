@@ -20,6 +20,8 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
+import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
+import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
@@ -46,6 +48,8 @@ export default {
     BasicInput,
     FormInvalidMessage,
     BasicTextarea,
+    SecurityKeypadButton,
+    SecurityInput,
     FormHelpText,
     CheckBox,
     CheckBoxLabelText,
@@ -207,15 +211,38 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="연락처" target="#Customer_P02_p002_phone">
+        <FormListItem titleText="연락처" target="#Customer_P02_p002_phone1">
           <FormInvalid :error="state.phoneError">
             <InputBlock :error="state.phoneError">
               <InputBlockCell :flexible="true">
                 <BasicInput
+                  type="number"
                   pattern="\d*"
-                  title="연락처"
-                  id="Customer_P02_p002_phone"
+                  title="연락처 국번"
+                  id="Customer_P02_p002_phone1"
+                  :useDelete="false"
                 />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  type="number"
+                  pattern="\d*"
+                  title="연락처 중간 번호"
+                  id="Customer_P02_p002_phone2"
+                  :useDelete="false"
+                />
+              </InputBlockCell>
+              <InputBlockCell type="sub">-</InputBlockCell>
+              <InputBlockCell :flexible="true">
+                <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
+                <SecurityInput
+                  title="연락처 뒷 번호"
+                  :dot="[true, true, false, false]"
+                />
+              </InputBlockCell>
+              <InputBlockCell>
+                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

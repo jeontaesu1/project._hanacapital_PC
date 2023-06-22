@@ -15,7 +15,7 @@ import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
-import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import BankFullLogo from '@/components/ui/imageData/BankFullLogo.vue';
 
 export default {
   components: {
@@ -34,7 +34,7 @@ export default {
     BoxCheckLabel,
     BoxCheckList,
     BoxCheckListItem,
-    BankLogo,
+    BankFullLogo,
   },
 };
 </script>
@@ -208,26 +208,17 @@ export default {
               name="PF_P07_p001_bankSelect"
               :id="`PF_P07_p001_bankSelect${i}`"
             >
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <BankLogo code="081" background="true" />
-                </div>
+              <div class="row-margin-item-small">
+                <BankFullLogo code="270" />
+              </div>
 
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <div
-                    class="text-body-3 color-gray font-weight-light row-margin-mini"
-                  >
-                    하나증권
-                  </div>
-                  <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
-                    >하나 & 스탁론 Ⅰ</BoxCheckLabel
-                  >
-                  <div
-                    class="text-body-2 color-gray-secondary row-margin-mini ellipsis"
-                  >
-                    토마토파트너
-                  </div>
-                </div>
+              <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
+                >하나 & 스탁론 Ⅰ</BoxCheckLabel
+              >
+              <div
+                class="text-body-2 color-gray-secondary row-margin-small ellipsis"
+              >
+                토마토파트너
               </div>
             </BoxCheck>
           </BoxCheckListItem>
