@@ -136,9 +136,12 @@ export default {
     </FormList>
 
     <ButtonList align="full">
+      <!-- Case : 기본 -->
       <ButtonListItem>
         <BasicButton>대출 신청하기</BasicButton>
       </ButtonListItem>
+      <!-- // Case : 기본 -->
+
       <!-- Case : 시스템심사 & Fraud인 경우 -->
       <ButtonListItem>
         <BasicButton>상담예약신청</BasicButton>

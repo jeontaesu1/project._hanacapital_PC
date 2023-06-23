@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 import IconClose from '@/assets/images/common/close.svg?component';
 
@@ -28,6 +28,8 @@ export default {
     },
   },
   setup(props, context) {
+    const styleModule = inject('popupStyleModule', {});
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -46,6 +48,7 @@ export default {
     };
 
     return {
+      styleModule,
       customClassNames,
       isSlot,
       icons,
@@ -65,11 +68,16 @@ export default {
         [$style[`popup-button--theme-${theme}`]]: theme,
       },
       customClassNames.wrap,
+      styleModule['popup__button'],
     ]"
   >
     <component
       :is="icons[type]"
-      :class="[$style['popup-button__icon'], customClassNames.icon]"
+      :class="[
+        $style['popup-button__icon'],
+        customClassNames.icon,
+        styleModule['popup__button-icon'],
+      ]"
     />
     <span
       v-if="!isSlot"

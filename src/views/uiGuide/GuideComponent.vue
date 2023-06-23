@@ -15,6 +15,8 @@ import PopupText from '@/components/ui/layer/PopupText.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
+import FullPopup from '@/components/ui/layer/FullPopup.vue';
+import FullPopupHead from '@/components/ui/layer/FullPopupHead.vue';
 import AlertPopup from '@/components/ui/layer/AlertPopup.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
@@ -144,6 +146,8 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
+    FullPopup,
+    FullPopupHead,
     AlertPopup,
     CheckBox,
     CheckBoxLabelText,
@@ -271,6 +275,7 @@ export default {
     const layerTest003 = ref(null);
     const layerTest004 = ref(null);
     const layerTest005 = ref(null);
+    const layerTest006 = ref(null);
     const testAccordion = ref(null);
 
     const layerOpenTest001 = (e = {}) => {
@@ -287,6 +292,9 @@ export default {
     };
     const layerOpenTest005 = (e = {}) => {
       layerTest005.value.open(e.target);
+    };
+    const layerOpenTest006 = (e = {}) => {
+      layerTest006.value.open(e.target);
     };
 
     const testErrorUpdate001 = (val) => {
@@ -312,12 +320,14 @@ export default {
       layerTest003,
       layerTest004,
       layerTest005,
+      layerTest006,
       testAccordion,
       layerOpenTest001,
       layerOpenTest002,
       layerOpenTest003,
       layerOpenTest004,
       layerOpenTest005,
+      layerOpenTest006,
       testErrorUpdate001,
       testInputEvent,
       testAccordionAllOpen,
@@ -535,6 +545,47 @@ export default {
           </AlertPopup>
         </UiLayer>
 
+        <UiLayer ref="layerTest006" type="full" v-slot="layerSlotProps">
+          <FullPopup>
+            <template v-slot:head>
+              <FullPopupHead>
+                <template v-slot:right>
+                  <PopupButton @click="layerSlotProps.close()" />
+                </template>
+                <PopupTitle>타이틀</PopupTitle>
+                <template v-slot:sub>
+                  <PopupSubTitle>서브 타이틀</PopupSubTitle>
+                </template>
+              </FullPopupHead>
+            </template>
+
+            <PopupText>// contents</PopupText>
+
+            <div style="height: 1500px; border: 10px dotted #666">
+              스크롤 생기게 하기 위한 더미
+            </div>
+
+            <template v-slot:foot>
+              <ButtonList
+                :wrap="true"
+                align="center"
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton size="regular" :line="true" theme="quaternary"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="regular">Button 2</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </FullPopup>
+        </UiLayer>
+
         <BasicButton @click="layerOpenTest001">모달 팝업</BasicButton>
         <BasicButton @click="layerOpenTest002"
           >모달 팝업 (높이 고정)</BasicButton
@@ -545,6 +596,7 @@ export default {
         <BasicButton @click="layerOpenTest005"
           >모달 팝업 (너비 1240)</BasicButton
         >
+        <BasicButton @click="layerOpenTest006">전체 팝업</BasicButton>
         <BasicButton @click="layerOpenTest003">얼럿형 팝업</BasicButton>
       </div>
     </section>

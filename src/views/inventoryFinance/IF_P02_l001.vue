@@ -176,6 +176,7 @@ export default {
     </ModalPopup>
   </UiLayer>
 </template>
+
 <style lang="scss" module>
 @import '@/assets/scss/views/inventoryFinance/IF_P02_l001.scss';
 </style>

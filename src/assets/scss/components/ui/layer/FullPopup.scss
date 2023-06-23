@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 500px;
-  max-height: 800px;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
   background-color: $color-white;
 
   &__head {
@@ -27,7 +26,10 @@
         > :global(.simplebar-mask) {
           > :global(.simplebar-offset) {
             > :global(.simplebar-content-wrapper) {
+              height: 100% !important;
+
               > :global(.simplebar-content) {
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: stretch;
@@ -107,27 +109,11 @@
       .popup__body-inner {
         padding-top: 40px;
       }
-      .popup__body-scroll {
-        > :global(.simplebar-wrapper) {
-          > :global(.simplebar-mask) {
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-          }
-        }
-      }
     }
 
     &:last-child {
       .popup__body-inner {
         padding-bottom: 40px;
-      }
-      .popup__body-scroll {
-        > :global(.simplebar-wrapper) {
-          > :global(.simplebar-mask) {
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-          }
-        }
       }
     }
   }
@@ -138,13 +124,13 @@
   }
 
   &__header {
-    padding: 30px 30px 16px;
+    padding: 24px;
     box-sizing: border-box;
 
     &-row {
       display: flex;
       align-items: flex-start;
-      min-height: 30px;
+      min-height: 32px;
     }
 
     &-left {
@@ -159,7 +145,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      margin-left: 8px;
+      margin-left: 12px;
     }
 
     &-sub {
@@ -189,41 +175,21 @@
     }
   }
 
-  &--fix {
-    height: 800px;
+  &__button.popup__button {
+    width: 32px;
+    height: 32px;
+  }
 
-    .popup__body-scroll {
-      > :global(.simplebar-wrapper) {
-        > :global(.simplebar-mask) {
-          > :global(.simplebar-offset) {
-            > :global(.simplebar-content-wrapper) {
-              height: 100% !important;
+  &--bg {
+    &-secondary {
+      color: $color-white;
+      background-color: $color-black;
 
-              > :global(.simplebar-content) {
-                height: 100%;
-              }
-            }
-          }
+      .popup__button-icon.popup__button-icon {
+        * {
+          fill: $color-white;
         }
       }
     }
   }
-
-  &--size {
-    &-regular {
-      width: 800px;
-    }
-
-    &-large {
-      width: 1240px;
-    }
-  }
-
-  /*
-  &--bg {
-    &-secondary {
-      background-color: $color-navy-05;
-    }
-  }
-  */
 }

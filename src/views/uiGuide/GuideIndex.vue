@@ -2557,7 +2557,9 @@ const datas = () => [
         path: '/guide/inventory-finance-001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          { date: '2023.06.23', text: '팝업추가\n- 서류확인 미리보기 팝업' },
+        ],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
