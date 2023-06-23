@@ -40,7 +40,7 @@ export default {
     </PageHead>
 
     <section :class="$style['bg']">
-      <div :class="[$style['contents'], 'align-center']">
+      <div class="wide-wrap align-center">
         <h3 class="text-big-3 row-margin-contents">인권선언문 구성원리</h3>
 
         <div :class="[$style['product-list'], $style['product-list--col-3']]">
@@ -98,7 +98,7 @@ export default {
       </div>
     </section>
 
-    <section :class="[$style['contents'], 'row-margin-block']">
+    <section class="wide-wrap row-margin-block">
       <h3 class="text-big-3 row-margin-contents">
         이해관계자 구분 및 인권 이슈
       </h3>

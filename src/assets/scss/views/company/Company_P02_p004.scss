@@ -6,11 +6,6 @@
   background-color: $color-gray-15;
 }
 
-.contents {
-  width: $contents-width-wide;
-  margin: 0 auto;
-}
-
 .section-group {
   &::before {
     content: '';

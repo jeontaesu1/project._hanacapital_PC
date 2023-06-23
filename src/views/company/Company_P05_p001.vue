@@ -33,7 +33,7 @@ export default {
     </PageHead>
 
     <section :class="$style['bg']">
-      <div :class="[$style['contents'], 'align-center']">
+      <div class="wide-wrap align-center">
         <h3 class="text-big-3 row-margin-small">
           핵심가치 <span class="color-green">INTEGRITY</span>
         </h3>
@@ -110,7 +110,7 @@ export default {
       </div>
     </section>
 
-    <section :class="[$style['contents'], 'row-margin-block']">
+    <section class="wide-wrap row-margin-block">
       <h3 class="text-big-3 row-margin-small">하나인재상</h3>
       <p class="text-title-2 font-weight-light color-gray-secondary">
         비전달성을 위한 전문 역량과 리더십을 겸비한 리더

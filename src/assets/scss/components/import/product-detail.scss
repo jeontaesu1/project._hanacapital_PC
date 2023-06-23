@@ -99,4 +99,51 @@
       }
     }
   }
+
+  &--main {
+    .product-detail {
+      &__list {
+        display: flex;
+        align-self: stretch;
+        justify-content: center;
+      }
+
+      &__item {
+        position: relative;
+        flex: none;
+        width: 200px;
+        display: block;
+        text-align: center;
+
+        & + .product-detail__item {
+          margin-top: 0;
+          margin-left: 1px;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -1px;
+            width: 1px;
+            height: 60px;
+            margin-top: -30px;
+            background-color: $color-gray-30;
+          }
+        }
+      }
+
+      &__icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 12px;
+      }
+
+      &__desc {
+        @include font-size-head(18);
+        font-weight: 500;
+        justify-content: center;
+      }
+    }
+  }
 }

@@ -6,11 +6,6 @@
   background-color: $color-gray-15;
 }
 
-.contents {
-  width: $contents-width-wide;
-  margin: 0 auto;
-}
-
 .basic-list-wrap {
   &::before {
     content: '';

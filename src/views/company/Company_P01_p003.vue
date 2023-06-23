@@ -2,11 +2,11 @@
 // Company_P01_p003
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 
 export default {
   components: {
@@ -14,9 +14,9 @@ export default {
     PageHead,
     PageTitle,
     UiTab,
+    UiTabPanel,
     NavTab,
     NavTabButton,
-    UiTabPanel,
   },
 };
 </script>

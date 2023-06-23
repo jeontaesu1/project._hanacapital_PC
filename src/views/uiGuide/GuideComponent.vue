@@ -127,6 +127,8 @@ import IconMembershipCar from '@/assets/images/icon/membership-car.svg?component
 import IconMembershipBuilding from '@/assets/images/icon/membership-building.svg?component';
 import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
+import IconAssignment from '@/assets/images/icon/assignment.svg?component';
+import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
 
@@ -259,6 +261,8 @@ export default {
     IconMembershipBuilding,
     IconDownloadSmall,
     IconCall,
+    IconAssignment,
+    IconTakingOver,
 
     ImgMainSample,
   },
@@ -6326,6 +6330,54 @@ export default {
           </ul>
         </div>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Main</h3>
+        <div
+          :class="[$style['product-detail'], $style['product-detail--main']]"
+        >
+          <ul :class="$style['product-detail__list']">
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconMoney />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">최대한도</div>
+                <div :class="$style['product-detail__desc']">1억원</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconRate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9~18.9%</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconDate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">기간</div>
+                <div :class="$style['product-detail__desc']">12~120개월</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconCommision />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">
+                  중도상환수수료
+                </div>
+                <div :class="$style['product-detail__desc']">0원</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="test-section">
@@ -8674,6 +8726,175 @@ export default {
             </span>
             <span :class="$style['name-card__number-item']"> 1000024254 </span>
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Product Benefit</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['product-benefit']">
+          <section :class="$style['product-benefit__section']">
+            <div :class="$style['product-benefit__image']">
+              <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            </div>
+            <div :class="$style['product-benefit__info']">
+              <h3 :class="$style['product-benefit__title']">
+                중도상환수수료 면제!
+              </h3>
+              <p :class="$style['product-benefit__text']">
+                언제, 얼마를 상환해도<br />
+                상환수수료가 발생하지 않습니다.<br />
+                필요 시 바로 상환하여, 이자 부담을 줄여보세요.
+              </p>
+            </div>
+          </section>
+          <section :class="$style['product-benefit__section']">
+            <div :class="$style['product-benefit__image']">
+              <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            </div>
+            <div :class="$style['product-benefit__info']">
+              <h3 :class="$style['product-benefit__title']">
+                대출최대기간 120개월
+              </h3>
+              <p :class="$style['product-benefit__text']">
+                내 마음대로 최대 120개월까지<br />
+                대출기간을 설정하여<br />
+                월납입부담을 줄여보세요.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Product Info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="$style['product-info']">
+          <ul :class="$style['product-info__list']">
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconPerson />
+                  </div>
+                  <div :class="$style['product-info__title']">대상</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    재직기간 6개월 이상 직장인 그 외 당사기준 충족 손님
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconInterestRate />
+                  </div>
+                  <div :class="$style['product-info__title']">한도</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    최대 1억원 (최저 300만원)
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconRate />
+                  </div>
+                  <div :class="$style['product-info__title']">금리</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    연 5.9% ~ 18.9%
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconDate />
+                  </div>
+                  <div :class="$style['product-info__title']">기간</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    12개월 ~ 120개월
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconRate />
+                  </div>
+                  <div :class="$style['product-info__title']">금리</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    최저 연0.0 ~ 최고 연6.9%
+                  </div>
+                  <div :class="$style['product-info__sub']">
+                    (금융소비자의 개인신용평점에 따라 차등 적용)
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Icon Info</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="[$style['icon-info'], 'row-margin-container-medium']">
+          <ul :class="$style['icon-info__list']">
+            <li :class="$style['icon-info__item']">
+              <div :class="$style['icon-info__block']">
+                <div :class="$style['icon-info__icon']">
+                  <IconAssignment />
+                </div>
+                <div :class="$style['icon-info__contents']">
+                  <div :class="$style['icon-info__title']">양도인</div>
+                  <div :class="$style['icon-info__text']">
+                    리스 승계 시 위약금이 발생하지 않아 유리합니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['icon-info__item']">
+              <div :class="$style['icon-info__block']">
+                <div :class="$style['icon-info__icon']">
+                  <IconTakingOver />
+                </div>
+                <div :class="$style['icon-info__contents']">
+                  <div :class="$style['icon-info__title']">양수인</div>
+                  <div :class="$style['icon-info__text']">
+                    초기비용이 상대적으로 저렴하고, 등록 비용이 별도로 발생하지
+                    않아 유리합니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
