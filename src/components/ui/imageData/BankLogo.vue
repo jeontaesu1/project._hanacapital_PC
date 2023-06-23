@@ -32,10 +32,6 @@ export default {
       Type: String,
       default: null,
     },
-    background: {
-      Type: Boolean,
-      default: false,
-    },
   },
   setup(props) {
     const customClassNames = computed(() => {
@@ -56,7 +52,6 @@ export default {
     :class="[
       $style['bank-logo'],
       {
-        [$style['bank-logo--background']]: background,
         [$style[`bank-logo--size-${size}`]]: size,
       },
       customClassNames.wrap,

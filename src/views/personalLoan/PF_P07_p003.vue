@@ -41,7 +41,7 @@ export default {
       <PageHeadRow>
         <PageTitle align="left">스탁론</PageTitle>
         <template v-slot:right>
-          <BankFullLogo code="270" size="large" />
+          <BankFullLogo type="securities" code="270" size="large" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">

@@ -91,7 +91,7 @@ export default {
     </PageHead>
 
     <div>
-      <!-- Case : 2개 이상일 경우 노출 탭 노출 -->
+      <!-- Case : 2개 이상일 경우 노출 -->
       <BoxCheckList
         :classNames="{
           wrap: 'row-margin-container-medium',
@@ -115,7 +115,7 @@ export default {
           </BoxCheck>
         </BoxCheckListItem>
       </BoxCheckList>
-      <!-- // Case : 2개 이상일 경우 탭 노출 -->
+      <!-- // Case : 2개 이상일 경우 -->
 
       <section>
         <BasicBox>

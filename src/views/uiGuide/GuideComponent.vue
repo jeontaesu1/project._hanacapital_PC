@@ -81,6 +81,7 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BankLogo from '@/components/ui/imageData/BankLogo.vue';
+import BankFullLogo from '@/components/ui/imageData/BankFullLogo.vue';
 import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
@@ -215,6 +216,7 @@ export default {
     IllustInfoText,
     UnitText,
     BankLogo,
+    BankFullLogo,
     PaginationNav,
     PaginationNavArrow,
     PaginationNavEllipsis,
@@ -6719,32 +6721,55 @@ export default {
       <h2 class="test-section-title">Bank Logo</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- 은행 -->
         <BankLogo code="002" />
         <BankLogo code="003" />
         <BankLogo code="004" />
         <BankLogo code="007" />
         <BankLogo code="011" />
         <BankLogo code="020" />
+
+        <!-- 증권 -->
+        <BankLogo type="securities" code="261" />
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size : small</h3>
+        <!-- 은행 -->
         <BankLogo size="small" code="002" />
         <BankLogo size="small" code="003" />
         <BankLogo size="small" code="004" />
         <BankLogo size="small" code="007" />
         <BankLogo size="small" code="011" />
         <BankLogo size="small" code="020" />
+
+        <!-- 증권 -->
+        <BankLogo size="small" type="securities" code="261" />
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Bank Full Logo</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <!-- 은행 -->
+
+        <!-- 증권 -->
+        <BankFullLogo type="securities" code="270" />
+        <BankFullLogo type="securities" code="247" />
+        <BankFullLogo type="securities" code="264" />
+        <BankFullLogo type="securities" code="267" />
       </div>
 
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Background</h3>
-        <BankLogo background="true" code="002" />
-        <BankLogo background="true" code="003" />
-        <BankLogo background="true" code="004" />
-        <BankLogo background="true" code="007" />
-        <BankLogo background="true" code="011" />
-        <BankLogo background="true" code="020" />
+        <h3 class="test-section-sub-title">Size : large</h3>
+        <!-- 은행 -->
+
+        <!-- 증권 -->
+        <BankFullLogo size="large" type="securities" code="270" />
+        <BankFullLogo size="large" type="securities" code="247" />
+        <BankFullLogo size="large" type="securities" code="264" />
+        <BankFullLogo size="large" type="securities" code="267" />
       </div>
     </section>
 

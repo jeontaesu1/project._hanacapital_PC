@@ -209,7 +209,7 @@ export default {
               :id="`PF_P07_p001_bankSelect${i}`"
             >
               <div class="row-margin-item-small">
-                <BankFullLogo code="270" />
+                <BankFullLogo type="securities" code="270" />
               </div>
 
               <BoxCheckLabel :classNames="{ label: 'ellipsis' }"

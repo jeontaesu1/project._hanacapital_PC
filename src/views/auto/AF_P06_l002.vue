@@ -275,73 +275,69 @@ export default {
           <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">보험처리 내역</h3>
 
-            <UiTab>
-              <RoundTab>
-                <RoundTabButton tagName="button" type="button" :active="true">
-                  내차보험처리
-                </RoundTabButton>
-                <RoundTabButton tagName="button" type="button">
-                  타차보험처리
-                </RoundTabButton>
-                <RoundTabButton tagName="button" type="button">
-                  타차피해
-                </RoundTabButton>
-              </RoundTab>
+            <RoundTab>
+              <RoundTabButton tagName="button" type="button" :active="true">
+                내차보험처리
+              </RoundTabButton>
+              <RoundTabButton tagName="button" type="button">
+                타차보험처리
+              </RoundTabButton>
+              <RoundTabButton tagName="button" type="button">
+                타차피해
+              </RoundTabButton>
+            </RoundTab>
 
-              <UiAccordion>
-                <UiAccordionItem
-                  v-for="i in 2"
-                  :key="i"
-                  :classNames="{ item: 'row-margin-contents-small' }"
-                >
-                  <BasicBox>
-                    <KeyValue>
-                      <KeyValueItem
-                        :classNames="{ item: 'align-items-center' }"
-                      >
-                        <KeyValueTitle>2022.08.11</KeyValueTitle>
-                        <KeyValueText>
-                          <div class="flex-box">
-                            <div class="flex-box__cell flex-1">
-                              <UnitText rightUnit="원" align="right">
-                                <span class="font-weight-medium">625,500</span>
-                              </UnitText>
-                            </div>
-                            <div class="flex-box__cell">
-                              <UiAccordionOpener
-                                :classNames="{ button: $style['opener'] }"
-                              />
-                            </div>
+            <UiAccordion>
+              <UiAccordionItem
+                v-for="i in 2"
+                :key="i"
+                :classNames="{ item: 'row-margin-contents-small' }"
+              >
+                <BasicBox>
+                  <KeyValue>
+                    <KeyValueItem :classNames="{ item: 'align-items-center' }">
+                      <KeyValueTitle>2022.08.11</KeyValueTitle>
+                      <KeyValueText>
+                        <div class="flex-box">
+                          <div class="flex-box__cell flex-1">
+                            <UnitText rightUnit="원" align="right">
+                              <span class="font-weight-medium">625,500</span>
+                            </UnitText>
                           </div>
-                        </KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
-                    <UiAccordionLayer>
-                      <div :class="$style['contents']">
-                        <KeyValue>
-                          <KeyValueItem>
-                            <KeyValueTitle>부품</KeyValueTitle>
-                            <KeyValueText>240,360 원</KeyValueText>
-                          </KeyValueItem>
-                          <KeyValueItem>
-                            <KeyValueTitle>공임</KeyValueTitle>
-                            <KeyValueText>81,000 원</KeyValueText>
-                          </KeyValueItem>
-                          <KeyValueItem>
-                            <KeyValueTitle>도장</KeyValueTitle>
-                            <KeyValueText>244,940 원</KeyValueText>
-                          </KeyValueItem>
-                          <KeyValueItem>
-                            <KeyValueTitle>보험비용</KeyValueTitle>
-                            <KeyValueText>566,300 원</KeyValueText>
-                          </KeyValueItem>
-                        </KeyValue>
-                      </div>
-                    </UiAccordionLayer>
-                  </BasicBox>
-                </UiAccordionItem>
-              </UiAccordion>
-            </UiTab>
+                          <div class="flex-box__cell">
+                            <UiAccordionOpener
+                              :classNames="{ button: $style['opener'] }"
+                            />
+                          </div>
+                        </div>
+                      </KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
+                  <UiAccordionLayer>
+                    <div :class="$style['contents']">
+                      <KeyValue>
+                        <KeyValueItem>
+                          <KeyValueTitle>부품</KeyValueTitle>
+                          <KeyValueText>240,360 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>공임</KeyValueTitle>
+                          <KeyValueText>81,000 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>도장</KeyValueTitle>
+                          <KeyValueText>244,940 원</KeyValueText>
+                        </KeyValueItem>
+                        <KeyValueItem>
+                          <KeyValueTitle>보험비용</KeyValueTitle>
+                          <KeyValueText>566,300 원</KeyValueText>
+                        </KeyValueItem>
+                      </KeyValue>
+                    </div>
+                  </UiAccordionLayer>
+                </BasicBox>
+              </UiAccordionItem>
+            </UiAccordion>
           </section>
         </UiTabPanel>
         <!-- // 상세정보 -->

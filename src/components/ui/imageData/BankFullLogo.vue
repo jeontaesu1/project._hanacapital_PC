@@ -50,18 +50,18 @@ export default {
 <template>
   <span
     :class="[
-      $style['bank-full-logo'],
+      $style['bank-logo'],
       {
-        [$style[`bank-full-logo--size-${size}`]]: size,
+        [$style[`bank-logo--size-${size}`]]: size,
       },
       customClassNames.wrap,
     ]"
   >
     <img
       v-if="code"
-      :src="`${BASE_URL}images/securities-full-logo/${code}.svg`"
+      :src="`${BASE_URL}images/${type}-full-logo/${code}.svg`"
       :alt="name"
-      :class="[$style['bank-full-logo__img'], customClassNames.img]"
+      :class="[$style['bank-logo__img'], customClassNames.img]"
     />
   </span>
 </template>

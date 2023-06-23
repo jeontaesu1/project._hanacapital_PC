@@ -21,17 +21,4 @@
   &--size-small {
     width: 24px;
   }
-
-  &--background {
-    width: 56px;
-    background-color: $color-gray-10;
-    border-radius: 20px;
-    box-sizing: border-box;
-
-    .bank-logo__img {
-      width: 44px;
-      height: 44px;
-      margin: 6px;
-    }
-  }
 }
