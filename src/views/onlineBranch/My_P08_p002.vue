@@ -1,16 +1,18 @@
 <script>
-// My_P08_p001
+// My_P08_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -29,6 +31,7 @@ import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconCarCheck from '@/assets/images/icon/car-check.svg?component';
 import IconCar from '@/assets/images/icon/car.svg?component';
 import IconDocumentSearch from '@/assets/images/icon/document-search.svg?component';
+import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -38,11 +41,13 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
     UiTab,
     UiTabPanel,
     NavTab,
     NavTabButton,
     NoticeText,
+    TextButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -60,6 +65,7 @@ export default {
     IconCarCheck,
     IconCar,
     IconDocumentSearch,
+    IconLink,
   },
 };
 </script>
@@ -68,11 +74,68 @@ export default {
   <PageContents>
     <PageHead>
       <PageTitle>
-        렌터카 계약 만기 1개월 전까지<br />
-        만기후처리를 반드시 선택해 주세요
+        만기후 연장(재렌트) 신청이<br />
+        완료되었습니다.
       </PageTitle>
     </PageHead>
 
+    <!-- Case : 신청후 - 연장 -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+        </BasicBoxHeadLeft>
+        <BasicBoxHeadRight>
+          <TextButton
+            theme="secondary"
+            textSize="regular"
+            iconSize="regular"
+            :block="true"
+          >
+            만기후처리 변경
+            <template v-slot:rightIcon>
+              <IconLink />
+            </template>
+          </TextButton>
+        </BasicBoxHeadRight>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>재렌트</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>약정주행거리</KeyValueTitle>
+          <KeyValueText>999,999km</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>렌트기간</KeyValueTitle>
+          <KeyValueText>12개월</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>정비서비스</KeyValueTitle>
+          <KeyValueText>프리미엄</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>보증금</KeyValueTitle>
+          <KeyValueText>99,999,999원</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <ButtonList
+        :wrap="true"
+        align="center"
+        :classNames="{ wrap: 'row-margin-contents' }"
+      >
+        <ButtonListItem>
+          <BasicButton size="regular">연장 심사접수 하러가기</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </BasicBox>
+    <!-- // Case : 신청후 - 연장 -->
+
+    <!-- Case : 신청후 - 구매 (직접이전) -->
     <BasicBox>
       <BasicBoxHead>
         <BasicBoxHeadLeft>
@@ -82,40 +145,99 @@ export default {
 
       <KeyValue :wrap="true">
         <KeyValueItem>
-          <KeyValueTitle>계약기간</KeyValueTitle>
-          <KeyValueText>2016.01.01-2021.01.01</KeyValueText>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>구매</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle>실납렌트료(VAT포함)</KeyValueTitle>
-          <KeyValueText>999,999원</KeyValueText>
+          <KeyValueTitle>매수자정보</KeyValueTitle>
+          <KeyValueText>김하나</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle>잔존가치(VAT포함)</KeyValueTitle>
-          <KeyValueText>99,999,999원</KeyValueText>
+          <KeyValueTitle>구매방법</KeyValueTitle>
+          <KeyValueText>직접이전</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle>약정주행거리</KeyValueTitle>
-          <KeyValueText>999,999km</KeyValueText>
+          <KeyValueTitle>서류수령방법</KeyValueTitle>
+          <KeyValueText>등기</KeyValueText>
         </KeyValueItem>
         <KeyValueItem>
-          <KeyValueTitle>보증금</KeyValueTitle>
-          <KeyValueText>99,999,999원</KeyValueText>
-        </KeyValueItem>
-        <KeyValueItem>
-          <KeyValueTitle>정비서비스</KeyValueTitle>
-          <KeyValueText>프리미엄</KeyValueText>
+          <KeyValueTitle>매도용인감주소</KeyValueTitle>
+          <KeyValueText
+            >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+          >
         </KeyValueItem>
       </KeyValue>
     </BasicBox>
+    <!-- // Case : 신청후 - 구매 (직접이전) -->
+
+    <!-- Case : 신청후 - 구매 (이전대행) -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>구매</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대행수수료</KeyValueTitle>
+          <KeyValueText>20,000 원</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>구매방법</KeyValueTitle>
+          <KeyValueText>이전대행</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>대행업체정보</KeyValueTitle>
+          <KeyValueText>다코스 010-1234-5678</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 구매 (이전대행) -->
+
+    <!-- Case : 신청후 - 반환 -->
+    <BasicBox>
+      <BasicBoxHead>
+        <BasicBoxHeadLeft>
+          <h3 class="text-title-2 font-weight-medium">렌터카 07호3994</h3>
+        </BasicBoxHeadLeft>
+      </BasicBoxHead>
+
+      <KeyValue :wrap="true">
+        <KeyValueItem>
+          <KeyValueTitle>만기후처리</KeyValueTitle>
+          <KeyValueText>반환</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환일시</KeyValueTitle>
+          <KeyValueText>2023.01.01</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환담당자</KeyValueTitle>
+          <KeyValueText>김길동</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem>
+          <KeyValueTitle>반환주소</KeyValueTitle>
+          <KeyValueText
+            >서울시 구로구 디지털로 123 지플러스타워 101호</KeyValueText
+          >
+        </KeyValueItem>
+      </KeyValue>
+    </BasicBox>
+    <!-- // Case : 신청후 - 반환 -->
 
     <UiTab :classNames="{ wrap: 'row-margin-block' }">
       <NavTab :useUiTab="true">
-        <NavTabButton link="My_P08_p001_tab001">연장</NavTabButton>
-        <NavTabButton link="My_P08_p001_tab002">반환</NavTabButton>
-        <NavTabButton link="My_P08_p001_tab003">구매</NavTabButton>
+        <NavTabButton link="My_P08_p002_tab001">연장</NavTabButton>
+        <NavTabButton link="My_P08_p002_tab002">반환</NavTabButton>
+        <NavTabButton link="My_P08_p002_tab003">구매</NavTabButton>
       </NavTab>
 
-      <UiTabPanel name="My_P08_p001_tab001">
+      <UiTabPanel name="My_P08_p002_tab001">
         <div>
           <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">
@@ -500,15 +622,9 @@ export default {
             </ul>
           </section>
         </div>
-
-        <ButtonList>
-          <ButtonListItem>
-            <BasicButton>연장 신청</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
       </UiTabPanel>
 
-      <UiTabPanel name="My_P08_p001_tab002">
+      <UiTabPanel name="My_P08_p002_tab002">
         <div>
           <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">
@@ -596,15 +712,9 @@ export default {
             </div>
           </section>
         </div>
-
-        <ButtonList>
-          <ButtonListItem>
-            <BasicButton>반환 신청</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
       </UiTabPanel>
 
-      <UiTabPanel name="My_P08_p001_tab003">
+      <UiTabPanel name="My_P08_p002_tab003">
         <div>
           <section class="row-margin-block-small">
             <h3 class="text-title-1 row-margin-contents">
@@ -673,17 +783,11 @@ export default {
             </div>
           </section>
         </div>
-
-        <ButtonList>
-          <ButtonListItem>
-            <BasicButton>구매 신청</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
       </UiTabPanel>
     </UiTab>
   </PageContents>
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/My_P08_p001.scss';
+@import '@/assets/scss/views/onlineBranch/My_P08_p002.scss';
 </style>

@@ -13,6 +13,7 @@ import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BankFullLogo from '@/components/ui/imageData/BankFullLogo.vue';
 
 export default {
   components: {
@@ -29,6 +30,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    BankFullLogo,
   },
 };
 </script>
@@ -37,12 +39,9 @@ export default {
   <PageContents>
     <PageHead>
       <PageHeadRow>
-        <PageTitle align="left" :classNames="{ wrap: 'row-margin-small' }"
-          >스탁론</PageTitle
-        >
-        <PageSubText align="left">토마토 파트너</PageSubText>
+        <PageTitle align="left">스탁론</PageTitle>
         <template v-slot:right>
-          <img src="@/assets/images/contents/hana-stock.png" alt="하나증권" />
+          <BankFullLogo code="270" size="large" />
         </template>
       </PageHeadRow>
       <PageMainText align="left">

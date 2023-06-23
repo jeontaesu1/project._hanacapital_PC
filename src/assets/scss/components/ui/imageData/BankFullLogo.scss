@@ -1,0 +1,14 @@
+.bank-full-logo {
+  display: block;
+  height: 30px;
+
+  &__img {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+
+  &--size-large {
+    height: 54px;
+  }
+}

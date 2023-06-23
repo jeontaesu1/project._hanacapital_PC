@@ -6875,46 +6875,6 @@ export default {
       </div>
     </section>
 
-    <section class="test-section">
-      <h2 class="test-section-title">Bank Radio Select</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-
-        <BoxCheckList :wrap="true">
-          <BoxCheckListItem v-for="i in 2" :key="i">
-            <BoxCheck
-              :contents="true"
-              type="checkbox"
-              name="testBankRadioSelect"
-              :id="`testBankRadioSelect${i}`"
-            >
-              <div class="flex-box">
-                <div class="flex-box__cell">
-                  <BankLogo code="081" background="true" />
-                </div>
-
-                <div class="flex-box__cell flex-box__cell--medium flex-1">
-                  <div
-                    class="text-body-3 color-gray font-weight-light row-margin-mini"
-                  >
-                    하나증권
-                  </div>
-                  <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
-                    >하나 & 스탁론 Ⅰ</BoxCheckLabel
-                  >
-                  <div
-                    class="text-body-2 color-gray-secondary row-margin-mini ellipsis"
-                  >
-                    토마토파트너
-                  </div>
-                </div>
-              </div>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-      </div>
-    </section>
-
     <!--
     <section class="test-section">
       <h2 class="test-section-title">Term List</h2>

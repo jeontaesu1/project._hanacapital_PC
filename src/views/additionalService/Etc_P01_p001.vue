@@ -55,6 +55,10 @@ export default {
       field001Error: false,
       nameError: false,
       phoneError: false,
+      time001Error: false,
+      carTypeError: false,
+      carNameError: false,
+      areaError: false,
     });
 
     return {
@@ -185,12 +189,254 @@ export default {
       <FormListItem titleText="연락처" target="#Etc_P01_p001_phone">
         <FormInvalid :error="state.phoneError">
           <InputBlock :error="state.phoneError">
+            <InputBlockCell>
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '010',
+                  },
+                  {
+                    value: '2',
+                    label: '011',
+                  },
+                ]"
+                title="연락처 앞자리 번호 선택"
+                inputId="Etc_P01_p001_phone"
+                :classNames="{
+                  wrap: 'input-width-telecom',
+                }"
+              />
+            </InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <BasicInput pattern="\d*" title="연락처 나머지 번호 입력" />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem titleText="연락가능시간" target="#Etc_P01_p001_time001">
+        <FormInvalid :error="state.time001Error">
+          <InputBlock :error="state.time001Error">
             <InputBlockCell :flexible="true">
-              <BasicInput
-                type="number"
-                pattern="\d*"
-                title="연락처"
-                id="Etc_P01_p001_phone"
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '9',
+                  },
+                  {
+                    value: '2',
+                    label: '10',
+                  },
+                  {
+                    value: '3',
+                    label: '11',
+                  },
+                  {
+                    value: '4',
+                    label: '12',
+                  },
+                  {
+                    value: '5',
+                    label: '13',
+                  },
+                  {
+                    value: '6',
+                    label: '14',
+                  },
+                  {
+                    value: '7',
+                    label: '15',
+                  },
+                  {
+                    value: '8',
+                    label: '16',
+                  },
+                  {
+                    value: '9',
+                    label: '17',
+                  },
+                ]"
+                title="연락가능시간 시작시간"
+                inputId="Etc_P01_p001_time001"
+              />
+            </InputBlockCell>
+            <InputBlockCell margin="regular">
+              <div class="text-body-1">시</div>
+            </InputBlockCell>
+            <InputBlockCell margin="regular">
+              <div class="text-title-1">~</div>
+            </InputBlockCell>
+            <InputBlockCell :flexible="true" margin="regular">
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '9',
+                  },
+                  {
+                    value: '2',
+                    label: '10',
+                  },
+                  {
+                    value: '3',
+                    label: '11',
+                  },
+                  {
+                    value: '4',
+                    label: '12',
+                  },
+                  {
+                    value: '5',
+                    label: '13',
+                  },
+                  {
+                    value: '6',
+                    label: '14',
+                  },
+                  {
+                    value: '7',
+                    label: '15',
+                  },
+                  {
+                    value: '8',
+                    label: '16',
+                  },
+                  {
+                    value: '9',
+                    label: '17',
+                  },
+                ]"
+                title="연락가능시간 종료시간"
+                inputId="Etc_P01_p001_time002"
+              />
+            </InputBlockCell>
+            <InputBlockCell margin="regular">
+              <div class="text-body-1">시 사이</div>
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem titleText="차량구분" target="#Etc_P01_p001_carType">
+        <FormInvalid :error="state.carTypeError">
+          <InputBlock :error="state.carTypeError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '국산차',
+                  },
+                  {
+                    value: '2',
+                    label: '수입차',
+                  },
+                ]"
+                title="차량구분"
+                inputId="Etc_P01_p001_carType"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem titleText="관심차량" target="#Etc_P01_p001_carName">
+        <FormInvalid :error="state.carNameError">
+          <InputBlock :error="state.carNameError">
+            <InputBlockCell :flexible="true">
+              <BasicInput title="관심차량" id="Etc_P01_p001_carName" />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem
+        titleText="지역"
+        target="#Etc_P01_p001_area"
+        :selectOnly="true"
+      >
+        <FormInvalid :error="state.areaError">
+          <InputBlock :error="state.areaError">
+            <InputBlockCell :flexible="true">
+              <BasicSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '전체',
+                  },
+                  {
+                    value: '2',
+                    label: '서울',
+                  },
+                  {
+                    value: '3',
+                    label: '부산',
+                  },
+                  {
+                    value: '4',
+                    label: '대구',
+                  },
+                  {
+                    value: '5',
+                    label: '광주',
+                  },
+                  {
+                    value: '6',
+                    label: '인천',
+                  },
+                  {
+                    value: '7',
+                    label: '대전',
+                  },
+                  {
+                    value: '8',
+                    label: '울산',
+                  },
+                  {
+                    value: '9',
+                    label: '경기',
+                  },
+                  {
+                    value: '10',
+                    label: '경남',
+                  },
+                  {
+                    value: '11',
+                    label: '경북',
+                  },
+                  {
+                    value: '12',
+                    label: '강원',
+                  },
+                  {
+                    value: '13',
+                    label: '충남',
+                  },
+                  {
+                    value: '14',
+                    label: '충북',
+                  },
+                  {
+                    value: '15',
+                    label: '전남',
+                  },
+                  {
+                    value: '16',
+                    label: '전북',
+                  },
+                  {
+                    value: '17',
+                    label: '제주',
+                  },
+                ]"
+                title="시/도/명 선택하기"
+                inputId="Etc_P01_p001_area"
               />
             </InputBlockCell>
           </InputBlock>

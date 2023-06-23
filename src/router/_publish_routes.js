@@ -801,9 +801,19 @@ const routes = [
     component: () => import('@/views/onlineBranch/My_P08_p001.vue'),
   },
   {
+    path: '/online-branch/My_P08_p002',
+    name: '/online-branch/My_P08_p002',
+    component: () => import('@/views/onlineBranch/My_P08_p002.vue'),
+  },
+  {
     path: '/online-branch/My_P08_p003',
     name: '/online-branch/My_P08_p003',
     component: () => import('@/views/onlineBranch/My_P08_p003.vue'),
+  },
+  {
+    path: '/online-branch/My_P08_p004',
+    name: '/online-branch/My_P08_p004',
+    component: () => import('@/views/onlineBranch/My_P08_p004.vue'),
   },
   {
     path: '/online-branch/My_P08_p005',

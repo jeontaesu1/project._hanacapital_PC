@@ -91,7 +91,14 @@ export default {
           <li v-for="i in 4" :key="i" :class="$style['bill-list__item']">
             <div :class="$style['bill-list__block']">
               <div :class="$style['bill-list__head']">
-                <div :class="$style['bill-list__title']">{{ i }}회차</div>
+                <div :class="$style['bill-list__title']">
+                  <div class="flex-box">
+                    <div class="flex-box__cell">{{ i }}회차</div>
+                    <div class="flex-box__cell flex-box__cell--small">
+                      <div class="text-body-4">(2022.1.1)</div>
+                    </div>
+                  </div>
+                </div>
                 <div :class="$style['bill-list__amount']">1,232,456,345 원</div>
               </div>
               <div :class="$style['bill-list__contents']">

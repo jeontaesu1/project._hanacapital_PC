@@ -27,8 +27,6 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import SearchButton from '@/components/ui/button/SearchButton.vue';
@@ -62,8 +60,6 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
-    NavTab,
-    NavTabButton,
     InputBlock,
     InputBlockCell,
     SearchButton,
@@ -96,12 +92,29 @@ export default {
 
     <div>
       <!-- Case : 2개 이상일 경우 노출 탭 노출 -->
-      <NavTab>
-        <NavTabButton tagName="button" type="button" :active="true"
-          >재고금융</NavTabButton
-        >
-        <NavTabButton tagName="button" type="button">재고금융Ⅱ</NavTabButton>
-      </NavTab>
+      <BoxCheckList
+        :classNames="{
+          wrap: 'row-margin-container-medium',
+        }"
+      >
+        <BoxCheckListItem>
+          <BoxCheck
+            name="IF_P08_p001_productType"
+            id="IF_P08_p001_productType_001"
+            :defaultChecked="true"
+          >
+            <BoxCheckLabel>재고금융</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+        <BoxCheckListItem>
+          <BoxCheck
+            name="IF_P08_p001_productType"
+            id="IF_P08_p001_productType_002"
+          >
+            <BoxCheckLabel>재고금융Ⅱ</BoxCheckLabel>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
       <!-- // Case : 2개 이상일 경우 탭 노출 -->
 
       <section>
@@ -524,9 +537,12 @@ export default {
                     <p class="text-body-4 font-weight-light">2020년식</p>
                   </div>
                 </div>
-                <h4 class="text-title-2 font-weight-medium">
-                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트<br />(마이 스마트 핏)
-                </h4>
+                <h4 class="text-title-2 font-weight-medium">16노2109</h4>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
+                </p>
 
                 <!-- Case : 한도 조회 전 노출 -->
                 <ButtonList

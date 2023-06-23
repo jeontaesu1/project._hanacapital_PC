@@ -32,6 +32,10 @@ import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckObject from '@/components/ui/form/BoxCheckObject.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
+import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
+import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
+import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
+import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
 
 export default {
   components: {
@@ -65,6 +69,10 @@ export default {
     BoxCheckObject,
     NoticeText,
     UnitText,
+    PaginationNav,
+    PaginationNavArrow,
+    PaginationNavEllipsis,
+    PaginationNavNumber,
   },
 
   setup() {
@@ -485,6 +493,54 @@ export default {
         </li>
         <!-- Case : 약정 가능한 경우 -->
       </ul>
+
+      <!-- Case : 첫번째 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" :disabled="true" />
+        <PaginationNavNumber :active="true">1</PaginationNavNumber>
+        <PaginationNavNumber>2</PaginationNavNumber>
+        <PaginationNavNumber>3</PaginationNavNumber>
+        <PaginationNavNumber>4</PaginationNavNumber>
+        <PaginationNavNumber>5</PaginationNavNumber>
+        <PaginationNavNumber>6</PaginationNavNumber>
+        <PaginationNavNumber>7</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>999</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 첫번째 페이지일 때 -->
+
+      <!-- Case : 중간 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>13</PaginationNavNumber>
+        <PaginationNavNumber>14</PaginationNavNumber>
+        <PaginationNavNumber :active="true">15</PaginationNavNumber>
+        <PaginationNavNumber>16</PaginationNavNumber>
+        <PaginationNavNumber>17</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>99</PaginationNavNumber>
+        <PaginationNavArrow type="next" />
+      </PaginationNav>
+      <!-- // Case : 중간 페이지일 때 -->
+
+      <!-- Case : 마지막 페이지일 때 -->
+      <PaginationNav>
+        <PaginationNavArrow type="prev" />
+        <PaginationNavNumber>1</PaginationNavNumber>
+        <PaginationNavEllipsis />
+        <PaginationNavNumber>93</PaginationNavNumber>
+        <PaginationNavNumber>94</PaginationNavNumber>
+        <PaginationNavNumber>95</PaginationNavNumber>
+        <PaginationNavNumber>96</PaginationNavNumber>
+        <PaginationNavNumber>97</PaginationNavNumber>
+        <PaginationNavNumber>98</PaginationNavNumber>
+        <PaginationNavNumber :active="true">99</PaginationNavNumber>
+        <PaginationNavArrow type="next" :disabled="true" />
+      </PaginationNav>
+      <!-- // Case : 마지막 페이지일 때 -->
 
       <ButtonList>
         <ButtonListItem>
