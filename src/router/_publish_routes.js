@@ -1440,14 +1440,14 @@ const routes = [
     component: () => import('@/views/auto/AF_P07_p010.vue'),
   },
   {
-    path: '/auto/AF_P07_p011',
-    name: '/auto/AF_P07_p011',
-    component: () => import('@/views/auto/AF_P07_p011.vue'),
-  },
-  {
     path: '/auto/AF_P07_p012',
     name: '/auto/AF_P07_p012',
     component: () => import('@/views/auto/AF_P07_p012.vue'),
+  },
+  {
+    path: '/auto/AF_P07_p015',
+    name: '/auto/AF_P07_p015',
+    component: () => import('@/views/auto/AF_P07_p015.vue'),
   },
   {
     path: '/auto/Main_P01_p002',
