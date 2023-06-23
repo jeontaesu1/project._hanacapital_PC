@@ -804,8 +804,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P01_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -2999,8 +2999,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P02_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -3219,8 +3219,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P07_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
