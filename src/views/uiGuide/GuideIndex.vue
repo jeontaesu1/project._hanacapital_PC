@@ -971,8 +971,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P02_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -1079,8 +1079,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P03_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -1090,8 +1090,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P04_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -1167,8 +1167,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P05_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
