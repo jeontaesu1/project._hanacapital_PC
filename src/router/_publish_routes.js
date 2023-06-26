@@ -29,6 +29,16 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideLayout002.vue'),
   },
   {
+    path: '/guide/layout-003',
+    name: '/guide/layout-003',
+    component: () => import('@/views/uiGuide/GuideLayout003.vue'),
+  },
+  {
+    path: '/guide/layout-004',
+    name: '/guide/layout-004',
+    component: () => import('@/views/uiGuide/GuideLayout004.vue'),
+  },
+  {
     path: '/guide/alert-001',
     name: '/guide/alert-001',
     component: () => import('@/views/uiGuide/GuideAlert001.vue'),
