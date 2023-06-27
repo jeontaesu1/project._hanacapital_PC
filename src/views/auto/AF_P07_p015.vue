@@ -46,16 +46,22 @@ export default {
       </PageHeadRow>
       <PageMainText align="left">심사서류를 등록해 주세요</PageMainText>
 
-      <ul :class="[$style['basic-list'], 'row-margin-contents-small']">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular'],
+          $style['basic-list--regular-margin'],
+        ]"
+      >
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
+          <div :class="[$style['basic-list__content'], 'font-weight-regular']">
             외국인: 국내거소사실증명원, 국내거소신고증(앞/뒷면)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
+          <div :class="[$style['basic-list__content'], 'font-weight-regular']">
             렌터카 임직원 상품 승계 시 임직원 증빙자료를 꼭 등록해주세요.
           </div>
         </li>
