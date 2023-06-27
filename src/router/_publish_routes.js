@@ -548,76 +548,91 @@ const routes = [
     path: '/inventory-finance/IF_P02_p001',
     name: '/inventory-finance/IF_P02_p001',
     component: () => import('@/views/inventoryFinance/IF_P02_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P02_p002',
     name: '/inventory-finance/IF_P02_p002',
     component: () => import('@/views/inventoryFinance/IF_P02_p002.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P02_p004',
     name: '/inventory-finance/IF_P02_p004',
     component: () => import('@/views/inventoryFinance/IF_P02_p004.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P02_p005',
     name: '/inventory-finance/IF_P02_p005',
     component: () => import('@/views/inventoryFinance/IF_P02_p005.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P03_p001',
     name: '/inventory-finance/IF_P03_p001',
     component: () => import('@/views/inventoryFinance/IF_P03_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P03_p002',
     name: '/inventory-finance/IF_P03_p002',
     component: () => import('@/views/inventoryFinance/IF_P03_p002.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P02_p007',
     name: '/inventory-finance/IF_P02_p007',
     component: () => import('@/views/inventoryFinance/IF_P02_p007.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P03_p003',
     name: '/inventory-finance/IF_P03_p003',
     component: () => import('@/views/inventoryFinance/IF_P03_p003.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P03_p008',
     name: '/inventory-finance/IF_P03_p008',
     component: () => import('@/views/inventoryFinance/IF_P03_p008.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P04_p001',
     name: '/inventory-finance/IF_P04_p001',
     component: () => import('@/views/inventoryFinance/IF_P04_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P04_p002',
     name: '/inventory-finance/IF_P04_p002',
     component: () => import('@/views/inventoryFinance/IF_P04_p002.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P04_p003',
     name: '/inventory-finance/IF_P04_p003',
     component: () => import('@/views/inventoryFinance/IF_P04_p003.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P05_p001',
     name: '/inventory-finance/IF_P05_p001',
     component: () => import('@/views/inventoryFinance/IF_P05_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P06_p001',
     name: '/inventory-finance/IF_P06_p001',
     component: () => import('@/views/inventoryFinance/IF_P06_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
   {
     path: '/inventory-finance/IF_P08_p001',
     name: '/inventory-finance/IF_P08_p001',
     component: () => import('@/views/inventoryFinance/IF_P08_p001.vue'),
+    meta: { layout: 'InventoryFinanceLayout' },
   },
 
   // lm-blog
@@ -625,31 +640,37 @@ const routes = [
     path: '/lm-blog/LM_P01_p001',
     name: '/lm-blog/LM_P01_p001',
     component: () => import('@/views/lmBlog/LM_P01_p001.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
   {
     path: '/lm-blog/LM_P01_p002',
     name: '/lm-blog/LM_P01_p002',
     component: () => import('@/views/lmBlog/LM_P01_p002.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
   {
     path: '/lm-blog/LM_P02_p001',
     name: '/lm-blog/LM_P02_p001',
     component: () => import('@/views/lmBlog/LM_P02_p001.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
   {
     path: '/lm-blog/LM_P03_p001',
     name: '/lm-blog/LM_P03_p001',
     component: () => import('@/views/lmBlog/LM_P03_p001.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
   {
     path: '/lm-blog/LM_P04_p001',
     name: '/lm-blog/LM_P04_p001',
     component: () => import('@/views/lmBlog/LM_P04_p001.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
   {
     path: '/lm-blog/LM_P05_p001',
     name: '/lm-blog/LM_P05_p001',
     component: () => import('@/views/lmBlog/LM_P05_p001.vue'),
+    meta: { layout: 'LmBlogLayout' },
   },
 
   // lm-blog-personal
@@ -657,11 +678,13 @@ const routes = [
     path: '/lm-blog-personal/LM_P07_p001',
     name: '/lm-blog-personal/LM_P07_p001',
     component: () => import('@/views/lmBlogPersonal/LM_P07_p001.vue'),
+    meta: { layout: 'LmBlogPersonalLayout' },
   },
   {
     path: '/lm-blog-personal/LM_P07_p002',
     name: '/lm-blog-personal/LM_P07_p002',
     component: () => import('@/views/lmBlogPersonal/LM_P07_p002.vue'),
+    meta: { layout: 'LmBlogPersonalLayout' },
   },
 
   // online-branch

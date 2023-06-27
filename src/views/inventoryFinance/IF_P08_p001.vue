@@ -1,6 +1,8 @@
 <script>
 // IF_P08_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -67,6 +69,12 @@ export default {
     SelectTableRow,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       categoryError: false,
       brandError: false,
@@ -75,6 +83,14 @@ export default {
       engineTypeError: false,
       detailError: false,
       carNumberError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance001');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

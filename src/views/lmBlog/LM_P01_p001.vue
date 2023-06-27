@@ -1,6 +1,8 @@
 <script>
 // LM_P01_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -68,6 +70,12 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       name001Error: false,
       name002Error: false,
@@ -76,6 +84,14 @@ export default {
       phone001Error: false,
       phone002Error: false,
       sendError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'lmBlog004');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

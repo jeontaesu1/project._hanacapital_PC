@@ -1,6 +1,9 @@
 <script>
 // LM_P07_p002
+import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -21,6 +24,21 @@ export default {
     IconCall,
     IconSms,
     IconConsultation,
+  },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'lmBlogPersonal002');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
   },
 };
 </script>

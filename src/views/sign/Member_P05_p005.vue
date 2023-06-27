@@ -1,6 +1,7 @@
 <script>
 // Member_P05_p005
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -12,6 +13,7 @@ import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -25,6 +27,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회원관리',
+          },
+          {
+            text: '회원가입',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>홈페이지 회원가입이 완료되었습니다</IllustInfoTitle>

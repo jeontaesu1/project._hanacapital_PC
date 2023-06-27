@@ -1,5 +1,9 @@
 <script>
 // IF_P04_p003
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -24,6 +28,21 @@ export default {
     IllustInfoText,
     BasicHr,
     IconCustomer,
+  },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance004');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
   },
 };
 </script>

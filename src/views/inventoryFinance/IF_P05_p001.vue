@@ -1,6 +1,8 @@
 <script>
 // IF_P05_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
@@ -57,8 +59,22 @@ export default {
     PaginationNavNumber,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       carNumberError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance005');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

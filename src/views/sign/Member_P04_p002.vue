@@ -3,6 +3,7 @@
 import { reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -22,6 +23,7 @@ import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vu
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -53,6 +55,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회원관리',
+          },
+          {
+            text: '비밀번호 찾기',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>새로운 비밀번호를 입력해 주세요</PageTitle>
       <PageSubText>

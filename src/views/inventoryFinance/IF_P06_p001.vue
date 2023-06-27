@@ -1,6 +1,8 @@
 <script>
 // IF_P06_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -66,13 +68,26 @@ export default {
     PaginationNavEllipsis,
     PaginationNavNumber,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       carNumberError: false,
       dateError: false,
       dateMinDate: '2022.02.17',
       dateMaxDate: '2022.03.17',
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance006');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

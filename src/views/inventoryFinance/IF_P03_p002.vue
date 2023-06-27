@@ -2,7 +2,9 @@
 // IF_P03_p002
 // IF_P03_p004
 // IF_P03_p006
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -78,6 +80,12 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       accountError001: false,
       accountError002: false,
@@ -95,6 +103,14 @@ export default {
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance003');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
 
     return {
       state,

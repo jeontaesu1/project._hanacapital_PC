@@ -1,6 +1,8 @@
 <script>
 // LM_P01_p002
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -80,6 +82,12 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       nameError: false,
       idNumberError: false,
@@ -99,6 +107,14 @@ export default {
       buisnessLicenseError: false,
       buisnessDateError: false,
       loanAmountError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'lmBlog004');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

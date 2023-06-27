@@ -1,5 +1,9 @@
 <script>
 // IF_P02_p005
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -23,6 +27,21 @@ export default {
     IllustInfoText,
     BasicBox,
     RoundStatus,
+  },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance002');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
   },
 };
 </script>

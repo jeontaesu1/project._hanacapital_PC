@@ -1,6 +1,7 @@
 <script>
 // Member_P05_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -17,6 +18,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageHeadRow,
     PageTitle,
@@ -35,6 +37,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회원관리',
+          },
+          {
+            text: '회원가입',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">회원가입</PageTitle>

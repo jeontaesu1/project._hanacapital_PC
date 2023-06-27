@@ -1,0 +1,170 @@
+.top-bar {
+  display: block;
+
+  &__fix {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__fake {
+    display: block;
+  }
+}
+
+.header-wrap {
+  min-width: $page-min-width;
+  border-bottom: 1px solid $color-gray-20;
+  background-color: $color-white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: $contents-width-max;
+  margin: 0 auto -1px;
+
+  &__logo {
+    flex: none;
+    margin: 0 90px 0 0;
+    width: 163px;
+    height: 38px;
+
+    &-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.nav {
+  flex: 1;
+  min-width: 0;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+  }
+
+  &__item {
+    flex: none;
+
+    & + & {
+      margin-left: 38px;
+    }
+
+    &--active {
+      .nav__link {
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 3px;
+          background-color: $color-green-50;
+        }
+      }
+      .nav__text {
+        font-weight: 700;
+        color: $color-green-50;
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 16px;
+  }
+
+  &__text {
+    flex: none;
+    display: block;
+    @include font-size-head(20);
+    font-weight: 500;
+  }
+}
+
+.etc {
+  flex: none;
+  margin: 0 0 0 90px;
+  display: flex;
+  align-items: center;
+
+  &__list {
+    @include reset-list;
+    flex: none;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    flex: none;
+    position: relative;
+
+    & + & {
+      padding-left: 21px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 1px;
+        height: 12px;
+        margin-top: -6px;
+        background-color: $color-gray-30;
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__text {
+    display: block;
+    @include font-size-default(14);
+    font-weight: 500;
+    color: $color-gray-90;
+  }
+
+  &__menu {
+    flex: none;
+    margin-left: 40px;
+  }
+}
+
+.menu-button {
+  @include reset-button;
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

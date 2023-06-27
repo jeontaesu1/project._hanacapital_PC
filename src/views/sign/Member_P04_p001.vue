@@ -3,6 +3,7 @@
 import { reactive } from 'vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -19,6 +20,7 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -46,6 +48,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회원관리',
+          },
+          {
+            text: '비밀번호 찾기',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <!-- Case : 다음 버튼 누르기 전 노출 -->
       <PageTitle>아이디를 입력해 주세요</PageTitle>

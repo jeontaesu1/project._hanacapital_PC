@@ -1,8 +1,10 @@
 <script>
 // LM_P07_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -56,12 +58,26 @@ export default {
     IconLink,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       smsError: false,
       nameError001: false,
       nameError002: false,
       phoneError001: false,
       phoneError002: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'lmBlogPersonal001');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {

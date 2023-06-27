@@ -1,6 +1,8 @@
 <script>
 // IF_P02_p002
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -49,12 +51,26 @@ export default {
     ButtonListItem,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       amountError: false,
       termError: false,
       paymentDateError: false,
       accountError: false,
       carOwnerError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'inventoryFinance002');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
     });
 
     return {
