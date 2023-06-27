@@ -1,6 +1,5 @@
 <script>
-//AF_P07_p015
-
+// AF_P07_p015
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
