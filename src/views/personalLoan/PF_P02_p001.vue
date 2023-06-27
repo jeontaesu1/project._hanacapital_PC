@@ -245,11 +245,7 @@ export default {
                 </li>
               </ul>
               <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  $style['basic-list--small-margin'],
-                ]"
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
               >
                 <li
                   :class="[
