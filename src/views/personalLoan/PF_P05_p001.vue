@@ -101,7 +101,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList :wrap="true" align="center">
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton>한도조회</BasicButton>
           </ButtonListItem>
