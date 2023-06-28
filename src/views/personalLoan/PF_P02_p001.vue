@@ -120,13 +120,13 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="PF_P01_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab003">유의사항</NavTabButton>
+          <NavTabButton link="PF_P02_p001_tab001">상품안내</NavTabButton>
+          <NavTabButton link="PF_P02_p001_tab002">진행절차</NavTabButton>
+          <NavTabButton link="PF_P02_p001_tab003">유의사항</NavTabButton>
         </NavTab>
 
         <!-- 상품안내 -->
-        <UiTabPanel name="PF_P01_p001_tab001">
+        <UiTabPanel name="PF_P02_p001_tab001">
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -329,7 +329,6 @@ export default {
                 (법정최고금리 연 20% 이내)
               </p>
             </section>
-
             <section class="row-margin-contents">
               <h3
                 class="text-body-3 font-weight-medium color-gray row-margin-item"
@@ -355,7 +354,7 @@ export default {
         <!-- // 상품안내 -->
 
         <!-- 진행절차 -->
-        <UiTabPanel name="PF_P01_p001_tab002">
+        <UiTabPanel name="PF_P02_p001_tab002">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -435,7 +434,7 @@ export default {
         <!-- // 진행절차 -->
 
         <!-- 유의사항 -->
-        <UiTabPanel name="PF_P01_p001_tab003">
+        <UiTabPanel name="PF_P02_p001_tab003">
           <ul
             :class="[
               $style['basic-list'],

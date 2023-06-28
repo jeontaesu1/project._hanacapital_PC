@@ -120,13 +120,13 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="PF_P01_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab003">유의사항</NavTabButton>
+          <NavTabButton link="PF_P04_p001_tab001">상품안내</NavTabButton>
+          <NavTabButton link="PF_P04_p001_tab002">진행절차</NavTabButton>
+          <NavTabButton link="PF_P04_p001_tab003">유의사항</NavTabButton>
         </NavTab>
 
         <!-- 상품안내 -->
-        <UiTabPanel name="PF_P01_p001_tab001">
+        <UiTabPanel name="PF_P04_p001_tab001">
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -373,7 +373,7 @@ export default {
         <!-- // 상품안내 -->
 
         <!-- 진행절차 -->
-        <UiTabPanel name="PF_P01_p001_tab002">
+        <UiTabPanel name="PF_P04_p001_tab002">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -423,9 +423,10 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
-                      제출하신 정보를 바탕으로 최종심사 후 손님께
-                      <strong>결과 안내 및 온라인 저당설정을 진행</strong
-                      >합니다.
+                      제출하신 정보를 바탕으로<br />
+                      최종심사 후 손님께 <strong>결과</strong><br />
+                      <strong>안내 및 온라인 저당설정을</strong><br />
+                      <strong>진행</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -453,7 +454,7 @@ export default {
         <!-- // 진행절차 -->
 
         <!-- 유의사항 -->
-        <UiTabPanel name="PF_P01_p001_tab003">
+        <UiTabPanel name="PF_P04_p001_tab003">
           <ul
             :class="[
               $style['basic-list'],
@@ -568,8 +569,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-                적용됩니다.
+                담보 물건, 담보종류 등에 따라 대출조건이 차등 적용되며, 담보물이
+                부적합할 경우 대출이 제한될 수 있습니다.
               </div>
             </li>
           </ul>

@@ -115,13 +115,13 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="PF_P01_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab003">유의사항</NavTabButton>
+          <NavTabButton link="PF_P05_p001_tab001">상품안내</NavTabButton>
+          <NavTabButton link="PF_P05_p001_tab002">진행절차</NavTabButton>
+          <NavTabButton link="PF_P05_p001_tab003">유의사항</NavTabButton>
         </NavTab>
 
         <!-- 상품안내 -->
-        <UiTabPanel name="PF_P01_p001_tab001">
+        <UiTabPanel name="PF_P05_p001_tab001">
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -217,7 +217,7 @@ export default {
         <!-- // 상품안내 -->
 
         <!-- 진행절차 -->
-        <UiTabPanel name="PF_P01_p001_tab002">
+        <UiTabPanel name="PF_P05_p001_tab002">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -253,7 +253,7 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 3</div>
                     <p :class="$style['step__text']">
-                      입력하신 <strong>정보 및 약정 확인 전화</strong>를
+                      입력하신 <strong>정보 및 약정 확인 전화</strong>를<br />
                       드립니다.
                     </p>
                   </div>
@@ -281,7 +281,7 @@ export default {
         <!-- // 진행절차 -->
 
         <!-- 유의사항 -->
-        <UiTabPanel name="PF_P01_p001_tab003">
+        <UiTabPanel name="PF_P05_p001_tab003">
           <ul
             :class="[
               $style['basic-list'],
