@@ -109,7 +109,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList :wrap="true" align="center">
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton>상담신청</BasicButton>
           </ButtonListItem>
@@ -248,7 +248,6 @@ export default {
               <p class="text-title-2">
                 대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
               </p>
-
               <ul
                 :class="[
                   $style['basic-list'],

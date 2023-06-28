@@ -179,7 +179,6 @@ export default {
               >
                 중도상환수수료
               </h3>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -217,7 +216,6 @@ export default {
                   </div>
                 </li>
               </ul>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -446,7 +444,6 @@ export default {
               >
                 구비서류
               </h3>
-
               <div :class="$style['contents-list']">
                 <ol
                   :class="[

@@ -3043,8 +3043,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P03_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -3065,8 +3065,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P04_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -3076,8 +3076,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P05_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
@@ -3087,8 +3087,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P06_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {

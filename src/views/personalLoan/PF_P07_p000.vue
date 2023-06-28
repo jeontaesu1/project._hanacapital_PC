@@ -21,6 +21,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
+import IconCompleted from '@/assets/images/icon/completed.svg?component';
 
 export default {
   components: {
@@ -44,6 +45,7 @@ export default {
     IconDeposit,
     IconCalculate,
     Icon1QCapital,
+    IconCompleted,
   },
 };
 </script>
@@ -103,7 +105,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList :wrap="true" :col="5" align="center">
+        <ButtonList :wrap="true" :col="3" align="center">
           <ButtonListItem>
             <BasicButton theme="tertiary">대출신청</BasicButton>
           </ButtonListItem>
@@ -338,7 +340,6 @@ export default {
               >
                 스탁론 위험성 안내
               </h3>
-
               <div :class="$style['contents-list']">
                 <ol
                   :class="[
@@ -405,7 +406,6 @@ export default {
               >
                 추가대출안내
               </h3>
-
               <div :class="$style['contents-list']">
                 <ol
                   :class="[
@@ -503,7 +503,6 @@ export default {
               >
                 이용가이드
               </h3>
-
               <div :class="$style['basic-table']">
                 <table>
                   <colgroup>
@@ -542,7 +541,6 @@ export default {
                   </tbody>
                 </table>
               </div>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -644,7 +642,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconSend />
+                    <IconCompleted />
                   </div>
                 </div>
               </li>
