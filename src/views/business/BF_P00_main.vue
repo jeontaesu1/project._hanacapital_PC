@@ -7,7 +7,9 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconMedical from '@/assets/images/icon/medical.svg?component';
+import IconGeHealthcare from '@/assets/images/icon/ge-healthcare.svg?component';
+import IconIndustrial from '@/assets/images/icon/industrial.svg?component';
 
 export default {
   components: {
@@ -17,7 +19,9 @@ export default {
     PageTitle,
     PageMainText,
     TextButton,
-    ImgMainSample,
+    IconMedical,
+    IconGeHealthcare,
+    IconIndustrial,
   },
 };
 </script>
@@ -42,7 +46,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconMedical />
             </div>
             <h3 :class="$style['product-list__title']">의료기할부</h3>
             <p :class="$style['product-list__text']">
@@ -66,7 +70,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconGeHealthcare />
             </div>
             <h3 :class="$style['product-list__title']">의료기리스</h3>
             <p :class="$style['product-list__text']">
@@ -90,7 +94,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconIndustrial />
             </div>
             <h3 :class="$style['product-list__title']">산업재리스</h3>
             <p :class="$style['product-list__text']">

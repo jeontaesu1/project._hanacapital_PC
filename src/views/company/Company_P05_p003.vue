@@ -8,7 +8,18 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconPersonalTermsGray from '@/assets/images/icon/personal-terms-gray.svg?component';
+import IconTrophy from '@/assets/images/icon/trophy.svg?component';
+import IconHrPoint from '@/assets/images/icon/hr-point.svg?component';
+import IconGiftBox from '@/assets/images/icon/gift-box.svg?component';
+import IconSyringe from '@/assets/images/icon/syringe.svg?component';
+import IconEducation from '@/assets/images/icon/education.svg?component';
+import IconVacation from '@/assets/images/icon/vacation.svg?component';
+import IconCard from '@/assets/images/icon/card.svg?component';
+import IconStudy from '@/assets/images/icon/study.svg?component';
+import IconHealth from '@/assets/images/icon/health.svg?component';
+import IconInsurance from '@/assets/images/icon/insurance.svg?component';
+import IconVacationSpot from '@/assets/images/icon/vacation-spot.svg?component';
 
 export default {
   components: {
@@ -19,8 +30,18 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
-
-    ImgMainSample,
+    IconPersonalTermsGray,
+    IconTrophy,
+    IconHrPoint,
+    IconGiftBox,
+    IconSyringe,
+    IconEducation,
+    IconVacation,
+    IconCard,
+    IconStudy,
+    IconHealth,
+    IconInsurance,
+    IconVacationSpot,
   },
 };
 </script>
@@ -52,7 +73,7 @@ export default {
                     'row-margin-contents-small',
                   ]"
                 >
-                  <ImgMainSample />
+                  <IconPersonalTermsGray />
                 </div>
                 <h3 class="text-title-2">평가제도</h3>
                 <p class="text-body-3 color-gray-tertiary row-margin-item">
@@ -78,7 +99,7 @@ export default {
                     'row-margin-contents-small',
                   ]"
                 >
-                  <ImgMainSample />
+                  <IconTrophy />
                 </div>
                 <h3 class="text-title-2">승진제도</h3>
                 <p class="text-body-3 color-gray-tertiary row-margin-item">
@@ -104,7 +125,7 @@ export default {
                     'row-margin-contents-small',
                   ]"
                 >
-                  <ImgMainSample />
+                  <IconHrPoint />
                 </div>
                 <h3 class="text-title-2">HR포인트제도</h3>
                 <p class="text-body-3 color-gray-tertiary row-margin-item">
@@ -130,12 +151,18 @@ export default {
             있도록 지원하고 있습니다.
           </p>
         </div>
-        <div :class="[$style['icon-list'], $style['icon-list--wrap']]">
+        <div
+          :class="[
+            $style['icon-list'],
+            $style['icon-list--bg-none'],
+            $style['icon-list--wrap'],
+          ]"
+        >
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconGiftBox />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -153,7 +180,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconSyringe />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']">의료비 지원</span>
@@ -170,7 +197,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconEducation />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -187,7 +214,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconVacation />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -205,7 +232,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconCard />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']">복지카드 지급</span>
@@ -219,7 +246,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconStudy />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -235,7 +262,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconHealth />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -254,7 +281,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconInsurance />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"
@@ -272,7 +299,7 @@ export default {
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
                 <span :class="$style['icon-list__icon']">
-                  <ImgMainSample />
+                  <IconVacationSpot />
                 </span>
                 <span :class="$style['icon-list__content']">
                   <span :class="$style['icon-list__title']"

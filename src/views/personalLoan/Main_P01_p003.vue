@@ -6,7 +6,14 @@ import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconPig from '@/assets/images/icon/pig.svg?component';
+import IconBuilding from '@/assets/images/icon/building.svg?component';
+import IconProperty from '@/assets/images/icon/property.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconVip from '@/assets/images/icon/vip.svg?component';
+import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconGoodsLoan from '@/assets/images/icon/goods-loan.svg?component';
+import IconHome from '@/assets/images/icon/home.svg?component';
 
 export default {
   components: {
@@ -15,7 +22,14 @@ export default {
     PageSubText,
     PageTitle,
     TextButton,
-    ImgMainSample,
+    IconPig,
+    IconBuilding,
+    IconProperty,
+    IconCarSecurity,
+    IconVip,
+    IconInterestRate,
+    IconGoodsLoan,
+    IconHome,
   },
 };
 </script>
@@ -35,7 +49,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconPig />
             </div>
             <h3 :class="$style['product-list__title']">e하나신용대출</h3>
             <p :class="$style['product-list__text']">
@@ -59,7 +73,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconBuilding />
             </div>
             <h3 :class="$style['product-list__title']">행복아파트론</h3>
             <p :class="$style['product-list__text']">
@@ -83,7 +97,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconProperty />
             </div>
             <h3 :class="$style['product-list__title']">아파트론</h3>
             <p :class="$style['product-list__text']">
@@ -107,7 +121,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarSecurity />
             </div>
             <h3 :class="$style['product-list__title']">원큐자동차담보대출</h3>
             <p :class="$style['product-list__text']">
@@ -131,7 +145,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconVip />
             </div>
             <h3 :class="$style['product-list__title']">우수고객추가대출</h3>
             <p :class="$style['product-list__text']">
@@ -155,7 +169,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconInterestRate />
             </div>
             <h3 :class="$style['product-list__title']">스탁론</h3>
             <p :class="$style['product-list__text']">
@@ -179,7 +193,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconGoodsLoan />
             </div>
             <h3 :class="$style['product-list__title']">내구소비재할부</h3>
             <p :class="$style['product-list__text']">
@@ -203,7 +217,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconHome />
             </div>
             <h3 :class="$style['product-list__title']">e임대주택론</h3>
             <p :class="$style['product-list__text']">

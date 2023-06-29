@@ -4,20 +4,20 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 
-import IconPhone from '@/assets/images/icon/phone.svg?component';
-import IconSend from '@/assets/images/icon/send.svg?component';
-import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
-import IconDeposit from '@/assets/images/icon/deposit.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconCompleted from '@/assets/images/icon/completed.svg?component';
+import IconConsulting from '@/assets/images/icon/consulting.svg?component';
+import IconHealthScreenings from '@/assets/images/icon/health-screenings.svg?component';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
-    IconPhone,
-    IconSend,
-    IconPersonalTerms,
-    IconDeposit,
+    IconContract,
+    IconCompleted,
+    IconConsulting,
+    IconHealthScreenings,
   },
 };
 </script>
@@ -74,7 +74,7 @@ export default {
               </ul>
             </div>
             <div :class="$style['step__icon']">
-              <IconPhone />
+              <IconContract />
             </div>
           </div>
         </li>
@@ -110,7 +110,7 @@ export default {
               </ul>
             </div>
             <div :class="$style['step__icon']">
-              <IconSend />
+              <IconCompleted />
             </div>
           </div>
         </li>
@@ -159,7 +159,7 @@ export default {
               </ul>
             </div>
             <div :class="$style['step__icon']">
-              <IconPersonalTerms />
+              <IconConsulting />
             </div>
           </div>
         </li>
@@ -212,7 +212,7 @@ export default {
               </ul>
             </div>
             <div :class="$style['step__icon']">
-              <IconDeposit />
+              <IconHealthScreenings />
             </div>
           </div>
         </li>

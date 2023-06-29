@@ -24,7 +24,7 @@ export default {
 <template>
   <PageContents>
     <IllustInfo>
-      <IllustObject type="complete" />
+      <IllustObject type="fail" />
       <IllustInfoTitle>
         아이디를 찾을 수 없습니다<br />
         회원가입을 해주세요

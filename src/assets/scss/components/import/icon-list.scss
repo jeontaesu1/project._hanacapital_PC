@@ -122,4 +122,10 @@ div.icon-list__block {
       }
     }
   }
+
+  &--bg-none {
+    .icon-list__icon {
+      background-color: transparent;
+    }
+  }
 }

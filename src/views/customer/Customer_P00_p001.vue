@@ -9,7 +9,15 @@ import EventBanner from '@/components/ui/banner/EventBanner.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
+import IconArs from '@/assets/images/icon/ars.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
+import IconContractGray from '@/assets/images/icon/contract-gray.svg?component';
+import IconFaqBlue from '@/assets/images/icon/faq-blue.svg?component';
+import IconLocation from '@/assets/images/icon/location.svg?component';
+import IconCertificationGray from '@/assets/images/icon/certification-gray.svg?component';
+import IconLock from '@/assets/images/icon/lock.svg?component';
+import IconPrivacyGuide from '@/assets/images/icon/privacy-guide.svg?component';
+import IconWarning from '@/assets/images/icon/warning.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconDownload from '@/assets/images/common/download.svg?component';
 
@@ -22,7 +30,15 @@ export default {
     EventBanner,
     TextButton,
     RoundStatus,
+    IconArs,
     IconCustomer,
+    IconContractGray,
+    IconFaqBlue,
+    IconLocation,
+    IconCertificationGray,
+    IconLock,
+    IconPrivacyGuide,
+    IconWarning,
     IconLink,
     IconDownload,
   },
@@ -43,7 +59,7 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"><IconArs /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']"
                   >고객센터 ARS 안내</span
@@ -67,7 +83,9 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"
+                ><IconContractGray
+              /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']">전자민원접수</span>
                 <span :class="$style['icon-list__text']">
@@ -94,7 +112,7 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"><IconFaqBlue /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']">FAQ</span>
                 <span :class="$style['icon-list__text']">
@@ -105,7 +123,7 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"><IconLocation /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']">지점 안내</span>
                 <span :class="$style['icon-list__text']">
@@ -116,7 +134,9 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"
+                ><IconCertificationGray
+              /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__title']">인증센터</span>
                 <span :class="$style['icon-list__text']">
@@ -168,7 +188,7 @@ export default {
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
-                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list__icon']"><IconLock /></div>
                 <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">보안센터</div>
                   <ul class="reset-list row-margin-item-medium">
@@ -208,7 +228,9 @@ export default {
             </li>
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
-                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list__icon']">
+                  <IconPrivacyGuide />
+                </div>
                 <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">
                     개인정보이용 현황
@@ -273,7 +295,7 @@ export default {
           <ul :class="$style['icon-list__list']">
             <li :class="$style['icon-list__item']">
               <div :class="$style['icon-list__block']">
-                <div :class="$style['icon-list__icon']"><IconCustomer /></div>
+                <div :class="$style['icon-list__icon']"><IconWarning /></div>
                 <div :class="$style['icon-list__content']">
                   <div :class="$style['icon-list__title']">금융소비자보호</div>
                   <div
