@@ -2950,8 +2950,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/auto/AF_P01_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.30',
         log: [],
       },
       {
