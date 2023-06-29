@@ -193,7 +193,6 @@ export default {
                 저당설정
               </h3>
               <p class="text-title-2">개인신용평점에 따라 차등 적용</p>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -675,13 +674,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-722 (2022.03.14~2023.03.13)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제2022-L1h-01783호 (2022.03.14~2023.03.13)
             </div>
           </li>
         </ul>

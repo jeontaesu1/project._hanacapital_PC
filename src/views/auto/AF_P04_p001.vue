@@ -47,9 +47,10 @@ export default {
     <div :class="$style['product-top']">
       <div :class="$style['product-top__contents']">
         <div :class="$style['product-top__head']">
-          <h2 :class="$style['product-top__sub-text']">오토할부</h2>
+          <h2 :class="$style['product-top__sub-text']">오토론</h2>
           <p :class="$style['product-top__main-text']">
-            판매사와 제휴, 합리적인 할부
+            차량 대금은 금융사에서 지급,<br />
+            손님은 해당 금액을 분할 납부하는 금융 서비스
           </p>
         </div>
 
@@ -204,7 +205,6 @@ export default {
                 저당설정
               </h3>
               <p class="text-title-2">개인신용평점에 따라 차등 적용</p>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -274,7 +274,6 @@ export default {
                   </div>
                 </li>
               </ul>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -688,13 +687,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-722 (2022.11.04~2023.07.14)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제2022-C1h-06012호 (2022.07.15~2023.07.14)
             </div>
           </li>
         </ul>

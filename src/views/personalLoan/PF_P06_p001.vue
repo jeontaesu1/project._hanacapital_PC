@@ -214,7 +214,6 @@ export default {
               <p class="text-title-2">
                 대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
               </p>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -248,6 +247,14 @@ export default {
                     잔존기간/(대출기간 - 30일)
                   </div>
                 </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -286,7 +293,6 @@ export default {
               <p class="text-body-3 color-gray row-margin-small">
                 (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
               </p>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -334,7 +340,6 @@ export default {
               >
                 제출서류
               </h3>
-
               <div :class="$style['contents-list']">
                 <ol
                   :class="[
@@ -429,6 +434,16 @@ export default {
                 </ol>
               </div>
             </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
+                채권보전
+              </h3>
+              <p class="text-title-2">
+                임대보증금 반환 채권에 대한 채원양수도 계약
+              </p>
+            </section>
           </div>
         </UiTabPanel>
         <!-- // 상품안내 -->
@@ -442,8 +457,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
-                      하나캐피탈 홈페이지 또는 당사와 협약된 대출모집법인을
-                      통하여 <strong>대출상담을</strong><br />
+                      하나캐피탈 홈페이지 또는<br />
+                      당사와 협약된 대출모집법인을 통하여
+                      <strong>대출상담을</strong><br />
                       <strong>신청</strong>합니다.
                     </p>
                   </div>
@@ -486,8 +502,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       신청하신 대출건의<br />
-                      서류심사 후 <strong>최종 결과를 통보</strong>하고
-                      <strong>채권양도를</strong><br />
+                      서류심사 후 <strong>최종 결과를</strong><br />
+                      <strong>통보</strong>하고 <strong>채권양도를</strong
+                      ><br />
                       <strong>통지</strong>합니다.
                     </p>
                   </div>
@@ -657,13 +674,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-1571 (2022.09.01 ~ 2023.08.31)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제 2022-L1h-07708호 (2022.09.01 ~ 2023.08.31)
             </div>
           </li>
         </ul>

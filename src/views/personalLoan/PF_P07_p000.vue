@@ -105,7 +105,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList :wrap="true" :col="3" align="center">
+        <ButtonList>
           <ButtonListItem>
             <BasicButton theme="tertiary">대출신청</BasicButton>
           </ButtonListItem>
@@ -546,6 +546,7 @@ export default {
                   $style['basic-list'],
                   $style['basic-list--regular'],
                   'row-margin-item-group',
+                  'row-margin-bottom-none',
                 ]"
               >
                 <li
@@ -565,6 +566,14 @@ export default {
                     주셔야 합니다.
                   </div>
                 </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -807,13 +816,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-133 (2022.02.25 ~ 2023.02.24)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제 2022-L1h-01579호 (2022.02.28 ~ 2023.02.27)
             </div>
           </li>
         </ul>

@@ -17,6 +17,7 @@ import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
@@ -41,6 +42,7 @@ export default {
     IconSend,
     IconDeposit,
     IconCalculate,
+    IconConsultation,
     Icon1QCapital,
     IconContract,
     IconConsulting,
@@ -624,13 +626,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-722 (2022.05.01~2023.04.30)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제2022-L1h-03103호 (2022.05.01~2023.04.30)
             </div>
           </li>
         </ul>
@@ -659,6 +661,17 @@ export default {
                 <span :class="$style['icon-list__title']">대출계산기</span>
               </span>
             </button>
+          </li>
+          <li :class="$style['icon-list__item']">
+            <RouterLink to="" :class="$style['icon-list__block']">
+              <span :class="$style['icon-list__icon']">
+                <IconConsultation />
+              </span>
+              <span :class="$style['icon-list__content']">
+                <span :class="$style['icon-list__text']">상품 신청 안내</span>
+                <span :class="$style['icon-list__title']">전화 상담 신청</span>
+              </span>
+            </RouterLink>
           </li>
           <li :class="$style['icon-list__item']">
             <a href="" :class="$style['icon-list__block']">

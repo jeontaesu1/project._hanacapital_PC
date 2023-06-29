@@ -146,30 +146,27 @@ export default {
                         개인사업자
                       </div>
                     </div>
-                    <div :class="[$style['product-info__text'], 'inline-wrap']">
-                      <ul
+                    <ul
+                      :class="[
+                        $style['basic-list'],
+                        $style['basic-list--regular'],
+                      ]"
+                    >
+                      <li
                         :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
+                          $style['basic-list__item'],
+                          'text-title-1',
+                          'font-weight-medium',
+                          'color-black',
                         ]"
                       >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-title-1',
-                            'font-weight-medium',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            실제 사업영위, 담보주택 소유권 이전등기일로부터
-                            3개월 경과 확인 / 주택임대사업자 · 주택매매사업자
-                            취급불가
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                        <div :class="$style['basic-list__symbol']">-</div>
+                        <div :class="$style['basic-list__content']">
+                          실제 사업영위, 담보주택 소유권 이전등기일로부터 3개월
+                          경과 확인 / 주택임대사업자 · 주택매매사업자 취급불가
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
@@ -205,9 +202,11 @@ export default {
                         (2021.11월 기준, 기준금리에 따라 변동 가능)
                       </div>
                     </div>
-                    <div :class="[$style['product-info__text'], 'inline-wrap']">
-                      변동금리 : 매 6개월마다 변동 / 기준금리 : 상담일 기준
-                      금융채AA- 6개월 만기 평균금리
+                    <div class="inline-wrap">
+                      <div :class="$style['product-info__text']">
+                        변동금리 : 매 6개월마다 변동 / 기준금리 : 상담일 기준
+                        금융채AA- 6개월 만기 평균금리
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -281,6 +280,14 @@ export default {
                     잔존기간/(대출기간 - 30일)
                   </div>
                 </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -362,6 +369,14 @@ export default {
                     대출금액 1억원 초과 10억원 이하 : 15만원
                   </div>
                 </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
                 <li
                   :class="[
                     $style['basic-list__item'],
@@ -514,8 +529,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
-                      하나캐피탈 홈페이지 또는 당사와 협약된 대출모집법인을
-                      통하여 <strong>대출상담을</strong><br />
+                      하나캐피탈 홈페이지 또는<br />
+                      당사와 협약된 대출모집법인을 통하여
+                      <strong>대출상담을</strong><br />
                       <strong>신청합니다.</strong>
                     </p>
                   </div>
@@ -558,8 +574,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       신청하신 대출건의<br />
-                      서류심사 후 <strong>최종 결과를 통보</strong>하고
-                      <strong>채권양도를</strong><br />
+                      서류심사 후 <strong>최종 결과를</strong><br />
+                      <strong>통보</strong>하고 <strong>채권양도를</strong
+                      ><br />
                       <strong>통지</strong>합니다.
                     </p>
                   </div>
@@ -743,13 +760,14 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-1596 (2022.09.13 ~ 2023.09.12)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제 2022 - L1h – 08093호 (2022.09.13 ~
+              2023.09.12)
             </div>
           </li>
         </ul>

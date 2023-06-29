@@ -712,8 +712,10 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       물품 구입대금을
-                      <strong>고객님 대신 일시에 지급</strong>하고, 고객님
-                      명의로 <strong>할부금융이 시작</strong>됩니다.
+                      <strong>고객님 대신 일시에</strong><br />
+                      <strong>지급</strong>하고, 고객님 명의로
+                      <strong>할부금융이</strong><br />
+                      <strong>시작</strong>됩니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -854,13 +856,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1651(2022.10.17~2023.10.16)
+              준법심의필 22-1138 (2022.05.01 ~ 2023.04.30)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08940호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제 2022-C1h-03280호 (2022.05.01 ~ 2023.04.30)
             </div>
           </li>
         </ul>
