@@ -59,7 +59,10 @@ export default {
 
       <div :class="$style['ceo-layout__item']">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
+          <img
+            src="@/assets/images/contents/ceo-introduction.png"
+            alt="샘플 이미지"
+          />
         </div>
       </div>
     </div>

@@ -353,7 +353,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconContract />
+                    <IconPersonalTerms />
                   </div>
                 </div>
               </li>
@@ -367,7 +367,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconPersonalTerms />
+                    <IconContract />
                   </div>
                 </div>
               </li>

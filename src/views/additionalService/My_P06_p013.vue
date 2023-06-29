@@ -35,7 +35,7 @@ export default {
       >
     </PageHead>
 
-    <IllustObject type="certification" />
+    <IllustObject type="contract" />
 
     <BasicBox>
       <div :class="$style['icon-box']">

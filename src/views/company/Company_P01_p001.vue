@@ -29,7 +29,7 @@ export default {
 
     <div :class="$style['image-view']">
       <img
-        src="@/assets/images/_dummy/box-detail-large-short.png"
+        src="@/assets/images/contents/company-introduction.png"
         alt="샘플 이미지"
       />
     </div>
