@@ -51,13 +51,13 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: flex-start;
-    margin: -16px 0 0 -16px;
+    margin: -20px 0 0 -20px;
   }
 
   &__item {
     flex: none;
     width: 33.333333%;
-    padding: 16px 0 0 16px;
+    padding: 20px 0 0 20px;
     box-sizing: border-box;
   }
 }
