@@ -64,7 +64,7 @@ export default {
         </div>
 
         <div :class="$style['product-top__image']">
-          <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+          <img src="@/assets/images/contents/img-direct-autolease.png" alt="" />
         </div>
 
         <div
@@ -137,7 +137,10 @@ export default {
       <div :class="[$style['product-benefit'], 'row-margin-block-group']">
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            <img
+              src="@/assets/images/contents/img-zero-commission-p.png"
+              alt=""
+            />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">
@@ -151,7 +154,7 @@ export default {
         </section>
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            <img src="@/assets/images/contents/img-simple-pay-p.png" alt="" />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">
