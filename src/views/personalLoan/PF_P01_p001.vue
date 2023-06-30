@@ -134,7 +134,7 @@ export default {
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
             <img
-              src="@/assets/images/contents/img-zero-commission.png"
+              src="@/assets/images/contents/img-zero-commission-p.png"
               alt=""
             />
           </div>
@@ -151,7 +151,7 @@ export default {
         </section>
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-120months.png" alt="" />
+            <img src="@/assets/images/contents/img-120months-p.png" alt="" />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">
