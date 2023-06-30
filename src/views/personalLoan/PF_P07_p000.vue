@@ -62,7 +62,7 @@ export default {
         </div>
 
         <div :class="$style['product-top__image']">
-          <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+          <img src="@/assets/images/contents/img-stock-loan.png" alt="" />
         </div>
 
         <div
@@ -105,7 +105,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList>
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton theme="tertiary">대출신청</BasicButton>
           </ButtonListItem>

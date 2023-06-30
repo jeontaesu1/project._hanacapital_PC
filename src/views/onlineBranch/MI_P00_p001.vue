@@ -23,7 +23,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
 
-import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
+import IconBill from '@/assets/images/icon/bill.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
@@ -49,7 +49,7 @@ export default {
     RoundStatus,
     TextButton,
     BasicBanner,
-    IconCustomer,
+    IconBill,
     IconLink,
   },
 };
@@ -136,7 +136,7 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']"><IconCustomer /></span>
+              <span :class="$style['icon-list__icon']"><IconBill /></span>
               <span :class="$style['icon-list__content']">
                 <span :class="$style['icon-list__text']">
                   결제예정금액의 자세한 내역이 궁금하시다면

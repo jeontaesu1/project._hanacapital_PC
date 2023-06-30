@@ -1,0 +1,31 @@
+@import '@/assets/scss/components/import/product-top.scss';
+@import '@/assets/scss/components/import/product-detail.scss';
+@import '@/assets/scss/components/import/product-benefit.scss';
+@import '@/assets/scss/components/import/product-info.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/step.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/basic-table.scss';
+
+.vehicle-information {
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: -20px 0 0 -20px;
+  }
+
+  &__item {
+    flex: none;
+    width: 33.333333%;
+    padding: 20px 0 0 20px;
+    box-sizing: border-box;
+  }
+}

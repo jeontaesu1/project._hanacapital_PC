@@ -6,7 +6,11 @@ import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+import IconCarGreen from '@/assets/images/icon/car-green.svg?component';
+import IconCarRent from '@/assets/images/icon/car-rent.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconCarUsed from '@/assets/images/icon/car-used.svg?component';
+import IconCarPay from '@/assets/images/icon/car-pay.svg?component';
 
 export default {
   components: {
@@ -15,7 +19,11 @@ export default {
     PageSubText,
     PageTitle,
     TextButton,
-    ImgMainSample,
+    IconCarGreen,
+    IconCarRent,
+    IconCarSecurity,
+    IconCarUsed,
+    IconCarPay,
   },
 };
 </script>
@@ -35,7 +43,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarGreen />
             </div>
             <h3 :class="$style['product-list__title']">오토론</h3>
             <p :class="$style['product-list__text']">
@@ -59,7 +67,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarRent />
             </div>
             <h3 :class="$style['product-list__title']">
               다이렉트<br />
@@ -86,7 +94,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarSecurity />
             </div>
             <h3 :class="$style['product-list__title']">
               다이렉트<br />
@@ -113,7 +121,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarUsed />
             </div>
             <h3 :class="$style['product-list__title']">중고차 오토론</h3>
             <p :class="$style['product-list__text']">
@@ -137,7 +145,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <ImgMainSample />
+              <IconCarPay />
             </div>
             <h3 :class="$style['product-list__title']">오토할부</h3>
             <p :class="$style['product-list__text']">
