@@ -55,7 +55,7 @@ export default {
         </div>
 
         <div :class="$style['product-top__image']">
-          <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+          <img src="@/assets/images/contents/img-auto-loan.png" alt="" />
         </div>
 
         <div
