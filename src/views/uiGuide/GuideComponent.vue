@@ -5605,6 +5605,7 @@ export default {
         <BasicBox theme="tertiary">// contnets</BasicBox>
         <BasicBox theme="quaternary">// contnets</BasicBox>
         <BasicBox theme="quinary">// contnets</BasicBox>
+        <BasicBox theme="senary">// contnets</BasicBox>
       </div>
     </section>
 
