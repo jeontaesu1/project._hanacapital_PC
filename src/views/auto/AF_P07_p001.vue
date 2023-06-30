@@ -127,12 +127,12 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="PF_P01_p001_tab001">리스승계</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab002">렌트승계</NavTabButton>
+          <NavTabButton link="AF_P07_p001_tab001">리스승계</NavTabButton>
+          <NavTabButton link="AF_P07_p001_tab002">렌트승계</NavTabButton>
         </NavTab>
 
         <!-- 리스승계 -->
-        <UiTabPanel name="PF_P01_p001_tab001">
+        <UiTabPanel name="AF_P07_p001_tab001">
           <section class="row-margin-block">
             <h3 class="text-big-3 font-weight-medium row-margin-item-group">
               리스승계란?
@@ -184,19 +184,19 @@ export default {
               :useUiTab="true"
               :classNames="{ wrap: 'row-margin-block-small' }"
             >
-              <NavTabButton link="PF_P01_p001_tab001_001"
+              <NavTabButton link="AF_P07_p001_tab001_001"
                 >상품안내</NavTabButton
               >
-              <NavTabButton link="PF_P01_p001_tab001_002"
+              <NavTabButton link="AF_P07_p001_tab001_002"
                 >진행절차</NavTabButton
               >
-              <NavTabButton link="PF_P01_p001_tab001_003"
+              <NavTabButton link="AF_P07_p001_tab001_003"
                 >유의사항</NavTabButton
               >
             </NavTab>
 
             <!-- 상품안내 -->
-            <UiTabPanel name="PF_P01_p001_tab001_001">
+            <UiTabPanel name="AF_P07_p001_tab001_001">
               <div :class="$style['product-info']">
                 <ul :class="$style['product-info__list']">
                   <li :class="$style['product-info__item']">
@@ -491,7 +491,7 @@ export default {
             <!-- // 상품안내 -->
 
             <!-- 진행절차 -->
-            <UiTabPanel name="PF_P01_p001_tab001_002">
+            <UiTabPanel name="AF_P07_p001_tab001_002">
               <div :class="[$style['step'], $style['step--horizontal']]">
                 <ul :class="$style['step__list']">
                   <li :class="$style['step__item']">
@@ -616,7 +616,7 @@ export default {
             <!-- // 진행절차 -->
 
             <!-- 유의사항 -->
-            <UiTabPanel name="PF_P01_p001_tab001_003">
+            <UiTabPanel name="AF_P07_p001_tab001_003">
               <ul
                 :class="[
                   $style['basic-list'],
@@ -758,7 +758,7 @@ export default {
         <!-- // 리스승계 -->
 
         <!-- 렌트승계 -->
-        <UiTabPanel name="PF_P01_p001_tab002">
+        <UiTabPanel name="AF_P07_p001_tab002">
           <section class="row-margin-block">
             <h3 class="text-big-3 font-weight-medium row-margin-item-group">
               렌트승계란?
@@ -810,19 +810,19 @@ export default {
               :useUiTab="true"
               :classNames="{ wrap: 'row-margin-block-small' }"
             >
-              <NavTabButton link="PF_P01_p001_tab002_001"
+              <NavTabButton link="AF_P07_p001_tab002_001"
                 >상품안내</NavTabButton
               >
-              <NavTabButton link="PF_P01_p001_tab002_002"
+              <NavTabButton link="AF_P07_p001_tab002_002"
                 >진행절차</NavTabButton
               >
-              <NavTabButton link="PF_P01_p001_tab002_003"
+              <NavTabButton link="AF_P07_p001_tab002_003"
                 >유의사항</NavTabButton
               >
             </NavTab>
 
             <!-- 상품안내 -->
-            <UiTabPanel name="PF_P01_p001_tab002_001">
+            <UiTabPanel name="AF_P07_p001_tab002_001">
               <div :class="$style['product-info']">
                 <ul :class="$style['product-info__list']">
                   <li :class="$style['product-info__item']">
@@ -1040,7 +1040,7 @@ export default {
             <!-- // 상품안내 -->
 
             <!-- 진행절차 -->
-            <UiTabPanel name="PF_P01_p001_tab002_002">
+            <UiTabPanel name="AF_P07_p001_tab002_002">
               <div :class="[$style['step'], $style['step--horizontal']]">
                 <ul :class="$style['step__list']">
                   <li :class="$style['step__item']">
@@ -1165,7 +1165,7 @@ export default {
             <!-- // 진행절차 -->
 
             <!-- 유의사항 -->
-            <UiTabPanel name="PF_P01_p001_tab002_003">
+            <UiTabPanel name="AF_P07_p001_tab002_003">
               <ul
                 :class="[
                   $style['basic-list'],
