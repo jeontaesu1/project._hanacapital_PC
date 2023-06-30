@@ -28,10 +28,7 @@ export default {
     </PageHead>
 
     <div :class="$style['image-view']">
-      <img
-        src="@/assets/images/contents/company-introduction.png"
-        alt="샘플 이미지"
-      />
+      <img src="@/assets/images/contents/company-introduction.png" alt="" />
     </div>
 
     <div :class="$style['logs-wrap']">
