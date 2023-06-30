@@ -119,7 +119,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList>
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton theme="quaternary">모바일 진행</BasicButton>
           </ButtonListItem>

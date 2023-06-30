@@ -1,6 +1,5 @@
 <script>
 // AF_P01_p001
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -13,13 +12,13 @@ import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
-import IconDate from '@/assets/images/icon/date.svg?component';
-import IconComplete from '@/assets/images/icon/complete.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
+import IconCar from '@/assets/images/icon/car.svg?component';
+import IconDate from '@/assets/images/icon/date.svg?component';
+import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
 import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
 
 export default {
@@ -35,13 +34,13 @@ export default {
     NavTabButton,
     BasicHr,
     CarThumb,
-    IconDate,
-    IconComplete,
     IconPerson,
+    IconCar,
+    IconDate,
+    IconCheckDocument,
     IconConsulting,
     IconSend,
     IconContract,
-    IconCar,
     Icon1QCapital,
   },
 };
@@ -59,7 +58,10 @@ export default {
         </div>
 
         <div :class="$style['product-top__image']">
-          <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+          <img
+            src="@/assets/images/contents/img-long-term-car-rental-main.png"
+            alt=""
+          />
         </div>
 
         <div
@@ -77,7 +79,8 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">대상</div>
                 <div :class="$style['product-detail__desc']">
-                  개인(사업자) 및<br />법인 사업자
+                  개인(사업자) 및<br />
+                  법인 사업자
                 </div>
               </div>
             </li>
@@ -90,7 +93,8 @@ export default {
                   진행가능 차종
                 </div>
                 <div :class="$style['product-detail__desc']">
-                  승용차 전 모델<br />(국산차, 수입차)
+                  승용차 전 모델<br />
+                  (국산차, 수입차)
                 </div>
               </div>
             </li>
@@ -106,10 +110,8 @@ export default {
               </div>
             </li>
             <li :class="$style['product-detail__item']">
-              <div
-                :class="[$style['product-detail__icon'], $style['icon-fill']]"
-              >
-                <IconComplete />
+              <div :class="$style['product-detail__icon']">
+                <IconCheckDocument />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">만기후처리</div>
@@ -121,7 +123,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList>
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton theme="tertiary">견적조회</BasicButton>
           </ButtonListItem>
@@ -139,7 +141,10 @@ export default {
       <div :class="[$style['product-benefit'], 'row-margin-block-small']">
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            <img
+              src="@/assets/images/contents/img-long-term-car-rental01.png"
+              alt=""
+            />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">
@@ -153,7 +158,10 @@ export default {
         </section>
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            <img
+              src="@/assets/images/contents/img-long-term-car-rental02.png"
+              alt=""
+            />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">맞춤요금제 선택!</h3>
@@ -165,7 +173,10 @@ export default {
         </section>
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img src="@/assets/images/contents/img-apt-loan.png" alt="" />
+            <img
+              src="@/assets/images/contents/img-long-term-car-rental03.png"
+              alt=""
+            />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">초기비용 ZERO!</h3>
@@ -265,13 +276,13 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="AF_P02_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="AF_P02_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="AF_P02_p001_tab003">유의사항</NavTabButton>
+          <NavTabButton link="AF_P01_p001_tab001">상품안내</NavTabButton>
+          <NavTabButton link="AF_P01_p001_tab002">진행절차</NavTabButton>
+          <NavTabButton link="AF_P01_p001_tab003">유의사항</NavTabButton>
         </NavTab>
 
         <!-- 상품안내 -->
-        <UiTabPanel name="AF_P02_p001_tab001">
+        <UiTabPanel name="AF_P01_p001_tab001">
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -331,7 +342,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    <div>계약기간 : 12개월 ~ 최대 60개월 까지</div>
+                    계약기간 : 12개월 ~ 최대 60개월 까지
                   </div>
                 </li>
                 <li
@@ -360,7 +371,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    <div>렌탈료 납부시기 : 매월 후취</div>
+                    렌탈료 납부시기 : 매월 후취
                   </div>
                 </li>
                 <li
@@ -470,19 +481,19 @@ export default {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>2년이하</td>
+                      <th>2년이하</th>
                       <td>35%</td>
                     </tr>
                     <tr>
-                      <td>3년이하</td>
+                      <th>3년이하</th>
                       <td>30%</td>
                     </tr>
                     <tr>
-                      <td>4년이하</td>
+                      <th>4년이하</th>
                       <td>25%</td>
                     </tr>
                     <tr>
-                      <td>4년초과</td>
+                      <th>4년초과</th>
                       <td>20%</td>
                     </tr>
                   </tbody>
@@ -494,7 +505,7 @@ export default {
         <!-- // 상품안내 -->
 
         <!-- 진행절차 -->
-        <UiTabPanel name="AF_P02_p001_tab002">
+        <UiTabPanel name="AF_P01_p001_tab002">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -557,7 +568,7 @@ export default {
         <!-- // 진행절차 -->
 
         <!-- 유의사항 -->
-        <UiTabPanel name="AF_P02_p001_tab003">
+        <UiTabPanel name="AF_P01_p001_tab003">
           <ul
             :class="[
               $style['basic-list'],

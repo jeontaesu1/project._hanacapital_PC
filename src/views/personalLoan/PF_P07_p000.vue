@@ -105,7 +105,7 @@ export default {
           </ul>
         </div>
 
-        <ButtonList>
+        <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
             <BasicButton theme="tertiary">대출신청</BasicButton>
           </ButtonListItem>
