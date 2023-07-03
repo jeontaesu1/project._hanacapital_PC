@@ -1,6 +1,8 @@
 <script>
 import { RouterLink } from 'vue-router';
 
+import DropDownMenu from '@/components/ui/layout/DropDownMenu.vue';
+
 import ImgGroupLogo from '@/assets/images/common/logo-hana-group.svg?component';
 import IconFacebook from '@/assets/images/common/facebook.svg?component';
 import IconYoutube from '@/assets/images/common/youtube.svg?component';
@@ -10,6 +12,7 @@ import IconGlobal from '@/assets/images/common/global.svg?component';
 export default {
   components: {
     RouterLink,
+    DropDownMenu,
     ImgGroupLogo,
     IconFacebook,
     IconYoutube,
@@ -65,7 +68,106 @@ export default {
           </div>
         </div>
         <div :class="$style['footer__cell']">
-          <!-- -->
+          <div :class="$style['family']">
+            <div :class="$style['family__item']">
+              <DropDownMenu
+                title="하나금융네트워크"
+                :data="[
+                  {
+                    text: '하나금융그룹',
+                    url: 'https://www.hanafn.com/',
+                  },
+                  {
+                    text: '하나은행',
+                    url: 'https://www.kebhana.com/',
+                  },
+                  {
+                    text: '하나금융투자',
+                    url: 'https://www.hanaw.com/',
+                  },
+                  {
+                    text: '하나카드',
+                    url: 'https://www.hanacard.co.kr/',
+                  },
+                  {
+                    text: '하나생명',
+                    url: 'https://www.hanalife.co.kr/',
+                  },
+                  {
+                    text: '하나저축은행',
+                    url: 'https://www.hanasavings.com/',
+                  },
+                  {
+                    text: '하나자산신탁',
+                    url: 'https://www.hanatrust.com/',
+                  },
+                  {
+                    text: '하나펀드서비스',
+                    url: 'https://www.hanais.com/',
+                  },
+                  {
+                    text: '하나자산운용',
+                    url: 'http://ww25.hana-assetmanagement.com/',
+                  },
+                  {
+                    text: '하나금융티아이',
+                    url: 'https://www.hanati.co.kr/',
+                  },
+                  {
+                    text: '하나금융경영연구소',
+                    url: 'http://www.hanaif.re.kr/',
+                  },
+                  {
+                    text: '하나금융공익재단',
+                    url: 'http://hanafoundation.or.kr/',
+                  },
+                  {
+                    text: '하나케어센터',
+                    url: 'https://hanacarecenter.or.kr/',
+                  },
+                  {
+                    text: '하나미소금융재단',
+                    url: 'http://www.hanamiso.org/',
+                  },
+                  {
+                    text: '핀크',
+                    url: 'https://www.finnq.com/',
+                  },
+                  {
+                    text: '하나금융나눔재단',
+                    url: 'https://www.hana-nanum.com/',
+                  },
+                ]"
+              />
+            </div>
+            <div :class="$style['family__item']">
+              <DropDownMenu
+                title="관련사이트"
+                :data="[
+                  {
+                    text: '서민금융1332',
+                    url: 'https://www.fss.or.kr/fss/s1332/s1332Index/sub.do?menuNo=200037',
+                  },
+                  {
+                    text: '보이스피싱 지킴이',
+                    url: 'https://www.fss.or.kr/fss/main/sub1voice.do?menuNo=200012',
+                  },
+                  {
+                    text: '불법사금융신고센터',
+                    url: 'https://www.fss.or.kr/fss/cvpl/unlawDistb/forInsertAgre.do?menuNo=200309',
+                  },
+                  {
+                    text: '금융소비자 정보포털<br />파인',
+                    url: 'https://fine.fss.or.kr/',
+                  },
+                  {
+                    text: '여신금융협회',
+                    url: 'https://www.crefia.or.kr/',
+                  },
+                ]"
+              />
+            </div>
+          </div>
         </div>
       </div>
 

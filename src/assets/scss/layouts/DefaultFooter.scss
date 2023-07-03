@@ -215,3 +215,17 @@
   color: $color-gray-70;
   background: url('@/assets/images/common/mark-isms.png') no-repeat 0 50%;
 }
+
+.family {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    flex: none;
+    width: 150px;
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+}

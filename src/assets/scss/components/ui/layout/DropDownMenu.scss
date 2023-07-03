@@ -1,0 +1,170 @@
+.menu {
+  position: relative;
+
+  &__head {
+    position: relative;
+    box-sizing: border-box;
+    padding: 7px 28px 7px 14px;
+    border-radius: 4px;
+    border: 1px solid $color-gray-30;
+    background-color: $color-white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.2s;
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-default(12);
+    font-weight: 500;
+    color: $color-gray-90;
+  }
+
+  &__opener {
+    @include reset-button;
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: 1px;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+
+    &-text {
+      @include for-a11y;
+    }
+
+    &-icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 15px;
+      height: 15px;
+      margin-top: -8px;
+      transition: transform 0.2s;
+
+      * {
+        fill: $color-gray-60;
+        transition: fill 0.2s;
+      }
+    }
+  }
+
+  &__layer {
+    position: absolute;
+    width: 100%;
+    padding-top: 4px;
+    display: none;
+  }
+
+  &__contents {
+    border-radius: 4px;
+    border: 1px solid $color-gray-30;
+    background-color: $color-white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__scroller {
+    max-height: 178px;
+
+    > :global(.simplebar-track) {
+      background: none;
+
+      :global(.simplebar-scrollbar) {
+        &::before {
+          top: 2px;
+          bottom: 2px;
+          left: 2px;
+          right: 2px;
+          border-radius: 2px;
+          background: $color-gray-40;
+        }
+
+        &:global(.simplebar-visible) {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:global(.simplebar-horizontal) {
+        height: 6px;
+
+        :global(.simplebar-scrollbar) {
+          top: 0;
+          height: 100%;
+
+          &::before {
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            height: auto;
+          }
+        }
+      }
+
+      &:global(.simplebar-vertical) {
+        width: 6px;
+
+        :global(.simplebar-scrollbar) {
+          &::before {
+            top: 2px;
+            bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    @include reset-list;
+    padding: 11px 0;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 7px 14px;
+    @include font-size-default(12);
+    color: $color-gray-90;
+  }
+
+  &:global(.is-opened) {
+    z-index: 1000;
+
+    .menu {
+      &__head {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      &__opener {
+        &-icon {
+          transform: rotate(180deg);
+
+          * {
+            fill: $color-black;
+          }
+        }
+      }
+
+      &__layer {
+        display: block;
+      }
+    }
+  }
+
+  &:global(.is-drop-up) {
+    .menu {
+      &__layer {
+        padding-top: 0;
+        padding-bottom: 4px;
+      }
+    }
+  }
+}
