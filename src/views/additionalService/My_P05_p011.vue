@@ -1,6 +1,7 @@
 <script>
 // My_P05_p011
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -16,6 +17,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageHeadRow,
     PageTitle,
@@ -33,6 +35,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '서류등록',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">서류등록</PageTitle>

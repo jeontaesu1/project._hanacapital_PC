@@ -1,6 +1,7 @@
 <script>
 // My_P02_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -13,6 +14,7 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -27,6 +29,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '진행상태조회',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>본인인증을 진행해 주세요</PageTitle>
     </PageHead>

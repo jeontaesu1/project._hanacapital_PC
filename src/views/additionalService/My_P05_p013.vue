@@ -1,6 +1,7 @@
 <script>
 // My_P05_p013
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -12,6 +13,7 @@ import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -25,6 +27,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '서류등록',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <!-- Case : 서류 등록 실패 시 노출 -->
       <IllustObject type="fail" />

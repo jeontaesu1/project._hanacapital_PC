@@ -1,6 +1,7 @@
 <script>
 // My_P06_p013
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
@@ -14,6 +15,7 @@ import IconStar from '@/assets/images/icon/star-badge.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -28,6 +30,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '온라인약정',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle
         >지금부터 하나캐피탈 이용을 위한<br />온라인 약정을
