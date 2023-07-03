@@ -1,6 +1,7 @@
 <script>
 // MI_P03_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -19,6 +20,7 @@ import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -38,6 +40,20 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '하나캐피탈 멤버십',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>하나캐피탈 멤버십</PageTitle>
       <PageSubText
