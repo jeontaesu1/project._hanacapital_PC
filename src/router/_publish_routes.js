@@ -1589,19 +1589,14 @@ const routes = [
     component: () => import('@/views/business/BF_P00_main.vue'),
   },
   {
-    path: '/business/BF_P03_p001',
-    name: '/business/BF_P03_p001',
-    component: () => import('@/views/business/BF_P03_p001.vue'),
+    path: '/business/BF_P05_p001',
+    name: '/business/BF_P05_p001',
+    component: () => import('@/views/business/BF_P05_p001.vue'),
   },
   {
-    path: '/business/BF_P01_p001',
-    name: '/business/BF_P01_p001',
-    component: () => import('@/views/business/BF_P01_p001.vue'),
-  },
-  {
-    path: '/business/BF_P02_p001',
-    name: '/business/BF_P02_p001',
-    component: () => import('@/views/business/BF_P02_p001.vue'),
+    path: '/business/BF_P06_p001',
+    name: '/business/BF_P06_p001',
+    component: () => import('@/views/business/BF_P06_p001.vue'),
   },
 
   // company
