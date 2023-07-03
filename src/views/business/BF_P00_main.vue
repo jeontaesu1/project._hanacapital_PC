@@ -1,6 +1,12 @@
 <script>
 // BF_P00_main
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -14,6 +20,7 @@ import IconGoodsLoan from '@/assets/images/icon/goods-loan.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageHeadRow,
     PageTitle,
@@ -23,11 +30,54 @@ export default {
     IconMedical,
     IconGoodsLoan,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'business');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '기업금융',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle>의료기·설비를 위한 최적의 자금 대출!</PageTitle>
