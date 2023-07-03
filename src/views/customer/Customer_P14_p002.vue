@@ -1,8 +1,12 @@
 <script>
 // Customer_P14_p002
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -29,6 +33,7 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -54,12 +59,36 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       phoneError: false,
       mailError: false,
     });
 
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -68,6 +97,25 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/customer/Customer_P00_p001',
+          },
+          {
+            text: '개인정보 열람 청구',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">개인정보 열람 청구</PageTitle>

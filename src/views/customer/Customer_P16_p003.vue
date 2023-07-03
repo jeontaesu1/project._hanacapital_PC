@@ -1,6 +1,12 @@
 <script>
 // Customer_P16_p003
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -15,6 +21,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     TextButton,
@@ -26,11 +33,58 @@ export default {
     ButtonList,
     ButtonListItem,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/customer/Customer_P00_p001',
+          },
+          {
+            text: '그룹사간 고객정보 제공내역 조회',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>그룹사간 고객정보 제공내역 조회</PageTitle>
     </PageHead>

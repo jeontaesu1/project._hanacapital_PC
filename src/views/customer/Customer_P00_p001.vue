@@ -1,8 +1,13 @@
 <script>
 // Customer_P00_p001
+import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
@@ -25,6 +30,7 @@ export default {
   components: {
     RouterLink,
     PageContents,
+    LocationBar,
     BasicHr,
     BasicButton,
     EventBanner,
@@ -42,11 +48,54 @@ export default {
     IconLink,
     IconDownload,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/customer/Customer_P00_p001',
+          },
+        ]"
+      />
+    </template>
+
     <section>
       <h3 class="text-big-3 row-margin-container-medium">상담 · 문의</h3>
       <div

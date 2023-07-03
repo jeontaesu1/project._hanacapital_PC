@@ -1,6 +1,12 @@
 <script>
 // Customer_P09_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -9,16 +15,68 @@ import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
     IconLogoMain,
+  },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
   },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/customer/Customer_P00_p001',
+          },
+          {
+            text: '금융소비자보호',
+            to: '/',
+          },
+          {
+            text: '금융소비자보호헌장',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>금융소비자보호헌장</PageTitle>
       <PageSubText

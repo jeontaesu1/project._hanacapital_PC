@@ -1,7 +1,11 @@
 <script>
 // Customer_P15_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
@@ -28,6 +32,7 @@ import UiScroller from '@/components/ui/common/UiScroller.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     FormList,
@@ -52,6 +57,13 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       nameError: false,
       birthNumberError: false,
@@ -60,7 +72,24 @@ export default {
       counselingError: false,
     });
 
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -69,6 +98,25 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/customer/Customer_P00_p001',
+          },
+          {
+            text: '전자민원접수',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>전자민원접수</PageTitle>
     </PageHead>
