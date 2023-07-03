@@ -59,11 +59,10 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '이용 시 유의사항',
-            to: '/',
           },
         ]"
       />

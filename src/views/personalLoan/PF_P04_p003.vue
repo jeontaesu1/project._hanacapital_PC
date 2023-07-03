@@ -1,8 +1,12 @@
 <script>
 // PF_P04_p003
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -41,6 +45,7 @@ import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageHeadRow,
     PageTitle,
@@ -76,8 +81,14 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
   },
-
   setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       nameError: false,
       idNumberError: false,
@@ -90,7 +101,24 @@ export default {
       carNumberError: false,
     });
 
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -99,6 +127,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '원큐자동차담보대출',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">원큐자동차담보대출</PageTitle>

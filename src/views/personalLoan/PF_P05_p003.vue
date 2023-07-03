@@ -1,8 +1,12 @@
 <script>
 // PF_P05_p003
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
@@ -31,6 +35,7 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -56,8 +61,14 @@ export default {
     ButtonListItem,
     BasicDatepicker,
   },
-
   setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       typeError: false,
       workplaceNameError001: false,
@@ -68,7 +79,24 @@ export default {
       businessNumberError: false,
     });
 
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -77,6 +105,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '우수고객추가대출',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">우수고객추가대출</PageTitle>

@@ -1,6 +1,12 @@
 <script>
 // PF_P02_p004
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -16,6 +22,7 @@ import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -27,11 +34,57 @@ export default {
     IconSearchMoney,
     IconInterestRate,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '행복아파트론',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>한도와 금리가 확인되었습니다</IllustInfoTitle>

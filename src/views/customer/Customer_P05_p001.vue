@@ -84,7 +84,7 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '지점안내',

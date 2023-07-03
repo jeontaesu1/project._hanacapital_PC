@@ -1,6 +1,12 @@
 <script>
 // PF_P02_p006 대출신청완료_자동송금 영업시간 내
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
@@ -12,6 +18,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
@@ -20,11 +27,57 @@ export default {
     ButtonListItem,
     BasicButton,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '행복아파트론',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>

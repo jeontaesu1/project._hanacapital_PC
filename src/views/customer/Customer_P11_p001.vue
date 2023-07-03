@@ -67,11 +67,10 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '공동인증센터',
-            to: '/',
           },
         ]"
       />

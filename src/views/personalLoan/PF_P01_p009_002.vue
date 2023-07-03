@@ -1,6 +1,12 @@
 <script>
 // PF_P01_p009 대출신청실패_Fraud 대상자
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiCommonStore } from '@/stores/ui/common';
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
@@ -15,6 +21,7 @@ import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
@@ -25,11 +32,57 @@ export default {
     BasicHr,
     IconCustomer,
   },
+  setup() {
+    const store = {
+      ui: {
+        common: useUiCommonStore(),
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      // optional : html 태그에 클래스 추가
+      store.ui.common.setRootClassName('page-optional-class');
+
+      // optional : 헤더 내비게이션 Active 세팅
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      // optional : html 태그에 클래스 제거
+      store.ui.common.setRootClassName();
+
+      // optional : 헤더 내비게이션 Active 리셋
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: 'e하나신용대출',
+          },
+        ]"
+      />
+    </template>
+
     <div class="row-margin-container-medium">
       <IllustInfo>
         <IllustObject type="error" />

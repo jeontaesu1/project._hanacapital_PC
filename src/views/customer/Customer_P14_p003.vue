@@ -82,11 +82,10 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '정보이용·제공 조회',
-            to: '/',
           },
         ]"
       />

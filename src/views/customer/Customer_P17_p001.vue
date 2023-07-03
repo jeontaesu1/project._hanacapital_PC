@@ -72,11 +72,10 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '프로그램 설치 안내',
-            to: '/',
           },
         ]"
       />

@@ -65,11 +65,10 @@ export default {
           },
           {
             text: '고객센터',
-            to: '/customer/Customer_P00_p001',
+            to: '/',
           },
           {
             text: '그룹사간 고객정보 제공내역 조회',
-            to: '/',
           },
         ]"
       />
