@@ -1,12 +1,14 @@
 <script>
 // Company_P02_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
   },
@@ -15,6 +17,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '윤리경영',
+          },
+          {
+            text: '윤리헌장',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>
         함께 성장하며 행복을 나누는 금융을<br />

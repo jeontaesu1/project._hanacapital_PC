@@ -1,6 +1,7 @@
 <script>
 // Company_P05_p004
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
@@ -17,6 +18,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     InputBlock,
@@ -35,6 +37,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '채용정보',
+          },
+          {
+            text: '채용공고',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>채용공고</PageTitle>
     </PageHead>

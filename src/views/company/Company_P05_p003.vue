@@ -1,6 +1,7 @@
 <script>
 // Company_P05_p003
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
@@ -24,6 +25,7 @@ import IconVacationSpot from '@/assets/images/icon/vacation-spot.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     UiTab,
@@ -48,6 +50,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '채용정보',
+          },
+          {
+            text: '인사/복리후생',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>인사/복리후생</PageTitle>
     </PageHead>

@@ -1,6 +1,7 @@
 <script>
 // Company_P01_p003
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
@@ -11,6 +12,7 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     UiTab,
@@ -23,6 +25,24 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '연혁',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>연혁</PageTitle>
     </PageHead>

@@ -1,6 +1,7 @@
 <script>
 // Company_P05_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 
@@ -12,6 +13,7 @@ import IconHealthScreenings from '@/assets/images/icon/health-screenings.svg?com
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     IconContract,
@@ -24,6 +26,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '채용정보',
+          },
+          {
+            text: '전형방법',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>전형방법</PageTitle>
     </PageHead>

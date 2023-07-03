@@ -1,6 +1,7 @@
 <script>
 // Company_P03_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
@@ -15,6 +16,7 @@ import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     InputBlock,
@@ -31,6 +33,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: 'PR',
+          },
+          {
+            text: '보도자료',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>보도자료</PageTitle>
     </PageHead>
