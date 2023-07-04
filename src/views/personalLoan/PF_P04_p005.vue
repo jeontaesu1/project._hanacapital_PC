@@ -2,7 +2,6 @@
 // PF_P04_p005
 import { reactive, onMounted, onUnmounted } from 'vue';
 
-import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicInput from '@/components/ui/form/BasicInput.vue';
@@ -60,7 +59,6 @@ export default {
   setup() {
     const store = {
       ui: {
-        common: useUiCommonStore(),
         header: useUiHeaderStore(),
       },
     };
@@ -89,18 +87,10 @@ export default {
     });
 
     onMounted(() => {
-      // optional : html 태그에 클래스 추가
-      store.ui.common.setRootClassName('page-optional-class');
-
-      // optional : 헤더 내비게이션 Active 세팅
       store.ui.header.setActive(() => 'personalLoan');
     });
 
     onUnmounted(() => {
-      // optional : html 태그에 클래스 제거
-      store.ui.common.setRootClassName();
-
-      // optional : 헤더 내비게이션 Active 리셋
       store.ui.header.setActive();
     });
 
