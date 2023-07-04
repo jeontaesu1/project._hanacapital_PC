@@ -363,7 +363,11 @@ export default {
           :error="state.counselingError"
           titleText="상담신청내용"
           title="상담신청내용"
-        />
+        >
+          <template v-slot:bottom>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </template>
+        </BasicTextarea>
       </FormList>
     </section>
 

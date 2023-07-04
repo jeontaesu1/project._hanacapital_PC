@@ -515,7 +515,11 @@ export default {
             :error="state.counselingError"
             titleText="민원접수내용"
             title="민원접수내용"
-          />
+          >
+            <template v-slot:bottom>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </template>
+          </BasicTextarea>
         </FormList>
       </section>
       <!-- // Case : 다음 누른 후 노출 -->
