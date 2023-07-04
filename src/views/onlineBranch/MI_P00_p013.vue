@@ -1,8 +1,11 @@
 <script>
 // MI_P00_p013
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -29,6 +32,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -54,13 +58,28 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       dateError: false,
       dateMinDate: '2022.02.17',
       dateMaxDate: '2022.03.17',
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -69,6 +88,27 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '범칙금/자동차세 조회',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>범칙금/자동차세 조회</PageTitle>
     </PageHead>

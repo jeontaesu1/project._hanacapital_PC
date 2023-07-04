@@ -1,6 +1,11 @@
 <script>
 // My_P08_p016
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
@@ -19,6 +24,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
@@ -34,11 +40,54 @@ export default {
     KeyValueTitle,
     KeyValueText,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '만기후처리',
+          },
+          {
+            text: '반환 신청',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>만기후 반환 신청이 완료되었습니다</IllustInfoTitle>

@@ -1,8 +1,11 @@
 <script>
 // My_p06_p002
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
@@ -27,6 +30,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -48,13 +52,27 @@ export default {
     ButtonListItem,
     BasicButton,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       accountError: false,
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -63,6 +81,27 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '청약철회권 신청',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>청약철회권 신청서를 작성해 주세요</PageTitle>
     </PageHead>

@@ -1,6 +1,11 @@
 <script>
 // My_P08_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
@@ -33,6 +38,7 @@ import IconDocumentSearch from '@/assets/images/icon/document-search.svg?compone
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -61,11 +67,51 @@ export default {
     IconCar,
     IconDocumentSearch,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '만기후처리',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>
         렌터카 계약 만기 1개월 전까지<br />

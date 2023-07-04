@@ -1,6 +1,11 @@
 <script>
 // MI_P00_p002
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
@@ -22,6 +27,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     NavTab,
@@ -40,11 +46,51 @@ export default {
     PaginationNavNumber,
     RoundStatus,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '계약현황',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>계약현황</PageTitle>
     </PageHead>

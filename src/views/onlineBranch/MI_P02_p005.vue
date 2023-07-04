@@ -1,9 +1,12 @@
 <script>
 // MI_P02_p005
 // MI_P02_p006
-import { reactive, ref } from 'vue';
+import { reactive, ref, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
@@ -41,6 +44,7 @@ import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -75,8 +79,13 @@ export default {
     PaginationNavEllipsis,
     PaginationNavNumber,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       dateError: false,
       useInputError001: false,
@@ -90,7 +99,16 @@ export default {
 
     const layer = ref(null);
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
       layer,
     };
@@ -100,6 +118,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '하나머니',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>하나머니</PageTitle>
     </PageHead>

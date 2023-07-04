@@ -1,8 +1,11 @@
 <script>
 // MI_P07_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
@@ -45,6 +48,7 @@ import FilterTabButton from '@/components/ui/tab/FilterTabButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageMainText,
@@ -86,6 +90,12 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       billPeriodError: false,
       mailError: false,
@@ -94,7 +104,16 @@ export default {
       maxDate: '2023.04.21',
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -103,6 +122,25 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '증명서 조회/발급',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>증명서 조회/발급</PageTitle>
       <PageMainText
