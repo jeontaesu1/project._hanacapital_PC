@@ -1,8 +1,11 @@
 <script>
 // AF_P07_p009
-import { ref, reactive } from 'vue';
+import { onMounted, onUnmounted, ref, reactive } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
@@ -32,6 +35,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -60,6 +64,20 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'auto');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     const state = reactive({
       corporationNameError: false,
       representativeNameError: false,
@@ -84,6 +102,7 @@ export default {
     const layer = ref(null);
 
     return {
+      store,
       state,
       layer,
     };
@@ -93,6 +112,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '오토금융',
+            to: '/',
+          },
+          {
+            text: '오토승계',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">오토승계</PageTitle>

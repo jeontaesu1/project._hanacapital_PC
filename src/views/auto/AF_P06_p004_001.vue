@@ -1,6 +1,11 @@
 <script>
 // AF_P06_p004 심사 승인 대상
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
@@ -20,6 +25,7 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
@@ -36,11 +42,48 @@ export default {
     ButtonListItem,
     BasicButton,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'auto');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '오토금융',
+            to: '/',
+          },
+          {
+            text: '중고차오토론',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>심사 승인 대상입니다</IllustInfoTitle>

@@ -1,6 +1,8 @@
 <script>
 // AF_P06_p003
-import { reactive } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -10,6 +12,7 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
@@ -35,6 +38,7 @@ import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -66,6 +70,20 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'auto');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     const state = reactive({
       brandError: false,
       modelError: false,
@@ -76,6 +94,7 @@ export default {
     });
 
     return {
+      store,
       state,
     };
   },
@@ -84,6 +103,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '오토금융',
+            to: '/',
+          },
+          {
+            text: '중고차오토론',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">중고차오토론</PageTitle>

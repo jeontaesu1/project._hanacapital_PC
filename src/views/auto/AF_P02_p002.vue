@@ -1,9 +1,12 @@
 <script>
 // AF_P02_p002
 // AF_P02_p003
-import { reactive } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -58,6 +61,7 @@ import iconInformation from '@/assets/images/icon/information.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -110,6 +114,20 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'auto');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     const state = reactive({
       companyError: false,
       carNameError: false,
@@ -126,6 +144,7 @@ export default {
     });
 
     return {
+      store,
       state,
     };
   },
@@ -134,6 +153,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '오토금융',
+            to: '/',
+          },
+          {
+            text: '다이렉트 오토리스',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>견적 조회</PageTitle>
       <PageSubText :classNames="{ wrap: 'font-weight-regular' }">
