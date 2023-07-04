@@ -1,6 +1,7 @@
 <script>
 // Partner_P00_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -12,6 +13,7 @@ import IconCompany from '@/assets/images/icon/company.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     TextButton,
@@ -24,6 +26,20 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '제휴광장',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>제휴광장</PageTitle>
     </PageHead>

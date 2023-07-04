@@ -1,8 +1,11 @@
 <script>
 // Customer_P01_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
@@ -85,6 +88,7 @@ const dummyData = () => [
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     InputBlock,
@@ -106,6 +110,12 @@ export default {
     UiAccordionOpener,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       data: dummyData(),
       active: 0,
@@ -117,7 +127,16 @@ export default {
       state.activeDepth = j;
     };
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
       setPage,
     };
@@ -127,6 +146,25 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/',
+          },
+          {
+            text: 'FAQ',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>FAQ</PageTitle>
     </PageHead>

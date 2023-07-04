@@ -1,6 +1,11 @@
 <script>
 // MI_P00_p012
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -21,6 +26,7 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -38,11 +44,51 @@ export default {
     KeyValueText,
     UnitText,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '중도상환신청',
+          },
+        ]"
+      />
+    </template>
+
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>중도상환신청이 완료되었습니다</IllustInfoTitle>

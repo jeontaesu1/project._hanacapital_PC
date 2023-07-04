@@ -1,6 +1,11 @@
 <script>
 // Customer_P09_p006
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -13,6 +18,7 @@ import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -21,11 +27,51 @@ export default {
     TextButton,
     IconDownloadSmall,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/',
+          },
+          {
+            text: '금융소비자보호',
+          },
+          {
+            text: '금융소비자보호공시',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>금융소비자보호공시</PageTitle>
     </PageHead>

@@ -1,7 +1,10 @@
 <script>
 // PF_P01_p005
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 
+import { useUiHeaderStore } from '@/stores/ui/header';
+
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
@@ -34,6 +37,7 @@ import IconLink from '@/assets/images/icon/link.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -63,6 +67,12 @@ export default {
   },
 
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       idNumberError: false,
       mailError: false,
@@ -86,7 +96,16 @@ export default {
       ownerError: false,
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -95,6 +114,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: 'e하나신용대출',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">e하나신용대출</PageTitle>

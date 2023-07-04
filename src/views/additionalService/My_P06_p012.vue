@@ -1,6 +1,7 @@
 <script>
 // My_P06_p012
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -24,6 +25,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -49,6 +51,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '온라인약정',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>약정목록을 확인하고 약정을 진행하세요</PageTitle>
     </PageHead>

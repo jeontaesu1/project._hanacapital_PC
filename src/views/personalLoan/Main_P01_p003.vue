@@ -1,6 +1,11 @@
 <script>
 // Main_P01_p003
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -18,6 +23,7 @@ import IconHome from '@/assets/images/icon/home.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageSubText,
     PageTitle,
@@ -31,11 +37,45 @@ export default {
     IconGoodsLoan,
     IconHome,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/personal-loan/Main_P01_p003',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>신속하면서 믿을 수 있는 개인금융!</PageTitle>
       <PageSubText>

@@ -1,6 +1,11 @@
 <script>
 // Customer_P09_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -9,16 +14,57 @@ import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
     IconLogoMain,
+  },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
   },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/',
+          },
+          {
+            text: '금융소비자보호',
+          },
+          {
+            text: '금융소비자보호헌장',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>금융소비자보호헌장</PageTitle>
       <PageSubText

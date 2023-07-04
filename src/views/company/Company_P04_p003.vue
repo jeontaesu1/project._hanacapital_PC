@@ -1,6 +1,7 @@
 <script>
 // Company_P04_p003
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
@@ -14,6 +15,7 @@ import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PaginationNav,
@@ -28,6 +30,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '투자정보',
+          },
+          {
+            text: '경영공시',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>경영공시</PageTitle>
     </PageHead>

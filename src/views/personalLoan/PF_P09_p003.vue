@@ -1,7 +1,10 @@
 <script>
 // PF_P09_p003
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 
+import { useUiHeaderStore } from '@/stores/ui/header';
+
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
@@ -33,6 +36,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -60,8 +64,13 @@ export default {
     NoticeText,
     TextButton,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       nameError: false,
       idNumberError: false,
@@ -74,7 +83,16 @@ export default {
       limitAmountError: false,
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -83,6 +101,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '사업자 주택담보대출',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">사업자 주택담보대출</PageTitle>

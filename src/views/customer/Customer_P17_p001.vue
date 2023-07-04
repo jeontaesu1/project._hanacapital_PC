@@ -1,6 +1,11 @@
 <script>
 // Customer_P17_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
@@ -14,6 +19,7 @@ import IconDownload from '@/assets/images/icon/download.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     UiTab,
@@ -23,11 +29,48 @@ export default {
     BasicButton,
     IconDownload,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/',
+          },
+          {
+            text: '프로그램 설치 안내',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>프로그램 설치 안내</PageTitle>
     </PageHead>

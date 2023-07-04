@@ -1,8 +1,11 @@
 <script>
 // PF_P05_p003
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
@@ -31,6 +34,7 @@ import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -56,8 +60,13 @@ export default {
     ButtonListItem,
     BasicDatepicker,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       typeError: false,
       workplaceNameError001: false,
@@ -68,7 +77,16 @@ export default {
       businessNumberError: false,
     });
 
+    onMounted(() => {
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -77,6 +95,24 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: '우수고객추가대출',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">우수고객추가대출</PageTitle>

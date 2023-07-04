@@ -1,6 +1,11 @@
 <script>
 // PF_P01_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -27,6 +32,7 @@ import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -49,11 +55,48 @@ export default {
     IconCalculate,
     Icon1QCapital,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'personalLoan');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="full">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '개인금융',
+            to: '/',
+          },
+          {
+            text: 'e하나신용대출',
+          },
+        ]"
+      />
+    </template>
+
     <div :class="$style['product-top']">
       <div :class="$style['product-top__contents']">
         <div :class="$style['product-top__head']">

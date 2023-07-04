@@ -1,8 +1,11 @@
 <script>
 // My_P08_p005
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import StepProgress from '@/components/ui/progress/StepProgress.vue';
@@ -34,6 +37,7 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageHeadRow,
@@ -62,8 +66,13 @@ export default {
     InputBlockCell,
     BasicInput,
   },
-
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       dateTypeError: false,
       paymentAmountTypeError: false,
@@ -72,7 +81,17 @@ export default {
       paymentAmount001Error: false,
       paymentAmount002Error: false,
     });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
     return {
+      store,
       state,
     };
   },
@@ -81,6 +100,30 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '만기후처리',
+          },
+          {
+            text: '연장 신청',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageHeadRow>
         <PageTitle align="left">만기후처리 연장 신청</PageTitle>

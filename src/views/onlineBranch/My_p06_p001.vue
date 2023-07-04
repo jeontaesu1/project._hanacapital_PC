@@ -1,6 +1,11 @@
 <script>
 // My_p06_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
@@ -21,6 +26,7 @@ import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllip
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -38,11 +44,51 @@ export default {
     PaginationNavNumber,
     PaginationNavEllipsis,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '청약철회권 신청',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>
         청약철회권 신청 가능한 상품은 총

@@ -1,6 +1,11 @@
 <script>
 // MI_P00_p003
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
@@ -20,6 +25,7 @@ import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicBox,
@@ -36,11 +42,51 @@ export default {
     PaginationNavEllipsis,
     PaginationNavNumber,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '자동이체 계좌 변경',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>자동이체 계좌 변경</PageTitle>
     </PageHead>

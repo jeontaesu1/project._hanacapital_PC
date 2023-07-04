@@ -1,6 +1,7 @@
 <script>
 // Company_P03_p004
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -10,6 +11,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -21,6 +23,27 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '윤리경영',
+          },
+          {
+            text: '사회공헌',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>사회공헌</PageTitle>
     </PageHead>

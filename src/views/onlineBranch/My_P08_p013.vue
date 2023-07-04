@@ -1,6 +1,11 @@
 <script>
 // My_P08_p013
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
@@ -15,6 +20,7 @@ import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     IllustInfo,
     IllustObject,
     IllustInfoTitle,
@@ -25,11 +31,54 @@ export default {
     BasicHr,
     IconCustomer,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '온라인 지점',
+            to: '/',
+          },
+          {
+            text: '계약정보',
+          },
+          {
+            text: '만기후처리',
+          },
+          {
+            text: '연장 신청',
+          },
+        ]"
+      />
+    </template>
+
     <div class="row-margin-container-medium">
       <IllustInfo>
         <IllustObject type="complete" />

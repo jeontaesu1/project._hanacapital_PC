@@ -1,6 +1,7 @@
 <script>
 // Company_P05_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
@@ -8,6 +9,7 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageMainText,
@@ -17,6 +19,27 @@ export default {
 
 <template>
   <PageContents size="full">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '채용정보',
+          },
+          {
+            text: '인재상',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>인재상</PageTitle>
       <PageMainText

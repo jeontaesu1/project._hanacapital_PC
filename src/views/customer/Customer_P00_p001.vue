@@ -1,8 +1,12 @@
 <script>
 // Customer_P00_p001
+import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import EventBanner from '@/components/ui/banner/EventBanner.vue';
@@ -25,6 +29,7 @@ export default {
   components: {
     RouterLink,
     PageContents,
+    LocationBar,
     BasicHr,
     BasicButton,
     EventBanner,
@@ -42,11 +47,45 @@ export default {
     IconLink,
     IconDownload,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '고객센터',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <section>
       <h3 class="text-big-3 row-margin-container-medium">상담 · 문의</h3>
       <div

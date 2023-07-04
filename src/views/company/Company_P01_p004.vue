@@ -1,6 +1,7 @@
 <script>
 // Company_P01_p004
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -13,6 +14,7 @@ import IconGlobal from '@/assets/images/icon/global-finance.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -27,6 +29,24 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: '사업분야',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>사업분야</PageTitle>
       <PageSubText>

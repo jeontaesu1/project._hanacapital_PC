@@ -1,6 +1,7 @@
 <script>
 // Company_P01_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -8,6 +9,7 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -17,6 +19,24 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '회사소개',
+            to: '/',
+          },
+          {
+            text: 'CEO 소개',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>CEO 소개</PageTitle>
       <PageSubText :classNames="{ wrap: 'font-weight-regular' }">

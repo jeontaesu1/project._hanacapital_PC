@@ -1,12 +1,14 @@
 <script>
 // MI_P02_p001
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
   },
@@ -15,6 +17,20 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '하나머니',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>하나머니</PageTitle>
     </PageHead>

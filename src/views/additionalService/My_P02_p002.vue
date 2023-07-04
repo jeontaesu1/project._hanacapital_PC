@@ -1,6 +1,7 @@
 <script>
 // My_P02_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
@@ -25,6 +26,7 @@ import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     PageSubText,
@@ -51,6 +53,23 @@ export default {
 
 <template>
   <PageContents>
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '부가서비스',
+          },
+          {
+            text: '진행상태조회',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>상담내역 및 진행단계를 확인해 주세요</PageTitle>
       <!-- Case : 상담내역이 있을경우 -->
