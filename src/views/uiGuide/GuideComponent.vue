@@ -96,6 +96,7 @@ import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 import UiScroller from '@/components/ui/common/UiScroller.vue';
+import ImageBannerSlide from '@/components/ui/banner/ImageBannerSlide.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -131,6 +132,8 @@ import IconAssignment from '@/assets/images/icon/assignment.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
@@ -230,6 +233,7 @@ export default {
     SelectTable,
     SelectTableRow,
     UiScroller,
+    ImageBannerSlide,
 
     IconAdd,
     IconPerson,
@@ -319,6 +323,7 @@ export default {
     };
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
       state,
       layerTest001,
@@ -7828,6 +7833,53 @@ export default {
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
         </BasicBannerSlide>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">ImageBannerSlide</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ImageBannerSlide>
+          <Swiper :modules="modules" :pagination="{ clickable: true }">
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </ImageBannerSlide>
       </div>
     </section>
 
