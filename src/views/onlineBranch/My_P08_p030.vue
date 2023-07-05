@@ -74,7 +74,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -102,6 +101,7 @@ export default {
           },
           {
             text: '구매 신청',
+            to: '/',
           },
         ]"
       />

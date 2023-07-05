@@ -37,6 +37,7 @@ export default {
           },
           {
             text: '인권선언문',
+            to: '/',
           },
         ]"
       />

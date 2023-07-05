@@ -51,10 +51,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -74,6 +70,7 @@ export default {
           },
           {
             text: '오토승계',
+            to: '/',
           },
         ]"
       />

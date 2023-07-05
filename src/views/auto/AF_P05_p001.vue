@@ -65,10 +65,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -88,6 +84,7 @@ export default {
           },
           {
             text: '원큐다이렉트오토론',
+            to: '/',
           },
         ]"
       />

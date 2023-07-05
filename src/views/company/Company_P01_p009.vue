@@ -38,6 +38,7 @@ export default {
           },
           {
             text: '하나금융그룹',
+            to: '/',
           },
         ]"
       />

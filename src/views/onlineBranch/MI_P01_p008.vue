@@ -75,7 +75,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -100,6 +99,7 @@ export default {
           },
           {
             text: '주소지/연락처 변경',
+            to: '/',
           },
         ]"
       />

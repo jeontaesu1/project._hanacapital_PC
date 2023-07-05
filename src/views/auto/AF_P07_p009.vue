@@ -102,7 +102,6 @@ export default {
     const layer = ref(null);
 
     return {
-      store,
       state,
       layer,
     };
@@ -125,6 +124,7 @@ export default {
           },
           {
             text: '오토승계',
+            to: '/',
           },
         ]"
       />

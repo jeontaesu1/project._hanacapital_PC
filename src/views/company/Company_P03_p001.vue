@@ -49,6 +49,7 @@ export default {
           },
           {
             text: '보도자료',
+            to: '/',
           },
         ]"
       />

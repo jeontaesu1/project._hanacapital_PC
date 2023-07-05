@@ -35,6 +35,7 @@ export default {
           },
           {
             text: '윤리강령',
+            to: '/',
           },
         ]"
       />

@@ -136,7 +136,6 @@ export default {
     });
 
     return {
-      store,
       state,
       setPage,
     };

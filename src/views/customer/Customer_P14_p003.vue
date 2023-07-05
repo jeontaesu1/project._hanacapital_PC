@@ -53,10 +53,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -76,6 +72,7 @@ export default {
           },
           {
             text: '정보이용·제공 조회',
+            to: '/',
           },
         ]"
       />

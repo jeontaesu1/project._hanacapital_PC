@@ -108,7 +108,6 @@ export default {
     });
 
     return {
-      store,
       state,
       layer,
     };
@@ -131,6 +130,7 @@ export default {
           },
           {
             text: '하나머니',
+            to: '/',
           },
         ]"
       />

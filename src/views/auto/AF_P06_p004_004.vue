@@ -45,10 +45,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -68,6 +64,7 @@ export default {
           },
           {
             text: '중고차오토론',
+            to: '/',
           },
         ]"
       />

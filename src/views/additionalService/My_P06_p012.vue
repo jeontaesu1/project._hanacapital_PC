@@ -63,6 +63,7 @@ export default {
           },
           {
             text: '온라인약정',
+            to: '/',
           },
         ]"
       />

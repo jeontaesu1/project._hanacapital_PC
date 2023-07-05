@@ -105,7 +105,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -127,6 +126,7 @@ export default {
           },
           {
             text: 'e하나신용대출',
+            to: '/',
           },
         ]"
       />

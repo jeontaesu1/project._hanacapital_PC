@@ -67,10 +67,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -90,6 +86,7 @@ export default {
           },
           {
             text: '아파트론',
+            to: '/',
           },
         ]"
       />

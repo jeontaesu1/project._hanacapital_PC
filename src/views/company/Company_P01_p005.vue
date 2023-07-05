@@ -48,6 +48,7 @@ export default {
           },
           {
             text: 'IR정보',
+            to: '/',
           },
         ]"
       />

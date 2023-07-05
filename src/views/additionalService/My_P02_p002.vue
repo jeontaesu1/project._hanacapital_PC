@@ -65,6 +65,7 @@ export default {
           },
           {
             text: '진행상태조회',
+            to: '/',
           },
         ]"
       />

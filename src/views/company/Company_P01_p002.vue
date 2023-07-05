@@ -32,6 +32,7 @@ export default {
           },
           {
             text: 'CEO 소개',
+            to: '/',
           },
         ]"
       />

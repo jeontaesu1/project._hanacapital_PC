@@ -35,6 +35,7 @@ export default {
           },
           {
             text: '인재상',
+            to: '/',
           },
         ]"
       />

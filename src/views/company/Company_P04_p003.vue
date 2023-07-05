@@ -46,6 +46,7 @@ export default {
           },
           {
             text: '경영공시',
+            to: '/',
           },
         ]"
       />

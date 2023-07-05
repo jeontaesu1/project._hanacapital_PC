@@ -64,7 +64,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -86,6 +85,7 @@ export default {
           },
           {
             text: '중고차오토론',
+            to: '/',
           },
         ]"
       />

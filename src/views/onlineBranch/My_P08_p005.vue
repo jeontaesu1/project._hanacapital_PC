@@ -91,7 +91,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -119,6 +118,7 @@ export default {
           },
           {
             text: '연장 신청',
+            to: '/',
           },
         ]"
       />

@@ -120,7 +120,6 @@ export default {
     });
 
     return {
-      store,
       state,
       layer001,
       layer001Open,
@@ -147,6 +146,7 @@ export default {
           },
           {
             text: '중도상환신청',
+            to: '/',
           },
         ]"
       />

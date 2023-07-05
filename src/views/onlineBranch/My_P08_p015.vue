@@ -87,7 +87,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -115,6 +114,7 @@ export default {
           },
           {
             text: '반환 신청',
+            to: '/',
           },
         ]"
       />

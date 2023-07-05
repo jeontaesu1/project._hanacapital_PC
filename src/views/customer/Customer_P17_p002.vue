@@ -38,10 +38,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -61,6 +57,7 @@ export default {
           },
           {
             text: '프로그램 삭제 안내',
+            to: '/',
           },
         ]"
       />

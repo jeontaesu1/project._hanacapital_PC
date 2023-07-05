@@ -39,6 +39,7 @@ export default {
           },
           {
             text: '전화상담신청',
+            to: '/',
           },
         ]"
       />

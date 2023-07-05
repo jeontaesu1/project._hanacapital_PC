@@ -33,6 +33,7 @@ export default {
           },
           {
             text: '윤리헌장',
+            to: '/',
           },
         ]"
       />

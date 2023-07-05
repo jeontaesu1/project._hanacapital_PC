@@ -63,10 +63,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -86,6 +82,7 @@ export default {
           },
           {
             text: '다이렉트 장기렌터카',
+            to: '/',
           },
         ]"
       />

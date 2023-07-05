@@ -62,10 +62,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -85,6 +81,7 @@ export default {
           },
           {
             text: '스탁론',
+            to: '/',
           },
         ]"
       />

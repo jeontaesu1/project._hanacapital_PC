@@ -113,7 +113,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },

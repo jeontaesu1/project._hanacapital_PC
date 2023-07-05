@@ -139,7 +139,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -161,6 +160,7 @@ export default {
           },
           {
             text: '다이렉트 장기렌터카',
+            to: '/',
           },
         ]"
       />

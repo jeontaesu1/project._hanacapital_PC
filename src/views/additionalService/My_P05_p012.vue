@@ -54,6 +54,7 @@ export default {
           },
           {
             text: '서류등록',
+            to: '/',
           },
         ]"
       />

@@ -42,6 +42,7 @@ export default {
           },
           {
             text: '사업분야',
+            to: '/',
           },
         ]"
       />

@@ -61,10 +61,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -84,6 +80,7 @@ export default {
           },
           {
             text: 'e임대주택론',
+            to: '/',
           },
         ]"
       />

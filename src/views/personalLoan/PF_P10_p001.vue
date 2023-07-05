@@ -57,10 +57,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -80,6 +76,7 @@ export default {
           },
           {
             text: '내구소비재할부',
+            to: '/',
           },
         ]"
       />

@@ -39,6 +39,7 @@ export default {
           },
           {
             text: '채용공고',
+            to: '/',
           },
         ]"
       />

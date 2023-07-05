@@ -33,6 +33,7 @@ export default {
           },
           {
             text: '영업현황',
+            to: '/',
           },
         ]"
       />

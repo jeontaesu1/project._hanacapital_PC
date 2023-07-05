@@ -38,10 +38,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -64,6 +60,7 @@ export default {
           },
           {
             text: '청구 방법/청구지 변경',
+            to: '/',
           },
         ]"
       />

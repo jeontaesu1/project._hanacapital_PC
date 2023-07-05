@@ -34,6 +34,7 @@ export default {
           },
           {
             text: '하나캐피탈 멤버십',
+            to: '/',
           },
         ]"
       />

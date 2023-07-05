@@ -72,7 +72,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -97,6 +96,7 @@ export default {
           },
           {
             text: '청약철회권 신청',
+            to: '/',
           },
         ]"
       />

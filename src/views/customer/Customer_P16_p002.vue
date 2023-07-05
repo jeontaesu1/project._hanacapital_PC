@@ -36,10 +36,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -59,6 +55,7 @@ export default {
           },
           {
             text: '그룹사간 고객정보 제공내역 조회',
+            to: '/',
           },
         ]"
       />

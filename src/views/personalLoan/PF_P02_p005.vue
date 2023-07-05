@@ -95,7 +95,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -117,6 +116,7 @@ export default {
           },
           {
             text: '행복아파트론',
+            to: '/',
           },
         ]"
       />

@@ -144,7 +144,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -166,6 +165,7 @@ export default {
           },
           {
             text: '다이렉트 오토리스',
+            to: '/',
           },
         ]"
       />

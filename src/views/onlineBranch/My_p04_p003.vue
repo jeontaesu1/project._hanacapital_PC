@@ -40,10 +40,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -66,6 +62,7 @@ export default {
           },
           {
             text: '근저당설정 조회/해지신청',
+            to: '/',
           },
         ]"
       />

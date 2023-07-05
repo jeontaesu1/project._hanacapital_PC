@@ -79,7 +79,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -104,6 +103,7 @@ export default {
           },
           {
             text: '범칙금/자동차세 조회',
+            to: '/',
           },
         ]"
       />

@@ -88,7 +88,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -113,6 +112,7 @@ export default {
           },
           {
             text: 'SMS안내 수신/변경',
+            to: '/',
           },
         ]"
       />

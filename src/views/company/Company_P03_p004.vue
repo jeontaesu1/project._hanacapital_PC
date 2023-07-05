@@ -39,6 +39,7 @@ export default {
           },
           {
             text: '사회공헌',
+            to: '/',
           },
         ]"
       />
