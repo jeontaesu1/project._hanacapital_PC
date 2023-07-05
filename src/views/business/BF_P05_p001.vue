@@ -1,6 +1,5 @@
 <script>
 // BF_P05_p001
-
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
@@ -99,13 +98,13 @@ export default {
           :useUiTab="true"
           :classNames="{ wrap: 'row-margin-block-small' }"
         >
-          <NavTabButton link="AF_P02_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="AF_P02_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="AF_P02_p001_tab003">유의사항</NavTabButton>
+          <NavTabButton link="BF_P05_p001_tab001">상품안내</NavTabButton>
+          <NavTabButton link="BF_P05_p001_tab002">진행절차</NavTabButton>
+          <NavTabButton link="BF_P05_p001_tab003">유의사항</NavTabButton>
         </NavTab>
 
         <!-- 상품안내 -->
-        <UiTabPanel name="AF_P02_p001_tab001">
+        <UiTabPanel name="BF_P05_p001_tab001">
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -222,12 +221,10 @@ export default {
               >
                 연체이자율
               </h3>
-
               <p class="text-title-2">약정금리+3.00%</p>
               <p class="text-body-3 color-gray row-margin-small">
                 (법정최고금리 연 20% 이내)
               </p>
-
               <ul
                 :class="[
                   $style['basic-list'],
@@ -266,10 +263,8 @@ export default {
                       >
                         <div :class="$style['basic-list__symbol']">*</div>
                         <div :class="$style['basic-list__content']">
-                          <div>
-                            한국은행에서 매월 발표하는 가장 최근의
-                            비은행금융기관 가중평균대출금리 (신규대출 기준)
-                          </div>
+                          한국은행에서 매월 발표하는 가장 최근의 비은행금융기관
+                          가중평균대출금리 (신규대출 기준)
                         </div>
                       </li>
                     </ul>
@@ -294,7 +289,6 @@ export default {
               </h3>
               <p class="text-title-2">무상양도</p>
             </section>
-
             <section class="row-margin-contents">
               <h3
                 class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
@@ -337,7 +331,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>리스신청서</div>
+                            리스신청서
                           </div>
                         </li>
                         <li
@@ -350,7 +344,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>리스물건견적서</div>
+                            리스물건견적서
                           </div>
                         </li>
                         <li
@@ -363,7 +357,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>사업자등록증 사본</div>
+                            사업자등록증 사본
                           </div>
                         </li>
                         <li
@@ -376,7 +370,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>재무제표증명원</div>
+                            재무제표증명원
                           </div>
                         </li>
                         <li
@@ -389,7 +383,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>주민등록등본</div>
+                            주민등록등본
                           </div>
                         </li>
                         <li
@@ -402,7 +396,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>인감증명서</div>
+                            인감증명서
                           </div>
                         </li>
                         <li
@@ -415,7 +409,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>신분증 사본</div>
+                            신분증 사본
                           </div>
                         </li>
                       </ul>
@@ -450,7 +444,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>대표이사 연대보증 필수</div>
+                            대표이사 연대보증 필수
                           </div>
                         </li>
                         <li
@@ -463,7 +457,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>법인등기부등본</div>
+                            법인등기부등본
                           </div>
                         </li>
                         <li
@@ -476,7 +470,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>법인인감증명서</div>
+                            법인인감증명서
                           </div>
                         </li>
                         <li
@@ -489,7 +483,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>주주명부</div>
+                            주주명부
                           </div>
                         </li>
                         <li
@@ -502,7 +496,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>정관사본</div>
+                            정관사본
                           </div>
                         </li>
                         <li
@@ -515,7 +509,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>이사회결의서 사본</div>
+                            이사회결의서 사본
                           </div>
                         </li>
                         <li
@@ -528,7 +522,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>사업계획서</div>
+                            사업계획서
                           </div>
                         </li>
                         <li
@@ -541,7 +535,7 @@ export default {
                         >
                           <div :class="$style['basic-list__symbol']">-</div>
                           <div :class="$style['basic-list__content']">
-                            <div>회사소개서</div>
+                            회사소개서
                           </div>
                         </li>
                       </ul>
@@ -566,7 +560,7 @@ export default {
         <!-- // 상품안내 -->
 
         <!-- 진행절차 -->
-        <UiTabPanel name="AF_P02_p001_tab002">
+        <UiTabPanel name="BF_P05_p001_tab002">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -575,11 +569,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
                       하나캐피탈<br />
-                      일반할부
-                      <strong>
-                        상담을<br />
-                        신청 </strong
-                      >합니다.
+                      일반할부 <strong>상담을</strong><br />
+                      <strong>신청</strong> 합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -592,8 +583,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      <strong>상담 또는 전화</strong>로<br />대출가능 금액에<br />대해
-                      상담합니다.
+                      <strong>상담 또는 전화</strong>로<br />
+                      대출가능 금액에<br />
+                      대해 상담합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -622,10 +614,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       할부 약정 시<br />
-                      <strong>
-                        온라인이나<br />
-                        오프라인 약정 </strong
-                      >을<br />
+                      <strong>온라인이나</strong><br />
+                      <strong>오프라인 약정</strong>을<br />
                       진행합니다.
                     </p>
                   </div>
@@ -640,11 +630,10 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                     <p :class="$style['step__text']">
                       고객님께서<br />
-                      <strong>
-                        원하시는 기기를<br />
-                        설치 </strong
-                      >해드리고,<br />
-                      담당직원이 실사를 합니다.
+                      <strong>원하시는 기기를</strong><br />
+                      <strong>설치</strong> 해드리고,<br />
+                      담당직원이 실사를<br />
+                      합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -658,7 +647,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 6</div>
                     <p :class="$style['step__text']">
                       판매업체에<br />
-                      <strong>기기금액을<br />입금</strong>해 드립니다.
+                      <strong>기기금액을</strong><br />
+                      <strong>입금</strong>해 드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -672,7 +662,7 @@ export default {
         <!-- // 진행절차 -->
 
         <!-- 유의사항 -->
-        <UiTabPanel name="AF_P02_p001_tab003">
+        <UiTabPanel name="BF_P05_p001_tab003">
           <ul
             :class="[
               $style['basic-list'],
@@ -799,13 +789,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1765 (2022.11.04~2023.07.14)
+              준법심의필 23-145 (2023.05.18~2024.05.17)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제 2022-C1h-05995호 (2022.07.15~2023.07.14)
+              여신금융협회 심의필 제 2023-C1h-05525호 (2023.05.18~2024.05.17)
             </div>
           </li>
         </ul>
@@ -855,5 +845,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/views/auto/AF_P02_p001.scss';
+@import '@/assets/scss/views/business/BF_P05_p001.scss';
 </style>
