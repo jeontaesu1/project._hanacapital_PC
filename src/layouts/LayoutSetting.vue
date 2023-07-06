@@ -14,6 +14,7 @@ import NoneLayout from '@/layouts/NoneLayout.vue';
 import InventoryFinanceLayout from '@/layouts/inventoryFinance/InventoryFinanceLayout.vue';
 import LmBlogLayout from '@/layouts/lmBlog/LmBlogLayout.vue';
 import LmBlogPersonalLayout from '@/layouts/lmBlogPersonal/LmBlogPersonalLayout.vue';
+import AgentLayout from '@/layouts/agent/AgentLayout.vue';
 import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
 
 export default {
@@ -93,6 +94,7 @@ export default {
       InventoryFinanceLayout,
       LmBlogLayout,
       LmBlogPersonalLayout,
+      AgentLayout,
     };
     const layout = computed(() => {
       const { layout } = route.meta;

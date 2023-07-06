@@ -1,5 +1,9 @@
 <script>
 // Agent_P03_p003
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
@@ -10,11 +14,26 @@ export default {
     PageHead,
     PageTitle,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'agent002');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+    });
+  },
 };
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="max">
     <PageHead>
       <PageTitle>타이틀</PageTitle>
     </PageHead>

@@ -1,6 +1,7 @@
 <script>
 // Agent_P07_p002
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -13,6 +14,7 @@ import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component
 export default {
   components: {
     PageContents,
+    LocationBar,
     PageHead,
     PageTitle,
     BasicButton,
@@ -26,6 +28,21 @@ export default {
 
 <template>
   <PageContents size="wide">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '각종서식다운로드',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <PageHead>
       <PageTitle>각종서식다운로드</PageTitle>
     </PageHead>

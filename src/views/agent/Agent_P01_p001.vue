@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="wide">
     <PageHead>
       <PageTitle>타이틀</PageTitle>
     </PageHead>
