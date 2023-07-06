@@ -218,6 +218,31 @@ const routes = [
     name: '/guide/main-001',
     component: () => import('@/views/uiGuide/GuideMain001.vue'),
   },
+  {
+    path: '/guide/agent-001',
+    name: '/guide/agent-001',
+    component: () => import('@/views/uiGuide/GuideAgent001.vue'),
+  },
+  {
+    path: '/guide/agent-002',
+    name: '/guide/agent-002',
+    component: () => import('@/views/uiGuide/GuideAgent002.vue'),
+  },
+  {
+    path: '/guide/agent-003',
+    name: '/guide/agent-003',
+    component: () => import('@/views/uiGuide/GuideAgent003.vue'),
+  },
+  {
+    path: '/guide/agent-004',
+    name: '/guide/agent-004',
+    component: () => import('@/views/uiGuide/GuideAgent004.vue'),
+  },
+  {
+    path: '/guide/agent-005',
+    name: '/guide/agent-005',
+    component: () => import('@/views/uiGuide/GuideAgent005.vue'),
+  },
 
   // main
   {
@@ -1731,11 +1756,325 @@ const routes = [
     component: () => import('@/views/company/Company_P05_p005.vue'),
   },
 
+  // agent
+  {
+    path: '/agent/Agent_P01_p001',
+    name: '/agent/Agent_P01_p001',
+    component: () => import('@/views/agent/Agent_P01_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p001',
+    name: '/agent/Agent_P02_p001',
+    component: () => import('@/views/agent/Agent_P02_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p002',
+    name: '/agent/Agent_P02_p002',
+    component: () => import('@/views/agent/Agent_P02_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p003',
+    name: '/agent/Agent_P02_p003',
+    component: () => import('@/views/agent/Agent_P02_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p004',
+    name: '/agent/Agent_P02_p004',
+    component: () => import('@/views/agent/Agent_P02_p004.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p005',
+    name: '/agent/Agent_P02_p005',
+    component: () => import('@/views/agent/Agent_P02_p005.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p006',
+    name: '/agent/Agent_P02_p006',
+    component: () => import('@/views/agent/Agent_P02_p006.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p007',
+    name: '/agent/Agent_P02_p007',
+    component: () => import('@/views/agent/Agent_P02_p007.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p008',
+    name: '/agent/Agent_P02_p008',
+    component: () => import('@/views/agent/Agent_P02_p008.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p009',
+    name: '/agent/Agent_P02_p009',
+    component: () => import('@/views/agent/Agent_P02_p009.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p001',
+    name: '/agent/Agent_P03_p001',
+    component: () => import('@/views/agent/Agent_P03_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p002',
+    name: '/agent/Agent_P03_p002',
+    component: () => import('@/views/agent/Agent_P03_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p003',
+    name: '/agent/Agent_P03_p003',
+    component: () => import('@/views/agent/Agent_P03_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p004',
+    name: '/agent/Agent_P03_p004',
+    component: () => import('@/views/agent/Agent_P03_p004.vue'),
+  },
+  {
+    path: '/agent/Agent_P04_p001',
+    name: '/agent/Agent_P04_p001',
+    component: () => import('@/views/agent/Agent_P04_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P04_p002',
+    name: '/agent/Agent_P04_p002',
+    component: () => import('@/views/agent/Agent_P04_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P05_p001',
+    name: '/agent/Agent_P05_p001',
+    component: () => import('@/views/agent/Agent_P05_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P05_p002',
+    name: '/agent/Agent_P05_p002',
+    component: () => import('@/views/agent/Agent_P05_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P06_p001',
+    name: '/agent/Agent_P06_p001',
+    component: () => import('@/views/agent/Agent_P06_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P06_p002',
+    name: '/agent/Agent_P06_p002',
+    component: () => import('@/views/agent/Agent_P06_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P07_p001',
+    name: '/agent/Agent_P07_p001',
+    component: () => import('@/views/agent/Agent_P07_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P07_p002',
+    name: '/agent/Agent_P07_p002',
+    component: () => import('@/views/agent/Agent_P07_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p001',
+    name: '/agent/Agent_P09_p001',
+    component: () => import('@/views/agent/Agent_P09_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p002',
+    name: '/agent/Agent_P09_p002',
+    component: () => import('@/views/agent/Agent_P09_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p003',
+    name: '/agent/Agent_P09_p003',
+    component: () => import('@/views/agent/Agent_P09_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p005',
+    name: '/agent/Agent_P09_p005',
+    component: () => import('@/views/agent/Agent_P09_p005.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p006',
+    name: '/agent/Agent_P09_p006',
+    component: () => import('@/views/agent/Agent_P09_p006.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p001',
+    name: '/agent/Agent_P10_p001',
+    component: () => import('@/views/agent/Agent_P10_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p002',
+    name: '/agent/Agent_P10_p002',
+    component: () => import('@/views/agent/Agent_P10_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p003',
+    name: '/agent/Agent_P10_p003',
+    component: () => import('@/views/agent/Agent_P10_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p004',
+    name: '/agent/Agent_P10_p004',
+    component: () => import('@/views/agent/Agent_P10_p004.vue'),
+  },
+
   // affiliate-plaza
   {
     path: '/affiliate-plaza/Partner_P00_p001',
     name: '/affiliate-plaza/Partner_P00_p001',
     component: () => import('@/views/affiliatePlaza/Partner_P00_p001.vue'),
+  },
+
+  // agent
+  {
+    path: '/agent/Agent_P01_p001',
+    name: '/agent/Agent_P01_p001',
+    component: () => import('@/views/agent/Agent_P01_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p001',
+    name: '/agent/Agent_P02_p001',
+    component: () => import('@/views/agent/Agent_P02_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p002',
+    name: '/agent/Agent_P02_p002',
+    component: () => import('@/views/agent/Agent_P02_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p003',
+    name: '/agent/Agent_P02_p003',
+    component: () => import('@/views/agent/Agent_P02_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p004',
+    name: '/agent/Agent_P02_p004',
+    component: () => import('@/views/agent/Agent_P02_p004.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p005',
+    name: '/agent/Agent_P02_p005',
+    component: () => import('@/views/agent/Agent_P02_p005.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p006',
+    name: '/agent/Agent_P02_p006',
+    component: () => import('@/views/agent/Agent_P02_p006.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p007',
+    name: '/agent/Agent_P02_p007',
+    component: () => import('@/views/agent/Agent_P02_p007.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p008',
+    name: '/agent/Agent_P02_p008',
+    component: () => import('@/views/agent/Agent_P02_p008.vue'),
+  },
+  {
+    path: '/agent/Agent_P02_p009',
+    name: '/agent/Agent_P02_p009',
+    component: () => import('@/views/agent/Agent_P02_p009.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p001',
+    name: '/agent/Agent_P03_p001',
+    component: () => import('@/views/agent/Agent_P03_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p002',
+    name: '/agent/Agent_P03_p002',
+    component: () => import('@/views/agent/Agent_P03_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p003',
+    name: '/agent/Agent_P03_p003',
+    component: () => import('@/views/agent/Agent_P03_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P03_p004',
+    name: '/agent/Agent_P03_p004',
+    component: () => import('@/views/agent/Agent_P03_p004.vue'),
+  },
+  {
+    path: '/agent/Agent_P04_p001',
+    name: '/agent/Agent_P04_p001',
+    component: () => import('@/views/agent/Agent_P04_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P04_p002',
+    name: '/agent/Agent_P04_p002',
+    component: () => import('@/views/agent/Agent_P04_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P05_p001',
+    name: '/agent/Agent_P05_p001',
+    component: () => import('@/views/agent/Agent_P05_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P05_p002',
+    name: '/agent/Agent_P05_p002',
+    component: () => import('@/views/agent/Agent_P05_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P06_p001',
+    name: '/agent/Agent_P06_p001',
+    component: () => import('@/views/agent/Agent_P06_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P06_p002',
+    name: '/agent/Agent_P06_p002',
+    component: () => import('@/views/agent/Agent_P06_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P07_p001',
+    name: '/agent/Agent_P07_p001',
+    component: () => import('@/views/agent/Agent_P07_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P07_p002',
+    name: '/agent/Agent_P07_p002',
+    component: () => import('@/views/agent/Agent_P07_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p001',
+    name: '/agent/Agent_P09_p001',
+    component: () => import('@/views/agent/Agent_P09_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p002',
+    name: '/agent/Agent_P09_p002',
+    component: () => import('@/views/agent/Agent_P09_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p003',
+    name: '/agent/Agent_P09_p003',
+    component: () => import('@/views/agent/Agent_P09_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p005',
+    name: '/agent/Agent_P09_p005',
+    component: () => import('@/views/agent/Agent_P09_p005.vue'),
+  },
+  {
+    path: '/agent/Agent_P09_p006',
+    name: '/agent/Agent_P09_p006',
+    component: () => import('@/views/agent/Agent_P09_p006.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p001',
+    name: '/agent/Agent_P10_p001',
+    component: () => import('@/views/agent/Agent_P10_p001.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p002',
+    name: '/agent/Agent_P10_p002',
+    component: () => import('@/views/agent/Agent_P10_p002.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p003',
+    name: '/agent/Agent_P10_p003',
+    component: () => import('@/views/agent/Agent_P10_p003.vue'),
+  },
+  {
+    path: '/agent/Agent_P10_p004',
+    name: '/agent/Agent_P10_p004',
+    component: () => import('@/views/agent/Agent_P10_p004.vue'),
   },
 ];
 
