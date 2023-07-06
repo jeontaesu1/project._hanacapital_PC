@@ -1944,6 +1944,12 @@ const routes = [
     component: () => import('@/views/agent/Agent_P10_p004.vue'),
     meta: { layout: 'AgentLayout' },
   },
+  {
+    path: '/agent/Agent_P10_p005',
+    name: '/agent/Agent_P10_p005',
+    component: () => import('@/views/agent/Agent_P10_p005.vue'),
+    meta: { layout: 'AgentLayout' },
+  },
 ];
 
 export default routes;

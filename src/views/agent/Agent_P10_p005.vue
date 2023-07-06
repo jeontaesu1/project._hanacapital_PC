@@ -1,5 +1,5 @@
 <script>
-// Agent_P09_p002
+// Agent_P10_p005
 import { onMounted, onUnmounted } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
@@ -30,7 +30,7 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setActive(() => 'agent003');
+      store.ui.header.setActive(() => 'agent004');
     });
 
     onUnmounted(() => {
@@ -51,57 +51,41 @@ export default {
 <template>
   <PageContents size="max">
     <PageHead>
-      <PageTitle>수납진행내역</PageTitle>
+      <PageTitle>사전동의내역</PageTitle>
     </PageHead>
 
     <div class="container">
       <div class="search--container">
         <div class="search--container__box">
           <div class="search--container__list">
-            <div class="search--container__list-title">수납요청일자</div>
-            <div class="search--container__list-contents">
+            <div class="search--container__list-title">동의일자</div>
+            <div class="search--container__list-contents w25p">
               <input type="date" v-model="startDate" />
-              <span>~</span>
+              <span>-</span>
               <input type="date" v-model="endDate" />
             </div>
-            <div class="search--container__list-title">진행상태</div>
-            <div class="search--container__list-contents">
+            <div class="search--container__list-title">동의여부</div>
+            <div class="search--container__list-contents w25p">
               <div class="radio-container">
                 <label class="flex-container jcfs">
                   <input type="radio" name="a1" checked />
                   <span class="small"></span>
-                  전체
+                  Y
                 </label>
               </div>
               <div class="radio-container">
                 <label class="flex-container jcfs">
                   <input type="radio" name="a1" />
                   <span class="small"></span>
-                  정상
-                </label>
-              </div>
-              <div class="radio-container">
-                <label class="flex-container jcfs">
-                  <input type="radio" name="a1" />
-                  <span class="small"></span>
-                  오류
-                </label>
-              </div>
-              <div class="radio-container">
-                <label class="flex-container jcfs">
-                  <input type="radio" name="a1" />
-                  <span class="small"></span>
-                  보류
+                  N
                 </label>
               </div>
             </div>
-          </div>
-          <div class="search--container__list">
             <div class="search--container__list-title">검색조건</div>
-            <div class="search--container__list-contents w35p">
-              <div class="select-container">
+            <div class="search--container__list-contents w45p">
+              <div class="select-container w80p">
                 <select>
-                  <option value="1">제휴사주문번호</option>
+                  <option>고객명</option>
                 </select>
               </div>
               <input type="text" />
@@ -117,18 +101,16 @@ export default {
       <table class="table-type-01">
         <colgroup>
           <col width="7%" />
-          <col width="20%" />
-          <col width="20%" />
-          <col width="20%" />
-          <col width="20%" />
+          <col width="30%" />
+          <col width="30%" />
+          <col width="30%" />
         </colgroup>
         <thead>
           <tr>
             <th>항목</th>
             <th>전체</th>
-            <th>오류</th>
-            <th>연체</th>
-            <th>수납</th>
+            <th>동의</th>
+            <th>미동의</th>
           </tr>
         </thead>
         <tbody>
@@ -137,28 +119,6 @@ export default {
             <td class="txt-center">368</td>
             <td class="txt-center">368</td>
             <td class="txt-center">368</td>
-            <td class="txt-center">368</td>
-          </tr>
-          <tr>
-            <td class="txt-center cDisabled">대상금액</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-          </tr>
-          <tr>
-            <td class="txt-center cDisabled">수납수수료</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-          </tr>
-          <tr>
-            <td class="txt-center cDisabled">실수납음액</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
-            <td class="txt-center">2,152,580,000</td>
           </tr>
         </tbody>
       </table>
@@ -182,57 +142,28 @@ export default {
 
       <table class="table-type-04">
         <colgroup>
-          <col width="5%" />
-          <col width="9%" />
-          <col width="15%" />
-          <col width="15%" />
-          <col width="15%" />
-          <col width="10%" />
-          <col width="15%" />
-          <col width="10%" />
+          <col width="4%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="20%" />
         </colgroup>
         <thead>
           <tr>
             <th>순번</th>
-            <th>수납요청일</th>
-            <th>채권번호</th>
-            <th>제휴사주문번호</th>
+            <th>동의일자</th>
+            <th>동의여부</th>
             <th>고객명</th>
-            <th>진행상태</th>
-            <th>수납금액</th>
-            <th>요청구분</th>
+            <th>생년월일</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="txt-center">1</td>
             <td class="txt-center">2023.01.01</td>
-            <td class="txt-center">L12345678</td>
-            <td class="txt-center">1234567891234</td>
+            <td class="txt-center">N</td>
             <td class="txt-center">김하나</td>
-            <td class="txt-center cRed">오류</td>
-            <td class="txt-center">999,999,999</td>
-            <td class="txt-center">정상수납</td>
-          </tr>
-          <tr>
-            <td class="txt-center">2</td>
             <td class="txt-center">2023.01.01</td>
-            <td class="txt-center">L12345678</td>
-            <td class="txt-center">1234567891234</td>
-            <td class="txt-center">김하나</td>
-            <td class="txt-center cGreen">정상</td>
-            <td class="txt-center">999,999,999</td>
-            <td class="txt-center">정상수납</td>
-          </tr>
-          <tr>
-            <td class="txt-center">3</td>
-            <td class="txt-center">2023.01.01</td>
-            <td class="txt-center">L12345678</td>
-            <td class="txt-center">1234567891234</td>
-            <td class="txt-center">김하나</td>
-            <td class="txt-center">보류</td>
-            <td class="txt-center">999,999,999</td>
-            <td class="txt-center">정상수납</td>
           </tr>
         </tbody>
       </table>
@@ -289,5 +220,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/views/agent/Agent_P09_p002.scss';
+@import '@/assets/scss/views/agent/Agent_P10_p004.scss';
 </style>
