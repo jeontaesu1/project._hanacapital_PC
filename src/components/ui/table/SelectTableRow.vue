@@ -1,11 +1,14 @@
 <script>
 import {
+  provide,
   inject,
   reactive,
+  onBeforeMount,
   onMounted,
   onBeforeUnmount,
   nextTick,
   ref,
+  watch,
 } from 'vue';
 
 const call = (obj, callName, row) => {
@@ -36,6 +39,10 @@ export default {
       Type: Boolean,
       default: true,
     },
+    actionType: {
+      Type: String,
+      default: 'toggle',
+    },
     disabled: {
       Type: Boolean,
       default: false,
@@ -45,20 +52,26 @@ export default {
     const selectTable = inject('selectTable', {});
 
     const state = reactive({
-      selected: false,
       key: null,
+      selected: {
+        value: false,
+      },
+      disabled: {
+        value: false,
+      },
+      radioClick: false,
     });
 
     const row = ref(null);
 
     const select = () => {
-      if (state.selected) return;
+      if (state.selected.value) return;
 
       if (selectTable.once.value) {
         selectTable.allUnSelect();
       }
 
-      state.selected = true;
+      state.selected.value = true;
 
       nextTick(() => {
         props.onSelected(row);
@@ -67,9 +80,9 @@ export default {
     };
 
     const unSelect = () => {
-      if (!state.selected) return;
+      if (!state.selected.value) return;
 
-      state.selected = false;
+      state.selected.value = false;
 
       nextTick(() => {
         props.onUnSelected(row);
@@ -78,7 +91,7 @@ export default {
     };
 
     const toggle = () => {
-      if (state.selected) {
+      if (state.selected.value) {
         unSelect();
       } else {
         select();
@@ -86,12 +99,27 @@ export default {
     };
 
     const click = () => {
-      const { disabled } = props;
+      const { disabled, actionType } = props;
+      const { radioClick } = state;
 
-      if (disabled) return;
+      if (!disabled && !radioClick) {
+        if (actionType === 'toggle') {
+          toggle();
+        } else if (actionType === 'select') {
+          select();
+        }
+      }
 
-      toggle();
+      state.radioClick = false;
     };
+
+    const radioClick = () => {
+      state.radioClick = true;
+    };
+
+    onBeforeMount(() => {
+      state.disabled.value = props.disabled;
+    });
 
     onMounted(() => {
       if (selectTable && selectTable.itemsAdd) {
@@ -112,6 +140,22 @@ export default {
       }
     });
 
+    watch(
+      () => props.disabled,
+      (cur) => {
+        state.disabled.value = cur;
+      }
+    );
+
+    provide('selectTableRow', {
+      disabled: state.disabled,
+      selected: state.selected,
+      select,
+      unSelect,
+      toggle,
+      radioClick,
+    });
+
     return {
       state,
       row,
@@ -130,7 +174,7 @@ export default {
     :tabindex="disabled ? '-1' : '0'"
     :class="[
       {
-        'is-selected': state.selected,
+        'is-selected': state.selected.value,
         'is-disabled': disabled,
       },
     ]"
@@ -139,6 +183,7 @@ export default {
         if (action) click();
       }
     "
+    :title="state.selected.value ? '선택 됨' : null"
   >
     <slot
       :select="select"

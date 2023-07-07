@@ -43,8 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  max-height: 264px;
-  border-top: 1px solid $color-gray-60;
+  border-top: 2px solid $color-gray-60;
   border-bottom: 1px solid $color-gray-30;
 
   &__caption {
@@ -119,6 +118,54 @@
     }
   }
 
+  &__radio {
+    @include reset-button;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-30;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -6px 0 0 -6px;
+    }
+
+    &-text {
+      @include for-a11y;
+    }
+
+    &:global(.is-selected) {
+      border-color: $color-navy-50;
+      background-color: $color-navy-50;
+
+      &::before {
+        background-color: $color-white;
+      }
+    }
+
+    &[disabled] {
+      border-color: $color-gray-30;
+      background-color: $color-gray-20;
+
+      &:global(.is-selected) {
+        &::before {
+          background-color: $color-gray-40;
+        }
+      }
+    }
+  }
+
   &--disabled {
     .basic-table {
       > table {
@@ -130,6 +177,15 @@
           }
         }
       }
+    }
+  }
+
+  &--maxrow {
+    &-4 {
+      max-height: 268px;
+    }
+    &-8 {
+      max-height: 492px;
     }
   }
 }
