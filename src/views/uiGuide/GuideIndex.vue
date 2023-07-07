@@ -3862,8 +3862,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/agent-002',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.06.14',
         log: [],
       },
       {

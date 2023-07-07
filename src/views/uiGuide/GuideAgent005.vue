@@ -41,7 +41,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          ㅇㅇㅇㅇㅇ<br />ㅁㅁㅁㅁㅁㅁ
+          법인 SGI 등록 및 조회 팝업<br />Agent_P09_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
