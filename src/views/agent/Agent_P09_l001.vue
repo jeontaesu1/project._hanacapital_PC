@@ -34,13 +34,13 @@ export default {
 
 <template>
   <UiLayer ref="layer" v-slot="layerSlotProps">
-    <ModalPopup>
+    <ModalPopup size="large">
       <template v-slot:head>
         <ModalPopupHead>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>SGI 가입정보</PopupTitle>
         </ModalPopupHead>
       </template>
 
@@ -49,18 +49,14 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :wrap="true"
+          :col="5"
           align="center"
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
+            <BasicButton size="regular">저장</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -7,9 +7,6 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -18,9 +15,6 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
   },
   setup() {
     const layer = ref(null);
@@ -34,36 +28,124 @@ export default {
 
 <template>
   <UiLayer ref="layer" v-slot="layerSlotProps">
-    <ModalPopup>
+    <ModalPopup size="large">
       <template v-slot:head>
         <ModalPopupHead>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>제조사 조회</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <div class="container">
+        <div class="search--container">
+          <div class="search--container__box">
+            <div class="search--container__list">
+              <div class="search--container__list-title">조회조건</div>
+              <div class="search--container__list-contents w85p">
+                <div class="select-container w40p">
+                  <select>
+                    <option>주민/사업번호</option>
+                  </select>
+                </div>
+                <input type="text" />
+              </div>
+            </div>
+          </div>
 
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+          <div class="btn-container">
+            <button class="btn btn-primary btn-search-02">검색</button>
+          </div>
+        </div>
+
+        <table class="table-type-01 none-search">
+          <tbody>
+            <tr>
+              <td>조회된 내용이 없습니다.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table-type-04 bt">
+          <colgroup>
+            <col width="20%" />
+            <col width="15%" />
+            <col width="20%" />
+            <col width="30%" />
+            <col width="10%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>성명/상호</th>
+              <th>주민/사업번호</th>
+              <th>본지점</th>
+              <th>거래구분</th>
+              <th>고객구분명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+            <tr>
+              <td class="txt-center">상호명</td>
+              <td class="txt-center">123-12-1****</td>
+              <td class="txt-center">본사</td>
+              <td class="txt-center">
+                공급자, 제조사, 판매대리점, 탁송/등록대행사
+              </td>
+              <td class="txt-center">법인</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/views/agent/Agent_P00_l008.scss';
+</style>

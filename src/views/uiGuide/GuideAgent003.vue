@@ -7,6 +7,13 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import Agent_P02_l003 from '@/views/agent/Agent_P02_l003.vue';
+import Agent_P00_l010 from '@/views/agent/Agent_P00_l010.vue';
+import Agent_P00_l011 from '@/views/agent/Agent_P00_l011.vue';
+import Agent_P02_l002 from '@/views/agent/Agent_P02_l002.vue';
+import Agent_P02_l004 from '@/views/agent/Agent_P02_l004.vue';
+import Agent_P02_l005 from '@/views/agent/Agent_P02_l005.vue';
+import Agent_P02_l006 from '@/views/agent/Agent_P02_l006.vue';
+import Agent_P02_l007 from '@/views/agent/Agent_P02_l007.vue';
 
 export default {
   components: {
@@ -15,6 +22,13 @@ export default {
     ButtonList,
     ButtonListItem,
     Agent_P02_l003,
+    Agent_P00_l010,
+    Agent_P00_l011,
+    Agent_P02_l002,
+    Agent_P02_l004,
+    Agent_P02_l005,
+    Agent_P02_l006,
+    Agent_P02_l007,
   },
   setup() {
     const layer001 = ref(null);
@@ -86,7 +100,6 @@ export default {
           상환스케쥴 팝업<br />Agent_P02_l003
         </BasicButton>
       </ButtonListItem>
-      <!--
       <ButtonListItem>
         <BasicButton @click="layer002Open">
           판매대리점조회 팝업<br />Agent_P00_l010
@@ -122,9 +135,15 @@ export default {
           하나캐피탈 할부 상담 URL 발송<br />Agent_P02_l007
         </BasicButton>
       </ButtonListItem>
-      -->
     </ButtonList>
 
     <Agent_P02_l003 ref="layer001" />
+    <Agent_P00_l010 ref="layer002" />
+    <Agent_P00_l011 ref="layer003" />
+    <Agent_P02_l002 ref="layer004" />
+    <Agent_P02_l004 ref="layer005" />
+    <Agent_P02_l005 ref="layer006" />
+    <Agent_P02_l006 ref="layer007" />
+    <Agent_P02_l007 ref="layer008" />
   </PageContents>
 </template>

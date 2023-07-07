@@ -6,7 +6,10 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-// import layer from '@/views/';
+import Agent_P03_l001 from '@/views/agent/Agent_P03_l001.vue';
+import Agent_P03_l002 from '@/views/agent/Agent_P03_l002.vue';
+import Agent_P03_l003 from '@/views/agent/Agent_P03_l003.vue';
+import Agent_P03_l004 from '@/views/agent/Agent_P03_l004.vue';
 
 export default {
   components: {
@@ -14,7 +17,10 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    // layer,
+    Agent_P03_l001,
+    Agent_P03_l002,
+    Agent_P03_l003,
+    Agent_P03_l004,
   },
   setup() {
     const layer001 = ref(null);
@@ -79,8 +85,9 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <!--
-    <layer ref="layer001" />
-    -->
+    <Agent_P03_l001 ref="layer001" />
+    <Agent_P03_l002 ref="layer002" />
+    <Agent_P03_l003 ref="layer003" />
+    <Agent_P03_l004 ref="layer004" />
   </PageContents>
 </template>

@@ -7,9 +7,6 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -18,9 +15,6 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
   },
   setup() {
     const layer = ref(null);
@@ -34,36 +28,111 @@ export default {
 
 <template>
   <UiLayer ref="layer" v-slot="layerSlotProps">
-    <ModalPopup>
+    <ModalPopup size="regular">
       <template v-slot:head>
         <ModalPopupHead>
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>타이틀</PopupTitle>
+          <PopupTitle>판매대리점 조회</PopupTitle>
         </ModalPopupHead>
       </template>
 
-      <section>// contents</section>
+      <div class="container">
+        <div class="search-container">
+          <table class="table-type-search">
+            <colgroup>
+              <col width="10%" />
+              <col width="90%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="title">국가명</td>
+                <td>
+                  <div class="flex-container">
+                    <input type="text" />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
-            >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+          <div class="btn-container">
+            <button class="btn btn-primary btn-search">검색</button>
+          </div>
+        </div>
+
+        <div class="scroll-container">
+          <div class="scroll-container">
+            <div class="flex-container">
+              <table class="table-type-04 bt none-bottom">
+                <colgroup>
+                  <col width="50%" />
+                  <col width="50%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>국가코드</th>
+                    <th>국가명</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="scroll-container">
+            <div class="flex-container">
+              <table class="table-type-04 body">
+                <colgroup>
+                  <col width="50%" />
+                  <col width="50%" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-center">AD</td>
+                    <td class="txt-center">안도라</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/views/agent/Agent_P00_l012.scss';
+</style>

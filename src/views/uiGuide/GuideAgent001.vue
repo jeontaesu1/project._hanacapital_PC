@@ -7,6 +7,14 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import Agent_P00_l002 from '@/views/agent/Agent_P00_l002.vue';
+import Agent_P00_l003 from '@/views/agent/Agent_P00_l003.vue';
+import Agent_P00_l004 from '@/views/agent/Agent_P00_l004.vue';
+import Agent_P00_l005 from '@/views/agent/Agent_P00_l005.vue';
+import Agent_P00_l006 from '@/views/agent/Agent_P00_l006.vue';
+import Agent_P00_l007 from '@/views/agent/Agent_P00_l007.vue';
+import Agent_P00_l012 from '@/views/agent/Agent_P00_l012.vue';
+import Agent_P00_l008 from '@/views/agent/Agent_P00_l008.vue';
+import Agent_P00_l009 from '@/views/agent/Agent_P00_l009.vue';
 
 export default {
   components: {
@@ -15,6 +23,14 @@ export default {
     ButtonList,
     ButtonListItem,
     Agent_P00_l002,
+    Agent_P00_l003,
+    Agent_P00_l004,
+    Agent_P00_l005,
+    Agent_P00_l006,
+    Agent_P00_l007,
+    Agent_P00_l012,
+    Agent_P00_l008,
+    Agent_P00_l009,
   },
   setup() {
     const layer001 = ref(null);
@@ -92,7 +108,6 @@ export default {
           서류등록 팝업<br />Agent_P00_l002
         </BasicButton>
       </ButtonListItem>
-      <!--
       <ButtonListItem>
         <BasicButton @click="layer002Open">
           상담등록 내역 조회 팝업(내구재할부)<br />Agent_P00_l003
@@ -133,9 +148,16 @@ export default {
           사전신용정보조회동의 URL 발송<br />Agent_P00_l009
         </BasicButton>
       </ButtonListItem>
-      -->
     </ButtonList>
 
     <Agent_P00_l002 ref="layer001" />
+    <Agent_P00_l003 ref="layer002" />
+    <Agent_P00_l004 ref="layer003" />
+    <Agent_P00_l005 ref="layer004" />
+    <Agent_P00_l006 ref="layer005" />
+    <Agent_P00_l007 ref="layer006" />
+    <Agent_P00_l012 ref="layer007" />
+    <Agent_P00_l008 ref="layer008" />
+    <Agent_P00_l009 ref="layer009" />
   </PageContents>
 </template>
