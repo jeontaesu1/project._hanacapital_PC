@@ -1765,6 +1765,12 @@ const routes = [
 
   // agent
   {
+    path: '/agent/Agent_P00_p001',
+    name: '/agent/Agent_P00_p001',
+    component: () => import('@/views/agent/Agent_P00_p001.vue'),
+    meta: { layout: 'AgentLayout' },
+  },
+  {
     path: '/agent/Agent_P01_p001',
     name: '/agent/Agent_P01_p001',
     component: () => import('@/views/agent/Agent_P01_p001.vue'),
