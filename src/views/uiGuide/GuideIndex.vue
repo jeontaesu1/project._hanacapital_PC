@@ -2787,8 +2787,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/LM_P02_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.07',
         log: [],
       },
       {
@@ -2798,8 +2798,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/LM_P03_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.07',
         log: [],
       },
       {
@@ -2858,8 +2858,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/lm-blog/LM_P05_p001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.07',
         log: [],
       },
       {
