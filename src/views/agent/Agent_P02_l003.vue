@@ -9,6 +9,8 @@ import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 
+import IconPrint from '@/assets/images/icon/print.svg?component';
+
 export default {
   components: {
     UiLayer,
@@ -17,6 +19,7 @@ export default {
     ModalPopup,
     ModalPopupHead,
     BasicButton,
+    IconPrint,
   },
   setup() {
     const layer = ref(null);
@@ -43,7 +46,7 @@ export default {
       <section>
         <h3 class="text-title-1 row-margin-contents">계약내용</h3>
 
-        <div :class="$style['basic-table']">
+        <div :class="[$style['basic-table'], $style['basic-table--secondary']]">
           <table>
             <colgroup>
               <col style="width: 160px" />
@@ -94,6 +97,9 @@ export default {
           </div>
           <div class="flex-box__cell">
             <BasicButton theme="quaternary" size="small">
+              <template v-slot:leftIcon>
+                <IconPrint />
+              </template>
               인쇄하기
             </BasicButton>
           </div>

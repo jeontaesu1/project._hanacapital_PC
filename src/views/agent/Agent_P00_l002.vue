@@ -50,11 +50,18 @@ export default {
       </template>
 
       <div class="row-margin-block-small">
+        <!-- Case : 내용 없을 경우 -->
+        <div :class="[$style['empty'], $style['empty--secondary']]">
+          <p :class="$style['empty__text']">조회된 내용이 없습니다.</p>
+        </div>
+        <!-- // Case : 내용 없을 경우 -->
+
+        <!-- Case : 내용 있을 경우 -->
         <div :class="$style['basic-table']">
           <table>
             <colgroup>
-              <col style="width: 120px" />
-              <col style="width: 500px" />
+              <col />
+              <col />
               <col />
               <col />
             </colgroup>
@@ -66,12 +73,17 @@ export default {
                 <th>서류유효절차</th>
               </tr>
             </thead>
+            <tbody>
+              <tr v-for="i in 5" :key="i">
+                <td>2023.01.01</td>
+                <td>첨부파일명.jpg</td>
+                <td>김하나</td>
+                <td>유효성</td>
+              </tr>
+            </tbody>
           </table>
         </div>
-
-        <div :class="$style['empty']">
-          <p :class="$style['empty__text']">조회된 내용이 없습니다.</p>
-        </div>
+        <!-- // Case : 내용 있을 경우 -->
       </div>
 
       <ul class="reset-list">
@@ -161,86 +173,6 @@ export default {
           </div>
           <!-- //Case : 파일 첨부 후 -->
         </li>
-
-        <li>
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="Agent_P00_l002_upload"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="Agent_P00_l002_upload"
-                :class="$style['upload-button__label']"
-                >파일첨부</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="Agent_P00_l002_upload"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="Agent_P00_l002_upload"
-                :class="$style['upload-button__label']"
-                >파일첨부</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="Agent_P00_l002_upload"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="Agent_P00_l002_upload"
-                :class="$style['upload-button__label']"
-                >파일첨부</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="Agent_P00_l002_upload"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="Agent_P00_l002_upload"
-                :class="$style['upload-button__label']"
-                >파일첨부</label
-              >
-            </div>
-          </div>
-        </li>
       </ul>
 
       <ul
@@ -253,22 +185,14 @@ export default {
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            서류등록 파일은 이미지 파일만 가능합니다. (jpg, jpeg, png, gif 파일)
+            서류등록 파일은 이미지 파일만 가능합니다.(jpg, jpge, png, gif, tif,
+            pdf 파일)
           </div>
         </li>
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
-            서류등록 파일은 1회 접속 시 최대 5개까지 등록 가능하며 추가적인
-            서류등록을 원하실 경우 서류등록 메뉴에 재접속하시어 추가등록을
-            해주시기 바랍니다.
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            고객님께서 제출하신 서류는 본 금융 거래 이외의 다른 목적으로
-            사용되지 않습니다.
+            서류등록 파일은 최대 5개까지 등록 가능합니다.
           </div>
         </li>
       </ul>
@@ -276,16 +200,14 @@ export default {
       <template v-slot:foot>
         <ButtonList
           :wrap="true"
-          :col="4"
+          :col="5"
           align="center"
           :classNames="{
             wrap: 'row-margin-none',
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular" @click="layerSlotProps.close()">
-              저장
-            </BasicButton>
+            <BasicButton size="regular">저장</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>
