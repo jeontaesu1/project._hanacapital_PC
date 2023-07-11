@@ -215,7 +215,7 @@ export default {
                           >
                             <div :class="$style['basic-list__symbol']"></div>
                             <div :class="$style['basic-list__content']">
-                              정산금액(a): 잔존가치-재리스원금
+                              인지대(d): 금융사/손님 50%부담
                             </div>
                           </li>
                           <li
