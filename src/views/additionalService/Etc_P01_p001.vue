@@ -218,6 +218,102 @@ export default {
                     value: '2',
                     label: '011',
                   },
+                  {
+                    value: '3',
+                    label: '0130',
+                  },
+                  {
+                    value: '4',
+                    label: '016',
+                  },
+                  {
+                    value: '5',
+                    label: '017',
+                  },
+                  {
+                    value: '6',
+                    label: '018',
+                  },
+                  {
+                    value: '7',
+                    label: '019',
+                  },
+                  {
+                    value: '8',
+                    label: '0505',
+                  },
+                  {
+                    value: '9',
+                    label: '02',
+                  },
+                  {
+                    value: '10',
+                    label: '070',
+                  },
+                  {
+                    value: '11',
+                    label: '031',
+                  },
+                  {
+                    value: '12',
+                    label: '032',
+                  },
+                  {
+                    value: '13',
+                    label: '033',
+                  },
+                  {
+                    value: '14',
+                    label: '041',
+                  },
+                  {
+                    value: '15',
+                    label: '042',
+                  },
+                  {
+                    value: '16',
+                    label: '043',
+                  },
+                  {
+                    value: '17',
+                    label: '044',
+                  },
+                  {
+                    value: '18',
+                    label: '051',
+                  },
+                  {
+                    value: '19',
+                    label: '052',
+                  },
+                  {
+                    value: '20',
+                    label: '053',
+                  },
+                  {
+                    value: '21',
+                    label: '054',
+                  },
+                  {
+                    value: '22',
+                    label: '055',
+                  },
+                  {
+                    value: '23',
+                    label: '061',
+                  },
+                  {
+                    value: '24',
+                    label: '062',
+                  },
+                  {
+                    value: '25',
+                    label: '063',
+                  },
+                  {
+                    value: '26',
+                    label: '064',
+                  },
                 ]"
                 title="연락처 앞자리 번호 선택"
                 inputId="Etc_P01_p001_phone"
@@ -234,6 +330,7 @@ export default {
         </FormInvalid>
       </FormListItem>
 
+      <!-- Case : '개인금융', '자동차금융' 선택 시 노출 -->
       <FormListItem titleText="연락가능시간" target="#Etc_P01_p001_time001">
         <FormInvalid :error="state.time001Error">
           <InputBlock :error="state.time001Error">
@@ -338,7 +435,9 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
+      <!-- // Case : '개인금융', '자동차금융' 선택 시 노출 -->
 
+      <!-- Case : '자동차금융'선택 시 노출 -->
       <FormListItem titleText="차량구분" target="#Etc_P01_p001_carType">
         <FormInvalid :error="state.carTypeError">
           <InputBlock :error="state.carTypeError">
@@ -461,6 +560,7 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
+      <!-- // Case : '자동차금융'선택 시 노출 -->
 
       <FormListItem titleText="약관동의" :forceFocus="true">
         <div :class="$style['agree-list']">
