@@ -206,10 +206,10 @@ export default {
 
       <BasicHr theme="secondary" type="popup" className="row-margin-block" />
 
+      <!-- Case : 렌트일 경우 -->
       <section>
         <h3 class="text-big-3 row-margin-contents">만기처리 안내</h3>
 
-        <!-- Case : 렌트일 경우 -->
         <section class="row-margin-block-small row-margin-top-none">
           <h4 class="text-title-1 row-margin-small">연장</h4>
           <p class="text-body-1 font-weight-light color-gray-secondary">
@@ -230,31 +230,7 @@ export default {
             </KeyValue>
           </BasicBox>
         </section>
-        <!-- //Case : 렌트일 경우 -->
 
-        <!-- Case : 리스일 경우 -->
-        <section class="row-margin-block-small row-margin-top-none">
-          <h4 class="text-title-1 row-margin-small">연장</h4>
-          <p class="text-body-1 font-weight-light color-gray-secondary">
-            차량의 잔존가치 9,999,999원으로 리스 기한 연장
-          </p>
-
-          <BasicBox className="row-margin-contents">
-            <KeyValue verticalAlign="center">
-              <KeyValueItem>
-                <KeyValueTitle :classNames="{ title: 'color-black' }">
-                  잔존가치
-                </KeyValueTitle>
-                <KeyValueText>
-                  <UnitText rightUnit="원" align="right">9,999,999</UnitText>
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
-        </section>
-        <!-- //Case : 리스일 경우 -->
-
-        <!-- Case : 렌트일 경우 -->
         <section class="row-margin-block-small">
           <h4 class="text-title-1 row-margin-small">구매</h4>
 
@@ -345,91 +321,6 @@ export default {
             </ol>
           </div>
         </section>
-        <!-- //Case : 렌트일 경우 -->
-
-        <!-- Case : 리스일 경우 -->
-        <section class="row-margin-block-small">
-          <h4 class="text-title-1 row-margin-small">구매</h4>
-
-          <BasicBox className="row-margin-contents">
-            <KeyValue verticalAlign="center">
-              <KeyValueItem>
-                <KeyValueTitle :classNames="{ title: 'color-black' }">
-                  구매대금
-                </KeyValueTitle>
-                <KeyValueText>
-                  <UnitText rightUnit="원" align="right">9,999,999</UnitText>
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
-
-          <div :class="[$style['contents-list'], 'row-margin-contents']">
-            <ol
-              :class="[
-                $style['contents-list__list'],
-                $style['contents-list__list--quinary'],
-              ]"
-            >
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">1</div>
-                  <div :class="$style['contents-list__title']">
-                    구매대금은 별도로 납부하셔야 합니다.
-                  </div>
-                </div>
-                <div
-                  :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
-                >
-                  <p
-                    class="text-body-2 font-weight-regular color-gray-tertiary"
-                  >
-                    (리스 보증금이 있는 경우 차액분만 입금)
-                  </p>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">2</div>
-                  <div :class="$style['contents-list__title']">
-                    만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
-                    완료(3자 이전금지) 하셔야 하며, 미이전 시에는 자동차관리법에
-                    따른 범칙금이 부과됩니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">3</div>
-                  <div :class="$style['contents-list__title']">
-                    명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
-                    등)은 고객님 부담입니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">4</div>
-                  <div :class="$style['contents-list__title']">
-                    소유권이전 등록은 손님이 직접 이전하는 방법과,
-                    이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
-                    이전대행업체를 통한 이전 등록 시 이전대행비용이 발생됩니다.
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['contents-list__item']">
-                <div :class="$style['contents-list__head']">
-                  <div :class="$style['contents-list__symbol']">5</div>
-                  <div :class="$style['contents-list__title']">
-                    『차량등록명의』가 이용자명의일 경우에도 차량 매입시
-                    취득세가 발생합니다.
-                  </div>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </section>
-        <!-- //Case : 리스일 경우 -->
 
         <section class="row-margin-block-small row-margin-top-none">
           <h4 class="text-title-1 row-margin-small">반환</h4>
@@ -568,6 +459,252 @@ export default {
           </ul>
         </section>
       </section>
+      <!-- // Case : 렌트일 경우 -->
+
+      <!-- Case : 리스일 경우 -->
+      <section>
+        <h3 class="text-big-3 row-margin-contents">만기처리 안내</h3>
+
+        <section class="row-margin-block-small row-margin-top-none">
+          <h4 class="text-title-1 row-margin-small">연장</h4>
+          <p class="text-body-1 font-weight-light color-gray-secondary">
+            차량의 잔존가치 9,999,999원으로 리스 기한 연장
+          </p>
+
+          <BasicBox className="row-margin-contents">
+            <KeyValue verticalAlign="center">
+              <KeyValueItem>
+                <KeyValueTitle :classNames="{ title: 'color-black' }">
+                  잔존가치
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="원" align="right">9,999,999</UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </section>
+
+        <section class="row-margin-block-small">
+          <h4 class="text-title-1 row-margin-small">구매</h4>
+
+          <BasicBox className="row-margin-contents">
+            <KeyValue verticalAlign="center">
+              <KeyValueItem>
+                <KeyValueTitle :classNames="{ title: 'color-black' }">
+                  구매대금
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="원" align="right">9,999,999</UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+
+          <div :class="[$style['contents-list'], 'row-margin-contents']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="$style['contents-list__title']">
+                    구매대금은 별도로 납부하셔야 합니다.
+                  </div>
+                </div>
+                <div
+                  :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
+                >
+                  <p
+                    class="text-body-2 font-weight-regular color-gray-tertiary"
+                  >
+                    (리스 보증금이 있는 경우 차액분만 입금)
+                  </p>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="$style['contents-list__title']">
+                    만기일 +10일 이내에 ‘차량등록명의’를 고객님으로 이전
+                    완료(3자 이전금지) 하셔야 하며, 미이전 시에는 자동차관리법에
+                    따른 범칙금이 부과됩니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">
+                    명의 이전에 소요되는 각종 비용(등록세, 취득세, 공채비용
+                    등)은 고객님 부담입니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">4</div>
+                  <div :class="$style['contents-list__title']">
+                    소유권이전 등록은 손님이 직접 이전하는 방법과,
+                    이전대행업체(주식회사 다코스)를 통한 이전 방법이 있습니다.
+                    이전대행업체를 통한 이전 등록 시 이전대행비용이 발생됩니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">5</div>
+                  <div :class="$style['contents-list__title']">
+                    『차량등록명의』가 이용자명의일 경우에도 차량 매입시
+                    취득세가 발생합니다.
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="row-margin-block-small row-margin-top-none">
+          <h4 class="text-title-1 row-margin-small">반환</h4>
+          <p class="text-body-1 font-weight-light color-gray-secondary">
+            차량 반환 일시와 장소를 협의하여 반환 후 차량 평가
+          </p>
+          <div :class="[$style['contents-list'], 'row-margin-contents']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="$style['contents-list__title']">
+                    평가결과에 따라 ‘차량평가정산금’이 발생될 수 있습니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="$style['contents-list__title']">
+                    차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">
+                    반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은 약관을
+                    참조하시기 바랍니다.
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="row-margin-block-small row-margin-top-none">
+          <h4 class="text-title-1 row-margin-contents">공통사항</h4>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              $style['basic-list--regular-margin'],
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                만기 1개월전까지 담당자가 만기상담을 위해 연락드릴 예정입니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                반환 또는 구매시점에는 확인되지 않은 범칙금, 과태료, 자동차세
+                등을 충당하기 위해 3개월간 예치하는 “해지후보증금”을 납부하셔야
+                합니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>승계(임차인변경)</div>
+
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    'row-margin-item',
+                  ]"
+                >
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'font-weight-regular color-black',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      만기일로부터 2개월전 승계신청 원칙<br />
+                      (만기일로부터 1개월전 승계불가)
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'font-weight-regular color-red',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      YY.MM.DD 이후에는 승계신청이 불가합니다.
+                    </div>
+                  </li>
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'font-weight-regular color-black',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">-</div>
+                    <div :class="$style['basic-list__content']">
+                      만기일로부터 3회차 이전 승계 접수 시 승계가능합니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- // Case : 리스일 경우 -->
 
       <BasicHr theme="quaternary" className="row-margin-container-medium" />
 
