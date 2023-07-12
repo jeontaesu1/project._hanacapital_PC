@@ -54,10 +54,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -83,6 +79,7 @@ export default {
           },
           {
             text: '구매 신청',
+            to: '/',
           },
         ]"
       />

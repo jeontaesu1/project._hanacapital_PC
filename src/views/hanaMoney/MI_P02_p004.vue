@@ -73,6 +73,7 @@ export default {
           },
           {
             text: '하나머니',
+            to: '/',
           },
         ]"
       />

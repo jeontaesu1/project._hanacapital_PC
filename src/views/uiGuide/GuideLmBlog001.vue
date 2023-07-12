@@ -12,6 +12,7 @@ import LM_P01_l003 from '@/views/lmBlog/LM_P01_l003.vue';
 import LM_P01_l006 from '@/views/lmBlog/LM_P01_l006.vue';
 import LM_P01_l007 from '@/views/lmBlog/LM_P01_l007.vue';
 import LM_P01_l008 from '@/views/lmBlog/LM_P01_l008.vue';
+import LM_P01_l001 from '@/views/lmBlog/LM_P01_l001.vue';
 
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     LM_P01_l006,
     LM_P01_l007,
     LM_P01_l008,
+    LM_P01_l001,
   },
   setup() {
     const layer001 = ref(null);
@@ -33,6 +35,7 @@ export default {
     const layer004 = ref(null);
     const layer005 = ref(null);
     const layer006 = ref(null);
+    const layer007 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -52,6 +55,9 @@ export default {
     const layer006Open = (e = {}) => {
       layer006.value.layer.open(e.target);
     };
+    const layer007Open = (e = {}) => {
+      layer007.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -60,12 +66,14 @@ export default {
       layer004,
       layer005,
       layer006,
+      layer007,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
       layer006Open,
+      layer007Open,
     };
   },
 };
@@ -109,6 +117,11 @@ export default {
           차량조회 팝업<br />LM_P01_l008
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer007Open">
+          한도 금리 확인 팝업<br />LM_P01_l001
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <LM_P01_l009 ref="layer001" />
@@ -117,5 +130,6 @@ export default {
     <LM_P01_l006 ref="layer004" />
     <LM_P01_l007 ref="layer005" />
     <LM_P01_l008 ref="layer006" />
+    <LM_P01_l001 ref="layer007" />
   </PageContents>
 </template>

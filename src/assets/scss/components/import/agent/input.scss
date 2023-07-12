@@ -1,0 +1,194 @@
+input {
+  width: 100%;
+  padding: 7px 16px;
+  background-color: $color-white;
+  border: 1px solid $color-gray-30;
+  border-radius: 8px;
+  color: $color-black;
+  font-size: 16px;
+
+  &:disabled {
+    background-color: $color-gray-10;
+    color: $color-gray-60;
+  }
+
+  &.rt {
+    text-align: right;
+  }
+
+  &[type='date'] {
+    position: relative;
+
+    &::-webkit-calendar-picker-indicator {
+      background: transparent;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      background: url('@/assets/images/icon/calendar.svg') no-repeat;
+    }
+  }
+}
+
+.radio-container {
+  margin-right: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  input[type='radio'] {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+
+    &:checked {
+      & + span {
+        position: relative;
+
+        &::after {
+          z-index: 1;
+          content: '';
+          position: absolute;
+          background-color: $color-navy-50;
+          width: 24px;
+          height: 24px;
+          left: 0;
+          top: 0;
+          border-radius: 50px;
+        }
+
+        &::before {
+          z-index: 2;
+          content: '';
+          position: absolute;
+          background-color: $color-white;
+          width: 12px;
+          height: 12px;
+          left: 12px;
+          top: 12px;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+        }
+
+        &.small {
+          width: 18px;
+          height: 18px;
+
+          &::after {
+            width: 18px;
+            height: 18px;
+          }
+
+          &::before {
+            width: 8px;
+            height: 8px;
+            left: 9px;
+            top: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $color-gray-30;
+    border-radius: 50%;
+    background-color: $color-white;
+
+    &.small {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.check-container {
+  margin-right: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  input[type='checkbox'] {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+
+    &:checked {
+      & + span {
+        background-image: url('@/assets/images/icon/check-l.svg');
+      }
+    }
+  }
+
+  span {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url('@/assets/images/icon/check-l-disabled.svg');
+    background-size: cover;
+  }
+}
+
+.select-container {
+  width: 100%;
+  position: relative;
+
+  select {
+    width: 100%;
+    padding: 7px 16px;
+    background-color: $color-white;
+    border: 1px solid $color-gray-30;
+    border-radius: 8px;
+    color: $color-black;
+    font-size: 16px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:disabled {
+      background-color: $color-gray-10;
+      color: $color-gray-60;
+    }
+  }
+
+  &::after {
+    content: '';
+    background-image: url('@/assets/images/icon/dropdown.svg');
+    background-size: cover;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border: 1px solid $color-gray-30;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.off {
+  display: none;
+}
+
+.on {
+  display: block;
+}

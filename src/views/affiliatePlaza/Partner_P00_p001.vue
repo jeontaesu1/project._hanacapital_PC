@@ -35,6 +35,7 @@ export default {
           },
           {
             text: '제휴광장',
+            to: '/',
           },
         ]"
       />

@@ -27,6 +27,10 @@ export default {
       Type: String,
       default: 'text',
     },
+    maxLength: {
+      Type: Number,
+      default: null,
+    },
     onDelete: {
       Type: Function,
       default() {
@@ -107,8 +111,13 @@ export default {
 
     const onInput = (e) => {
       const { value } = e.target;
-      state.val = value;
-      emit('update:modelValue', value);
+      const { maxLength } = props;
+      const val =
+        maxLength === null ? value : value.substr(0, Number(maxLength));
+
+      e.target.value = val;
+      state.val = val;
+      emit('update:modelValue', val);
     };
 
     const onKeyup = (e) => {

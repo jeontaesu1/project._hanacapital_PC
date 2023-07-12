@@ -92,7 +92,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -114,6 +113,7 @@ export default {
           },
           {
             text: '사업자 주택담보대출',
+            to: '/',
           },
         ]"
       />

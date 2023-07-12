@@ -89,7 +89,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -114,6 +113,7 @@ export default {
           },
           {
             text: '청구 방법/청구지 변경',
+            to: '/',
           },
         ]"
       />

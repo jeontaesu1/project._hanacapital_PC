@@ -42,6 +42,7 @@ export default {
           },
           {
             text: '전형방법',
+            to: '/',
           },
         ]"
       />

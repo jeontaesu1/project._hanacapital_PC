@@ -1,0 +1,29 @@
+@import '@/assets/scss/components/import/product-top.scss';
+@import '@/assets/scss/components/import/product-detail.scss';
+@import '@/assets/scss/components/import/product-benefit.scss';
+@import '@/assets/scss/components/import/product-info.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/step.scss';
+@import '@/assets/scss/components/import/icon-list.scss';
+@import '@/assets/scss/components/import/contents-list.scss';
+
+.contents-list {
+  &__list--quinary {
+    > .contents-list__item {
+      & + .contents-list__item {
+        margin-top: 16px;
+      }
+
+      > .contents-list__head {
+        .contents-list__symbol {
+          margin-right: 12px;
+          padding: 1px 6px 0;
+          min-width: 20px;
+          min-height: 19px;
+          @include font-size-default(11);
+          background-color: $color-gray-20;
+        }
+      }
+    }
+  }
+}

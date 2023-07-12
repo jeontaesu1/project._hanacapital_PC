@@ -65,10 +65,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -88,6 +84,7 @@ export default {
           },
           {
             text: '우수고객추가대출',
+            to: '/',
           },
         ]"
       />

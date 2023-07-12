@@ -104,7 +104,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -129,6 +128,7 @@ export default {
           },
           {
             text: '지정운전자 등록',
+            to: '/',
           },
         ]"
       />

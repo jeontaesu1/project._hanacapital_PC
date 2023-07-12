@@ -91,7 +91,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -113,6 +112,7 @@ export default {
           },
           {
             text: '스탁론',
+            to: '/',
           },
         ]"
       />

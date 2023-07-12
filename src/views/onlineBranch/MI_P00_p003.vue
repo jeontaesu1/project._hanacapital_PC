@@ -56,10 +56,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -82,6 +78,7 @@ export default {
           },
           {
             text: '자동이체 계좌 변경',
+            to: '/',
           },
         ]"
       />

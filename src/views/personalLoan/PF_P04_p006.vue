@@ -42,10 +42,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -65,6 +61,7 @@ export default {
           },
           {
             text: '원큐자동차담보대출',
+            to: '/',
           },
         ]"
       />

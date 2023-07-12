@@ -35,6 +35,7 @@ export default {
           },
           {
             text: '신용등급',
+            to: '/',
           },
         ]"
       />

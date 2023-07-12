@@ -35,6 +35,7 @@ export default {
           },
           {
             text: '인권선언문 구성체계',
+            to: '/',
           },
         ]"
       />

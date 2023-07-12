@@ -83,10 +83,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -109,6 +105,7 @@ export default {
           },
           {
             text: '만기후처리',
+            to: '/',
           },
         ]"
       />

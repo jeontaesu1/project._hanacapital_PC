@@ -29,7 +29,7 @@
   width: 100%;
   min-height: 64px;
   border-radius: 10px;
-  padding: 12px 20px;
+  padding: 12px 19px;
   @include font-size-button(20);
   font-weight: 700;
   text-align: center;
@@ -80,7 +80,7 @@
   &--size {
     &-regular {
       min-height: 52px;
-      padding: 8px 16px;
+      padding: 8px 15px;
       @include font-size-button(18);
       font-weight: 500;
 
@@ -97,7 +97,7 @@
     &-small {
       min-height: 40px;
       border-radius: 8px;
-      padding: 6px 12px;
+      padding: 6px 11px;
       @include font-size-button(14);
       font-weight: 500;
 

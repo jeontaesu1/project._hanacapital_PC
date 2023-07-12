@@ -76,7 +76,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -98,6 +97,7 @@ export default {
           },
           {
             text: '원큐자동차담보대출',
+            to: '/',
           },
         ]"
       />

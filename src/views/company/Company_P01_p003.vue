@@ -38,6 +38,7 @@ export default {
           },
           {
             text: '연혁',
+            to: '/',
           },
         ]"
       />

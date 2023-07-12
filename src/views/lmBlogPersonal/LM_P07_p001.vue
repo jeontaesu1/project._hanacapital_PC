@@ -1,6 +1,7 @@
 <script>
 // LM_P07_p001
 import { reactive, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -23,15 +24,16 @@ import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicBanner from '@/components/ui/banner/BasicBanner.vue';
-import BasicBannerSlide from '@/components/ui/banner/BasicBannerSlide.vue';
+import ImageBannerSlide from '@/components/ui/banner/ImageBannerSlide.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconCall from '@/assets/images/icon/call.svg?component';
-import IconLink from '@/assets/images/icon/link.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
+    RouterLink,
     Swiper,
     SwiperSlide,
     PageContents,
@@ -51,11 +53,9 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicBanner,
-    BasicBannerSlide,
+    ImageBannerSlide,
     IconCustomer,
     IconCall,
-    IconLink,
   },
   setup() {
     const store = {
@@ -81,6 +81,7 @@ export default {
     });
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
       state,
     };
@@ -183,103 +184,46 @@ export default {
       >
         <div class="row-margin-contents-small">
           <!-- DD : 관리자 등록 배너 -->
-          <BasicBannerSlide>
+          <ImageBannerSlide>
             <Swiper :modules="modules" :pagination="{ clickable: true }">
               <!-- Case : 링크 기능 없을 때 -->
               <SwiperSlide>
-                <BasicBanner
-                  thumb="/images/_dummy/banner-001.png"
-                  :action="false"
-                >
-                  <h3 class="text-title-1 row-margin-small ellipsis">
-                    원큐자동차담보대출 타이틀 텍스트 최대 한줄 노출 타이틀
-                    텍스트 최대 한줄 노출
-                  </h3>
-                  <p class="text-body-1 font-weight-light multi-ellipsis">
-                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
-                    대출이 가능한 금융서비스 입니다. 설명 텍스트 최대 두줄 노출
-                    설명 텍스트 최대 두줄 노출
-                  </p>
-                  <div class="inline-wrap row-margin-contents-small">
-                    <TextButton
-                      textSize="medium"
-                      iconSize="medium"
-                      tagName="span"
-                      :classNames="{ wrap: 'color-gray-tertiary' }"
-                    >
-                      자세히보기
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
-                  </div>
-                </BasicBanner>
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
               </SwiperSlide>
               <!-- //Case : 링크 기능 없을 때 -->
 
               <!-- Case : 링크 기능 있을 때 (RouterLink) -->
               <SwiperSlide>
-                <BasicBanner
-                  thumb="/images/_dummy/banner-001.png"
-                  tagName="RouterLink"
-                  to=""
-                >
-                  <h3 class="text-title-1 row-margin-small">
-                    원큐자동차담보대출
-                  </h3>
-                  <p class="text-body-1 font-weight-light">
-                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
-                    대출이 가능한 금융서비스 입니다.
-                  </p>
-                  <div class="inline-wrap row-margin-contents-small">
-                    <TextButton
-                      textSize="medium"
-                      iconSize="medium"
-                      tagName="span"
-                      :classNames="{ wrap: 'color-gray-tertiary' }"
-                    >
-                      자세히보기
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
+                <RouterLink to="" class="link-block">
+                  <div :class="$style['image-view']">
+                    <img
+                      :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                      alt="배너 설명 넣어주세요"
+                    />
                   </div>
-                </BasicBanner>
+                </RouterLink>
               </SwiperSlide>
               <!-- // Case : 링크 기능 있을 때 -->
 
               <!-- Case : 링크 기능 있을 때 (a tag) -->
               <SwiperSlide>
-                <BasicBanner
-                  thumb="/images/_dummy/banner-001.png"
-                  tagName="a"
-                  href=""
-                >
-                  <h3 class="text-title-1 row-margin-small">
-                    원큐자동차담보대출
-                  </h3>
-                  <p class="text-body-1 font-weight-light">
-                    자동차 소유 고객을 대상으로 빠르고 편리하게<br />
-                    대출이 가능한 금융서비스 입니다.
-                  </p>
-                  <div class="inline-wrap row-margin-contents-small">
-                    <TextButton
-                      textSize="medium"
-                      iconSize="medium"
-                      tagName="span"
-                      :classNames="{ wrap: 'color-gray-tertiary' }"
-                    >
-                      자세히보기
-                      <template v-slot:rightIcon>
-                        <IconLink />
-                      </template>
-                    </TextButton>
+                <a href="" class="link-block">
+                  <div :class="$style['image-view']">
+                    <img
+                      :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                      alt="배너 설명 넣어주세요"
+                    />
                   </div>
-                </BasicBanner>
+                </a>
               </SwiperSlide>
               <!-- // Case : 링크 기능 있을 때 (a tag) -->
             </Swiper>
-          </BasicBannerSlide>
+          </ImageBannerSlide>
           <!-- // DD : 관리자 등록 배너 -->
         </div>
 

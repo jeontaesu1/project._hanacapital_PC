@@ -39,6 +39,7 @@ export default {
           },
           {
             text: '회원탈회',
+            to: '/',
           },
         ]"
       />

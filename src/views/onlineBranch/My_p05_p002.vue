@@ -81,7 +81,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -106,6 +105,7 @@ export default {
           },
           {
             text: '금리인하요구권 신청',
+            to: '/',
           },
         ]"
       />

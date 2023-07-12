@@ -43,10 +43,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -66,6 +62,7 @@ export default {
           },
           {
             text: 'e하나신용대출',
+            to: '/',
           },
         ]"
       />

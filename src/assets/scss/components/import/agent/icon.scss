@@ -1,0 +1,123 @@
+.ico {
+  display: inline-block;
+  margin-right: 10px;
+
+  &-plus {
+    width: 16px;
+    height: 16px;
+    mask-image: url('@/assets/images/icon/add-black.svg');
+    -webkit-mask-image: url('@/assets/images/icon/add-black.svg');
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: $color-green-50;
+
+    &-black {
+      width: 16px;
+      height: 16px;
+      mask-image: url('@/assets/images/icon/add-black.svg');
+      -webkit-mask-image: url('@/assets/images/icon/add-black.svg');
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      background-color: $color-black;
+    }
+
+    &-gray {
+      width: 16px;
+      height: 16px;
+      mask-image: url('@/assets/images/icon/add-black.svg');
+      -webkit-mask-image: url('@/assets/images/icon/add-black.svg');
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      background-color: $color-gray-30;
+    }
+  }
+
+  &-nchecked {
+    width: 24px;
+    height: 24px;
+    background-image: url('@/assets/images/icon/check-l-disabled.svg');
+    background-size: cover;
+  }
+
+  &-checked {
+    width: 24px;
+    height: 24px;
+    background-image: url('@/assets/images/icon/check-l.svg');
+    background-size: cover;
+  }
+
+  &-excel {
+    width: 24px;
+    height: 24px;
+    mask-image: url('@/assets/images/icon/download.svg');
+    -webkit-mask-image: url('@/assets/images/icon/download.svg');
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: $color-green-50;
+  }
+
+  &-close {
+    width: 30px;
+    height: 30px;
+    background-image: url('@/assets/images/common/close.svg');
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  &-warning {
+    width: 24px;
+    height: 24px;
+    background-image: url('@/assets/images/icon/text-error.svg');
+    background-size: cover;
+  }
+
+  &-explan {
+    position: relative;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    background-image: url('@/assets/images/icon/important.svg');
+    background-size: cover;
+  }
+
+  &-reset {
+    width: 14px;
+    height: 14px;
+    background-image: url('@/assets/images/icon/reload.svg');
+    background-size: cover;
+  }
+
+  &-success {
+    width: 16px;
+    height: 16px;
+    background-image: url('@/assets/images/icon/complete.svg');
+    background-size: cover;
+  }
+
+  &-print {
+    width: 24px;
+    height: 24px;
+    background-image: url('@/assets/images/icon/print.svg');
+    background-size: cover;
+  }
+
+  &-arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url('@/assets/images/icon/pagination-next.svg');
+    background-size: cover;
+    margin-right: 0;
+  }
+
+  &-image {
+    width: 36px;
+    height: 36px;
+    background-image: url('@/assets/images/icon/img-color.svg');
+
+    &-no {
+      width: 36px;
+      height: 36px;
+      background-image: url('@/assets/images/icon/img.svg');
+    }
+  }
+}

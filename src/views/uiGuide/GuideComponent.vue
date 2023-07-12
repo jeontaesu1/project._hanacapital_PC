@@ -95,7 +95,9 @@ import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
+import SelectTableRadioCell from '@/components/ui/table/SelectTableRadioCell.vue';
 import UiScroller from '@/components/ui/common/UiScroller.vue';
+import ImageBannerSlide from '@/components/ui/banner/ImageBannerSlide.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -131,6 +133,8 @@ import IconAssignment from '@/assets/images/icon/assignment.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 
 import ImgMainSample from '@/assets/images/_dummy/main-sample.svg?component';
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default {
   components: {
@@ -229,7 +233,9 @@ export default {
     BasicTooltip,
     SelectTable,
     SelectTableRow,
+    SelectTableRadioCell,
     UiScroller,
+    ImageBannerSlide,
 
     IconAdd,
     IconPerson,
@@ -319,6 +325,7 @@ export default {
     };
 
     return {
+      BASE_URL,
       modules: [Pagination, A11y],
       state,
       layerTest001,
@@ -6560,7 +6567,7 @@ export default {
     <section class="test-section">
       <h2 class="test-section-title">SelectTable</h2>
       <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
+        <h3 class="test-section-sub-title">Default (toggle)</h3>
 
         <SelectTable>
           <template v-slot:colgroup>
@@ -6603,6 +6610,64 @@ export default {
             <td>5,300 만원</td>
           </SelectTableRow>
           <SelectTableRow>
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+        </SelectTable>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Not Toggle</h3>
+
+        <SelectTable>
+          <template v-slot:colgroup>
+            <col style="width: 80px" />
+            <col style="width: 140px" />
+            <col style="width: 800px" />
+            <col style="width: 160px" />
+          </template>
+
+          <template v-slot:head>
+            <tr>
+              <th>선택</th>
+              <th>제조사</th>
+              <th>모델명</th>
+              <th>차량 금액</th>
+            </tr>
+          </template>
+
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select" :initialActive="true">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>2.2 디젤 11인승 노블레스</td>
+            <td>5,500 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
+            <td>기아</td>
+            <td>뉴 카니발(YP) 3.0 가솔린 9인승 노블레스</td>
+            <td>5,300 만원</td>
+          </SelectTableRow>
+          <SelectTableRow actionType="select">
+            <SelectTableRadioCell />
             <td>기아</td>
             <td>2.2 디젤 11인승 노블레스</td>
             <td>5,500 만원</td>
@@ -7090,52 +7155,52 @@ export default {
       <h2 class="test-section-title">status-inquiry</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <!-- status-inquiry -->
-        <ul :class="$style['status-inquiry']">
-          <li :class="$style['status-inquiry__item']">
-            <button
-              type="button"
-              :class="[
-                $style['status-inquiry__category'],
-                $style['status-inquiry__category--active'],
-              ]"
-            >
-              <span :class="$style['status-inquiry__number']">10</span>
-              <span :class="$style['status-inquiry__text']">전체</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">신용동의</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">3</span>
-              <span :class="$style['status-inquiry__text']">상담</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">계약</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">4</span>
-              <span :class="$style['status-inquiry__text']">심사</span>
-            </button>
-          </li>
-          <li :class="$style['status-inquiry__item']">
-            <button type="button" :class="$style['status-inquiry__category']">
-              <span :class="$style['status-inquiry__number']">1</span>
-              <span :class="$style['status-inquiry__text']">송금</span>
-            </button>
-          </li>
-        </ul>
-        <!-- status-inquiry -->
+        <div :class="$style['status-inquiry']">
+          <ul :class="$style['status-inquiry__list']">
+            <li :class="$style['status-inquiry__item']">
+              <button
+                type="button"
+                :class="[
+                  $style['status-inquiry__category'],
+                  $style['status-inquiry__category--active'],
+                ]"
+              >
+                <span :class="$style['status-inquiry__number']">10</span>
+                <span :class="$style['status-inquiry__text']">전체</span>
+              </button>
+            </li>
+            <li :class="$style['status-inquiry__item']">
+              <button type="button" :class="$style['status-inquiry__category']">
+                <span :class="$style['status-inquiry__number']">4</span>
+                <span :class="$style['status-inquiry__text']">신용동의</span>
+              </button>
+            </li>
+            <li :class="$style['status-inquiry__item']">
+              <button type="button" :class="$style['status-inquiry__category']">
+                <span :class="$style['status-inquiry__number']">3</span>
+                <span :class="$style['status-inquiry__text']">상담</span>
+              </button>
+            </li>
+            <li :class="$style['status-inquiry__item']">
+              <button type="button" :class="$style['status-inquiry__category']">
+                <span :class="$style['status-inquiry__number']">4</span>
+                <span :class="$style['status-inquiry__text']">계약</span>
+              </button>
+            </li>
+            <li :class="$style['status-inquiry__item']">
+              <button type="button" :class="$style['status-inquiry__category']">
+                <span :class="$style['status-inquiry__number']">4</span>
+                <span :class="$style['status-inquiry__text']">심사</span>
+              </button>
+            </li>
+            <li :class="$style['status-inquiry__item']">
+              <button type="button" :class="$style['status-inquiry__category']">
+                <span :class="$style['status-inquiry__number']">1</span>
+                <span :class="$style['status-inquiry__text']">송금</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -7828,6 +7893,53 @@ export default {
             <!-- // Case : 링크 기능 있을 때 (a tag) -->
           </Swiper>
         </BasicBannerSlide>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">ImageBannerSlide</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+        <ImageBannerSlide>
+          <Swiper :modules="modules" :pagination="{ clickable: true }">
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </ImageBannerSlide>
       </div>
     </section>
 

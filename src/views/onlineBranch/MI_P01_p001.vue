@@ -69,7 +69,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -94,6 +93,7 @@ export default {
           },
           {
             text: '비밀번호 변경',
+            to: '/',
           },
         ]"
       />

@@ -42,10 +42,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -68,6 +64,7 @@ export default {
           },
           {
             text: 'SMS안내 수신/변경',
+            to: '/',
           },
         ]"
       />

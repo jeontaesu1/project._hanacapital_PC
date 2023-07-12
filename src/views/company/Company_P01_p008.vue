@@ -41,6 +41,7 @@ export default {
           },
           {
             text: '지속가능경영',
+            to: '/',
           },
         ]"
       />

@@ -78,7 +78,6 @@ export default {
     });
 
     return {
-      store,
       state,
     };
   },
@@ -100,6 +99,7 @@ export default {
           },
           {
             text: '개인정보 열람 청구',
+            to: '/',
           },
         ]"
       />

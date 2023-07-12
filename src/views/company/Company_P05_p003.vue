@@ -66,6 +66,7 @@ export default {
           },
           {
             text: '인사/복리후생',
+            to: '/',
           },
         ]"
       />

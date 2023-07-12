@@ -217,18 +217,29 @@ export default {
             >
               <div class="flex-box">
                 <div class="flex-box__cell flex-1">
-                  <h4 class="text-title-2 font-weight-medium">하나캐피탈</h4>
-                  <div :class="[$style['division-info'], 'row-margin-small']">
-                    <ul :class="$style['division-info__list']">
-                      <li :class="$style['division-info__item']">
-                        <div class="text-body-3 font-weight-light">홍길동</div>
-                      </li>
-                      <li :class="$style['division-info__item']">
-                        <div class="text-body-3 font-weight-light">
-                          210-91-12345
-                        </div>
-                      </li>
-                    </ul>
+                  <div :class="$style['block']">
+                    <h4
+                      class="text-title-2 font-weight-medium row-margin-small"
+                    >
+                      하나캐피탈
+                    </h4>
+                    <div :class="$style['division-info']">
+                      <ul :class="$style['division-info__list']">
+                        <li :class="$style['division-info__item']">
+                          <div class="text-body-3 font-weight-light">
+                            홍길동
+                          </div>
+                        </li>
+                        <li :class="$style['division-info__item']">
+                          <div class="text-body-3 font-weight-light">
+                            210-91-12345
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <button type="button" :class="$style['button']">
+                      <span class="for-a11y">선택</span>
+                    </button>
                   </div>
                 </div>
                 <div class="flex-box__cell">

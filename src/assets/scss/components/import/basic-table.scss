@@ -82,4 +82,16 @@
       border-left: 1px solid $color-gray-30;
     }
   }
+
+  &--secondary {
+    > table {
+      > tbody {
+        > tr {
+          > th {
+            background-color: $color-gray-10;
+          }
+        }
+      }
+    }
+  }
 }

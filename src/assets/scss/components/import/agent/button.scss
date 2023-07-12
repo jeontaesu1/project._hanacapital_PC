@@ -1,0 +1,120 @@
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  &.bottom {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.fixed {
+    width: 100%;
+    padding: 16px 0 30px;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-white;
+    max-width: 1240px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
+button {
+  padding: 8px 12px;
+  color: $color-black;
+  border: 1px solid $color-black;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: $color-white;
+  min-width: 52px;
+  height: auto;
+  min-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.btn {
+    &-s01 {
+      color: $color-white;
+      background-color: $color-green-50;
+      border: 1px solid $color-green-50;
+    }
+
+    &-s02 {
+      color: $color-green-50;
+      background-color: $color-white;
+      border: 1px solid $color-green-50;
+    }
+
+    &-s03 {
+      color: $color-black;
+      background-color: $color-gray-20;
+      border: 1px solid $color-gray-20;
+    }
+
+    &-s04 {
+      color: $color-gray-40;
+      background-color: $color-gray-20;
+      border: 1px solid $color-gray-20;
+    }
+
+    &-s05 {
+      color: $color-gray-70;
+      background-color: $color-white;
+      border: 1px solid $color-gray-20;
+    }
+
+    &-primary {
+      color: $color-white;
+      background-color: $color-navy-50;
+      border: 1px solid $color-navy-50;
+    }
+
+    &-send {
+      width: 212px;
+      color: $color-white;
+      background-color: $color-green-50;
+      border: 1px solid $color-green-50;
+    }
+
+    &-address {
+      width: 103px;
+      color: $color-white;
+      background-color: $color-navy-50;
+      border: 1px solid $color-navy-50;
+    }
+
+    &-search {
+      width: 290px;
+
+      &-02 {
+        width: 290px;
+        height: 52px;
+        font-size: 18px;
+      }
+    }
+
+    &-middle {
+      padding: 14px;
+    }
+
+    &-snone {
+      font-size: 16px;
+      border: none;
+      color: $color-gray-60;
+      margin-right: -20px;
+    }
+  }
+}

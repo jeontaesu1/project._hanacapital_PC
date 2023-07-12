@@ -43,10 +43,6 @@ export default {
       // optional : 헤더 내비게이션 Active 리셋
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>

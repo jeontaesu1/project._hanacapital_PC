@@ -51,10 +51,6 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
-
-    return {
-      store,
-    };
   },
 };
 </script>
@@ -77,6 +73,7 @@ export default {
           },
           {
             text: '금융소비자보호공시',
+            to: '/',
           },
         ]"
       />
