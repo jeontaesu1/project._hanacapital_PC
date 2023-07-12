@@ -346,7 +346,7 @@ export default {
                 <div :class="$style['contents-list__head']">
                   <div :class="$style['contents-list__symbol']">2</div>
                   <div :class="$style['contents-list__title']">
-                    차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                    차량 반환 지연 시에는 ‘반환지연금’이 추가로 부과됩니다.
                   </div>
                 </div>
               </li>
@@ -354,7 +354,7 @@ export default {
                 <div :class="$style['contents-list__head']">
                   <div :class="$style['contents-list__symbol']">3</div>
                   <div :class="$style['contents-list__title']">
-                    반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은 약관을
+                    반환 가능 여부 및 ‘차량평가정산금’에 관한 세부내용은 약관을
                     참조하시기 바랍니다.
                   </div>
                 </div>
@@ -591,7 +591,7 @@ export default {
                 <div :class="$style['contents-list__head']">
                   <div :class="$style['contents-list__symbol']">2</div>
                   <div :class="$style['contents-list__title']">
-                    차량 반환 지연 시에는 ‘반환지연금‘이 추가로 부과됩니다.
+                    차량 반환 지연 시에는 ‘반환지연금’이 추가로 부과됩니다.
                   </div>
                 </div>
               </li>
@@ -599,7 +599,7 @@ export default {
                 <div :class="$style['contents-list__head']">
                   <div :class="$style['contents-list__symbol']">3</div>
                   <div :class="$style['contents-list__title']">
-                    반환 가능 여부 및 ‘차량평가정산금‘에 관한 세부내용은 약관을
+                    반환 가능 여부 및 ‘차량평가정산금’에 관한 세부내용은 약관을
                     참조하시기 바랍니다.
                   </div>
                 </div>
