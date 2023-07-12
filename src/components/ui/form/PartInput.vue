@@ -1,5 +1,13 @@
 <script>
-import { ref, computed, onMounted, onUpdated } from 'vue';
+import {
+  ref,
+  computed,
+  onMounted,
+  onUpdated,
+  watch,
+  inject,
+  nextTick,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
@@ -42,6 +50,8 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const formListItem = inject('formListItem', {});
+
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -72,6 +82,19 @@ export default {
     onUpdated(() => {
       checkLength();
     });
+
+    watch(
+      () => props.modelValue,
+      () => {
+        checkLength();
+
+        nextTick(() => {
+          if (formListItem && formListItem.checkInputed) {
+            formListItem.checkInputed();
+          }
+        });
+      }
+    );
 
     return {
       input,

@@ -1,5 +1,13 @@
 <script>
-import { ref, reactive, computed, onBeforeMount } from 'vue';
+import {
+  ref,
+  reactive,
+  computed,
+  onBeforeMount,
+  watch,
+  inject,
+  nextTick,
+} from 'vue';
 
 import IconDelete from '@/assets/images/icon/text-delete.svg?component';
 
@@ -70,6 +78,8 @@ export default {
       val: '',
     });
 
+    const formListItem = inject('formListItem', {});
+
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -127,6 +137,19 @@ export default {
     onBeforeMount(() => {
       state.val = props.modelValue || props.defaultValue || '';
     });
+
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.val = cur;
+
+        nextTick(() => {
+          if (formListItem && formListItem.checkInputed) {
+            formListItem.checkInputed();
+          }
+        });
+      }
+    );
 
     return {
       state,

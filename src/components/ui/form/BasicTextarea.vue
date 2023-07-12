@@ -9,6 +9,8 @@ import {
   onMounted,
   onUpdated,
   useCssModule,
+  watch,
+  nextTick,
 } from 'vue';
 
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
@@ -178,6 +180,17 @@ export default {
     onUpdated(() => {
       checkLength();
     });
+
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.val = cur;
+
+        nextTick(() => {
+          checkInputed();
+        });
+      }
+    );
 
     provide('formListItem', {
       helpClass: formListStyleModule['form__help'],
