@@ -597,17 +597,28 @@ export default {
             </button>
           </li>
           <li :class="$style['icon-list__item']">
-            <a href="" :class="$style['icon-list__block']">
-              <span :class="$style['icon-list__icon']">
+            <div :class="$style['icon-list__block']">
+              <div :class="$style['icon-list__icon']">
                 <Icon1QCapital />
-              </span>
-              <span :class="$style['icon-list__content']">
-                <span :class="$style['icon-list__text']">
-                  모바일 앱에서 편하게 이용해요
-                </span>
-                <span :class="$style['icon-list__title']">앱 설치하기</span>
-              </span>
-            </a>
+              </div>
+              <div :class="$style['icon-list__content']">
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-1">
+                    <div :class="$style['icon-list__text']">
+                      모바일 앱에서 편하게 이용해요
+                    </div>
+                    <div :class="$style['icon-list__title']">앱 설치하기</div>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--large">
+                    <img
+                      src="@/assets/images/contents/qr-install.png"
+                      alt=""
+                      class="display-block"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
