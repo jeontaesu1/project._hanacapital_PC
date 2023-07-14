@@ -104,7 +104,7 @@ export default {
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
           금융소비자 보호를 위해 대출 계약 후, 14일 동안 불이익 없이 청약 탈퇴할
-          수 있습니다. 대출 실행일 다음날부터 14일을 초과한 경우 철약 철회가
+          수 있습니다. 대출 실행일 다음날부터 14일을 초과한 경우 청약 철회가
           불가합니다. (14일째가 휴일인 경우 다음 영업일까지 가능)
         </div>
       </li>
@@ -119,7 +119,7 @@ export default {
         <div :class="$style['basic-list__symbol']"></div>
         <div :class="$style['basic-list__content']">
           청약철회로 안내되는 상환 금액은 신청일 기준이므로 신청일 이후에는
-          재신청을 하셔야합니다.
+          재신청을 하셔야 합니다.
         </div>
       </li>
       <li :class="[$style['basic-list__item'], 'font-weight-regular']">
@@ -139,7 +139,7 @@ export default {
     <!-- Case : 신청 가능 상품이 없는 경우 노출 -->
     <div :class="$style['empty']">
       <p :class="$style['empty__text']">
-        현재 금리인하가 가능한 상품이 없습니다.
+        현재 청약철회가 가능한 상품이 없습니다.
       </p>
     </div>
     <!-- // Case : 신청 가능 상품이 없는 경우 노출 -->
