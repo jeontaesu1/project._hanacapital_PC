@@ -120,12 +120,10 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">한도</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>
-                    <div>시세의 최대 85%</div>
-                    <div class="text-body-3 font-weight-light row-margin-mini">
-                      (선순위, 후순위)
-                    </div>
-                  </div>
+                  시세의 최대 85%
+                </div>
+                <div class="text-body-3 font-weight-light row-margin-mini">
+                  (선순위, 후순위)
                 </div>
               </div>
             </li>
@@ -136,17 +134,15 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>
-                    <div class="font-weight-bold">
-                      (고정금리)<br />
-                      최저 연7.2%<br />
-                      ~ 최고 9.0%
-                    </div>
-                    <div class="text-body-3 font-weight-light row-margin-mini">
-                      * 만기연장 시 최초 약정 금리<br />
-                      조건적용(변동 또는 고정금리)
-                    </div>
+                  <div class="font-weight-bold">
+                    (고정금리)<br />
+                    최저 연7.2%<br />
+                    ~ 최고 9.0%
                   </div>
+                </div>
+                <div class="text-body-3 font-weight-light row-margin-mini">
+                  * 만기연장 시 최초 약정 금리<br />
+                  조건적용(변동 또는 고정금리)
                 </div>
               </div>
             </li>
@@ -157,15 +153,11 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>
-                    <div>
-                      신규 : 12개월 ~ 36개월<br />
-                      연장 : 1년 단위
-                    </div>
-                    <div class="text-body-3 font-weight-light row-margin-mini">
-                      (최대 10년 이내)
-                    </div>
-                  </div>
+                  신규 : 12개월 ~ 36개월<br />
+                  연장 : 1년 단위
+                </div>
+                <div class="text-body-3 font-weight-light row-margin-mini">
+                  (최대 10년 이내)
                 </div>
               </div>
             </li>

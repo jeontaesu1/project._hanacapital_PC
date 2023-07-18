@@ -196,7 +196,8 @@ export default {
                     <div :class="$style['icon-info__contents']">
                       <div :class="$style['icon-info__title']">양도인</div>
                       <div :class="$style['icon-info__text']">
-                        리스 승계 시 위약금이 발생하지 않아 유리합니다.
+                        <span>리스 승계</span> 시 위약금이 발생하지 않아
+                        유리합니다.
                       </div>
                     </div>
                   </div>
@@ -823,7 +824,8 @@ export default {
                     <div :class="$style['icon-info__contents']">
                       <div :class="$style['icon-info__title']">양도인</div>
                       <div :class="$style['icon-info__text']">
-                        렌트 승계 시 위약금이 발생하지 않아 유리합니다.
+                        <span class="color-red">렌트 승계</span> 시 위약금이
+                        발생하지 않아 유리합니다.
                       </div>
                     </div>
                   </div>
