@@ -129,8 +129,8 @@ export default {
                 <IconRate />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 5.9~16.9%</div>
+                <div :class="$style['product-detail__title']">최저금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -139,7 +139,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">12 ~ 120개월</div>
+                <div :class="$style['product-detail__desc']">최대 84개월</div>
               </div>
             </li>
           </ul>
@@ -210,8 +210,13 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      연 5.9% ~ 16.9%
+                    <div
+                      :class="[
+                        $style['product-info__text'],
+                        'font-weight-bold',
+                      ]"
+                    >
+                      연 5.9% ~ 19.9%
                     </div>
                   </div>
                 </div>
@@ -226,7 +231,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      12개월 ~ 120개월
+                      12개월 ~ 84개월
                     </div>
                   </div>
                 </div>
@@ -323,8 +328,10 @@ export default {
               >
                 연체이자율
               </h3>
-              <p class="text-title-2">약정이율 + 3%</p>
-              <p class="text-body-3 color-gray row-margin-small">
+              <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
+              <p
+                class="text-body-3 color-gray font-weight-bold row-margin-small"
+              >
                 (법정최고금리 연 20% 이내)
               </p>
             </section>
@@ -377,8 +384,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      대출 한도 확인 후<br />
-                      <strong>신청정보를 입력</strong>합니다.
+                      고객님이 원하는 조건으로<br />
+                      <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -391,23 +398,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 3</div>
                     <p :class="$style['step__text']">
-                      온라인으로 <strong>약정을</strong><br />
-                      <strong>진행</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconContract />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 4</div>
-                    <p :class="$style['step__text']">
-                      제출하신 정보를 바탕으로<br />
-                      최종심사 후 손님께 <strong>결과를</strong><br />
-                      <strong>안내해</strong>드립니다.
+                      신청하신 정보를 바탕으로<br />
+                      최종심사 후 손님께<br />
+                      <strong>결과를 안내</strong>해드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -418,10 +411,24 @@ export default {
               <li :class="$style['step__item']">
                 <div :class="$style['step__inner']">
                   <div :class="$style['step__contents']">
+                    <div :class="$style['step__badge']">STEP 4</div>
+                    <p :class="$style['step__text']">
+                      온라인으로<br />
+                      <strong>약정을 진행</strong>합니다.
+                    </p>
+                  </div>
+                  <div :class="$style['step__icon']">
+                    <IconContract />
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['step__item']">
+                <div :class="$style['step__inner']">
+                  <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 5</div>
                     <p :class="$style['step__text']">
-                      계좌로 <strong>대출금을</strong><br />
-                      <strong>입금</strong>해드립니다.
+                      손님 계좌로<br />
+                      <strong>대출금을 입금</strong>해드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -562,13 +569,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1653(2022.10.17~2023.10.16)
+              준법심의필 23-40(2023.02.15~2024.02.14)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회심의필 제 2022-L1h-08905호(2022.10.17~2023.10.16)
+              여신금융협회 심의필 제 2023-L1h-01308호(2023.02.15~2024.02.14)
             </div>
           </li>
         </ul>

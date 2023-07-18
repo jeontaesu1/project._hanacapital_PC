@@ -692,6 +692,7 @@ export default {
         :class="[
           $style['icon-list'],
           $style['icon-list--wrap'],
+          $style['icon-list--col-3'],
           'row-margin-container-medium',
         ]"
       >

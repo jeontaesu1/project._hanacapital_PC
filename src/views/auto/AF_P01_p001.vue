@@ -569,7 +569,7 @@ export default {
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
                       신청정보 확인하여<br />
-                      결과를 통보<strong>결과를 통보</strong>합니다.
+                      <strong>결과를 통보</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">

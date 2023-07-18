@@ -22,10 +22,11 @@ import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
-import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
+import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconSend from '@/assets/images/icon/send.svg?component';
 
 export default {
   components: {
@@ -46,10 +47,11 @@ export default {
     IconInterestRate,
     IconSearchMoney,
     IconPersonalTerms,
-    IconCallMint,
     IconDeposit,
     IconCalculate,
     Icon1QCapital,
+    IconContract,
+    IconSend,
   },
   setup() {
     const store = {
@@ -127,8 +129,8 @@ export default {
                 <IconRate />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 5.9~16.9%</div>
+                <div :class="$style['product-detail__title']">최저금리</div>
+                <div :class="$style['product-detail__desc']">연 5.9%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -137,7 +139,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">12 ~ 120개월</div>
+                <div :class="$style['product-detail__desc']">최대 84개월</div>
               </div>
             </li>
           </ul>
@@ -205,8 +207,13 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      연 5.9% ~ 16.9%
+                    <div
+                      :class="[
+                        $style['product-info__text'],
+                        'font-weight-bold',
+                      ]"
+                    >
+                      연 5.9% ~ 19.9%
                     </div>
                   </div>
                 </div>
@@ -221,7 +228,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      12개월 ~ 120개월
+                      12개월 ~ 84개월
                     </div>
                   </div>
                 </div>
@@ -250,6 +257,19 @@ export default {
               <h3
                 class="text-body-3 font-weight-medium color-gray row-margin-item"
               >
+                연체이자율
+              </h3>
+              <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
+              <p
+                class="text-body-3 color-gray font-weight-bold row-margin-small"
+              >
+                (법정최고금리 연 20% 이내)
+              </p>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
                 이자부과시기
               </h3>
               <p class="text-title-2">매월 후취</p>
@@ -267,8 +287,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
-                      하나캐피탈 홈페이지에서<br />
-                      <strong>추가대출 대상 여부</strong>를 조회합니다.
+                      본인인증 및 손님의 정보로<br />
+                      <strong>대출한도를 조회</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -281,8 +301,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      대출 한도 확인 후<br />
-                      <strong>신청정보를 입력</strong>합니다.
+                      고객님이 원하는 조건으로<br />
+                      <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -295,12 +315,13 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 3</div>
                     <p :class="$style['step__text']">
-                      입력하신 <strong>정보 및 약정 확인 전화</strong>를<br />
-                      드립니다.
+                      신청하신 정보를 바탕으로<br />
+                      최종심사 후 손님께<br />
+                      <strong>결과를 안내</strong>해드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconCallMint />
+                    <IconSend />
                   </div>
                 </div>
               </li>
@@ -309,7 +330,22 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
-                      계좌로 <strong>대출금을 입금</strong>해드립니다.
+                      온라인으로<br />
+                      <strong>약정을 진행</strong>합니다.
+                    </p>
+                  </div>
+                  <div :class="$style['step__icon']">
+                    <IconContract />
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['step__item']">
+                <div :class="$style['step__inner']">
+                  <div :class="$style['step__contents']">
+                    <div :class="$style['step__badge']">STEP 5</div>
+                    <p :class="$style['step__text']">
+                      손님 계좌로<br />
+                      <strong>대출금을 입금</strong>해드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -450,13 +486,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-1571 (2022.09.01 ~ 2023.08.31)
+              준법심의필 23-41(2023.02.15~2024.02.14)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제 2022-L1h-07708호 (2022.09.01 ~ 2023.08.31)
+              여신금융협회 심의필 제 2023-L1h-01309호(2023.02.15~2024.02.14)
             </div>
           </li>
         </ul>
