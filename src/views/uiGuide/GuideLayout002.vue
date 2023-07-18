@@ -34,6 +34,9 @@ export default {
 
       // optional : 헤더 내비게이션 Active 세팅
       store.ui.header.setActive(() => 'business');
+
+      // optional : 헤더 내비게이션 2 뎁스 Active 세팅
+      store.ui.header.setDepthActive(() => 'business001');
     });
 
     onUnmounted(() => {
@@ -42,6 +45,9 @@ export default {
 
       // optional : 헤더 내비게이션 Active 리셋
       store.ui.header.setActive();
+
+      // optional : 헤더 내비게이션 2 뎁스 Active 리셋
+      store.ui.header.setDepthActive();
     });
   },
 };

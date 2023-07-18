@@ -5,13 +5,8 @@ export default {
   components: {
     HeaderBase,
   },
-};
-</script>
-
-<template>
-  <HeaderBase
-    type="lmBlogPersonal"
-    :nav="[
+  setup() {
+    const nav = [
       {
         name: 'lmBlogPersonal001',
         text: '홈',
@@ -22,6 +17,15 @@ export default {
         text: '찾아오시는 길',
         to: '/lm-blog-personal/LM_P07_p002',
       },
-    ]"
-  />
+    ];
+
+    return {
+      nav,
+    };
+  },
+};
+</script>
+
+<template>
+  <HeaderBase type="lmBlogPersonal" :nav="nav" />
 </template>

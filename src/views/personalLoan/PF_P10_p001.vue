@@ -51,11 +51,13 @@ export default {
     };
 
     onMounted(() => {
-      store.ui.header.setActive(() => 'personalLoan');
+      store.ui.header.setActive(() => 'business');
+      store.ui.header.setDepthActive(() => 'business003');
     });
 
     onUnmounted(() => {
       store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
   },
 };
@@ -71,11 +73,11 @@ export default {
             to: '/main/home',
           },
           {
-            text: '개인금융',
+            text: '의료기·설비',
             to: '/',
           },
           {
-            text: '내구소비재할부',
+            text: '내구재할부',
             to: '/',
           },
         ]"
@@ -85,7 +87,7 @@ export default {
     <div :class="$style['product-top']">
       <div :class="$style['product-top__contents']">
         <div :class="$style['product-top__head']">
-          <h2 :class="$style['product-top__sub-text']">내구소비재할부</h2>
+          <h2 :class="$style['product-top__sub-text']">내구재할부</h2>
           <p :class="$style['product-top__main-text']">
             일반 내구소비재를 구입하는 분들께 물건대금을 지원하는 금융서비스
           </p>

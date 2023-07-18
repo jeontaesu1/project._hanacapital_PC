@@ -1,5 +1,9 @@
 <script>
 // My_P02_p002
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
@@ -47,6 +51,23 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+  },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'onlineBranch');
+      store.ui.header.setDepthActive(() => 'onlineBranch001');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+      store.ui.header.setDepthActive();
+    });
   },
 };
 </script>

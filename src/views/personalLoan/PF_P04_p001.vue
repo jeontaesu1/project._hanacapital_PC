@@ -62,10 +62,12 @@ export default {
 
     onMounted(() => {
       store.ui.header.setActive(() => 'personalLoan');
+      store.ui.header.setDepthActive(() => 'personalLoan004');
     });
 
     onUnmounted(() => {
       store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
   },
 };

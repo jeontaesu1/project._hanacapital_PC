@@ -1,6 +1,8 @@
 <script>
 // Etc_P01_p001
-import { reactive } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import LocationBar from '@/components/ui/layout/LocationBar.vue';
@@ -51,6 +53,12 @@ export default {
     ButtonListItem,
   },
   setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
     const state = reactive({
       type001Error: false,
       field001Error: false,
@@ -60,6 +68,16 @@ export default {
       carTypeError: false,
       carNameError: false,
       areaError: false,
+    });
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'customer');
+      store.ui.header.setDepthActive(() => 'customer011');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
 
     return {

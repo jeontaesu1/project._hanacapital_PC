@@ -62,10 +62,12 @@ export default {
 
     onMounted(() => {
       store.ui.header.setActive(() => 'onlineBranch');
+      store.ui.header.setDepthActive(() => 'onlineBranch003');
     });
 
     onUnmounted(() => {
       store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
 
     return {

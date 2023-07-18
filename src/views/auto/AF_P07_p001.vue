@@ -69,10 +69,12 @@ export default {
 
     onMounted(() => {
       store.ui.header.setActive(() => 'auto');
+      store.ui.header.setDepthActive(() => 'auto006');
     });
 
     onUnmounted(() => {
       store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
   },
 };

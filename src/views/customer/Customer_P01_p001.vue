@@ -129,10 +129,12 @@ export default {
 
     onMounted(() => {
       store.ui.header.setActive(() => 'customer');
+      store.ui.header.setDepthActive(() => 'customer001');
     });
 
     onUnmounted(() => {
       store.ui.header.setActive();
+      store.ui.header.setDepthActive();
     });
 
     return {

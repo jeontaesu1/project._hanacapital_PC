@@ -6,6 +6,9 @@ import {
   onUpdated,
   onBeforeUnmount,
   onUnmounted,
+  reactive,
+  useCssModule,
+  nextTick,
 } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -38,6 +41,9 @@ export default {
     },
   },
   setup() {
+    const timer = {};
+    const $style = useCssModule();
+
     const store = {
       ui: {
         common: useUiCommonStore(),
@@ -46,10 +52,19 @@ export default {
       },
     };
 
+    const state = reactive({
+      isFocus: {},
+      isHover: {},
+      navLayerHeight: 0,
+      isDepthFocus: {},
+      isDepthHover: {},
+    });
+
     const header = ref(null);
     const fixbar = ref(null);
     const fake = ref(null);
     const siteMap = ref(null);
+    const navLayer = ref(null);
 
     const isBlocking = computed(() => {
       return store.ui.scrollBlock.isBlocking;
@@ -61,6 +76,46 @@ export default {
 
     const blockingScrollLeft = computed(() => {
       return store.ui.scrollBlock.scrollLeft;
+    });
+
+    const isNavLayerShow = computed(() => {
+      let isShow = false;
+
+      for (const [key] of Object.entries(state.isFocus)) {
+        if (state.isFocus[key]) {
+          isShow = true;
+          break;
+        }
+      }
+
+      for (const [key] of Object.entries(state.isHover)) {
+        if (state.isHover[key]) {
+          isShow = true;
+          break;
+        }
+      }
+
+      return isShow;
+    });
+
+    const isDepthEnter = computed(() => {
+      let isEnter = false;
+
+      for (const [key] of Object.entries(state.isDepthFocus)) {
+        if (state.isDepthFocus[key]) {
+          isEnter = true;
+          break;
+        }
+      }
+
+      for (const [key] of Object.entries(state.isDepthHover)) {
+        if (state.isDepthHover[key]) {
+          isEnter = true;
+          break;
+        }
+      }
+
+      return isEnter;
     });
 
     const update = () => {
@@ -96,6 +151,93 @@ export default {
       siteMap.value.layer.open(e.target);
     };
 
+    const resetHoverFocus = () => {
+      Object.keys(state.isHover).forEach(function (k) {
+        state.isHover[k] = false;
+      });
+      Object.keys(state.isFocus).forEach(function (k) {
+        state.isFocus[k] = false;
+      });
+    };
+
+    const onfocusin = (key, target) => {
+      clearTimeout(timer[key] || null);
+      resetHoverFocus();
+      state.isFocus[key] = true;
+
+      nextTick(() => {
+        const depthEl = target
+          .closest(`.${$style['nav__item']}`)
+          .getElementsByClassName($style['nav__depth']);
+        const depthH = depthEl.length && depthEl[0].offsetHeight;
+
+        state.navLayerHeight = depthH;
+      });
+    };
+
+    const onfocusout = (key) => {
+      clearTimeout(timer[key] || null);
+      timer[key] = setTimeout(() => {
+        state.isFocus[key] = false;
+        clearTimeout(timer[key]);
+      }, 50);
+    };
+
+    const onMouseenter = (key, target) => {
+      resetHoverFocus();
+      state.isHover[key] = true;
+
+      nextTick(() => {
+        const depthEl = target.getElementsByClassName($style['nav__depth']);
+        const depthH = depthEl.length && depthEl[0].offsetHeight;
+
+        state.navLayerHeight = depthH;
+      });
+    };
+
+    const onNavMouseenter = () => {
+      clearTimeout(timer.headerNav || null);
+    };
+
+    const onNavMouseleave = () => {
+      clearTimeout(timer.headerNav || null);
+      timer.headerNav = setTimeout(() => {
+        resetHoverFocus();
+        clearTimeout(timer.headerNav);
+      }, 50);
+    };
+
+    const onClick = () => {
+      resetHoverFocus();
+    };
+
+    const resetDepthHoverFocus = () => {
+      Object.keys(state.isDepthHover).forEach(function (k) {
+        state.isDepthHover[k] = false;
+      });
+      Object.keys(state.isDepthFocus).forEach(function (k) {
+        state.isDepthFocus[k] = false;
+      });
+    };
+
+    const onDepthfocusin = (key) => {
+      resetDepthHoverFocus();
+      state.isDepthFocus[key] = true;
+    };
+
+    const onDepthfocusout = () => {
+      resetDepthHoverFocus();
+    };
+
+    const onDepthMouseenter = (key) => {
+      resetDepthHoverFocus();
+      state.isDepthHover[key] = true;
+    };
+
+    const onDepthMouseleave = () => {
+      resetDepthHoverFocus();
+    };
+
     onMounted(() => {
       update();
 
@@ -120,13 +262,27 @@ export default {
 
     return {
       store,
+      state,
       header,
       fixbar,
       fake,
       siteMap,
-      siteMapOpen,
+      navLayer,
       isBlocking,
       scrollbarsWidth,
+      isNavLayerShow,
+      isDepthEnter,
+      siteMapOpen,
+      onfocusin,
+      onfocusout,
+      onMouseenter,
+      onNavMouseenter,
+      onNavMouseleave,
+      onClick,
+      onDepthfocusin,
+      onDepthfocusout,
+      onDepthMouseenter,
+      onDepthMouseleave,
     };
   },
 };
@@ -139,6 +295,21 @@ export default {
       :class="$style['top-bar__fix']"
       :style="`${isBlocking ? `margin-right: ${scrollbarsWidth}px` : ''}`"
     >
+      <div
+        ref="navLayer"
+        :class="[
+          $style['nav-layer'],
+          {
+            'is-show': isNavLayerShow && state.navLayerHeight,
+          },
+        ]"
+        :style="{
+          height: state.navLayerHeight + 'px',
+        }"
+        @mouseenter="onNavMouseenter()"
+        @mouseleave="onNavMouseleave()"
+      ></div>
+
       <div ref="header" :class="$style['header-wrap']">
         <header :class="$style['header']">
           <h1 :class="$style['header__logo']">
@@ -149,7 +320,11 @@ export default {
           </h1>
 
           <div :class="$style['nav']">
-            <ul :class="$style['nav__list']">
+            <ul
+              :class="$style['nav__list']"
+              @mouseenter="onNavMouseenter()"
+              @mouseleave="onNavMouseleave()"
+            >
               <li
                 v-for="item in nav"
                 :key="item.name"
@@ -158,12 +333,73 @@ export default {
                   {
                     [$style['nav__item--active']]:
                       store.ui.header.active === item.name,
+                    'is-depth-show': isNavLayerShow,
+                    'is-focus': state.isFocus[item.name],
+                    'is-hover': state.isHover[item.name],
                   },
                 ]"
+                @focusin="(e) => onfocusin(item.name, e.target)"
+                @focusout="onfocusout(item.name)"
+                @mouseenter="(e) => onMouseenter(item.name, e.target)"
               >
                 <RouterLink :to="item.to" :class="$style['nav__link']">
                   <span :class="$style['nav__text']">{{ item.text }}</span>
                 </RouterLink>
+
+                <div v-if="item.child" :class="$style['nav__depth']">
+                  <ul :class="$style['nav__depth-list']">
+                    <li
+                      v-for="childItem in item.child"
+                      :key="childItem.name"
+                      :class="[
+                        $style['nav__depth-item'],
+                        {
+                          [$style['nav__depth-item--active']]:
+                            store.ui.header.depthActive === childItem.name,
+                          'is-depth-enter': isDepthEnter,
+                          'is-focus': state.isDepthFocus[childItem.name],
+                          'is-hover': state.isDepthHover[childItem.name],
+                        },
+                      ]"
+                      @focusin="onDepthfocusin(childItem.name)"
+                      @focusout="onDepthfocusout(childItem.name)"
+                      @mouseenter="onDepthMouseenter(childItem.name)"
+                      @mouseleave="onDepthMouseleave(childItem.name)"
+                    >
+                      <button
+                        v-if="childItem.type === 'button'"
+                        type="button"
+                        :class="$style['nav__depth-link']"
+                        @click="
+                          () => {
+                            onClick();
+                            childItem.click && childItem.click();
+                          }
+                        "
+                      >
+                        <span :class="$style['nav__depth-text']">{{
+                          childItem.text
+                        }}</span>
+                      </button>
+
+                      <RouterLink
+                        v-else
+                        :to="childItem.to"
+                        :class="$style['nav__depth-link']"
+                        @click="
+                          () => {
+                            onClick();
+                            childItem.click && childItem.click();
+                          }
+                        "
+                      >
+                        <span :class="$style['nav__depth-text']">{{
+                          childItem.text
+                        }}</span>
+                      </RouterLink>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>

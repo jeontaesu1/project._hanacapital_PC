@@ -5,13 +5,8 @@ export default {
   components: {
     HeaderBase,
   },
-};
-</script>
-
-<template>
-  <HeaderBase
-    type="agent"
-    :nav="[
+  setup() {
+    const nav = [
       {
         name: 'agent001',
         text: '내구재할부',
@@ -32,6 +27,15 @@ export default {
         text: '선정산',
         to: '/agent/Agent_P10_p001',
       },
-    ]"
-  />
+    ];
+
+    return {
+      nav,
+    };
+  },
+};
+</script>
+
+<template>
+  <HeaderBase type="agent" :nav="nav" />
 </template>

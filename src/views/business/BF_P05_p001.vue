@@ -1,6 +1,11 @@
 <script>
 // BF_P05_p001
+import { onMounted, onUnmounted } from 'vue';
+
+import { useUiHeaderStore } from '@/stores/ui/header';
+
 import PageContents from '@/components/ui/layout/PageContents.vue';
+import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
@@ -22,6 +27,7 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 export default {
   components: {
     PageContents,
+    LocationBar,
     UiTab,
     UiTabPanel,
     NavTab,
@@ -39,11 +45,47 @@ export default {
     IconInstallation,
     IconDeposit,
   },
+  setup() {
+    const store = {
+      ui: {
+        header: useUiHeaderStore(),
+      },
+    };
+
+    onMounted(() => {
+      store.ui.header.setActive(() => 'business');
+      store.ui.header.setDepthActive(() => 'business001');
+    });
+
+    onUnmounted(() => {
+      store.ui.header.setActive();
+      store.ui.header.setDepthActive();
+    });
+  },
 };
 </script>
 
 <template>
   <PageContents size="full">
+    <template v-slot:head>
+      <LocationBar
+        :data="[
+          {
+            text: '홈',
+            to: '/main/home',
+          },
+          {
+            text: '의료기·설비',
+            to: '/',
+          },
+          {
+            text: '일반리스',
+            to: '/',
+          },
+        ]"
+      />
+    </template>
+
     <div :class="$style['product-top']">
       <div :class="$style['product-top__contents']">
         <div :class="$style['product-top__head']">

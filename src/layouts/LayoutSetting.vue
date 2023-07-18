@@ -1,7 +1,7 @@
 <script>
 // import { ref, reactive, computed, watch, markRaw } from 'vue';
 // import { useRouter, useRoute, RouterView } from 'vue-router';
-import { computed, onMounted, onUnmounted } from 'vue';
+import { computed, onMounted, onUnmounted, watch } from 'vue';
 import { useRoute, RouterView } from 'vue-router';
 
 // 레이아웃 설정
@@ -105,6 +105,15 @@ export default {
         return NoneLayout;
       }
     });
+
+    watch(
+      () => route.path,
+      () => {
+        const html = document.getElementsByTagName('html')[0];
+        html.scrollTop = 0;
+        html.scrollLeft = 0;
+      }
+    );
 
     return {
       layout,

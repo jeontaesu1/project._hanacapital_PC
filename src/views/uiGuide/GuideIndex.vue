@@ -48,7 +48,7 @@ const datas = () => [
         path: '/ui-guide/layout-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [{ date: '2023.07.19', text: '헤더 2뎁스 기능 추가' }],
       },
       {
         depth2: '레이아웃',
@@ -59,7 +59,7 @@ const datas = () => [
         path: '/ui-guide/layout-002',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [{ date: '2023.07.19', text: '헤더 2뎁스 기능 추가' }],
       },
       {
         depth2: '레이아웃',
@@ -70,7 +70,7 @@ const datas = () => [
         path: '/ui-guide/layout-003',
         status: 'end',
         create: '2023.06.28',
-        log: [],
+        log: [{ date: '2023.07.19', text: '헤더 2뎁스 기능 추가' }],
       },
       {
         depth2: '레이아웃',
@@ -81,7 +81,7 @@ const datas = () => [
         path: '/ui-guide/layout-004',
         status: 'end',
         create: '2023.06.28',
-        log: [],
+        log: [{ date: '2023.07.19', text: '헤더 2뎁스 기능 추가' }],
       },
       {
         depth2: '얼럿',
@@ -4409,7 +4409,7 @@ export default {
               <a
                 :href="`${
                   path.match('guide-index') ? '..' : '.'
-                }/guide/component`"
+                }/ui-guide/component`"
                 target="_blank"
                 class="index-button"
               >

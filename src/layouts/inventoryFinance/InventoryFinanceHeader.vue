@@ -5,13 +5,8 @@ export default {
   components: {
     HeaderBase,
   },
-};
-</script>
-
-<template>
-  <HeaderBase
-    type="inventoryFinance"
-    :nav="[
+  setup() {
+    const nav = [
       {
         name: 'inventoryFinance001',
         text: '한도조회',
@@ -42,6 +37,15 @@ export default {
         text: '종료건 확인',
         to: '/inventory-finance/IF_P06_p001',
       },
-    ]"
-  />
+    ];
+
+    return {
+      nav,
+    };
+  },
+};
+</script>
+
+<template>
+  <HeaderBase type="inventoryFinance" :nav="nav" />
 </template>

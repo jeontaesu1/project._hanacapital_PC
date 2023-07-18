@@ -5,13 +5,8 @@ export default {
   components: {
     HeaderBase,
   },
-};
-</script>
-
-<template>
-  <HeaderBase
-    type="lmBlog"
-    :nav="[
+  setup() {
+    const nav = [
       {
         name: 'lmBlog001',
         text: '빠른상담신청 내역',
@@ -37,6 +32,15 @@ export default {
         text: '현황조회',
         to: '/lm-blog/LM_P05_p001',
       },
-    ]"
-  />
+    ];
+
+    return {
+      nav,
+    };
+  },
+};
+</script>
+
+<template>
+  <HeaderBase type="lmBlog" :nav="nav" />
 </template>
