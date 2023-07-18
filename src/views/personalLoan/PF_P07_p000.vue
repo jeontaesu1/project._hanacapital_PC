@@ -128,7 +128,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 10.9%</div>
+                <div :class="$style['product-detail__desc']">8.2%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -214,7 +214,7 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">연 10 . 9%</div>
+                    <div :class="$style['product-info__text']">8.2%</div>
                   </div>
                 </div>
               </li>
@@ -570,14 +570,6 @@ export default {
                         5회이상 오류시 당일 대출신청을 할 수 없습니다.
                       </td>
                     </tr>
-                    <tr>
-                      <th>인지대</th>
-                      <td class="align-left">
-                        대출 실행 시 인지대(7만원~15만원)이 발생합니다. (단,
-                        인지대는 본인 및 하나캐피탈 각각 50%씩 부담, 대출금
-                        5천만원 이하 인지대 없음)
-                      </td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -700,8 +692,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 5</div>
                     <p :class="$style['step__text']">
-                      계좌로 <strong>대출금을</strong><br />
-                      <strong>입금</strong>해드립니다.
+                      손님 계좌로<br />
+                      <strong>대출금을 입금</strong>해드립니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -856,13 +848,13 @@ export default {
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              준법심의필 22-133 (2022.02.25 ~ 2023.02.24)
+              준법심의필 22-35 (2023.02.25 ~ 2024.02.24)
             </div>
           </li>
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제 2022-L1h-01579호 (2022.02.28 ~ 2023.02.27)
+              여신금융협회 심의필 제 2023-L1h-01373호 (2023.02.28 ~ 2024.02.27)
             </div>
           </li>
         </ul>

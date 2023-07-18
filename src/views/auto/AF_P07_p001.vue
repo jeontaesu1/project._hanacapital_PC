@@ -503,9 +503,10 @@ export default {
                       <div :class="$style['basic-list__symbol']">※</div>
                       <div :class="$style['basic-list__content']">
                         주1) ‘중도해지손해배상금’은 고객이 계약의 중도해지를
-                        이유로 자동차를 반환하고자 할 때 ‘자동차리스 표준약관’
-                        제24조에 따라 금융회사에 발생한 손해를 배상하기 위하여
-                        지급해야 하는 금액을 의미합니다.
+                        이유로
+                        <span class="color-green">자동차를 반환</span>하고자 할
+                        때 ‘자동차리스 표준약관’ 제24조에 따라 금융회사에 발생한
+                        손해를 배상하기 위하여 지급해야 하는 금액을 의미합니다.
                       </div>
                     </li>
                     <li
@@ -519,9 +520,9 @@ export default {
                       <div :class="$style['basic-list__symbol']">※</div>
                       <div :class="$style['basic-list__content']">
                         주2) 규정손해배상금은 고객이 계약의 중도해지를 이유로
-                        자동차를 매입하고자 할 때 ‘자동차리스 표준약관’ 제23조에
-                        따라 금융회사에 발생한 손해를 배상하기 위하여 지급해야
-                        하는 금액을 의미합니다.
+                        <span class="color-green">자동차를 매입</span>하고자 할
+                        때 ‘자동차리스 표준약관’ 제23조에 따라 금융회사에 발생한
+                        손해를 배상하기 위하여 지급해야 하는 금액을 의미합니다.
                       </div>
                     </li>
                   </ul>

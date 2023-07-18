@@ -93,7 +93,8 @@ export default {
             e임대주택론(임대보증금 담보대출)
           </h2>
           <p :class="$style['product-top__main-text']">
-            임대주택의 임대보증금을 담보로 빠르고 간편하게 대출하는 금융서비스
+            임대주택의 임대보증금을 담보로<br />
+            빠르고 간편하게 대출해드리는 금융서비스입니다
           </p>
         </div>
 
@@ -114,8 +115,19 @@ export default {
                 <IconMoney />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">최대한도</div>
-                <div :class="$style['product-detail__desc']">5억원</div>
+                <div :class="$style['product-detail__title']">한도</div>
+                <div :class="$style['product-detail__desc']">
+                  <div>
+                    <div>
+                      최소 2천만원<br />
+                      ~ 최대 5억원
+                    </div>
+                    <div class="text-body-3 font-weight-light row-margin-mini">
+                      (임대보증금의<br />
+                      최대 95% 이내)
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -124,7 +136,18 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 8.5~10.3%</div>
+                <div :class="$style['product-detail__desc']">
+                  <div>
+                    <div class="font-weight-bold">
+                      연 6.1% ~ 11.4%<br />
+                      연체이자율 :<br />
+                      약정이율 + 3%
+                    </div>
+                    <div class="text-body-3 font-weight-light row-margin-mini">
+                      (법정최고금리 연 20% 이내)
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -134,7 +157,12 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  6개월 ~ 27개월
+                  <div>
+                    <div>6개월 ~ 27개월</div>
+                    <div class="text-body-3 font-weight-light row-margin-mini">
+                      (임대차계약기간 이내)
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -201,8 +229,21 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      연 8.5~10.3%
+                    <div
+                      :class="[
+                        $style['product-info__text'],
+                        'font-weight-bold',
+                      ]"
+                    >
+                      연 6.1% ~ 11.4% / 연체이자율 : 약정이율 + 3%
+                    </div>
+                    <div
+                      :class="[
+                        $style['product-info__sub'],
+                        'font-weight-regular',
+                      ]"
+                    >
+                      (법정최고금리 연 20% 이내)
                     </div>
                   </div>
                 </div>
@@ -498,9 +539,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 1</div>
                     <p :class="$style['step__text']">
                       하나캐피탈 홈페이지 또는<br />
-                      당사와 협약된 대출모집법인을 통하여
-                      <strong>대출상담을</strong><br />
-                      <strong>신청</strong>합니다.
+                      당사와 협약된 대출모집법인을 통하여<br />
+                      <strong>대출상담을 신청</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -513,8 +553,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      대출한도 확인 및 대출<br />
-                      관련 <strong>상담을 진행</strong>합니다.
+                      대출한도 확인<br />
+                      및 대출 관련<br />
+                      <strong>상담을 진행</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -527,7 +568,8 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 3</div>
                     <p :class="$style['step__text']">
-                      대출 약정서를 작성하고<br />
+                      대출 약정서를<br />
+                      작성하고<br />
                       <strong>서류를 제출</strong>합니다.
                     </p>
                   </div>
@@ -542,10 +584,9 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       신청하신 대출건의<br />
-                      서류심사 후 <strong>최종 결과를</strong><br />
-                      <strong>통보</strong>하고 <strong>채권양도를</strong
-                      ><br />
-                      <strong>통지</strong>합니다.
+                      서류심사 후<br />
+                      <strong>최종 결과를 통보</strong>하고<br />
+                      <strong>채권양도를 통지</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -559,7 +600,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 5</div>
                     <p :class="$style['step__text']">
                       권리관계 등 확인 후<br />
-                      <strong>대출금을 입금</strong>합니다.
+                      <strong>대출금을</strong><br />
+                      <strong>입금</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -591,14 +633,15 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                계약을 체결하기 전에 상품 설명서와 약관을 확인하시기 바랍니다.
+                계약을 체결하기 전에 자세한 내용은 상품설명서와 약관을
+                읽어보시기 바랍니다.
               </div>
             </li>
             <li
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-medium',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -612,7 +655,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-medium',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -626,7 +669,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-medium',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -674,7 +717,7 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
+                금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은
                 홈페이지에서 확인하시기 바랍니다.
               </div>
             </li>
@@ -707,23 +750,24 @@ export default {
               </div>
             </li>
           </ul>
+
+          <ul :class="[$style['basic-list'], 'row-margin-contents']">
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                준법심의필 22-1613 (2022.09.26 ~ 2023.09.25)
+              </div>
+            </li>
+            <li :class="$style['basic-list__item']">
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                여신금융협회 심의필 제 2022-L1h-08221호 (2022.09.26 ~
+                2023.09.25)
+              </div>
+            </li>
+          </ul>
         </UiTabPanel>
         <!-- // 유의사항 -->
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-1571 (2022.09.01 ~ 2023.08.31)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제 2022-L1h-07708호 (2022.09.01 ~ 2023.08.31)
-            </div>
-          </li>
-        </ul>
       </UiTab>
 
       <BasicHr
