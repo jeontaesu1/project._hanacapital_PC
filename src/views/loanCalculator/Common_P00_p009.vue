@@ -29,6 +29,7 @@ import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -59,6 +60,7 @@ export default {
     KeyValueTitle,
     KeyValueText,
     NoticeText,
+    UnitText,
   },
   setup() {
     const state = reactive({
@@ -237,26 +239,6 @@ export default {
                         value: '7',
                         label: '60개월',
                       },
-                      {
-                        value: '8',
-                        label: '72개월',
-                      },
-                      {
-                        value: '9',
-                        label: '84개월',
-                      },
-                      {
-                        value: '10',
-                        label: '96개월',
-                      },
-                      {
-                        value: '11',
-                        label: '108개월',
-                      },
-                      {
-                        value: '12',
-                        label: '120개월',
-                      },
                     ]"
                     title="대출기간"
                     inputId="layerLoanCalculatorTerm"
@@ -365,6 +347,7 @@ export default {
         <div>
           <BasicBox>
             <KeyValue>
+              <!-- Case : 원리금 균등상환 선택 시 노출 -->
               <KeyValueItem verticalAlign="center">
                 <KeyValueTitle :classNames="{ title: 'color-black' }">
                   월 납입액
@@ -373,6 +356,18 @@ export default {
                   <UnitText rightUnit="원" align="right">333,389</UnitText>
                 </KeyValueText>
               </KeyValueItem>
+              <!-- // Case : 원리금 균등상환 선택 시 노출 -->
+
+              <!-- Case : 만기 일시상환 선택 시 노출 -->
+              <KeyValueItem verticalAlign="center">
+                <KeyValueTitle :classNames="{ title: 'color-black' }">
+                  월평균 납입이자
+                </KeyValueTitle>
+                <KeyValueText>
+                  <UnitText rightUnit="원" align="right">333,389</UnitText>
+                </KeyValueText>
+              </KeyValueItem>
+              <!-- // Case : 만기 일시상환 선택 시 노출 -->
             </KeyValue>
             <BasicHr
               type="contents"
