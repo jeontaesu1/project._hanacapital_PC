@@ -139,6 +139,7 @@
       }
 
       &__desc {
+        display: block;
         @include font-size-head(18);
         font-weight: 500;
         justify-content: center;

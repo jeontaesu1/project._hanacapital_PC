@@ -123,10 +123,10 @@ export default {
                     최소 2천만원<br />
                     ~ 최대 5억원
                   </div>
-                </div>
-                <div class="text-body-3 font-weight-light row-margin-mini">
-                  (임대보증금의<br />
-                  최대 95% 이내)
+                  <div class="text-body-3 font-weight-light row-margin-mini">
+                    (임대보증금의<br />
+                    최대 95% 이내)
+                  </div>
                 </div>
               </div>
             </li>
@@ -137,14 +137,14 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  <div class="font-weight-bold">
+                  <strong>
                     연 6.1% ~ 11.4%<br />
                     연체이자율 :<br />
                     약정이율 + 3%
+                  </strong>
+                  <div class="text-body-3 font-weight-light row-margin-mini">
+                    (법정최고금리 연 20% 이내)
                   </div>
-                </div>
-                <div class="text-body-3 font-weight-light row-margin-mini">
-                  (법정최고금리 연 20% 이내)
                 </div>
               </div>
             </li>
@@ -155,10 +155,10 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  6개월 ~ 27개월
-                </div>
-                <div class="text-body-3 font-weight-light row-margin-mini">
-                  (임대차계약기간 이내)
+                  <div>6개월 ~ 27개월</div>
+                  <div class="text-body-3 font-weight-light row-margin-mini">
+                    (임대차계약기간 이내)
+                  </div>
                 </div>
               </div>
             </li>

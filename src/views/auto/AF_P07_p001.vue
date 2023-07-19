@@ -141,11 +141,13 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  양도인 적용금리<br />
-                  동일 적용
-                </div>
-                <div class="text-body-3 font-weight-light row-margin-mini">
-                  (동일조건승계)
+                  <div>
+                    양도인 적용금리<br />
+                    동일 적용
+                  </div>
+                  <div class="text-body-3 font-weight-light row-margin-mini">
+                    (동일조건승계)
+                  </div>
                 </div>
               </div>
             </li>
