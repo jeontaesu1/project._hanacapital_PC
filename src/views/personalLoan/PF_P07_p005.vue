@@ -14,7 +14,6 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import BasicBox from '@/components/ui/common/BasicBox.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -26,6 +25,7 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
+import PartInput from '@/components/ui/form/PartInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
@@ -48,7 +48,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    BasicBox,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -60,6 +59,7 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     BasicInput,
+    PartInput,
     BasicSelect,
     BasicDatepicker,
     SecurityKeypadButton,
@@ -378,39 +378,54 @@ export default {
           </p>
         </div>
 
-        <BasicBox>
-          <KeyValue :wrap="true">
-            <KeyValueItem>
-              <KeyValueTitle>계좌담보평가액</KeyValueTitle>
-              <KeyValueText>5천만원 이하</KeyValueText>
-            </KeyValueItem>
+        <ul class="reset-list">
+          <li v-for="i in 3" :key="i" class="row-margin-item-regular">
+            <BoxCheckList>
+              <BoxCheckListItem>
+                <BoxCheck
+                  :contents="true"
+                  name="PF_P07_p005_type"
+                  :id="`PF_P07_p005_transactionType${i}`"
+                  :defaultChecked="true"
+                >
+                  <BoxCheckLabel>
+                    <KeyValue :wrap="true">
+                      <KeyValueItem>
+                        <KeyValueTitle>계좌담보평가액</KeyValueTitle>
+                        <KeyValueText>5천만원 이하</KeyValueText>
+                      </KeyValueItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>최저유지담보비율</KeyValueTitle>
-              <KeyValueText>120%</KeyValueText>
-            </KeyValueItem>
+                      <KeyValueItem>
+                        <KeyValueTitle>최저유지담보비율</KeyValueTitle>
+                        <KeyValueText>120%</KeyValueText>
+                      </KeyValueItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>집중투자비율</KeyValueTitle>
-              <KeyValueText>50%</KeyValueText>
-            </KeyValueItem>
+                      <KeyValueItem>
+                        <KeyValueTitle>집중투자비율</KeyValueTitle>
+                        <KeyValueText>50%</KeyValueText>
+                      </KeyValueItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>대출시 초기담보비율</KeyValueTitle>
-              <KeyValueText>140%</KeyValueText>
-            </KeyValueItem>
+                      <KeyValueItem>
+                        <KeyValueTitle>대출시 초기담보비율</KeyValueTitle>
+                        <KeyValueText>140%</KeyValueText>
+                      </KeyValueItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>최대대출가능비율</KeyValueTitle>
-              <KeyValueText>250%</KeyValueText>
-            </KeyValueItem>
+                      <KeyValueItem>
+                        <KeyValueTitle>최대대출가능비율</KeyValueTitle>
+                        <KeyValueText>250%</KeyValueText>
+                      </KeyValueItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>수익금인출가능비율</KeyValueTitle>
-              <KeyValueText>130%</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
+                      <KeyValueItem>
+                        <KeyValueTitle>수익금인출가능비율</KeyValueTitle>
+                        <KeyValueText>130%</KeyValueText>
+                      </KeyValueItem>
+                    </KeyValue>
+                  </BoxCheckLabel>
+                </BoxCheck>
+              </BoxCheckListItem>
+            </BoxCheckList>
+          </li>
+        </ul>
       </section>
 
       <!-- Case : 대출 정보 입력 및 다음 버튼 클릭 시 노출 -->
@@ -516,9 +531,11 @@ export default {
                 <InputBlockCell type="sub">-</InputBlockCell>
                 <InputBlockCell :flexible="true">
                   <!-- DD : 보안 키패드 열렸을 때 :isFocused="true" props 추가 해서 포커싱 스타일 적용 -->
-                  <SecurityInput
-                    title="주민등록번호 뒤 7자리"
-                    :dot="[true, true, true, true, true, true, true]"
+                  <PartInput
+                    type="number"
+                    pattern="\d*"
+                    title="주민등록번호 뒤 7자리 중 첫번째자리"
+                    :afterDot="6"
                     :disabled="true"
                   />
                 </InputBlockCell>
