@@ -828,7 +828,12 @@ const datas = () => [
         path: '/personal-loan/PF_P01_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
@@ -995,7 +1000,12 @@ const datas = () => [
         path: '/personal-loan/PF_P02_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '행복아파트론\nPF_P02_p001',
@@ -1103,7 +1113,12 @@ const datas = () => [
         path: '/personal-loan/PF_P03_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '원큐자동차담보대출\nPF_P04_p001',
@@ -1114,7 +1129,12 @@ const datas = () => [
         path: '/personal-loan/PF_P04_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '원큐자동차담보대출\nPF_P04_p001',
@@ -1191,7 +1211,12 @@ const datas = () => [
         path: '/personal-loan/PF_P05_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '우수고객추가대출\nPF_P05_p001',
@@ -1290,7 +1315,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p000',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
@@ -1455,7 +1485,12 @@ const datas = () => [
         path: '/personal-loan/PF_P09_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '사업자주택담보대출\nPF_P09_p001',
@@ -1521,7 +1556,12 @@ const datas = () => [
         path: '/personal-loan/PF_P06_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
     ],
   },
@@ -1548,7 +1588,12 @@ const datas = () => [
         path: '/business/BF_P05_p001',
         status: 'end',
         create: '2023.07.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '의료비∙설비',
@@ -1559,7 +1604,12 @@ const datas = () => [
         path: '/business/BF_P06_p001',
         status: 'end',
         create: '2023.07.05',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
     ],
   },
@@ -2967,7 +3017,12 @@ const datas = () => [
         path: '/auto/AF_P01_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '다이렉트 장기렌터카\nAF_P01_p001',
@@ -3016,7 +3071,12 @@ const datas = () => [
         path: '/auto/AF_P02_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '다이렉트 오토리스\nAF_P02_p001',
@@ -3060,7 +3120,12 @@ const datas = () => [
         path: '/auto/AF_P03_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '오토할부\nAF_P03_p001',
@@ -3082,7 +3147,12 @@ const datas = () => [
         path: '/auto/AF_P04_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '원큐다이렉트 오토론\nAF_P05_p001',
@@ -3104,7 +3174,12 @@ const datas = () => [
         path: '/auto/AF_P06_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '중고차 오토론\nAF_P06_p001',
@@ -3236,7 +3311,12 @@ const datas = () => [
         path: '/auto/AF_P07_p001',
         status: 'end',
         create: '2023.06.30',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '상품안내 내용 수정',
+          },
+        ],
       },
       {
         depth2: '오토승계\nAF_P07_p001',
