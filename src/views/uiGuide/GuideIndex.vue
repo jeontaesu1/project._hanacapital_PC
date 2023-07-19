@@ -181,7 +181,12 @@ const datas = () => [
         path: '/guide/loan-calculator-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '팝업 내용 수정',
+          },
+        ],
       },
       {
         depth2: '안내팝업',
@@ -1356,7 +1361,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p005',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.07.19',
+            text: '내용 수정',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
