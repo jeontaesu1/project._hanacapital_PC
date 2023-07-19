@@ -41,6 +41,10 @@ export default {
       Type: Number,
       default: 0,
     },
+    defaultValue: {
+      Type: String,
+      default: null,
+    },
     modelValue: {
       Type: String,
     },
@@ -57,6 +61,11 @@ export default {
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
+    });
+
+    const value = computed(() => {
+      const { modelValue, defaultValue } = props;
+      return typeof modelValue === 'string' ? modelValue : defaultValue;
     });
 
     const checkLength = () => {
@@ -99,6 +108,7 @@ export default {
     return {
       input,
       customClassNames,
+      value,
       checkLength,
       onInput,
     };
@@ -131,7 +141,7 @@ export default {
         :type="type"
         :class="[$style['part-input__input'], customClassNames.input]"
         :maxlength="length"
-        :value="modelValue"
+        :value="value"
         :disabled="disabled"
         @input="onInput"
         @focusin="checkLength"

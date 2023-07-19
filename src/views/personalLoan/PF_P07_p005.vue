@@ -385,41 +385,42 @@ export default {
                 <BoxCheck
                   :contents="true"
                   name="PF_P07_p005_type"
-                  :id="`PF_P07_p005_transactionType${i}`"
-                  :defaultChecked="true"
+                  :id="`PF_P07_p005_type${i}`"
+                  :defaultChecked="i === 1"
                 >
+                  <KeyValue :wrap="true">
+                    <KeyValueItem>
+                      <KeyValueTitle>계좌담보평가액</KeyValueTitle>
+                      <KeyValueText>5천만원 이하</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem>
+                      <KeyValueTitle>최저유지담보비율</KeyValueTitle>
+                      <KeyValueText>120%</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem>
+                      <KeyValueTitle>집중투자비율</KeyValueTitle>
+                      <KeyValueText>50%</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem>
+                      <KeyValueTitle>대출시 초기담보비율</KeyValueTitle>
+                      <KeyValueText>140%</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem>
+                      <KeyValueTitle>최대대출가능비율</KeyValueTitle>
+                      <KeyValueText>250%</KeyValueText>
+                    </KeyValueItem>
+
+                    <KeyValueItem>
+                      <KeyValueTitle>수익금인출가능비율</KeyValueTitle>
+                      <KeyValueText>130%</KeyValueText>
+                    </KeyValueItem>
+                  </KeyValue>
                   <BoxCheckLabel>
-                    <KeyValue :wrap="true">
-                      <KeyValueItem>
-                        <KeyValueTitle>계좌담보평가액</KeyValueTitle>
-                        <KeyValueText>5천만원 이하</KeyValueText>
-                      </KeyValueItem>
-
-                      <KeyValueItem>
-                        <KeyValueTitle>최저유지담보비율</KeyValueTitle>
-                        <KeyValueText>120%</KeyValueText>
-                      </KeyValueItem>
-
-                      <KeyValueItem>
-                        <KeyValueTitle>집중투자비율</KeyValueTitle>
-                        <KeyValueText>50%</KeyValueText>
-                      </KeyValueItem>
-
-                      <KeyValueItem>
-                        <KeyValueTitle>대출시 초기담보비율</KeyValueTitle>
-                        <KeyValueText>140%</KeyValueText>
-                      </KeyValueItem>
-
-                      <KeyValueItem>
-                        <KeyValueTitle>최대대출가능비율</KeyValueTitle>
-                        <KeyValueText>250%</KeyValueText>
-                      </KeyValueItem>
-
-                      <KeyValueItem>
-                        <KeyValueTitle>수익금인출가능비율</KeyValueTitle>
-                        <KeyValueText>130%</KeyValueText>
-                      </KeyValueItem>
-                    </KeyValue>
+                    <span class="for-a11y">선택</span>
                   </BoxCheckLabel>
                 </BoxCheck>
               </BoxCheckListItem>
@@ -536,6 +537,7 @@ export default {
                     pattern="\d*"
                     title="주민등록번호 뒤 7자리 중 첫번째자리"
                     :afterDot="6"
+                    defaultValue="1"
                     :disabled="true"
                   />
                 </InputBlockCell>
