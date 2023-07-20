@@ -531,7 +531,12 @@ const datas = () => [
         path: '/customer/Customer_P05_p001',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '지도 배치 수정',
+          },
+        ],
       },
       {
         depth2: '홈페이지 이용안내\nCustomer_P13_p001',
