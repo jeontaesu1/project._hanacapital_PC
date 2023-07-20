@@ -3,24 +3,15 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
-import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
-import ButtonList from '@/components/ui/button/ButtonList.vue';
-import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+
+import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
 
 export default {
   components: {
     UiLayer,
-    PopupTitle,
-    PopupButton,
     ModalPopup,
-    ModalPopupHead,
-    BasicButton,
-    ButtonList,
-    ButtonListItem,
+    IconLogoMain,
   },
   setup() {
     const layer = ref(null);
@@ -33,37 +24,63 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" v-slot="layerSlotProps">
+  <UiLayer ref="layer">
     <ModalPopup>
-      <template v-slot:head>
-        <ModalPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
-          <PopupTitle>타이틀</PopupTitle>
-        </ModalPopupHead>
-      </template>
+      <div :class="$style['connection']">
+        <div :class="$style['loading-spinner']">
+          <div></div>
+          <div></div>
+          <div></div>
 
-      <section>// contents</section>
+          <div></div>
+          <div></div>
+          <div></div>
 
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular" :line="true" theme="quaternary"
-              >Button 1</BasicButton
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="row-margin-contents row-margin-bottom-none">
+          <p class="row-margin-none text-body-1 color-gray-tertiary">
+            대기인원
+          </p>
+          <div class="flex-box justify-conten-center">
+            <div class="flex-box__cell color-green text-big-1 font-weight-bold">
+              222
+            </div>
+            <div
+              :class="[
+                $style['population'],
+                'flex-box__cell',
+                'flex-box__cell--small',
+                'row-margin-item',
+              ]"
             >
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton size="regular">Button 2</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+              <span class="text-body-1 color-gray-tertiary">명</span>
+            </div>
+          </div>
+        </div>
+        <div class="row-margin-contents-group row-margin-bottom-none">
+          <p class="text-big-3 font-weight-bold">
+            서비스 접속 <span class="color-green">대기중</span> 입니다
+          </p>
+          <p class="text-body-1 row-margin-item-group">
+            잠시만 기다리시면 서비스로 자동 접속됩니다.
+          </p>
+        </div>
+        <div
+          :class="[
+            $style['connection-over__logo'],
+            'row-margin-container-medium',
+          ]"
+        >
+          <IconLogoMain />
+        </div>
+      </div>
     </ModalPopup>
   </UiLayer>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/guide/Common_P00_l011.scss';
+</style>

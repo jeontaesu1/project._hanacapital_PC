@@ -192,7 +192,12 @@ const datas = () => [
         path: '/ui-guide/guide-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.07.21',
+            text: '접속대기 안내 팝업\n초과접속 안내 팝업 추가',
+          },
+        ],
       },
       {
         depth2: '보안 프로그램 설치 안내\nCommon_P00_p017',
@@ -201,8 +206,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/guide/Common_P00_p017',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.21',
         log: [],
       },
       {
