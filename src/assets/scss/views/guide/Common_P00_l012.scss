@@ -1,17 +1,33 @@
 .connection-over {
-  margin-top: -10px;
-  padding-bottom: 20px;
+  width: 500px;
+  box-sizing: border-box;
+  padding: 60px 0;
+  border-radius: 20px;
+  background-color: $color-white;
   text-align: center;
 
   &__illust {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    padding-bottom: 0;
     width: 150px;
     height: 120px;
-    padding-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    @include font-size-head(24);
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(16);
   }
 
   &__logo {
-    svg {
-      width: 112px;
-    }
+    display: block;
+    margin: 40px auto 0;
+    width: auto;
+    height: 26px;
   }
 }

@@ -3,14 +3,12 @@
 import { ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
-import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 
-import IconLogoMain from '@/assets/images/icon/logo_main.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
     UiLayer,
-    ModalPopup,
     IconLogoMain,
   },
   setup() {
@@ -25,59 +23,36 @@ export default {
 
 <template>
   <UiLayer ref="layer">
-    <ModalPopup>
-      <div :class="$style['connection']">
-        <div :class="$style['loading-spinner']">
-          <div></div>
-          <div></div>
-          <div></div>
-
-          <div></div>
-          <div></div>
-          <div></div>
-
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="row-margin-contents row-margin-bottom-none">
-          <p class="row-margin-none text-body-1 color-gray-tertiary">
-            대기인원
-          </p>
-          <div class="flex-box justify-conten-center">
-            <div class="flex-box__cell color-green text-big-1 font-weight-bold">
-              222
-            </div>
-            <div
-              :class="[
-                $style['population'],
-                'flex-box__cell',
-                'flex-box__cell--small',
-                'row-margin-item',
-              ]"
-            >
-              <span class="text-body-1 color-gray-tertiary">명</span>
-            </div>
-          </div>
-        </div>
-        <div class="row-margin-contents-group row-margin-bottom-none">
-          <p class="text-big-3 font-weight-bold">
-            서비스 접속 <span class="color-green">대기중</span> 입니다
-          </p>
-          <p class="text-body-1 row-margin-item-group">
-            잠시만 기다리시면 서비스로 자동 접속됩니다.
-          </p>
-        </div>
-        <div
-          :class="[
-            $style['connection-over__logo'],
-            'row-margin-container-medium',
-          ]"
-        >
-          <IconLogoMain />
-        </div>
+    <section :class="$style['wait']">
+      <div :class="$style['wait__loading']">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </ModalPopup>
+
+      <dl :class="$style['wait__count']">
+        <dt :class="$style['wait__count-key']">대기인원</dt>
+        <dd :class="$style['wait__count-val']">
+          <strong :class="$style['wait__count-num']">222</strong>
+          <span :class="$style['wait__count-unit']">명</span>
+        </dd>
+      </dl>
+
+      <h2 :class="$style['wait__title']">
+        서비스 접속 <span class="color-green">대기중</span> 입니다
+      </h2>
+
+      <p :class="$style['wait__text']">
+        잠시만 기다리시면 서비스로 자동 접속됩니다.
+      </p>
+
+      <IconLogoMain :class="$style['wait__logo']" />
+    </section>
   </UiLayer>
 </template>
 

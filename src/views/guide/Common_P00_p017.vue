@@ -41,12 +41,10 @@ export default {
           <h3 class="text-title-1">필수 설치 (통합 보안 프로그램)</h3>
         </div>
         <div class="flex-box__cell">
-          <BasicButton size="regular" tagName="a" theme="tertiary">
-            설치
-          </BasicButton>
+          <BasicButton size="regular" theme="tertiary">설치</BasicButton>
         </div>
       </div>
-      <!-- table -->
+
       <div :class="$style['basic-table']">
         <table>
           <colgroup>
@@ -55,22 +53,20 @@ export default {
           </colgroup>
           <tbody>
             <tr>
-              <th class="align-left">
-                <p class="color-black text-body-1">
-                  보안 프로그램<br />
-                  (Ahnlab Safe Transaction)
-                </p>
+              <th class="align-left color-black text-body-1">
+                보안 프로그램<br />
+                (Ahnlab Safe Transaction)
               </th>
               <td class="align-left">
                 <ul
-                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    $style['basic-list--normal-margin'],
+                  ]"
                 >
                   <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'text-body-3',
-                      'font-weight-regular',
-                    ]"
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
                   >
                     <div :class="$style['basic-list__symbol']"></div>
                     <div :class="$style['basic-list__content']">
@@ -80,11 +76,7 @@ export default {
                     </div>
                   </li>
                   <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'text-body-3',
-                      'font-weight-regular',
-                    ]"
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
                   >
                     <div :class="$style['basic-list__symbol']"></div>
                     <div :class="$style['basic-list__content']">
@@ -92,11 +84,7 @@ export default {
                     </div>
                   </li>
                   <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'text-body-3',
-                      'font-weight-regular',
-                    ]"
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
                   >
                     <div :class="$style['basic-list__symbol']"></div>
                     <div :class="$style['basic-list__content']">
@@ -106,11 +94,7 @@ export default {
                     </div>
                   </li>
                   <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'text-body-3',
-                      'font-weight-regular',
-                    ]"
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
                   >
                     <div :class="$style['basic-list__symbol']"></div>
                     <div :class="$style['basic-list__content']">
@@ -123,21 +107,19 @@ export default {
               </td>
             </tr>
             <tr>
-              <th class="align-left">
-                <p class="color-black text-body-1">
-                  공동인증서 프로그램 (AnySign)
-                </p>
+              <th class="align-left color-black text-body-1">
+                공동인증서 프로그램 (AnySign)
               </th>
               <td class="align-left">
                 <ul
-                  :class="[$style['basic-list'], $style['basic-list--regular']]"
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    $style['basic-list--normal-margin'],
+                  ]"
                 >
                   <li
-                    :class="[
-                      $style['basic-list__item'],
-                      'text-body-3',
-                      'font-weight-regular',
-                    ]"
+                    :class="[$style['basic-list__item'], 'font-weight-regular']"
                   >
                     <div :class="$style['basic-list__symbol']"></div>
                     <div :class="$style['basic-list__content']">
@@ -151,7 +133,7 @@ export default {
           </tbody>
         </table>
       </div>
-      <!-- // table -->
+
       <ButtonList
         col="4"
         :wrap="true"
@@ -171,67 +153,66 @@ export default {
       </ButtonList>
     </section>
 
-    <section class="flex-box row-margin-block row-margin-bottom-none">
-      <div class="flex-box__cell flex-1">
-        <h3 class="text-title-1">수동 설치</h3>
-        <p class="row-margin-small text-body-1 font-weight-light">
-          사용자의 환경에 따라 오류가 발생할 경우 보안 프로그램을 PC에
-          다운로드하여 설치하시기 바랍니다.
-        </p>
+    <section class="row-margin-block">
+      <div class="flex-box row-margin-contents">
+        <div class="flex-box__cell flex-1">
+          <h3 class="text-title-1">수동 설치</h3>
+          <p
+            class="text-body-1 font-weight-light color-gray-secondary row-margin-small"
+          >
+            사용자의 환경에 따라 오류가 발생할 경우 보안 프로그램을 PC에
+            다운로드하여 설치하시기 바랍니다.
+          </p>
+        </div>
+        <div class="flex-box__cell">
+          <BasicButton size="regular" theme="tertiary">
+            <template v-slot:leftIcon>
+              <IconDownload />
+            </template>
+            통합 보안 프로그램
+          </BasicButton>
+        </div>
       </div>
-      <div class="flex-box__cell">
-        <BasicButton
-          size="regular"
-          tagName="a"
-          href="/foo/bar.pdf"
-          download
-          theme="tertiary"
-        >
-          <template v-slot:leftIcon>
-            <IconDownload />
-          </template>
-          통합 보안 프로그램
-        </BasicButton>
-      </div>
-    </section>
-    <section class="row-margin-contents">
-      <h4 class="text-body-1 font-weight-medium row-margin-item-group">
-        수동 설치
-      </h4>
-      <div :class="$style['contents-list']">
-        <ol
-          :class="[
-            $style['contents-list__list'],
-            $style['contents-list__list--quinary'],
-          ]"
-        >
-          <li :class="$style['contents-list__item']">
-            <div :class="$style['contents-list__head']">
-              <div :class="$style['contents-list__symbol']">1</div>
-              <div :class="$style['contents-list__title']">
-                보안 관련 프로그램을 수동으로 직접 PC에 다운로드 받고 브라우저를
-                모두 닫습니다.
+
+      <section>
+        <h4 class="text-body-1 font-weight-medium row-margin-item-group">
+          수동 설치 방법
+        </h4>
+        <div :class="$style['contents-list']">
+          <ol
+            :class="[
+              $style['contents-list__list'],
+              $style['contents-list__list--quinary'],
+            ]"
+          >
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">1</div>
+                <div :class="$style['contents-list__title']">
+                  보안 관련 프로그램을 수동으로 직접 PC에 다운로드 받고
+                  브라우저를 모두 닫습니다.
+                </div>
               </div>
-            </div>
-          </li>
-          <li :class="$style['contents-list__item']">
-            <div :class="$style['contents-list__head']">
-              <div :class="$style['contents-list__symbol']">2</div>
-              <div :class="$style['contents-list__title']">
-                다운로드 받은 프로그램을 실행하여 설치합니다.
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">2</div>
+                <div :class="$style['contents-list__title']">
+                  다운로드 받은 프로그램을 실행하여 설치합니다.
+                </div>
               </div>
-            </div>
-          </li>
-          <li :class="$style['contents-list__item']">
-            <div :class="$style['contents-list__head']">
-              <div :class="$style['contents-list__symbol']">3</div>
-              <div :class="$style['contents-list__title']">
-                브라우저를 실행하여 하나캐피탈 홈페이지에 접속합니다.
+            </li>
+            <li :class="$style['contents-list__item']">
+              <div :class="$style['contents-list__head']">
+                <div :class="$style['contents-list__symbol']">3</div>
+                <div :class="$style['contents-list__title']">
+                  브라우저를 실행하여 하나캐피탈 홈페이지에 접속합니다.
+                </div>
               </div>
-            </div>
-          </li>
-        </ol>
-      </div>
+            </li>
+          </ol>
+        </div>
+      </section>
     </section>
   </PageContents>
 </template>
