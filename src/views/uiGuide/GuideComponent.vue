@@ -117,7 +117,6 @@ import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconImg from '@/assets/images/icon/img.svg?component';
 import IconTooltip from '@/assets/images/icon/tooltip.svg?component';
-import IconMap from '@/assets/images/icon/map.svg?component';
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
@@ -255,7 +254,6 @@ export default {
     IconImgColor,
     IconImg,
     IconTooltip,
-    IconMap,
     IconMoney,
     IconRate,
     IconDate,
@@ -8674,71 +8672,6 @@ export default {
             </div>
           </div>
           <!-- // Case : 첨부 파일 없을시 비노출 -->
-        </div>
-      </div>
-    </section>
-
-    <section class="test-section">
-      <h2 class="test-section-title">Maps</h2>
-      <div class="test-section-sub">
-        <h3 class="test-section-sub-title">Default</h3>
-        <div :class="$style['maps']">
-          <UiAccordion :classNames="{ wrap: $style['maps__list'] }">
-            <UiAccordionItem
-              v-for="i in 5"
-              :key="i"
-              :classNames="{ item: $style['maps__item'] }"
-              v-slot="accordionItemSlotProps"
-            >
-              <div :class="$style['maps__head']">
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--branch'],
-                  ]"
-                >
-                  본사
-                </div>
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--title'],
-                  ]"
-                >
-                  <div :class="$style['maps__title']">
-                    서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
-                  </div>
-                </div>
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--opener'],
-                  ]"
-                >
-                  <TextButton
-                    iconSize="large"
-                    textSize="regular"
-                    @click="accordionItemSlotProps.toggle"
-                    :title="accordionItemSlotProps.opened ? '닫기' : '열기'"
-                    :classNames="{ wrap: $style['maps__opener'] }"
-                  >
-                    <template v-slot:leftIcon>
-                      <IconMap :class="$style['maps__opener-icon']" />
-                    </template>
-                    지도보기
-                  </TextButton>
-                </div>
-              </div>
-
-              <UiAccordionLayer>
-                <div :class="$style['maps__area']">
-                  <div style="height: 100%; background-color: #f7f7f7">
-                    // 지도 영역
-                  </div>
-                </div>
-              </UiAccordionLayer>
-            </UiAccordionItem>
-          </UiAccordion>
         </div>
       </div>
     </section>

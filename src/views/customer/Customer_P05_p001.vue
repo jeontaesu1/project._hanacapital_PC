@@ -125,44 +125,55 @@ export default {
 
     <div class="flex-box align-items-start">
       <div class="flex-box__cell flex-1">
-        <div :class="$style['maps']">
-          <ul :class="$style['maps__list']">
-            <li v-for="i in 5" :key="i" :class="$style['maps__item']">
-              <div :class="$style['maps__head']">
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--branch'],
-                  ]"
-                >
-                  본사
-                </div>
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--title'],
-                  ]"
-                >
-                  <div :class="$style['maps__title']">
-                    서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
-                  </div>
-                </div>
-                <div
-                  :class="[
-                    $style['maps__head-cell'],
-                    $style['maps__head-cell--opener'],
-                  ]"
-                >
-                  <TextButton iconSize="large" textSize="regular">
+        <div :class="$style['board']">
+          <table>
+            <colgroup>
+              <col style="width: 140px" />
+              <col />
+              <col style="width: 140px" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="align-left">본사</td>
+                <td class="align-left color-black">
+                  서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
+                </td>
+                <td>
+                  <!-- Case : 선택 되었을 때 theme="secondary" -->
+                  <TextButton
+                    :iconFillAll="true"
+                    iconSize="large"
+                    textSize="regular"
+                    theme="secondary"
+                  >
                     <template v-slot:leftIcon>
-                      <IconMap :class="$style['maps__opener-icon']" />
+                      <IconMap />
                     </template>
                     지도보기
                   </TextButton>
-                </div>
-              </div>
-            </li>
-          </ul>
+                </td>
+              </tr>
+              <tr v-for="i in 4" :key="i">
+                <td class="align-left">경수중고차센터(안산SI)</td>
+                <td class="align-left color-black">
+                  서울 강남구 테헤란로 127 하나금융그룹 (역삼동, 강남사옥)
+                </td>
+                <td>
+                  <TextButton
+                    :iconFillAll="true"
+                    iconSize="large"
+                    textSize="regular"
+                    theme="quinary"
+                  >
+                    <template v-slot:leftIcon>
+                      <IconMap />
+                    </template>
+                    지도보기
+                  </TextButton>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <!-- Case : 첫번째 페이지일 때 -->
@@ -214,8 +225,8 @@ export default {
         <!-- // Case : 마지막 페이지일 때 -->
       </div>
 
-      <div class="flex-box__cell--large flex-1">
-        <div :class="$style['maps__area']">
+      <div class="flex-box__cell flex-box__cell--large flex-1">
+        <div :class="$style['map-area']">
           <div style="height: 100%; background-color: #f7f7f7">
             // 지도 영역
           </div>
