@@ -1,0 +1,17 @@
+.connection-over {
+  margin-top: -10px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  &__illust {
+    width: 150px;
+    height: 120px;
+    padding-bottom: 30px;
+  }
+
+  &__logo {
+    svg {
+      width: 112px;
+    }
+  }
+}
