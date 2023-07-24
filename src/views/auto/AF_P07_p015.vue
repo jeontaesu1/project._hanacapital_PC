@@ -170,7 +170,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['upload-file__button']">
-                  <BasicButton line="true" theme="quaternary" size="small">
+                  <BasicButton :line="true" theme="quaternary" size="small">
                     삭제
                   </BasicButton>
                 </div>
@@ -249,7 +249,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['upload-file__button']">
-                  <BasicButton line="true" theme="quaternary" size="small">
+                  <BasicButton :line="true" theme="quaternary" size="small">
                     삭제
                   </BasicButton>
                 </div>
@@ -328,7 +328,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['upload-file__button']">
-                  <BasicButton line="true" theme="quaternary" size="small">
+                  <BasicButton :line="true" theme="quaternary" size="small">
                     삭제
                   </BasicButton>
                 </div>
@@ -407,7 +407,7 @@ export default {
                   </div>
                 </div>
                 <div :class="$style['upload-file__button']">
-                  <BasicButton line="true" theme="quaternary" size="small">
+                  <BasicButton :line="true" theme="quaternary" size="small">
                     삭제
                   </BasicButton>
                 </div>

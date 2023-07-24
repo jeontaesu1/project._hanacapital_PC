@@ -107,7 +107,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton line="true" theme="quaternary">다시 계산하기</BasicButton>
+        <BasicButton :line="true" theme="quaternary">다시 계산하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
   </PageContents>

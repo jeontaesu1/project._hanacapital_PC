@@ -28,6 +28,10 @@ export default {
       Type: String,
       default: 'checkbox',
     },
+    name: {
+      Type: String,
+      default: null,
+    },
     id: {
       Type: String,
       required: true,
@@ -57,6 +61,8 @@ export default {
     },
   },
   setup(props, { emit }) {
+    const eSiblingsChange = new Event('siblingsChange');
+
     const state = reactive({
       theme: { value: null },
       checked: false,
@@ -74,7 +80,30 @@ export default {
     };
 
     const onChange = (e) => {
-      const { checked } = e.target;
+      const el = e.target;
+      const { checked } = el;
+      const { type, name } = props;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+
+      if (type === 'radio' && name) {
+        const siblingsEl = Array.prototype.filter.call(
+          document.querySelectorAll(`[name="${name}"]`),
+          (item) => {
+            return !(item === el);
+          }
+        );
+
+        siblingsEl.forEach((item) => {
+          item.dispatchEvent(eSiblingsChange);
+        });
+      }
+    };
+
+    const onSiblingsChange = (e) => {
+      const el = e.target;
+      const { checked } = el;
 
       state.checked = checked;
       emit('update:modelValue', checked);
@@ -95,10 +124,9 @@ export default {
     );
 
     onBeforeMount(() => {
-      state.theme.value = props.theme;
+      const { theme, modelValue, defaultChecked } = props;
 
-      const { modelValue, defaultChecked } = props;
-
+      state.theme.value = theme;
       state.checked =
         typeof modelValue === 'boolean' ? modelValue : defaultChecked;
     });
@@ -112,6 +140,7 @@ export default {
       customClassNames,
       getInputElement,
       onChange,
+      onSiblingsChange,
     };
   },
 };
@@ -135,9 +164,11 @@ export default {
       v-bind="$attrs"
       :type="type"
       :class="[$style['checkbox__input'], customClassNames.input]"
+      :name="name"
       :id="id"
       :checked="state.checked"
       @change="onChange"
+      @siblingsChange="onSiblingsChange"
     />
     <label
       :for="id"

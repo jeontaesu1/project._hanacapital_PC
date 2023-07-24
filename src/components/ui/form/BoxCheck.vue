@@ -31,6 +31,10 @@ export default {
       Type: String,
       default: 'radio',
     },
+    name: {
+      Type: String,
+      default: null,
+    },
     id: {
       Type: String,
       required: true,
@@ -56,6 +60,8 @@ export default {
     },
   },
   setup(props, { emit, slots }) {
+    const eSiblingsChange = new Event('siblingsChange');
+
     const state = reactive({
       type: { value: null },
       id: { value: null },
@@ -82,7 +88,30 @@ export default {
     };
 
     const onChange = (e) => {
-      const { checked } = e.target;
+      const el = e.target;
+      const { checked } = el;
+      const { type, name } = props;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+
+      if (type === 'radio' && name) {
+        const siblingsEl = Array.prototype.filter.call(
+          document.querySelectorAll(`[name="${name}"]`),
+          (item) => {
+            return !(item === el);
+          }
+        );
+
+        siblingsEl.forEach((item) => {
+          item.dispatchEvent(eSiblingsChange);
+        });
+      }
+    };
+
+    const onSiblingsChange = (e) => {
+      const el = e.target;
+      const { checked } = el;
 
       state.checked = checked;
       emit('update:modelValue', checked);
@@ -110,10 +139,10 @@ export default {
     );
 
     onBeforeMount(() => {
-      state.type.value = props.type;
-      state.id.value = props.id;
+      const { type, id, modelValue, defaultChecked } = props;
 
-      const { modelValue, defaultChecked } = props;
+      state.type.value = type;
+      state.id.value = id;
       state.checked =
         typeof modelValue === 'boolean' ? modelValue : defaultChecked;
     });
@@ -130,6 +159,7 @@ export default {
       isLeft,
       isRight,
       onChange,
+      onSiblingsChange,
     };
   },
 };
@@ -153,9 +183,11 @@ export default {
       v-bind="$attrs"
       :type="type"
       :class="[$style['box-check__input'], customClassNames.input]"
+      :name="name"
       :id="id"
       :checked="state.checked"
       @change="onChange"
+      @siblingsChange="onSiblingsChange"
     />
     <div :class="[$style['box-check__block'], customClassNames.block]">
       <div

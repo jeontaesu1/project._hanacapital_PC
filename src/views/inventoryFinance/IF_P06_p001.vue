@@ -267,7 +267,7 @@ export default {
 
       <ButtonList>
         <ButtonListItem>
-          <BasicButton line="true">조회</BasicButton>
+          <BasicButton :line="true">조회</BasicButton>
         </ButtonListItem>
       </ButtonList>
     </section>

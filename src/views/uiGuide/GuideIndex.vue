@@ -260,9 +260,14 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/main/home',
-        status: '',
-        create: '',
-        log: [],
+        status: 'end',
+        create: '2023.07.26',
+        log: [
+          {
+            date: '2023.07.26',
+            text: '아이디 로그인 버튼 클릭하여 로그인 후 메뉴 확인 가능',
+          },
+        ],
       },
     ],
   },

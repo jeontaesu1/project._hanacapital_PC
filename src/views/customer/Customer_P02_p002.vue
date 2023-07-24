@@ -372,7 +372,7 @@ export default {
 
     <ButtonList>
       <ButtonListItem>
-        <BasicButton line="true">대출관련 상담신청</BasicButton>
+        <BasicButton :line="true">대출관련 상담신청</BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton>민원접수</BasicButton>

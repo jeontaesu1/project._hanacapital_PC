@@ -169,4 +169,12 @@
       }
     }
   }
+
+  &--secondary {
+    .product-list {
+      &__title {
+        @include font-size-head(20);
+      }
+    }
+  }
 }
