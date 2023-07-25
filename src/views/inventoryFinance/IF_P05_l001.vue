@@ -50,8 +50,8 @@ export default {
       </template>
 
       <ul class="reset-list">
-        <li class="row-margin-container-medium">
-          <div :class="[$style['upload-button'], 'row-margin-contents']">
+        <li class="row-margin-contents">
+          <div :class="$style['upload-button']">
             <input
               type="file"
               id="IF_P05_l001_upload001"
@@ -64,11 +64,13 @@ export default {
               <label
                 for="IF_P05_l001_upload001"
                 :class="$style['upload-button__label']"
-                >차량사진(앞)</label
+                >자동차등록증</label
               >
             </div>
           </div>
+        </li>
 
+        <li class="row-margin-container-medium">
           <div :class="[$style['upload-file'], $style['upload-file--inside']]">
             <ul :class="$style['upload-file__list']">
               <li :class="$style['upload-file__item']">
@@ -129,7 +131,7 @@ export default {
           </div>
         </li>
 
-        <li>
+        <li class="row-margin-contents">
           <div :class="$style['upload-button']">
             <input
               type="file"
@@ -142,66 +144,6 @@ export default {
               </span>
               <label
                 for="IF_P05_l001_upload002"
-                :class="$style['upload-button__label']"
-                >차량사진(뒤)</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="IF_P05_l001_upload003"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="IF_P05_l001_upload003"
-                :class="$style['upload-button__label']"
-                >자동차등록증</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="IF_P05_l001_upload004"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="IF_P05_l001_upload004"
-                :class="$style['upload-button__label']"
-                >자동차등록원부</label
-              >
-            </div>
-          </div>
-        </li>
-
-        <li class="row-margin-contents">
-          <div :class="$style['upload-button']">
-            <input
-              type="file"
-              id="IF_P05_l001_upload005"
-              :class="$style['upload-button__input']"
-            />
-            <div :class="$style['upload-button__block']">
-              <span :class="$style['upload-button__img']">
-                <IconImg />
-              </span>
-              <label
-                for="IF_P05_l001_upload005"
                 :class="$style['upload-button__label']"
                 >기타서류</label
               >
