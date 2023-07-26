@@ -659,6 +659,17 @@ const datas = () => [
         log: [],
       },
       {
+        depth2: '개인정보이용현황',
+        depth3: '',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/customer-002',
+        status: 'end',
+        create: '2023.07.25',
+        log: [],
+      },
+      {
         depth2: '금융소비자보호',
         depth3: '금융소비자보호헌장\nCustomer_P09_p001',
         depth4: '',
