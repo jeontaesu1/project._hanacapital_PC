@@ -3687,7 +3687,12 @@ const datas = () => [
         path: '/company/Company_P01_p004',
         status: 'end',
         create: '2023.06.21',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '글로벌금융 서비스 링크 기능 추가',
+          },
+        ],
       },
       {
         depth2: '회사소개',

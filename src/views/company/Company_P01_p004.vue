@@ -153,26 +153,34 @@ export default {
       <h3 class="text-title-1 row-margin-contents">글로벌금융 서비스</h3>
       <ul class="reset-list flex-box">
         <li class="flex-box__cell flex-1">
-          <div :class="$style['nation']">
-            <div :class="$style['nation__contents']">
-              <div :class="$style['nation__sub']">SINARMAS HANA FINANCE</div>
-              <div :class="$style['nation__title']">인도네시아</div>
-            </div>
-            <div
+          <a
+            href="https://shf.co.id/"
+            target="_blank"
+            :class="$style['nation']"
+          >
+            <span :class="$style['nation__contents']">
+              <span :class="$style['nation__sub']">SINARMAS HANA FINANCE</span>
+              <span :class="$style['nation__title']">인도네시아</span>
+            </span>
+            <span
               :class="[$style['nation__icon'], $style['nation__icon--001']]"
-            ></div>
-          </div>
+            ></span>
+          </a>
         </li>
         <li class="flex-box__cell flex-box__cell--large flex-1">
-          <div :class="$style['nation']">
-            <div :class="$style['nation__contents']">
-              <div :class="$style['nation__sub']">HANA MICRO FINANCE</div>
-              <div :class="$style['nation__title']">미얀마</div>
-            </div>
-            <div
+          <a
+            href="https://www.hanamyanmar.com/"
+            target="_blank"
+            :class="$style['nation']"
+          >
+            <span :class="$style['nation__contents']">
+              <span :class="$style['nation__sub']">HANA MICRO FINANCE</span>
+              <span :class="$style['nation__title']">미얀마</span>
+            </span>
+            <span
               :class="[$style['nation__icon'], $style['nation__icon--002']]"
-            ></div>
-          </div>
+            ></span>
+          </a>
         </li>
       </ul>
     </section>
