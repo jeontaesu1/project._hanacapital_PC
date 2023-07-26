@@ -4,6 +4,7 @@ import Simplebar from 'simplebar-vue';
 
 const defaultClassNames = () => ({
   wrap: '',
+  outerBottom: '',
   head: '',
   body: '',
   bodyInner: '',
@@ -53,6 +54,10 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const isOuterBottom = computed(() => {
+      return Boolean(context.slots.outerBottom);
+    });
+
     const isHead = computed(() => {
       return Boolean(context.slots.head);
     });
@@ -72,6 +77,7 @@ export default {
       head,
       body,
       customClassNames,
+      isOuterBottom,
       isHead,
       isFoot,
     };
@@ -110,6 +116,12 @@ export default {
     </div>
     <div v-if="isFoot" :class="[$style['popup__foot'], customClassNames.foot]">
       <slot name="foot" />
+    </div>
+    <div
+      v-if="isOuterBottom"
+      :class="[$style['popup__outer-bottom'], customClassNames.outerBottom]"
+    >
+      <slot name="outerBottom" />
     </div>
   </div>
 </template>

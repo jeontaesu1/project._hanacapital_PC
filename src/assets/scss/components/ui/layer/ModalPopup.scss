@@ -1,4 +1,5 @@
 .popup {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -6,6 +7,15 @@
   max-height: 800px;
   border-radius: 20px;
   background-color: $color-white;
+
+  &__outer-bottom {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
   &__head {
     flex: none;

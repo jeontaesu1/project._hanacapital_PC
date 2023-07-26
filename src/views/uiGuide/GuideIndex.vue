@@ -249,8 +249,8 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/ui-guide/main-001',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.07.26',
         log: [],
       },
       {
