@@ -1,2 +1,11 @@
 @import '@/assets/scss/components/import/basic-table.scss';
 @import '@/assets/scss/components/import/not-table.scss';
+
+.sign {
+  margin-top: 10px;
+
+  img {
+    display: block;
+    margin-left: auto;
+  }
+}

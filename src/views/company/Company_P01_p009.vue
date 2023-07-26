@@ -58,7 +58,7 @@ export default {
       <!-- 비전과 미션 -->
       <UiTabPanel name="Company_P01_p009_001">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/company-1.png" alt="" />
+          <img src="@/assets/images/contents/company-1.png" alt="" />
         </div>
       </UiTabPanel>
       <!-- // 비전과 미션 -->
@@ -77,7 +77,7 @@ export default {
           </p>
 
           <div :class="[$style['image-view'], 'row-margin-block-small']">
-            <img src="@/assets/images/_dummy/company-2.png" alt="" />
+            <img src="@/assets/images/contents/company-2.png" alt="" />
           </div>
         </section>
       </UiTabPanel>
@@ -86,7 +86,7 @@ export default {
       <!-- 관계사 -->
       <UiTabPanel name="Company_P01_p009_003">
         <div :class="$style['image-view']">
-          <img src="@/assets/images/_dummy/company-3.png" alt="" />
+          <img src="@/assets/images/contents/company-3.png" alt="" />
         </div>
       </UiTabPanel>
       <!-- // 관계사 -->

@@ -45,20 +45,16 @@ export default {
       </template>
 
       <div>
-        <section>
-          <h3 class="text-title-1 font-weight-bold row-margin-small">
-            김하나 귀하
-          </h3>
+        <h3 class="text-title-1 row-margin-small">김하나 귀하</h3>
 
-          <p class="text-body-1 font-weight-light color-gray-secondary">
-            신용정보의 이용 및 보호에 관한 법률 제35조에 따라<br />
-            당사는 2023년 07월 17일(조회기준일자)부터 최근 3년간 귀하의
-            개인신용정보를 이용 · 제공한 내역을 아래와 같이 통지합니다.
-          </p>
-        </section>
+        <p class="text-body-1 font-weight-light color-gray-secondary">
+          신용정보의 이용 및 보호에 관한 법률 제35조에 따라<br />
+          당사는 2023년 07월 17일(조회기준일자)부터 최근 3년간 귀하의
+          개인신용정보를 이용 · 제공한 내역을 아래와 같이 통지합니다.
+        </p>
 
         <section class="row-margin-container-medium">
-          <h3 class="text-body-1 row-margin-item-group">정보 이용 현황</h3>
+          <h4 class="text-body-1 row-margin-item-group">정보 이용 현황</h4>
 
           <!-- Case : 이용 현황 있는 경우 노출 -->
           <div :class="$style['basic-table']">
@@ -67,6 +63,7 @@ export default {
                 <col style="width: 80px" />
                 <col style="width: 80px" />
                 <col style="width: 120px" />
+                <col />
                 <col />
                 <col style="width: 144px" />
               </colgroup>
@@ -85,8 +82,8 @@ export default {
               </thead>
               <tbody>
                 <tr>
-                  <td>2011. 11.11</td>
-                  <td>2011. 11.11</td>
+                  <td>2011.11.11</td>
+                  <td>2011.11.11</td>
                   <td>CRM사업팀</td>
                   <td>마케팅 목적 TM 및 SMS 발송</td>
                   <td>성명, 금융거래내역, 핸드폰번호</td>
@@ -105,15 +102,15 @@ export default {
         </section>
 
         <section class="row-margin-container-medium row-margin-bottom-none">
-          <h3 class="text-body-1 row-margin-item-group">정보 제공 현황</h3>
+          <h4 class="text-body-1 row-margin-item-group">정보 제공 현황</h4>
 
-          <p class="text-body-1 font-weight-regular">
+          <p class="text-body-1">
             최근 3년간 고객님의 개인정보를 마케팅 목적으로 다른 회사에 제공할 수
             있도록 다음과 같이 동의 받은 사실이 있습니다.<br />
             당사의 마케팅을 원치 않는 경우 [정보이용·제공 동의 철회] 버튼을
             클릭하거나, 고객센터(1800-1110)를 통해 철회할 수 있습니다.
           </p>
-          <p class="text-body-1 font-weight-regular row-margin-item-medium">
+          <p class="text-body-1 row-margin-item-medium">
             하나캐피탈은 마케팅목적으로 개인신용정보를 다른회사(제3자)에게
             제공하지 않습니다.
           </p>
@@ -126,10 +123,10 @@ export default {
             2021년 09월 23일
           </p>
 
-          <div class="text-body-1 align-right row-margin-item-group">
+          <div :class="$style['sign']">
             <img
               src="@/assets/images/contents/img-sign-hanacapital.png"
-              alt=""
+              alt="하나캐피탈주식회사 대표이사 사인"
             />
           </div>
         </div>

@@ -628,6 +628,17 @@ const datas = () => [
       {
         depth2: '개인정보이용현황',
         depth3: '정보이용 제공 조회',
+        depth4: '팝업',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/customer-002',
+        status: 'end',
+        create: '2023.07.26',
+        log: [],
+      },
+      {
+        depth2: '개인정보이용현황',
+        depth3: '정보이용 제공 조회',
         depth4: '약관 동의/본인인증\nCustomer_P14_p003',
         depth5: '',
         depth6: '',
@@ -656,17 +667,6 @@ const datas = () => [
         path: '/customer/Customer_P14_p006',
         status: 'end',
         create: '2023.06.14',
-        log: [],
-      },
-      {
-        depth2: '개인정보이용현황',
-        depth3: '',
-        depth4: '팝업',
-        depth5: '',
-        depth6: '',
-        path: '/ui-guide/customer-002',
-        status: 'end',
-        create: '2023.07.25',
         log: [],
       },
       {
@@ -3758,7 +3758,12 @@ const datas = () => [
         path: '/company/Company_P01_p009',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.26',
+            text: '이미지 반영',
+          },
+        ],
       },
       {
         depth2: '윤리경영',
