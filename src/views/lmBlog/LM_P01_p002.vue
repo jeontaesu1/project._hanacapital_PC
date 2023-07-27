@@ -320,6 +320,31 @@ export default {
         <h3 class="text-title-1 row-margin-contents">아파트 정보</h3>
 
         <FormList>
+          <FormListItem titleText="소유지 거주여부" :forceFocus="true">
+            <FormInvalid :error="state.residenceError">
+              <BoxCheckList>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="LM_P01_p002_residence"
+                    id="LM_P01_p002_residence01"
+                  >
+                    <BoxCheckLabel>예</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    name="LM_P01_p002_residence"
+                    id="LM_P01_p002_residence02"
+                    :defaultChecked="true"
+                  >
+                    <BoxCheckLabel>아니오</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
           <FormListItem
             titleText="아파트 정보"
             target="#LM_P01_p002_apartmentInfo"
@@ -502,35 +527,6 @@ export default {
               </section>
             </div>
             <!-- //Case : 등기부등본 조회 버튼 클릭시 노출 -->
-          </FormListItem>
-
-          <FormListItem titleText="소유지 거주여부" :forceFocus="true">
-            <FormInvalid :error="state.residenceError">
-              <BoxCheckList>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="LM_P01_p002_residence"
-                    id="LM_P01_p002_residence01"
-                  >
-                    <BoxCheckLabel>예</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-                <BoxCheckListItem>
-                  <BoxCheck
-                    name="LM_P01_p002_residence"
-                    id="LM_P01_p002_residence02"
-                    :defaultChecked="true"
-                  >
-                    <BoxCheckLabel>아니오</BoxCheckLabel>
-                  </BoxCheck>
-                </BoxCheckListItem>
-              </BoxCheckList>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-              <NoticeText :classNames="{ wrap: 'row-margin-item-medium' }">
-                주민등록등본 주소와 아파트 주소가 일치하면 ‘예‘, 다르면
-                ‘아니오’를 선택해주세요.
-              </NoticeText>
-            </FormInvalid>
           </FormListItem>
 
           <FormListItem titleText="비금융권설정여부" :forceFocus="true">

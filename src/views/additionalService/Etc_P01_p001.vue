@@ -63,6 +63,7 @@ export default {
       type001Error: false,
       field001Error: false,
       nameError: false,
+      businessNameError: false,
       phoneError: false,
       time001Error: false,
       carTypeError: false,
@@ -222,6 +223,19 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
+
+      <!-- Case : '법인' 선택 시 노출 -->
+      <FormListItem titleText="법인명" target="#Etc_P01_p001_businessName">
+        <FormInvalid :error="state.businessNameError">
+          <InputBlock :error="state.businessNameError">
+            <InputBlockCell :flexible="true">
+              <BasicInput title="법인명" id="Etc_P01_p001_businessName" />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : '법인' 선택 시 노출 -->
 
       <FormListItem titleText="연락처" target="#Etc_P01_p001_phone">
         <FormInvalid :error="state.phoneError">

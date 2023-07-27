@@ -83,28 +83,7 @@ export default {
           <StepProgress :total="3" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText align="left">심사서류를 등록해 주세요</PageMainText>
-
-      <ul
-        :class="[
-          $style['basic-list'],
-          $style['basic-list--regular'],
-          $style['basic-list--regular-margin'],
-        ]"
-      >
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="[$style['basic-list__content'], 'font-weight-regular']">
-            외국인: 국내거소사실증명원, 국내거소신고증(앞/뒷면)
-          </div>
-        </li>
-        <li :class="$style['basic-list__item']">
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="[$style['basic-list__content'], 'font-weight-regular']">
-            렌터카 임직원 상품 승계 시 임직원 증빙자료를 꼭 등록해주세요.
-          </div>
-        </li>
-      </ul>
+      <PageMainText align="left">서류를 등록해 주세요</PageMainText>
     </PageHead>
 
     <div>
@@ -415,6 +394,41 @@ export default {
             </ul>
           </div>
           <!-- //Case : 파일 첨부 후 -->
+        </li>
+      </ul>
+
+      <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="[$style['basic-list__content'], 'font-weight-light']">
+            서류등록파일은 이미지 파일만 가능합니다. (jpg, jpeg, png, gif 파일)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="[$style['basic-list__content'], 'font-weight-light']">
+            서류등록파일은 1회 접속 시 최대 5개까지 등록 가능하며 추가적인
+            서류등록을 원하실 경우 서류등록 메뉴에 재접속하여 추가등록해 주세요.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="[$style['basic-list__content'], 'font-weight-light']">
+            고객님께서 제출하신 서류는 본 금융거래 이외의 다른 목적으로 사용되지
+            않습니다.
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="[$style['basic-list__content'], 'font-weight-light']">
+            외국인 : 국내거소사실증명원, 국내거소신고증(앞/뒷면)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="[$style['basic-list__content'], 'font-weight-light']">
+            렌터카 임직원 상품 승계 시 임직원 증빙자료를 꼭 등록해주세요.
+          </div>
         </li>
       </ul>
     </div>

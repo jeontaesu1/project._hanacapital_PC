@@ -444,15 +444,21 @@ export default {
               </li>
               <li :class="$style['etc__item']">
                 <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']">비밀번호 변경</span>
-                </RouterLink>
-              </li>
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
                   <span :class="$style['etc__text']">로그아웃</span>
                 </RouterLink>
               </li>
             </ul>
+
+            <div :class="$style['etc__menu']">
+              <button
+                type="button"
+                :class="$style['menu-button']"
+                @click="siteMapOpen"
+              >
+                <IconMenu />
+                <span class="for-a11y">사이트맵 열기</span>
+              </button>
+            </div>
           </div>
 
           <div v-else-if="type === 'agent'" :class="$style['etc']">

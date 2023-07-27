@@ -53,7 +53,7 @@ export default {
       <div
         class="text-body-1 color-gray-tertiary align-right row-margin-contents-small"
       >
-        (2020년 12월 기준)
+        (2022년 12월 기준)
       </div>
 
       <div :class="$style['basic-table']">
@@ -67,7 +67,7 @@ export default {
           </thead>
           <tbody>
             <tr>
-              <td>한국 신용 정보</td>
+              <td>나이스 신용 평가</td>
               <td>AA-</td>
               <td>A1</td>
             </tr>

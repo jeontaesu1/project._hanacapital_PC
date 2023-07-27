@@ -753,11 +753,7 @@ export default {
       </div>
 
       <FormList>
-        <FormListItem
-          titleText="이메일"
-          titleOptionalText="(선택)"
-          target="#MI_P01_p005_EmailId"
-        >
+        <FormListItem titleText="이메일" target="#MI_P01_p005_EmailId">
           <FormInvalid :error="state.mailError">
             <InputBlock :error="state.mailError">
               <InputBlockCell :flexible="true">
@@ -799,11 +795,30 @@ export default {
                       value: '8',
                       label: 'freechal.com',
                     },
+                    {
+                      value: '9',
+                      label: '직접입력',
+                    },
                   ]"
                   title="이메일 도메인"
                 />
               </InputBlockCell>
             </InputBlock>
+            <!-- Case : 직접입력 선택 시 노출 -->
+            <InputBlock
+              :error="state.mailError"
+              :classNames="{
+                wrap: 'row-margin-item-group row-margin-bottom-none',
+              }"
+            >
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="이메일 도메인 직접입력"
+                  id="MI_P01_p005_EmailDomainSelf"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <!-- //Case : 직접입력 선택 시 노출 -->
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>

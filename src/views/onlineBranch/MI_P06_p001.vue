@@ -88,7 +88,6 @@ export default {
     const state = reactive({
       billPeriodError: false,
       mailError: false,
-      addressError: false,
       minDate: '2023.04.21',
       maxDate: '2023.04.21',
     });
@@ -427,7 +426,6 @@ export default {
       </BoxCheckList>
 
       <FormList :classNames="{ wrap: 'row-margin-contents' }">
-        <!-- Case : E-mail 탭 선택 시 노출 -->
         <FormListItem titleText="이메일" target="#MI_P06_p001_EmailId">
           <FormInvalid :error="state.mailError">
             <InputBlock :error="state.mailError">
@@ -497,67 +495,6 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
-        <!-- //Case : E-mail 탭 선택 시 노출 -->
-
-        <!-- Case : 우편 탭 선택 시 노출 -->
-        <FormListItem
-          titleText="주소"
-          target="#MI_P06_p001_addressSerachButton"
-        >
-          <FormInvalid :error="state.addressError">
-            <InputBlock :error="state.addressError">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="주소 - 우편번호"
-                  defaultValue="01000"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-              <template v-slot:right>
-                <BasicButton
-                  size="small"
-                  theme="tertiary"
-                  id="MI_P06_p001_addressSerachButton"
-                  >검색</BasicButton
-                >
-              </template>
-            </InputBlock>
-            <!-- Case: 주소 검색 및 입력 후 노출 -->
-            <InputBlock
-              :error="state.addressError"
-              :disabled="true"
-              :classNames="{
-                wrap: 'row-margin-item-group row-margin-bottom-none',
-              }"
-            >
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="자택주소 - 주소"
-                  defaultValue="인천 서구 에코로 181"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <InputBlock
-              :error="state.addressError"
-              :disabled="true"
-              :classNames="{
-                wrap: 'row-margin-item-group row-margin-bottom-none',
-              }"
-            >
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="주소 - 상세주소"
-                  defaultValue="하나금융 로비"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <!-- //Case: 주소 검색 및 입력 후 노출 -->
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- //Case : 우편 탭 선택 시 노출 -->
       </FormList>
 
       <ul

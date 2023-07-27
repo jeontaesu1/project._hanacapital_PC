@@ -102,7 +102,7 @@ export default {
     </PageHead>
 
     <div>
-      <!-- Cass : 파트너사 양도계약(팩토링) 보유 -->
+      <!-- Case : 파트너사 양도계약(팩토링) 보유 -->
       <ul
         :class="[
           $style['basic-list'],
@@ -111,14 +111,14 @@ export default {
           'row-margin-container-medium',
         ]"
       >
-        <!-- Cass : 캐피탈 계약 + 파트너사 양도계약(팩토링) 보유 -->
+        <!-- Case : 캐피탈 계약 + 파트너사 양도계약(팩토링) 보유 -->
         <li :class="[$style['basic-list__item'], 'font-weight-regular']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
             렌탈/할부채권 양도계약은 총 금액에 포함되지 않습니다.
           </div>
         </li>
-        <!-- // Cass : 캐피탈 계약 + 파트너사 양도계약(팩토링) 보유 -->
+        <!-- // Case : 캐피탈 계약 + 파트너사 양도계약(팩토링) 보유 -->
         <li :class="[$style['basic-list__item'], 'font-weight-regular']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
@@ -139,9 +139,9 @@ export default {
           </div>
         </li>
       </ul>
-      <!-- // Cass : 파트너사 양도계약(팩토링) 보유 -->
+      <!-- // Case : 파트너사 양도계약(팩토링) 보유 -->
 
-      <!-- Cass : 캐피탈 계약 보유 -->
+      <!-- Case : 캐피탈 계약 보유 -->
       <BasicBox className="row-margin-container-medium">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
@@ -165,7 +165,25 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
-      <!-- // Cass : 캐피탈 계약 보유 -->
+      <!-- // Case : 캐피탈 계약 보유 -->
+
+      <!-- Case : 총 남은 원금 삭제 -->
+      <BasicBox className="row-margin-container-medium">
+        <div class="flex-box">
+          <div class="flex-1">
+            <UnitText size="large" rightUnit="원" align="left">
+              2,449,160
+            </UnitText>
+            <div class="text-body-1 color-gray-secondary">
+              당월 결제예정금액
+            </div>
+          </div>
+          <div class="flex-cell">
+            <BasicButton size="small" :line="true">상세보기</BasicButton>
+          </div>
+        </div>
+      </BasicBox>
+      <!-- // Case : 총 남은 원금 삭제 -->
 
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
@@ -183,7 +201,7 @@ export default {
         </ul>
       </div>
 
-      <!-- Cass : 마케팅 동의여부, 대출 여부 확인 -->
+      <!-- Case : 마케팅 동의여부, 대출 여부 확인 -->
       <BasicBox className="row-margin-block-small">
         <p class="text-title-2 font-weight-medium row-margin-contents">
           고객님께서는 <span class="color-green">우수고객</span>으로
@@ -218,7 +236,7 @@ export default {
           </ButtonListItem>
         </ButtonList>
       </BasicBox>
-      <!-- // Cass : 마케팅 동의여부, 대출 여부 확인 -->
+      <!-- // Case : 마케팅 동의여부, 대출 여부 확인 -->
     </div>
 
     <BasicHr theme="quaternary" className="row-margin-block" />

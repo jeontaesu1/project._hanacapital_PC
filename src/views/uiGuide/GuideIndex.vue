@@ -1677,7 +1677,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p001',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '총 남은 원금 삭제 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '메인\nMI_P00_p001',
@@ -2428,7 +2433,12 @@ const datas = () => [
         path: '/online-branch/MI_P01_p005',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '이메일 항목 수정',
+          },
+        ],
       },
       {
         depth2: '내정보관리',
@@ -2516,7 +2526,12 @@ const datas = () => [
         path: '/online-branch/MI_P06_p001',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '주소 항목 삭제',
+          },
+        ],
       },
       {
         depth2: '온라인청구서\nMI_P06_p001',
@@ -2654,7 +2669,12 @@ const datas = () => [
         path: '/additional-service/Etc_P01_p001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '법인명 항목 추가',
+          },
+        ],
       },
       {
         depth2: '상담등록\nEtc_P01_p001',
@@ -2681,7 +2701,12 @@ const datas = () => [
         path: '/inventory-finance/IF_P08_p001',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '헤더 수정',
+          },
+        ],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
@@ -2864,7 +2889,12 @@ const datas = () => [
         path: '/ui-guide/inventory-finance-003',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: 'IF_P05_l001 내용 수정',
+          },
+        ],
       },
       {
         depth2: '종료건 확인\nIF_P06_p001',
@@ -2913,7 +2943,12 @@ const datas = () => [
         path: '/lm-blog/LM_P04_p001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '테이블 내용 수정',
+          },
+        ],
       },
       {
         depth2: '대출상담\nLM_P01_p001',
@@ -2944,6 +2979,10 @@ const datas = () => [
             date: '2023.07.07',
             text: '팝업추가\n- 한도 금리 확인 팝업',
           },
+          {
+            date: '2023.07.27',
+            text: '- LM_P01_l009 전세가 항목 삭제',
+          },
         ],
       },
       {
@@ -2955,7 +2994,12 @@ const datas = () => [
         path: '/lm-blog/LM_P01_p002',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '아파트 정보 영역 위치 수정',
+          },
+        ],
       },
       {
         depth2: '현황조회\nLM_P05_p001',
@@ -3020,7 +3064,12 @@ const datas = () => [
         path: '/ui-guide/lm-blog-personal-002',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '- LM_P07_l002 약관 동의 추가',
+          },
+        ],
       },
       {
         depth2: 'SMS 상담',
@@ -3502,7 +3551,12 @@ const datas = () => [
         path: '/auto/AF_P07_p015',
         status: 'end',
         create: '2023.06.28',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '타이틀 및 문구 위치 수정',
+          },
+        ],
       },
     ],
   },
@@ -3895,7 +3949,12 @@ const datas = () => [
         path: '/company/Company_P04_p004',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.07.27',
+            text: '기준 및 신용평가사 문구 수정',
+          },
+        ],
       },
       {
         depth2: '채용정보',
