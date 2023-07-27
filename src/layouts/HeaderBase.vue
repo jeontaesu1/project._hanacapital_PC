@@ -431,7 +431,11 @@ export default {
           </div>
 
           <div
-            v-else-if="type === 'inventoryFinance' || type === 'lmBlog'"
+            v-else-if="
+              type === 'inventoryFinance' ||
+              type === 'lmBlog' ||
+              type === 'agent'
+            "
             :class="$style['etc']"
           >
             <ul :class="$style['etc__list']">
@@ -440,44 +444,6 @@ export default {
                   <span :class="$style['etc__text']"
                     ><strong class="color-green">김하나</strong>님</span
                   >
-                </RouterLink>
-              </li>
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']">로그아웃</span>
-                </RouterLink>
-              </li>
-            </ul>
-
-            <div :class="$style['etc__menu']">
-              <button
-                type="button"
-                :class="$style['menu-button']"
-                @click="siteMapOpen"
-              >
-                <IconMenu />
-                <span class="for-a11y">사이트맵 열기</span>
-              </button>
-            </div>
-          </div>
-
-          <div v-else-if="type === 'agent'" :class="$style['etc']">
-            <ul :class="$style['etc__list']">
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']"
-                    ><strong class="color-green">김하나</strong>님</span
-                  >
-                </RouterLink>
-              </li>
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']">비밀번호 변경</span>
-                </RouterLink>
-              </li>
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']">주소지/연락처 변경</span>
                 </RouterLink>
               </li>
               <li :class="$style['etc__item']">

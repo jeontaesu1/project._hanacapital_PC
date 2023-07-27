@@ -1849,13 +1849,13 @@ export default {
                   <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
                   <BasicButton size="small" theme="quaternary">
                     인증번호 전송
                   </BasicButton>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
 
-                  <!-- Cass : 전송 후
+                  <!-- Case : 전송 후
                   <BasicButton size="small" theme="quaternary">
                     인증번호 재전송
                   </BasicButton>
@@ -7627,6 +7627,106 @@ export default {
             </li>
           </ul>
         </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Upload Button 함께 사용시</h3>
+
+        <ul class="reset-list">
+          <li class="row-margin-contents">
+            <div :class="$style['upload-button']">
+              <input
+                type="file"
+                id="My_p05_p003_upload001"
+                :class="$style['upload-button__input']"
+              />
+              <div :class="$style['upload-button__block']">
+                <span :class="$style['upload-button__img']">
+                  <IconImg />
+                </span>
+                <label
+                  for="My_p05_p003_upload001"
+                  :class="$style['upload-button__label']"
+                >
+                  파일첨부
+                </label>
+              </div>
+            </div>
+
+            <!-- Case : 파일 첨부 후 -->
+            <div
+              :class="[
+                $style['upload-file'],
+                $style['upload-file--inside'],
+                $style['upload-file--child'],
+              ]"
+            >
+              <ul :class="$style['upload-file__list']">
+                <li :class="$style['upload-file__item']">
+                  <div :class="$style['upload-file__icon']">
+                    <IconImgColor />
+                  </div>
+                  <div :class="$style['upload-file__content']">
+                    <div :class="$style['upload-file__name']">
+                      첨부파일명.jpg
+                    </div>
+                  </div>
+                  <div :class="$style['upload-file__button']">
+                    <BasicButton :line="true" theme="quaternary" size="small">
+                      삭제
+                    </BasicButton>
+                  </div>
+                </li>
+                <li :class="$style['upload-file__item']">
+                  <div :class="$style['upload-file__icon']">
+                    <IconImgColor />
+                  </div>
+                  <div :class="$style['upload-file__content']">
+                    <div :class="$style['upload-file__name']">
+                      첨부파일명.png
+                    </div>
+                  </div>
+                  <div :class="$style['upload-file__button']">
+                    <BasicButton :line="true" theme="quaternary" size="small">
+                      삭제
+                    </BasicButton>
+                  </div>
+                </li>
+                <li :class="$style['upload-file__item']">
+                  <div :class="$style['upload-file__icon']">
+                    <IconImgColor />
+                  </div>
+                  <div :class="$style['upload-file__content']">
+                    <div :class="$style['upload-file__name']">
+                      첨부파일명.gif
+                    </div>
+                  </div>
+                  <div :class="$style['upload-file__button']">
+                    <BasicButton :line="true" theme="quaternary" size="small">
+                      삭제
+                    </BasicButton>
+                  </div>
+                </li>
+                <li :class="$style['upload-file__item']">
+                  <div :class="$style['upload-file__icon']">
+                    <IconImgColor />
+                  </div>
+                  <div :class="$style['upload-file__content']">
+                    <div :class="$style['upload-file__name']">
+                      첨부파일명_첨부파일명_첨부파일명_첨부파일명_첨부파일명.jpeg
+                    </div>
+                  </div>
+                  <div :class="$style['upload-file__button']">
+                    <BasicButton :line="true" theme="quaternary" size="small">
+                      삭제
+                    </BasicButton>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //Case : 파일 첨부 후 -->
+          </li>
+        </ul>
       </div>
     </section>
 

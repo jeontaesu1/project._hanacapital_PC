@@ -149,7 +149,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -227,7 +227,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -305,7 +305,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -383,7 +383,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">

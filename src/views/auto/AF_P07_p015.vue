@@ -135,7 +135,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -214,7 +214,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -293,7 +293,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -372,7 +372,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              $style['file-box'],
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -397,7 +397,13 @@ export default {
         </li>
       </ul>
 
-      <ul :class="[$style['basic-list'], $style['basic-list--regular-margin']]">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular-margin'],
+          'row-margin-contents',
+        ]"
+      >
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="[$style['basic-list__content'], 'font-weight-light']">

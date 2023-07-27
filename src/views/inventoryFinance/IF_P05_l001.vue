@@ -68,10 +68,15 @@ export default {
               >
             </div>
           </div>
-        </li>
 
-        <li class="row-margin-container-medium">
-          <div :class="[$style['upload-file'], $style['upload-file--inside']]">
+          <!-- Case : 파일 첨부 후 -->
+          <div
+            :class="[
+              $style['upload-file'],
+              $style['upload-file--inside'],
+              $style['upload-file--child'],
+            ]"
+          >
             <ul :class="$style['upload-file__list']">
               <li :class="$style['upload-file__item']">
                 <div :class="$style['upload-file__icon']">
@@ -129,8 +134,8 @@ export default {
               </li>
             </ul>
           </div>
+          <!-- //Case : 파일 첨부 후 -->
         </li>
-
         <li class="row-margin-contents">
           <div :class="$style['upload-button']">
             <input

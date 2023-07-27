@@ -87,7 +87,7 @@ export default {
       </div>
 
       <ul class="reset-list">
-        <li class="row-margin-container-medium">
+        <li class="row-margin-contents">
           <div :class="$style['upload-button']">
             <input
               type="file"
@@ -101,8 +101,9 @@ export default {
               <label
                 for="Agent_P00_l002_upload"
                 :class="$style['upload-button__label']"
-                >파일첨부</label
               >
+                파일첨부
+              </label>
             </div>
           </div>
 
@@ -111,7 +112,7 @@ export default {
             :class="[
               $style['upload-file'],
               $style['upload-file--inside'],
-              'row-margin-contents',
+              $style['upload-file--child'],
             ]"
           >
             <ul :class="$style['upload-file__list']">
@@ -179,7 +180,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular-margin'],
-          'row-margin-container-medium',
+          'row-margin-contents',
         ]"
       >
         <li :class="$style['basic-list__item']">

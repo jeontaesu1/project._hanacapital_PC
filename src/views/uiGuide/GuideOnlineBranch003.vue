@@ -6,7 +6,8 @@ import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
-import My_P08_l001 from '@/views/onlineBranch/My_P08_l001.vue';
+import My_P08_l001_001 from '@/views/onlineBranch/My_P08_l001_001.vue';
+import My_P08_l001_002 from '@/views/onlineBranch/My_P08_l001_002.vue';
 import My_P08_l002 from '@/views/onlineBranch/My_P08_l002.vue';
 import My_P08_l003 from '@/views/onlineBranch/My_P08_l003.vue';
 import My_P08_l004 from '@/views/onlineBranch/My_P08_l004.vue';
@@ -18,7 +19,8 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    My_P08_l001,
+    My_P08_l001_001,
+    My_P08_l001_002,
     My_P08_l002,
     My_P08_l003,
     My_P08_l004,
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -73,35 +81,41 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          만기안내장<br />My_P08_l001
+          만기안내장 - 렌트<br />My_P08_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer002Open">
-          만기후처리 변경 방법선택_렌트<br />My_P08_l002
+          만기안내장 - 리스<br />My_P08_l001
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer003Open">
-          만기후처리 변경 방법선택_리스<br />My_P08_l003
+          만기후처리 변경 방법선택_렌트<br />My_P08_l002
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer004Open">
-          반환 신청 확인<br />My_P08_l004
+          만기후처리 변경 방법선택_리스<br />My_P08_l003
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer005Open">
+          반환 신청 확인<br />My_P08_l004
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
           구매 신청 확인<br />My_P08_l005
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
 
-    <My_P08_l001 ref="layer001" />
-    <My_P08_l002 ref="layer002" />
-    <My_P08_l003 ref="layer003" />
-    <My_P08_l004 ref="layer004" />
-    <My_P08_l005 ref="layer005" />
+    <My_P08_l001_001 ref="layer001" />
+    <My_P08_l001_002 ref="layer002" />
+    <My_P08_l002 ref="layer003" />
+    <My_P08_l003 ref="layer004" />
+    <My_P08_l004 ref="layer005" />
+    <My_P08_l005 ref="layer006" />
   </PageContents>
 </template>

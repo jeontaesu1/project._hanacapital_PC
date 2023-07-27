@@ -141,21 +141,22 @@ export default {
       </ul>
       <!-- // Case : 파트너사 양도계약(팩토링) 보유 -->
 
-      <!-- Case : 캐피탈 계약 보유 -->
+      <!-- Case : 캐피탈 계약 보유 - 총 남은 원금 있는 경우 -->
       <BasicBox className="row-margin-container-medium">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
+        <div class="flex-box">
+          <div class="flex-1">
             <UnitText size="large" rightUnit="원" align="left">
               2,449,160
             </UnitText>
             <div class="text-body-1 color-gray-secondary">
               당월 결제예정금액
             </div>
-          </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
+          </div>
+          <div class="flex-cell">
             <BasicButton size="small" :line="true">상세보기</BasicButton>
-          </BasicBoxHeadRight>
-        </BasicBoxHead>
+          </div>
+        </div>
+        <BasicHr theme="quaternary" className="row-margin-contents" />
         <KeyValue>
           <KeyValueItem>
             <KeyValueTitle>총 남은 원금</KeyValueTitle>
@@ -165,9 +166,9 @@ export default {
           </KeyValueItem>
         </KeyValue>
       </BasicBox>
-      <!-- // Case : 캐피탈 계약 보유 -->
+      <!-- // Case : 캐피탈 계약 보유 - 총 남은 원금 있는 경우 -->
 
-      <!-- Case : 총 남은 원금 삭제 -->
+      <!-- Case : 캐피탈 계약 보유 - 총 남은 원금 없는 경우 -->
       <BasicBox className="row-margin-container-medium">
         <div class="flex-box">
           <div class="flex-1">
@@ -183,7 +184,7 @@ export default {
           </div>
         </div>
       </BasicBox>
-      <!-- // Case : 총 남은 원금 삭제 -->
+      <!-- // Case : 캐피탈 계약 보유 - 총 남은 원금 없는 경우 -->
 
       <div :class="$style['icon-list']">
         <ul :class="$style['icon-list__list']">
@@ -409,7 +410,7 @@ export default {
       </ul>
     </section>
 
-    <!-- Cass : 법인, 멤버십가입 유무 확인 -->
+    <!-- Case : 법인, 멤버십가입 유무 확인 -->
     <div class="row-margin-block">
       <!-- DD : 하드 코딩 배너 -->
       <BasicBanner
@@ -424,7 +425,7 @@ export default {
       </BasicBanner>
       <!-- // DD : 하드 코딩 배너 -->
     </div>
-    <!-- // Cass : 법인, 멤버십가입 유무 확인 -->
+    <!-- // Case : 법인, 멤버십가입 유무 확인 -->
   </PageContents>
 </template>
 

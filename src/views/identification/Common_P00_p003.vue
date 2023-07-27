@@ -486,13 +486,13 @@ export default {
                   <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
                   <BasicButton size="small" theme="quaternary">
                     인증번호 전송
                   </BasicButton>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
 
-                  <!-- Cass : 전송 후
+                  <!-- Case : 전송 후
                 <BasicButton size="small" theme="quaternary">
                   인증번호 재전송
                 </BasicButton>
@@ -706,13 +706,13 @@ export default {
                   <BasicInput type="number" pattern="\d*" title="휴대폰번호" />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
                   <BasicButton size="small" theme="quaternary">
                     인증번호 전송
                   </BasicButton>
-                  <!-- Cass : 전송 전 -->
+                  <!-- Case : 전송 전 -->
 
-                  <!-- Cass : 전송 후
+                  <!-- Case : 전송 후
                   <BasicButton size="small" theme="quaternary">
                     인증번호 재전송
                   </BasicButton>
