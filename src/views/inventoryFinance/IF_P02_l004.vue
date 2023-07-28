@@ -57,7 +57,14 @@ export default {
               <div :class="$style['upload-file__name']">서류명</div>
             </div>
             <div :class="$style['upload-file__button']">
-              <BasicButton :line="true" theme="quaternary" size="small">
+              <BasicButton
+                :line="true"
+                theme="quaternary"
+                size="small"
+                tagName="a"
+                href="/foo/bar.pdf"
+                download
+              >
                 다운로드
               </BasicButton>
             </div>
@@ -70,7 +77,14 @@ export default {
               <div :class="$style['upload-file__name']">서류명</div>
             </div>
             <div :class="$style['upload-file__button']">
-              <BasicButton :line="true" theme="quaternary" size="small">
+              <BasicButton
+                :line="true"
+                theme="quaternary"
+                size="small"
+                tagName="a"
+                href="/foo/bar.pdf"
+                download
+              >
                 다운로드
               </BasicButton>
             </div>
