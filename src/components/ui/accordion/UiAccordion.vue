@@ -90,7 +90,7 @@ export default {
     });
 
     const itemsAdd = (obj) => {
-      const key = state.count;
+      const key = obj.key || state.count;
 
       state.items.push(
         Object.assign({}, obj, {
@@ -213,7 +213,7 @@ export default {
     :is="tagName"
     :class="[$style['accordion'], customClassNames.wrap]"
   >
-    <slot :allOpen="allOpen" :allClose="allClose" />
+    <slot :allOpen="allOpen" :allClose="allClose" :items="state.items" />
   </component>
 </template>
 

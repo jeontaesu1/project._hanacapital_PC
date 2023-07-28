@@ -34,6 +34,10 @@ import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
+import FloatingWrap from '@/components/ui/layout/FloatingWrap.vue';
+import FloatingButton from '@/components/ui/button/FloatingButton.vue';
+
+import IconSearchCompany from '@/assets/images/icon/search-company.svg?component';
 
 export default {
   components: {
@@ -67,6 +71,9 @@ export default {
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
+    FloatingWrap,
+    FloatingButton,
+    IconSearchCompany,
   },
 
   setup() {
@@ -119,6 +126,15 @@ export default {
         계약 해지될 수 있으니 유의하시길 바랍니다.
       </PageSubText>
     </PageHead>
+
+    <FloatingWrap>
+      <FloatingButton>
+        <template v-slot:topIcon>
+          <IconSearchCompany />
+        </template>
+        빠른 직군 검색
+      </FloatingButton>
+    </FloatingWrap>
 
     <div>
       <section>

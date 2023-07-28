@@ -30,6 +30,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    keyName: {
+      Type: String,
+      default: null,
+    },
     onBeforeOpened: {
       Type: Function,
       default() {
@@ -104,6 +108,10 @@ export default {
       state.opened.value = val;
     };
 
+    const getOpened = () => {
+      return state.opened.value;
+    };
+
     const open = (speed) => {
       if (state.opened.value) return;
 
@@ -151,9 +159,11 @@ export default {
     onMounted(() => {
       if (uiAccordion && uiAccordion.itemsAdd) {
         state.key = uiAccordion.itemsAdd({
+          key: props.keyName,
           open,
           close,
           toggle,
+          getOpened,
         });
       }
     });

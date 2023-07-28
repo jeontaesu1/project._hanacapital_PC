@@ -2958,7 +2958,12 @@ const datas = () => [
         path: '/lm-blog/LM_P01_p001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.07.28',
+            text: '빠른 직군 검색 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '대출상담\nLM_P01_p001',
