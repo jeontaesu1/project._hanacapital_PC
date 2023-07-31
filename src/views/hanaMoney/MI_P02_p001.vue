@@ -37,10 +37,7 @@ export default {
     </PageHead>
 
     <div :class="$style['image-view']">
-      <img
-        src="@/assets/images/_dummy/box-detail-large.png"
-        alt="샘플 이미지"
-      />
+      <img src="@/assets/images/contents/hanamoney-w.png" alt="" />
     </div>
   </PageContents>
 </template>

@@ -3659,7 +3659,12 @@ const datas = () => [
         path: '/hana-money/MI_P02_p001',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.07.31',
+            text: '이미지 반영',
+          },
+        ],
       },
       {
         depth2: '가입하기\nMI_P02_p002',
