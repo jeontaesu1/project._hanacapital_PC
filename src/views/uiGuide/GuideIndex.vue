@@ -1482,7 +1482,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p009',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.02',
+            text: '폰트 굵기 및 유의사항 컨텐츠 수정',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',

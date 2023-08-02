@@ -137,9 +137,10 @@ export default {
         </h3>
         <p class="text-body-3 color-gray-tertiary">
           해당 만기일 전까지 계좌평가금액이
-          <span class="color-red">최저담보비율(+0.9%)</span>에 만기해당월 이자
-          이상 있어야 하며, 위 조건을 충족하지 못 할 경우 상환정책에 따라
-          익영업일에 상환조치를 통해 대출금 회수 후 계약이 해지됩니다.
+          <span class="color-red font-weight-bold">최저담보비율(+0.9%)</span>에
+          만기해당월 이자 이상 있어야 하며, 위 조건을 충족하지 못 할 경우
+          상환정책에 따라 익영업일에 상환조치를 통해 대출금 회수 후 계약이
+          해지됩니다.
         </p>
       </section>
 
@@ -148,9 +149,9 @@ export default {
           출금안내
         </h3>
         <p class="text-body-3 color-gray-tertiary">
-          대출금의 <span class="color-red">130%</span> 초과 금액에 대해서
-          부분출금이 가능합니다. CD기 출금 및 계좌이체, 해당 증권사 영업점에서의
-          창구 출금은 제한됩니다.
+          대출금의 <span class="color-red font-weight-bold">130%</span> 초과
+          금액에 대해서 부분출금이 가능합니다. CD기 출금 및 계좌이체, 해당
+          증권사 영업점에서의 창구 출금은 제한됩니다.
         </p>
       </section>
 
@@ -177,16 +178,18 @@ export default {
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               담보비율이
-              <span class="color-red">종가기준 최저유지담보비율(120%)</span
-              >미만이면 <span class="color-red">대출금액만큼</span> 익일오전
-              동시호가(오전 8:45)에 반대매매하여 대출금을 회수합니다.
+              <span class="color-red font-weight-bold"
+                >종가기준 최저유지담보비율(120%)</span
+              >미만이면
+              <span class="color-red font-weight-bold">대출금액만큼</span>
+              익일오전 동시호가(오전 8:45)에 반대매매하여 대출금을 회수합니다.
             </div>
           </li>
           <li :class="[$style['basic-list__item'], 'font-weight-regular']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
               대출금 상환 전까지
-              <span class="color-red"
+              <span class="color-red font-weight-bold"
                 >해당 증권계좌의 주식 출고, 입고가 정지됩니다.</span
               >
             </div>
@@ -201,7 +204,7 @@ export default {
           <li :class="[$style['basic-list__item'], 'font-weight-regular']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
-              <span class="color-red"
+              <span class="color-red font-weight-bold"
                 >보유불가종목(권리락종목, 감자/합병종목, 관리종목,
                 거래정지예정종목, 긴급매수보유금지) 보유시
                 반대매매실행되오니</span
@@ -229,10 +232,19 @@ export default {
           </div>
         </div>
 
-        <NoticeText :classNames="{ wrap: 'color-red' }">
-          확인을 누르시면 대출금이 입금되며 입금 후에는 취소가 불가능하므로 이점
-          유의하시기 바랍니다.
-        </NoticeText>
+        <div
+          :class="[
+            $style['inline-alert'],
+            $style['inline-alert--error'],
+            'font-weight-bold',
+            'row-margin-container-medium',
+          ]"
+        >
+          <p :class="$style['inline-alert__text']">
+            확인을 누르시면 대출금이 입금되며 입금 후에는 취소가 불가능하므로
+            이점 유의하시기 바랍니다.
+          </p>
+        </div>
       </div>
     </div>
 
