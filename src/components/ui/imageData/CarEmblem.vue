@@ -58,6 +58,11 @@ export default {
       :src="`${BASE_URL}images/car-emblem/${code}.svg`"
       :alt="name"
       :class="[$style['car-emblem__img'], customClassNames.img]"
+      @error="
+        (e) => {
+          e.target.parentNode.classList.add('is-error');
+        }
+      "
     />
   </span>
 </template>

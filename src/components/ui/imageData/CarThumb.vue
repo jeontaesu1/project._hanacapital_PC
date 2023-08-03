@@ -64,6 +64,11 @@ export default {
       :src="imgSrc"
       alt=""
       :class="[$style['car-thumb__img'], customClassNames.img]"
+      @error="
+        (e) => {
+          e.target.parentNode.classList.add('is-error');
+        }
+      "
     />
   </span>
 </template>

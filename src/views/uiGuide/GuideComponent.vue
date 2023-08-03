@@ -8045,11 +8045,27 @@ export default {
       <h2 class="test-section-title">Car Thumb</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarThumb src="/images/_dummy/car-thumb.png" />
       </div>
 
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size : Regular</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="regular" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="regular" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarThumb size="regular" src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
@@ -8058,6 +8074,14 @@ export default {
       <h2 class="test-section-title">Car Emblem</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
+        <!-- Case : code 없을 때 -->
+        <CarEmblem code="" name="현대" />
+        <!-- // Case : code 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarEmblem code="dummyCode" name="현대" />
+        <!-- // Case : 이미지 에러 -->
+
         <CarEmblem code="1001" name="현대" />
       </div>
     </section>
@@ -8067,6 +8091,9 @@ export default {
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
         <ColorChip />
+        <!--
+        <ColorChip type="text" />
+        -->
         <ColorChip :colors="['244, 238, 238']" />
         <ColorChip :colors="['244, 238, 238', '225, 213, 213', '66, 83, 82']" />
         <ColorChip
