@@ -579,7 +579,12 @@ const datas = () => [
         path: '/customer/Customer_P17_p001',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.07',
+            text: '줄바꿈 수정 및 이미지 교체',
+          },
+        ],
       },
       {
         depth2: '보안센터',
@@ -590,7 +595,12 @@ const datas = () => [
         path: '/customer/Customer_P17_p002',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.07',
+            text: '줄바꿈 수정 및 이미지 교체',
+          },
+        ],
       },
       {
         depth2: '정책 및 약관\nCustomer_P08_p001',

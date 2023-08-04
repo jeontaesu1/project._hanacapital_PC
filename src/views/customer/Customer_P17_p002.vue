@@ -98,10 +98,7 @@ export default {
               </div>
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
-                  <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
-                  />
+                  <img src="@/assets/images/contents/img-delete-1.png" alt="" />
                 </div>
               </div>
             </li>
@@ -127,10 +124,7 @@ export default {
               </div>
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
-                  <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
-                  />
+                  <img src="@/assets/images/contents/img-delete-2.png" alt="" />
                 </div>
               </div>
             </li>
@@ -156,10 +150,7 @@ export default {
               </div>
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
-                  <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
-                  />
+                  <img src="@/assets/images/contents/img-delete-3.png" alt="" />
                 </div>
               </div>
             </li>

@@ -127,15 +127,15 @@ export default {
               <div :class="$style['contents-list__head']">
                 <div :class="$style['contents-list__symbol']">2</div>
                 <div :class="$style['contents-list__title']">
-                  설치 파일 다운로드 시, 다음과 같은 메시지가 나타납니다. AhnLab
-                  Safe Transaction 설치를 위해 “다음”을 클릭합니다.
+                  설치 파일 다운로드 시, 다음과 같은 메시지가 나타납니다.<br />
+                  AhnLab Safe Transaction 설치를 위해 “다음”을 클릭합니다.
                 </div>
               </div>
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-1.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -144,15 +144,15 @@ export default {
               <div :class="$style['contents-list__head']">
                 <div :class="$style['contents-list__symbol']">3</div>
                 <div :class="$style['contents-list__title']">
-                  아래와 같이 사용권 계약 화면이 나타납니다. “동의함”을 클릭하여
-                  AhnLab Safe Transaction를 설치해주십시오.
+                  아래와 같이 사용권 계약 화면이 나타납니다.<br />
+                  “동의함”을 클릭하여 AhnLab Safe Transaction를 설치해주십시오.
                 </div>
               </div>
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-2.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -167,8 +167,8 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-3.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -185,8 +185,8 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-4.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -243,8 +243,8 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-5.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -301,8 +301,8 @@ export default {
               <div class="row-margin-item-regular">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-2.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-install-6.png"
+                    alt=""
                   />
                 </div>
               </div>
