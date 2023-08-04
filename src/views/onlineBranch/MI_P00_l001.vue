@@ -52,9 +52,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <div :class="[$style['image-view'], 'row-margin-contents']">
-        <img src="@/assets/images/_dummy/box-detail.png" alt="샘플 이미지" />
-      </div>
+      <div class="row-margin-contents">// 약관 상세 영역</div>
 
       <template v-slot:foot>
         <ButtonList

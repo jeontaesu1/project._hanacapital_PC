@@ -11,6 +11,7 @@ import PF_P01_l002 from '@/views/personalLoan/PF_P01_l002.vue';
 import PF_P01_l003 from '@/views/personalLoan/PF_P01_l003.vue';
 import PF_P01_l005 from '@/views/personalLoan/PF_P01_l005.vue';
 import PF_P01_l006 from '@/views/personalLoan/PF_P01_l006.vue';
+import PF_P01_l010 from '@/views/personalLoan/PF_P01_l010.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     PF_P01_l003,
     PF_P01_l005,
     PF_P01_l006,
+    PF_P01_l010,
   },
   setup() {
     const layer001 = ref(null);
@@ -30,6 +32,7 @@ export default {
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -46,6 +49,9 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -53,11 +59,13 @@ export default {
       layer003,
       layer004,
       layer005,
+      layer006,
       layer001Open,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -96,6 +104,11 @@ export default {
           1원 인증<br />PF_P01_l006
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          iSAS 설치 팝업<br />PF_P01_l010
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <PF_P01_l001 ref="layer001" />
@@ -103,5 +116,6 @@ export default {
     <PF_P01_l003 ref="layer003" />
     <PF_P01_l005 ref="layer004" />
     <PF_P01_l006 ref="layer005" />
+    <PF_P01_l010 ref="layer006" />
   </PageContents>
 </template>

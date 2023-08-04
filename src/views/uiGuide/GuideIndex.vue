@@ -888,6 +888,7 @@ const datas = () => [
         create: '2023.05.26',
         log: [
           { date: '2023.06.01', text: '팝업 추가\n- 온라인 약정\n- 1원 인증' },
+          { date: '2023.08.04', text: '팝업 추가\n- iSAS 설치 팝업' },
         ],
       },
       {
@@ -1698,7 +1699,12 @@ const datas = () => [
         path: '/ui-guide/online-branch-001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.04',
+            text: 'MI_P00_l001 약관 상세 영역 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
