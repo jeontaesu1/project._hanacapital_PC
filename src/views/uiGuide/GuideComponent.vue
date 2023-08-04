@@ -2200,6 +2200,77 @@ export default {
             </FormInvalid>
           </FormListItem>
 
+          <FormListItem titleText="이메일" target="#testInput015">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="이메일 아이디" id="testInput015" />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">@</InputBlockCell>
+                <InputBlockCell margin="regular" :flexible="true">
+                  <BasicSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: 'naver.com',
+                      },
+                      {
+                        value: '2',
+                        label: 'hanmail.net',
+                      },
+                      {
+                        value: '3',
+                        label: 'gmail.com',
+                      },
+                      {
+                        value: '4',
+                        label: 'nate.com',
+                      },
+                      {
+                        value: '5',
+                        label: 'paran.com',
+                      },
+                      {
+                        value: '6',
+                        label: 'dreamwiz.com',
+                      },
+                      {
+                        value: '7',
+                        label: 'yahoo.com',
+                      },
+                      {
+                        value: '8',
+                        label: 'freechal.com',
+                      },
+                      {
+                        value: '9',
+                        label: '직접입력',
+                      },
+                    ]"
+                    title="이메일 도메인"
+                    placeholder="선택"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- Case : 직접입력 선택 시 노출 -->
+              <InputBlock
+                :error="state.testError001"
+                :classNames="{
+                  wrap: 'row-margin-item-group row-margin-bottom-none',
+                }"
+              >
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="이메일 도메인 직접입력"
+                    id="testInput015_EmailDomainSelf"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <!-- //Case : 직접입력 선택 시 노출 -->
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
           <BasicTextarea
             :error="state.testError001"
             titleText="Label"
@@ -2237,17 +2308,6 @@ export default {
         <h3 class="test-section-sub-title">Wrap - col 2</h3>
 
         <FormList :wrap="true">
-          <FormListItem titleText="이름" target="#testInput015">
-            <FormInvalid :error="state.testError001">
-              <InputBlock :error="state.testError001">
-                <InputBlockCell :flexible="true">
-                  <BasicInput title="이름" id="testInput015" />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
           <FormListItem titleText="이름" target="#testInput016">
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
@@ -2264,6 +2324,17 @@ export default {
               <InputBlock :error="state.testError001">
                 <InputBlockCell :flexible="true">
                   <BasicInput title="이름" id="testInput017" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem titleText="이름" target="#testInput018">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="이름" id="testInput018" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

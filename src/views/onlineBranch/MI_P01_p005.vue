@@ -801,6 +801,7 @@ export default {
                     },
                   ]"
                   title="이메일 도메인"
+                  placeholder="선택"
                 />
               </InputBlockCell>
             </InputBlock>
