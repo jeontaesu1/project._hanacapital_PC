@@ -24,6 +24,10 @@ export default {
       Type: String,
       default: null,
     },
+    src: {
+      Type: String,
+      default: null,
+    },
     name: {
       Type: String,
       default: null,
@@ -35,9 +39,27 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
+    const imgSrc = computed(() => {
+      const { code, src = '' } = props;
+
+      console.log(typeof src === 'string');
+
+      if (code) {
+        return `${BASE_URL}images/car-emblem/${code}.svg`;
+      } else if (typeof src === 'string' && src.length) {
+        if (src.match(/^\//)) {
+          return BASE_URL + src.replace(/^\//, '');
+        } else {
+          return src;
+        }
+      } else {
+        return '';
+      }
+    });
+
     return {
-      BASE_URL,
       customClassNames,
+      imgSrc,
     };
   },
 };
@@ -54,8 +76,8 @@ export default {
     ]"
   >
     <img
-      v-if="code"
-      :src="`${BASE_URL}images/car-emblem/${code}.svg`"
+      v-if="imgSrc.length"
+      :src="imgSrc"
       :alt="name"
       :class="[$style['car-emblem__img'], customClassNames.img]"
       @error="
