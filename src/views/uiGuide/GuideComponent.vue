@@ -2262,7 +2262,7 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicInput
                     title="이메일 도메인 직접입력"
-                    id="testInput015_EmailDomainSelf"
+                    id="testInput015_emailDomainSelf"
                   />
                 </InputBlockCell>
               </InputBlock>

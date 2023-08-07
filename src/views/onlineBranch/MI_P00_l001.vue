@@ -52,7 +52,7 @@ export default {
         </ModalPopupHead>
       </template>
 
-      <div class="row-margin-contents">// 약관 상세 영역</div>
+      <article>{{ '// 약관 내용 노출' }}</article>
 
       <template v-slot:foot>
         <ButtonList
@@ -70,7 +70,3 @@ export default {
     </ModalPopup>
   </UiLayer>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_l001.scss';
-</style>
