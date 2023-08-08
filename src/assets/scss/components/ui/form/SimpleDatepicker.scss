@@ -5,22 +5,28 @@
   &__dummy {
     display: flex;
     align-items: center;
+    @include font-size-default(16);
+    padding: 7px 11px 7px 15px;
+    border-radius: 8px;
+    border: 1px solid $color-gray-30;
+    background-color: $color-white;
+    outline: none;
+    transition: border-color 0.2s;
   }
 
   &__text {
     flex: 1;
     min-width: 0;
     overflow: hidden;
-    @include font-size-head(20);
-    font-weight: 500;
-    height: #{$line-height-head}em;
+    @include font-size-default(16);
+    height: #{$line-height-default}em;
   }
 
   &__icon {
     flex: none;
     margin-left: 8px;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 
     svg {
       display: block;
@@ -33,10 +39,24 @@
     }
   }
 
+  &--align {
+    &-right {
+      .input {
+        &__text {
+          text-align: right;
+        }
+      }
+    }
+  }
+
   &--disabled {
     .input {
+      &__dummy {
+        background-color: $color-gray-10;
+      }
+
       &__text {
-        color: $color-gray-40;
+        color: $color-gray-60;
       }
 
       &__icon {
@@ -49,12 +69,20 @@
     }
   }
 
-  &--align {
-    &-right {
-      .input {
-        &__text {
-          text-align: right;
-        }
+  &--focus {
+    .input {
+      &__dummy {
+        border-width: 2px;
+        border-color: $color-black;
+        padding: 6px 10px 6px 14px;
+      }
+    }
+  }
+
+  &--error {
+    .input {
+      &__dummy {
+        border-color: $color-semantic-essential;
       }
     }
   }

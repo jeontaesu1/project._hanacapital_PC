@@ -42,8 +42,6 @@ export default {
     const imgSrc = computed(() => {
       const { code, src = '' } = props;
 
-      console.log(typeof src === 'string');
-
       if (code) {
         return `${BASE_URL}images/car-emblem/${code}.svg`;
       } else if (typeof src === 'string' && src.length) {

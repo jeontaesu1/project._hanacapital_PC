@@ -1,14 +1,5 @@
 <script>
-import {
-  ref,
-  reactive,
-  computed,
-  onMounted,
-  nextTick,
-  inject,
-  h,
-  useCssModule,
-} from 'vue';
+import { ref, reactive, computed, onMounted, h, useCssModule } from 'vue';
 import VueSelect from 'vue-select';
 import { createPopper } from '@popperjs/core';
 
@@ -62,6 +53,10 @@ export default {
     modelValue: {
       Type: String,
     },
+    error: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props, { emit }) {
     const $style = useCssModule();
@@ -70,8 +65,6 @@ export default {
       placement: 'bottom',
       value: '',
     });
-
-    const formListItem = inject('formListItem', {});
 
     const select = ref(null);
 
@@ -139,23 +132,11 @@ export default {
     const optionSelected = (selectedOption) => {
       state.value = selectedOption.value;
       props.onSelected(selectedOption);
-
-      nextTick(() => {
-        if (formListItem && formListItem.checkInputed) {
-          formListItem.checkInputed();
-        }
-      });
     };
 
     const onUpdate = (val) => {
       state.value = val;
       props.onUpdate(val);
-
-      nextTick(() => {
-        if (formListItem && formListItem.checkInputed) {
-          formListItem.checkInputed();
-        }
-      });
     };
 
     const OpenIndicator = computed(() => {
@@ -173,12 +154,6 @@ export default {
 
       if (select.value.selectedValue[0]) {
         state.value = select.value.selectedValue[0].value;
-
-        nextTick(() => {
-          if (formListItem && formListItem.checkInputed) {
-            formListItem.checkInputed();
-          }
-        });
       }
     });
 
@@ -196,7 +171,15 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['select'], customClassNames.wrap]">
+  <div
+    :class="[
+      $style['select'],
+      {
+        [$style['select--error']]: error,
+      },
+      customClassNames.wrap,
+    ]"
+  >
     <input type="hidden" :value="state.value" />
     <VueSelect
       ref="select"
@@ -215,5 +198,5 @@ export default {
 </template>
 
 <style lang="scss" module>
-@import '@/assets/scss/components/ui/form/BasicSelect.scss';
+@import '@/assets/scss/components/ui/form/SimpleSelect.scss';
 </style>

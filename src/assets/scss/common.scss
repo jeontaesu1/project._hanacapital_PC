@@ -165,6 +165,10 @@ body,
     & + &--mini {
       margin-left: 2px;
     }
+
+    &.flex-box {
+      display: flex;
+    }
   }
 }
 
@@ -228,6 +232,12 @@ body,
   &-driving-license {
     width: 140px;
   }
+}
+
+// simple-input-height
+.simple-input-height {
+  @include font-size-default(16);
+  min-height: calc(40 / 16) * 1em;
 }
 
 // text

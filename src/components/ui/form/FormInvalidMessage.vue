@@ -17,6 +17,7 @@ export default {
   setup(props) {
     const formInvalid = inject('formInvalid', {});
     const basicTextarea = inject('basicTextarea', {});
+    const simpleInput = inject('simpleInput', {});
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -27,6 +28,7 @@ export default {
       customClassNames,
       formInvalid,
       basicTextarea,
+      simpleInput,
     };
   },
 };
@@ -38,6 +40,7 @@ export default {
       $style['invalid-message'],
       formInvalid.messageClass,
       basicTextarea.invalidClass,
+      simpleInput.invalidClass,
       customClassNames.wrap,
     ]"
   >

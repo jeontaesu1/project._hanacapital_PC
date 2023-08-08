@@ -17,6 +17,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    disabled: {
+      Type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const $style = useCssModule();
@@ -60,6 +64,7 @@ export default {
       $style['invalid'],
       {
         [$style['invalid--error']]: error,
+        [$style['invalid--disabled']]: disabled,
       },
       customClassNames.wrap,
     ]"

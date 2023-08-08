@@ -14,4 +14,10 @@
       display: none;
     }
   }
+
+  &--disabled {
+    .invalid__help {
+      color: $color-gray-40;
+    }
+  }
 }
