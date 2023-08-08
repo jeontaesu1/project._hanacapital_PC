@@ -73,11 +73,11 @@ export default {
                   계약체결을 하시기 전에 반드시 상품 약관을 확인해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-1.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -96,11 +96,11 @@ export default {
                   고객 정보를 확인해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-2.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -119,11 +119,11 @@ export default {
                   차량 정보 및 상품 조건을 확인해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-3.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -142,11 +142,11 @@ export default {
                   약관을 확인 및 동의해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-4.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -165,11 +165,11 @@ export default {
                   자동이체 정보 확인 및 약관을 동의해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-5.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -183,14 +183,14 @@ export default {
                 :class="[$style['contents-list__depth-3'], 'row-margin-mini']"
               >
                 <p class="text-body-2 font-weight-regular color-gray-tertiary">
-                  화면 우측 상단의 [약정하기] 버튼을 클릭해 주세요.
+                  화면 우측 하단의 [약정하기] 버튼을 클릭해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-6.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -209,11 +209,11 @@ export default {
                   공동인증서 인증을 진행해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-7.png"
+                    alt=""
                   />
                 </div>
               </div>
@@ -233,11 +233,11 @@ export default {
                   버튼을 클릭해 주세요.
                 </p>
               </div>
-              <div class="row-margin-item-regular">
+              <div class="row-margin-item">
                 <div :class="$style['image-view']">
                   <img
-                    src="@/assets/images/_dummy/box-detail-small.png"
-                    alt="샘플 이미지"
+                    src="@/assets/images/contents/img-online-guide-8.png"
+                    alt=""
                   />
                 </div>
               </div>

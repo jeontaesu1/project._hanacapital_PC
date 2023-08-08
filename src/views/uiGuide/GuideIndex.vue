@@ -2687,7 +2687,10 @@ const datas = () => [
         path: '/ui-guide/additional-service-001',
         status: 'end',
         create: '2023.05.26',
-        log: [{ date: '2023.06.01', text: '팝업추가\n- 온라인약정 팝업' }],
+        log: [
+          { date: '2023.06.01', text: '팝업추가\n- 온라인약정 팝업' },
+          { date: '2023.08.10', text: 'My_P06_l002 이미지 교체 및 문구 수정' },
+        ],
       },
       {
         depth2: '상담등록\nEtc_P01_p001',
