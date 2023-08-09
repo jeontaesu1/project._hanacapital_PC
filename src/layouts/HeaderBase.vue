@@ -16,6 +16,7 @@ import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
+import DropDownMenu from '@/components/ui/layout/DropDownMenu.vue';
 import LayerSiteMap from '@/components/ui/layout/LayerSiteMap.vue';
 
 import ImgLogo from '@/assets/images/common/logo-main.svg?component';
@@ -24,6 +25,7 @@ import IconMenu from '@/assets/images/common/menu.svg?component';
 export default {
   components: {
     RouterLink,
+    DropDownMenu,
     LayerSiteMap,
     ImgLogo,
     IconMenu,
@@ -40,7 +42,7 @@ export default {
       },
     },
   },
-  setup() {
+  setup(props) {
     const timer = {};
     const $style = useCssModule();
 
@@ -116,6 +118,18 @@ export default {
       }
 
       return isEnter;
+    });
+
+    const pageType = computed(() => {
+      const { type } = props;
+      const page = {
+        default: '손님',
+        inventoryFinance: '재고금융',
+        lmBlog: 'LM블로그',
+        agent: '에이전트',
+      };
+
+      return page[type];
     });
 
     const update = () => {
@@ -272,6 +286,7 @@ export default {
       scrollbarsWidth,
       isNavLayerShow,
       isDepthEnter,
+      pageType,
       siteMapOpen,
       onfocusin,
       onfocusout,
@@ -402,6 +417,31 @@ export default {
                 </div>
               </li>
             </ul>
+          </div>
+
+          <div :class="$style['type-menu']">
+            <DropDownMenu
+              :title="pageType"
+              :data="[
+                {
+                  text: '손님',
+                  to: '/main/home',
+                },
+                {
+                  text: '재고금융',
+                  to: '/inventory-finance/IF_P08_p001',
+                },
+                {
+                  text: 'LM블로그',
+                  to: '/lm-blog/LM_P02_p001',
+                },
+                {
+                  text: '에이전트',
+                  to: '/agent/Agent_P01_p001',
+                },
+              ]"
+              theme="secondary"
+            />
           </div>
 
           <div v-if="type === 'default'" :class="$style['etc']">

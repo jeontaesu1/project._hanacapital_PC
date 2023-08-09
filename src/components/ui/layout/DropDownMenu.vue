@@ -7,6 +7,7 @@ import {
   onMounted,
   onBeforeUnmount,
 } from 'vue';
+import { RouterLink } from 'vue-router';
 import Simplebar from 'simplebar-vue';
 import { createPopper } from '@popperjs/core';
 
@@ -29,6 +30,7 @@ const defaultClassNames = () => ({
 
 export default {
   components: {
+    RouterLink,
     Simplebar,
     IconDropdown,
   },
@@ -48,6 +50,10 @@ export default {
       default() {
         return [];
       },
+    },
+    theme: {
+      Type: String,
+      default: null,
     },
   },
   setup(props) {
@@ -73,7 +79,7 @@ export default {
           {
             name: 'offset',
             options: {
-              offset: [0, -1],
+              offset: [0, 0],
             },
           },
           {
@@ -163,6 +169,7 @@ export default {
       $style['menu'],
       {
         'is-opened': state.opened,
+        [$style[`menu--theme-${theme}`]]: theme,
       },
       customClassNames.wrap,
     ]"
@@ -199,7 +206,16 @@ export default {
               :key="i"
               :class="[$style['menu__item'], customClassNames.item]"
             >
+              <RouterLink
+                v-if="item.to"
+                :to="item.to"
+                :target="item.target"
+                :class="[$style['menu__link'], customClassNames.link]"
+              >
+                {{ item.text }}
+              </RouterLink>
               <a
+                v-else
                 :href="item.url"
                 :target="item.target || '_blank'"
                 :class="[$style['menu__link'], customClassNames.link]"
