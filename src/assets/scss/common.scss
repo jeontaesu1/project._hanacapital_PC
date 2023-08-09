@@ -232,6 +232,22 @@ body,
   &-driving-license {
     width: 140px;
   }
+
+  &-small {
+    width: 120px;
+  }
+  &-regular {
+    width: 160px;
+  }
+  &-medium {
+    width: 200px;
+  }
+  &-large {
+    width: 240px;
+  }
+  &-wide {
+    width: 400px;
+  }
 }
 
 // simple-input-height

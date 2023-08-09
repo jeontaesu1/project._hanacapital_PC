@@ -67,7 +67,7 @@ export default {
     const $style = useCssModule();
 
     const state = reactive({
-      placement: 'bottom',
+      placement: 'bottom-start',
       value: '',
     });
 
@@ -99,7 +99,7 @@ export default {
           {
             name: 'offset',
             options: {
-              offset: [0, -1],
+              offset: [0, 0],
             },
           },
           {
@@ -121,12 +121,12 @@ export default {
 
               dropdownList.classList.toggle(
                 'drop-up',
-                state.placement === 'top'
+                state.placement === 'top-start'
               );
 
               component.$el.classList.toggle(
                 'drop-up',
-                state.placement === 'top'
+                state.placement === 'top-start'
               );
             },
           },

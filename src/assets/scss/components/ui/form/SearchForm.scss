@@ -1,0 +1,75 @@
+.form {
+  margin-bottom: 60px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $color-gray-05;
+
+  &__bottom {
+    margin-top: 40px;
+  }
+
+  &__list {
+    &::before {
+      content: '';
+      display: table;
+    }
+
+    &-inner {
+      @include reset-list;
+      margin: -24px 0 0 -40px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    flex: none;
+    padding: 24px 0 0 40px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: block;
+      flex: none;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $color-black;
+      margin-right: 12px;
+    }
+  }
+
+  &__key {
+    flex: none;
+    margin-right: 16px;
+    @include font-size-default(16);
+  }
+
+  &__val {
+    flex: none;
+  }
+
+  &__section {
+    & + & {
+      margin-top: 40px;
+    }
+
+    &-head {
+      margin-bottom: 16px;
+    }
+
+    &-body {
+      &::before,
+      &::after {
+        content: '';
+        display: table;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      @include font-size-default(16);
+    }
+  }
+}

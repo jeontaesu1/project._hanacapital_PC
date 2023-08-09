@@ -2946,7 +2946,12 @@ const datas = () => [
         path: '/lm-blog/LM_P02_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.09',
+            text: '소스 전반 재작업',
+          },
+        ],
       },
       {
         depth2: 'SMS 상담요청 내역\nLM_P03_p001',
@@ -2957,7 +2962,12 @@ const datas = () => [
         path: '/lm-blog/LM_P03_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.09',
+            text: '소스 전반 재작업',
+          },
+        ],
       },
       {
         depth2: '접속통계\nLM_P04_p001',
@@ -3040,7 +3050,12 @@ const datas = () => [
         path: '/lm-blog/LM_P05_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.09',
+            text: '조회 조건 입력 영역 추가',
+          },
+        ],
       },
       {
         depth2: '현황조회\nLM_P05_p001',

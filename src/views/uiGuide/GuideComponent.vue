@@ -101,6 +101,11 @@ import ImageBannerSlide from '@/components/ui/banner/ImageBannerSlide.vue';
 import SimpleInput from '@/components/ui/form/SimpleInput.vue';
 import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
+import SearchForm from '@/components/ui/form/SearchForm.vue';
+import SearchFormList from '@/components/ui/form/SearchFormList.vue';
+import SearchFormItem from '@/components/ui/form/SearchFormItem.vue';
+import SearchFormSection from '@/components/ui/form/SearchFormSection.vue';
+import SearchFormTitle from '@/components/ui/form/SearchFormTitle.vue';
 
 import IconAdd from '@/assets/images/icon/add.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -241,6 +246,11 @@ export default {
     SimpleInput,
     SimpleSelect,
     SimpleDatepicker,
+    SearchForm,
+    SearchFormList,
+    SearchFormItem,
+    SearchFormSection,
+    SearchFormTitle,
 
     IconAdd,
     IconPerson,
@@ -286,6 +296,8 @@ export default {
       testMaxDate002: '',
       testMinDate003: '',
       testMaxDate003: '',
+      testSearchMinDate001: '',
+      testSearchMaxDate001: '',
     });
 
     const layerTest001 = ref(null);
@@ -9513,6 +9525,301 @@ export default {
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="test-section">
+      <h2 class="test-section-title">Search Form</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <SearchForm>
+          <h3 class="for-a11y">조회 조건</h3>
+
+          <SearchFormList>
+            <SearchFormItem>
+              <template v-slot:key>조회기간</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '직접입력',
+                      },
+                      {
+                        value: '2',
+                        label: '1주',
+                      },
+                      {
+                        value: '3',
+                        label: '1개월',
+                      },
+                    ]"
+                    title="조회기간"
+                    defaultValue="1"
+                    :classNames="{ wrap: 'input-width-small' }"
+                  />
+                </div>
+                <div class="flex-box__cell">
+                  <SimpleDatepicker
+                    title="조회기간 시작 날짜"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                    :max="state.testSearchMaxDate001"
+                    v-model="state.testSearchMinDate001"
+                  />
+                </div>
+                <div class="flex-box__cell">
+                  <div class="text-body-3">~</div>
+                </div>
+                <div class="flex-box__cell">
+                  <SimpleDatepicker
+                    title="조회기간 종료 날짜"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                    :min="state.testSearchMinDate001"
+                    v-model="state.testSearchMaxDate001"
+                  />
+                </div>
+              </div>
+            </SearchFormItem>
+
+            <SearchFormItem>
+              <template v-slot:key>이름</template>
+              <SimpleInput
+                title="이름"
+                :classNames="{ wrap: 'input-width-large' }"
+              />
+            </SearchFormItem>
+          </SearchFormList>
+
+          <template v-slot:bottom>
+            <ButtonList
+              :wrap="true"
+              :col="5"
+              align="center"
+              :classNames="{ wrap: 'row-margin-none' }"
+            >
+              <ButtonListItem>
+                <BasicButton size="regular" theme="tertiary">조회</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </template>
+        </SearchForm>
+
+        <SearchForm>
+          <h3 class="for-a11y">시뮬레이터 조건</h3>
+
+          <SearchFormSection>
+            <template v-slot:head>
+              <SearchFormTitle>상환정보입력</SearchFormTitle>
+            </template>
+
+            <SearchFormList>
+              <SearchFormItem>
+                <template v-slot:key>할부원금</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="할부원금"
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">원</div>
+                  </div>
+                </div>
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>대출일자</template>
+                <SimpleDatepicker
+                  title="대출일자"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                />
+              </SearchFormItem>
+              <SearchFormItem>
+                <template v-slot:key>초회납입일자</template>
+                <SimpleDatepicker
+                  title="초회납입일자"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                />
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>상환기간/금리</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="상환기간"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">개월</div>
+                  </div>
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="상환금리"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">%</div>
+                  </div>
+                </div>
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>내구재이자부과구분</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <RadioButton
+                      name="testSearchFormRadioButton001"
+                      id="testSearchFormRadioButton001_001"
+                      theme="tertiary"
+                    >
+                      <RadioButtonObject />
+                      <RadioButtonLabelText>이자부과</RadioButtonLabelText>
+                    </RadioButton>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <RadioButton
+                      name="testSearchFormRadioButton001"
+                      id="testSearchFormRadioButton001_002"
+                      theme="tertiary"
+                    >
+                      <RadioButtonObject />
+                      <RadioButtonLabelText>부분이자</RadioButtonLabelText>
+                    </RadioButton>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <RadioButton
+                      name="testSearchFormRadioButton001"
+                      id="testSearchFormRadioButton001_003"
+                      theme="tertiary"
+                    >
+                      <RadioButtonObject />
+                      <RadioButtonLabelText>무이자</RadioButtonLabelText>
+                    </RadioButton>
+                  </div>
+                </div>
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>내구재물품기본금리</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="내구재물품기본금리"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">%</div>
+                  </div>
+                </div>
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>결제일자</template>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '1일',
+                    },
+                    {
+                      value: '2',
+                      label: '2일',
+                    },
+                    {
+                      value: '3',
+                      label: '3일',
+                    },
+                    {
+                      value: '4',
+                      label: '4일',
+                    },
+                    {
+                      value: '5',
+                      label: '5일',
+                    },
+                    {
+                      value: '6',
+                      label: '6일',
+                    },
+                    {
+                      value: '7',
+                      label: '7일',
+                    },
+                    {
+                      value: '8',
+                      label: '8일',
+                    },
+                  ]"
+                  title="결제일자"
+                  defaultValue="1"
+                  :classNames="{ wrap: 'input-width-small' }"
+                />
+              </SearchFormItem>
+            </SearchFormList>
+          </SearchFormSection>
+
+          <SearchFormSection>
+            <template v-slot:head>
+              <SearchFormTitle>선취수수료</SearchFormTitle>
+            </template>
+
+            <SearchFormList>
+              <SearchFormItem>
+                <template v-slot:key>내구재선취수수료율</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="내구재선취수수료율"
+                      :classNames="{ wrap: 'input-width-regular' }"
+                      :disabled="true"
+                      defaultValue="11.82"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">%</div>
+                  </div>
+                </div>
+              </SearchFormItem>
+
+              <SearchFormItem>
+                <template v-slot:key>내구재선취수수료</template>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      title="내구재선취수수료"
+                      :classNames="{ wrap: 'input-width-regular' }"
+                      :disabled="true"
+                      defaultValue="11,820"
+                    />
+                  </div>
+                  <div class="flex-box__cell">
+                    <div class="text-body-3">원</div>
+                  </div>
+                </div>
+              </SearchFormItem>
+            </SearchFormList>
+          </SearchFormSection>
+
+          <template v-slot:bottom>
+            <ButtonList
+              :wrap="true"
+              :col="5"
+              align="center"
+              :classNames="{ wrap: 'row-margin-none' }"
+            >
+              <ButtonListItem>
+                <BasicButton size="regular" theme="tertiary">산출</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </template>
+        </SearchForm>
       </div>
     </section>
 

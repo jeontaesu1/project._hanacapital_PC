@@ -1,28 +1,44 @@
 <script>
 // LM_P05_p001
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import BasicButton from '@/components/ui/button/BasicButton.vue';
 import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import SearchForm from '@/components/ui/form/SearchForm.vue';
+import SearchFormList from '@/components/ui/form/SearchFormList.vue';
+import SearchFormItem from '@/components/ui/form/SearchFormItem.vue';
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
-    BasicButton,
     PaginationNav,
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    SearchForm,
+    SearchFormList,
+    SearchFormItem,
+    SimpleInput,
+    SimpleSelect,
+    SimpleDatepicker,
+    ButtonList,
+    ButtonListItem,
+    BasicButton,
   },
   setup() {
     const store = {
@@ -31,6 +47,11 @@ export default {
       },
     };
 
+    const state = reactive({
+      searchMinDate: '2023.04.21',
+      searchMaxDate: '2023.04.21',
+    });
+
     onMounted(() => {
       store.ui.header.setActive(() => 'lmBlog005');
     });
@@ -38,6 +59,10 @@ export default {
     onUnmounted(() => {
       store.ui.header.setActive();
     });
+
+    return {
+      state,
+    };
   },
 };
 </script>
@@ -97,11 +122,88 @@ export default {
     </div>
     <!-- // Category -->
 
-    <div class="row-margin-block-small row-margin-top-none">
-      // 조회 폼 추후 전달 예정
-    </div>
+    <!-- 조회 조건 -->
+    <SearchForm>
+      <h3 class="for-a11y">조회 조건</h3>
 
-    <!-- table -->
+      <SearchFormList>
+        <SearchFormItem>
+          <template v-slot:key>조회기간</template>
+          <div class="flex-box">
+            <div class="flex-box__cell">
+              <SimpleSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '직접입력',
+                  },
+                  {
+                    value: '2',
+                    label: '1주',
+                  },
+                  {
+                    value: '3',
+                    label: '1개월',
+                  },
+                ]"
+                title="조회기간"
+                defaultValue="1"
+                :classNames="{ wrap: 'input-width-small' }"
+              />
+            </div>
+            <div class="flex-box__cell">
+              <SimpleDatepicker
+                title="조회기간 시작 날짜"
+                :classNames="{ wrap: 'input-width-regular' }"
+                :max="state.searchMaxDate"
+                v-model="state.searchMinDate"
+              />
+            </div>
+            <div class="flex-box__cell">
+              <div class="text-body-3">~</div>
+            </div>
+            <div class="flex-box__cell">
+              <SimpleDatepicker
+                title="조회기간 종료 날짜"
+                :classNames="{ wrap: 'input-width-regular' }"
+                :min="state.searchMinDate"
+                v-model="state.searchMaxDate"
+              />
+            </div>
+          </div>
+        </SearchFormItem>
+
+        <SearchFormItem>
+          <template v-slot:key>이름</template>
+          <SimpleInput
+            title="이름"
+            :classNames="{ wrap: 'input-width-large' }"
+          />
+        </SearchFormItem>
+      </SearchFormList>
+
+      <template v-slot:bottom>
+        <ButtonList
+          :wrap="true"
+          :col="5"
+          align="center"
+          :classNames="{ wrap: 'row-margin-none' }"
+        >
+          <ButtonListItem>
+            <BasicButton size="regular" theme="tertiary">조회</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </template>
+    </SearchForm>
+    <!-- // 조회 조건 -->
+
+    <!-- Case : 조회 결과 없을 경우 -->
+    <div :class="[$style['empty'], $style['empty--secondary']]">
+      <p :class="$style['empty__text']">조회된 결과가 없습니다.</p>
+    </div>
+    <!-- // Case : 조회 결과 없을 경우 -->
+
+    <!-- Case : 결과 있을 경우 -->
     <div :class="$style['basic-table']">
       <table>
         <colgroup>
@@ -264,7 +366,7 @@ export default {
         </tbody>
       </table>
     </div>
-    <!-- // table -->
+    <!-- // Case : 결과 있을 경우 -->
 
     <!-- Case : 첫번째 페이지일 때 -->
     <PaginationNav>
