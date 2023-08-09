@@ -59,7 +59,7 @@ export default {
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
-            <h3 class="text-body-1 font-weight-regular">월 납입액</h3>
+            <h3 class="text-body-1 font-weight-regular">총 상환금액</h3>
           </BasicBoxHeadLeft>
           <BasicBoxHeadRight>
             <UnitText rightUnit="원" align="right">300,000</UnitText>
@@ -75,11 +75,6 @@ export default {
           <KeyValueItem>
             <KeyValueTitle>이자합계</KeyValueTitle>
             <KeyValueText>167 원</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>총 상환금액</KeyValueTitle>
-            <KeyValueText>1,000,167 원</KeyValueText>
           </KeyValueItem>
         </KeyValue>
       </BasicBox>

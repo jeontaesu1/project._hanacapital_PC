@@ -7,6 +7,8 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
@@ -40,6 +42,8 @@ export default {
     PageContents,
     PageHead,
     PageTitle,
+    NavTab,
+    NavTabButton,
     BasicBox,
     BasicBoxHead,
     KeyValue,
@@ -106,8 +110,17 @@ export default {
       </PageTitle>
     </PageHead>
 
-    <ul class="reset-list">
-      <li class="row-margin-contents-small">
+    <div>
+      <!-- Case : 2개 이상일 경우 노출 탭 노출 -->
+      <NavTab>
+        <NavTabButton tagName="button" type="button" :active="true"
+          >재고금융</NavTabButton
+        >
+        <NavTabButton tagName="button" type="button">재고금융Ⅱ</NavTabButton>
+      </NavTab>
+      <!-- // Case : 2개 이상일 경우 탭 노출 -->
+
+      <section>
         <BasicBox>
           <BasicBoxHead>
             <h3 class="text-title-2 font-weight-medium">
@@ -142,137 +155,106 @@ export default {
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
-      </li>
+      </section>
 
-      <li class="row-margin-contents-small">
-        <BasicBox>
-          <BasicBoxHead>
-            <h3 class="text-title-2 font-weight-medium">
-              주식회사알차이노베이션 (재고금융Ⅱ)
-            </h3>
-          </BasicBoxHead>
+      <BasicHr theme="quaternary" className="row-margin-block" />
 
-          <KeyValue :wrap="true">
-            <KeyValueItem>
-              <KeyValueTitle>약정기간</KeyValueTitle>
-              <KeyValueText>2021.11.10 ~ 2022.03.10</KeyValueText>
-            </KeyValueItem>
+      <section>
+        <h3 class="text-title-1 row-margin-contents">조회이력</h3>
 
-            <KeyValueItem>
-              <KeyValueTitle>한도잔액</KeyValueTitle>
-              <KeyValueText>2,000,000,000 원</KeyValueText>
-            </KeyValueItem>
+        <FormList>
+          <FormListItem titleText="차량번호" target="#IF_P06_p001_carNumber">
+            <FormInvalid :error="state.carNumberError">
+              <InputBlock :error="state.carNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput title="차량번호" id="IF_P06_p001_carNumber" />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
 
-            <KeyValueItem>
-              <KeyValueTitle>한도금액</KeyValueTitle>
-              <KeyValueText>200,000,000 원</KeyValueText>
-            </KeyValueItem>
+          <FormListItem titleText="조회기간" :forceFocus="true">
+            <FormInvalid :error="state.dateError">
+              <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="IF_P06_p001_check"
+                    id="IF_P06_p001_check_001"
+                  >
+                    <BoxCheckLabel>1개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="IF_P06_p001_check"
+                    id="IF_P06_p001_check_002"
+                  >
+                    <BoxCheckLabel>6개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="IF_P06_p001_check"
+                    id="IF_P06_p001_check_003"
+                  >
+                    <BoxCheckLabel>12개월</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+                <BoxCheckListItem>
+                  <BoxCheck
+                    :minSide="true"
+                    name="IF_P06_p001_check"
+                    id="IF_P06_p001_check_004"
+                  >
+                    <BoxCheckLabel>직접입력</BoxCheckLabel>
+                  </BoxCheck>
+                </BoxCheckListItem>
+              </BoxCheckList>
+              <InputBlock :error="state.dateError">
+                <InputBlockCell :flexible="true">
+                  <BasicDatepicker
+                    title="조회기간 시작 날짜"
+                    id="IF_P06_p001_start"
+                    buttonId="IF_P06_p001_startButton"
+                    :max="state.dateMaxDate"
+                    v-model="state.dateMinDate"
+                  />
+                </InputBlockCell>
+                <InputBlockCell margin="regular">~</InputBlockCell>
+                <InputBlockCell :flexible="true" margin="regular">
+                  <BasicDatepicker
+                    title="조회기간 종료 날짜"
+                    id="IF_P06_p001_start_end"
+                    buttonId="IF_P06_p001_start_endButton"
+                    :min="state.dateMinDate"
+                    v-model="state.dateMaxDate"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
 
-            <KeyValueItem>
-              <KeyValueTitle>실행금액</KeyValueTitle>
-              <KeyValueText>2,000,000 원</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem>
-              <KeyValueTitle>실행건수</KeyValueTitle>
-              <KeyValueText>N 건</KeyValueText>
-            </KeyValueItem>
-          </KeyValue>
-        </BasicBox>
-      </li>
-    </ul>
-
-    <BasicHr theme="quaternary" className="row-margin-block" />
-
-    <section>
-      <h3 class="text-title-1 row-margin-contents">조회이력</h3>
-
-      <FormList>
-        <FormListItem titleText="차량번호" target="#IF_P06_p001_carNumber">
-          <FormInvalid :error="state.carNumberError">
-            <InputBlock :error="state.carNumberError">
-              <InputBlockCell :flexible="true">
-                <BasicInput title="차량번호" id="IF_P06_p001_carNumber" />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-
-        <FormListItem titleText="조회기간" :forceFocus="true">
-          <FormInvalid :error="state.dateError">
-            <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="IF_P06_p001_check"
-                  id="IF_P06_p001_check_001"
-                >
-                  <BoxCheckLabel>1개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="IF_P06_p001_check"
-                  id="IF_P06_p001_check_002"
-                >
-                  <BoxCheckLabel>6개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="IF_P06_p001_check"
-                  id="IF_P06_p001_check_003"
-                >
-                  <BoxCheckLabel>12개월</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-              <BoxCheckListItem>
-                <BoxCheck
-                  :minSide="true"
-                  name="IF_P06_p001_check"
-                  id="IF_P06_p001_check_004"
-                >
-                  <BoxCheckLabel>직접입력</BoxCheckLabel>
-                </BoxCheck>
-              </BoxCheckListItem>
-            </BoxCheckList>
-            <InputBlock :error="state.dateError">
-              <InputBlockCell :flexible="true">
-                <BasicDatepicker
-                  title="조회기간 시작 날짜"
-                  id="IF_P06_p001_start"
-                  buttonId="IF_P06_p001_startButton"
-                  :max="state.dateMaxDate"
-                  v-model="state.dateMinDate"
-                />
-              </InputBlockCell>
-              <InputBlockCell margin="regular">~</InputBlockCell>
-              <InputBlockCell :flexible="true" margin="regular">
-                <BasicDatepicker
-                  title="조회기간 종료 날짜"
-                  id="IF_P06_p001_start_end"
-                  buttonId="IF_P06_p001_start_endButton"
-                  :min="state.dateMinDate"
-                  v-model="state.dateMaxDate"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-      </FormList>
-
-      <ButtonList>
-        <ButtonListItem>
-          <BasicButton :line="true">조회</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-    </section>
+        <ButtonList>
+          <ButtonListItem>
+            <BasicButton :line="true">조회</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+      </section>
+    </div>
 
     <BasicHr theme="quaternary" className="row-margin-block" />
+
+    <!-- Case : 조회결과 없을 시 -->
+    <div :class="$style['empty']">
+      <p :class="$style['empty__text']">신청현황이 없습니다.</p>
+    </div>
+    <!-- // Case : 조회결과 없을 시 -->
 
     <!-- Case : 조회 후 노출 -->
     <section class="contents-wrap">
@@ -372,12 +354,6 @@ export default {
         <PaginationNavArrow type="next" :disabled="true" />
       </PaginationNav>
       <!-- // Case : 마지막 페이지일 때 -->
-
-      <!-- Case : 조회결과 없을 시 -->
-      <div :class="$style['empty']">
-        <p :class="$style['empty__text']">신청현황이 없습니다.</p>
-      </div>
-      <!-- // Case : 조회결과 없을 시 -->
     </section>
     <!-- // Case : 조회 후 노출 -->
   </PageContents>

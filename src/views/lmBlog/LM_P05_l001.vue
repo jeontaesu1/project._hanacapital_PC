@@ -59,7 +59,7 @@ export default {
         </KeyValueItem>
 
         <KeyValueItem>
-          <KeyValueTitle>상담조회일자</KeyValueTitle>
+          <KeyValueTitle>상담일자</KeyValueTitle>
           <KeyValueText>2021.06.24</KeyValueText>
         </KeyValueItem>
 

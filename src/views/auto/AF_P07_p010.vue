@@ -177,8 +177,8 @@ export default {
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">승계 조건</h3>
 
-        <!-- Case : 리스 - 신청인 양수인인 경우 -->
         <div>
+          <!-- Case : 리스 - 신청인 양수인, 렌트일 경우 -->
           <BasicBox>
             <h4 class="text-body-1 font-weight-regular row-margin-item-medium">
               동일한 조건으로 승계 희망
@@ -187,7 +187,9 @@ export default {
               현재 계약자의 이용 조건을 동일하게 승계합니다.
             </p>
           </BasicBox>
+          <!-- // Case : 리스 - 신청인 양수인, 렌트일 경우 -->
 
+          <!-- Case : 리스 - 신청인 양수인인 경우 -->
           <section
             :class="[$style['notice-section'], 'row-margin-contents-small']"
           >
@@ -214,8 +216,8 @@ export default {
               </li>
             </ul>
           </section>
+          <!-- // Case : 리스 - 신청인 양수인인 경우 -->
         </div>
-        <!-- // Case : 리스 - 신청인 양수인인 경우 -->
 
         <!-- Case : 리스 - 전액선납 승계 선택 시 -->
         <div>
@@ -278,19 +280,6 @@ export default {
           </section>
         </div>
         <!-- // Case : 리스 - 전액선납 승계 선택 시 -->
-
-        <!-- Case : 렌트 -->
-        <div>
-          <BasicBox>
-            <h4 class="text-body-1 font-weight-regular row-margin-item-medium">
-              동일한 조건으로 승계 희망
-            </h4>
-            <p class="text-body-3 color-gray-tertiary">
-              현재 계약자의 이용 조건을 동일하게 승계합니다.
-            </p>
-          </BasicBox>
-        </div>
-        <!-- // Case : 렌트 -->
       </section>
     </div>
 

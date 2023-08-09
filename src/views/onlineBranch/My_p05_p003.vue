@@ -82,7 +82,7 @@ export default {
           <StepProgress :total="4" :current="2" />
         </template>
       </PageHeadRow>
-      <PageMainText align="left"> 서류를 등록해주세요</PageMainText>
+      <PageMainText align="left"> 서류를 등록해 주세요</PageMainText>
     </PageHead>
 
     <div>
@@ -176,7 +176,13 @@ export default {
         </li>
       </ul>
 
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular-margin'],
+          'row-margin-contents',
+        ]"
+      >
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">
