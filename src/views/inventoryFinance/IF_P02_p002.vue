@@ -88,8 +88,7 @@ export default {
 
     <BasicBox>
       <div>
-        <p class="text-body-4 font-weight-light row-margin-small">2023.01.10</p>
-        <h3 class="text-title-2 font-weight-medium">재고금융Ⅱ20고5678</h3>
+        <h3 class="text-title-2 font-weight-medium">20고5678</h3>
         <p class="text-body-3 color-gray-tertiary row-margin-item-small">
           BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
         </p>
