@@ -26,7 +26,7 @@ export default {
       layer001.value.layer.open(e.target);
     };
     const layer002Open = (e = {}) => {
-      layer001.value.layer.open(e.target);
+      layer002.value.layer.open(e.target);
     };
 
     return {
