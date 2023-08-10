@@ -66,7 +66,7 @@ export default {
                   재고금융Ⅱ20고5678
                 </h3>
                 <p class="text-body-4 color-gray row-margin-item-small">
-                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021 (국산)
                 </p>
               </div>
               <div class="flex-box__cell">
@@ -85,7 +85,7 @@ export default {
                   재고금융 20고5678
                 </h3>
                 <p class="text-body-4 color-gray row-margin-item-small">
-                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021 (수입)
                 </p>
               </div>
               <div class="flex-box__cell">

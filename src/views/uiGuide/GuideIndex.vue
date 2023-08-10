@@ -2813,7 +2813,7 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p004',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
@@ -2824,7 +2824,7 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p005',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
       },
       {
         depth2: '중도상환',
