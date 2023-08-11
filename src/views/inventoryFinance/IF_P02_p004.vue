@@ -84,20 +84,88 @@ export default {
 
     <div>
       <ul class="reset-list">
-        <li v-for="i in 2" :key="i" class="row-margin-contents">
+        <li class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
-                <p class="text-body-4 font-weight-light row-margin-small">
-                  2023.01.10
-                </p>
                 <h3 class="text-title-2 font-weight-medium">
                   재고금융Ⅱ20고5678
                 </h3>
                 <p
                   class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
-                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021 (국산)
+                </p>
+              </BasicBoxHeadLeft>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>대출신청금액</KeyValueTitle>
+                <KeyValueText>200,000,000 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>차대번호</KeyValueTitle>
+                <KeyValueText>KNALD2237A21548</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>3개월</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>상환방법</KeyValueTitle>
+                <KeyValueText>만기일시상환</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>대출금리</KeyValueTitle>
+                <KeyValueText>7.5%</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>연체이자율</KeyValueTitle>
+                <KeyValueText>약정대출금리 + 3%</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>만기일자</KeyValueTitle>
+                <KeyValueText>2023.02.11</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일자</KeyValueTitle>
+                <KeyValueText
+                  >매월 11일<br />(최초결제일 2월 11일)</KeyValueText
+                >
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>총 납부 금액<br />(원금+이자)</KeyValueTitle>
+                <KeyValueText>10,500,000원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>서류등록</KeyValueTitle>
+                <KeyValueText>
+                  <div :class="['inline-wrap', $style['text-buttons']]">
+                    <TextButton
+                      :underline="true"
+                      theme="secondary"
+                      textSize="regular"
+                      >서류확인</TextButton
+                    >
+                  </div>
+                </KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  재고금융Ⅱ20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021 (수입)
                 </p>
               </BasicBoxHeadLeft>
             </BasicBoxHead>

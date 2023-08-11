@@ -14,6 +14,7 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconHyendaiRentalCare from '@/assets/images/icon/hyendai-rental-care.svg?component';
 
@@ -33,6 +34,7 @@ export default {
     NavTabButton,
     RoundStatus,
     BasicHr,
+    TextButton,
     IconHyendaiRentalCare,
   },
 };
@@ -66,6 +68,7 @@ export default {
       </PageSubText>
     </PageHead>
 
+    <!-- Case : 미가입 회원일 경우 노출 -->
     <ButtonList
       :wrap="true"
       align="center"
@@ -75,6 +78,7 @@ export default {
         <BasicButton>하나캐피탈 멤버십 가입하기</BasicButton>
       </ButtonListItem>
     </ButtonList>
+    <!-- // Case : 미가입 회원일 경우 노출 -->
 
     <UiTab>
       <NavTab :useUiTab="true" :auto="true">
@@ -1100,6 +1104,19 @@ export default {
       </UiTabPanel>
       <!-- // 부동산 시세조회 -->
     </UiTab>
+
+    <!-- Case : 기가입 회원일 경우 -->
+    <div class="inline-wrap align-center row-margin-block">
+      <TextButton
+        :underline="true"
+        :classNames="{
+          wrap: ['color-gray-tertiary'],
+        }"
+      >
+        탈퇴하기
+      </TextButton>
+    </div>
+    <!-- //Case : 기가입 회원일 경우 -->
   </PageContents>
 </template>
 

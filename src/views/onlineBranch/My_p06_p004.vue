@@ -74,7 +74,7 @@ export default {
       <IllustObject type="complete" />
       <IllustInfoTitle>청약철회 신청이 완료되었습니다</IllustInfoTitle>
       <IllustInfoText>
-        금일 17시 이내로 상환금액을 입금해주시면<br />
+        금일 17시 이내로 상환금액을 입금해 주시면<br />
         청약철회 후 문자로 안내 드리겠습니다.<br />
         감사합니다.
       </IllustInfoText>

@@ -69,11 +69,11 @@ export default {
       </template>
 
       <FormList>
-        <FormListItem titleText="이름" target="#Member_P02_l001_name">
+        <FormListItem titleText="아이디" target="#Member_P02_l001_name">
           <FormInvalid :error="state.nameError">
             <InputBlock :error="state.nameError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="이름" id="Member_P02_l001_name" />
+                <BasicInput title="아이디" id="Member_P02_l001_name" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

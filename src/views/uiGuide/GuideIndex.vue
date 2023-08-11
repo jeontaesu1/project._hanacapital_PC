@@ -341,7 +341,12 @@ const datas = () => [
         path: '/ui-guide/sign-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: 'Member_P02_l001 폼 타이틀 수정',
+          },
+        ],
       },
       {
         depth2: '아이디 찾기\nMember_P03_p001',
@@ -1420,7 +1425,13 @@ const datas = () => [
         path: '/ui-guide/personal-loan-005',
         status: 'end',
         create: '2023.05.26',
-        log: [{ date: '2023.06.09', text: '팝업 추가\n- 월납입금 조회' }],
+        log: [
+          { date: '2023.06.09', text: '팝업 추가\n- 월납입금 조회' },
+          {
+            date: '2023.08.11',
+            text: 'PF_P07_l003 타이틀 수정 및 항목 삭제',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
@@ -1469,7 +1480,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p004',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '연락처 폼 삭제',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
@@ -1792,7 +1808,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p003',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '유의사항 추가',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2012,7 +2033,12 @@ const datas = () => [
         path: '/online-branch/My_p05_p003',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '서브타이틀 및 안내사항 간격 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2056,7 +2082,12 @@ const datas = () => [
         path: '/online-branch/My_p06_p002',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '마지막 타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2067,7 +2098,12 @@ const datas = () => [
         path: '/online-branch/My_p06_p004',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '텍스트 띄어쓰기 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2816,7 +2852,7 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p004',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
@@ -2827,7 +2863,7 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p005',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
       },
       {
         depth2: '중도상환',
@@ -2942,7 +2978,12 @@ const datas = () => [
         path: '/inventory-finance/IF_P05_p001',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '탭 추가 및 컨텐츠 수정',
+          },
+        ],
       },
       {
         depth2: '구비서류등록\nIF_P05_p001',
@@ -2969,7 +3010,12 @@ const datas = () => [
         path: '/inventory-finance/IF_P06_p001',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '탭 추가 및 컨텐츠 수정',
+          },
+        ],
       },
     ],
   },
@@ -3109,6 +3155,10 @@ const datas = () => [
           {
             date: '2023.06.02',
             text: '팝업추가\n- 서류등록 팝업',
+          },
+          {
+            date: '2023.08.11',
+            text: 'LM_P05_l001 문구 수정',
           },
         ],
       },
@@ -3386,7 +3436,12 @@ const datas = () => [
         path: '/auto/AF_P06_p003',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '컨텐츠 내 문구 수정',
+          },
+        ],
       },
       {
         depth2: '중고차 오토론\nAF_P06_p001',
@@ -3613,7 +3668,12 @@ const datas = () => [
         path: '/auto/AF_P07_p010',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '승계조건 케이스 수정',
+          },
+        ],
       },
       {
         depth2: '오토승계\nAF_P07_p001',
@@ -3667,7 +3727,12 @@ const datas = () => [
         path: '/membership/MI_P03_p002',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.11',
+            text: '탈퇴하기 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '회원가입',

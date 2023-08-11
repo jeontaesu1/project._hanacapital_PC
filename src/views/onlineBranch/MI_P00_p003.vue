@@ -109,6 +109,12 @@ export default {
           스탁론은 변경이 불가하며 고객센터(1800-1110)로 연락 바랍니다.
         </div>
       </li>
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          결제일 당일에는 결제계좌 변경이 불가하니 참고해 주세요.
+        </div>
+      </li>
     </ul>
 
     <div class="row-margin-block-small">

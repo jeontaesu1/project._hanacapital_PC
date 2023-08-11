@@ -75,7 +75,6 @@ export default {
     const state = reactive({
       nameError: false,
       idNumberError001: false,
-      phoneError: false,
       idNumberError002: false,
       partnershipError: false,
       evaluationError: false,
@@ -205,17 +204,6 @@ export default {
             </InputBlockCell>
             <InputBlockCell>
               <SecurityKeypadButton />
-            </InputBlockCell>
-          </InputBlock>
-          <FormInvalidMessage>Error Message</FormInvalidMessage>
-        </FormInvalid>
-      </FormListItem>
-
-      <FormListItem titleText="연락처" target="#PF_P07_p004_phone">
-        <FormInvalid :error="state.phoneError">
-          <InputBlock :error="state.phoneError">
-            <InputBlockCell :flexible="true">
-              <BasicInput title="연락처" id="PF_P07_p004_phone" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

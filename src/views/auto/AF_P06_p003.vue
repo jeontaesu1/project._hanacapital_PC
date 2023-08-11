@@ -548,7 +548,7 @@ export default {
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>사고이력(내차피해)</KeyValueTitle>
-              <KeyValueText>0회 / 0회</KeyValueText>
+              <KeyValueText>0회 / 0원</KeyValueText>
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>전손/침수/도난</KeyValueTitle>
@@ -556,7 +556,7 @@ export default {
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>사고이력(타차가해)</KeyValueTitle>
-              <KeyValueText>0회 / 0회</KeyValueText>
+              <KeyValueText>0회 / 0원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>

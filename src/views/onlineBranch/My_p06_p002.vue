@@ -201,7 +201,7 @@ export default {
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">청약철회 예상금액</h3>
+        <h3 class="text-title-1 row-margin-contents">결제방법</h3>
 
         <BasicBox>
           <KeyValue>
