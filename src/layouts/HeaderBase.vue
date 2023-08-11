@@ -419,7 +419,7 @@ export default {
             </ul>
           </div>
 
-          <div :class="$style['type-menu']">
+          <div v-if="type !== 'lmBlogPersonal'" :class="$style['type-menu']">
             <DropDownMenu
               :title="pageType"
               :data="[
