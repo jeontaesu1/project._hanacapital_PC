@@ -5,6 +5,7 @@
     .vs__dropdown-toggle {
       align-items: center;
       @include font-size-default(16);
+      letter-spacing: 0;
       box-sizing: border-box;
       padding: 7px 11px 7px 15px;
       border-radius: 8px;
@@ -41,6 +42,7 @@
       padding: 0;
       margin: 0;
       @include font-size-default(16);
+      letter-spacing: 0;
       height: #{$line-height-default}em;
       white-space: nowrap;
       overflow: hidden;
@@ -48,6 +50,7 @@
     .vs__search {
       @include reset-input-text;
       @include font-size-default(16);
+      letter-spacing: 0;
       height: #{$line-height-default}em;
 
       &::-webkit-input-placeholder {
@@ -150,6 +153,7 @@
         position: relative;
         padding: 12px 40px 12px 16px;
         @include font-size-default(16);
+        letter-spacing: 0;
         color: inherit;
         white-space: normal;
       }

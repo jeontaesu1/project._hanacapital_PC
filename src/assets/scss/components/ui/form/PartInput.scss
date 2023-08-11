@@ -29,6 +29,7 @@
     @include reset-input-text;
     width: 100%;
     @include font-size-head(20);
+    letter-spacing: 0;
     height: #{$line-height-head}em;
 
     &[disabled] {

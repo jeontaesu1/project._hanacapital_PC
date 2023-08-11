@@ -9,6 +9,7 @@
     @include reset-input-text;
     width: 100%;
     @include font-size-default(16);
+    letter-spacing: 0;
     height: calc(40 / 16) * 1em;
     padding: 7px 15px;
     border-radius: 8px;

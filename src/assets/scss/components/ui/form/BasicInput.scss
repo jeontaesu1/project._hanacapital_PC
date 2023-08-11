@@ -11,6 +11,7 @@
     @include reset-input-text;
     width: 100%;
     @include font-size-head(20);
+    letter-spacing: 0;
     font-weight: 500;
     height: #{$line-height-head}em;
 
