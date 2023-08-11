@@ -2036,7 +2036,7 @@ const datas = () => [
         log: [
           {
             date: '2023.08.11',
-            text: '서브타이틀 및 안내사항 간격 수정',
+            text: '띄어쓰기 수정 및 안내사항 간격 수정',
           },
         ],
       },
@@ -2829,7 +2829,7 @@ const datas = () => [
         create: '2023.06.01',
         log: [
           { date: '2023.06.23', text: '팝업추가\n- 서류확인 미리보기 팝업' },
-          { date: '2023.07.28', text: 'IF_P02_L004 내용 전체 수정' },
+          { date: '2023.07.28', text: 'IF_P02_l004 내용 전체 수정' },
         ],
       },
       {
@@ -2841,7 +2841,9 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p002',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          { date: '2023.08.11', text: '일부 문구 삭제 및 서류등록 영역 추가' },
+        ],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
@@ -2852,7 +2854,9 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p004',
         status: 'end',
         create: '2023.06.01',
-        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
+        log: [
+          { date: '2023.08.11', text: '문구 수정 및 국산/수입 케이스 추가' },
+        ],
       },
       {
         depth2: '대출신청\nIF_P02_p001',
@@ -2863,7 +2867,9 @@ const datas = () => [
         path: '/inventory-finance/IF_P02_p005',
         status: 'end',
         create: '2023.06.01',
-        log: [{ date: '2023.08.11', text: '문구 수정 및 국산/수입 항목 추가' }],
+        log: [
+          { date: '2023.08.11', text: '문구 수정 및 국산/수입 케이스 추가' },
+        ],
       },
       {
         depth2: '중도상환',
@@ -3668,12 +3674,7 @@ const datas = () => [
         path: '/auto/AF_P07_p010',
         status: 'end',
         create: '2023.06.09',
-        log: [
-          {
-            date: '2023.08.11',
-            text: '승계조건 케이스 수정',
-          },
-        ],
+        log: [],
       },
       {
         depth2: '오토승계\nAF_P07_p001',

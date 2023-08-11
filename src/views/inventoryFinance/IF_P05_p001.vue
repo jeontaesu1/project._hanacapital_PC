@@ -98,7 +98,7 @@ export default {
     </PageHead>
 
     <div>
-      <!-- Case : 2개 이상일 경우 노출 탭 노출 -->
+      <!-- Case : 2개 이상일 경우 탭 노출 -->
       <NavTab>
         <NavTabButton tagName="button" type="button" :active="true"
           >재고금융</NavTabButton
@@ -174,111 +174,117 @@ export default {
       </section>
     </div>
 
+    <!-- Case : 조회 후 노출 -->
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <!-- Case : 조회결과 없을 시 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">상담 승인 건이 없습니다.</p>
-    </div>
-    <!-- // Case : 조회결과 없을 시 -->
+    <div class="contents-wrap">
+      <section class="contents-wrap">
+        <h3 class="text-title-1 row-margin-contents">계약내역</h3>
 
-    <!-- Case : 조회 후 노출 -->
-    <section class="contents-wrap">
-      <h3 class="text-title-1 row-margin-contents">계약내역</h3>
+        <!-- Case : 조회 결과 없을 시 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">상담 승인 건이 없습니다.</p>
+        </div>
+        <!-- // Case : 조회 결과 없을 시 -->
 
-      <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents-small">
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h4 class="text-title-2 font-weight-medium">20고5678</h4>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+        <!-- Case : 조회 결과 있을 때 -->
+        <div>
+          <ul class="reset-list">
+            <li v-for="i in 5" :key="i" class="row-margin-contents-small">
+              <BasicBox>
+                <BasicBoxHead>
+                  <BasicBoxHeadLeft>
+                    <h4 class="text-title-2 font-weight-medium">20고5678</h4>
+                    <p
+                      class="text-body-3 color-gray-tertiary row-margin-item-small"
+                    >
+                      BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                    </p>
+                  </BasicBoxHeadLeft>
+                </BasicBoxHead>
+                <KeyValue :wrap="true">
+                  <KeyValueItem>
+                    <KeyValueTitle>대출신청금액</KeyValueTitle>
+                    <KeyValueText>10,000,000 원</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>상담일자</KeyValueTitle>
+                    <KeyValueText>2022.11.25</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>등록여부</KeyValueTitle>
+                    <KeyValueText>N</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+
+                <ButtonList
+                  :wrap="true"
+                  align="center"
+                  :classNames="{
+                    wrap: 'row-margin-contents',
+                  }"
                 >
-                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
-                </p>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>대출신청금액</KeyValueTitle>
-                <KeyValueText>10,000,000 원</KeyValueText>
-              </KeyValueItem>
+                  <ButtonListItem>
+                    <BasicButton size="regular">구비서류 추가등록</BasicButton>
+                  </ButtonListItem>
+                </ButtonList>
+              </BasicBox>
+            </li>
+          </ul>
 
-              <KeyValueItem>
-                <KeyValueTitle>상담일자</KeyValueTitle>
-                <KeyValueText>2022.11.25</KeyValueText>
-              </KeyValueItem>
+          <!-- Case : 첫번째 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" :disabled="true" />
+            <PaginationNavNumber :active="true">1</PaginationNavNumber>
+            <PaginationNavNumber>2</PaginationNavNumber>
+            <PaginationNavNumber>3</PaginationNavNumber>
+            <PaginationNavNumber>4</PaginationNavNumber>
+            <PaginationNavNumber>5</PaginationNavNumber>
+            <PaginationNavNumber>6</PaginationNavNumber>
+            <PaginationNavNumber>7</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>999</PaginationNavNumber>
+            <PaginationNavArrow type="next" />
+          </PaginationNav>
+          <!-- // Case : 첫번째 페이지일 때 -->
 
-              <KeyValueItem>
-                <KeyValueTitle>등록여부</KeyValueTitle>
-                <KeyValueText>N</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
+          <!-- Case : 중간 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" />
+            <PaginationNavNumber>1</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>13</PaginationNavNumber>
+            <PaginationNavNumber>14</PaginationNavNumber>
+            <PaginationNavNumber :active="true">15</PaginationNavNumber>
+            <PaginationNavNumber>16</PaginationNavNumber>
+            <PaginationNavNumber>17</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>99</PaginationNavNumber>
+            <PaginationNavArrow type="next" />
+          </PaginationNav>
+          <!-- // Case : 중간 페이지일 때 -->
 
-            <ButtonList
-              :wrap="true"
-              align="center"
-              :classNames="{
-                wrap: 'row-margin-contents',
-              }"
-            >
-              <ButtonListItem>
-                <BasicButton size="regular">구비서류 추가등록</BasicButton>
-              </ButtonListItem>
-            </ButtonList>
-          </BasicBox>
-        </li>
-      </ul>
-
-      <!-- Case : 첫번째 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" :disabled="true" />
-        <PaginationNavNumber :active="true">1</PaginationNavNumber>
-        <PaginationNavNumber>2</PaginationNavNumber>
-        <PaginationNavNumber>3</PaginationNavNumber>
-        <PaginationNavNumber>4</PaginationNavNumber>
-        <PaginationNavNumber>5</PaginationNavNumber>
-        <PaginationNavNumber>6</PaginationNavNumber>
-        <PaginationNavNumber>7</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>999</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 첫번째 페이지일 때 -->
-
-      <!-- Case : 중간 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>13</PaginationNavNumber>
-        <PaginationNavNumber>14</PaginationNavNumber>
-        <PaginationNavNumber :active="true">15</PaginationNavNumber>
-        <PaginationNavNumber>16</PaginationNavNumber>
-        <PaginationNavNumber>17</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>99</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 중간 페이지일 때 -->
-
-      <!-- Case : 마지막 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>93</PaginationNavNumber>
-        <PaginationNavNumber>94</PaginationNavNumber>
-        <PaginationNavNumber>95</PaginationNavNumber>
-        <PaginationNavNumber>96</PaginationNavNumber>
-        <PaginationNavNumber>97</PaginationNavNumber>
-        <PaginationNavNumber>98</PaginationNavNumber>
-        <PaginationNavNumber :active="true">99</PaginationNavNumber>
-        <PaginationNavArrow type="next" :disabled="true" />
-      </PaginationNav>
-      <!-- // Case : 마지막 페이지일 때 -->
-    </section>
+          <!-- Case : 마지막 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" />
+            <PaginationNavNumber>1</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>93</PaginationNavNumber>
+            <PaginationNavNumber>94</PaginationNavNumber>
+            <PaginationNavNumber>95</PaginationNavNumber>
+            <PaginationNavNumber>96</PaginationNavNumber>
+            <PaginationNavNumber>97</PaginationNavNumber>
+            <PaginationNavNumber>98</PaginationNavNumber>
+            <PaginationNavNumber :active="true">99</PaginationNavNumber>
+            <PaginationNavArrow type="next" :disabled="true" />
+          </PaginationNav>
+          <!-- // Case : 마지막 페이지일 때 -->
+        </div>
+        <!-- // Case : 조회 결과 있을 때 -->
+      </section>
+    </div>
     <!-- // Case : 조회 후 노출 -->
   </PageContents>
 </template>

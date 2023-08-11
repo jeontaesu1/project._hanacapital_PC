@@ -248,113 +248,119 @@ export default {
       </section>
     </div>
 
+    <!-- Case : 조회 후 노출 -->
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <!-- Case : 조회결과 없을 시 -->
-    <div :class="$style['empty']">
-      <p :class="$style['empty__text']">신청현황이 없습니다.</p>
+    <div class="contents-wrap">
+      <section class="contents-wrap">
+        <h3 class="text-title-1 row-margin-contents">종료건 확인</h3>
+
+        <!-- Case : 조회 결과 없을 시 -->
+        <div :class="$style['empty']">
+          <p :class="$style['empty__text']">신청현황이 없습니다.</p>
+        </div>
+        <!-- // Case : 조회 결과 없을 시 -->
+
+        <!-- Case : 조회 결과 있을 때 -->
+        <div>
+          <ul class="reset-list">
+            <li v-for="i in 5" :key="i" class="row-margin-contents-small">
+              <BasicBox>
+                <BasicBoxHead>
+                  <BasicBoxHeadLeft>
+                    <div class="text-title-2 font-weight-medium">20고5678</div>
+                    <p
+                      class="text-body-3 color-gray-tertiary row-margin-item-small"
+                    >
+                      BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                    </p>
+                  </BasicBoxHeadLeft>
+                </BasicBoxHead>
+                <KeyValue :wrap="true">
+                  <KeyValueItem>
+                    <KeyValueTitle>대출신청금액</KeyValueTitle>
+                    <KeyValueText>10,000,000 원</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>상환금액</KeyValueTitle>
+                    <KeyValueText>10,000,000 원</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>대출기간</KeyValueTitle>
+                    <KeyValueText>3개월</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>금리</KeyValueTitle>
+                    <KeyValueText>7.5%</KeyValueText>
+                  </KeyValueItem>
+
+                  <KeyValueItem>
+                    <KeyValueTitle>결제방법</KeyValueTitle>
+                    <KeyValueText>
+                      즉시 출금<br />
+                      농협은행<br />
+                      24138123435
+                    </KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </li>
+          </ul>
+
+          <!-- Case : 첫번째 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" :disabled="true" />
+            <PaginationNavNumber :active="true">1</PaginationNavNumber>
+            <PaginationNavNumber>2</PaginationNavNumber>
+            <PaginationNavNumber>3</PaginationNavNumber>
+            <PaginationNavNumber>4</PaginationNavNumber>
+            <PaginationNavNumber>5</PaginationNavNumber>
+            <PaginationNavNumber>6</PaginationNavNumber>
+            <PaginationNavNumber>7</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>999</PaginationNavNumber>
+            <PaginationNavArrow type="next" />
+          </PaginationNav>
+          <!-- // Case : 첫번째 페이지일 때 -->
+
+          <!-- Case : 중간 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" />
+            <PaginationNavNumber>1</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>13</PaginationNavNumber>
+            <PaginationNavNumber>14</PaginationNavNumber>
+            <PaginationNavNumber :active="true">15</PaginationNavNumber>
+            <PaginationNavNumber>16</PaginationNavNumber>
+            <PaginationNavNumber>17</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>99</PaginationNavNumber>
+            <PaginationNavArrow type="next" />
+          </PaginationNav>
+          <!-- // Case : 중간 페이지일 때 -->
+
+          <!-- Case : 마지막 페이지일 때 -->
+          <PaginationNav>
+            <PaginationNavArrow type="prev" />
+            <PaginationNavNumber>1</PaginationNavNumber>
+            <PaginationNavEllipsis />
+            <PaginationNavNumber>93</PaginationNavNumber>
+            <PaginationNavNumber>94</PaginationNavNumber>
+            <PaginationNavNumber>95</PaginationNavNumber>
+            <PaginationNavNumber>96</PaginationNavNumber>
+            <PaginationNavNumber>97</PaginationNavNumber>
+            <PaginationNavNumber>98</PaginationNavNumber>
+            <PaginationNavNumber :active="true">99</PaginationNavNumber>
+            <PaginationNavArrow type="next" :disabled="true" />
+          </PaginationNav>
+          <!-- // Case : 마지막 페이지일 때 -->
+        </div>
+        <!-- // Case : 조회 결과 있을 때 -->
+      </section>
     </div>
-    <!-- // Case : 조회결과 없을 시 -->
-
-    <!-- Case : 조회 후 노출 -->
-    <section class="contents-wrap">
-      <h3 class="text-title-1 row-margin-contents">종료건 확인</h3>
-
-      <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents-small">
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <div class="text-title-2 font-weight-medium">20고5678</div>
-                <p
-                  class="text-body-3 color-gray-tertiary row-margin-item-small"
-                >
-                  BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
-                </p>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>대출신청금액</KeyValueTitle>
-                <KeyValueText>10,000,000 원</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem>
-                <KeyValueTitle>상환금액</KeyValueTitle>
-                <KeyValueText>10,000,000 원</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem>
-                <KeyValueTitle>대출기간</KeyValueTitle>
-                <KeyValueText>3개월</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem>
-                <KeyValueTitle>금리</KeyValueTitle>
-                <KeyValueText>7.5%</KeyValueText>
-              </KeyValueItem>
-
-              <KeyValueItem>
-                <KeyValueTitle>결제방법</KeyValueTitle>
-                <KeyValueText>
-                  즉시 출금<br />
-                  농협은행<br />
-                  24138123435
-                </KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
-        </li>
-      </ul>
-
-      <!-- Case : 첫번째 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" :disabled="true" />
-        <PaginationNavNumber :active="true">1</PaginationNavNumber>
-        <PaginationNavNumber>2</PaginationNavNumber>
-        <PaginationNavNumber>3</PaginationNavNumber>
-        <PaginationNavNumber>4</PaginationNavNumber>
-        <PaginationNavNumber>5</PaginationNavNumber>
-        <PaginationNavNumber>6</PaginationNavNumber>
-        <PaginationNavNumber>7</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>999</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 첫번째 페이지일 때 -->
-
-      <!-- Case : 중간 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>13</PaginationNavNumber>
-        <PaginationNavNumber>14</PaginationNavNumber>
-        <PaginationNavNumber :active="true">15</PaginationNavNumber>
-        <PaginationNavNumber>16</PaginationNavNumber>
-        <PaginationNavNumber>17</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>99</PaginationNavNumber>
-        <PaginationNavArrow type="next" />
-      </PaginationNav>
-      <!-- // Case : 중간 페이지일 때 -->
-
-      <!-- Case : 마지막 페이지일 때 -->
-      <PaginationNav>
-        <PaginationNavArrow type="prev" />
-        <PaginationNavNumber>1</PaginationNavNumber>
-        <PaginationNavEllipsis />
-        <PaginationNavNumber>93</PaginationNavNumber>
-        <PaginationNavNumber>94</PaginationNavNumber>
-        <PaginationNavNumber>95</PaginationNavNumber>
-        <PaginationNavNumber>96</PaginationNavNumber>
-        <PaginationNavNumber>97</PaginationNavNumber>
-        <PaginationNavNumber>98</PaginationNavNumber>
-        <PaginationNavNumber :active="true">99</PaginationNavNumber>
-        <PaginationNavArrow type="next" :disabled="true" />
-      </PaginationNav>
-      <!-- // Case : 마지막 페이지일 때 -->
-    </section>
     <!-- // Case : 조회 후 노출 -->
   </PageContents>
 </template>

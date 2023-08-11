@@ -42,7 +42,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      nameError: false,
+      idError: false,
       idNumberError: false,
     });
 
@@ -69,11 +69,11 @@ export default {
       </template>
 
       <FormList>
-        <FormListItem titleText="아이디" target="#Member_P02_l001_name">
-          <FormInvalid :error="state.nameError">
-            <InputBlock :error="state.nameError">
+        <FormListItem titleText="아이디" target="#Member_P02_l001_id">
+          <FormInvalid :error="state.idError">
+            <InputBlock :error="state.idError">
               <InputBlockCell :flexible="true">
-                <BasicInput title="아이디" id="Member_P02_l001_name" />
+                <BasicInput title="아이디" id="Member_P02_l001_id" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

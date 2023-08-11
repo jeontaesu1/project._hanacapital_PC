@@ -117,7 +117,7 @@ export default {
       </KeyValue>
     </BasicBox>
 
-    <div class="row-margin-container-medium">
+    <div class="row-margin-container-medium row-margin-bottom-none">
       <FormList>
         <FormListItem titleText="대출신청금액" target="#IF_P02_p002_amount">
           <FormInvalid :error="state.amountError">
@@ -258,7 +258,50 @@ export default {
       </FormList>
     </div>
 
-    <div>// 구비서류등록 영역 기획 대기</div>
+    <section class="row-margin-block-small row-margin-bottom-none">
+      <h3 class="text-title-1 row-margin-contents">서류등록</h3>
+      <ul :class="$style['logs']">
+        <li :class="$style['logs__item']">
+          <div :class="$style['logs__block']">
+            <div :class="$style['logs__row']">
+              <div :class="$style['logs__contents']">
+                <h3 :class="$style['logs__title']">서류등록</h3>
+                <!-- Case : 등록 후 노출 -->
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    'row-margin-item',
+                  ]"
+                >
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'text-body-4 font-weight-regular',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">※</div>
+                    <div :class="$style['basic-list__content']">
+                      2022.12.28 11:34
+                    </div>
+                  </li>
+                </ul>
+                <!-- // Case : 등록 후 노출 -->
+              </div>
+              <div :class="$style['logs__right']">
+                <button
+                  type="button"
+                  :class="$style['logs__link']"
+                  @click="layer001Open"
+                >
+                  <span :class="$style['logs__link-text']">상세보기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
 
     <ButtonList>
       <ButtonListItem>
@@ -267,3 +310,7 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/inventoryFinance/IF_P02_p002.scss';
+</style>
