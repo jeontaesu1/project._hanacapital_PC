@@ -132,7 +132,7 @@ export default {
           <BasicBoxHeadLeft>
             <div class="flex-box row-margin-small">
               <div class="flex-box__cell">
-                <CarEmblem code="1001" name="현대" />
+                <CarEmblem src="/images/_dummy/car-emblem.png" name="현대" />
               </div>
               <div class="flex-box__cell flex-box__cell--small">
                 <p class="text-body-4 font-weight-light">2020년식</p>
