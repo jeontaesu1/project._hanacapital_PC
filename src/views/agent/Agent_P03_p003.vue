@@ -228,20 +228,36 @@ export default {
             </tr>
             <tr>
               <td class="title required">휴대전화</td>
-              <td>
+              <td colspan="7">
                 <div class="flex-container jcfs">
-                  <div class="check-container w50p">
+                  <div class="check-container">
                     <label class="flex-container jcfs">
                       <input type="checkbox" name="me" />
                       <span></span>
                       본인명의
                     </label>
                   </div>
+                  <div class="flex-container jcfs w25p">
+                    <input type="tel" />
+                    <span>-</span>
+                    <input type="tel" />
+                    <span>-</span>
+                    <input type="tel" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="title required">자택전화</td>
+              <td colspan="5">
+                <div class="flex-container jcfs w35p">
+                  <input type="tel" />
+                  <span>-</span>
+                  <input type="tel" />
+                  <span>-</span>
                   <input type="tel" />
                 </div>
               </td>
-              <td class="title required">자택전화</td>
-              <td colspan="5"><input type="tel" class="w35p" /></td>
             </tr>
             <tr>
               <td class="title">이메일</td>
@@ -896,20 +912,36 @@ export default {
             </tr>
             <tr>
               <td class="title required">휴대전화</td>
-              <td>
+              <td colspan="7">
                 <div class="flex-container jcfs">
-                  <div class="check-container w60p">
+                  <div class="check-container">
                     <label class="flex-container jcfs">
                       <input type="checkbox" name="me" />
                       <span></span>
                       본인명의
                     </label>
                   </div>
+                  <div class="flex-container jcfs w25p">
+                    <input type="tel" />
+                    <span>-</span>
+                    <input type="tel" />
+                    <span>-</span>
+                    <input type="tel" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="title required">자택전화</td>
+              <td colspan="5">
+                <div class="flex-container jcfs w35p">
+                  <input type="tel" />
+                  <span>-</span>
+                  <input type="tel" />
+                  <span>-</span>
                   <input type="tel" />
                 </div>
               </td>
-              <td class="title required">자택전화</td>
-              <td colspan="5"><input type="tel" class="w35p" /></td>
             </tr>
             <tr>
               <td class="title">이메일</td>

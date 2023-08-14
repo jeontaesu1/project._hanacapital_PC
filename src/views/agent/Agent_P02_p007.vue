@@ -145,7 +145,7 @@ export default {
           </colgroup>
           <thead>
             <tr>
-              <th>동의요청일자</th>
+              <th>결제일</th>
               <th>이용자</th>
               <th>주민/사업번호</th>
               <th>품목</th>

@@ -150,7 +150,6 @@ export default {
           <col width="10%" />
           <col width="10%" />
           <col width="10%" />
-          <col width="6%" />
           <col width="7%" />
           <col width="6%" />
           <col width="5%" />
@@ -165,7 +164,6 @@ export default {
             <th>상담채널</th>
             <th>고객명</th>
             <th>주민/사업자번호</th>
-            <th>판정결과</th>
             <th>신청금액</th>
             <th>상담결과</th>
             <th>AG손배</th>
@@ -181,9 +179,6 @@ export default {
             <td class="txt-center">홈페이지(AG)</td>
             <td class="txt-center">김하나</td>
             <td class="txt-center">123456-1******</td>
-            <td class="txt-center">
-              <span class="status status-success">정상</span>
-            </td>
             <td class="txt-center">999,999,999</td>
             <td class="txt-center cGreen">승인</td>
             <td class="txt-center">N</td>
@@ -201,9 +196,6 @@ export default {
             <td class="txt-center">홈페이지(AG)</td>
             <td class="txt-center">김하나</td>
             <td class="txt-center">123456-1******</td>
-            <td class="txt-center">
-              <span class="status status-success">정상</span>
-            </td>
             <td class="txt-center">999,999,999</td>
             <td class="txt-center cGreen">승인</td>
             <td class="txt-center">N</td>
@@ -221,9 +213,6 @@ export default {
             <td class="txt-center">홈페이지(AG)</td>
             <td class="txt-center">김하나</td>
             <td class="txt-center">123456-1******</td>
-            <td class="txt-center">
-              <span class="status status-bad">거절</span>
-            </td>
             <td class="txt-center">999,999,999</td>
             <td class="txt-center cGreen">승인</td>
             <td class="txt-center">N</td>
@@ -241,9 +230,6 @@ export default {
             <td class="txt-center">홈페이지(AG)</td>
             <td class="txt-center">김하나</td>
             <td class="txt-center">123456-1******</td>
-            <td class="txt-center">
-              <span class="status status-warning">유의</span>
-            </td>
             <td class="txt-center">999,999,999</td>
             <td class="txt-center">심사중</td>
             <td class="txt-center">N</td>
