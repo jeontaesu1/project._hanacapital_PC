@@ -31,6 +31,7 @@
 
       &[disabled] {
         color: $color-gray-40;
+        -webkit-text-fill-color: $color-gray-40;
       }
 
       &::-webkit-input-placeholder {
