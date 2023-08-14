@@ -54,5 +54,18 @@ export const useUiScrollBlockStore = defineStore('uiScrollBlock', {
         this.scrollLeft = wrap.scrollLeft;
       }
     },
+
+    update({ top, left }) {
+      const wrap = document.getElementById('app');
+
+      if (typeof top === 'number') {
+        this.scrollTop = top;
+        wrap.scrollTop = top;
+      }
+      if (typeof left === 'number') {
+        this.scrollLeft = left;
+        wrap.scrollLeft = left;
+      }
+    },
   },
 });

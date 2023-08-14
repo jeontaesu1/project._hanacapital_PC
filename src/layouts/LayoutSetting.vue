@@ -1,21 +1,22 @@
 <script>
-// import { ref, reactive, computed, watch, markRaw } from 'vue';
-// import { useRouter, useRoute, RouterView } from 'vue-router';
 import { computed, onMounted, onUnmounted, watch } from 'vue';
 import { useRoute, RouterView } from 'vue-router';
+import { useHead } from '@vueuse/head';
 
 // 레이아웃 설정
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
-import { useHead } from '@vueuse/head';
-import favicon from '@/assets/images/common/favicon.ico';
+
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import NoneLayout from '@/layouts/NoneLayout.vue';
 import InventoryFinanceLayout from '@/layouts/inventoryFinance/InventoryFinanceLayout.vue';
 import LmBlogLayout from '@/layouts/lmBlog/LmBlogLayout.vue';
 import LmBlogPersonalLayout from '@/layouts/lmBlogPersonal/LmBlogPersonalLayout.vue';
 import AgentLayout from '@/layouts/agent/AgentLayout.vue';
+
 import LoadingLayer from '@/components/ui/layout/LoadingLayer.vue';
+
+import favicon from '@/assets/images/common/favicon.ico';
 
 export default {
   components: {
@@ -112,6 +113,10 @@ export default {
         const html = document.getElementsByTagName('html')[0];
         html.scrollTop = 0;
         html.scrollLeft = 0;
+
+        if (store.ui.scrollBlock.isBlocking) {
+          store.ui.scrollBlock.update({ top: 0, left: 0 });
+        }
       }
     );
 

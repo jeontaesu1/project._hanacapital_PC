@@ -9,8 +9,9 @@ import {
   reactive,
   useCssModule,
   nextTick,
+  watch,
 } from 'vue';
-import { RouterLink } from 'vue-router';
+import { useRoute, RouterLink } from 'vue-router';
 
 import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
@@ -45,6 +46,7 @@ export default {
   setup(props) {
     const timer = {};
     const $style = useCssModule();
+    const route = useRoute();
 
     const store = {
       ui: {
@@ -273,6 +275,14 @@ export default {
       window.removeEventListener('scroll', scroll);
       window.removeEventListener('resize', resize);
     });
+
+    watch(
+      () => route.path,
+      () => {
+        scroll();
+        update();
+      }
+    );
 
     return {
       store,
