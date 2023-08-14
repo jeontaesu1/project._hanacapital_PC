@@ -69,6 +69,7 @@ export default {
       $style['car-emblem'],
       {
         [$style[`car-emblem--size-${size}`]]: size,
+        [$style[`car-emblem--code`]]: code,
       },
       customClassNames.wrap,
     ]"
