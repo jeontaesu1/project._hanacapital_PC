@@ -91,7 +91,7 @@ export default {
             </div>
             <div class="search--container__list mb40">
               <div class="search--container__list-title">
-                내구재선취수수료율
+                내구재물품기본금리
               </div>
               <div class="search--container__list-contents w15p">
                 <input type="text" class="rt" />%

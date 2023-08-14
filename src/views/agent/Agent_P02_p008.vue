@@ -50,7 +50,7 @@ export default {
       <div class="search--container">
         <div class="search--container__box">
           <div class="search--container__list">
-            <div class="search--container__list-title">사업자번호</div>
+            <div class="search--container__list-title">판매점</div>
             <div class="search--container__list-contents w15p">
               <input type="text" />
             </div>

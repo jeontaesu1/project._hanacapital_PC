@@ -28,7 +28,6 @@
 button {
   padding: 8px 12px;
   color: $color-black;
-  border: 1px solid $color-black;
   border-radius: 8px;
   font-size: 14px;
   background-color: $color-white;
@@ -84,6 +83,7 @@ button {
 
     &-send {
       width: 212px;
+      height: 52px;
       color: $color-white;
       background-color: $color-green-50;
       border: 1px solid $color-green-50;

@@ -24,9 +24,29 @@ export default {
   },
   setup() {
     const layer = ref(null);
+    const byte = ref(0);
+    const textarea = ref(
+      '하나캐피탈 채무 승계를 위한 서비스입니다.\n채무 승계 확약을 위하여 아래의 URL로 접속하주십시오.\nhttps://m.hanacapital.co.kr/partnet/itsc/onlCert.hnc\n자세한 문의사항은 1800-1110으로 연락바랍니다.\n대단히 감사합니다.'
+    );
+    const title = ref('[하나캐피탈 할부 상담 안내]');
+
+    function byteLength(s, b, i, c) {
+      for (
+        b = i = 0;
+        (c = s.charCodeAt(i++));
+        b += c >> 11 ? 3 : c >> 7 ? 2 : 1
+      );
+      byte.value = b;
+    }
+
+    byteLength(textarea.value);
 
     return {
       layer,
+      byte,
+      textarea,
+      title,
+      byteLength,
     };
   },
 };
@@ -136,14 +156,19 @@ export default {
             </tr>
             <tr>
               <td class="title">제목</td>
-              <td><input type="text" /></td>
+              <td><input type="text" v-model="title" /></td>
             </tr>
             <tr>
               <td class="title">사전신용정보조회<br />동의 녹취 스크립트</td>
               <td>
-                <textarea class="textarea"></textarea>
+                <textarea
+                  class="textarea"
+                  v-model="textarea"
+                  @keyup="byteLength(textarea)"
+                ></textarea>
                 <div class="flex-container jcfe cDisabled">
-                  <strong>0</strong>Byte
+                  <strong>{{ byte }}</strong
+                  >Byte
                 </div>
               </td>
             </tr>
@@ -161,7 +186,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">전송하기</BasicButton>
+            <BasicButton size="regular" :classNames="{ wrap: 'btn-send' }">
+              전송하기
+            </BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

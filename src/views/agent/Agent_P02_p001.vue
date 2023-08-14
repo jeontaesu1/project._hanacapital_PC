@@ -58,7 +58,7 @@ export default {
       <div class="search--container">
         <div class="search--container__box">
           <div class="search--container__list">
-            <div class="search--container__list-title">조회조건</div>
+            <div class="search--container__list-title">신청일자</div>
             <div class="search--container__list-contents w25p">
               <input type="date" v-model="startDate" />
               <span>-</span>

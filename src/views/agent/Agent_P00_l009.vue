@@ -24,9 +24,23 @@ export default {
   },
   setup() {
     const layer = ref(null);
+    const byte = ref(0);
+    const textarea = ref('');
+
+    function byteLength(s, b, i, c) {
+      for (
+        b = i = 0;
+        (c = s.charCodeAt(i++));
+        b += c >> 11 ? 3 : c >> 7 ? 2 : 1
+      );
+      byte.value = b;
+    }
 
     return {
       layer,
+      byte,
+      textarea,
+      byteLength,
     };
   },
 };
@@ -141,9 +155,14 @@ export default {
             <tr>
               <td class="title">내용</td>
               <td>
-                <textarea class="textarea"></textarea>
+                <textarea
+                  class="textarea"
+                  v-model="textarea"
+                  @keyup="byteLength(textarea)"
+                ></textarea>
                 <div class="flex-container jcfe cDisabled">
-                  <strong>0</strong>Byte
+                  <strong>{{ byte }}</strong
+                  >Byte
                 </div>
               </td>
             </tr>
@@ -161,7 +180,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">전송하기</BasicButton>
+            <BasicButton size="regular" :classNames="{ wrap: 'btn-send' }">
+              전송하기
+            </BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

@@ -4185,6 +4185,10 @@ const datas = () => [
             date: '2023.07.07',
             text: '팝업 추가\n- 상담등록 내역 조회 팝업(내구재할부)\n- 상담등록 내역 조회 팝업(할부승계)\n- 상담/사전승인 내역 조회 팝업\n- 우편번호 검색 팝업\n- 개설은행 조회 팝업\n- 국적 조회 팝업\n- 제조사 팝업\n- 사전신용정보조회동의 URL 발송',
           },
+          {
+            date: '2023.08.14',
+            text: '- Agent_P00_l003 정렬 수정, x버튼 라인 삭제, 상담결과 라디오 버튼 추가\n- Agent_P00_l004 상담결과 라디오 버튼 추가, 정렬 수정, x버튼 라인 삭제\n- Agent_P00_l005 정렬 수정, x버튼 라인 삭제\n- Agent_P00_l007 정렬 수정, x버튼 라인 삭제\n- Agent_P00_l008 정렬 수정, x버튼 라인 삭제\n- Agent_P00_l009 정렬 수정, x버튼 라인 삭제, byte 계산 추가, 전송버튼 수정\n- Agent_P00_l010 정렬 수정, x버튼 라인 삭제\n- Agent_P00_l012 정렬 수정, x버튼 라인 삭제, 조회된 내역 없는 경우 추가',
+          },
         ],
       },
       {
@@ -4234,6 +4238,10 @@ const datas = () => [
             date: '2023.07.07',
             text: '팝업 추가\n- 판매대리점조회 팝업\n- 품목선택 팝업\n- 상환스케쥴시뮬레이터 팝업\n- 본인확인(본의명의휴대폰소지자) 팝업\n- 하나캐피탈 전자 약정 URL 발송 팝업\n- 판매점 제휴 협약을 위한 개인(신용)정보동의 URL 발송 팝업\n- 하나캐피탈 할부 상담 URL 발송',
           },
+          {
+            date: '2023.08.14',
+            text: '- Agent_P02_l002 정렬 수정, x버튼 라인 삭제, 내구재선취수수료율 → 내구재물품기본금리로 수정\n- Agent_P02_l004 정렬 수정, x버튼 라인 삭제, 스크립트 내용 한줄만 노출\n- Agent_P02_l005 정렬 수정, x버튼 라인 삭제, byte 계산 추가, input default 노출, 전송버튼 수정\n- Agent_P02_l006 정렬 수정, x버튼 라인 삭제, byte 계산 추가, input default 노출, 전송버튼 수정\n- Agent_P02_l007 정렬 수정, x버튼 라인 삭제, byte 계산 추가, input default 노출, 전송버튼 수정',
+          },
         ],
       },
       {
@@ -4245,7 +4253,7 @@ const datas = () => [
         path: '/agent/Agent_P02_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [{ date: '2023.08.14', text: '조회조건 -> 신청일자로 수정' }],
       },
       {
         depth2: '내구재할부',
@@ -4256,7 +4264,7 @@ const datas = () => [
         path: '/agent/Agent_P02_p002',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [{ date: '2023.08.14', text: '마우스오버시 열색 변경' }],
       },
       {
         depth2: '내구재할부',
@@ -4267,7 +4275,7 @@ const datas = () => [
         path: '/agent/Agent_P02_p003',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [{ date: '2023.08.14', text: '판정결과 삭제' }],
       },
       {
         depth2: '내구재할부',
@@ -4278,7 +4286,12 @@ const datas = () => [
         path: '/agent/Agent_P02_p004',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '신품여부 -> 납부방법 변경, 설립일자 / 대표업태 / 대표업종 추가, 전화번호 입력칸 변경, 이용인 탭에 설립일자 / 대표업태 / 대표업종 추가, 전화번호 입력칸 변경',
+          },
+        ],
       },
       {
         depth2: '내구재할부',
@@ -4300,7 +4313,12 @@ const datas = () => [
         path: '/agent/Agent_P02_p007',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '동의요청일자 -> 결제일로 수정',
+          },
+        ],
       },
       {
         depth2: '내구재할부',
@@ -4311,7 +4329,12 @@ const datas = () => [
         path: '/agent/Agent_P02_p008',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '사업자번호 -> 판매점으로 수정',
+          },
+        ],
       },
       {
         depth2: '내구재할부',
@@ -4333,7 +4356,12 @@ const datas = () => [
         path: '/ui-guide/agent-004',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '- Agent_P03_l001 정렬 수정, x버튼 라인 삭제\n- Agent_P03_l002 정렬 수정, x버튼 라인 삭제, byte 계산 추가\n- Agent_P03_l003 정렬 수정, x버튼 라인 삭제, byte 계산 추가, input default 추가, 전송버튼 수정\n- Agent_P03_l004 정렬 수정, x버튼 라인 삭제, byte 계산 추가, 하나캐피탈 전자 약정 URL 발송 -> 하나캐피탈 전자 약정 URL 전송으로 수정, 전송버튼 수정',
+          },
+        ],
       },
       {
         depth2: '할부승계',
@@ -4344,7 +4372,12 @@ const datas = () => [
         path: '/agent/Agent_P03_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '이용자 연대보증인 내역 판정결과 삭제, 마우스오버시 열색 변경',
+          },
+        ],
       },
       {
         depth2: '할부승계',
@@ -4366,7 +4399,12 @@ const datas = () => [
         path: '/agent/Agent_P03_p003',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.14',
+            text: '전화번호 입력칸 수정',
+          },
+        ],
       },
       {
         depth2: '할부승계',

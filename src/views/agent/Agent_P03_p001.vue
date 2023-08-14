@@ -311,7 +311,6 @@ export default {
           <col width="15%" />
           <col />
           <col width="15%" />
-          <col width="10% " />
         </colgroup>
         <thead>
           <tr>
@@ -320,11 +319,10 @@ export default {
             <th>관계</th>
             <th>고객명</th>
             <th>주민/사업자번호</th>
-            <th>판정결과</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="hoverBgGray">
             <td class="txt-center">
               <div class="check-container">
                 <label class="flex-container">
@@ -337,9 +335,8 @@ export default {
             <td class="txt-center">본인</td>
             <td class="txt-center">㈜고은푸드</td>
             <td class="txt-center">123-45-7****</td>
-            <td class="txt-center">거절</td>
           </tr>
-          <tr>
+          <tr class="hoverBgGray">
             <td class="txt-center">
               <div class="check-container">
                 <label class="flex-container">
@@ -352,7 +349,6 @@ export default {
             <td class="txt-center">본인</td>
             <td class="txt-center">㈜고은푸드</td>
             <td class="txt-center">123-45-7****</td>
-            <td class="txt-center">거절</td>
           </tr>
         </tbody>
       </table>

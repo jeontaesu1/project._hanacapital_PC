@@ -62,6 +62,14 @@ export default {
           </div>
         </div>
 
+        <table class="table-type-01 none-search">
+          <tbody>
+            <tr>
+              <td>조회된 내용이 없습니다.</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div class="scroll-container">
           <div class="scroll-container">
             <div class="flex-container">

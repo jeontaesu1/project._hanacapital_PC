@@ -18,9 +18,23 @@ export default {
   },
   setup() {
     const layer = ref(null);
+    const byte = ref(0);
+    const textarea = ref('');
+
+    function byteLength(s, b, i, c) {
+      for (
+        b = i = 0;
+        (c = s.charCodeAt(i++));
+        b += c >> 11 ? 3 : c >> 7 ? 2 : 1
+      );
+      byte.value = b;
+    }
 
     return {
       layer,
+      byte,
+      textarea,
+      byteLength,
     };
   },
 };
@@ -122,14 +136,21 @@ export default {
               <td class="title">신용정보 사전동의<br />녹취파일 등록</td>
               <td>
                 <div class="flex-container jcfs">
-                  <input type="text" class="w90p" />
+                  <input
+                    type="text"
+                    class="w90p"
+                    v-model="textarea"
+                    @keyup="byteLength(textarea)"
+                  />
                   <button class="btn btn-s03">찾아보기</button>
                 </div>
                 <div class="flex-container jcsb w90p">
                   <p class="explan">
                     손님 상담 녹취 파일은 .au .wav 파일만 가능합니다.
                   </p>
-                  <span class="explan"><strong>4</strong> / 150</span>
+                  <span class="explan"
+                    ><strong>{{ byte }}</strong> / 150</span
+                  >
                 </div>
               </td>
             </tr>
