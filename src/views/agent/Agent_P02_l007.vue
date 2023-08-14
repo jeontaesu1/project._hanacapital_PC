@@ -25,7 +25,10 @@ export default {
   setup() {
     const layer = ref(null);
     const byte = ref(0);
-    const textarea = ref('');
+    const textarea = ref(
+      '안녕하세요?\n하나캐피탈 할부 상담을 위한 서비스입니다.\n고객님의 할부 금융 상담을 위해 아래의 URL로 접속하여 진행 바랍니다.\nhttps://m.hanacapital.co.kr/drqd/index.hnc\n대단히 감사합니다.'
+    );
+    const title = ref('[하나캐피탈 할부 상담 안내]');
 
     function byteLength(s, b, i, c) {
       for (
@@ -40,6 +43,7 @@ export default {
       layer,
       byte,
       textarea,
+      title,
       byteLength,
     };
   },
@@ -150,7 +154,7 @@ export default {
             </tr>
             <tr>
               <td class="title">제목</td>
-              <td><input type="text" /></td>
+              <td><input type="text" v-model="title" /></td>
             </tr>
             <tr>
               <td class="title">내용</td>
@@ -180,7 +184,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">전송하기</BasicButton>
+            <BasicButton size="regular" :classNames="{ wrap: 'btn-send' }">
+              전송하기
+            </BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

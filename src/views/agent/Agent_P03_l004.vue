@@ -180,7 +180,9 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton size="regular">전송하기</BasicButton>
+            <BasicButton size="regular" :classNames="{ wrap: 'btn-send' }">
+              전송하기
+            </BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

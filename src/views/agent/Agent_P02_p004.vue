@@ -170,6 +170,14 @@ export default {
               </td>
             </tr>
             <tr>
+              <td class="title">설립일자</td>
+              <td>2022.11.01</td>
+              <td class="title">대표업태</td>
+              <td>음식점</td>
+              <td class="title" colspan="2">대표업종</td>
+              <td>한식</td>
+            </tr>
+            <tr>
               <td class="title required">등본지</td>
               <td>
                 <div class="flex-container jcfs">
@@ -939,7 +947,7 @@ export default {
               <td>2022.11.01</td>
               <td class="title">대표업태</td>
               <td>음식점</td>
-              <td class="title">대포업종</td>
+              <td class="title" colspan="2">대표업종</td>
               <td>한식</td>
             </tr>
             <tr>

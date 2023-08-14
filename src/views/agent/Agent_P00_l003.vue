@@ -63,6 +63,37 @@ export default {
               <div class="search--container__list-contents w25p">
                 <input type="text" />
               </div>
+              <div class="search--container__list-title">상담결과</div>
+              <div class="search--container__list-contents">
+                <div class="radio-container">
+                  <label class="flex-container jcfs">
+                    <input type="radio" name="a1" checked />
+                    <span class="small"></span>
+                    전체
+                  </label>
+                </div>
+                <div class="radio-container">
+                  <label class="flex-container jcfs">
+                    <input type="radio" name="a1" />
+                    <span class="small"></span>
+                    접수
+                  </label>
+                </div>
+                <div class="radio-container">
+                  <label class="flex-container jcfs">
+                    <input type="radio" name="a1" />
+                    <span class="small"></span>
+                    심사중
+                  </label>
+                </div>
+                <div class="radio-container">
+                  <label class="flex-container jcfs">
+                    <input type="radio" name="a1" />
+                    <span class="small"></span>
+                    승인
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
 
