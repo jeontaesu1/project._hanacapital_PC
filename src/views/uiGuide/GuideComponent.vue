@@ -306,6 +306,7 @@ export default {
     const layerTest004 = ref(null);
     const layerTest005 = ref(null);
     const layerTest006 = ref(null);
+    const layerTest007 = ref(null);
     const testAccordion = ref(null);
 
     const layerOpenTest001 = (e = {}) => {
@@ -325,6 +326,9 @@ export default {
     };
     const layerOpenTest006 = (e = {}) => {
       layerTest006.value.open(e.target);
+    };
+    const layerOpenTest007 = (e = {}) => {
+      layerTest007.value.open(e.target);
     };
 
     const testErrorUpdate001 = (val) => {
@@ -352,6 +356,7 @@ export default {
       layerTest004,
       layerTest005,
       layerTest006,
+      layerTest007,
       testAccordion,
       layerOpenTest001,
       layerOpenTest002,
@@ -359,6 +364,7 @@ export default {
       layerOpenTest004,
       layerOpenTest005,
       layerOpenTest006,
+      layerOpenTest007,
       testErrorUpdate001,
       testInputEvent,
       testAccordionAllOpen,
@@ -542,6 +548,48 @@ export default {
           </ModalPopup>
         </UiLayer>
 
+        <UiLayer ref="layerTest007" v-slot="layerSlotProps">
+          <ModalPopup size="wide">
+            <template v-slot:head>
+              <ModalPopupHead>
+                <template v-slot:right>
+                  <PopupButton @click="layerSlotProps.close()" />
+                </template>
+                <PopupTitle>타이틀</PopupTitle>
+                <template v-slot:sub>
+                  <PopupSubTitle>서브 타이틀</PopupSubTitle>
+                </template>
+              </ModalPopupHead>
+            </template>
+
+            <PopupText>// contents</PopupText>
+            <PopupText>너비 1300px</PopupText>
+
+            <div style="height: 1500px; border: 10px dotted #666">
+              스크롤 생기게 하기 위한 더미
+            </div>
+
+            <template v-slot:foot>
+              <ButtonList
+                :wrap="true"
+                align="center"
+                :classNames="{
+                  wrap: 'row-margin-none',
+                }"
+              >
+                <ButtonListItem>
+                  <BasicButton size="regular" :line="true" theme="quaternary"
+                    >Button 1</BasicButton
+                  >
+                </ButtonListItem>
+                <ButtonListItem>
+                  <BasicButton size="regular">Button 2</BasicButton>
+                </ButtonListItem>
+              </ButtonList>
+            </template>
+          </ModalPopup>
+        </UiLayer>
+
         <UiLayer ref="layerTest003" v-slot="layerSlotProps">
           <AlertPopup>
             <template v-slot:head>
@@ -626,6 +674,9 @@ export default {
         >
         <BasicButton @click="layerOpenTest005"
           >모달 팝업 (너비 1240)</BasicButton
+        >
+        <BasicButton @click="layerOpenTest007"
+          >모달 팝업 (너비 1300)</BasicButton
         >
         <BasicButton @click="layerOpenTest006">전체 팝업</BasicButton>
         <BasicButton @click="layerOpenTest003">얼럿형 팝업</BasicButton>
