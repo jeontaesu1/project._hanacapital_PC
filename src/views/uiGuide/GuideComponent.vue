@@ -2463,6 +2463,36 @@ export default {
           </template>
         </SimpleInput>
       </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Multiple</h3>
+
+        <FormInvalid :error="state.testError001">
+          <div class="flex-box align-items-start">
+            <div class="flex-box__cell flex-1">
+              <SimpleInput
+                :error="state.testError001"
+                title="title"
+                placeholder="placeholder"
+              />
+            </div>
+            <div class="flex-box__cell flex-1">
+              <SimpleInput
+                :error="state.testError001"
+                title="title"
+                placeholder="placeholder"
+              />
+            </div>
+            <div class="flex-box__cell flex-box simple-input-height">
+              <div class="flex-box__cell">
+                <div class="text-body-3">Text</div>
+              </div>
+            </div>
+          </div>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>Helper Text</FormHelpText>
+        </FormInvalid>
+      </div>
     </section>
 
     <section class="test-section">
@@ -7000,6 +7030,54 @@ export default {
                 <td>1</td>
               </tr>
             </tfoot>
+          </table>
+        </div>
+        <!-- // table -->
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+        <!-- table -->
+        <div :class="[$style['basic-table'], $style['basic-table--secondary']]">
+          <table>
+            <colgroup>
+              <col style="width: 160px" />
+              <col />
+              <col style="width: 160px" />
+              <col />
+              <col style="width: 160px" />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="align-left">이용자</th>
+                <td class="align-left">김하나</td>
+                <th class="align-left">계약번호</th>
+                <td class="align-left">Data</td>
+                <th class="align-left">할부원금</th>
+                <td class="align-left">999,999,999 원</td>
+              </tr>
+              <tr>
+                <th class="align-left">주민/사업번호</th>
+                <td class="align-left">123-12-12345</td>
+                <th class="align-left">실행일자</th>
+                <td class="align-left">2023.01.01</td>
+                <th class="align-left">취급수수료</th>
+                <td class="align-left">999,999,999 원</td>
+              </tr>
+              <tr>
+                <th class="align-left">상품종류</th>
+                <td class="align-left">Data</td>
+                <th class="align-left">할부기간</th>
+                <td class="align-left">12개월</td>
+                <th class="align-left">유예원금</th>
+                <td class="align-left">999,999,999 원</td>
+              </tr>
+              <tr>
+                <th class="align-left">품목명</th>
+                <td colspan="5" class="align-left">Data</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <!-- // table -->
