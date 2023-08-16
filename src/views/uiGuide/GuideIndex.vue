@@ -3197,7 +3197,12 @@ const datas = () => [
         path: '/ui-guide/lm-blog-personal-001',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.08.16',
+            text: 'LM_P07_l001 개인금융, 기업금융, 자동차금융 상품 설명 이용 가능케 수정',
+          },
+        ],
       },
       {
         depth2: '빠른 대출상담',
