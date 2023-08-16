@@ -19,7 +19,6 @@
     min-width: 0;
     overflow: hidden;
     @include font-size-default(16);
-    letter-spacing: 0;
     height: #{$line-height-default}em;
   }
 
