@@ -7,6 +7,7 @@ import {
   onMounted,
   onBeforeUnmount,
   nextTick,
+  inject,
 } from 'vue';
 
 import IconCalendar from '@/assets/images/icon/calendar.svg?component';
@@ -123,6 +124,8 @@ export default {
       isFocus: false,
     });
 
+    const popupLayout = inject('popupLayout', {});
+
     const input = ref(null);
 
     const customClassNames = computed(() => {
@@ -159,11 +162,20 @@ export default {
 
       html.classList.add('is-date-picker-animated');
 
+      if (popupLayout.bodyScroll) {
+        popupLayout.bodyScroll.value.SimpleBar.recalculate();
+      }
+
       clearTimeout(timer[0]);
 
       timer[0] = setTimeout(function () {
         clearTimeout(timer[0]);
         html.classList.remove('is-date-picker-animated');
+
+        if (popupLayout.bodyScroll) {
+          popupLayout.bodyScroll.value.SimpleBar.recalculate();
+        }
+
         callback();
       }, 300);
     };

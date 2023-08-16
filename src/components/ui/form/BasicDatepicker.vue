@@ -121,6 +121,7 @@ export default {
 
     const formListItem = inject('formListItem', {});
     const inputBlock = inject('inputBlock', {});
+    const popupLayout = inject('popupLayout', {});
 
     const input = ref(null);
 
@@ -158,11 +159,20 @@ export default {
 
       html.classList.add('is-date-picker-animated');
 
+      if (popupLayout.bodyScroll) {
+        popupLayout.bodyScroll.value.SimpleBar.recalculate();
+      }
+
       clearTimeout(timer);
 
       timer = setTimeout(function () {
         clearTimeout(timer);
         html.classList.remove('is-date-picker-animated');
+
+        if (popupLayout.bodyScroll) {
+          popupLayout.bodyScroll.value.SimpleBar.recalculate();
+        }
+
         callback();
       }, 300);
     };
