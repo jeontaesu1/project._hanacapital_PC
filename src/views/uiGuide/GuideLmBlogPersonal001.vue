@@ -5,9 +5,8 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import LM_P07_l001 from '../lmBlogPersonal/LM_P07_l001.vue';
 
-// import layer from '@/views/';
+import LM_P07_l001 from '@/views/lmBlogPersonal/LM_P07_l001.vue';
 
 export default {
   components: {
@@ -15,6 +14,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+
     LM_P07_l001,
   },
   setup() {
@@ -47,6 +47,6 @@ export default {
       </ButtonListItem>
     </ButtonList>
 
-    <LM_P07_l001 ref="layer001" />
+    <LM_P07_l001 ref="layer001" contentsName="PF_P01_p001" />
   </PageContents>
 </template>
