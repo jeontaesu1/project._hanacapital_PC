@@ -125,6 +125,26 @@
     }
     .duet-date__dialog {
       z-index: 999999;
+      position: fixed;
+      left: -100%;
+
+      html.is-date-picker-animated &,
+      &.is-active {
+        position: absolute;
+        left: 0;
+        z-index: 1010;
+      }
+    }
+
+    @media (max-width: 35.9375em) {
+      .duet-date__dialog {
+        background-color: rgba(0, 0, 0, 0.5);
+
+        html.is-date-picker-animated &,
+        &.is-active {
+          position: fixed;
+        }
+      }
     }
   }
 }

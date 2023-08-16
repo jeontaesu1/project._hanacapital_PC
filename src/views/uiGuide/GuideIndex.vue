@@ -4510,18 +4510,18 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '팝업',
         depth4: '',
         depth5: '',
         depth6: '',
         path: '/ui-guide/agent-005',
-        status: '',
-        create: '',
+        status: 'end',
+        create: '2023.08.16',
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '매입진행내역\nAgent_P09_p001',
         depth4: '',
         depth5: '',
@@ -4532,7 +4532,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '수납진행내역\nAgent_P09_p002',
         depth4: '',
         depth5: '',
@@ -4543,7 +4543,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '사전심사진행내역\nAgent_P09_p003',
         depth4: '',
         depth5: '',
@@ -4554,7 +4554,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '취소/상환금액 확인\nAgent_P09_p005',
         depth4: '',
         depth5: '',
@@ -4565,7 +4565,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '자산양수도',
+        depth2: '채권양수도',
         depth3: '연체매각리스트\nAgent_P09_p006',
         depth4: '',
         depth5: '',

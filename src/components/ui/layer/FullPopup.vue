@@ -35,10 +35,14 @@ export default {
       body: {
         value: null,
       },
+      bodyScroll: {
+        value: null,
+      },
     });
 
     const head = ref(null);
     const body = ref(null);
+    const bodyScroll = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -56,13 +60,20 @@ export default {
     onMounted(() => {
       state.head.value = head;
       state.body.value = body;
+      state.bodyScroll.value = bodyScroll;
     });
 
     provide('popupStyleModule', useCssModule());
+    provide('popupLayout', {
+      head: state.head,
+      body: state.body,
+      bodyScroll: state.bodyScroll,
+    });
 
     return {
       head,
       body,
+      bodyScroll,
       customClassNames,
       isHead,
       isFoot,
@@ -90,6 +101,7 @@ export default {
     </div>
     <div ref="body" :class="[$style['popup__body'], customClassNames.body]">
       <Simplebar
+        ref="bodyScroll"
         data-simplebar-auto-hide="false"
         :class="[$style['popup__body-scroll'], customClassNames.bodyScroll]"
       >
