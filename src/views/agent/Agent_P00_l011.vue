@@ -19,8 +19,202 @@ export default {
   setup() {
     const layer = ref(null);
 
+    const item1 = ref([
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+    ]);
+
+    const item2 = ref([
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+    ]);
+
+    const item3 = ref([
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+    ]);
+
+    const item4 = ref([
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+    ]);
+    const isType = ref(1);
+
+    function tableChange(n, i) {
+      isType.value = n + 1;
+      switch (n) {
+        case 1:
+          item1.value.forEach((ele) => {
+            ele.checked = false;
+          });
+          item1.value[i].checked = true;
+          break;
+        case 2:
+          console.log(item2.value)
+          item2.value.forEach((ele) => {
+            ele.checked = false;
+          });
+          item2.value[i].checked = true;
+          break;
+        case 3:
+          item3.value.forEach((ele) => {
+            ele.checked = false;
+          });
+          item3.value[i].checked = true;
+          break;
+        case 4:
+          item4.value.forEach((ele) => {
+            ele.checked = false;
+          });
+          item4.value[i].checked = true;
+          break;
+      }
+    }
+
     return {
       layer,
+      item1,
+      item2,
+      item3,
+      item4,
+      isType,
+      tableChange,
     };
   },
 };
@@ -39,7 +233,7 @@ export default {
       </template>
 
       <div class="container">
-        <div class="flex-container aifs no-gap fw bdrbt">
+        <div class="flex-container aifs no-gap fw bdrbt jcfs">
           <table class="table-type-04 w100p bt">
             <colgroup>
               <col width="25%" />
@@ -56,164 +250,62 @@ export default {
               </tr>
             </thead>
           </table>
-          <div class="scroll-container mxh-770 w25p bdrrt">
-            <table class="table-type-04 body w100p">
+          <div class="scroll-container mxh-550 w25p bdrrt">
+            <table class="table-type-04 body w100p cur-p">
               <tbody>
-                <tr class="on">
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
+                <tr
+                  :class="{ on: t.checked === true }"
+                  v-for="(t, i) in item1"
+                  :key="i"
+                >
+                  <td class="txt-center" @click="tableChange(1, i)">
+                    {{ t.name }}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="scroll-container mxh-770 w25p bdrlf">
-            <table class="table-type-04 body w100p">
-              <tbody class="scroll-container mxh-678">
-                <tr class="on">
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">소분류</td>
+          <div class="scroll-container mxh-550 w25p bdrrt" v-if="isType > 1">
+            <table class="table-type-04 body w100p cur-p">
+              <tbody>
+                <tr
+                  :class="{ on: t.checked === true }"
+                  v-for="(t, i) in item2"
+                  :key="i"
+                >
+                  <td class="txt-center" @click="tableChange(2, i)">
+                    {{ t.name }}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="scroll-container mxh-770 w25p bdrlf bdrrt">
-            <table class="table-type-04 body w100p">
+          <div class="scroll-container mxh-550 w25p bdrrt" v-if="isType > 2">
+            <table class="table-type-04 body w100p cur-p">
               <tbody>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr class="on">
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
+                <tr
+                  :class="{ on: t.checked === true }"
+                  v-for="(t, i) in item3"
+                  :key="i"
+                >
+                  <td class="txt-center" @click="tableChange(3, i)">
+                    {{ t.name }}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="scroll-container mxh-770 w25p bdrlf">
-            <table class="table-type-04 body w100p">
+          <div class="scroll-container mxh-550 w25p" v-if="isType > 3">
+            <table class="table-type-04 body w100p cur-p">
               <tbody>
-                <tr class="on">
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
-                </tr>
-                <tr>
-                  <td class="txt-center">S36_기타채널</td>
+                <tr
+                  :class="{ on: t.checked === true }"
+                  v-for="(t, i) in item4"
+                  :key="i"
+                >
+                  <td class="txt-center" @click="tableChange(4, i)">
+                    {{ t.name }}
+                  </td>
                 </tr>
               </tbody>
             </table>
