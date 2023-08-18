@@ -123,12 +123,6 @@ export default {
 
         <ButtonList :wrap="true" :col="4" align="center">
           <ButtonListItem>
-            <BasicButton theme="tertiary">견적조회</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
-            <BasicButton>렌터카 상담신청</BasicButton>
-          </ButtonListItem>
-          <ButtonListItem>
             <BasicButton>모바일 진행</BasicButton>
           </ButtonListItem>
         </ButtonList>
