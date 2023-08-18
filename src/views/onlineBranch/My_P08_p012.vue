@@ -535,6 +535,34 @@ export default {
               >
             </div>
           </div>
+
+          <!-- Case : 파일 첨부 후 -->
+          <div
+            :class="[
+              $style['upload-file'],
+              $style['upload-file--inside'],
+              $style['upload-file--child'],
+            ]"
+          >
+            <ul :class="$style['upload-file__list']">
+              <li v-for="i in 4" :key="i" :class="$style['upload-file__item']">
+                <div :class="$style['upload-file__icon']">
+                  <IconImgColor />
+                </div>
+                <div :class="$style['upload-file__content']">
+                  <div :class="$style['upload-file__name']">
+                    첨부된파일명입력.pdf
+                  </div>
+                </div>
+                <div :class="$style['upload-file__button']">
+                  <BasicButton :line="true" theme="quaternary" size="small">
+                    삭제
+                  </BasicButton>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- //Case : 파일 첨부 후 -->
         </li>
       </ul>
       <!-- //Case : 개인사업자인 경우 -->
@@ -543,7 +571,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular-margin'],
-          'row-margin-container-medium',
+          'row-margin-contents',
         ]"
       >
         <li :class="$style['basic-list__item']">
