@@ -1,6 +1,6 @@
 <script>
 // Agent_P02_p009
-import { onMounted, onUnmounted } from 'vue';
+import {onMounted, onUnmounted, reactive} from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -11,6 +11,15 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import SearchForm from "@/components/ui/form/SearchForm.vue";
+import SearchFormList from "@/components/ui/form/SearchFormList.vue";
+import SearchFormItem from "@/components/ui/form/SearchFormItem.vue";
+import SimpleInput from "@/components/ui/form/SimpleInput.vue";
+import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
+import SimpleDatepicker from "@/components/ui/form/SimpleDatepicker.vue";
+import BasicButton from "@/components/ui/button/BasicButton.vue";
+import ButtonList from "@/components/ui/button/ButtonList.vue";
+import ButtonListItem from "@/components/ui/button/ButtonListItem.vue";
 
 export default {
   components: {
@@ -21,6 +30,15 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    SearchForm,
+    SearchFormList,
+    SearchFormItem,
+    SimpleInput,
+    SimpleSelect,
+    SimpleDatepicker,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const store = {
@@ -37,12 +55,13 @@ export default {
       store.ui.header.setActive();
     });
 
-    const startDate = '2022-01-01';
-    const endDate = '2022-01-01';
+    const state = reactive({
+      searchMinDate: '2023.04.21',
+      searchMaxDate: '2023.04.21',
+    });
 
     return {
-      startDate,
-      endDate,
+      state,
     };
   },
 };
@@ -54,46 +73,100 @@ export default {
       <PageTitle>민원접수내역</PageTitle>
     </PageHead>
 
-    <div className="container">
-      <div class="search--container">
-        <div class="search--container__box">
-          <div class="search--container__list">
-            <div class="search--container__list-title">발생일자</div>
-            <div class="search--container__list-contents">
-              <input type="date" v-model="startDate" />
-              <span>~</span>
-              <input type="date" v-model="endDate" />
-            </div>
-            <div class="search--container__list-title">검색조건</div>
-            <div class="search--container__list-contents w50p">
-              <div class="select-container w30p">
-                <select>
-                  <option>선택</option>
-                </select>
-              </div>
-              <input type="text" />
-            </div>
-          </div>
-          <div class="search--container__list">
-            <div class="search--container__list-title">판매점</div>
-            <div class="search--container__list-contents w20p">
-              <input type="text" />
-            </div>
-            <div class="search--container__list-title">민원상태</div>
-            <div class="search--container__list-contents w10p">
-              <div class="select-container">
-                <select>
-                  <option>선택</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="container">
+      <SearchForm>
+        <h3 class="for-a11y">상담일자</h3>
 
-        <div class="btn-container">
-          <button class="btn btn-primary btn-search-02">조회</button>
-        </div>
-      </div>
+        <SearchFormList>
+          <SearchFormItem>
+            <template v-slot:key>발생일자</template>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <SimpleDatepicker
+                  title="조회기간 시작 날짜"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                  :max="state.searchMaxDate"
+                  v-model="state.searchMinDate"
+                />
+              </div>
+              <div class="flex-box__cell">
+                <div class="text-body-3">~</div>
+              </div>
+              <div class="flex-box__cell">
+                <SimpleDatepicker
+                  title="조회기간 종료 날짜"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                  :min="state.searchMinDate"
+                  v-model="state.searchMaxDate"
+                />
+              </div>
+            </div>
+          </SearchFormItem>
+          <SearchFormItem>
+            <template v-slot:key>검색조건</template>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '선택',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                  :classNames="{ wrap: 'input-width-medium' }"
+                />
+              </div>
+              <div class="flex-box__cell">
+                <SimpleInput :classNames="{ wrap: 'input-width-wide' }" />
+              </div>
+            </div>
+          </SearchFormItem>
+          <SearchFormItem>
+            <template v-slot:key>판매점</template>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <SimpleInput :classNames="{ wrap: 'input-width-large' }" />
+              </div>
+            </div>
+          </SearchFormItem>
+          <SearchFormItem>
+            <template v-slot:key>민원상태</template>
+            <div class="flex-box">
+              <div class="flex-box__cell">
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '선택',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                />
+              </div>
+            </div>
+          </SearchFormItem>
+        </SearchFormList>
+
+        <template v-slot:bottom>
+          <ButtonList
+            :wrap="true"
+            :col="5"
+            align="center"
+            :classNames="{ wrap: 'row-margin-none' }"
+          >
+            <ButtonListItem>
+              <BasicButton
+                :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+              >조회</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+        </template>
+      </SearchForm>
 
       <table className="table-type-01 none-search">
         <tbody>

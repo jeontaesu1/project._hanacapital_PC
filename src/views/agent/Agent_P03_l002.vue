@@ -7,6 +7,8 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
+import SimpleInput from "@/components/ui/form/SimpleInput.vue";
+import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
 
 export default {
   components: {
@@ -15,6 +17,8 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
+    SimpleInput,
+    SimpleSelect,
   },
   setup() {
     const layer = ref(null);
@@ -90,14 +94,14 @@ export default {
                 <div class="flex-container jcfs">
                   <div class="radio-container">
                     <label class="flex-container jcfs">
-                      <input type="radio" name="type" checked />
+                      <input type="radio" name="P03_l002_01" checked />
                       <span class="small"></span>
                       본인명의 휴대폰 녹취동의
                     </label>
                   </div>
                   <div class="radio-container">
                     <label class="flex-container jcfs">
-                      <input type="radio" name="type" />
+                      <input type="radio" name="P03_l002_01" />
                       <span class="small"></span>
                       신분증 본인확인 녹취동의
                     </label>
@@ -109,12 +113,24 @@ export default {
               <td class="title">본인확인</td>
               <td>
                 <div class="flex-container jcfs">
-                  <div class="select-container w15p">
-                    <select>
-                      <option>SKT</option>
-                    </select>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <SimpleSelect
+                        :options="[
+                          {
+                            value: '1',
+                            label: 'SKT',
+                          },
+                        ]"
+                        title="조회기간"
+                        defaultValue="1"
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
+                    </div>
+                    <div class="flex-box__cell">
+                      <SimpleInput :classNames="{ wrap: 'input-width-wide' }" />
+                    </div>
                   </div>
-                  <input type="text" class="w20p" />
                   <button class="btn btn-s03">인증번호요청</button>
                   <input type="text" class="w20p" />
                   <button class="btn btn-s03">인증확인</button>

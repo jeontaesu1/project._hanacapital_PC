@@ -7,6 +7,8 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
+import SimpleInput from "@/components/ui/form/SimpleInput.vue";
+import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
 
 export default {
   components: {
@@ -15,6 +17,8 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
+    SimpleInput,
+    SimpleSelect,
   },
   setup() {
     const layer = ref(null);
@@ -67,12 +71,24 @@ export default {
               <td class="title">본인확인</td>
               <td>
                 <div class="flex-container jcfs">
-                  <div class="select-container w15p">
-                    <select>
-                      <option>SKT</option>
-                    </select>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <SimpleSelect
+                        :options="[
+                          {
+                            value: '1',
+                            label: 'SKT',
+                          },
+                        ]"
+                        title="조회기간"
+                        defaultValue="1"
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
+                    </div>
+                    <div class="flex-box__cell">
+                      <SimpleInput :classNames="{ wrap: 'input-width-wide' }" />
+                    </div>
                   </div>
-                  <input type="text" class="w30p" />
                   <button class="btn btn-s03">SMS발송</button>
                 </div>
               </td>

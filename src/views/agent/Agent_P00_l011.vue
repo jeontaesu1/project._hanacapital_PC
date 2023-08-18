@@ -71,33 +71,29 @@ export default {
         name: 'S36_기타채널',
         checked: false,
       },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
-      {
-        name: 'S36_기타채널',
-        checked: false,
-      },
     ]);
 
     const item3 = ref([
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
+      {
+        name: 'S36_기타채널',
+        checked: false,
+      },
       {
         name: 'S36_기타채널',
         checked: false,
@@ -146,7 +142,7 @@ export default {
         checked: false,
       },
       {
-        name: 'S36_기타채널',
+        name: 'S36_기타채널S36_기타채널S36_기타채널S36_기타채널S36_기타채널',
         checked: false,
       },
       {
@@ -250,8 +246,8 @@ export default {
               </tr>
             </thead>
           </table>
-          <div class="scroll-container mxh-550 w25p bdrrt">
-            <table class="table-type-04 body w100p cur-p">
+          <div class="scroll-container mxh-550 w25p1 bdrrt">
+            <table class="table-type-05 body w100p cur-p">
               <tbody>
                 <tr
                   :class="{ on: t.checked === true }"
@@ -259,14 +255,16 @@ export default {
                   :key="i"
                 >
                   <td class="txt-center" @click="tableChange(1, i)">
-                    {{ t.name }}
+                    <div>
+                      {{ t.name }}
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="scroll-container mxh-550 w25p bdrrt" v-if="isType > 1">
-            <table class="table-type-04 body w100p cur-p">
+            <table class="table-type-05 body w100p cur-p">
               <tbody>
                 <tr
                   :class="{ on: t.checked === true }"
@@ -274,14 +272,16 @@ export default {
                   :key="i"
                 >
                   <td class="txt-center" @click="tableChange(2, i)">
-                    {{ t.name }}
+                    <div>
+                      {{ t.name }}
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="scroll-container mxh-550 w25p bdrrt" v-if="isType > 2">
-            <table class="table-type-04 body w100p cur-p">
+            <table class="table-type-05 body w100p cur-p">
               <tbody>
                 <tr
                   :class="{ on: t.checked === true }"
@@ -289,14 +289,16 @@ export default {
                   :key="i"
                 >
                   <td class="txt-center" @click="tableChange(3, i)">
-                    {{ t.name }}
+                    <div>
+                      {{ t.name }}
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="scroll-container mxh-550 w25p" v-if="isType > 3">
-            <table class="table-type-04 body w100p cur-p">
+          <div class="scroll-container mxh-550 w25p-1" v-if="isType > 3">
+            <table class="table-type-05 body w100p cur-p">
               <tbody>
                 <tr
                   :class="{ on: t.checked === true }"
@@ -304,7 +306,9 @@ export default {
                   :key="i"
                 >
                   <td class="txt-center" @click="tableChange(4, i)">
-                    {{ t.name }}
+                    <div>
+                      {{ t.name }}
+                    </div>
                   </td>
                 </tr>
               </tbody>

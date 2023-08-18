@@ -1,6 +1,6 @@
 <script>
 // Agent_P00_l009
-import { ref } from 'vue';
+import {reactive, ref} from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -10,6 +10,7 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
 
 export default {
   components: {
@@ -21,11 +22,17 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    SimpleDatepicker
   },
   setup() {
     const layer = ref(null);
     const byte = ref(0);
     const textarea = ref('');
+
+    const state = reactive({
+      searchMinDate: '2023.04.21',
+      searchMaxDate: '2023.04.21',
+    });
 
     function byteLength(s, b, i, c) {
       for (
@@ -40,6 +47,7 @@ export default {
       layer,
       byte,
       textarea,
+      state,
       byteLength,
     };
   },
@@ -107,7 +115,11 @@ export default {
               </td>
               <td class="title">생년월일</td>
               <td>
-                <input type="date" value="2022-01-01" />
+                <SimpleDatepicker
+                  title="조회기간 시작 날짜"
+                  :max="state.searchMaxDate"
+                  v-model="state.searchMinDate"
+                />
               </td>
             </tr>
             <tr>
