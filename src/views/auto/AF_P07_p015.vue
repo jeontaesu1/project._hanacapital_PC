@@ -401,7 +401,7 @@ export default {
         :class="[
           $style['basic-list'],
           $style['basic-list--regular-margin'],
-          'row-margin-container-medium',
+          'row-margin-contents',
         ]"
       >
         <li :class="$style['basic-list__item']">
