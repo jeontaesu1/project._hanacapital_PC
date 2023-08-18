@@ -161,7 +161,13 @@ export default {
         </li>
       </ul>
 
-      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+      <ul
+        :class="[
+          $style['basic-list'],
+          $style['basic-list--regular-margin'],
+          'row-margin-container-medium',
+        ]"
+      >
         <li :class="$style['basic-list__item']">
           <div :class="$style['basic-list__symbol']"></div>
           <div :class="$style['basic-list__content']">

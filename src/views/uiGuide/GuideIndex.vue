@@ -2708,7 +2708,7 @@ const datas = () => [
         path: '/additional-service/My_P05_p012',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [{ date: '2023.08.18', text: '안내 문구 간격 수정' }],
       },
       {
         depth2: '서류등록',
@@ -3709,6 +3709,10 @@ const datas = () => [
           {
             date: '2023.07.27',
             text: '문구 수정 및 추가',
+          },
+          {
+            date: '2023.08.18',
+            text: '안내 문구 간격 수정',
           },
         ],
       },
