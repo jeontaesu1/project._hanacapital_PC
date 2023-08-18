@@ -3,9 +3,25 @@ table {
   border-collapse: collapse;
   font-size: 14px;
 
+  &.cur-p {
+    td {
+      cursor: pointer;
+    }
+  }
+
+  &.off {
+    display: none;
+  }
+
   .flex-container {
     &.cDisabled {
       font-size: 12px;
+    }
+  }
+
+  tr {
+    &.on {
+      display: table-row !important;
     }
   }
 
@@ -41,7 +57,7 @@ table {
 
     tr {
       &.on {
-        display: table-row;
+        display: table-row !important;
       }
     }
 
@@ -336,6 +352,134 @@ table {
       color: $color-black;
       border-bottom: 1px solid $color-gray-30;
       border-right: 1px solid $color-gray-30;
+
+      &.on {
+        background-color: rgba($color-navy-50, 0.08);
+      }
+
+      .date {
+        color: $color-gray-60;
+      }
+
+      &.title {
+        color: $color-gray-70;
+        background-color: $color-gray-10;
+        border-bottom: 1px solid $color-gray-30;
+        border-left: 1px solid $color-gray-30;
+        border-right: 1px solid $color-gray-30;
+
+        &:first-child {
+          border-left: none;
+        }
+
+        &.required {
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            margin-left: 4px;
+            width: 4px;
+            height: 4px;
+            background-color: $color-semantic-essential;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      &.none-border {
+        padding: 100px 0;
+        border: none;
+      }
+
+      &.h-72 {
+        height: 72px;
+      }
+
+      &.txt {
+        &-center {
+          text-align: center;
+        }
+
+        &-left {
+          text-align: left;
+        }
+
+        &-right {
+          text-align: right;
+        }
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.bdr {
+        &:last-child {
+          border-right: 1px solid $color-gray-30;
+        }
+      }
+    }
+
+    th {
+      font-weight: normal;
+      color: $color-gray-70;
+      padding: 12px;
+      border-bottom: 1px solid $color-gray-30;
+      border-right: 1px solid $color-gray-30;
+      text-align: center;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  &.table-type-05 {
+    margin-bottom: 40px;
+    border-top: 2px solid $color-gray-60;
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.none-bottom {
+      margin-bottom: 0;
+    }
+
+    &.body {
+      border-top: none;
+    }
+
+    tr {
+      &.on {
+        td {
+          background-color: rgba($color-navy-50, 0.08);
+        }
+      }
+    }
+
+    td {
+      padding: 16px 20px;
+      height: 70px;
+      max-height: 70px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: $color-black;
+      border-bottom: 1px solid $color-gray-30;
+      border-right: 1px solid $color-gray-30;
+      vertical-align: middle;
+
+      > div {
+        width: 100%;
+        max-height: 37px;
+        overflow: hidden;
+        line-height: 140%;
+      }
 
       &.on {
         background-color: rgba($color-navy-50, 0.08);

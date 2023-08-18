@@ -7,12 +7,16 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
+    SimpleInput,
+    SimpleSelect,
   },
   setup() {
     const store = {
@@ -145,11 +149,17 @@ export default {
                       N
                     </label>
                   </div>
-                  <div class="select-container">
-                    <select disabled>
-                      <option>각자</option>
-                    </select>
-                  </div>
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '선택',
+                      },
+                    ]"
+                    title="조회기간"
+                    defaultValue="1"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                  />
                 </div>
               </td>
               <td class="title">법인등록번호</td>
@@ -157,12 +167,27 @@ export default {
               <td class="title" colspan="2">외국인여부/국적</td>
               <td>
                 <div class="flex-container jcfs">
-                  <div class="select-container">
-                    <select>
-                      <option>내국인</option>
-                    </select>
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <SimpleSelect
+                        :options="[
+                          {
+                            value: '1',
+                            label: '내국인',
+                          },
+                        ]"
+                        title="조회기간"
+                        defaultValue="1"
+                        :classNames="{ wrap: 'input-width-small' }"
+                      />
+                    </div>
+                    <div class="flex-box__cell">
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                        :disabled="true"
+                      />
+                    </div>
                   </div>
-                  <input type="text" disabled />
                   <button class="btn btn-primary">검색</button>
                 </div>
               </td>
@@ -310,18 +335,28 @@ export default {
                 </button>
               </td>
               <td>
-                <div class="select-container">
-                  <select>
-                    <option>본인</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '본인',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                />
               </td>
               <td>
-                <div class="select-container">
-                  <select>
-                    <option>휴대폰인증</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '선택',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                />
               </td>
               <td>
                 <div class="flex-container">
@@ -509,22 +544,33 @@ export default {
             <tr>
               <td class="title">품목구분</td>
               <td>
-                <div class="select-container">
-                  <select>
-                    <option>선택</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '선택',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                />
               </td>
               <td class="title">품목금리</td>
               <td>14.00%</td>
               <td class="title">납부방법</td>
               <td>
                 <div class="flex-container">
-                  <div class="select-container w45p">
-                    <select>
-                      <option>선택</option>
-                    </select>
-                  </div>
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '선택',
+                      },
+                    ]"
+                    title="조회기간"
+                    defaultValue="1"
+                    :classNames="{ wrap: 'input-width-small' }"
+                  />
                   <div class="radio-container">
                     <label class="flex-container jcfs">
                       <input type="radio" name="before" checked />
@@ -616,13 +662,26 @@ export default {
               <td>0.00% / 0.00% / 0.00%</td>
               <td class="title">거치기간/금리</td>
               <td>
-                <div class="flex-container">
-                  <div class="select-container">
-                    <select>
-                      <option>6개월</option>
-                    </select>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '6개월',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
                   </div>
-                  <input type="text" disabled /> %
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">선수율 · 금액</td>
@@ -631,24 +690,42 @@ export default {
             <tr>
               <td class="title">이자형태/무이자횟수</td>
               <td>
-                <div class="flex-container">
-                  <div class="select-container">
-                    <select>
-                      <option>무이자</option>
-                    </select>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '무이자',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
                   </div>
-                  <input type="text" disabled /> 회
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">회</div>
                 </div>
               </td>
               <td class="title">연체이자율</td>
               <td>9.00%</td>
               <td class="title">대출기간</td>
               <td>
-                <div class="select-container">
-                  <select>
-                    <option>36개월</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '36개월',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                />
               </td>
             </tr>
             <tr>
@@ -656,13 +733,26 @@ export default {
               <td>0.00% · 0원</td>
               <td class="title">중도상환수수료</td>
               <td>
-                <div class="flex-container">
-                  <div class="select-container">
-                    <select>
-                      <option>무이자</option>
-                    </select>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '무이자',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
                   </div>
-                  <input type="text" disabled /> %
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
+                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">취급수수료</td>
@@ -712,27 +802,57 @@ export default {
               </td>
               <td class="title">결제일/1회차납부일</td>
               <td>
-                <div class="flex-container">
-                  <div class="select-container">
-                    <select>
-                      <option>1일</option>
-                    </select>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '1일',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
                   </div>
-                  <input type="text" disabled /> %
+                  <div class="flex-box__cell">
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                      :disabled="true"
+                    />
+                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">청구방법/청구지</td>
               <td>
-                <div class="flex-container">
-                  <div class="select-container">
-                    <select>
-                      <option>우편</option>
-                    </select>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '우편',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-small' }"
+                    />
                   </div>
-                  <div class="select-container">
-                    <select>
-                      <option>실거주지</option>
-                    </select>
+                  <div class="flex-box__cell">
+                    <SimpleSelect
+                      :options="[
+                        {
+                          value: '1',
+                          label: '실거주지',
+                        },
+                      ]"
+                      title="조회기간"
+                      defaultValue="1"
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
                   </div>
                 </div>
               </td>
@@ -740,11 +860,16 @@ export default {
             <tr>
               <td class="title">실행통지서</td>
               <td>
-                <div class="select-container">
-                  <select>
-                    <option>실거주지</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '실거주지',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                />
               </td>
               <td class="title">Agent/영업사원</td>
               <td colspan="3">신한프라자</td>

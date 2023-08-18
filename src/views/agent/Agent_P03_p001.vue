@@ -7,12 +7,14 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
+    SimpleSelect,
   },
   setup() {
     const store = {
@@ -213,16 +215,29 @@ export default {
             <td class="title required">거래구분/관계</td>
             <td>
               <div class="flex-container">
-                <div class="select-container">
-                  <select>
-                    <option>이용자</option>
-                  </select>
-                </div>
-                <div class="select-container">
-                  <select disabled>
-                    <option>본인</option>
-                  </select>
-                </div>
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '이용자',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                />
+                <SimpleSelect
+                  :options="[
+                    {
+                      value: '1',
+                      label: '본인',
+                    },
+                  ]"
+                  title="조회기간"
+                  defaultValue="1"
+                  :classNames="{ wrap: 'input-width-regular' }"
+                  :disabled="true"
+                />
               </div>
             </td>
             <td class="title">할부신청금액</td>
@@ -233,13 +248,16 @@ export default {
             </td>
             <td class="title">할부기간</td>
             <td>
-              <div class="flex-container">
-                <div class="select-container">
-                  <select>
-                    <option>7개월</option>
-                  </select>
-                </div>
-              </div>
+              <SimpleSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '7개월',
+                  },
+                ]"
+                title="조회기간"
+                defaultValue="1"
+              />
             </td>
           </tr>
           <tr>

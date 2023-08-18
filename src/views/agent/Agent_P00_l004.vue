@@ -1,12 +1,24 @@
 <script>
 // Agent_P00_l004
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
+import SearchForm from '@/components/ui/form/SearchForm.vue';
+import SearchFormList from '@/components/ui/form/SearchFormList.vue';
+import SearchFormItem from '@/components/ui/form/SearchFormItem.vue';
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
 
 export default {
   components: {
@@ -15,12 +27,30 @@ export default {
     PopupButton,
     ModalPopup,
     ModalPopupHead,
+    SearchForm,
+    SearchFormList,
+    SearchFormItem,
+    SimpleInput,
+    SimpleSelect,
+    SimpleDatepicker,
+    RadioButtonLabelText,
+    RadioButtonObject,
+    RadioButton,
+    BasicButton,
+    ButtonList,
+    ButtonListItem,
   },
   setup() {
     const layer = ref(null);
 
+    const state = reactive({
+      searchMinDate: '2023.04.21',
+      searchMaxDate: '2023.04.21',
+    });
+
     return {
       layer,
+      state,
     };
   },
 };
@@ -39,68 +69,171 @@ export default {
       </template>
 
       <div class="container">
-        <div class="search--container">
-          <div class="search--container__box">
-            <div class="search--container__list">
-              <div class="search--container__list-title">상담일자</div>
-              <div class="search--container__list-contents w30p">
-                <input type="date" v-model="startDate" />
-                <span>~</span>
-                <input type="date" v-model="endDate" />
-              </div>
-              <div class="search--container__list-title">검색조건</div>
-              <div class="search--container__list-contents w40p">
-                <div class="select-container w60p">
-                  <select>
-                    <option>고객명</option>
-                  </select>
-                </div>
-                <input type="text" />
-              </div>
-            </div>
-            <div class="search--container__list">
-              <div class="search--container__list-title">판매점</div>
-              <div class="search--container__list-contents w25p">
-                <input type="text" />
-              </div>
-              <div class="search--container__list-title">상담결과</div>
-              <div class="search--container__list-contents">
-                <div class="radio-container">
-                  <label class="flex-container jcfs">
-                    <input type="radio" name="a1" checked />
-                    <span class="small"></span>
-                    전체
-                  </label>
-                </div>
-                <div class="radio-container">
-                  <label class="flex-container jcfs">
-                    <input type="radio" name="a1" />
-                    <span class="small"></span>
-                    접수
-                  </label>
-                </div>
-                <div class="radio-container">
-                  <label class="flex-container jcfs">
-                    <input type="radio" name="a1" />
-                    <span class="small"></span>
-                    심사중
-                  </label>
-                </div>
-                <div class="radio-container">
-                  <label class="flex-container jcfs">
-                    <input type="radio" name="a1" />
-                    <span class="small"></span>
-                    승인
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+        <SearchForm>
+          <h3 class="for-a11y">상담일자</h3>
 
-          <div class="btn-container">
-            <button class="btn btn-primary btn-search-02">조회</button>
-          </div>
-        </div>
+          <SearchFormList>
+            <SearchFormItem>
+              <template v-slot:key>상담일자</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleDatepicker
+                    title="조회기간 시작 날짜"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                    :max="state.searchMaxDate"
+                    v-model="state.searchMinDate"
+                  />
+                </div>
+                <div class="flex-box__cell">
+                  <div class="text-body-3">~</div>
+                </div>
+                <div class="flex-box__cell">
+                  <SimpleDatepicker
+                    title="조회기간 종료 날짜"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                    :min="state.searchMinDate"
+                    v-model="state.searchMaxDate"
+                  />
+                </div>
+              </div>
+            </SearchFormItem>
+            <SearchFormItem>
+              <template v-slot:key>검색조건</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '고객명',
+                      },
+                    ]"
+                    title="조회기간"
+                    defaultValue="1"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                  />
+                </div>
+                <div class="flex-box__cell">
+                  <SimpleInput :classNames="{ wrap: 'input-width-large' }" />
+                </div>
+              </div>
+            </SearchFormItem>
+            <SearchFormItem>
+              <template v-slot:key>판매점</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleInput :classNames="{ wrap: 'input-width-large' }" />
+                </div>
+              </div>
+            </SearchFormItem>
+            <SearchFormItem>
+              <template v-slot:key>상담결과</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RadioButton
+                    name="P00_l003_01"
+                    id="P00_l003_01"
+                    theme="tertiary"
+                    align="center"
+                    default-checked
+                  >
+                    <RadioButtonObject />
+                    <RadioButtonLabelText>
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
+                        >
+                          <span class="text-title-5 font-weight-normal"
+                            >전체</span
+                          >
+                        </span>
+                      </span>
+                    </RadioButtonLabelText>
+                  </RadioButton>
+                </div>
+                <div class="flex-box__cell">
+                  <RadioButton
+                    name="P00_l003_01"
+                    id="P00_l003_02"
+                    theme="tertiary"
+                    align="center"
+                  >
+                    <RadioButtonObject />
+                    <RadioButtonLabelText>
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
+                        >
+                          <span class="text-title-5 font-weight-normal"
+                            >접수</span
+                          >
+                        </span>
+                      </span>
+                    </RadioButtonLabelText>
+                  </RadioButton>
+                </div>
+                <div class="flex-box__cell">
+                  <RadioButton
+                    name="P00_l003_01"
+                    id="P00_l003_03"
+                    theme="tertiary"
+                    align="center"
+                  >
+                    <RadioButtonObject />
+                    <RadioButtonLabelText>
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
+                        >
+                          <span class="text-title-5 font-weight-normal"
+                            >심사중</span
+                          >
+                        </span>
+                      </span>
+                    </RadioButtonLabelText>
+                  </RadioButton>
+                </div>
+                <div class="flex-box__cell">
+                  <RadioButton
+                    name="P00_l003_01"
+                    id="P00_l003_04"
+                    theme="tertiary"
+                    align="center"
+                  >
+                    <RadioButtonObject />
+                    <RadioButtonLabelText>
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
+                        >
+                          <span class="text-title-5 font-weight-normal"
+                            >승인</span
+                          >
+                        </span>
+                      </span>
+                    </RadioButtonLabelText>
+                  </RadioButton>
+                </div>
+              </div>
+            </SearchFormItem>
+          </SearchFormList>
+
+          <template v-slot:bottom>
+            <ButtonList
+              :wrap="true"
+              :col="5"
+              align="center"
+              :classNames="{ wrap: 'row-margin-none' }"
+            >
+              <ButtonListItem>
+                <BasicButton
+                  :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+                  >조회</BasicButton
+                >
+              </ButtonListItem>
+            </ButtonList>
+          </template>
+        </SearchForm>
 
         <table class="table-type-01 none-search">
           <tbody>

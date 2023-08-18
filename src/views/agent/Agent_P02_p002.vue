@@ -7,12 +7,14 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {
     PageContents,
     PageHead,
     PageTitle,
+    SimpleSelect,
   },
   setup() {
     const store = {
@@ -173,11 +175,16 @@ export default {
             </td>
             <td class="title">소득구분</td>
             <td>
-              <div class="select-container">
-                <select>
-                  <option>선택</option>
-                </select>
-              </div>
+              <SimpleSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '선택',
+                  },
+                ]"
+                title="조회기간"
+                defaultValue="1"
+              />
             </td>
             <td class="title">물품구입금액</td>
             <td>
@@ -189,16 +196,32 @@ export default {
           <tr>
             <td class="title required">거래구분/관계</td>
             <td>
-              <div class="flex-container">
-                <div class="select-container">
-                  <select>
-                    <option>이용자</option>
-                  </select>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '이용자',
+                      },
+                    ]"
+                    title="조회기간"
+                    :classNames="{ wrap: 'input-width-regular' }"
+                    defaultValue="1"
+                  />
                 </div>
-                <div class="select-container">
-                  <select disabled>
-                    <option>본인</option>
-                  </select>
+                <div class="flex-box__cell">
+                  <SimpleSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '본인',
+                      },
+                    ]"
+                    title="조회기간"
+                    :classNames="{ wrap: 'input-width-small' }"
+                    defaultValue="1"
+                  />
                 </div>
               </div>
             </td>
@@ -211,11 +234,16 @@ export default {
             </td>
             <td class="title">상품코드</td>
             <td>
-              <div class="select-container">
-                <select>
-                  <option>이용자</option>
-                </select>
-              </div>
+              <SimpleSelect
+                :options="[
+                  {
+                    value: '1',
+                    label: '이용자',
+                  },
+                ]"
+                title="조회기간"
+                defaultValue="1"
+              />
             </td>
           </tr>
           <tr>
