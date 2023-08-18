@@ -914,7 +914,12 @@ const datas = () => [
         path: '/personal-loan/Main_P01_p003',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 및 상품 문구 수정, 순서 변경',
+          },
+        ],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
@@ -1701,7 +1706,12 @@ const datas = () => [
         path: '/business/BF_P00_main',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '의료비∙설비',
@@ -2171,7 +2181,12 @@ const datas = () => [
         path: '/online-branch/My_P08_p012',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '하단 안내 문구 추가',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -3256,7 +3271,12 @@ const datas = () => [
         path: '/auto/Main_P01_p002',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 및 서브타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '다이렉트 장기렌터카\nAF_P01_p001',
@@ -3271,6 +3291,10 @@ const datas = () => [
           {
             date: '2023.07.19',
             text: '상품안내 내용 수정',
+          },
+          {
+            date: '2023.08.18',
+            text: '견적조회, 렌터카 상담신청 버튼 삭제',
           },
         ],
       },
@@ -3288,29 +3312,11 @@ const datas = () => [
             date: '2023.06.23',
             text: '팝업 추가\n- 모바일 진행 URL 전송 팝업',
           },
+          {
+            date: '2023.08.18',
+            text: 'AF_P01_l002 팝업 삭제',
+          },
         ],
-      },
-      {
-        depth2: '다이렉트 장기렌터카\nAF_P01_p001',
-        depth3: '견적조회\nAF_P01_p002\n렌터카신청\nAF_P01_p003',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/auto/AF_P01_p002',
-        status: 'end',
-        create: '2023.06.09',
-        log: [],
-      },
-      {
-        depth2: '다이렉트 장기렌터카\nAF_P01_p001',
-        depth3: '렌터카신청',
-        depth4: '신청완료\nAF_P01_p004',
-        depth5: '',
-        depth6: '',
-        path: '/auto/AF_P01_p004',
-        status: 'end',
-        create: '2023.06.02',
-        log: [],
       },
       {
         depth2: '다이렉트 오토리스\nAF_P02_p001',

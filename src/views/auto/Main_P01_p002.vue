@@ -67,9 +67,9 @@ export default {
     </template>
 
     <PageHead>
-      <PageTitle>다이렉트 오토금융</PageTitle>
+      <PageTitle>다이렉트 자동차</PageTitle>
       <PageSubText>
-        지금 바로 하나캐피탈이 제공하는 오토금융을 이용하시고,<br />
+        지금 바로 하나캐피탈이 제공하는 자동차 대출상품을 이용하시고,<br />
         최고의 만족을 누리세요.
       </PageSubText>
     </PageHead>
