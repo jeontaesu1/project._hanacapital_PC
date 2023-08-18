@@ -182,7 +182,7 @@ export default {
           item1.value[i].checked = true;
           break;
         case 2:
-          console.log(item2.value)
+          console.log(item2.value);
           item2.value.forEach((ele) => {
             ele.checked = false;
           });

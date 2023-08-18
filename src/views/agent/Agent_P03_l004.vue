@@ -1,6 +1,6 @@
 <script>
 // Agent_P03_l004
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -10,7 +10,7 @@ import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import SimpleDatepicker from "@/components/ui/form/SimpleDatepicker.vue";
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
 
 export default {
   components: {

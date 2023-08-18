@@ -1,6 +1,6 @@
 <script>
 // Agent_P02_l002
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -112,11 +112,19 @@ export default {
               <template v-slot:key>상환금리</template>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <SimpleInput default-value="12" align="right" :classNames="{wrap: 'input-width-small'}" />
+                  <SimpleInput
+                    default-value="12"
+                    align="right"
+                    :classNames="{ wrap: 'input-width-small' }"
+                  />
                 </div>
                 <div class="flex-box__cell">개월</div>
                 <div class="flex-box__cell">
-                  <SimpleInput default-value="12" align="right" :classNames="{wrap: 'input-width-small'}" />
+                  <SimpleInput
+                    default-value="12"
+                    align="right"
+                    :classNames="{ wrap: 'input-width-small' }"
+                  />
                 </div>
                 <div class="flex-box__cell">%</div>
               </div>
@@ -134,15 +142,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >이자부과</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >이자부과</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -155,15 +163,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >부분이자</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >부분이자</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -176,15 +184,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >무이자</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >무이자</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -194,7 +202,11 @@ export default {
               <template v-slot:key>내구재물품기본금리</template>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <SimpleInput default-value="12" align="right" :classNames="{wrap: 'input-width-small'}" />
+                  <SimpleInput
+                    default-value="12"
+                    align="right"
+                    :classNames="{ wrap: 'input-width-small' }"
+                  />
                 </div>
                 <div class="flex-box__cell">%</div>
               </div>
@@ -205,11 +217,11 @@ export default {
                 <div class="flex-box__cell">
                   <SimpleSelect
                     :options="[
-                    {
-                      value: '1',
-                      label: '선택',
-                    },
-                  ]"
+                      {
+                        value: '1',
+                        label: '선택',
+                      },
+                    ]"
                     title="조회기간"
                     defaultValue="1"
                     :classNames="{ wrap: 'input-width-small' }"
@@ -226,19 +238,27 @@ export default {
               <template v-slot:key>내구재선취수수료율</template>
               <div class="flex-box">
                 <div class="flex-box__cell">
-                  <SimpleInput align="right" :classNames="{wrap: 'input-width-small'}" :disabled="true" />
+                  <SimpleInput
+                    align="right"
+                    :classNames="{ wrap: 'input-width-small' }"
+                    :disabled="true"
+                  />
                 </div>
                 <div class="flex-box__cell">%</div>
               </div>
             </SearchFormItem>
             <SearchFormItem>
-            <template v-slot:key>내구재선취수수료</template>
-            <div class="flex-box">
-              <div class="flex-box__cell">
-                <SimpleInput align="right" :classNames="{wrap: 'input-width-small'}" :disabled="true" />
+              <template v-slot:key>내구재선취수수료</template>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <SimpleInput
+                    align="right"
+                    :classNames="{ wrap: 'input-width-small' }"
+                    :disabled="true"
+                  />
+                </div>
+                <div class="flex-box__cell">원</div>
               </div>
-              <div class="flex-box__cell">원</div>
-            </div>
             </SearchFormItem>
           </SearchFormList>
 
@@ -249,10 +269,12 @@ export default {
               align="center"
               :classNames="{ wrap: 'row-margin-none' }"
             >
-              <BasicButton
-                :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
-              >산출</BasicButton
-              >
+              <ButtonListItem>
+                <BasicButton
+                  :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+                  >산출</BasicButton
+                >
+              </ButtonListItem>
             </ButtonList>
           </template>
         </SearchForm>

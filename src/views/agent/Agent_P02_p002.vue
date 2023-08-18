@@ -7,7 +7,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {
@@ -177,11 +177,11 @@ export default {
             <td>
               <SimpleSelect
                 :options="[
-                    {
-                      value: '1',
-                      label: '선택',
-                    },
-                  ]"
+                  {
+                    value: '1',
+                    label: '선택',
+                  },
+                ]"
                 title="조회기간"
                 defaultValue="1"
               />
@@ -206,7 +206,7 @@ export default {
                       },
                     ]"
                     title="조회기간"
-                    :classNames="{wrap: 'input-width-regular' }"
+                    :classNames="{ wrap: 'input-width-regular' }"
                     defaultValue="1"
                   />
                 </div>
@@ -219,7 +219,7 @@ export default {
                       },
                     ]"
                     title="조회기간"
-                    :classNames="{wrap: 'input-width-small' }"
+                    :classNames="{ wrap: 'input-width-small' }"
                     defaultValue="1"
                   />
                 </div>
@@ -236,11 +236,11 @@ export default {
             <td>
               <SimpleSelect
                 :options="[
-                    {
-                      value: '1',
-                      label: '이용자',
-                    },
-                  ]"
+                  {
+                    value: '1',
+                    label: '이용자',
+                  },
+                ]"
                 title="조회기간"
                 defaultValue="1"
               />

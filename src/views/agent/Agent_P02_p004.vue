@@ -1,15 +1,15 @@
 <script>
 // Agent_P02_p004
-import {onMounted, onUnmounted, reactive, ref} from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import SimpleInput from "@/components/ui/form/SimpleInput.vue";
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
-import SimpleDatepicker from "@/components/ui/form/SimpleDatepicker.vue";
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
 
 export default {
   components: {
@@ -186,7 +186,9 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-small' }" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-small' }"
+                      />
                     </div>
                   </div>
                   <button class="btn btn-primary">검색</button>
@@ -313,7 +315,9 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-medium' }" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-medium' }"
+                      />
                     </div>
                   </div>
                 </div>
@@ -717,11 +721,11 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
                     </div>
-                    <div class="flex-box__cell">
-                      %
-                    </div>
+                    <div class="flex-box__cell">%</div>
                   </div>
                 </div>
               </td>
@@ -747,11 +751,11 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
                     </div>
-                    <div class="flex-box__cell">
-                      회
-                    </div>
+                    <div class="flex-box__cell">회</div>
                   </div>
                 </div>
               </td>
@@ -792,11 +796,11 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
                     </div>
-                    <div class="flex-box__cell">
-                      %
-                    </div>
+                    <div class="flex-box__cell">%</div>
                   </div>
                 </div>
               </td>
@@ -939,7 +943,10 @@ export default {
                 <div class="flex-container">
                   <div class="flex-box">
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-regular' }" :disabled="true" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                        :disabled="true"
+                      />
                     </div>
                     <div class="flex-box__cell">
                       <SimpleSelect

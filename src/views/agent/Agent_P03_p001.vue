@@ -7,7 +7,7 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {

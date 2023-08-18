@@ -7,8 +7,8 @@ import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
-import SimpleInput from "@/components/ui/form/SimpleInput.vue";
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {

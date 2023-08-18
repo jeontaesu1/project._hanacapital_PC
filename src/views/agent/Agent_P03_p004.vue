@@ -1,6 +1,6 @@
 <script>
 // Agent_P03_p004
-import {onMounted, onUnmounted, reactive} from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
 import { useUiHeaderStore } from '@/stores/ui/header';
 
@@ -11,18 +11,18 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
-import SearchForm from "@/components/ui/form/SearchForm.vue";
-import SearchFormList from "@/components/ui/form/SearchFormList.vue";
-import SearchFormItem from "@/components/ui/form/SearchFormItem.vue";
-import SimpleInput from "@/components/ui/form/SimpleInput.vue";
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
-import SimpleDatepicker from "@/components/ui/form/SimpleDatepicker.vue";
-import RadioButtonLabelText from "@/components/ui/form/RadioButtonLabelText.vue";
-import RadioButtonObject from "@/components/ui/form/RadioButtonObject.vue";
-import RadioButton from "@/components/ui/form/RadioButton.vue";
-import BasicButton from "@/components/ui/button/BasicButton.vue";
-import ButtonList from "@/components/ui/button/ButtonList.vue";
-import ButtonListItem from "@/components/ui/button/ButtonListItem.vue";
+import SearchForm from '@/components/ui/form/SearchForm.vue';
+import SearchFormList from '@/components/ui/form/SearchFormList.vue';
+import SearchFormItem from '@/components/ui/form/SearchFormItem.vue';
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
+import SimpleDatepicker from '@/components/ui/form/SimpleDatepicker.vue';
+import RadioButtonLabelText from '@/components/ui/form/RadioButtonLabelText.vue';
+import RadioButtonObject from '@/components/ui/form/RadioButtonObject.vue';
+import RadioButton from '@/components/ui/form/RadioButton.vue';
+import BasicButton from '@/components/ui/button/BasicButton.vue';
+import ButtonList from '@/components/ui/button/ButtonList.vue';
+import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 export default {
   components: {
@@ -102,7 +102,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >품의일자</span
+                          >품의일자</span
                         >
                       </span>
                     </span>
@@ -123,7 +123,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >실행일자</span
+                          >실행일자</span
                         >
                       </span>
                     </span>
@@ -206,7 +206,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >전체</span
+                          >전체</span
                         >
                       </span>
                     </span>
@@ -227,7 +227,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >완료</span
+                          >완료</span
                         >
                       </span>
                     </span>
@@ -248,7 +248,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >미완료</span
+                          >미완료</span
                         >
                       </span>
                     </span>
@@ -275,7 +275,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >전체</span
+                          >전체</span
                         >
                       </span>
                     </span>
@@ -296,7 +296,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >작성중</span
+                          >작성중</span
                         >
                       </span>
                     </span>
@@ -317,7 +317,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >미실행취소</span
+                          >미실행취소</span
                         >
                       </span>
                     </span>
@@ -338,7 +338,7 @@ export default {
                         class="flex-box__cell flex-box__cell--regular flex-1"
                       >
                         <span class="text-title-5 font-weight-normal"
-                        >승인</span
+                          >승인</span
                         >
                       </span>
                     </span>
@@ -356,10 +356,12 @@ export default {
             align="center"
             :classNames="{ wrap: 'row-margin-none' }"
           >
-            <BasicButton
-              :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
-            >조회</BasicButton
-            >
+            <ButtonListItem>
+              <BasicButton
+                :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+                >조회</BasicButton
+              >
+            </ButtonListItem>
           </ButtonList>
         </template>
       </SearchForm>

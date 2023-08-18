@@ -7,8 +7,8 @@ import { useUiHeaderStore } from '@/stores/ui/header';
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
-import SimpleInput from "@/components/ui/form/SimpleInput.vue";
-import SimpleSelect from "@/components/ui/form/SimpleSelect.vue";
+import SimpleInput from '@/components/ui/form/SimpleInput.vue';
+import SimpleSelect from '@/components/ui/form/SimpleSelect.vue';
 
 export default {
   components: {
@@ -151,11 +151,11 @@ export default {
                   </div>
                   <SimpleSelect
                     :options="[
-                    {
-                      value: '1',
-                      label: '선택',
-                    },
-                  ]"
+                      {
+                        value: '1',
+                        label: '선택',
+                      },
+                    ]"
                     title="조회기간"
                     defaultValue="1"
                     :classNames="{ wrap: 'input-width-regular' }"
@@ -182,7 +182,10 @@ export default {
                       />
                     </div>
                     <div class="flex-box__cell">
-                      <SimpleInput :classNames="{ wrap: 'input-width-regular' }" :disabled="true" />
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                        :disabled="true"
+                      />
                     </div>
                   </div>
                   <button class="btn btn-primary">검색</button>
@@ -559,14 +562,14 @@ export default {
                 <div class="flex-container">
                   <SimpleSelect
                     :options="[
-                    {
-                      value: '1',
-                      label: '선택',
-                    },
-                  ]"
+                      {
+                        value: '1',
+                        label: '선택',
+                      },
+                    ]"
                     title="조회기간"
                     defaultValue="1"
-                    :classNames="{wrap: 'input-width-small'}"
+                    :classNames="{ wrap: 'input-width-small' }"
                   />
                   <div class="radio-container">
                     <label class="flex-container jcfs">
@@ -674,11 +677,11 @@ export default {
                     />
                   </div>
                   <div class="flex-box__cell">
-                    <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
                   </div>
-                  <div class="flex-box__cell">
-                    %
-                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">선수율 · 금액</td>
@@ -702,11 +705,11 @@ export default {
                     />
                   </div>
                   <div class="flex-box__cell">
-                    <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
                   </div>
-                  <div class="flex-box__cell">
-                    회
-                  </div>
+                  <div class="flex-box__cell">회</div>
                 </div>
               </td>
               <td class="title">연체이자율</td>
@@ -745,11 +748,11 @@ export default {
                     />
                   </div>
                   <div class="flex-box__cell">
-                    <SimpleInput :classNames="{ wrap: 'input-width-regular' }" />
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                    />
                   </div>
-                  <div class="flex-box__cell">
-                    %
-                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">취급수수료</td>
@@ -814,11 +817,12 @@ export default {
                     />
                   </div>
                   <div class="flex-box__cell">
-                    <SimpleInput :classNames="{ wrap: 'input-width-regular' }" :disabled="true" />
+                    <SimpleInput
+                      :classNames="{ wrap: 'input-width-regular' }"
+                      :disabled="true"
+                    />
                   </div>
-                  <div class="flex-box__cell">
-                    %
-                  </div>
+                  <div class="flex-box__cell">%</div>
                 </div>
               </td>
               <td class="title">청구방법/청구지</td>

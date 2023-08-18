@@ -1,6 +1,6 @@
 <script>
 // Agent_P00_l004
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -103,11 +103,11 @@ export default {
                 <div class="flex-box__cell">
                   <SimpleSelect
                     :options="[
-                    {
-                      value: '1',
-                      label: '고객명',
-                    },
-                  ]"
+                      {
+                        value: '1',
+                        label: '고객명',
+                      },
+                    ]"
                     title="조회기간"
                     defaultValue="1"
                     :classNames="{ wrap: 'input-width-regular' }"
@@ -139,15 +139,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >전체</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >전체</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -160,15 +160,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >접수</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >접수</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -181,15 +181,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >심사중</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >심사중</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -202,15 +202,15 @@ export default {
                   >
                     <RadioButtonObject />
                     <RadioButtonLabelText>
-                    <span class="flex-box">
-                      <span
-                        class="flex-box__cell flex-box__cell--regular flex-1"
-                      >
-                        <span class="text-title-5 font-weight-normal"
-                        >승인</span
+                      <span class="flex-box">
+                        <span
+                          class="flex-box__cell flex-box__cell--regular flex-1"
                         >
+                          <span class="text-title-5 font-weight-normal"
+                            >승인</span
+                          >
+                        </span>
                       </span>
-                    </span>
                     </RadioButtonLabelText>
                   </RadioButton>
                 </div>
@@ -225,10 +225,12 @@ export default {
               align="center"
               :classNames="{ wrap: 'row-margin-none' }"
             >
-              <BasicButton
-                :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
-              >조회</BasicButton
-              >
+              <ButtonListItem>
+                <BasicButton
+                  :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+                  >조회</BasicButton
+                >
+              </ButtonListItem>
             </ButtonList>
           </template>
         </SearchForm>

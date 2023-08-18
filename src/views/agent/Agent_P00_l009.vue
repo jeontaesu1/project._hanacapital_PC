@@ -1,6 +1,6 @@
 <script>
 // Agent_P00_l009
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -22,7 +22,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    SimpleDatepicker
+    SimpleDatepicker,
   },
   setup() {
     const layer = ref(null);

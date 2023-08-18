@@ -1,6 +1,6 @@
 <script>
 // Agent_P00_l008
-import {reactive, ref} from 'vue';
+import { reactive, ref } from 'vue';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
@@ -71,11 +71,11 @@ export default {
                 <div class="flex-box__cell">
                   <SimpleSelect
                     :options="[
-                    {
-                      value: '1',
-                      label: '은행명',
-                    },
-                  ]"
+                      {
+                        value: '1',
+                        label: '은행명',
+                      },
+                    ]"
                     title="조회기간"
                     defaultValue="1"
                     :classNames="{ wrap: 'input-width-large' }"
@@ -95,10 +95,12 @@ export default {
               align="center"
               :classNames="{ wrap: 'row-margin-none' }"
             >
-              <BasicButton
-                :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
-              >검색</BasicButton
-              >
+              <ButtonListItem>
+                <BasicButton
+                  :classNames="{ wrap: 'btn btn-primary btn-search-02' }"
+                  >검색</BasicButton
+                >
+              </ButtonListItem>
             </ButtonList>
           </template>
         </SearchForm>
