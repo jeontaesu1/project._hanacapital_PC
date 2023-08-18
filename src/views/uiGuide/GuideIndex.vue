@@ -4546,7 +4546,12 @@ const datas = () => [
         path: '/agent/Agent_P09_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '채권양수도',
@@ -4557,7 +4562,12 @@ const datas = () => [
         path: '/agent/Agent_P09_p002',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '채권양수도',
@@ -4568,7 +4578,12 @@ const datas = () => [
         path: '/agent/Agent_P09_p003',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '채권양수도',
@@ -4579,7 +4594,12 @@ const datas = () => [
         path: '/agent/Agent_P09_p005',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '채권양수도',
@@ -4590,7 +4610,12 @@ const datas = () => [
         path: '/agent/Agent_P09_p006',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '선정산',
@@ -4601,7 +4626,12 @@ const datas = () => [
         path: '/agent/Agent_P10_p001',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '선정산',
@@ -4612,7 +4642,12 @@ const datas = () => [
         path: '/agent/Agent_P10_p002',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '선정산',
@@ -4623,7 +4658,12 @@ const datas = () => [
         path: '/agent/Agent_P10_p003',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '선정산',
@@ -4634,7 +4674,12 @@ const datas = () => [
         path: '/agent/Agent_P10_p004',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
       {
         depth2: '선정산',
@@ -4645,7 +4690,12 @@ const datas = () => [
         path: '/agent/Agent_P10_p005',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '소스 전면 재작업',
+          },
+        ],
       },
     ],
   },
