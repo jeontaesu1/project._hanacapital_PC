@@ -247,6 +247,7 @@ ul {
   &::-webkit-scrollbar {
     width: 4px;
     height: 4px;
+    position: fixed;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -290,6 +291,12 @@ ul {
 }
 .w25p {
   width: 25% !important;
+}
+.w25p-1 {
+  width: calc(25% - 1px) !important;
+}
+.w25p1 {
+  width: calc(25% + 1px) !important;
 }
 .w28p {
   width: 28% !important;
@@ -537,6 +544,7 @@ ul {
   max-height: 478px;
 }
 .mxh-550 {
+  height: 550px;
   max-height: 550px;
 }
 .mxh-578 {
