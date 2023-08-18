@@ -66,12 +66,13 @@ export default {
 
     <PageHead>
       <PageHeadRow>
-        <PageTitle>의료기·설비를 위한 최적의 자금 대출!</PageTitle>
+        <PageTitle>의료기 · 설비를 위한 최적의 자금 대출!</PageTitle>
         <PageMainText
           align="center"
           :classNames="{ wrap: 'text-title-2 font-weight-regular' }"
         >
-          하나캐피탈 의료기·설비 대출이 여러분의 성공 비즈니스를 지원해드립니다.
+          하나캐피탈 의료기 · 설비 대출이 여러분의 성공비즈니스를
+          지원해드립니다.
         </PageMainText>
       </PageHeadRow>
     </PageHead>

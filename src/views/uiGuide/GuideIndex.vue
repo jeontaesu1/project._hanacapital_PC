@@ -914,7 +914,12 @@ const datas = () => [
         path: '/personal-loan/Main_P01_p003',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 및 상품 문구 수정, 순서 변경',
+          },
+        ],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
@@ -1701,7 +1706,12 @@ const datas = () => [
         path: '/business/BF_P00_main',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '의료비∙설비',
@@ -3261,7 +3271,12 @@ const datas = () => [
         path: '/auto/Main_P01_p002',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 및 서브타이틀 문구 수정',
+          },
+        ],
       },
       {
         depth2: '다이렉트 장기렌터카\nAF_P01_p001',

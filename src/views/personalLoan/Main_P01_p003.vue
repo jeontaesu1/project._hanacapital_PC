@@ -73,7 +73,7 @@ export default {
     </template>
 
     <PageHead>
-      <PageTitle>신속하면서 믿을 수 있는 개인금융!</PageTitle>
+      <PageTitle>신속하면서 믿을 수 있는 개인대출!</PageTitle>
       <PageSubText>
         넉넉한 한도와 합리적인 금리<br />
         하나캐피탈의 개인금융 상품을 만나보세요!
@@ -205,12 +205,12 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconInterestRate />
+              <IconHome />
             </div>
-            <h3 :class="$style['product-list__title']">스탁론</h3>
+            <h3 :class="$style['product-list__title']">e임대주택론</h3>
             <p :class="$style['product-list__text']">
-              주식매입<br />
-              자금 지원
+              임대보증금을<br />
+              담보로 가능한 대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -226,12 +226,13 @@ export default {
             </div>
           </div>
         </li>
+
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
               <IconGoodsLoan />
             </div>
-            <h3 :class="$style['product-list__title']">내구소비재할부</h3>
+            <h3 :class="$style['product-list__title']">사업자주택담보대출</h3>
             <p :class="$style['product-list__text']">
               생활에 꼭 필요한 소비재도<br />
               이젠 할부로!
@@ -253,12 +254,12 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconHome />
+              <IconInterestRate />
             </div>
-            <h3 :class="$style['product-list__title']">e임대주택론</h3>
+            <h3 :class="$style['product-list__title']">스탁론</h3>
             <p :class="$style['product-list__text']">
-              임대보증금을<br />
-              담보로 가능한 대출
+              주식매입<br />
+              자금 지원
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
