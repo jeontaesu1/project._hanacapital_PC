@@ -2171,7 +2171,12 @@ const datas = () => [
         path: '/online-branch/My_P08_p012',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.08.18',
+            text: '하단 안내 문구 추가',
+          },
+        ],
       },
       {
         depth2: '계약정보',
