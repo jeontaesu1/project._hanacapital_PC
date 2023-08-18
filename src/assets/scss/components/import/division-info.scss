@@ -8,6 +8,8 @@
   }
 
   &__item {
+    min-width: 0;
+
     & + & {
       position: relative;
       padding-left: 13px;
