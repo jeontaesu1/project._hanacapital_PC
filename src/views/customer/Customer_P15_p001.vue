@@ -16,7 +16,6 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
@@ -42,7 +41,6 @@ export default {
     BasicInput,
     FormInvalidMessage,
     FormHelpText,
-    SecurityKeypadButton,
     SecurityInput,
     BasicSelect,
     BasicTextarea,
@@ -430,9 +428,6 @@ export default {
                     title="연락처 뒷 번호"
                     :dot="[true, true, false, false]"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

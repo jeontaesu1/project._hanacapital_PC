@@ -20,7 +20,6 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
@@ -50,7 +49,6 @@ export default {
     BasicInput,
     FormInvalidMessage,
     SecurityInput,
-    SecurityKeypadButton,
     BoxCheckList,
     BoxCheckListItem,
     BoxCheck,
@@ -173,9 +171,6 @@ export default {
                 :dot="[true, true, true, true, true, true, true]"
                 :disabled="true"
               />
-            </InputBlockCell>
-            <InputBlockCell>
-              <SecurityKeypadButton :disabled="true" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

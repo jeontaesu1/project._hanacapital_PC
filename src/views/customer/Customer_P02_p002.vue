@@ -23,7 +23,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
@@ -52,7 +51,6 @@ export default {
     BasicInput,
     FormInvalidMessage,
     BasicTextarea,
-    SecurityKeypadButton,
     SecurityInput,
     FormHelpText,
     CheckBox,
@@ -276,9 +274,6 @@ export default {
                   title="연락처 뒷 번호"
                   :dot="[true, true, false, false]"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

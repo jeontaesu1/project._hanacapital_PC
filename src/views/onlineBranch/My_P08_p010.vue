@@ -22,7 +22,6 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 
 export default {
@@ -45,7 +44,6 @@ export default {
     InputBlockCell,
     BasicSelect,
     BasicInput,
-    SecurityKeypadButton,
     SecurityInput,
   },
   setup() {
@@ -161,9 +159,6 @@ export default {
                 :dot="[true, true, true, true, true, true, true]"
                 :disabled="true"
               />
-            </InputBlockCell>
-            <InputBlockCell>
-              <SecurityKeypadButton :disabled="true" />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

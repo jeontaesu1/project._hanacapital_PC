@@ -28,7 +28,6 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -61,7 +60,6 @@ export default {
     BasicSelect,
     SecurityInput,
     PartInput,
-    SecurityKeypadButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -151,9 +149,6 @@ export default {
                 title="주민등록번호 뒤 7자리"
                 :dot="[true, true, true, false, false, false, false]"
               />
-            </InputBlockCell>
-            <InputBlockCell>
-              <SecurityKeypadButton />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -257,9 +252,6 @@ export default {
                     title="주민등록번호 뒤 7자리 중 첫번째자리"
                     :afterDot="6"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -790,9 +782,6 @@ export default {
                     :dot="[true, true, true, false, false, false, false]"
                   />
                 </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -885,9 +874,6 @@ export default {
                     :dot="[true, true, true, false, false, false, false]"
                   />
                 </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
-                </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
@@ -939,9 +925,6 @@ export default {
                     id="Common_P00_p003_cardNumber4"
                     :useDelete="false"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

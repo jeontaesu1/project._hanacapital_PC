@@ -23,7 +23,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -55,7 +54,6 @@ export default {
     FormInvalidMessage,
     BasicInput,
     SecurityInput,
-    SecurityKeypadButton,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -114,9 +112,6 @@ export default {
                     title="비밀번호"
                     id="signInPassword"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -279,9 +274,6 @@ export default {
                       title="법인번호 뒤 7자리"
                       :dot="[true, true, true, false, false, false, false]"
                     />
-                  </InputBlockCell>
-                  <InputBlockCell>
-                    <SecurityKeypadButton />
                   </InputBlockCell>
                 </InputBlock>
                 <FormInvalidMessage>Error Message</FormInvalidMessage>

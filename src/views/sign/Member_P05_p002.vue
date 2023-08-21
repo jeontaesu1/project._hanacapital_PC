@@ -21,7 +21,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 
 export default {
   components: {
@@ -44,7 +43,6 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicInput,
-    SecurityKeypadButton,
   },
   setup() {
     const state = reactive({
@@ -119,9 +117,6 @@ export default {
                   id="password"
                 />
               </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
             <FormHelpText>
@@ -139,9 +134,6 @@ export default {
                   title="신규 비밀번호 확인"
                   id="passwordConfirm"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

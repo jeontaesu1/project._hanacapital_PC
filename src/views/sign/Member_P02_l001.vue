@@ -18,7 +18,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 
 export default {
   components: {
@@ -38,7 +37,6 @@ export default {
     FormInvalidMessage,
     BasicInput,
     SecurityInput,
-    SecurityKeypadButton,
   },
   setup() {
     const state = reactive({
@@ -98,9 +96,6 @@ export default {
                   title="주민등록번호 뒤 7자리"
                   :dot="[true, true, true, false, false, false, false]"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

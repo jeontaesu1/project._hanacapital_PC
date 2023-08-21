@@ -22,7 +22,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
@@ -52,7 +51,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     SecurityInput,
-    SecurityKeypadButton,
     BasicInput,
     BasicSelect,
     CheckBox,
@@ -206,9 +204,6 @@ export default {
                   :dot="[true, true, true, false, false, false, false]"
                 />
               </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
@@ -299,9 +294,6 @@ export default {
                   title="주민등록번호 뒤 7자리"
                   :dot="[true, true, true, false, false, false, false]"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -436,9 +428,6 @@ export default {
                   :dot="[true, true, true, false, false, false, false]"
                 />
               </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
-              </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
@@ -553,9 +542,6 @@ export default {
                   title="주민등록번호 뒤 7자리"
                   :dot="[true, true, true, false, false, false, false]"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

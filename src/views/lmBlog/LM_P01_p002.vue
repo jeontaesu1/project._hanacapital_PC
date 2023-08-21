@@ -18,7 +18,6 @@ import PageHeadRow from '@/components/ui/text/PageHeadRow.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
@@ -57,7 +56,6 @@ export default {
     BasicInput,
     FormInvalidMessage,
     SecurityInput,
-    SecurityKeypadButton,
     BasicSelect,
     BoxCheckList,
     BoxCheckListItem,
@@ -186,9 +184,6 @@ export default {
                     :dot="[true, true, true, true, true, true, true]"
                     :disabled="true"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton :disabled="true" />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

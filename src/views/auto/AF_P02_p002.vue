@@ -21,7 +21,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
@@ -76,7 +75,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     SecurityInput,
-    SecurityKeypadButton,
     BasicInput,
     BasicSelect,
     BasicButton,
@@ -1542,9 +1540,6 @@ export default {
                     title="주민등록번호 뒤 7자리"
                     :dot="[true, true, true, false, false, false, false]"
                   />
-                </InputBlockCell>
-                <InputBlockCell>
-                  <SecurityKeypadButton />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>

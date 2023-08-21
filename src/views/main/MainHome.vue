@@ -19,7 +19,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
@@ -71,7 +70,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     BasicInput,
-    SecurityKeypadButton,
     BoxCheck,
     BoxCheckLabel,
     BoxCheckList,
@@ -393,9 +391,6 @@ export default {
                               id="mainHomeLoginPassword"
                             />
                           </InputBlockCell>
-                          <InputBlockCell>
-                            <SecurityKeypadButton />
-                          </InputBlockCell>
                         </InputBlock>
                         <FormInvalidMessage>Error Message</FormInvalidMessage>
                       </FormInvalid>
@@ -557,9 +552,6 @@ export default {
                                 title="법인번호 뒤 7자리"
                                 id="mainHomeLoginBusinessNumber002"
                               />
-                            </InputBlockCell>
-                            <InputBlockCell>
-                              <SecurityKeypadButton />
                             </InputBlockCell>
                           </InputBlock>
                           <FormInvalidMessage>Error Message</FormInvalidMessage>

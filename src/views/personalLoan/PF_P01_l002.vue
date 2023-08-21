@@ -19,7 +19,6 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 
 export default {
   components: {
@@ -40,7 +39,6 @@ export default {
     FormInvalid,
     BasicSelect,
     FormInvalidMessage,
-    SecurityKeypadButton,
   },
   setup() {
     const state = reactive({
@@ -148,9 +146,6 @@ export default {
                   title="비밀번호"
                   id="PF_P01_l002_password"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

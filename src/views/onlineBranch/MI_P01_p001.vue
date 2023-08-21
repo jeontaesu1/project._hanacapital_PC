@@ -21,7 +21,6 @@ import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 
@@ -44,7 +43,6 @@ export default {
     FormInvalidMessage,
     FormHelpText,
     BasicInput,
-    SecurityKeypadButton,
     InputBlock,
     InputBlockCell,
   },
@@ -126,9 +124,6 @@ export default {
                 id="MI_P01_p001_password"
               />
             </InputBlockCell>
-            <InputBlockCell>
-              <SecurityKeypadButton />
-            </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>
           <FormHelpText>
@@ -149,9 +144,6 @@ export default {
                 title="신규 비밀번호 확인"
                 id="MI_P01_p001_passwordConfirm"
               />
-            </InputBlockCell>
-            <InputBlockCell>
-              <SecurityKeypadButton />
             </InputBlockCell>
           </InputBlock>
           <FormInvalidMessage>Error Message</FormInvalidMessage>

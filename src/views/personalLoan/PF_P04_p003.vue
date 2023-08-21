@@ -34,7 +34,6 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
@@ -73,7 +72,6 @@ export default {
     FormHelpText,
     BasicInput,
     SecurityInput,
-    SecurityKeypadButton,
     BasicDatepicker,
     BoxCheck,
     BoxCheckLabel,
@@ -195,9 +193,6 @@ export default {
                   :dot="[true, true, true, true, true, true, true]"
                   :disabled="true"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton :disabled="true" />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>

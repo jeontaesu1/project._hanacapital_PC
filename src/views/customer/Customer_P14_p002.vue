@@ -22,7 +22,6 @@ import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
-import SecurityKeypadButton from '@/components/ui/button/SecurityKeypadButton.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -49,7 +48,6 @@ export default {
     FormInvalid,
     FormInvalidMessage,
     BasicInput,
-    SecurityKeypadButton,
     SecurityInput,
     BasicButton,
     ButtonList,
@@ -175,9 +173,6 @@ export default {
                   title="휴대폰번호 세번째 4자리"
                   :dot="[true, true, false, false]"
                 />
-              </InputBlockCell>
-              <InputBlockCell>
-                <SecurityKeypadButton />
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
