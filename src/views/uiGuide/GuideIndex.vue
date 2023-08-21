@@ -949,6 +949,7 @@ const datas = () => [
         log: [
           { date: '2023.06.01', text: '팝업 추가\n- 온라인 약정\n- 1원 인증' },
           { date: '2023.08.07', text: '팝업 추가\n- iSAS 설치 팝업' },
+          { date: '2023.08.21', text: 'PF_P01_l002 공동인증서 케이스 추가' },
         ],
       },
       {
@@ -1015,7 +1016,7 @@ const datas = () => [
         path: '/personal-loan/PF_P01_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.21', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
@@ -1172,7 +1173,7 @@ const datas = () => [
         path: '/personal-loan/PF_P02_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.21', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '행복아파트론\nPF_P02_p001',
@@ -1292,7 +1293,7 @@ const datas = () => [
         path: '/personal-loan/PF_P04_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.21', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '원큐자동차담보대출\nPF_P04_p001',
@@ -1374,7 +1375,7 @@ const datas = () => [
         path: '/personal-loan/PF_P05_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.21', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '우수고객추가대출\nPF_P05_p001',
@@ -1440,6 +1441,7 @@ const datas = () => [
             date: '2023.08.11',
             text: 'PF_P07_l003 타이틀 수정 및 항목 삭제',
           },
+          { date: '2023.08.21', text: 'PF_P07_l002 공동인증서 케이스 추가' },
         ],
       },
       {

@@ -114,9 +114,10 @@ export default {
           </InputBlock>
         </FormListItem>
 
+        <!-- Case : 공동인증서가 있는 경우 -->
         <FormListItem
           titleText="공동인증서"
-          target="#PF_P01_l002_certificate"
+          target="#PF_P01_l002_certificate001"
           :selectOnly="true"
         >
           <FormInvalid :error="state.certificateError">
@@ -130,7 +131,7 @@ export default {
                     },
                   ]"
                   title="공동인증서"
-                  inputId="PF_P01_l002_certificate"
+                  inputId="PF_P01_l002_certificate001"
                   defaultValue="1"
                 />
               </InputBlockCell>
@@ -156,6 +157,26 @@ export default {
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>
         </FormListItem>
+        <!-- // Case : 공동인증서가 있는 경우 -->
+
+        <!-- Case : 공동인증서가 없는 경우 -->
+        <FormListItem
+          titleText="공동인증서"
+          target="#PF_P01_l002_certificate002"
+          :disabled="true"
+        >
+          <InputBlock :disabled="true">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                title="공동인증서"
+                defaultValue="공동인증서가 없습니다"
+                :disabled="true"
+                id="PF_P01_l002_certificate002"
+              />
+            </InputBlockCell>
+          </InputBlock>
+        </FormListItem>
+        <!-- // Case : 공동인증서가 없는 경우 -->
       </FormList>
 
       <template v-slot:foot>
