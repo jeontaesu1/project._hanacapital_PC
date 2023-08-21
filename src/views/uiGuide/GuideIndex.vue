@@ -2038,7 +2038,12 @@ const datas = () => [
         path: '/online-branch/My_p05_p002',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.21',
+            text: '라디오 버튼 스타일 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
