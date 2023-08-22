@@ -102,12 +102,12 @@ export default {
 
       <table class="table-type-01">
         <colgroup>
-          <col width="11%" />
-          <col width="22%" />
-          <col width="11%" />
-          <col width="22%" />
-          <col width="11%" />
-          <col width="22%" />
+          <col width="10%" />
+          <col width="23%" />
+          <col width="10%" />
+          <col width="23%" />
+          <col width="10%" />
+          <col width="23%" />
         </colgroup>
         <tbody>
           <tr>
