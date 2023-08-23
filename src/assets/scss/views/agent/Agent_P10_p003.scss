@@ -1,1 +1,13 @@
-@import '@/assets/scss/views/agent/AgentBase.scss';
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.scroll-table-wrap {
+  font-size: 0;
+  line-height: 0;
+
+  .basic-table {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 100%;
+  }
+}
