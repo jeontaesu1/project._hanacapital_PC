@@ -1767,6 +1767,54 @@ export default {
     </section>
 
     <section class="test-section">
+      <h2 class="test-section-title">Check List</h2>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Default</h3>
+
+        <div :class="[$style['check-list'], 'row-margin-contents']">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_001">
+                <RadioButtonObject />
+                <RadioButtonLabelText>신용평점(등급) 개선</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_002">
+                <RadioButtonObject />
+                <RadioButtonLabelText>재무상태 개선</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_003">
+                <RadioButtonObject />
+                <RadioButtonLabelText>기타 신용도 상승</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_004">
+                <RadioButtonObject />
+                <RadioButtonLabelText>소득증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_005">
+                <RadioButtonObject />
+                <RadioButtonLabelText>재산증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton name="testCheckList001" id="testCheckList001_006">
+                <RadioButtonObject />
+                <RadioButtonLabelText>기타 소득증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-section">
       <h2 class="test-section-title">Form</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>

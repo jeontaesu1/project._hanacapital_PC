@@ -181,87 +181,73 @@ export default {
           </BoxCheckListItem>
         </BoxCheckList>
 
-        <!-- Case : 신용도 상승 선택 시 경우 노출 -->
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_001"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >신용평점(등급) 개선</RadioButtonLabelText
+        <!-- Case : 신용도 상승 선택 시 노출 -->
+        <div :class="[$style['check-list'], 'row-margin-contents']">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details001"
+                id="My_p05_p002_details001_001"
               >
-            </RadioButton>
-          </div>
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_002"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >재무상태 개선</RadioButtonLabelText
+                <RadioButtonObject />
+                <RadioButtonLabelText>신용평점(등급) 개선</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details001"
+                id="My_p05_p002_details001_002"
               >
-            </RadioButton>
-          </div>
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_003"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >기타 신용도 상승</RadioButtonLabelText
+                <RadioButtonObject />
+                <RadioButtonLabelText>재무상태 개선</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details001"
+                id="My_p05_p002_details001_003"
               >
-            </RadioButton>
-          </div>
+                <RadioButtonObject />
+                <RadioButtonLabelText>기타 신용도 상승</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+          </ul>
         </div>
-        <!-- // Case : 신용도 상승 선택 시 경우 노출 -->
+        <!-- // Case : 신용도 상승 선택 시 노출 -->
 
-        <!-- Case : 소득 재산 증가 선택 시 경우 노출 -->
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_004"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >소득증가</RadioButtonLabelText
+        <!-- Case : 소득 재산 증가 선택 시 노출 -->
+        <div :class="[$style['check-list'], 'row-margin-contents']">
+          <ul :class="$style['check-list__list']">
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details002"
+                id="My_p05_p002_details002_001"
               >
-            </RadioButton>
-          </div>
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_005"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >재산증가</RadioButtonLabelText
+                <RadioButtonObject />
+                <RadioButtonLabelText>소득증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details002"
+                id="My_p05_p002_details002_002"
               >
-            </RadioButton>
-          </div>
-          <div class="flex-box__cell flex-box__cell--wide">
-            <RadioButton
-              name="My_p05_p002_details001"
-              id="My_p05_p002_details001_006"
-              theme="quaternary"
-            >
-              <RadioButtonObject />
-              <RadioButtonLabelText :classNames="{ text: 'text-body-1' }"
-                >기타 소득증가</RadioButtonLabelText
+                <RadioButtonObject />
+                <RadioButtonLabelText>재산증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+            <li :class="$style['check-list__item']">
+              <RadioButton
+                name="My_p05_p002_details002"
+                id="My_p05_p002_details002_003"
               >
-            </RadioButton>
-          </div>
+                <RadioButtonObject />
+                <RadioButtonLabelText>기타 소득증가</RadioButtonLabelText>
+              </RadioButton>
+            </li>
+          </ul>
         </div>
-        <!-- // Case : 소득 재산 증가 선택 시 경우 노출 -->
+        <!-- // Case : 소득 재산 증가 선택 시 노출 -->
       </section>
 
       <section class="row-margin-block-small">
@@ -388,3 +374,7 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/onlineBranch/My_p05_p002.scss';
+</style>
