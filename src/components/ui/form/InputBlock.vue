@@ -1,5 +1,13 @@
 <script>
-import { computed, useCssModule, reactive, provide, inject } from 'vue';
+import {
+  computed,
+  useCssModule,
+  reactive,
+  provide,
+  inject,
+  onBeforeMount,
+  onUpdated,
+} from 'vue';
 
 import IconError from '@/assets/images/icon/text-error.svg?component';
 
@@ -10,6 +18,17 @@ const defaultClassNames = () => ({
   right: '',
   errorIcon: '',
 });
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
 
 export default {
   components: {
@@ -35,12 +54,13 @@ export default {
       default: null,
     },
   },
-  setup(props, context) {
+  setup(props, { slots }) {
     let timer = null;
 
     const state = reactive({
       isFocus: false,
       isSelectFocus: false,
+      slots: {},
     });
 
     const formListItem = inject('formListItem', {});
@@ -52,19 +72,19 @@ export default {
     });
 
     const isLeft = computed(() => {
-      return Boolean(context.slots.left);
+      return isSlot(state.slots.left);
     });
 
     const isRight = computed(() => {
-      return Boolean(context.slots.right);
+      return isSlot(state.slots.right);
     });
 
     const isInnerLeft = computed(() => {
-      return Boolean(context.slots.innerLeft);
+      return isSlot(state.slots.innerLeft);
     });
 
     const isInnerRight = computed(() => {
-      return Boolean(context.slots.innerRight);
+      return isSlot(state.slots.innerRight);
     });
 
     const onfocusin = () => {
@@ -91,6 +111,20 @@ export default {
     const selectFocus = (val) => {
       state.isSelectFocus = val;
     };
+
+    onBeforeMount(() => {
+      state.slots.left = slots.left;
+      state.slots.right = slots.right;
+      state.slots.innerLeft = slots.innerLeft;
+      state.slots.innerRight = slots.innerRight;
+    });
+
+    onUpdated(() => {
+      state.slots.left = slots.left;
+      state.slots.right = slots.right;
+      state.slots.innerLeft = slots.innerLeft;
+      state.slots.innerRight = slots.innerRight;
+    });
 
     provide('inputBlockStyleModule', useCssModule());
     provide('inputBlock', {

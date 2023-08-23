@@ -1,10 +1,28 @@
 <script>
-import { computed, useCssModule, provide } from 'vue';
+import {
+  computed,
+  useCssModule,
+  provide,
+  reactive,
+  onBeforeMount,
+  onUpdated,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
   bottom: '',
 });
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
 
 export default {
   props: {
@@ -16,13 +34,25 @@ export default {
     },
   },
   setup(props, { slots }) {
+    const state = reactive({
+      slots: {},
+    });
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     const isBottom = computed(() => {
-      return Boolean(slots.bottom);
+      return isSlot(state.slots.bottom);
+    });
+
+    onBeforeMount(() => {
+      state.slots.bottom = slots.bottom;
+    });
+
+    onUpdated(() => {
+      state.slots.bottom = slots.bottom;
     });
 
     provide('searchFormStyleModule', useCssModule());

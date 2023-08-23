@@ -86,18 +86,7 @@ export default {
 <template>
   <UiLayer ref="layer" v-slot="layerSlotProps">
     <UiTab type="popup" v-slot="tabSlotProps">
-      <ModalPopup
-        :classNames="{
-          foot:
-            tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'
-              ? 'display-none'
-              : '',
-          bodyInner:
-            tabSlotProps.activeName !== 'layerSearchWorkplaceTab003'
-              ? $style['only-body']
-              : '',
-        }"
-      >
+      <ModalPopup>
         <template v-slot:head>
           <ModalPopupHead>
             <template v-slot:right>
@@ -276,6 +265,7 @@ export default {
 
         <template v-slot:foot>
           <ButtonList
+            v-if="tabSlotProps.activeName === 'layerSearchWorkplaceTab003'"
             :wrap="true"
             align="center"
             :classNames="{

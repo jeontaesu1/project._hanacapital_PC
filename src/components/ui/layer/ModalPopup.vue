@@ -1,5 +1,14 @@
 <script>
-import { computed, useCssModule, provide, reactive, ref, onMounted } from 'vue';
+import {
+  computed,
+  useCssModule,
+  provide,
+  reactive,
+  ref,
+  onMounted,
+  onBeforeMount,
+  onUpdated,
+} from 'vue';
 import Simplebar from 'simplebar-vue';
 
 const defaultClassNames = () => ({
@@ -11,6 +20,17 @@ const defaultClassNames = () => ({
   bodyScroll: '',
   foot: '',
 });
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
 
 export default {
   components: {
@@ -36,7 +56,7 @@ export default {
       default: null,
     },
   },
-  setup(props, context) {
+  setup(props, { slots }) {
     const state = reactive({
       head: {
         value: null,
@@ -47,6 +67,7 @@ export default {
       bodyScroll: {
         value: null,
       },
+      slots: {},
     });
 
     const head = ref(null);
@@ -59,21 +80,33 @@ export default {
     });
 
     const isOuterBottom = computed(() => {
-      return Boolean(context.slots.outerBottom);
+      return isSlot(state.slots.outerBottom);
     });
 
     const isHead = computed(() => {
-      return Boolean(context.slots.head);
+      return isSlot(state.slots.head);
     });
 
     const isFoot = computed(() => {
-      return Boolean(context.slots.foot);
+      return isSlot(state.slots.foot);
     });
 
     onMounted(() => {
       state.head.value = head;
       state.body.value = body;
       state.bodyScroll.value = bodyScroll;
+    });
+
+    onBeforeMount(() => {
+      state.slots.outerBottom = slots.outerBottom;
+      state.slots.head = slots.head;
+      state.slots.foot = slots.foot;
+    });
+
+    onUpdated(() => {
+      state.slots.outerBottom = slots.outerBottom;
+      state.slots.head = slots.head;
+      state.slots.foot = slots.foot;
     });
 
     provide('popupStyleModule', useCssModule());

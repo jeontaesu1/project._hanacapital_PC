@@ -102,12 +102,9 @@ export default {
 
 <template>
   <UiLayer ref="layer" :onAfterClosed="state.onAfterClosed">
-    <AlertPopup
-      :forceHeadHide="!state.title.length"
-      :forceBodyHide="!state.message[0].length"
-    >
+    <AlertPopup>
       <template v-slot:head>
-        <PopupTitle>{{ state.title }}</PopupTitle>
+        <PopupTitle v-if="state.title.length">{{ state.title }}</PopupTitle>
       </template>
 
       <PopupText v-if="state.message[0].length">
