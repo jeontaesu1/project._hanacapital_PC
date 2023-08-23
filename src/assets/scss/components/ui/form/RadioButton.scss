@@ -234,5 +234,12 @@
         margin-left: 6px;
       }
     }
+
+    &-quaternary {
+      .radio__object + .radio__text,
+      .radio__text + .radio__object {
+        margin-left: 8px;
+      }
+    }
   }
 }

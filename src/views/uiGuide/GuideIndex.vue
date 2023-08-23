@@ -1002,6 +1002,10 @@ const datas = () => [
             date: '2023.08.21',
             text: 'PF_P01_l002 마우스 버튼(보안 키패드 버튼) 삭제',
           },
+          {
+            date: '2023.08.23',
+            text: 'PF_P01_l002 공동인증서 케이스 추가',
+          },
         ],
       },
       {
@@ -1078,7 +1082,7 @@ const datas = () => [
         path: '/personal-loan/PF_P01_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.23', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',
@@ -1245,7 +1249,7 @@ const datas = () => [
         path: '/personal-loan/PF_P02_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.23', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '행복아파트론\nPF_P02_p001',
@@ -1375,7 +1379,7 @@ const datas = () => [
         path: '/personal-loan/PF_P04_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.23', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '원큐자동차담보대출\nPF_P04_p001',
@@ -1467,7 +1471,7 @@ const datas = () => [
         path: '/personal-loan/PF_P05_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [{ date: '2023.08.23', text: '비대면 개설 영역 삭제' }],
       },
       {
         depth2: '우수고객추가대출\nPF_P05_p001',
@@ -1539,6 +1543,10 @@ const datas = () => [
           {
             date: '2023.08.21',
             text: 'PF_P07_l002 마우스 버튼(보안 키패드 버튼) 삭제',
+          },
+          {
+            date: '2023.08.23',
+            text: 'PF_P07_l002 공동인증서 케이스 추가',
           },
         ],
       },
@@ -2159,7 +2167,12 @@ const datas = () => [
         path: '/online-branch/My_p05_p002',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '라디오 버튼 스타일 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -3469,34 +3482,11 @@ const datas = () => [
             date: '2023.07.19',
             text: '상품안내 내용 수정',
           },
-        ],
-      },
-      {
-        depth2: '다이렉트 오토리스\nAF_P02_p001',
-        depth3: '견적조회\nAF_P02_p002\nAF_P02_p003',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/auto/AF_P02_p002',
-        status: 'end',
-        create: '2023.06.09',
-        log: [
           {
-            date: '2023.08.21',
-            text: '마우스 버튼(보안 키패드 버튼) 삭제',
+            date: '2023.08.23',
+            text: '버튼 삭제 및 컬러 변경',
           },
         ],
-      },
-      {
-        depth2: '다이렉트 오토리스\nAF_P02_p001',
-        depth3: '리스신청',
-        depth4: '신청완료\nAF_P02_p004',
-        depth5: '',
-        depth6: '',
-        path: '/auto/AF_P02_p004',
-        status: 'end',
-        create: '2023.06.02',
-        log: [],
       },
       {
         depth2: '오토할부\nAF_P03_p001',

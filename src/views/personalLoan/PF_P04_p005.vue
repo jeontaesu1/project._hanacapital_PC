@@ -21,13 +21,9 @@ import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-
-import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
-import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -48,12 +44,9 @@ export default {
     BasicSelect,
     BasicButton,
     FormHelpText,
-    TextButton,
     NoticeText,
     ButtonList,
     ButtonListItem,
-    IconLogo,
-    IconLink,
   },
 
   setup() {
@@ -453,26 +446,6 @@ export default {
             </FormInvalid>
           </FormListItem>
         </FormList>
-
-        <div :class="$style['join']">
-          <div :class="$style['join__inner']">
-            <div :class="$style['join__icon']"><IconLogo /></div>
-            <div :class="$style['join__title']">
-              하나은행 계좌가 없으신가요?
-            </div>
-            <TextButton
-              :block="true"
-              :classNames="{
-                wrap: [$style['join__link'], 'color-gray-tertiary'],
-              }"
-            >
-              비대면 개설
-              <template v-slot:rightIcon>
-                <IconLink />
-              </template>
-            </TextButton>
-          </div>
-        </div>
       </section>
 
       <section class="row-margin-block-small">
