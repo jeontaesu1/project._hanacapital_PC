@@ -3999,22 +3999,6 @@ const datas = () => [
     ],
   },
   {
-    depth1: '제휴광장',
-    datas: [
-      {
-        depth2: '메인\nPartner_P00_p001',
-        depth3: '',
-        depth4: '',
-        depth5: '',
-        depth6: '',
-        path: '/affiliate-plaza/Partner_P00_p001',
-        status: 'end',
-        create: '2023.06.09',
-        log: [],
-      },
-    ],
-  },
-  {
     depth1: '회사소개',
     datas: [
       {

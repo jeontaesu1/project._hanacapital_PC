@@ -51,11 +51,6 @@ export default {
               </li>
               <li :class="$style['nav__item']">
                 <RouterLink to="" :class="$style['nav__link']">
-                  <span :class="$style['nav__text']">제휴광장</span>
-                </RouterLink>
-              </li>
-              <li :class="$style['nav__item']">
-                <RouterLink to="" :class="$style['nav__link']">
                   <span :class="$style['nav__text']">하나캐피탈 멤버십</span>
                 </RouterLink>
               </li>

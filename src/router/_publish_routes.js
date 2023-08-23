@@ -1748,13 +1748,6 @@ const routes = [
     component: () => import('@/views/company/Company_P05_p005.vue'),
   },
 
-  // affiliate-plaza
-  {
-    path: '/affiliate-plaza/Partner_P00_p001',
-    name: '/affiliate-plaza/Partner_P00_p001',
-    component: () => import('@/views/affiliatePlaza/Partner_P00_p001.vue'),
-  },
-
   // agent
   {
     path: '/agent/Agent_P00_p001',
