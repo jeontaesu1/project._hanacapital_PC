@@ -4662,7 +4662,12 @@ const datas = () => [
         path: '/ui-guide/agent-005',
         status: 'end',
         create: '2023.08.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'Agent_P09_l001 하단 버튼 고정 기능 제거',
+          },
+        ],
       },
       {
         depth2: '채권양수도',

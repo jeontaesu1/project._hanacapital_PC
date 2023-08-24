@@ -207,20 +207,18 @@ export default {
         </table>
       </div>
 
-      <template v-slot:foot>
-        <ButtonList
-          :wrap="true"
-          :col="5"
-          align="center"
-          :classNames="{
-            wrap: 'row-margin-none',
-          }"
-        >
-          <ButtonListItem>
-            <BasicButton size="regular">저장</BasicButton>
-          </ButtonListItem>
-        </ButtonList>
-      </template>
+      <ButtonList
+        :wrap="true"
+        :col="5"
+        align="center"
+        :classNames="{
+          wrap: 'row-margin-container-medium',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton size="regular">저장</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
     </ModalPopup>
   </UiLayer>
 </template>
