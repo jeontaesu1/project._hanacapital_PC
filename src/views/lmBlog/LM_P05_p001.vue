@@ -143,7 +143,7 @@ export default {
                   },
                   {
                     value: '3',
-                    label: '1개월',
+                    label: '2주',
                   },
                 ]"
                 title="조회기간"
