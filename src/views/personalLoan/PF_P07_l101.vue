@@ -57,9 +57,11 @@ export default {
             </div>
             <div class="flex-box__cell">
               <TextButton
+                iconSize="regular"
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 tagName="a"
                 href="/foo/bar.pdf"
                 download
@@ -71,7 +73,7 @@ export default {
               </TextButton>
             </div>
           </div>
-          <p class="text-body-3 color-gray-tertiary font-weight-regular">
+          <p class="text-body-3 color-gray-tertiary">
             본인은 하나캐피탈 주식회사(이하 “캐피탈”이라 합니다.)와 아래의
             조건에 따라 여신거래를 함께 함에 있어 “여신거래기본약관(가계용)“,
             “인터넷 서비스 이용약관“이 적용됨을 승인하고 다음 각 조항을
@@ -86,9 +88,11 @@ export default {
             </div>
             <div class="flex-box__cell">
               <TextButton
+                iconSize="regular"
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 tagName="a"
                 href="/foo/bar.pdf"
                 download
@@ -100,7 +104,7 @@ export default {
               </TextButton>
             </div>
           </div>
-          <p class="text-body-3 color-gray-tertiary font-weight-regular">
+          <p class="text-body-3 color-gray-tertiary">
             근질권설정자(이하 “설정자”라고 합니다.)는 여신거래 기본 약관을
             승인하고, 이 계약서 끝부분 “담보목적물 목록”란에 기재한 채권, 물건,
             증권 등 (이하 “담보목적물“이라 합니다.)에 다음 내용으로 근질권을
@@ -115,9 +119,11 @@ export default {
             </div>
             <div class="flex-box__cell">
               <TextButton
+                iconSize="regular"
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 tagName="a"
                 href="/foo/bar.pdf"
                 download
@@ -129,7 +135,7 @@ export default {
               </TextButton>
             </div>
           </div>
-          <p class="text-body-3 color-gray-tertiary font-weight-regular">
+          <p class="text-body-3 color-gray-tertiary">
             이 여신거래기본약관은 하나캐피탈주식회사와 거래처(이하 “채무자“라
             합니다.)와의 상호신뢰를 바탕으로 여신거래의 원활하고 공정한 처리를
             위하여 만들어진 것입니다.<br />
@@ -145,9 +151,11 @@ export default {
             </div>
             <div class="flex-box__cell">
               <TextButton
+                iconSize="regular"
                 textSize="regular"
                 theme="secondary"
                 :underline="true"
+                :block="true"
                 tagName="a"
                 href="/foo/bar.pdf"
                 download
@@ -159,7 +167,7 @@ export default {
               </TextButton>
             </div>
           </div>
-          <p class="text-body-3 color-gray-tertiary font-weight-regular">
+          <p class="text-body-3 color-gray-tertiary">
             이 약관은 하나캐피탈주식회사(이하 “회사“라 한다)가 운영하는
             온라인서비스(이하 “서비스”라 한다)를 이용함에 있어 이용자의
             권리·의무 및 책임사항과 서비스 이용에 대한 기타 필요한 사항을
