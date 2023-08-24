@@ -242,31 +242,6 @@ export default {
 
       const html = document.getElementsByTagName('html')[0];
       const body = document.getElementsByTagName('body')[0];
-      const preOpenLayers = filter.call(
-        document.getElementsByClassName($style['layer--opened']),
-        (item) => {
-          return layer.value !== item;
-        }
-      );
-      const preOpenLayer = (() => {
-        if (!preOpenLayers.length) return null;
-
-        const higherZIndex = (() => {
-          const arr = [];
-          for (let i = 0; i < preOpenLayers.length; i++) {
-            arr.push(preOpenLayers[i].style.zIndex);
-          }
-          arr.sort();
-          return arr[arr.length - 1];
-        })();
-
-        return filter.call(preOpenLayers, (item) => {
-          return item.style.zIndex === higherZIndex;
-        })[0];
-      })();
-      const preOpenLayerOhterElements = preOpenLayer
-        ? preOpenLayer.querySelectorAll('[data-ui-js="hidden"]')
-        : [];
 
       clearTimeout(timer);
       state.speed = speed;
@@ -276,6 +251,31 @@ export default {
       nextTick(() => {
         timer = setTimeout(function () {
           const { opener } = state;
+          const preOpenLayers = filter.call(
+            document.getElementsByClassName($style['layer--opened']),
+            (item) => {
+              return layer.value !== item;
+            }
+          );
+          const preOpenLayer = (() => {
+            if (!preOpenLayers.length) return null;
+
+            const higherZIndex = (() => {
+              const arr = [];
+              for (let i = 0; i < preOpenLayers.length; i++) {
+                arr.push(preOpenLayers[i].style.zIndex);
+              }
+              arr.sort();
+              return arr[arr.length - 1];
+            })();
+
+            return filter.call(preOpenLayers, (item) => {
+              return item.style.zIndex === higherZIndex;
+            })[0];
+          })();
+          const preOpenLayerOhterElements = preOpenLayer
+            ? preOpenLayer.querySelectorAll('[data-ui-js="hidden"]')
+            : [];
           state.display = 'none';
 
           if (preOpenLayer) {
