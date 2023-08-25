@@ -1907,6 +1907,17 @@ const datas = () => [
       },
       {
         depth2: '메인\nMI_P00_p001',
+        depth3: '계약미보유,\n종료계약만 보유',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/online-branch/MI_P00_p001_empty',
+        status: 'end',
+        create: '2023.08.25',
+        log: [],
+      },
+      {
+        depth2: '메인\nMI_P00_p001',
         depth3: '팝업',
         depth4: '',
         depth5: '',
