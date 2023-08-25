@@ -115,18 +115,12 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -216,18 +210,12 @@ export default {
               <h3 class="text-title-2 font-weight-medium">
                 리스[금융] 20고5678
               </h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -310,18 +298,12 @@ export default {
               <h3 class="text-title-2 font-weight-medium">
                 리스[운용] 20고5678
               </h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -369,18 +351,12 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">오토론 20고5678</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -443,18 +419,12 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">오토론 20고5678</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <RoundStatus size="large" :block="true">종료</RoundStatus>
@@ -488,18 +458,12 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">중고차론 20고5678</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">BMW 435d</div>
-                  </li>
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -562,15 +526,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">신용대출</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -633,15 +591,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">아파트담보대출</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -704,15 +656,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">스탁론(키움증권)</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -791,15 +737,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">담보대출</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -862,15 +802,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">내구재</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -918,15 +852,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">의료기리스</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -974,15 +902,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">산업재/선박리스</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -1030,15 +952,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">건설상용금융</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">
-                      L99999999999999
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <button type="button" :class="$style['logs__link']">
@@ -1101,13 +1017,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">업체명</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">품목명</div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                품목명
+              </p>
             </div>
           </div>
 
@@ -1150,13 +1062,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">업체명</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">품목명</div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                품목명
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <RoundStatus size="large" :block="true">종료</RoundStatus>
@@ -1195,13 +1103,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">업체명</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">품목명</div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                품목명
+              </p>
             </div>
           </div>
 
@@ -1244,13 +1148,9 @@ export default {
           <div :class="$style['logs__row']">
             <div :class="$style['logs__contents']">
               <h3 class="text-title-2 font-weight-medium">업체명</h3>
-              <div :class="[$style['division-info'], 'row-margin-item-small']">
-                <ul :class="$style['division-info__list']">
-                  <li :class="$style['division-info__item']">
-                    <div class="text-body-3 color-gray-tertiary">품목명</div>
-                  </li>
-                </ul>
-              </div>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                품목명
+              </p>
             </div>
             <div :class="$style['logs__right']">
               <RoundStatus size="large" :block="true">종료</RoundStatus>

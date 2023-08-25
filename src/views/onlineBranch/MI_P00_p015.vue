@@ -149,20 +149,12 @@ export default {
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    팰리세이드 디젤 2
-                  </div>
-                </li>
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              팰리세이드 디젤 2
+            </p>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
           </BasicBoxHeadLeft>
         </BasicBoxHead>
 
@@ -585,7 +577,3 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p015.scss';
-</style>

@@ -1961,7 +1961,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p002',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -1977,6 +1982,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '유의사항 추가',
           },
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
         ],
       },
       {
@@ -1988,7 +1997,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p004',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2021,7 +2035,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p007',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2054,7 +2073,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p010',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2087,7 +2111,12 @@ const datas = () => [
         path: '/online-branch/My_p04_p001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2120,7 +2149,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p013',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2131,7 +2165,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p014',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2142,7 +2181,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p015',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
