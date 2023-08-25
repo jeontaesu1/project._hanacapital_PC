@@ -140,7 +140,7 @@ export default {
             </td>
             <td class="title required">주민등록번호</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" value="123456-1******" />
                 <button class="btn btn-s03">확인</button>
               </div>
@@ -157,14 +157,14 @@ export default {
             </td>
             <td class="title">사업자번호</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" value="" disabled />
                 <button class="btn btn-s04">확인</button>
               </div>
             </td>
             <td class="title">물품단가/수령</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" class="rt" value="840,000" disabled />원
                 <input type="text" class="rt" value="1" disabled />개
               </div>
@@ -199,14 +199,14 @@ export default {
             </td>
             <td class="title required">신용정보조회동의</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" value="온라인(SMS)" disabled />
                 <button class="btn btn-s03">선택</button>
               </div>
             </td>
             <td class="title">물품구입금액</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" class="rt" value="840,000" disabled />원
               </div>
             </td>
@@ -214,7 +214,7 @@ export default {
           <tr>
             <td class="title required">거래구분/관계</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <SimpleSelect
                   :options="[
                     {
@@ -242,7 +242,7 @@ export default {
             </td>
             <td class="title">할부신청금액</td>
             <td>
-              <div class="flex-container">
+              <div class="flex-container jcfs">
                 <input type="text" class="rt" value="840,000" disabled />원
               </div>
             </td>
@@ -343,7 +343,7 @@ export default {
           <tr class="hoverBgGray">
             <td class="txt-center">
               <div class="check-container">
-                <label class="flex-container">
+                <label class="flex-container jcfs">
                   <input type="checkbox" name="ok" />
                   <span @click="select($event)"></span>
                 </label>
@@ -357,7 +357,7 @@ export default {
           <tr class="hoverBgGray">
             <td class="txt-center">
               <div class="check-container">
-                <label class="flex-container">
+                <label class="flex-container jcfs">
                   <input type="checkbox" name="ok" />
                   <span></span>
                 </label>
