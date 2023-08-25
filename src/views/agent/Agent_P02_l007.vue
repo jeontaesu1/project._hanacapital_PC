@@ -39,6 +39,8 @@ export default {
       byte.value = b;
     }
 
+    byteLength(textarea.value)
+
     return {
       layer,
       byte,
