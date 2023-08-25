@@ -157,6 +157,7 @@ export default {
       layer,
       toggle,
       wrapClick,
+      close,
     };
   },
 };
@@ -211,6 +212,7 @@ export default {
                 :to="item.to"
                 :target="item.target"
                 :class="[$style['menu__link'], customClassNames.link]"
+                @click="close"
               >
                 {{ item.text }}
               </RouterLink>
