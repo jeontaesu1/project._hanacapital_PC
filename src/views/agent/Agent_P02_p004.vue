@@ -819,24 +819,24 @@ export default {
               <td>
                 <div class="flex-container jcfs">
                   <div class="flex-box">
-	                <div class="flex-box__cell">
-		              <SimpleSelect
-			            :options="[
+                    <div class="flex-box__cell">
+                      <SimpleSelect
+                        :options="[
                           {
                             value: '1',
                             label: '무이자',
                           },
                         ]"
-			            title="조회기간"
-			            defaultValue="1"
-			            :classNames="{ wrap: 'input-width-small' }"
-		              />
-	                </div>
-	                <div class="flex-box__cell">
-		              <SimpleInput
-			            :classNames="{ wrap: 'input-width-regular' }"
-		              />
-	                </div>
+                        title="조회기간"
+                        defaultValue="1"
+                        :classNames="{ wrap: 'input-width-small' }"
+                      />
+                    </div>
+                    <div class="flex-box__cell">
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-regular' }"
+                      />
+                    </div>
                   </div>
                 </div>
               </td>
@@ -1101,26 +1101,26 @@ export default {
               <td class="title" colspan="2">외국인여부/국적</td>
               <td>
                 <div class="flex-container jcfs">
-	              <div class="flex-box">
-		            <div class="flex-box__cell">
-			          <SimpleSelect
-				        :options="[
+                  <div class="flex-box">
+                    <div class="flex-box__cell">
+                      <SimpleSelect
+                        :options="[
                           {
                             value: '1',
                             label: '내국인',
                           },
                         ]"
-				        title="조회기간"
-				        defaultValue="1"
-				        :classNames="{ wrap: 'input-width-small' }"
-			          />
-		            </div>
-		              <div class="flex-box__cell">
-			            <SimpleInput
-				          :classNames="{ wrap: 'input-width-small' }"
-			            />
-		              </div>
-	                </div>
+                        title="조회기간"
+                        defaultValue="1"
+                        :classNames="{ wrap: 'input-width-small' }"
+                      />
+                    </div>
+                    <div class="flex-box__cell">
+                      <SimpleInput
+                        :classNames="{ wrap: 'input-width-small' }"
+                      />
+                    </div>
+                  </div>
                   <button class="btn btn-primary">검색</button>
                 </div>
               </td>
