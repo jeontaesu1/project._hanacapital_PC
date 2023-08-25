@@ -71,7 +71,7 @@
   }
 
   &__contents {
-    @include font-size-head(18);
+    @include font-size-head(16);
     color: $color-gray-80;
 
     &::before,

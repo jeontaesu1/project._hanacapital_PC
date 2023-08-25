@@ -511,7 +511,12 @@ const datas = () => [
         path: '/customer/Customer_P01_p001',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '아코디언 오픈 시 노출되는 텍스트 크기 수정',
+          },
+        ],
       },
       {
         depth2: '고객상담',
@@ -3870,7 +3875,12 @@ const datas = () => [
         path: '/membership/MI_P03_p001',
         status: 'end',
         create: '2023.06.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '아코디언 오픈 시 노출되는 텍스트 크기 수정',
+          },
+        ],
       },
       {
         depth2: '멤버십 안내\nMI_P03_p002',
