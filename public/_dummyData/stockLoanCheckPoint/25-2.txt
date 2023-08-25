@@ -1,0 +1,12 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[1581]대출가능금액 조회</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000004_tms_20230222_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청 전 키움증권 HTS[1581]에서 대출가능금액을 확인하시기 바랍니다.</p>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000004_tms_20230222_kiwoom-hts-img01.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

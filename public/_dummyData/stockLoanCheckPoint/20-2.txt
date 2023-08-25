@@ -1,0 +1,14 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[5997] 제휴대출 서비스 안내 및 신청</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000009_tms_20161111_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 신한금융투자 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>			
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000009_tms_20161111_shin-hts-img01.png" alt="신청" />
+				<img src="/utils/res/n/stockloan_2016040600000009_tms_20161111_shin-hts-img02.png" alt="신청" />
+				<img src="/utils/res/n/stockloan_2016040600000009_tms_20161111_shin-hts-img03.png" alt="신청" />
+			</div>
+		</div>
+	</div>

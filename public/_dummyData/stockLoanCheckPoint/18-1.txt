@@ -1,0 +1,12 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[7800]대출가능금액 조회</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000011_tms_20170214_/utils/res/n/stockloan-tms-2016050800000007-pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청 전 SK증권 HTS[7800]에서 대출가능금액을 확인하시기 바랍니다.</p>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000011_tms_20170214_/utils/res/n/stockloan-tms-2016050800000007-hana-hts-img0718.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,16 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[0894]금융거래정보제공/임의처분동의서</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000014_tms_20161125_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 하나금융투자 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<ol>
+				<li>1. HTS[0894]금융거래정보제공/임의처분동의서 실행<br />
+				&nbsp;&nbsp;&nbsp;하나금융투자 HTS > 계좌정보 > 연계대출 > HTS[0894]</li>
+			</ol>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000014_tms_20161125_hana-hts-img01.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>
