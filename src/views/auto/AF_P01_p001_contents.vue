@@ -203,7 +203,7 @@ export default {
               <BasicBox theme="senary">
                 <div class="flex-box">
                   <div class="flex-box__cell flex-1">
-                    <h3 class="text-body-1 font-weight-light">카니발</h3>
+                    <h3 class="text-body-1 font-weight-light">스포티지</h3>
                     <p class="text-title-1 font-weight-bold row-margin-small">
                       월 350,000 원~
                     </p>
@@ -218,7 +218,7 @@ export default {
               <BasicBox theme="senary">
                 <div class="flex-box">
                   <div class="flex-box__cell flex-1">
-                    <h3 class="text-body-1 font-weight-light">카니발</h3>
+                    <h3 class="text-body-1 font-weight-light">아반떼</h3>
                     <p class="text-title-1 font-weight-bold row-margin-small">
                       월 350,000 원~
                     </p>
@@ -233,7 +233,7 @@ export default {
               <BasicBox theme="senary">
                 <div class="flex-box">
                   <div class="flex-box__cell flex-1">
-                    <h3 class="text-body-1 font-weight-light">카니발</h3>
+                    <h3 class="text-body-1 font-weight-light">K5</h3>
                     <p class="text-title-1 font-weight-bold row-margin-small">
                       월 350,000 원~
                     </p>
@@ -248,7 +248,7 @@ export default {
               <BasicBox theme="senary">
                 <div class="flex-box">
                   <div class="flex-box__cell flex-1">
-                    <h3 class="text-body-1 font-weight-light">카니발</h3>
+                    <h3 class="text-body-1 font-weight-light">쏘나타</h3>
                     <p class="text-title-1 font-weight-bold row-margin-small">
                       월 350,000 원~
                     </p>
@@ -446,8 +446,8 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    잔여렌트료 = 앞면표기 “월렌트료“ X (미청구 잔여개월 수 – 1
-                    개월) + 해지시점 당월
+                    잔여렌트료 = 앞면표기 “월렌트료” X (미청구 잔여개월 수 –
+                    1개월) + 해지시점 당월 잔여렌트
                   </div>
                 </li>
               </ul>

@@ -106,7 +106,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
                 <div :class="$style['product-detail__desc']">
-                  연 11.2 ~ 19.9%
+                  연 6.9% ~ 연 16.5%
                 </div>
               </div>
             </li>
@@ -116,7 +116,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
-                <div :class="$style['product-detail__desc']">24 ~ 60개월</div>
+                <div :class="$style['product-detail__desc']">24 ~ 72개월</div>
               </div>
             </li>
           </ul>
@@ -188,7 +188,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      최저 연11.2%~최고 연 19.9%
+                      연 6.9% ~ 연 16.5%
                     </div>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      24개월 ~ 60개월
+                      24개월 ~ 72개월
                     </div>
                   </div>
                 </div>

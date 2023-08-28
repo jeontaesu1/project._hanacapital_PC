@@ -19,6 +19,8 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
@@ -48,6 +50,8 @@ export default {
     InputBlockCell,
     BasicInput,
     FormInvalidMessage,
+    FormHelpText,
+    BasicDatepicker,
     SecurityInput,
     BoxCheckList,
     BoxCheckListItem,
@@ -74,6 +78,9 @@ export default {
       apartmentInfoError: false,
       setAmountError: false,
       residenceError: false,
+      workplaceNameError: false,
+      businessNumberError: false,
+      dayError: false,
     });
 
     onMounted(() => {
@@ -177,7 +184,11 @@ export default {
         </FormInvalid>
       </FormListItem>
 
-      <FormListItem titleText="소득구분" :forceFocus="true">
+      <FormListItem
+        titleText="소득구분"
+        :forceFocus="true"
+        :classNames="{ item: 'row-margin-container-medium' }"
+      >
         <FormInvalid :error="state.incomeError">
           <BoxCheckList>
             <BoxCheckListItem>
@@ -211,6 +222,53 @@ export default {
           <FormInvalidMessage>Error Message</FormInvalidMessage>
         </FormInvalid>
       </FormListItem>
+
+      <!-- Case : '자영업자' 선택 시 노출 -->
+      <FormListItem titleText="상호명" target="#PF_P02_p003_workplaceName">
+        <FormInvalid :error="state.workplaceNameError">
+          <InputBlock :error="state.workplaceNameError">
+            <InputBlockCell :flexible="true">
+              <BasicInput title="상호명" id="PF_P02_p003_workplaceName" />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem titleText="사업자번호" target="#PF_P02_p003_businessNumber">
+        <FormInvalid :error="state.businessNumberError">
+          <InputBlock :error="state.businessNumberError">
+            <InputBlockCell :flexible="true">
+              <BasicInput
+                pattern="\d*"
+                title="사업자번호"
+                id="PF_P02_p003_businessNumber"
+              />
+            </InputBlockCell>
+            <template v-slot:right>
+              <BasicButton size="small" theme="quaternary">확인</BasicButton>
+            </template>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+          <FormHelpText>‘-’를 제외하고 입력해주세요.</FormHelpText>
+        </FormInvalid>
+      </FormListItem>
+
+      <FormListItem titleText="사업개시일" target="#PF_P02_p003_day_Button">
+        <FormInvalid :error="state.dayError">
+          <InputBlock :error="state.dayError">
+            <InputBlockCell :flexible="true">
+              <BasicDatepicker
+                title="사업개시일"
+                id="PF_P02_p003_day"
+                buttonId="PF_P02_p003_day_Button"
+              />
+            </InputBlockCell>
+          </InputBlock>
+          <FormInvalidMessage>Error Message</FormInvalidMessage>
+        </FormInvalid>
+      </FormListItem>
+      <!-- // Case : '자영업자' 선택 시 노출 -->
     </FormList>
 
     <!-- Case : 다음 누른 후 비노출 -->
