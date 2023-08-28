@@ -35,9 +35,8 @@
       box-sizing: border-box;
       border: 1px solid $color-gray-30;
       border-radius: 50%;
-      outline: 0 solid rgba($color-navy-50, 0);
       background-color: rgba($color-white, 1);
-      transition: border-color 0.2s, background-color 0.2s, outline 0.2s;
+      transition: border-color 0.2s, background-color 0.2s;
 
       svg {
         display: block;
@@ -65,12 +64,8 @@
         }
       }
 
-      .checkbox__input:focus + .checkbox__label & {
-        outline: 4px solid rgba($color-navy-50, 0.08);
-      }
-
-      .checkbox__input:active + .checkbox__label & {
-        outline: 4px solid rgba($color-navy-50, 0.2);
+      .checkbox__input:focus-visible + .checkbox__label & {
+        outline: 2px dotted;
       }
 
       .checkbox__input[disabled] + .checkbox__label & {
@@ -90,10 +85,6 @@
         svg {
           opacity: 1;
         }
-      }
-
-      .checkbox__input[disabled]:active + .checkbox__label & {
-        outline: none;
       }
     }
   }
@@ -162,16 +153,6 @@
             fill: $color-navy-50;
           }
         }
-      }
-
-      .checkbox__input:focus + .checkbox__label .checkbox__object-inner {
-        outline: none;
-        background-color: rgba($color-navy-50, 0.08);
-      }
-
-      .checkbox__input:active + .checkbox__label .checkbox__object-inner {
-        outline: none;
-        background-color: rgba($color-navy-50, 0.2);
       }
 
       .checkbox__input[disabled] + .checkbox__label .checkbox__object-inner {

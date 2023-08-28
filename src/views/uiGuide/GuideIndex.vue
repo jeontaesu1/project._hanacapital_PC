@@ -511,7 +511,12 @@ const datas = () => [
         path: '/customer/Customer_P01_p001',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '아코디언 오픈 시 노출되는 텍스트 크기 수정',
+          },
+        ],
       },
       {
         depth2: '고객상담',
@@ -1548,6 +1553,14 @@ const datas = () => [
             date: '2023.08.23',
             text: 'PF_P07_l002 공동인증서 케이스 추가',
           },
+          {
+            date: '2023.08.24',
+            text: '팝업추가\n- PF_P07_l101 약관보기 팝업',
+          },
+          {
+            date: '2023.08.25',
+            text: '팝업추가\n- PF_P07_l301 대출 전 주요 체크포인트 팝업',
+          },
         ],
       },
       {
@@ -1899,6 +1912,17 @@ const datas = () => [
       },
       {
         depth2: '메인\nMI_P00_p001',
+        depth3: '계약미보유,\n종료계약만 보유',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/online-branch/MI_P00_p001_empty',
+        status: 'end',
+        create: '2023.08.25',
+        log: [],
+      },
+      {
+        depth2: '메인\nMI_P00_p001',
         depth3: '팝업',
         depth4: '',
         depth5: '',
@@ -1942,7 +1966,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p002',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -1958,6 +1987,10 @@ const datas = () => [
             date: '2023.08.11',
             text: '유의사항 추가',
           },
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
         ],
       },
       {
@@ -1969,7 +2002,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p004',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2002,7 +2040,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p007',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2035,7 +2078,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p010',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2068,7 +2116,12 @@ const datas = () => [
         path: '/online-branch/My_p04_p001',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2101,7 +2154,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p013',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2112,7 +2170,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p014',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -2123,7 +2186,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p015',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '모델명, 계약번호 표기법 변경',
+          },
+        ],
       },
       {
         depth2: '계약정보',
@@ -3873,7 +3941,12 @@ const datas = () => [
         path: '/membership/MI_P03_p001',
         status: 'end',
         create: '2023.06.21',
-        log: [],
+        log: [
+          {
+            date: '2023.08.25',
+            text: '아코디언 오픈 시 노출되는 텍스트 크기 수정',
+          },
+        ],
       },
       {
         depth2: '멤버십 안내\nMI_P03_p002',
@@ -4666,7 +4739,12 @@ const datas = () => [
         path: '/ui-guide/agent-005',
         status: 'end',
         create: '2023.08.16',
-        log: [],
+        log: [
+          {
+            date: '2023.08.24',
+            text: 'Agent_P09_l001 하단 버튼 고정 기능 제거',
+          },
+        ],
       },
       {
         depth2: '채권양수도',

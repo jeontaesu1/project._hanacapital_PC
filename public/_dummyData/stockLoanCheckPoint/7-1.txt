@@ -1,0 +1,11 @@
+	<div class="body">
+		<div class="tit">
+			<span>NH투자증권 개인신용정보제공 / 활용동의서 HTS[8922]</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2020020700000002_tms_20200207_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2020020700000002_tms_20200207_woori-hts-img01.gif" alt="신청" />
+			</div>
+		</div>
+	</div>

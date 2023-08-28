@@ -1,0 +1,12 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[8052]연계신용거래 서비스 이용 약관</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_tms_2016040600000019_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 유안타증권 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_tms_2016040600000019_dy-hts-img01.gif" alt="신청" />
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,15 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[0950] 개인신용정보제공동의서/연계신용서비스약관/임의처분동의서 등</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2020040200000001_tms_20200525_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 대신증권 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<ol>
+				<li>1. HTS[0950] 연계신용대출 이용등록/해지 선택</li>
+			</ol>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2020040200000001_tms_20200525_ds-hts-img01.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

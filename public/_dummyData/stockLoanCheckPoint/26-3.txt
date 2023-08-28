@@ -1,0 +1,16 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[0889]대출가능금액 조회</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000003_tms_20220708_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 하나증권 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<ol>
+				<li>3. HTS[0889]대출가능금액 조회<br />
+				&nbsp;&nbsp;&nbsp;하나증권 HTS > 계좌정보 > 연계대출 > HTS[0889]</li>
+			</ol>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000003_tms_20220708_hana-hts-img-0889.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

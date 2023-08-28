@@ -210,22 +210,16 @@ export default {
                 <h3 class="text-title-2 font-weight-medium">
                   오토리스 20고5678
                 </h3>
-                <div
-                  :class="[$style['division-info'], 'row-margin-item-small']"
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="text-body-3 color-gray-tertiary">
-                        BMW 435d
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="text-body-3 color-gray-tertiary">
-                        L99999999999999
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 
@@ -281,22 +275,16 @@ export default {
                 <h3 class="text-title-2 font-weight-medium">
                   오토리스 20고5678
                 </h3>
-                <div
-                  :class="[$style['division-info'], 'row-margin-item-small']"
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
                 >
-                  <ul :class="$style['division-info__list']">
-                    <li :class="$style['division-info__item']">
-                      <div class="text-body-3 color-gray-tertiary">
-                        BMW 435d
-                      </div>
-                    </li>
-                    <li :class="$style['division-info__item']">
-                      <div class="text-body-3 color-gray-tertiary">
-                        L99999999999999
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
               </BasicBoxHeadLeft>
             </BasicBoxHead>
 

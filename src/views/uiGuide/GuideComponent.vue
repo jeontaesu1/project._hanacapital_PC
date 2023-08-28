@@ -398,7 +398,13 @@ export default {
             <PopupText>// contents</PopupText>
             <PopupText>최대 높이 800px</PopupText>
 
-            <BasicButton @click="layerOpenTest002">높이 고정 팝업</BasicButton>
+            <BasicButton
+              @click="
+                layerSlotProps.close();
+                layerOpenTest002();
+              "
+              >높이 고정 팝업</BasicButton
+            >
 
             <div style="height: 1500px; border: 10px dotted #666">
               스크롤 생기게 하기 위한 더미

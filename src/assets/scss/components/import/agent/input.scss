@@ -6,6 +6,7 @@ input {
   border-radius: 8px;
   color: $color-black;
   font-size: 16px;
+  letter-spacing: 1px;
 
   &:disabled {
     background-color: $color-gray-10;

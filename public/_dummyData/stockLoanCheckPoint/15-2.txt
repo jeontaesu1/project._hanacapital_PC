@@ -1,0 +1,16 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[0547]개인신용정보제공/활용동의서</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2016040600000014_tms_20161129_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 하나금융투자 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<ol>
+				<li>2. HTS[0547]개인신용정보제공/활용동의서 실행<br />
+				&nbsp;&nbsp;&nbsp;하나금융투자 HTS > 온라인 창구 > 고객정보 조회 변경 > HTS[0547]</li>
+			</ol>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2016040600000014_tms_20161129_hana-hts-img02.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

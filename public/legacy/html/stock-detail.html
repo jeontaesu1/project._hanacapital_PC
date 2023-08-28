@@ -37,6 +37,10 @@
             $('a').on('click.stockDetailData', function () {
               triggerLoad();
             });
+
+            $('img').on('load.stockDetailData', function () {
+              triggerLoad();
+            });
           },
         });
       });

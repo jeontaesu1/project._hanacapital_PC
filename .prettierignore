@@ -5,3 +5,7 @@ dist-ssr
 *.local
 # .eslintcache
 HomeView.vue
+
+public/_dummyData/
+public/legacy/css/
+public/legacy/js/

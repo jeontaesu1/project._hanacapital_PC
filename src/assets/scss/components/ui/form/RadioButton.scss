@@ -46,9 +46,8 @@
         border: 1px solid $color-gray-30;
         border-radius: 50%;
         box-sizing: border-box;
-        outline: 0 solid rgba($color-navy-50, 0);
         background-color: rgba($color-white, 1);
-        transition: border-color 0.2s, background-color 0.2s, outline 0.2s;
+        transition: border-color 0.2s, background-color 0.2s;
       }
 
       &::after {
@@ -77,15 +76,9 @@
         }
       }
 
-      .radio__input:focus + .radio__label & {
+      .radio__input:focus-visible + .radio__label & {
         &::before {
-          outline: 4px solid rgba($color-navy-50, 0.08);
-        }
-      }
-
-      .radio__input:active + .radio__label & {
-        &::before {
-          outline: 4px solid rgba($color-navy-50, 0.2);
+          outline: 2px dotted;
         }
       }
 
@@ -103,12 +96,6 @@
       .radio__input[disabled]:checked + .radio__label & {
         &::after {
           background-color: rgba($color-gray-40, 1);
-        }
-      }
-
-      .radio__input[disabled]:active + .radio__label & {
-        &::before {
-          outline: none;
         }
       }
     }

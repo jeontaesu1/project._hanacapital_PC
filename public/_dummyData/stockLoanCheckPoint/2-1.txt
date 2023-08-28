@@ -1,0 +1,15 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[1080] 제휴매입자금핵심설명서</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2021020400000001_tms_20210204_pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청하시기 전에 KB증권 HTS를 방문하셔서 아래의 절차를 반드시 진행하여 주시기 바랍니다.</p>
+			<ol>
+				<li>1. HTS[1080] 핵심설명서(연계신용거래) 확인</li>
+			</ol>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2021020400000001_tms_20210204_hts1080.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>
