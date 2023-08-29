@@ -105,10 +105,8 @@ export default {
                 <IconCommision />
               </div>
               <div :class="$style['product-detail__block']">
-                <div :class="$style['product-detail__title']">
-                  중도상환수수료
-                </div>
-                <div :class="$style['product-detail__desc']">0원</div>
+                <div :class="$style['product-detail__title']">서류</div>
+                <div :class="$style['product-detail__desc']">무서류</div>
               </div>
             </li>
           </ul>
@@ -135,13 +133,11 @@ export default {
             />
           </div>
           <div :class="$style['product-benefit__info']">
-            <h3 :class="$style['product-benefit__title']">
-              중도상환수수료 면제!
-            </h3>
+            <h3 :class="$style['product-benefit__title']">서류 자동제출!</h3>
             <p :class="$style['product-benefit__text']">
-              언제, 얼마를 상환해도<br />
-              상환수수료가 발생하지 않습니다.<br />
-              필요 시 바로 상환하여, 이자 부담을 줄여보세요.
+              공공마이데이터, 스크래핑 서비스로<br />
+              별도 서류제출이 필요없습니다.<br />
+              (단, 일부 고객의 경우 추가 제출을 요청할 수 있습니다.)
             </p>
           </div>
         </section>
@@ -259,7 +255,73 @@ export default {
               >
                 중도상환수수료
               </h3>
-              <p class="text-title-2">없음</p>
+              <p class="text-title-2">
+                대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
+              </p>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
+                    (중도상환수수료율 - 1%) X 잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                    잔존기간/(대출기간 - 30일)
+                  </div>
+                </li>
+              </ul>
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-gray-secondary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-gray-secondary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    중도상환수수료율 : 2%
+                  </div>
+                </li>
+              </ul>
             </section>
             <section class="row-margin-contents">
               <h3
