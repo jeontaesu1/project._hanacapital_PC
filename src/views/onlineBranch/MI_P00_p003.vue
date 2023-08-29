@@ -21,6 +21,7 @@ import PaginationNav from '@/components/ui/pagination/PaginationNav.vue';
 import PaginationNavArrow from '@/components/ui/pagination/PaginationNavArrow.vue';
 import PaginationNavEllipsis from '@/components/ui/pagination/PaginationNavEllipsis.vue';
 import PaginationNavNumber from '@/components/ui/pagination/PaginationNavNumber.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     PaginationNavArrow,
     PaginationNavEllipsis,
     PaginationNavNumber,
+    RoundStatus,
   },
   setup() {
     const store = {
@@ -119,7 +121,85 @@ export default {
 
     <div class="row-margin-block-small">
       <ul class="reset-list">
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <div class="flex-box">
+                  <div class="flex-box__cell">
+                    <RoundStatus theme="nonary" size="large" :block="true">
+                      연체
+                    </RoundStatus>
+                  </div>
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <TextButton
+                      :underline="true"
+                      :block="true"
+                      :classNames="{
+                        wrap: 'color-gray-tertiary',
+                      }"
+                      >변경</TextButton
+                    >
+                  </div>
+                </div>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>대출금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>상태</KeyValueTitle>
+                <KeyValueText>정상</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>자동이체계좌</KeyValueTitle>
+                <KeyValueText>
+                  신한<br />
+                  123-123456-12345
+                </KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>최근변경일</KeyValueTitle>
+                <KeyValueText>2022.12.06</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
+        <li v-for="i in 4" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>

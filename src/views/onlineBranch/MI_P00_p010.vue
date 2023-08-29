@@ -345,7 +345,8 @@ export default {
     </ul>
     <div class="row-margin-block-small row-margin-bottom-none">
       <ul class="reset-list">
-        <li v-for="i in 10" :key="i" class="row-margin-contents">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -364,10 +365,110 @@ export default {
                 </p>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus theme="secondary" size="large" :block="true">
-                  정상
+                <RoundStatus theme="nonary" size="large" :block="true">
+                  연체
                 </RoundStatus>
               </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>이용기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>12/36</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{
+                wrap: 'row-margin-contents',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton size="regular">신청</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
+        <!-- Case : 종료, 신청 버튼 미노출 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>이용기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>12/36</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 종료, 신청 버튼 미노출 -->
+
+        <li v-for="i in 8" :key="i" class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
             </BasicBoxHead>
 
             <KeyValue :wrap="true">

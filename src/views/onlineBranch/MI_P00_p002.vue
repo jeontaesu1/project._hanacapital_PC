@@ -149,6 +149,158 @@ export default {
             </KeyValueItem>
 
             <KeyValueItem>
+              <KeyValueTitle>결제일</KeyValueTitle>
+              <KeyValueText>05일</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>결제회차</KeyValueTitle>
+              <KeyValueText>12/36</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </div>
+      </li>
+
+      <!-- Case : 연체 -->
+      <li :class="$style['logs__item']">
+        <div :class="$style['logs__block']">
+          <div :class="$style['logs__row']">
+            <div :class="$style['logs__contents']">
+              <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
+            </div>
+            <div :class="$style['logs__right']">
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RoundStatus theme="nonary" size="large" :block="true">
+                    연체
+                  </RoundStatus>
+                </div>
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <BasicHr
+            type="contents"
+            theme="quaternary"
+            className="row-margin-contents"
+          />
+
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>결제예정금액</KeyValueTitle>
+              <KeyValueText>
+                <div class="color-green">6,265,200 원</div>
+              </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>계약기간</KeyValueTitle>
+              <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>결제일</KeyValueTitle>
+              <KeyValueText>05일</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>결제회차</KeyValueTitle>
+              <KeyValueText>12/36</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </div>
+      </li>
+      <!-- // Case : 연체 -->
+
+      <!-- Case : 종료 -->
+      <li :class="$style['logs__item']">
+        <div :class="$style['logs__block']">
+          <div :class="$style['logs__row']">
+            <div :class="$style['logs__contents']">
+              <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
+            </div>
+            <div :class="$style['logs__right']">
+              <RoundStatus size="large" :block="true">종료</RoundStatus>
+            </div>
+          </div>
+
+          <BasicHr
+            type="contents"
+            theme="quaternary"
+            className="row-margin-contents"
+          />
+
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>이용기간</KeyValueTitle>
+              <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>대출원금</KeyValueTitle>
+              <KeyValueText>999,999,999 원</KeyValueText>
+            </KeyValueItem>
+          </KeyValue>
+        </div>
+      </li>
+      <!-- // Case : 종료 -->
+
+      <li :class="$style['logs__item']">
+        <div :class="$style['logs__block']">
+          <div :class="$style['logs__row']">
+            <div :class="$style['logs__contents']">
+              <h3 class="text-title-2 font-weight-medium">오토리스 20고5678</h3>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                BMW 435d
+              </p>
+              <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+                L99999999999999
+              </p>
+            </div>
+            <div :class="$style['logs__right']">
+              <button type="button" :class="$style['logs__link']">
+                <span :class="$style['logs__link-text']">상세보기</span>
+              </button>
+            </div>
+          </div>
+
+          <BasicHr
+            type="contents"
+            theme="quaternary"
+            className="row-margin-contents"
+          />
+
+          <KeyValue :wrap="true">
+            <KeyValueItem>
+              <KeyValueTitle>결제예정금액</KeyValueTitle>
+              <KeyValueText>
+                <div class="color-green">6,265,200 원</div>
+              </KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
+              <KeyValueTitle>계약기간</KeyValueTitle>
+              <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+            </KeyValueItem>
+
+            <KeyValueItem>
               <KeyValueTitle>만기일자</KeyValueTitle>
               <KeyValueText>2022.02.02</KeyValueText>
             </KeyValueItem>

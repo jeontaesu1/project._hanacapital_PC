@@ -17,6 +17,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -49,6 +51,8 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+    RoundStatus,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -75,8 +79,10 @@ export default {
     };
 
     const state = reactive({
-      smsError: false,
-      phoneError: false,
+      sms001Error: false,
+      sms002Error: false,
+      phone001Error: false,
+      phone002Error: false,
     });
 
     onMounted(() => {
@@ -175,6 +181,120 @@ export default {
 
     <div class="row-margin-block-small row-margin-bottom-none">
       <ul class="reset-list">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus theme="nonary" size="large" :block="true">
+                  연체
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>대출금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <BasicBox theme="tertiary" className="row-margin-contents">
+              <FormList>
+                <FormListItem
+                  titleText="SMS 수신"
+                  :target="`#MI_P00_p007_sms001_${i}`"
+                  :selectOnly="true"
+                >
+                  <FormInvalid :error="state.sms001Error">
+                    <InputBlock :error="state.sms001Error">
+                      <InputBlockCell :flexible="true">
+                        <BasicSelect
+                          :options="[
+                            {
+                              value: '1',
+                              label: '수신',
+                            },
+                            {
+                              value: '2',
+                              label: '미수신',
+                            },
+                          ]"
+                          title="SMS 수신"
+                          :inputId="`MI_P00_p007_sms001_${i}`"
+                          defaultValue="1"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+
+                <!-- Case : 수신 선택 시 노출  -->
+                <FormListItem
+                  titleText="연락처"
+                  :target="`#MI_P00_p007_phone001_${i}`"
+                  :selectOnly="true"
+                >
+                  <FormInvalid :error="state.phone001Error">
+                    <InputBlock :error="state.phone001Error">
+                      <InputBlockCell :flexible="true">
+                        <BasicSelect
+                          :options="[
+                            {
+                              value: '1',
+                              label: '휴대전화1 (010-1234-5678)',
+                            },
+                            {
+                              value: '2',
+                              label: '휴대전화2 (010-1234-5678)',
+                            },
+                            {
+                              value: '3',
+                              label: '휴대전화3 (010-1234-5678)',
+                            },
+                          ]"
+                          title="연락처"
+                          :inputId="`MI_P00_p007_phone001_${i}`"
+                          defaultValue="1"
+                        />
+                      </InputBlockCell>
+                    </InputBlock>
+                    <FormInvalidMessage>Error Message</FormInvalidMessage>
+                  </FormInvalid>
+                </FormListItem>
+                <!-- // Case : 수신 선택 시 노출  -->
+              </FormList>
+            </BasicBox>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
         <li v-for="i in 5" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
@@ -216,11 +336,11 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="SMS 수신"
-                  :target="`#MI_P00_p007_sms_${i}`"
+                  :target="`#MI_P00_p007_sms002_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.smsError">
-                    <InputBlock :error="state.smsError">
+                  <FormInvalid :error="state.sms002Error">
+                    <InputBlock :error="state.sms002Error">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -234,7 +354,7 @@ export default {
                             },
                           ]"
                           title="SMS 수신"
-                          :inputId="`MI_P00_p007_sms_${i}`"
+                          :inputId="`MI_P00_p007_sms002_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -246,11 +366,11 @@ export default {
                 <!-- Case : 수신 선택 시 노출  -->
                 <FormListItem
                   titleText="연락처"
-                  :target="`#MI_P00_p007_phone_${i}`"
+                  :target="`#MI_P00_p007_phone002_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.phoneError">
-                    <InputBlock :error="state.phoneError">
+                  <FormInvalid :error="state.phone002Error">
+                    <InputBlock :error="state.phone002Error">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -268,7 +388,7 @@ export default {
                             },
                           ]"
                           title="연락처"
-                          :inputId="`MI_P00_p007_phone_${i}`"
+                          :inputId="`MI_P00_p007_phone002_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>

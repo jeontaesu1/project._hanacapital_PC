@@ -14,6 +14,8 @@ import StepProgress from '@/components/ui/progress/StepProgress.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -43,6 +45,8 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+    RoundStatus,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -275,7 +279,129 @@ export default {
     <!-- Case : 지정운전자 등록이 가능한 계약 리스트가 있는 경우 -->
     <div class="row-margin-container-medium row-margin-bottom-none">
       <ul class="reset-list">
-        <li v-for="i in 10" :key="i" class="row-margin-contents">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  렌터카 159호5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  팰리세이드 디젤 2
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus theme="nonary" size="large" :block="true">
+                  연체
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>이용기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>12/36</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>정기서비스</KeyValueTitle>
+                <KeyValueText>프리미엄</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>만기일자</KeyValueTitle>
+                <KeyValueText>2023.02.02</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+
+            <ButtonList
+              :wrap="true"
+              align="center"
+              :classNames="{
+                wrap: 'row-margin-contents',
+              }"
+            >
+              <ButtonListItem>
+                <BasicButton size="regular">신청</BasicButton>
+              </ButtonListItem>
+            </ButtonList>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
+        <!-- Case : 종료, 신청 버튼 미노출 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  렌터카 159호5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  팰리세이드 디젤 2
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueText>6,265,200 원</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>이용기간</KeyValueTitle>
+                <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제일</KeyValueTitle>
+                <KeyValueText>05일</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>결제회차</KeyValueTitle>
+                <KeyValueText>12/36</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>정기서비스</KeyValueTitle>
+                <KeyValueText>프리미엄</KeyValueText>
+              </KeyValueItem>
+              <KeyValueItem>
+                <KeyValueTitle>만기일자</KeyValueTitle>
+                <KeyValueText>2023.02.02</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 종료, 신청 버튼 미노출 -->
+
+        <li v-for="i in 8" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
