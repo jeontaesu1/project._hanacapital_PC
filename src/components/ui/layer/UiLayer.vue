@@ -11,6 +11,7 @@ import {
 } from 'vue';
 
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
+import { useUiLoadingStore } from '@/stores/ui/loading';
 import { useUiLayerStore } from '@/stores/ui/layer';
 
 const defaultClassNames = () => ({
@@ -112,6 +113,7 @@ export default {
     const store = {
       ui: {
         scrollBlock: useUiScrollBlockStore(),
+        loading: useUiLoadingStore(),
         layer: useUiLayerStore(),
       },
     };
@@ -166,6 +168,7 @@ export default {
           !item.classList.contains($style['layer']) &&
           !item.closest(`.${$style['layer']}`) &&
           !item.matches(notOhterElements) &&
+          !(item === store.ui.loading.element) &&
           !layersParents.find((parent) => parent === item) &&
           !(!item.offsetWidth && !item.offsetHeight)
         );

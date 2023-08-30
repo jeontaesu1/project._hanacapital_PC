@@ -87,10 +87,13 @@ export default {
       if (!loading.value.parentNode.matches('body')) {
         body.append(loading.value);
       }
+
+      store.ui.loading.setElement(loading.value);
     });
 
     onBeforeUnmount(() => {
       loading.value.remove();
+      store.ui.loading.setElement();
     });
 
     return {

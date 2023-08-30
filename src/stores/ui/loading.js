@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 export const useUiLoadingStore = defineStore('uiLoading', {
   state: () => ({
     isShow: false,
+    element: null,
   }),
   actions: {
     show() {
@@ -14,6 +15,9 @@ export const useUiLoadingStore = defineStore('uiLoading', {
       if (this.isShow) {
         this.isShow = false;
       }
+    },
+    setElement(element = null) {
+      this.element = element;
     },
   },
 });
