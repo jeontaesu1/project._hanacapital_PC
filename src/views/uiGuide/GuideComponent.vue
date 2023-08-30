@@ -2014,6 +2014,7 @@ export default {
                     pattern="\d*"
                     title="주민등록번호 뒤 7자리 중 첫번째자리"
                     :afterDot="6"
+                    placeholder="◌"
                   />
                 </InputBlockCell>
                 <InputBlockCell>
