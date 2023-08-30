@@ -676,7 +676,3 @@ export default {
     <IF_P03_l002 ref="layer001" />
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p011.scss';
-</style>

@@ -154,7 +154,12 @@ export default {
 
       <section class="row-margin-block-small">
         <h3 class="text-title-1 row-margin-contents">
-          중도상환금액<span :class="$style['sub']">(결제하실 금액)</span>
+          <div class="flex-box">
+            <div class="flex-box__cell">중도상환금액</div>
+            <div class="flex-box__cell flex-box__cell--small">
+              <div class="text-body-1 font-weight-regular">(결제하실 금액)</div>
+            </div>
+          </div>
         </h3>
 
         <BasicBox>
@@ -217,7 +222,3 @@ export default {
     </ButtonList>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/onlineBranch/MI_P00_p012.scss';
-</style>
