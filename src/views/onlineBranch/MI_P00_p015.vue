@@ -149,7 +149,6 @@ export default {
     </PageHead>
 
     <div>
-      <!-- Case : 연체 -->
       <BasicBox className="row-margin-block-small">
         <BasicBoxHead>
           <BasicBoxHeadLeft>
@@ -161,43 +160,13 @@ export default {
               L99999999999999
             </p>
           </BasicBoxHeadLeft>
+          <!-- Case : 연체 -->
           <BasicBoxHeadRight>
             <RoundStatus theme="nonary" size="large" :block="true">
               연체
             </RoundStatus>
           </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>보험사</KeyValueTitle>
-            <KeyValueText>탄톤칙김기매니</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>가입연령</KeyValueTitle>
-            <KeyValueText>만 26세 이상</KeyValueText>
-          </KeyValueItem>
-
-          <KeyValueItem>
-            <KeyValueTitle>임직원특약</KeyValueTitle>
-            <KeyValueText>미가입</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- // Case : 연체 -->
-
-      <BasicBox className="row-margin-block-small">
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">렌터카 159호5678</h3>
-            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
-              팰리세이드 디젤 2
-            </p>
-            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
-              L99999999999999
-            </p>
-          </BasicBoxHeadLeft>
+          <!-- // Case : 연체 -->
         </BasicBoxHead>
 
         <KeyValue :wrap="true">

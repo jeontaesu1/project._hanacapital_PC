@@ -79,12 +79,9 @@ export default {
     };
 
     const state = reactive({
-      billingMethod001Error: false,
-      billingMethod002Error: false,
-      address001Error: false,
-      address002Error: false,
-      email001Error: false,
-      email002Error: false,
+      billingMethodError: [false, false, false, false, false],
+      addressError: [false, false, false, false, false],
+      emailError: [false, false, false, false, false],
     });
 
     onMounted(() => {
@@ -230,11 +227,11 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="청구방법"
-                  :target="`#MI_P00_p004_billingMethod001_${i}`"
+                  target="#MI_P00_p004_billingMethod_0"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.billingMethod001Error">
-                    <InputBlock :error="state.billingMethod001Error">
+                  <FormInvalid :error="state.billingMethodError[0]">
+                    <InputBlock :error="state.billingMethodError[0]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -268,7 +265,7 @@ export default {
                             },
                           ]"
                           title="청구방법"
-                          :inputId="`MI_P00_p004_billingMethod001_${i}`"
+                          inputId="MI_P00_p004_billingMethod_0"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -281,11 +278,11 @@ export default {
                 <!-- Case : 청구방법 우편 선택 시 노출  -->
                 <FormListItem
                   titleText="청구지주소"
-                  :target="`#MI_P00_p004_address001_${i}`"
+                  target="#MI_P00_p004_address_0"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.address001Error">
-                    <InputBlock :error="state.address001Error">
+                  <FormInvalid :error="state.addressError[0]">
+                    <InputBlock :error="state.addressError[0]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -306,7 +303,7 @@ export default {
                             },
                           ]"
                           title="청구지주소"
-                          :inputId="`MI_P00_p004_address001_${i}`"
+                          inputId="MI_P00_p004_address_0"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -319,11 +316,11 @@ export default {
                 <!-- Case : 청구방법 이메일 선택 시 노출  -->
                 <FormListItem
                   titleText="이메일주소"
-                  :target="`#MI_P00_p004_email001_${i}`"
+                  target="#MI_P00_p004_email_0"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.email001Error">
-                    <InputBlock :error="state.email001Error">
+                  <FormInvalid :error="state.emailError[0]">
+                    <InputBlock :error="state.emailError[0]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -341,7 +338,7 @@ export default {
                             },
                           ]"
                           title="이메일주소"
-                          :inputId="`MI_P00_p004_email001_${i}`"
+                          inputId="MI_P00_p004_email_0"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -356,7 +353,8 @@ export default {
           </BasicBox>
         </li>
         <!-- // Case : 연체 -->
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+
+        <li v-for="i in 4" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -397,11 +395,11 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="청구방법"
-                  :target="`#MI_P00_p004_billingMethod002_${i}`"
+                  :target="`#MI_P00_p004_billingMethod_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.billingMethod002Error">
-                    <InputBlock :error="state.billingMethod002Error">
+                  <FormInvalid :error="state.billingMethodError[i]">
+                    <InputBlock :error="state.billingMethodError[i]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -435,7 +433,7 @@ export default {
                             },
                           ]"
                           title="청구방법"
-                          :inputId="`MI_P00_p004_billingMethod002_${i}`"
+                          :inputId="`MI_P00_p004_billingMethod_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -448,11 +446,11 @@ export default {
                 <!-- Case : 청구방법 우편 선택 시 노출  -->
                 <FormListItem
                   titleText="청구지주소"
-                  :target="`#MI_P00_p004_address002_${i}`"
+                  :target="`#MI_P00_p004_address_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.address002Error">
-                    <InputBlock :error="state.address002Error">
+                  <FormInvalid :error="state.addressError[i]">
+                    <InputBlock :error="state.addressError[i]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -473,7 +471,7 @@ export default {
                             },
                           ]"
                           title="청구지주소"
-                          :inputId="`MI_P00_p004_address002_${i}`"
+                          :inputId="`MI_P00_p004_address_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -486,11 +484,11 @@ export default {
                 <!-- Case : 청구방법 이메일 선택 시 노출  -->
                 <FormListItem
                   titleText="이메일주소"
-                  :target="`#MI_P00_p004_email002_${i}`"
+                  :target="`#MI_P00_p004_email_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.email002Error">
-                    <InputBlock :error="state.email002Error">
+                  <FormInvalid :error="state.emailError[i]">
+                    <InputBlock :error="state.emailError[i]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -508,7 +506,7 @@ export default {
                             },
                           ]"
                           title="이메일주소"
-                          :inputId="`MI_P00_p004_email002_${i}`"
+                          :inputId="`MI_P00_p004_email_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>

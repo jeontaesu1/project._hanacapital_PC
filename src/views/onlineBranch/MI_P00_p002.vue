@@ -123,9 +123,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -237,7 +241,11 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <RoundStatus size="large" :block="true">종료</RoundStatus>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RoundStatus size="large" :block="true">종료</RoundStatus>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -275,9 +283,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -370,9 +382,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -458,9 +474,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -511,9 +531,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -579,7 +603,11 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <RoundStatus size="large" :block="true">종료</RoundStatus>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RoundStatus size="large" :block="true">종료</RoundStatus>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -618,9 +646,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -683,9 +715,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -748,9 +784,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -813,9 +853,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -894,9 +938,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -959,9 +1007,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1009,9 +1061,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1059,9 +1115,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1109,9 +1169,13 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <button type="button" :class="$style['logs__link']">
-                <span :class="$style['logs__link-text']">상세보기</span>
-              </button>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1219,7 +1283,11 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <RoundStatus size="large" :block="true">종료</RoundStatus>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RoundStatus size="large" :block="true">종료</RoundStatus>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1305,7 +1373,11 @@ export default {
               </p>
             </div>
             <div :class="$style['logs__right']">
-              <RoundStatus size="large" :block="true">종료</RoundStatus>
+              <div class="flex-box">
+                <div class="flex-box__cell">
+                  <RoundStatus size="large" :block="true">종료</RoundStatus>
+                </div>
+              </div>
             </div>
           </div>
 

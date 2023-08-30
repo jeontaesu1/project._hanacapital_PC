@@ -405,7 +405,7 @@ export default {
         </li>
         <!-- // Case : 연체 -->
 
-        <!-- Case : 종료, 신청 버튼 미노출 -->
+        <!-- Case : 종료 -->
         <li class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
@@ -449,7 +449,7 @@ export default {
             </KeyValue>
           </BasicBox>
         </li>
-        <!-- // Case : 종료, 신청 버튼 미노출 -->
+        <!-- // Case : 종료 -->
 
         <li v-for="i in 8" :key="i" class="row-margin-contents">
           <BasicBox>

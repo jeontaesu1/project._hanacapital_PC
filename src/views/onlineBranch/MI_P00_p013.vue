@@ -317,7 +317,7 @@ export default {
         </li>
         <!-- // Case : 종료 -->
 
-        <li v-for="i in 2" :key="i" class="row-margin-contents">
+        <li class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -472,7 +472,7 @@ export default {
         </li>
         <!-- // Case : 종료 -->
 
-        <li v-for="i in 2" :key="i" class="row-margin-contents">
+        <li class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>

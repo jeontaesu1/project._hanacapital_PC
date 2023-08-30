@@ -79,10 +79,8 @@ export default {
     };
 
     const state = reactive({
-      sms001Error: false,
-      sms002Error: false,
-      phone001Error: false,
-      phone002Error: false,
+      smsError: [false, false, false, false, false],
+      phoneError: [false, false, false, false, false],
     });
 
     onMounted(() => {
@@ -228,11 +226,11 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="SMS 수신"
-                  :target="`#MI_P00_p007_sms001_${i}`"
+                  target="#MI_P00_p007_sms_0"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.sms001Error">
-                    <InputBlock :error="state.sms001Error">
+                  <FormInvalid :error="state.smsError[0]">
+                    <InputBlock :error="state.smsError[0]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -246,7 +244,7 @@ export default {
                             },
                           ]"
                           title="SMS 수신"
-                          :inputId="`MI_P00_p007_sms001_${i}`"
+                          inputId="MI_P00_p007_sms_0"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -258,11 +256,11 @@ export default {
                 <!-- Case : 수신 선택 시 노출  -->
                 <FormListItem
                   titleText="연락처"
-                  :target="`#MI_P00_p007_phone001_${i}`"
+                  target="#MI_P00_p007_phone_0"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.phone001Error">
-                    <InputBlock :error="state.phone001Error">
+                  <FormInvalid :error="state.phoneError[0]">
+                    <InputBlock :error="state.phoneError[0]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -280,7 +278,7 @@ export default {
                             },
                           ]"
                           title="연락처"
-                          :inputId="`MI_P00_p007_phone001_${i}`"
+                          inputId="MI_P00_p007_phone_0"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -295,7 +293,7 @@ export default {
         </li>
         <!-- // Case : 연체 -->
 
-        <li v-for="i in 5" :key="i" class="row-margin-contents">
+        <li v-for="i in 4" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
               <BasicBoxHeadLeft>
@@ -336,11 +334,11 @@ export default {
               <FormList>
                 <FormListItem
                   titleText="SMS 수신"
-                  :target="`#MI_P00_p007_sms002_${i}`"
+                  :target="`#MI_P00_p007_sms_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.sms002Error">
-                    <InputBlock :error="state.sms002Error">
+                  <FormInvalid :error="state.smsError[i]">
+                    <InputBlock :error="state.smsError[i]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -354,7 +352,7 @@ export default {
                             },
                           ]"
                           title="SMS 수신"
-                          :inputId="`MI_P00_p007_sms002_${i}`"
+                          :inputId="`MI_P00_p007_sms_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>
@@ -366,11 +364,11 @@ export default {
                 <!-- Case : 수신 선택 시 노출  -->
                 <FormListItem
                   titleText="연락처"
-                  :target="`#MI_P00_p007_phone002_${i}`"
+                  :target="`#MI_P00_p007_phone_${i}`"
                   :selectOnly="true"
                 >
-                  <FormInvalid :error="state.phone002Error">
-                    <InputBlock :error="state.phone002Error">
+                  <FormInvalid :error="state.phoneError[i]">
+                    <InputBlock :error="state.phoneError[i]">
                       <InputBlockCell :flexible="true">
                         <BasicSelect
                           :options="[
@@ -388,7 +386,7 @@ export default {
                             },
                           ]"
                           title="연락처"
-                          :inputId="`MI_P00_p007_phone002_${i}`"
+                          :inputId="`MI_P00_p007_phone_${i}`"
                           defaultValue="1"
                         />
                       </InputBlockCell>

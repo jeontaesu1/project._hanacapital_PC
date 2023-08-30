@@ -218,14 +218,18 @@ export default {
                 </p>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <TextButton
-                  :underline="true"
-                  :block="true"
-                  :classNames="{
-                    wrap: 'color-gray-tertiary',
-                  }"
-                  >변경</TextButton
-                >
+                <div class="flex-box">
+                  <div class="flex-box__cell flex-box__cell--medium">
+                    <TextButton
+                      :underline="true"
+                      :block="true"
+                      :classNames="{
+                        wrap: 'color-gray-tertiary',
+                      }"
+                      >변경</TextButton
+                    >
+                  </div>
+                </div>
               </BasicBoxHeadRight>
             </BasicBoxHead>
 

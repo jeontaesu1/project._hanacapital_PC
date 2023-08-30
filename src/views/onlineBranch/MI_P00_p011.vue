@@ -164,69 +164,24 @@ export default {
 
     <div>
       <!-- Case : 스탁론일 때 -->
-      <!-- Case : 연체 -->
       <BasicBox>
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-title-2 font-weight-medium">스탁론</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">키움증권</div>
-                </li>
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              키움증권
+            </p>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
           </BasicBoxHeadLeft>
+          <!-- Case : 연체 -->
           <BasicBoxHeadRight>
             <RoundStatus theme="nonary" size="large" :block="true">
               연체
             </RoundStatus>
           </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>6,265,200 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>이용기간</KeyValueTitle>
-            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>05일</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>12/36</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-      <!-- // Case : 연체 -->
-
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">스탁론</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">키움증권</div>
-                </li>
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </BasicBoxHeadLeft>
+          <!-- // Case : 연체 -->
         </BasicBoxHead>
 
         <KeyValue :wrap="true">
@@ -255,57 +210,17 @@ export default {
         <BasicBoxHead>
           <BasicBoxHeadLeft>
             <h3 class="text-title-2 font-weight-medium">신용대출</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <p class="text-body-3 color-gray-tertiary row-margin-item-small">
+              L99999999999999
+            </p>
           </BasicBoxHeadLeft>
+          <!-- Case : 연체 -->
           <BasicBoxHeadRight>
             <RoundStatus theme="nonary" size="large" :block="true">
               연체
             </RoundStatus>
           </BasicBoxHeadRight>
-        </BasicBoxHead>
-
-        <KeyValue :wrap="true">
-          <KeyValueItem>
-            <KeyValueTitle>결제예정금액</KeyValueTitle>
-            <KeyValueText>6,265,200 원</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>이용기간</KeyValueTitle>
-            <KeyValueText>2021.02.02 ~ 2022.02.02</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>결제일</KeyValueTitle>
-            <KeyValueText>05일</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem>
-            <KeyValueTitle>결제회차</KeyValueTitle>
-            <KeyValueText>12/36</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-
-      <BasicBox>
-        <BasicBoxHead>
-          <BasicBoxHeadLeft>
-            <h3 class="text-title-2 font-weight-medium">신용대출</h3>
-            <div :class="[$style['division-info'], 'row-margin-item-small']">
-              <ul :class="$style['division-info__list']">
-                <li :class="$style['division-info__item']">
-                  <div class="text-body-3 color-gray-tertiary">
-                    L99999999999999
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </BasicBoxHeadLeft>
+          <!-- // Case : 연체 -->
         </BasicBoxHead>
 
         <KeyValue :wrap="true">
