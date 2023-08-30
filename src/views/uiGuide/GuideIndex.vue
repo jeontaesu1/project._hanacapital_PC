@@ -180,7 +180,7 @@ const datas = () => [
           },
           {
             date: '2023.08.30',
-            text: '생년월일에 placeholder 추가',
+            text: '생년월일, 카드비밀번호 placeholder 추가',
           },
         ],
       },
@@ -1650,6 +1650,10 @@ const datas = () => [
           {
             date: '2023.08.21',
             text: '마우스 버튼(보안 키패드 버튼) 삭제',
+          },
+          {
+            date: '2023.08.30',
+            text: '주민등록번호 뒤 첫자리 placeholder 적용',
           },
         ],
       },
