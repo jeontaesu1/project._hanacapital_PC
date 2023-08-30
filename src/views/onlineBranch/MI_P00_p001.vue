@@ -265,6 +265,7 @@ export default {
       </div>
 
       <ul class="reset-list">
+        <!-- Case : 종료 -->
         <li class="row-margin-contents-small">
           <BasicBox>
             <BasicBoxHead>
@@ -283,6 +284,9 @@ export default {
                   L99999999999999
                 </p>
               </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
+              </BasicBoxHeadRight>
             </BasicBoxHead>
 
             <KeyValue :wrap="true">
@@ -307,6 +311,9 @@ export default {
             </KeyValue>
           </BasicBox>
         </li>
+        <!-- // Case : 종료 -->
+
+        <!-- Case : 연체 -->
         <li class="row-margin-contents-small">
           <BasicBox>
             <BasicBoxHead>
@@ -354,6 +361,8 @@ export default {
             </KeyValue>
           </BasicBox>
         </li>
+        <!-- // Case : 연체 -->
+
         <li class="row-margin-contents-small">
           <BasicBox>
             <BasicBoxHead>

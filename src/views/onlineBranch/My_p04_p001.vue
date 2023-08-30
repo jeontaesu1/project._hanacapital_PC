@@ -175,7 +175,7 @@ export default {
                 </p>
               </BasicBoxHeadLeft>
               <BasicBoxHeadRight>
-                <RoundStatus size="large" :block="true"> 종료 </RoundStatus>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
               </BasicBoxHeadRight>
             </BasicBoxHead>
 
@@ -399,11 +399,6 @@ export default {
                   L99999999999999
                 </p>
               </BasicBoxHeadLeft>
-              <BasicBoxHeadRight>
-                <RoundStatus theme="nonary" size="large" :block="true">
-                  연체
-                </RoundStatus>
-              </BasicBoxHeadRight>
             </BasicBoxHead>
 
             <KeyValue :wrap="true">

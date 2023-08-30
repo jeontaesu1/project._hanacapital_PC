@@ -14,6 +14,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
+import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
+import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -41,6 +43,8 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
+    BasicBoxHeadRight,
+    RoundStatus,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -203,6 +207,116 @@ export default {
 
       <!-- Case : 조회 결과 있을 경우 -->
       <ul class="reset-list">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus theme="nonary" size="large" :block="true">
+                  연체
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>위반내용</KeyValueTitle>
+                <KeyValueText>속도위반 (40km/h 초과)</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>위반일자</KeyValueTitle>
+                <KeyValueText>2022.10.21 16:49:00</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>관할기관</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>60,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발생장소</KeyValueTitle>
+                <KeyValueText>인제군 남면 관대리 인제1동 41</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
+        <!-- Case : 종료 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>위반내용</KeyValueTitle>
+                <KeyValueText>속도위반 (40km/h 초과)</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>위반일자</KeyValueTitle>
+                <KeyValueText>2022.10.21 16:49:00</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>관할기관</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>60,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발생장소</KeyValueTitle>
+                <KeyValueText>인제군 남면 관대리 인제1동 41</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 종료 -->
+
         <li v-for="i in 2" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
@@ -268,6 +382,96 @@ export default {
 
       <!-- Case : 조회 결과 있을 경우 -->
       <ul class="reset-list">
+        <!-- Case : 연체 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus theme="nonary" size="large" :block="true">
+                  연체
+                </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>납부기일</KeyValueTitle>
+                <KeyValueText>2022.10.21</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>360,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발급관청</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 연체 -->
+
+        <!-- Case : 종료 -->
+        <li class="row-margin-contents">
+          <BasicBox>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  오토리스 20고5678
+                </h3>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  BMW 435d
+                </p>
+                <p
+                  class="text-body-3 color-gray-tertiary row-margin-item-small"
+                >
+                  L99999999999999
+                </p>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true">종료</RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>납부기일</KeyValueTitle>
+                <KeyValueText>2022.10.21</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>과세금액</KeyValueTitle>
+                <KeyValueText>360,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>발급관청</KeyValueTitle>
+                <KeyValueText>모니토오아리</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </BasicBox>
+        </li>
+        <!-- // Case : 종료 -->
+
         <li v-for="i in 2" :key="i" class="row-margin-contents">
           <BasicBox>
             <BasicBoxHead>
