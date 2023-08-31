@@ -732,20 +732,28 @@ export default {
                     </BasicBoxHeadRight>
                   </BasicBoxHead>
 
-                  <KeyValue>
+                  <KeyValue align="left">
                     <KeyValueItem>
-                      <KeyValueTitle>자동이체 계좌</KeyValueTitle>
+                      <KeyValueTitle
+                        :classNames="{
+                          title: $style['account-title'],
+                        }"
+                        >자동이체 계좌</KeyValueTitle
+                      >
                       <KeyValueText
                         >하나 123-123456-12345 (홍길동)</KeyValueText
                       >
                     </KeyValueItem>
                     <KeyValueItem>
-                      <KeyValueTitle>가상계좌</KeyValueTitle>
+                      <KeyValueTitle
+                        :classNames="{
+                          title: $style['account-title'],
+                        }"
+                        >가상계좌</KeyValueTitle
+                      >
                       <KeyValueText>
-                        <KeyValue>
-                          <KeyValueItem
-                            :classNames="{ item: 'justify-conten-end' }"
-                          >
+                        <KeyValue align="left">
+                          <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
                                 <div class="flex-box__cell">
@@ -758,13 +766,9 @@ export default {
                                 </div>
                               </div>
                             </KeyValueTitle>
-                            <KeyValueText :classNames="{ text: 'flex-none' }"
-                              >123-456-78901234</KeyValueText
-                            >
+                            <KeyValueText>123-456-78901234</KeyValueText>
                           </KeyValueItem>
-                          <KeyValueItem
-                            :classNames="{ item: 'justify-conten-end' }"
-                          >
+                          <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
                                 <div class="flex-box__cell">
@@ -777,13 +781,9 @@ export default {
                                 </div>
                               </div>
                             </KeyValueTitle>
-                            <KeyValueText :classNames="{ text: 'flex-none' }"
-                              >123-456-78901234</KeyValueText
-                            >
+                            <KeyValueText>123-456-78901234</KeyValueText>
                           </KeyValueItem>
-                          <KeyValueItem
-                            :classNames="{ item: 'justify-conten-end' }"
-                          >
+                          <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
                                 <div class="flex-box__cell">
@@ -796,13 +796,9 @@ export default {
                                 </div>
                               </div>
                             </KeyValueTitle>
-                            <KeyValueText :classNames="{ text: 'flex-none' }"
-                              >123-456-78901234</KeyValueText
-                            >
+                            <KeyValueText>123-456-78901234</KeyValueText>
                           </KeyValueItem>
-                          <KeyValueItem
-                            :classNames="{ item: 'justify-conten-end' }"
-                          >
+                          <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
                                 <div class="flex-box__cell">
@@ -815,13 +811,9 @@ export default {
                                 </div>
                               </div>
                             </KeyValueTitle>
-                            <KeyValueText :classNames="{ text: 'flex-none' }"
-                              >123-456-78901234</KeyValueText
-                            >
+                            <KeyValueText>123-456-78901234</KeyValueText>
                           </KeyValueItem>
-                          <KeyValueItem
-                            :classNames="{ item: 'justify-conten-end' }"
-                          >
+                          <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
                                 <div class="flex-box__cell">
@@ -834,9 +826,7 @@ export default {
                                 </div>
                               </div>
                             </KeyValueTitle>
-                            <KeyValueText :classNames="{ text: 'flex-none' }"
-                              >123-456-78901234</KeyValueText
-                            >
+                            <KeyValueText>123-456-78901234</KeyValueText>
                           </KeyValueItem>
                         </KeyValue>
                       </KeyValueText>
