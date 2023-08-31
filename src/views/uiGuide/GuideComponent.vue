@@ -1913,6 +1913,7 @@ export default {
             titleText="인증번호"
             titleOptionalText="(6자리)"
             target="#testInput003"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
@@ -1922,6 +1923,7 @@ export default {
                     pattern="\d*"
                     title="인증번호 (6자리)"
                     id="testInput003"
+                    placeholder="인증번호를 입력해 주세요"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
