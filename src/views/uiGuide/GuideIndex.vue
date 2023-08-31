@@ -193,7 +193,12 @@ const datas = () => [
         path: '/ui-guide/clause-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.08.31',
+            text: 'Common_P00_l001 타이틀 길어지면 말줄임 처리 및 내용 아이프레임 처리',
+          },
+        ],
       },
       {
         depth2: '직장검색',
