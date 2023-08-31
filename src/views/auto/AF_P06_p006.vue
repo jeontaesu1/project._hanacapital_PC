@@ -173,6 +173,7 @@ export default {
           titleText="차량구입금액"
           :require="true"
           target="#AF_P06_p006_carAmount"
+          :forceFocus="true"
         >
           <FormInvalid :error="state.carAmountError">
             <InputBlock :error="state.carAmountError">
@@ -199,7 +200,11 @@ export default {
           </FormInvalid>
         </FormListItem>
 
-        <FormListItem titleText="대출신청금액" target="#AF_P06_p006_loanAmount">
+        <FormListItem
+          titleText="대출신청금액"
+          target="#AF_P06_p006_loanAmount"
+          :forceFocus="true"
+        >
           <FormInvalid :error="state.loanAmountError">
             <InputBlock :error="state.loanAmountError">
               <InputBlockCell :flexible="true">

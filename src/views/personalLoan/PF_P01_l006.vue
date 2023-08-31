@@ -86,6 +86,7 @@ export default {
           <FormListItem
             titleText="입금자명"
             target="#PF_P01_l006_accountAuthName"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.nameError">
               <InputBlock :error="state.nameError">
