@@ -752,7 +752,12 @@ export default {
                         >가상계좌</KeyValueTitle
                       >
                       <KeyValueText>
-                        <KeyValue align="left">
+                        <KeyValue
+                          align="left"
+                          :classNames="{
+                            wrap: $style['account-list'],
+                          }"
+                        >
                           <KeyValueItem>
                             <KeyValueTitle>
                               <div class="flex-box">
