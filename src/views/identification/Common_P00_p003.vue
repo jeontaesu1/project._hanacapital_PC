@@ -982,7 +982,6 @@ export default {
                     title="카드비밀번호 앞 2자리"
                     :afterDot="2"
                     :length="2"
-                    placeholder="◌◌"
                     id="Common_P00_p003_cardPassword"
                   />
                 </InputBlockCell>
