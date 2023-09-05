@@ -309,7 +309,12 @@ const datas = () => [
         path: '/ui-guide/main-001',
         status: 'end',
         create: '2023.07.26',
-        log: [],
+        log: [
+          {
+            date: '2023.09.05',
+            text: 'Main_P01_l001 슬라이드 기능 추가',
+          },
+        ],
       },
       {
         depth2: '홈\nMain_P01_p001',
