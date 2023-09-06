@@ -276,46 +276,50 @@ export default {
         <section class="row-margin-container-medium">
           <h4 class="text-body-1 row-margin-item-group">대출거래현황</h4>
           <!-- Case : 데이터 있을 때 -->
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h4 class="text-title-2 font-weight-medium">
-                  오토리스 운용 (정상)
-                </h4>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
+          <ul class="reset-list">
+            <li v-for="i in 2" :key="i" class="row-margin-contents">
+              <BasicBox>
+                <BasicBoxHead>
+                  <BasicBoxHeadLeft>
+                    <h4 class="text-title-2 font-weight-medium">
+                      오토리스 운용 (정상)
+                    </h4>
+                  </BasicBoxHeadLeft>
+                </BasicBoxHead>
 
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>용도</KeyValueTitle>
-                <KeyValueText>대환대출</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>대출잔액</KeyValueTitle>
-                <KeyValueText>29,729 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>이율</KeyValueTitle>
-                <KeyValueText>22.6%</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>대출기한</KeyValueTitle>
-                <KeyValueText>2024.08.05</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>대출일자</KeyValueTitle>
-                <KeyValueText>2019.07.24</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>비고</KeyValueTitle>
-                <KeyValueText>-</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>대출금액</KeyValueTitle>
-                <KeyValueText>53,691 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
+                <KeyValue :wrap="true">
+                  <KeyValueItem>
+                    <KeyValueTitle>용도</KeyValueTitle>
+                    <KeyValueText>대환대출</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>대출잔액</KeyValueTitle>
+                    <KeyValueText>29,729 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>이율</KeyValueTitle>
+                    <KeyValueText>22.6%</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>대출기한</KeyValueTitle>
+                    <KeyValueText>2024.08.05</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>대출일자</KeyValueTitle>
+                    <KeyValueText>2019.07.24</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>비고</KeyValueTitle>
+                    <KeyValueText>-</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>대출금액</KeyValueTitle>
+                    <KeyValueText>53,691 원</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </li>
+          </ul>
           <!-- //Case : 데이터 있을 때 -->
 
           <!-- Case : 데이터 없을 때 -->
@@ -330,36 +334,40 @@ export default {
         <section class="row-margin-container-medium">
           <h4 class="text-body-1 row-margin-item-group">담보내용</h4>
           <!-- Case : 데이터 있을 때 -->
-          <BasicBox>
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>소재지/<br />차량번호</KeyValueTitle>
-                <KeyValueText>
-                  인천 서구 에코로 181 <br />하나금융 로비
-                </KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>종류</KeyValueTitle>
-                <KeyValueText>오토리스 운용</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>소유자</KeyValueTitle>
-                <KeyValueText>김하나</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>감정가격</KeyValueTitle>
-                <KeyValueText>845,000 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>채무자관계</KeyValueTitle>
-                <KeyValueText>최대주주</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>설정순위/금액</KeyValueTitle>
-                <KeyValueText>845,000 원</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
+          <ul class="reset-list">
+            <li v-for="i in 2" :key="i" class="row-margin-contents">
+              <BasicBox>
+                <KeyValue :wrap="true">
+                  <KeyValueItem>
+                    <KeyValueTitle>소재지/<br />차량번호</KeyValueTitle>
+                    <KeyValueText>
+                      인천 서구 에코로 181 <br />하나금융 로비
+                    </KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>종류</KeyValueTitle>
+                    <KeyValueText>오토리스 운용</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>소유자</KeyValueTitle>
+                    <KeyValueText>김하나</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>감정가격</KeyValueTitle>
+                    <KeyValueText>845,000 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>채무자관계</KeyValueTitle>
+                    <KeyValueText>최대주주</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>설정순위/금액</KeyValueTitle>
+                    <KeyValueText>845,000 원</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </li>
+          </ul>
           <!-- //Case : 데이터 있을 때 -->
 
           <!-- Case : 데이터 없을 때 -->
@@ -409,42 +417,46 @@ export default {
             최근 3개월 내 10일 이상 계속된 연체 명세
           </h4>
           <!-- Case : 데이터 있을 때 -->
-          <BasicBox>
-            <BasicBoxHead>
-              <BasicBoxHeadLeft>
-                <h5 class="text-title-2 font-weight-medium">
-                  오토리스 운용 (정상)
-                </h5>
-              </BasicBoxHeadLeft>
-            </BasicBoxHead>
+          <ul class="reset-list">
+            <li v-for="i in 2" :key="i" class="row-margin-contents">
+              <BasicBox>
+                <BasicBoxHead>
+                  <BasicBoxHeadLeft>
+                    <h5 class="text-title-2 font-weight-medium">
+                      오토리스 운용 (정상)
+                    </h5>
+                  </BasicBoxHeadLeft>
+                </BasicBoxHead>
 
-            <KeyValue :wrap="true">
-              <KeyValueItem>
-                <KeyValueTitle>연체발생일</KeyValueTitle>
-                <KeyValueText>2022.02.02</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>연체정리일</KeyValueTitle>
-                <KeyValueText>2022.02.02</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>원금</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>연체일수</KeyValueTitle>
-                <KeyValueText>15일</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>이자</KeyValueTitle>
-                <KeyValueText>999,999,999 원</KeyValueText>
-              </KeyValueItem>
-              <KeyValueItem>
-                <KeyValueTitle>비고</KeyValueTitle>
-                <KeyValueText>-</KeyValueText>
-              </KeyValueItem>
-            </KeyValue>
-          </BasicBox>
+                <KeyValue :wrap="true">
+                  <KeyValueItem>
+                    <KeyValueTitle>연체발생일</KeyValueTitle>
+                    <KeyValueText>2022.02.02</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>연체정리일</KeyValueTitle>
+                    <KeyValueText>2022.02.02</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>원금</KeyValueTitle>
+                    <KeyValueText>999,999,999 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>연체일수</KeyValueTitle>
+                    <KeyValueText>15일</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>이자</KeyValueTitle>
+                    <KeyValueText>999,999,999 원</KeyValueText>
+                  </KeyValueItem>
+                  <KeyValueItem>
+                    <KeyValueTitle>비고</KeyValueTitle>
+                    <KeyValueText>-</KeyValueText>
+                  </KeyValueItem>
+                </KeyValue>
+              </BasicBox>
+            </li>
+          </ul>
           <!-- //Case : 데이터 있을 때 -->
 
           <!-- Case : 데이터 없을 때 -->
