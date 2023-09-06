@@ -1,5 +1,5 @@
 <script>
-import { computed } from 'vue';
+import { computed, reactive, watch } from 'vue';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -26,6 +26,10 @@ export default {
     },
   },
   setup(props) {
+    const state = reactive({
+      isError: false,
+    });
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
@@ -41,9 +45,22 @@ export default {
       }
     });
 
+    const onError = () => {
+      state.isError = true;
+    };
+
+    watch(
+      () => props.src,
+      () => {
+        state.isError = false;
+      }
+    );
+
     return {
+      state,
       customClassNames,
       imgSrc,
+      onError,
     };
   },
 };
@@ -54,6 +71,7 @@ export default {
     :class="[
       $style['car-thumb'],
       {
+        'is-error': state.isError,
         [$style[`car-thumb--size-${size}`]]: size,
       },
       customClassNames.wrap,
@@ -64,11 +82,7 @@ export default {
       :src="imgSrc"
       alt=""
       :class="[$style['car-thumb__img'], customClassNames.img]"
-      @error="
-        (e) => {
-          e.target.parentNode.classList.add('is-error');
-        }
-      "
+      @error="onError"
     />
   </span>
 </template>
