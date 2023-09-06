@@ -69,9 +69,8 @@ export default {
             [customClassNames.active]: i === current,
           },
         ]"
-      >
-        {{ item }}
-      </li>
+        v-html="item"
+      />
     </ul>
   </div>
 </template>
