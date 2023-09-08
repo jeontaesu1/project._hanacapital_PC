@@ -185,7 +185,7 @@ export default {
             </KeyValueItem>
             <KeyValueItem>
               <KeyValueTitle>입금 신청일자</KeyValueTitle>
-              <KeyValueText>13,000,000 원</KeyValueText>
+              <KeyValueText>2019.03.05</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>

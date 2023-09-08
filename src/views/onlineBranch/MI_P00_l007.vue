@@ -50,11 +50,23 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
+          <!-- Case : 즉시출금 -->
           <PopupTitle>중도상환 즉시출금 신청</PopupTitle>
+          <!-- // Case : 즉시출금 -->
+          <!-- Case : 가상계좌 -->
+          <PopupTitle>중도상환 입금예약 신청</PopupTitle>
+          <!-- // Case : 가상계좌 -->
           <template v-slot:sub>
+            <!-- Case : 즉시출금 -->
             <PopupSubTitle>
               즉시출금으로 중도상환신청을 하시겠어요?
             </PopupSubTitle>
+            <!-- // Case : 즉시출금 -->
+            <!-- Case : 가상계좌 -->
+            <PopupSubTitle>
+              입금예약으로 중도상환신청을 하시겠어요?
+            </PopupSubTitle>
+            <!-- // Case : 가상계좌 -->
           </template>
         </ModalPopupHead>
       </template>

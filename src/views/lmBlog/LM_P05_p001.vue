@@ -103,7 +103,7 @@ export default {
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
             <span :class="$style['status-inquiry__number']">4</span>
-            <span :class="$style['status-inquiry__text']">계약</span>
+            <span :class="$style['status-inquiry__text']">품의(계약)</span>
           </button>
         </li>
         <li :class="$style['status-inquiry__item']">
@@ -115,7 +115,7 @@ export default {
         <li :class="$style['status-inquiry__item']">
           <button type="button" :class="$style['status-inquiry__category']">
             <span :class="$style['status-inquiry__number']">1</span>
-            <span :class="$style['status-inquiry__text']">송금</span>
+            <span :class="$style['status-inquiry__text']">정산</span>
           </button>
         </li>
       </ul>
