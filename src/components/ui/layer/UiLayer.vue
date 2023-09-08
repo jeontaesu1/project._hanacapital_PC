@@ -10,6 +10,7 @@ import {
   provide,
 } from 'vue';
 
+import { useUiCommonStore } from '@/stores/ui/common';
 import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiLoadingStore } from '@/stores/ui/loading';
 import { useUiLayerStore } from '@/stores/ui/layer';
@@ -112,6 +113,7 @@ export default {
 
     const store = {
       ui: {
+        common: useUiCommonStore(),
         scrollBlock: useUiScrollBlockStore(),
         loading: useUiLoadingStore(),
         layer: useUiLayerStore(),
@@ -206,17 +208,20 @@ export default {
       layer.value.setAttribute('aria-hidden', 'false');
       layer.value.setAttribute('aria-modal', 'true');
       setAttr(ohterElements, 'aria-hidden', 'true');
-      setAttr(ohterElements, 'inert', '');
       setAttr(ohterElements, 'data-ui-js', 'hidden');
       setAttr(preLayersElements, 'aria-hidden', 'true');
-      setAttr(preLayersElements, 'inert', '');
       setAttr(preLayersElements, 'data-ui-js', 'hidden');
       setAttr(preOpenLayers, 'aria-hidden', 'true');
-      setAttr(preOpenLayers, 'inert', '');
       removeAttr(preOpenLayers, 'aria-modal');
 
+      if (!store.ui.common.userAgent.isIos) {
+        setAttr(ohterElements, 'inert', '');
+        setAttr(preLayersElements, 'inert', '');
+        setAttr(preOpenLayers, 'inert', '');
+      }
+
       nextTick(() => {
-        timer = setTimeout(function () {
+        timer = setTimeout(() => {
           state.opened = true;
 
           nextTick(() => {
@@ -226,7 +231,7 @@ export default {
             onOpened();
             clearTimeout(timer);
 
-            timer = setTimeout(function () {
+            timer = setTimeout(() => {
               layerContainer.value.focus();
               onAfterOpened();
               clearTimeout(timer);
@@ -252,7 +257,7 @@ export default {
       onClosed();
 
       nextTick(() => {
-        timer = setTimeout(function () {
+        timer = setTimeout(() => {
           const { opener } = state;
           const preOpenLayers = filter.call(
             document.getElementsByClassName($style['layer--opened']),
@@ -279,7 +284,6 @@ export default {
           const preOpenLayerOhterElements = preOpenLayer
             ? preOpenLayer.querySelectorAll('[data-ui-js="hidden"]')
             : [];
-          state.display = 'none';
 
           if (preOpenLayer) {
             removeAttr(preOpenLayerOhterElements, 'aria-hidden');
@@ -302,12 +306,15 @@ export default {
           }
 
           if (opener) {
+            const openerParent = opener.closest('button, a');
+            const openerTarget = openerParent ? openerParent : opener;
+
             if (preOpenLayer) {
               if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
-                elFocus(opener);
+                elFocus(openerTarget);
               }
             } else {
-              elFocus(opener);
+              elFocus(openerTarget);
             }
             state.opener = null;
           } else {
@@ -317,6 +324,8 @@ export default {
               store.ui.scrollBlock.scrollTop
             );
           }
+
+          state.display = 'none';
 
           onAfterClosed();
           clearTimeout(timer);

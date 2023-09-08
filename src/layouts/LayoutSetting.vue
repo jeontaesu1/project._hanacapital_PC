@@ -78,6 +78,7 @@ export default {
     };
 
     onMounted(() => {
+      store.ui.common.setUserAgent();
       store.ui.common.setScrollbarsWidth();
 
       window.addEventListener('resize', resize);
