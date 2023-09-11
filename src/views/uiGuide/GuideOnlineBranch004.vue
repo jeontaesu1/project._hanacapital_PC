@@ -7,6 +7,7 @@ import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 
 import MI_P06_l001 from '@/views/onlineBranch/MI_P06_l001.vue';
+import MI_P06_l002 from '@/views/onlineBranch/MI_P06_l002.vue';
 
 export default {
   components: {
@@ -15,17 +16,24 @@ export default {
     ButtonList,
     ButtonListItem,
     MI_P06_l001,
+    MI_P06_l002,
   },
   setup() {
     const layer001 = ref(null);
+    const layer002 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
     };
+    const layer002Open = (e = {}) => {
+      layer002.value.layer.open(e.target);
+    };
 
     return {
       layer001,
+      layer002,
       layer001Open,
+      layer002Open,
     };
   },
 };
@@ -44,8 +52,14 @@ export default {
           온라인청구서_미리보기 팝업<br />MI_P06_l001
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer002Open">
+          채권번호 선택 팝업<br />MI_P06_l002
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
 
     <MI_P06_l001 ref="layer001" />
+    <MI_P06_l002 ref="layer002" />
   </PageContents>
 </template>

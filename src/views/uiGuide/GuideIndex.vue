@@ -2986,6 +2986,10 @@ const datas = () => [
             date: '2023.07.27',
             text: '주소 입력 항목 삭제',
           },
+          {
+            date: '2023.09.11',
+            text: '채권번호 항목 위치 수정 및 케이스 추가',
+          },
         ],
       },
       {
@@ -2997,7 +3001,12 @@ const datas = () => [
         path: '/ui-guide/online-branch-004',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.09.11',
+            text: '채권번호 선택 팝업 추가',
+          },
+        ],
       },
       {
         depth2:
