@@ -135,9 +135,9 @@
       }
     }
 
-    &:focus {
+    &:focus-visible {
       & + .box-check__block {
-        background-color: rgba($color-navy-50, 0.08);
+        outline: 2px dotted;
       }
     }
 

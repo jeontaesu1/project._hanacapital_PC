@@ -44,7 +44,8 @@ textarea,
 
 button:focus:not(:focus-visible),
 [type='button']:focus:not(:focus-visible),
-[type='submit']:focus:not(:focus-visible) {
+[type='submit']:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
   outline: none;
 }
 
