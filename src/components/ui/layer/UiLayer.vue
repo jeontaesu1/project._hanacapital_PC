@@ -69,6 +69,10 @@ export default {
       Type: Boolean,
       default: false,
     },
+    openerFocusToAfterClose: {
+      Type: Boolean,
+      default: true,
+    },
     onBeforeOpened: {
       Type: Function,
       default() {
@@ -214,7 +218,10 @@ export default {
       setAttr(preOpenLayers, 'aria-hidden', 'true');
       removeAttr(preOpenLayers, 'aria-modal');
 
-      if (!store.ui.common.userAgent.isIos) {
+      if (
+        !store.ui.common.userAgent.isIos &&
+        !store.ui.common.userAgent.isAndroid
+      ) {
         setAttr(ohterElements, 'inert', '');
         setAttr(preLayersElements, 'inert', '');
         setAttr(preOpenLayers, 'inert', '');
@@ -244,7 +251,12 @@ export default {
     const close = (speed = defaultSpeed) => {
       if (!state.opened) return;
 
-      const { onBeforeClosed, onClosed, onAfterClosed } = props;
+      const {
+        openerFocusToAfterClose,
+        onBeforeClosed,
+        onClosed,
+        onAfterClosed,
+      } = props;
 
       onBeforeClosed();
 
@@ -309,12 +321,14 @@ export default {
             const openerParent = opener.closest('button, a');
             const openerTarget = openerParent ? openerParent : opener;
 
-            if (preOpenLayer) {
-              if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
+            if (openerFocusToAfterClose) {
+              if (preOpenLayer) {
+                if (opener.closest(`.${$style['layer']}`) === preOpenLayer) {
+                  elFocus(openerTarget);
+                }
+              } else {
                 elFocus(openerTarget);
               }
-            } else {
-              elFocus(openerTarget);
             }
             state.opener = null;
           } else {
