@@ -9,3 +9,5 @@ HomeView.vue
 public/_dummyData/
 public/legacy/css/
 public/legacy/js/
+
+*.md
