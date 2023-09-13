@@ -15,13 +15,13 @@ jobs:
         uses: actions/checkout@master
 
       - name: Clean
-        run: npm cache verify
+        run: yarn cache clean
 
       - name: Install
-        run: npm install
+        run: yarn
 
       - name: Build
-        run: npm run publish-build
+        run: yarn publish-build
 
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@master
