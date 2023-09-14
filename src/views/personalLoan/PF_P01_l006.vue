@@ -64,7 +64,7 @@ export default {
           <template v-slot:right>
             <PopupButton @click="layerSlotProps.close()" />
           </template>
-          <PopupTitle>1원 인증</PopupTitle>
+          <PopupTitle>김하나님 계좌로 1원을 보냈습니다</PopupTitle>
           <template v-slot:sub>
             <PopupSubTitle>
               해당 계좌의 거래내역에서 입금된 1원의 입금자명을 확인 후<br />
