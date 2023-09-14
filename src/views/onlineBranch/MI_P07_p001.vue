@@ -1067,6 +1067,61 @@ export default {
             wrap: 'row-margin-block-small row-margin-bottom-none',
           }"
         >
+          <FormListItem
+            titleText="채권번호"
+            target="#MI_P07_p001_bondNumber"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.bondNumberError">
+              <InputBlock :error="state.bondNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '오토리스 (L99999999999999)',
+                      },
+                      {
+                        value: '2',
+                        label: '오토리스 (L99999999999999)',
+                      },
+                      {
+                        value: '3',
+                        label: '오토리스 (L99999999999999)',
+                      },
+                    ]"
+                    title="채권번호"
+                    inputId="MI_P07_p001_bondNumber"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- Case : 채권번호 10개 이상일때 -->
+          <FormListItem
+            titleText="채권번호"
+            target="#MI_P07_p001_bondNumberInput"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.bondNumberError">
+              <InputBlock :error="state.bondNumberError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="채권번호"
+                    id="MI_P07_p001_bondNumberInput"
+                  />
+                </InputBlockCell>
+                <template v-slot:right>
+                  <BasicButton size="small" theme="tertiary">조회</BasicButton>
+                </template>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 채권번호 10개 이상일때 -->
+
           <FormListItem titleText="조회기간" :forceFocus="true">
             <FormInvalid :error="state.billPeriodError">
               <BoxCheckList :classNames="{ wrap: 'row-margin-contents-small' }">
@@ -1131,37 +1186,6 @@ export default {
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
               <FormHelpText>조회기간은 최대 1년까지 가능합니다.</FormHelpText>
-            </FormInvalid>
-          </FormListItem>
-          <FormListItem
-            titleText="채권번호"
-            target="#MI_P07_p001_bondNumber"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.bondNumberError">
-              <InputBlock :error="state.bondNumberError">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '오토리스 (L99999999999999)',
-                      },
-                      {
-                        value: '2',
-                        label: '오토리스 (L99999999999999)',
-                      },
-                      {
-                        value: '3',
-                        label: '오토리스 (L99999999999999)',
-                      },
-                    ]"
-                    title="채권번호"
-                    inputId="MI_P07_p001_bondNumber"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
         </FormList>
