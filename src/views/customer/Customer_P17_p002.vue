@@ -118,8 +118,8 @@ export default {
               <div :class="$style['contents-list__head']">
                 <div :class="$style['contents-list__symbol']">1</div>
                 <div :class="$style['contents-list__title']">
-                  다음과 같이 제어판의 “프로그램 및 기능”에서 Anysign4PC를 찾아
-                  “제거”를 선택하면 프로그램이 삭제됩니다.
+                  다음과 같이 제어판의 “프로그램 및 기능”에서 MagicLine4NX를
+                  찾아 “제거”를 선택하면 프로그램이 삭제됩니다.
                 </div>
               </div>
               <div class="row-margin-item-regular">

@@ -99,9 +99,6 @@ export default {
                     id="PF_P01_l006_accountAuthName"
                   />
                 </InputBlockCell>
-                <template v-slot:innerRight>
-                  <div class="text-body-3 color-red">00:00</div>
-                </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
