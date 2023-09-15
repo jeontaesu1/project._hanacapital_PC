@@ -559,6 +559,6 @@ body,
 
 // OZ 솔루션 css 강제 수정 (개발 요청)
 // PF_P01_l005, PF_P02_l004, PF_P04_l001, PF_P05_l005
-.ui-front {
-  z-index: 100000 !important;
+.ui-front.ui-front {
+  z-index: 100000;
 }
