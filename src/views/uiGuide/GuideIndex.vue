@@ -1133,7 +1133,16 @@ const datas = () => [
         path: '/personal-loan/PF_P01_p005',
         status: 'end',
         create: '2023.05.26',
-        log: [{ date: '2023.08.23', text: '비대면 개설 영역 삭제' }],
+        log: [
+          {
+            date: '2023.08.23',
+            text: '비대면 개설 영역 삭제',
+          },
+          {
+            date: '2023.09.15',
+            text: '발급일자 항목 텍스트 입력 박스로 변경',
+          },
+        ],
       },
       {
         depth2: 'e하나신용대출\nPF_P01_p001',

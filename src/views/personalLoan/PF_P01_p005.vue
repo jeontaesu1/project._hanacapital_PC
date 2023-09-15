@@ -24,7 +24,6 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import BoxCheck from '@/components/ui/form/BoxCheck.vue';
 import BoxCheckLabel from '@/components/ui/form/BoxCheckLabel.vue';
-import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
@@ -52,7 +51,6 @@ export default {
     BoxCheckListItem,
     BoxCheck,
     BoxCheckLabel,
-    BasicDatepicker,
     FormHelpText,
     NoticeText,
     ButtonList,
@@ -349,17 +347,15 @@ export default {
 
         <FormList>
           <!-- Case : '주민등록증' 선택 시  -->
-          <FormListItem
-            titleText="발급일자"
-            target="#PF_P01_p005_day_001_Button"
-          >
+          <FormListItem titleText="발급일자" target="#PF_P01_p005_day_001">
             <FormInvalid :error="state.dayError001">
               <InputBlock :error="state.dayError001">
                 <InputBlockCell :flexible="true">
-                  <BasicDatepicker
+                  <BasicInput
+                    type="number"
+                    pattern="\d*"
                     title="발급일자"
                     id="PF_P01_p005_day_001"
-                    buttonId="PF_P01_p005_day_001_Button"
                   />
                 </InputBlockCell>
               </InputBlock>
