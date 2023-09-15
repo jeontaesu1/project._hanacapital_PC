@@ -87,6 +87,7 @@ export default {
       routeError: false,
       objectError: false,
       ownerError: false,
+      domesticBankNameError: false,
     });
 
     onMounted(() => {
@@ -491,6 +492,26 @@ export default {
         <h3 class="text-title-1 row-margin-contents">결제 정보</h3>
 
         <FormList>
+          <!-- Case : 개인사업자일 경우 -->
+          <FormListItem
+            titleText="예금주명"
+            target="PF_P01_p005_domesticBankName"
+          >
+            <FormInvalid :error="state.domesticBankNameError">
+              <InputBlock :error="state.domesticBankNameError">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="예금주명"
+                    id="PF_P01_p005_domesticBankName"
+                    defaultValue="김하나"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 개인사업자일 경우 -->
+
           <FormListItem
             titleText="은행명"
             target="#PF_P01_p005_bank"
