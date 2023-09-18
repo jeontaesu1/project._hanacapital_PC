@@ -210,10 +210,11 @@
 
 .mark {
   margin: 0;
-  padding-left: 40px;
+  padding-right: 40px;
   @include font-size-default(10);
   color: $color-gray-70;
-  background: url('@/assets/images/common/mark-isms.png') no-repeat 0 50%;
+  background: url('@/assets/images/common/mark-isms.png') no-repeat right center;
+  text-align: right;
 }
 
 .family {
