@@ -11,7 +11,6 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -29,7 +28,6 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 
 import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
-import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
   components: {
@@ -42,7 +40,6 @@ export default {
     NavTab,
     NavTabButton,
     NoticeText,
-    TextButton,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -59,7 +56,6 @@ export default {
     BoxCheckList,
     BoxCheckListItem,
     IconLogo,
-    IconLink,
   },
   setup() {
     const state = reactive({
@@ -309,17 +305,9 @@ export default {
       <div :class="$style['join__inner']">
         <div :class="$style['join__icon']"><IconLogo /></div>
         <div :class="$style['join__title']">앱에서 가입하셨나요?</div>
-        <TextButton
-          :block="true"
-          :classNames="{
-            wrap: [$style['join__link'], 'color-gray-tertiary'],
-          }"
-        >
-          앱회원 가입
-          <template v-slot:rightIcon>
-            <IconLink />
-          </template>
-        </TextButton>
+        <button type="button" :class="$style['join__button']">
+          <span class="for-a11y">앱으로 이동</span>
+        </button>
       </div>
     </div>
 
