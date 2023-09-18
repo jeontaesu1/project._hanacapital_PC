@@ -189,10 +189,14 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      연 최저 5.9% ~ 최고 8.8%
+                      <span class="font-weight-bold underline">
+                        금융리스 연 6.1% ~ 9.0%
+                      </span>
                     </div>
                     <div :class="$style['product-info__sub']">
-                      (금융소비자의 개인신용평점에 따라 차등 적용)
+                      <span class="font-weight-medium underline">
+                        (금융소비자의 개인신용평점에 따라 차등 적용)
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -258,8 +262,9 @@ export default {
                   <tbody>
                     <tr>
                       <th>
+                        규정<br />
                         손해<br />
-                        배상금
+                        배상금<br />
                       </th>
                       <td class="align-left">
                         <div :class="$style['contents-list']">
@@ -447,7 +452,7 @@ export default {
               <h3
                 class="text-body-3 font-weight-medium color-gray row-margin-item"
               >
-                연체이자율
+                금융리스 연체이자율
               </h3>
               <ul
                 :class="[
@@ -466,7 +471,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    <div>금융리스 : 약정이율+3%</div>
+                    <div>유이자 : 약정금리 + 3.00%</div>
                     <p class="text-body-3 color-gray row-margin-small">
                       (법정최고금리 연 20% 이내)
                     </p>
@@ -482,10 +487,97 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    <div>운용리스 : 연 20%</div>
+                    <div>무이자 : 상시약정금리 + 3%</div>
+                    <p class="text-body-3 color-gray row-margin-small">
+                      (법정최고금리 연 20% 이내)
+                    </p>
                   </div>
                 </li>
               </ul>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-gray-secondary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    <div>
+                      단, 연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
+                      적용함
+                    </div>
+                    <ul
+                      :class="[
+                        $style['basic-list'],
+                        $style['basic-list--regular'],
+                        'row-margin-item',
+                      ]"
+                    >
+                      <li
+                        :class="[
+                          $style['basic-list__item'],
+                          'text-body-4',
+                          'font-weight-regular',
+                          'color-black',
+                        ]"
+                      >
+                        <div :class="$style['basic-list__symbol']">-</div>
+                        <div :class="$style['basic-list__content']">
+                          <div class="color-gray-tertiary font-weight-light">
+                            약정 금리는 상법상 상사법정이율과 상호금융
+                            가계대출금리*중 높은 금리 적용약정 금리는 상법상
+                            상사법정이율과 상호금융 가계대출금리*중 높은 금리
+                            적용
+                          </div>
+                          <ul
+                            :class="[
+                              $style['basic-list'],
+                              $style['basic-list--regular'],
+                              'row-margin-item',
+                            ]"
+                          >
+                            <li
+                              :class="[
+                                $style['basic-list__item'],
+                                'text-body-4',
+                                'font-weight-regular',
+                                'color-gray-secondary',
+                              ]"
+                            >
+                              <div :class="$style['basic-list__symbol']">*</div>
+                              <div :class="$style['basic-list__content']">
+                                <div>
+                                  한국은행에서 매월 발표하는 가장 최근의 비은행
+                                  금융기관 가중평균대출금리(신규대출 기준)
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
+                운용리스 연체이자율
+              </h3>
+              <p class="text-title-2 underline">연 20%</p>
             </section>
 
             <section class="row-margin-contents">
@@ -701,7 +793,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-regular',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -715,21 +807,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-regular',
-                'color-black',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
-                있습니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-1',
-                'font-weight-regular',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -737,6 +815,20 @@ export default {
               <div :class="$style['basic-list__content']">
                 일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
                 발생할 수 있습니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-bold',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
+                있습니다.
               </div>
             </li>
             <li
