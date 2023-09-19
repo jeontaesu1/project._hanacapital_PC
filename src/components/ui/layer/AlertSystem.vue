@@ -13,6 +13,7 @@ const defaultOptions = () => ({
   title: '',
   message: [''],
   buttons: [{}],
+  speed: null,
 });
 const defaultButtonsOptions = () => ({
   text: '확인',
@@ -48,7 +49,7 @@ export default {
 
     const open = (customOptions) => {
       const options = Object.assign(defaultOptions(), customOptions);
-      const { title, message, buttons } = options;
+      const { title, message, buttons, speed } = options;
 
       for (let i = 0; i < buttons.length; i++) {
         buttons[i] = Object.assign(defaultButtonsOptions(), buttons[i]);
@@ -59,11 +60,11 @@ export default {
         typeof message === 'string' ? message.split(/\n/) : message;
       state.buttons = buttons;
 
-      layer.value.open();
+      layer.value.open(null, speed);
     };
 
-    const close = () => {
-      layer.value.close();
+    const close = (speed) => {
+      layer.value.close(speed);
     };
 
     const clear = () => {
