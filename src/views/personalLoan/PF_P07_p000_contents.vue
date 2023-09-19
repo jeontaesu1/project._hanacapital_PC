@@ -8,6 +8,7 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -32,6 +33,7 @@ export default {
     NavTab,
     NavTabButton,
     BasicHr,
+    TextButton,
     IconMoney,
     IconRate,
     IconDate,
@@ -364,7 +366,11 @@ export default {
                       >
                         담보유지비율 하락으로 인한 반대매매, 보유불가종목
                         반대매매 등 담보관리를 위한 여러가지 제한이 있으니
-                        계좌운용규칙을 충분히 숙지하시기 바랍니다.
+                        계좌운용규칙을 충분히 숙지하시기 바랍니다.<TextButton
+                          theme="quinary"
+                          :classNames="{ wrap: $style['account-guide'] }"
+                          >[계좌운용규칙 열람]</TextButton
+                        >
                       </div>
                     </div>
                   </li>

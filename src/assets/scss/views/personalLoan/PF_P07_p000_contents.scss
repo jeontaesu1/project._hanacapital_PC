@@ -16,3 +16,10 @@
     }
   }
 }
+
+.account-guide {
+  @include font-size-button(13);
+  padding: 2px 0;
+  border-bottom: 1px solid $color-semantic-essential;
+  margin: 3px 0 0 12px;
+}
