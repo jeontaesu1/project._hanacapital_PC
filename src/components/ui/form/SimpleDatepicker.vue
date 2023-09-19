@@ -63,6 +63,10 @@ export default {
       Type: String,
       default: null,
     },
+    direction: {
+      Type: String,
+      default: 'left',
+    },
     onInit: {
       Type: Function,
       default() {
@@ -115,6 +119,7 @@ export default {
   },
   setup(props, { emit }) {
     const DATE_FORMAT = /^(\d{4})\.(\d{2})\.(\d{2})$/;
+    const eChange = new Event('change');
     const timer = [];
 
     const state = reactive({
@@ -133,11 +138,14 @@ export default {
       return Object.assign(defaultClassNames(), classNames);
     });
 
-    const setButtonId = (id = '') => {
+    const setButtonId = (id) => {
       const { element } = state;
       const button = element.getElementsByClassName('duet-date__toggle')[0];
+      const setId = typeof id === 'string' ? id : '';
 
-      button.setAttribute('id', id);
+      if (button) {
+        button.setAttribute('id', setId);
+      }
     };
 
     const setSelectDisabled = (is = false) => {
@@ -145,14 +153,16 @@ export default {
       const select = element.querySelectorAll('.duet-date__select select');
 
       [...select].forEach((item) => {
-        if (is) {
-          item.disabled = true;
-          item.setAttribute('aria-hidden', 'true');
-          item.setAttribute('inert', '');
-        } else {
-          item.disabled = false;
-          item.removeAttribute('aria-hidden');
-          item.removeAttribute('inert');
+        if (item) {
+          if (is) {
+            item.disabled = true;
+            item.setAttribute('aria-hidden', 'true');
+            item.setAttribute('inert', '');
+          } else {
+            item.disabled = false;
+            item.removeAttribute('aria-hidden');
+            item.removeAttribute('inert');
+          }
         }
       });
     };
@@ -196,7 +206,6 @@ export default {
       if (val === state.val) return;
 
       const { element } = state;
-      const eChange = new Event('change');
 
       if (!val || !val.length) {
         element.value = '';
@@ -274,7 +283,6 @@ export default {
       const { element } = state;
       const { valueAsDate, value } = e.detail;
       const { pickerChange } = props;
-      const eChange = new Event('change');
       const val = value.replace(/-/g, '.');
 
       state.val = val;
@@ -366,80 +374,85 @@ export default {
         input.value && input.value.querySelector('duet-date-picker');
 
       if (element) {
-        state.element = element;
+        const initObserverCallback = () => {
+          initObserver.disconnect();
 
-        nextTick(() => {
-          setTimeout(() => {
-            element.firstDayOfWeek = 0;
-            element.localization = {
-              buttonLabel: '날짜 선택',
-              placeholder: '연도.월.일',
-              selectedDateMessage: '선택 된 날짜',
-              prevMonthLabel: '이전 달',
-              nextMonthLabel: '다음 달',
-              monthSelectLabel: '월',
-              yearSelectLabel: '연도',
-              closeLabel: '닫기',
-              calendarHeading: '날짜 선택',
-              dayNames: [
-                '일 요일',
-                '월 요일',
-                '화 요일',
-                '수 요일',
-                '목 요일',
-                '금 요일',
-                '토 요일',
-              ],
-              monthNames: [
-                '1월',
-                '2월',
-                '3월',
-                '4월',
-                '5월',
-                '6월',
-                '7월',
-                '8월',
-                '9월',
-                '10월',
-                '11월',
-                '12월',
-              ],
-              monthNamesShort: [
-                '1',
-                '2',
-                '3',
-                '4',
-                '5',
-                '6',
-                '7',
-                '8',
-                '9',
-                '10',
-                '11',
-                '12',
-              ],
-              locale: 'ko-KR',
-            };
+          element.firstDayOfWeek = 0;
+          element.localization = {
+            buttonLabel: '날짜 선택',
+            placeholder: '연도.월.일',
+            selectedDateMessage: '선택 된 날짜',
+            prevMonthLabel: '이전 달',
+            nextMonthLabel: '다음 달',
+            monthSelectLabel: '월',
+            yearSelectLabel: '연도',
+            closeLabel: '닫기',
+            calendarHeading: '날짜 선택',
+            dayNames: [
+              '일 요일',
+              '월 요일',
+              '화 요일',
+              '수 요일',
+              '목 요일',
+              '금 요일',
+              '토 요일',
+            ],
+            monthNames: [
+              '1월',
+              '2월',
+              '3월',
+              '4월',
+              '5월',
+              '6월',
+              '7월',
+              '8월',
+              '9월',
+              '10월',
+              '11월',
+              '12월',
+            ],
+            monthNamesShort: [
+              '1',
+              '2',
+              '3',
+              '4',
+              '5',
+              '6',
+              '7',
+              '8',
+              '9',
+              '10',
+              '11',
+              '12',
+            ],
+            locale: 'ko-KR',
+          };
 
-            setButtonId(buttonId);
-            setSelectDisabled(true);
+          setButtonId(buttonId);
+          setSelectDisabled(true);
 
-            setMin(min);
-            setMax(max);
+          setMin(min);
+          setMax(max);
 
-            if (modelValue || defaultValue) {
-              setValue(modelValue || defaultValue);
-            }
+          if (modelValue || defaultValue) {
+            setValue(modelValue || defaultValue);
+          }
 
-            element.addEventListener('duetBlur', duetBlur);
-            element.addEventListener('duetChange', duetChange);
-            element.addEventListener('duetFocus', duetFocus);
-            element.addEventListener('duetOpen', duetOpen);
-            element.addEventListener('duetClose', duetClose);
+          element.addEventListener('duetBlur', duetBlur);
+          element.addEventListener('duetChange', duetChange);
+          element.addEventListener('duetFocus', duetFocus);
+          element.addEventListener('duetOpen', duetOpen);
+          element.addEventListener('duetClose', duetClose);
 
-            onInit(element);
-          }, 0);
+          onInit(element);
+        };
+        const initObserver = new MutationObserver(initObserverCallback);
+
+        initObserver.observe(element, {
+          childList: true,
         });
+
+        state.element = element;
       }
     });
 
@@ -482,6 +495,7 @@ export default {
         [$style['input--disabled']]: disabled,
         [$style['input--focus']]: state.isFocus,
         [$style['input--error']]: error,
+        [$style[`input--direction-${direction}`]]: direction,
       },
       customClassNames.wrap,
     ]"

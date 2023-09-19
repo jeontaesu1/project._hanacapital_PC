@@ -118,4 +118,18 @@
       }
     }
   }
+
+  &--direction {
+    &-right {
+      :global {
+        .duet-date__dialog {
+          html.is-date-picker-animated &,
+          &.is-active {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
 }
