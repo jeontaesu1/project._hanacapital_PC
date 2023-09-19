@@ -134,7 +134,9 @@ export default {
       const { element } = state;
       const button = element.getElementsByClassName('duet-date__toggle')[0];
 
-      button.setAttribute('id', id);
+      if (button) {
+        button.setAttribute('id', id);
+      }
     };
 
     const setSelectDisabled = (is = false) => {
@@ -142,14 +144,16 @@ export default {
       const select = element.querySelectorAll('.duet-date__select select');
 
       [...select].forEach((item) => {
-        if (is) {
-          item.disabled = true;
-          item.setAttribute('aria-hidden', 'true');
-          item.setAttribute('inert', '');
-        } else {
-          item.disabled = false;
-          item.removeAttribute('aria-hidden');
-          item.removeAttribute('inert');
+        if (item) {
+          if (is) {
+            item.disabled = true;
+            item.setAttribute('aria-hidden', 'true');
+            item.setAttribute('inert', '');
+          } else {
+            item.disabled = false;
+            item.removeAttribute('aria-hidden');
+            item.removeAttribute('inert');
+          }
         }
       });
     };
