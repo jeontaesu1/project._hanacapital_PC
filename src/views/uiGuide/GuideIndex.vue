@@ -271,7 +271,12 @@ const datas = () => [
         path: '/guide/Common_P00_p017',
         status: 'end',
         create: '2023.07.21',
-        log: [],
+        log: [
+          {
+            date: '2023.09.20',
+            text: '서브타이틀 문구 수정 및 수동 설치 영역 삭제, 설치 버튼 위치 변경',
+          },
+        ],
       },
       {
         depth2: '앱 설치 안내\nCommon_P00_p012',
