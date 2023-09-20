@@ -34,9 +34,7 @@ export default {
 
     <div>
       <section class="row-margin-block-small">
-        <div class="flex-box row-margin-contents">
-          <h3 class="text-title-1">필수 설치</h3>
-        </div>
+        <h3 class="text-title-1 row-margin-contents">필수 설치</h3>
 
         <div :class="$style['basic-table']">
           <table>
@@ -126,10 +124,8 @@ export default {
         </div>
       </section>
 
-      <section>
-        <div class="flex-box row-margin-contents">
-          <h3 class="text-title-1">선택 설치</h3>
-        </div>
+      <section class="row-margin-block-small">
+        <h3 class="text-title-1 row-margin-contents">선택 설치</h3>
 
         <div :class="$style['basic-table']">
           <table>
@@ -205,7 +201,11 @@ export default {
                 <td>
                   <div class="flex-box justify-conten-center">
                     <div class="flex-box__cell">
-                      <BasicButton size="regular" :disabled="true">
+                      <BasicButton
+                        size="regular"
+                        theme="tertiary"
+                        :disabled="true"
+                      >
                         설치완료
                       </BasicButton>
                     </div>
