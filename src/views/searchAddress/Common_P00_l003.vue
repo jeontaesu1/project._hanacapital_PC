@@ -20,6 +20,7 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import ContentsButton from '@/components/ui/button/ContentsButton.vue';
+import BasicBox from '@/components/ui/common/BasicBox.vue';
 
 export default {
   components: {
@@ -41,6 +42,7 @@ export default {
     FormList,
     FormListItem,
     ContentsButton,
+    BasicBox,
   },
   setup() {
     const state = reactive({
@@ -264,6 +266,38 @@ export default {
               </ContentsButton>
             </li>
           </ul>
+
+          <!-- Case : 도로명주소가 없는 경우 -->
+          <div>
+            <div :class="$style['address_empty']">
+              <p :class="$style['address_empty__text']">
+                입력하신 주소는<br />
+                표준화 및 도로명이 없는 주소입니다.
+              </p>
+            </div>
+
+            <BasicBox>
+              <div class="inline-wrap align-center">
+                <p class="text-body-1 font-weight-bold row-margin-item-small">
+                  04538
+                </p>
+                <p class="text-body-1 font-weight-regular">
+                  인천 서구 청라동 123
+                </p>
+
+                <div
+                  class="flex-box justify-conten-center row-margin-item-group"
+                >
+                  <div class="flex-box__cell">
+                    <BasicButton :line="true" size="small">
+                      해당 주소로 입력
+                    </BasicButton>
+                  </div>
+                </div>
+              </div>
+            </BasicBox>
+          </div>
+          <!-- // Case : 도로명주소가 없는 경우 -->
         </section>
         <!-- // Case : 상세주소 입력 후 노출 -->
       </div>

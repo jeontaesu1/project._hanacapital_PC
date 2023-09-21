@@ -29,7 +29,7 @@ export default {
       <IllustInfoTitle>하나캐피탈 앱을 설치해 보세요!</IllustInfoTitle>
       <IllustInfoText>
         하나캐피탈 앱을 설치하면<br />
-        <span class="color-green"
+        <span class="color-green font-weight-regular"
           >대출 이어하기, 대출 관리 등 하나캐피탈의 모든 서비스를 이용</span
         >하실 수 있어요.
       </IllustInfoText>
