@@ -231,7 +231,7 @@ const datas = () => [
         log: [
           {
             date: '2023.09.21',
-            text: 'Common_P00_l003 도로명주소 없는 케이스 추가',
+            text: 'Common_P00_l003 표준화 주소 없는 케이스 추가',
           },
         ],
       },

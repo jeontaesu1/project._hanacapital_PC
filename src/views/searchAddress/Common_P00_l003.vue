@@ -220,6 +220,7 @@ export default {
         <section class="row-margin-container-medium">
           <h3 class="text-body-1 row-margin-item-group">해당 주소 선택</h3>
 
+          <!-- Case : 표준화 주소 있을 경우 -->
           <ul :class="[$style['address-list'], $style['address-list--select']]">
             <li :class="$style['address-list__item']">
               <ContentsButton>
@@ -266,38 +267,34 @@ export default {
               </ContentsButton>
             </li>
           </ul>
+          <!-- // Case : 표준화 주소 있을 경우 -->
 
-          <!-- Case : 도로명주소가 없는 경우 -->
-          <div>
-            <div :class="$style['address_empty']">
-              <p :class="$style['address_empty__text']">
+          <!-- Case : 표준화 주소 없을 경우 -->
+          <div :class="$style['empty-standardization']">
+            <div :class="$style['empty-standardization__info']">
+              <p :class="$style['empty-standardization__text']">
                 입력하신 주소는<br />
                 표준화 및 도로명이 없는 주소입니다.
               </p>
             </div>
 
             <BasicBox>
-              <div class="inline-wrap align-center">
-                <p class="text-body-1 font-weight-bold row-margin-item-small">
-                  04538
-                </p>
-                <p class="text-body-1 font-weight-regular">
-                  인천 서구 청라동 123
-                </p>
-
-                <div
-                  class="flex-box justify-conten-center row-margin-item-group"
+              <p :class="$style['empty-standardization__result']">
+                <span :class="$style['empty-standardization__zip-code']"
+                  >04538</span
                 >
-                  <div class="flex-box__cell">
-                    <BasicButton :line="true" size="small">
-                      해당 주소로 입력
-                    </BasicButton>
-                  </div>
-                </div>
+                <span :class="$style['empty-standardization__address']"
+                  >인천 서구 청라동 123</span
+                >
+              </p>
+              <div :class="$style['empty-standardization__button']">
+                <BasicButton size="small" :line="true" :inline="true">
+                  해당 주소로 입력
+                </BasicButton>
               </div>
             </BasicBox>
           </div>
-          <!-- // Case : 도로명주소가 없는 경우 -->
+          <!-- // Case : 표준화 주소 없을 경우 -->
         </section>
         <!-- // Case : 상세주소 입력 후 노출 -->
       </div>

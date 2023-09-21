@@ -3,15 +3,37 @@
 @import '@/assets/scss/components/import/notice-section.scss';
 @import '@/assets/scss/components/import/address-list.scss';
 
-.address_empty {
-  padding: 16px 0 30px 0;
-  margin: auto 0;
+.empty-standardization {
   text-align: center;
+
+  &__info {
+    padding: 16px 0 30px;
+  }
 
   &__text {
     margin: 0;
     @include font-size-default(14);
-    font-weight: 400;
     color: $color-gray-80;
+  }
+
+  &__result {
+    margin: 0;
+    @include font-size-default(16);
+  }
+
+  &__zip-code {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  &__address {
+    display: block;
+  }
+
+  &__button {
+    margin-top: 16px;
+    font-size: 0;
+    line-height: 0;
   }
 }
