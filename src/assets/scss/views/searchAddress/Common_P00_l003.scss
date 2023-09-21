@@ -2,3 +2,16 @@
 @import '@/assets/scss/components/import/empty.scss';
 @import '@/assets/scss/components/import/notice-section.scss';
 @import '@/assets/scss/components/import/address-list.scss';
+
+.address_empty {
+  padding: 16px 0 30px 0;
+  margin: auto 0;
+  text-align: center;
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    font-weight: 400;
+    color: $color-gray-80;
+  }
+}

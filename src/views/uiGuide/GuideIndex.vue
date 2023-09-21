@@ -228,7 +228,12 @@ const datas = () => [
         path: '/ui-guide/search-address-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.09.21',
+            text: 'Common_P00_l003 도로명주소 없는 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '대출계산기',
@@ -287,7 +292,12 @@ const datas = () => [
         path: '/redirect/Common_P00_p012',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.09.21',
+            text: '서브타이틀 텍스트 굵기 수정',
+          },
+        ],
       },
       {
         depth2: '오류 안내\nCommon_P00_p013',
