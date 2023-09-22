@@ -3229,7 +3229,7 @@ const datas = () => [
         path: '/inventory-finance/IF_P08_p001',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [{ date: '2023.09.22', text: '차량번호 입력 영역 버튼으로 변경' }],
       },
       {
         depth2: '대출신청\nIF_P02_p001',

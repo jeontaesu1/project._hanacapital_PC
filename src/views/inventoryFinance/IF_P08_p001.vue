@@ -31,7 +31,6 @@ import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
-import SearchButton from '@/components/ui/button/SearchButton.vue';
 import SelectTable from '@/components/ui/table/SelectTable.vue';
 import SelectTableRow from '@/components/ui/table/SelectTableRow.vue';
 
@@ -64,7 +63,6 @@ export default {
     KeyValueText,
     InputBlock,
     InputBlockCell,
-    SearchButton,
     SelectTable,
     SelectTableRow,
   },
@@ -204,9 +202,11 @@ export default {
                 placeholder="차량번호 입력"
               />
             </InputBlockCell>
-            <InputBlockCell type="search">
-              <SearchButton />
-            </InputBlockCell>
+            <template v-slot:right>
+              <BasicButton size="small" theme="tertiary">
+                차량조회
+              </BasicButton>
+            </template>
           </InputBlock>
 
           <!-- Case : 조회 후 노출 -->
