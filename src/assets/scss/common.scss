@@ -367,6 +367,16 @@ body,
   text-decoration: none;
 }
 
+// nowrap
+.nowrap.nowrap {
+  white-space: nowrap;
+}
+
+// break-all
+.break-all.break-all {
+  word-break: break-all;
+}
+
 // ellipsis
 .ellipsis.ellipsis {
   white-space: nowrap;
