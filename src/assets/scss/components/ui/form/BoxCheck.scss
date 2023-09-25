@@ -168,7 +168,11 @@
 
     &[disabled]:checked {
       & + .box-check__block {
-        border-color: $color-gray-30;
+        border-color: $color-gray-40;
+
+        .box-check__label {
+          color: $color-gray-50;
+        }
       }
     }
 
