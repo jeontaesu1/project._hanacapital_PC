@@ -24,6 +24,7 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import PartInput from '@/components/ui/form/PartInput.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
@@ -57,6 +58,7 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    FormHelpText,
     BasicInput,
     PartInput,
     BasicSelect,
@@ -239,6 +241,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 대출가능금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                백삼십억원
+              </FormHelpText>
+              <!-- // Case : 대출가능금액 입력 시 노출 -->
             </FormInvalid>
           </FormListItem>
 
@@ -283,6 +291,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 대출신청금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                백삼십억원
+              </FormHelpText>
+              <!-- // Case : 대출신청금액 입력 시 노출 -->
             </FormInvalid>
           </FormListItem>
 
