@@ -20,6 +20,7 @@ import InputBlock from '@/components/ui/form/InputBlock.vue';
 import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import SecurityInput from '@/components/ui/form/SecurityInput.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
@@ -50,6 +51,7 @@ export default {
     InputBlockCell,
     BasicInput,
     FormInvalidMessage,
+    FormHelpText,
     SecurityInput,
     CheckBox,
     CheckBoxObject,
@@ -674,6 +676,12 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+
+              <!-- Case : 대출가능금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }">
+                백삼십억원
+              </FormHelpText>
+              <!-- // Case : 대출가능금액 입력 시 노출 -->
             </FormInvalid>
           </FormListItem>
         </FormList>
