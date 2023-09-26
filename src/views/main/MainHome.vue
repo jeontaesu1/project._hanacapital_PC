@@ -2,7 +2,7 @@
 // Main_P01_p001
 import { ref, reactive, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
-import { Pagination, A11y, Autoplay } from 'swiper';
+import { Pagination, A11y, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import PageContents from '@/components/ui/layout/PageContents.vue';
@@ -116,9 +116,15 @@ export default {
         paginationEl: null,
         autoplay: false,
       },
+      hotDealBanner: {
+        swiper: null,
+        paginationEl: null,
+        autoplay: false,
+      },
     });
 
     const topBannerPagination = ref(null);
+    const hotDealBannerPagination = ref(null);
 
     const topBannerOn = {
       swiper: (swiper) => {
@@ -132,11 +138,31 @@ export default {
       },
     };
 
+    const hotDealBannerOn = {
+      swiper: (swiper) => {
+        state.hotDealBanner.swiper = swiper;
+      },
+      autoplayStart: () => {
+        state.hotDealBanner.autoplay = true;
+      },
+      autoplayStop: () => {
+        state.hotDealBanner.autoplay = false;
+      },
+    };
+
     const topBannerToggle = () => {
       if (state.topBanner.autoplay) {
         state.topBanner.swiper.autoplay.stop();
       } else {
         state.topBanner.swiper.autoplay.start();
+      }
+    };
+
+    const hotDealBannerToggle = () => {
+      if (state.hotDealBanner.autoplay) {
+        state.hotDealBanner.swiper.autoplay.stop();
+      } else {
+        state.hotDealBanner.swiper.autoplay.start();
       }
     };
 
@@ -146,15 +172,19 @@ export default {
 
     onMounted(() => {
       state.topBanner.paginationEl = topBannerPagination.value;
+      state.hotDealBanner.paginationEl = hotDealBannerPagination.value;
     });
 
     return {
       BASE_URL,
-      modules: [Pagination, A11y, Autoplay],
+      modules: [Pagination, A11y, Autoplay, Navigation],
       state,
       topBannerPagination,
+      hotDealBannerPagination,
       topBannerOn,
+      hotDealBannerOn,
       topBannerToggle,
+      hotDealBannerToggle,
       testLogin,
     };
   },
@@ -166,7 +196,7 @@ export default {
     <div :class="$style['top']">
       <div class="max-wrap">
         <div :class="$style['slice']">
-          <div :class="[$style['slice__cell'], $style['slice__cell--wide']]">
+          <div :class="$style['slice__cell']">
             <!-- 상단 배너 -->
             <!-- DD : 관리자 등록 배너 -->
             <div :class="$style['top-banner']">
@@ -351,7 +381,7 @@ export default {
             </div>
             <!-- // 상단 퀵 메뉴 -->
           </div>
-          <div :class="$style['slice__cell']">
+          <div :class="[$style['slice__cell'], $style['slice__cell--side']]">
             <!-- Case : 로그인 전 노출 폼 -->
             <section v-if="!state.isTestLogin" :class="$style['login']">
               <h2 class="for-a11y">로그인</h2>
@@ -403,7 +433,9 @@ export default {
                     </ButtonListItem>
                   </ButtonList>
 
-                  <div :class="$style['login-menu']">
+                  <div
+                    :class="[$style['login-menu'], 'row-margin-contents-group']"
+                  >
                     <ul :class="$style['login-menu__list']">
                       <li :class="$style['login-menu__item']">
                         <RouterLink to="" :class="$style['login-menu__link']">
@@ -452,10 +484,12 @@ export default {
 
                   <!-- Case : 개인 / 개인사업자 -->
                   <div v-if="state.loginBusinessType.personal">
-                    <p :class="$style['login-guide']">
-                      최초 로그인 시<br />
-                      공동인증서 등록을 먼저 해주세요.
-                    </p>
+                    <div :class="$style['login-guide']">
+                      <p :class="$style['login-guide__text']">
+                        최초 로그인 시<br />
+                        공동인증서 등록을 먼저 해주세요.
+                      </p>
+                    </div>
                     <ButtonList
                       align="full"
                       :classNames="{ wrap: 'row-margin-none' }"
@@ -569,7 +603,7 @@ export default {
                       </ButtonListItem>
                     </ButtonList>
 
-                    <div :class="[$style['login-menu'], 'row-margin-contents']">
+                    <div :class="$style['login-menu']">
                       <ul :class="$style['login-menu__list']">
                         <li :class="$style['login-menu__item']">
                           <RouterLink to="" :class="$style['login-menu__link']">
@@ -696,10 +730,47 @@ export default {
       </div>
     </div>
 
-    <div :class="$style['middle']">
+    <div :class="$style['bottom']">
       <div class="max-wrap">
         <div :class="$style['slice']">
-          <div :class="[$style['slice__cell'], $style['slice__cell--wide']]">
+          <div :class="$style['slice__cell']">
+            <!-- 오토금융 -->
+            <div :class="$style['product-banners']">
+              <ul :class="$style['product-banners__list']">
+                <li :class="$style['product-banners__item']">
+                  <RouterLink to="" :class="$style['product-banners__link']">
+                    <span :class="$style['product-banners__title']">
+                      오토리스/렌터카<br />
+                      견적조회
+                    </span>
+                    <span :class="$style['product-banners__text']"
+                      >지금 바로 견적을 확인해 보세요!</span
+                    >
+                  </RouterLink>
+                </li>
+                <li :class="$style['product-banners__item']">
+                  <RouterLink
+                    to=""
+                    :class="[
+                      $style['product-banners__link'],
+                      $style['product-banners__link--secondary'],
+                    ]"
+                  >
+                    <span :class="$style['product-banners__title']">
+                      중고차 오토론<br />
+                      자금 대출
+                    </span>
+                    <span :class="$style['product-banners__text']"
+                      >하나캐피탈을 이용해 보세요!</span
+                    >
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
+            <!-- // 오토금융 -->
+          </div>
+          <!-- Case : 핫딜 없을 경우 미노출 -->
+          <div :class="[$style['slice__cell'], $style['slice__cell--side']]">
             <!-- 즉시출고 핫딜! -->
             <section :class="$style['section']">
               <div :class="$style['section__head']">
@@ -710,6 +781,8 @@ export default {
                   <TextButton
                     :block="true"
                     :iconFillAll="true"
+                    textSize="regular"
+                    iconSize="regular"
                     :classNames="{
                       wrap: 'color-gray-tertiary',
                     }"
@@ -723,70 +796,72 @@ export default {
               </div>
 
               <div :class="$style['hot-deal']">
-                <ul :class="$style['hot-deal__list']">
-                  <li v-for="i in 4" :key="i" :class="$style['hot-deal__item']">
+                <div :class="$style['hot-deal__controller']">
+                  <div id="hotDealPagination"></div>
+                  <button
+                    type="button"
+                    :class="[
+                      $style['hot-deal__toggle'],
+                      {
+                        [$style['hot-deal__toggle--autoplay']]:
+                          state.hotDealBanner.autoplay,
+                      },
+                    ]"
+                    @click="hotDealBannerToggle"
+                  >
+                    <span class="for-a11y">
+                      배너 롤링
+                      {{ state.hotDealBanner.autoplay ? '정지' : '재생' }}
+                    </span>
+                  </button>
+                </div>
+                <div id="hotDealNext" :class="$style['hot-deal__next']"></div>
+                <div id="hotDealPrev" :class="$style['hot-deal__prev']"></div>
+                <Swiper
+                  :modules="modules"
+                  :pagination="{
+                    el: '#hotDealPagination',
+                    clickable: true,
+                  }"
+                  :navigation="{
+                    nextEl: '#hotDealNext',
+                    prevEl: '#hotDealPrev',
+                  }"
+                  :autoplay="{
+                    delay: 3000,
+                  }"
+                  :loop="true"
+                  @swiper="hotDealBannerOn.swiper"
+                  @autoplayStart="hotDealBannerOn.autoplayStart"
+                  @autoplayPause="hotDealBannerOn.autoplayPause"
+                  @autoplayStop="hotDealBannerOn.autoplayStop"
+                >
+                  <SwiperSlide v-for="i in 4" :key="i">
                     <RouterLink to="" :class="$style['hot-deal__link']">
                       <span :class="$style['hot-deal__thumb']">
                         <CarThumb
-                          size="regular"
+                          size="small"
                           src="/images/_dummy/car-thumb.png"
                         />
                       </span>
-                      <span :class="$style['hot-deal__brand']">현대</span>
-                      <span :class="$style['hot-deal__model']"
-                        >디 올 뉴 코나 Electric</span
-                      >
+                      <span :class="$style['hot-deal__info']">
+                        <span :class="$style['hot-deal__brand']">현대</span>
+                        <span :class="$style['hot-deal__model']"
+                          >디 올 뉴 코나 Electric 최대 2줄 노출 됩니다.</span
+                        >
+                      </span>
                     </RouterLink>
-                  </li>
-                </ul>
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </section>
             <!-- // 즉시출고 핫딜! -->
           </div>
-          <div :class="$style['slice__cell']">
-            <!-- 오토금융 -->
-            <div :class="$style['product-banners']">
-              <ul :class="$style['product-banners__list']">
-                <li :class="$style['product-banners__item']">
-                  <RouterLink to="" :class="$style['product-banners__link']">
-                    <span :class="$style['product-banners__category']"
-                      >오토리스/렌터카</span
-                    >
-                    <span :class="$style['product-banners__title']">
-                      쉽고 빠른<br />
-                      견적조회
-                    </span>
-                  </RouterLink>
-                </li>
-                <li :class="$style['product-banners__item']">
-                  <RouterLink
-                    to=""
-                    :class="[
-                      $style['product-banners__link'],
-                      $style['product-banners__link--secondary'],
-                    ]"
-                  >
-                    <span :class="$style['product-banners__category']"
-                      >중고차 오토론</span
-                    >
-                    <span :class="$style['product-banners__title']">
-                      중고차 구입<br />
-                      자금 대출
-                    </span>
-                  </RouterLink>
-                </li>
-              </ul>
-            </div>
-            <!-- // 오토금융 -->
-          </div>
+          <!-- // Case : 핫딜 없을 경우 미노출 -->
         </div>
-      </div>
-    </div>
 
-    <div :class="$style['bottom']">
-      <div class="max-wrap">
         <div :class="$style['slice']">
-          <div :class="[$style['slice__cell'], $style['slice__cell--wide']]">
+          <div :class="$style['slice__cell']">
             <!-- 개인대출 -->
             <section :class="$style['section']">
               <div :class="$style['section__head']">
@@ -892,7 +967,7 @@ export default {
             </section>
             <!-- // 개인대출 -->
           </div>
-          <div :class="$style['slice__cell']">
+          <div :class="[$style['slice__cell'], $style['slice__cell--side']]">
             <!-- 의료기·설비 -->
             <section :class="$style['section']">
               <div :class="$style['section__head']">

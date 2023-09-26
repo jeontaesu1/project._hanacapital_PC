@@ -8834,6 +8834,19 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Size : small</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="small" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="small" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarThumb size="small" src="/images/_dummy/car-thumb.png" />
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">Size : Regular</h3>
         <!-- Case : 이미지 없을 때 -->
         <CarThumb size="regular" src="" />

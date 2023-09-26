@@ -30,15 +30,11 @@
   margin-left: -6px;
   letter-spacing: 0;
 
+  @include swiper-pagination-bullet;
+
   :global(.swiper-pagination-bullet) {
-    display: inline-block;
-    vertical-align: top;
-    width: 8px;
-    height: 8px;
     margin-left: 6px;
-    border-radius: 4px;
     background-color: rgba($color-white, 0.3);
-    transition: width 0.3s, background-color 0.3s;
 
     &:only-child {
       display: none;
@@ -46,7 +42,6 @@
   }
 
   :global(.swiper-pagination-bullet-active) {
-    width: 12px;
     background-color: $color-white;
   }
 }

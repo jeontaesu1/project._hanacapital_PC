@@ -30,22 +30,5 @@
     text-align: center;
   }
 
-  :global(.swiper-pagination-bullet) {
-    display: inline-block;
-    vertical-align: top;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background-color: $color-gray-50;
-    transition: width 0.3s, background-color 0.3s;
-
-    & + :global(.swiper-pagination-bullet) {
-      margin-left: 6px;
-    }
-  }
-
-  :global(.swiper-pagination-bullet-active) {
-    width: 12px;
-    background-color: $color-black;
-  }
+  @include swiper-pagination-bullet;
 }
