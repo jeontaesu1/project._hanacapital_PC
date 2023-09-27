@@ -1038,11 +1038,16 @@ export default {
             titleText="직장명/상호명"
             :require="true"
             target="#PF_P07_p005_workName"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.workNameError">
               <InputBlock :error="state.workNameError" :disabled="true">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="직장명/상호명" id="PF_P07_p005_workName" />
+                  <BasicInput
+                    title="직장명/상호명"
+                    id="PF_P07_p005_workName"
+                    placeholder="직장/상호명을 입력해 주세요"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -1053,11 +1058,16 @@ export default {
             titleText="부서명"
             :require="true"
             target="#PF_P07_p005_department"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.departmentError">
               <InputBlock :error="state.departmentError" :disabled="true">
                 <InputBlockCell :flexible="true">
-                  <BasicInput title="부서명" id="PF_P07_p005_department" />
+                  <BasicInput
+                    title="부서명"
+                    id="PF_P07_p005_department"
+                    placeholder="부서명을 입력해 주세요"
+                  />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
@@ -1068,6 +1078,7 @@ export default {
             titleText="직군/직장"
             target="#PF_P07_p005_jobGroup"
             :require="true"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.jobGroupError">
               <InputBlock :error="state.jobGroupError">
@@ -1089,6 +1100,7 @@ export default {
                     ]"
                     title="직군"
                     inputId="PF_P07_p005_jobGroup"
+                    placeholder="선택"
                   />
                 </InputBlockCell>
                 <InputBlockCell :flexible="true" margin="regular">
@@ -1108,6 +1120,7 @@ export default {
                       },
                     ]"
                     title="직장"
+                    placeholder="선택"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -1119,6 +1132,7 @@ export default {
             titleText="직종/직위"
             target="#PF_P07_p005_jobCategory"
             :require="true"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.jobCategoryError">
               <InputBlock :error="state.jobCategoryError">
@@ -1140,6 +1154,7 @@ export default {
                     ]"
                     title="직종"
                     inputId="PF_P07_p005_jobCategory"
+                    placeholder="선택"
                   />
                 </InputBlockCell>
                 <InputBlockCell :flexible="true" margin="regular">
@@ -1159,6 +1174,7 @@ export default {
                       },
                     ]"
                     title="직위"
+                    placeholder="선택"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -1171,6 +1187,7 @@ export default {
             :require="true"
             target="#PF_P07_p005_year002"
             :selectOnly="true"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.year002Error">
               <InputBlock :error="state.year002Error">
@@ -1228,6 +1245,7 @@ export default {
                     ]"
                     title="사업/근속년수"
                     inputId="PF_P07_p005_year002"
+                    placeholder="선택"
                   />
                 </InputBlockCell>
               </InputBlock>
