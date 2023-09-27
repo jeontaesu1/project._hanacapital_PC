@@ -37,7 +37,12 @@ const datas = () => [
         path: '/ui-guide/loading-001',
         status: 'end',
         create: '2023.05.19',
-        log: [],
+        log: [
+          {
+            date: '2023.09.27',
+            text: '모션 변경',
+          },
+        ],
       },
       {
         depth2: '레이아웃',

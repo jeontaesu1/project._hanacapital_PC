@@ -24,20 +24,20 @@
   &__dot {
     width: 10px;
     height: 10px;
-    background-color: $color-green-50;
+    background-color: $color-green-30;
     border-radius: 50%;
-    opacity: 0.05;
-    animation: loading-animate-opacity 1.5s linear infinite;
+    animation: loading-dot-animate 2.4s ease-in-out infinite;
 
     & + & {
       margin-left: 5px;
     }
 
     &--2 {
-      animation-delay: 0.5s;
+      animation-delay: 0.15s;
     }
+
     &--3 {
-      animation-delay: 1s;
+      animation-delay: 0.3s;
     }
   }
 
@@ -46,14 +46,25 @@
   }
 }
 
-@keyframes loading-animate-opacity {
+@keyframes loading-dot-animate {
   0% {
-    opacity: 0.05;
+    background-color: $color-green-30;
+    transform: translateY(0);
   }
-  40% {
-    opacity: 1;
+  25% {
+    background-color: $color-navy-60;
+    transform: translateY(-20px);
   }
-  80% {
-    opacity: 0.05;
+  50% {
+    background-color: $color-navy-60;
+    transform: translateY(0);
+  }
+  75% {
+    background-color: $color-green-30;
+    transform: translateY(-20px);
+  }
+  100% {
+    background-color: $color-green-30;
+    transform: translateY(0);
   }
 }
