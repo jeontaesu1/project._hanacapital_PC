@@ -28,7 +28,7 @@
     @include font-size-head(20);
     min-height: #{$line-height-head}em;
     font-weight: 400;
-    color: $color-gray-60;
+    color: $color-gray-90;
     cursor: pointer;
     transition: transform 0.2s, font-size 0.2s, line-height 0.2s, color 0.2s,
       padding 0.2s;
@@ -86,6 +86,7 @@
       min-height: #{$line-height-default}em;
       font-weight: 500;
       transform: translateY(-28px);
+      color: $color-gray-70;
 
       &-optional {
         @include font-size-default(12);
@@ -118,12 +119,12 @@
 
   &__item--disabled {
     .form__title {
-      color: $color-gray-40;
+      color: $color-gray-50;
       cursor: default;
     }
 
     .form__help {
-      color: $color-gray-40;
+      color: $color-gray-50;
     }
   }
 

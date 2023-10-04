@@ -122,9 +122,11 @@
   }
 
   &--disabled {
+    .input__help,
+    .input__invalid,
     .input__count,
     .input__count-current {
-      color: $color-gray-40;
+      color: $color-gray-50;
     }
   }
 }
