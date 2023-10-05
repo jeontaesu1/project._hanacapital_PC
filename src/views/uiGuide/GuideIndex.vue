@@ -199,7 +199,23 @@ const datas = () => [
             date: '2023.09.25',
             text: '생년월일 입력 전 빈 동그라미 보이는 기능 적용',
           },
+          {
+            date: '2023.10.05',
+            text: '카드사, 약관동의, 휴대폰번호 항목, 안내문구 추가 및 카드유효기간, 비밀번호 항목 삭제',
+          },
         ],
+      },
+      {
+        depth2:
+          '본인인증\nCommon_P00_p003\nCommon_P00_p004\nCommon_P00_p006\nCommon_P00_p007\nCommon_P00_p008\nCommon_P00_p016',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/common-001',
+        status: 'end',
+        create: '2023.10.05',
+        log: [],
       },
       {
         depth2: '약관동의',

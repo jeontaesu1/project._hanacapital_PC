@@ -265,6 +265,12 @@ const routes = [
     component: () => import('@/views/identification/Common_P00_p003.vue'),
   },
 
+  {
+    path: '/ui-guide/common-001',
+    name: '/ui-guide/common-001',
+    component: () => import('@/views/uiGuide/GuideCommon001.vue'),
+  },
+
   // redirect
   {
     path: '/redirect/Common_P00_p012',
