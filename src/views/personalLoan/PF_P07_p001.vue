@@ -61,7 +61,7 @@ export default {
 </script>
 
 <template>
-  <PageContents>
+  <PageContents size="large">
     <template v-slot:head>
       <LocationBar
         :data="[
@@ -81,16 +81,16 @@ export default {
       />
     </template>
 
-    <PageHead>
-      <PageTitle>계좌운용규칙을 확인해 주세요</PageTitle>
-      <PageSubText :classNames="{ wrap: 'font-weight-regular' }">
-        고객님의 안전한 투자 및 금융기관과의 안정적 금융거래를 위하여 다음과
-        같이 계좌운용규칙을 운용하고 있사오니, 충분히 숙지하신 후 대출 신청해
-        주시기 바랍니다.
-      </PageSubText>
-    </PageHead>
+    <div :class="$style['default-bg']">
+      <PageHead>
+        <PageTitle>계좌운용규칙을 확인해 주세요</PageTitle>
+        <PageSubText :classNames="{ wrap: 'font-weight-regular' }">
+          고객님의 안전한 투자 및 금융기관과의 안정적 금융거래를 위하여 다음과
+          같이 계좌운용규칙을 운용하고 있사오니, 충분히 숙지하신 후 대출 신청해
+          주시기 바랍니다.
+        </PageSubText>
+      </PageHead>
 
-    <div>
       <BasicBox>
         <div :class="$style['agree-list']">
           <ul
@@ -234,44 +234,46 @@ export default {
           </ul>
         </section>
       </section>
-
-      <!-- Case : 동의 후 다음 버튼 선택 시 노출 -->
-      <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">
-          대출신청 진행할 증권사 선택
-        </h3>
-
-        <BoxCheckList :wrap="true">
-          <BoxCheckListItem v-for="i in 9" :key="i">
-            <BoxCheck
-              :contents="true"
-              name="PF_P07_p001_bankSelect"
-              :id="`PF_P07_p001_bankSelect${i}`"
-            >
-              <div class="row-margin-item-small">
-                <BankFullLogo type="securities" code="270" />
-              </div>
-
-              <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
-                >하나 & 스탁론 Ⅰ</BoxCheckLabel
-              >
-              <div
-                class="text-body-2 color-gray-secondary row-margin-small ellipsis"
-              >
-                토마토파트너
-              </div>
-            </BoxCheck>
-          </BoxCheckListItem>
-        </BoxCheckList>
-      </section>
-      <!-- //Case : 동의 후 다음 버튼 선택 시 노출 -->
     </div>
 
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>다음</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+    <!-- Case : 동의 후 다음 버튼 선택 시 노출 -->
+    <section class="row-margin-block-small row-margin-bottom-none">
+      <h3 class="text-title-1 row-margin-contents">
+        대출신청 진행할 증권사 선택
+      </h3>
+
+      <BoxCheckList :wrap="true" :col="3">
+        <BoxCheckListItem v-for="i in 10" :key="i">
+          <BoxCheck
+            :contents="true"
+            name="PF_P07_p001_bankSelect"
+            :id="`PF_P07_p001_bankSelect${i}`"
+          >
+            <div class="row-margin-item-small">
+              <BankFullLogo type="securities" code="270" />
+            </div>
+
+            <BoxCheckLabel :classNames="{ label: 'ellipsis' }"
+              >하나 & 스탁론 Ⅰ</BoxCheckLabel
+            >
+            <div
+              class="text-body-2 color-gray-secondary row-margin-small ellipsis"
+            >
+              토마토파트너
+            </div>
+          </BoxCheck>
+        </BoxCheckListItem>
+      </BoxCheckList>
+    </section>
+    <!-- //Case : 동의 후 다음 버튼 선택 시 노출 -->
+
+    <div :class="$style['default-bg']">
+      <ButtonList>
+        <ButtonListItem>
+          <BasicButton>다음</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+    </div>
   </PageContents>
 </template>
 

@@ -30,6 +30,13 @@
         }
       }
     }
+    &-large {
+      .page-contents {
+        &__body {
+          width: $contents-width-large;
+        }
+      }
+    }
     &-max {
       .page-contents {
         &__body {
