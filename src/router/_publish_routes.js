@@ -514,6 +514,11 @@ const routes = [
     component: () => import('@/views/additionalService/My_P06_p013.vue'),
   },
   {
+    path: '/additional-service/My_P06_p014',
+    name: '/additional-service/My_P06_p014',
+    component: () => import('@/views/additionalService/My_P06_p014.vue'),
+  },
+  {
     path: '/additional-service/Etc_P01_p001',
     name: '/additional-service/Etc_P01_p001',
     component: () => import('@/views/additionalService/Etc_P01_p001.vue'),
