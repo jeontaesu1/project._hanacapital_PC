@@ -265,6 +265,12 @@ const routes = [
     component: () => import('@/views/identification/Common_P00_p003.vue'),
   },
 
+  {
+    path: '/ui-guide/common-001',
+    name: '/ui-guide/common-001',
+    component: () => import('@/views/uiGuide/GuideCommon001.vue'),
+  },
+
   // redirect
   {
     path: '/redirect/Common_P00_p012',
@@ -506,6 +512,11 @@ const routes = [
     path: '/additional-service/My_P06_p013',
     name: '/additional-service/My_P06_p013',
     component: () => import('@/views/additionalService/My_P06_p013.vue'),
+  },
+  {
+    path: '/additional-service/My_P06_p014',
+    name: '/additional-service/My_P06_p014',
+    component: () => import('@/views/additionalService/My_P06_p014.vue'),
   },
   {
     path: '/additional-service/Etc_P01_p001',

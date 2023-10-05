@@ -34,7 +34,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
-import NoticeText from '@/components/ui/text/NoticeText.vue';
+
+import BrandLogo001 from '@/assets/images/icon/bc.svg?component';
 
 export default {
   components: {
@@ -66,7 +67,7 @@ export default {
     CheckBox,
     CheckBoxLabelText,
     CheckBoxObject,
-    NoticeText,
+    BrandLogo001,
   },
 
   setup() {
@@ -77,6 +78,7 @@ export default {
       idNumber001Error: false,
       idNumber002Error: false,
       idNumber003Error: false,
+      phoneError: false,
       phone001Error: false,
       phone002Error: false,
       code001Error: false,
@@ -85,8 +87,7 @@ export default {
       businessLicenseError: false,
       businessNumberError: false,
       cardNumberError: false,
-      cardDateError: false,
-      cardPasswordError: false,
+      cardBrandError: false,
     });
 
     return {
@@ -891,6 +892,54 @@ export default {
       <div>
         <FormList>
           <FormListItem
+            titleText="카드사"
+            target="#Common_P00_p003_cardBrand"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.cardBrandError">
+              <InputBlock :error="state.cardBrandError">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :options="[
+                      {
+                        value: '1',
+                        label: '하나카드',
+                      },
+                      {
+                        value: '2',
+                        label: '롯데카드',
+                      },
+                      {
+                        value: '3',
+                        label: '삼성카드',
+                      },
+                      {
+                        value: '4',
+                        label: '신한카드',
+                      },
+                      {
+                        value: '5',
+                        label: '국민카드',
+                      },
+                      {
+                        value: '6',
+                        label: '현대카드',
+                      },
+                      {
+                        value: '7',
+                        label: 'BC카드',
+                      },
+                    ]"
+                    title="카드사 선택"
+                    inputId="Common_P00_p003_cardBrand"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
             titleText="카드번호"
             target="#Common_P00_p003_cardNumber1"
           >
@@ -936,53 +985,142 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem
-            titleText="유효기간"
-            target="#Common_P00_p003_cardDate1"
-          >
-            <FormInvalid :error="state.cardDateError">
-              <InputBlock :error="state.cardDateError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="유효기간 월"
-                    id="Common_P00_p003_cardDate1"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-1">월</div>
-                </InputBlockCell>
-                <InputBlockCell :flexible="true" margin="regular">
-                  <BasicInput
-                    type="number"
-                    pattern="\d*"
-                    title="유효기간 년"
-                    id="Common_P00_p003_cardDate2"
-                  />
-                </InputBlockCell>
-                <InputBlockCell margin="regular">
-                  <div class="text-body-1">년</div>
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
+          <FormListItem titleText="약관동의" :forceFocus="true">
+            <div :class="$style['agree-list']">
+              <ul :class="$style['agree-list__depth']">
+                <li :class="$style['agree-list__depth-item']">
+                  <div :class="$style['agree-list__depth-head']">
+                    <CheckBox
+                      id="Common_P00_p003_cardAgree001"
+                      :classNames="{
+                        wrap: $style['agree-list__depth-checkbox'],
+                      }"
+                    >
+                      <CheckBoxObject />
+                      <CheckBoxLabelText>전체동의</CheckBoxLabelText>
+                    </CheckBox>
+                  </div>
+                  <div :class="$style['agree-list__depth-contents']">
+                    <ul :class="$style['agree-list__list']">
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="Common_P00_p003_cardAgree001_001"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              카드사 서비스 이용약관
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="Common_P00_p003_cardAgree001_002"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              본인확인 서비스 이용약관
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="Common_P00_p003_cardAgree001_003"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              본인확인 이용약관
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                      <li :class="$style['agree-list__item']">
+                        <div :class="$style['agree-list__head']">
+                          <CheckBox
+                            id="Common_P00_p003_cardAgree001_004"
+                            :classNames="{
+                              wrap: $style['agree-list__checkbox'],
+                            }"
+                            theme="tertiary"
+                          >
+                            <CheckBoxObject />
+                            <CheckBoxLabelText>
+                              통신사 본인확인 이용약관 동의
+                            </CheckBoxLabelText>
+                          </CheckBox>
+                          <div :class="$style['agree-list__right']">
+                            <button
+                              type="button"
+                              :class="$style['agree-list__link']"
+                            >
+                              <span :class="$style['agree-list__link-text']">
+                                상세보기
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </FormListItem>
 
-          <FormListItem
-            titleText="카드비밀번호 앞 2자리"
-            target="#Common_P00_p003_cardPassword"
-          >
-            <FormInvalid :error="state.cardPasswordError">
-              <InputBlock :error="state.cardPasswordError">
+          <FormListItem titleText="휴대폰번호" target="#Common_P00_p003_phone">
+            <FormInvalid :error="state.phoneError">
+              <InputBlock :error="state.phoneError">
                 <InputBlockCell :flexible="true">
-                  <PartInput
-                    type="number"
+                  <BasicInput
                     pattern="\d*"
-                    title="카드비밀번호 앞 2자리"
-                    :afterDot="2"
-                    :length="2"
-                    id="Common_P00_p003_cardPassword"
+                    title="휴대폰번호"
+                    id="Common_P00_p003_phone"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -991,9 +1129,35 @@ export default {
           </FormListItem>
         </FormList>
 
-        <NoticeText :classNames="{ wrap: 'row-margin-contents' }">
-          일부 카드사는 지원되지 않습니다.
-        </NoticeText>
+        <ul :class="[$style['basic-list'], 'row-margin-container-medium']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              본인명의의 개인 신용카드 또는 체크카드로 본인확인이 가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              법인카드, 가족카드, 선불카드는 본인확인이 불가능합니다.
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              비씨카드는 비씨로고(
+              <span :class="$style['inline-logo']"><BrandLogo001 /></span>
+              )가 표시된 카드만 이용가능합니다. (예 : 농협BC, 우리카드, IBK카드
+              등)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              일부 카드사는 지원되지 않습니다.
+            </div>
+          </li>
+        </ul>
       </div>
       <!-- // Case : 신용카드 선택시 노출 -->
     </section>

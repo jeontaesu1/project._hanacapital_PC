@@ -1,2 +1,20 @@
 @import '@/assets/scss/components/import/agree-list.scss';
 @import '@/assets/scss/components/import/basic-list.scss';
+
+.inline-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 13px;
+  height: #{$line-height-default}em;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -14px 0 0 -13px;
+    display: block;
+    width: 26px;
+    height: 26px;
+  }
+}
