@@ -1700,7 +1700,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p001',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.10.06',
+            text: '증권사 선택 영역 너비 및 정렬 수정',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
