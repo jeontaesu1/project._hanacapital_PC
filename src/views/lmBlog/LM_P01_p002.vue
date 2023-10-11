@@ -39,6 +39,7 @@ import UiAccordionItem from '@/components/ui/accordion/UiAccordionItem.vue';
 import UiAccordionOpener from '@/components/ui/accordion/UiAccordionOpener.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UiAccordionLayer from '@/components/ui/accordion/UiAccordionLayer.vue';
+import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 
 export default {
   components: {
@@ -77,6 +78,7 @@ export default {
     UiAccordionOpener,
     BasicBox,
     UiAccordionLayer,
+    BasicDatepicker,
   },
 
   setup() {
@@ -98,8 +100,7 @@ export default {
       settingError: false,
       carNumberError: false,
       workNameError: false,
-      workYearError: false,
-      workMonthError: false,
+      workDateError: false,
       workIncomeError: false,
       buisnessNameError: false,
       buisnessLicenseError: false,
@@ -663,159 +664,14 @@ export default {
             </FormInvalid>
           </FormListItem>
 
-          <FormListItem
-            titleText="입사년도"
-            target="#LM_P01_p002_WorkYear"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.workYearError">
-              <InputBlock :error="state.workYearError">
+          <FormListItem titleText="입사일" target="#LM_P01_p002_workDateButton">
+            <FormInvalid :error="state.workDateError">
+              <InputBlock :error="state.workDateError">
                 <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '2022년',
-                      },
-                      {
-                        value: '2',
-                        label: '2021년',
-                      },
-                      {
-                        value: '3',
-                        label: '2020년',
-                      },
-                      {
-                        value: '4',
-                        label: '2019년',
-                      },
-                      {
-                        value: '5',
-                        label: '2018년',
-                      },
-                      {
-                        value: '6',
-                        label: '2017년',
-                      },
-                      {
-                        value: '7',
-                        label: '2016년',
-                      },
-                      {
-                        value: '8',
-                        label: '2015년',
-                      },
-                      {
-                        value: '9',
-                        label: '2014년',
-                      },
-                      {
-                        value: '10',
-                        label: '2013년',
-                      },
-                      {
-                        value: '11',
-                        label: '2012년',
-                      },
-                      {
-                        value: '12',
-                        label: '2011년',
-                      },
-                      {
-                        value: '13',
-                        label: '2010년',
-                      },
-                      {
-                        value: '14',
-                        label: '2009년',
-                      },
-                      {
-                        value: '15',
-                        label: '2008년',
-                      },
-                      {
-                        value: '16',
-                        label: '2007년',
-                      },
-                      {
-                        value: '17',
-                        label: '2006년',
-                      },
-                      {
-                        value: '18',
-                        label: '2005년',
-                      },
-                    ]"
-                    title="입사년도 선택하기"
-                    inputId="LM_P01_p002_WorkYear"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="입사월"
-            target="#LM_P01_p002_WorkMonth"
-            :selectOnly="true"
-          >
-            <FormInvalid :error="state.workMonthError">
-              <InputBlock :error="state.workMonthError">
-                <InputBlockCell :flexible="true">
-                  <BasicSelect
-                    :options="[
-                      {
-                        value: '1',
-                        label: '1월',
-                      },
-                      {
-                        value: '2',
-                        label: '2월',
-                      },
-                      {
-                        value: '3',
-                        label: '3월',
-                      },
-                      {
-                        value: '4',
-                        label: '4월',
-                      },
-                      {
-                        value: '5',
-                        label: '5월',
-                      },
-                      {
-                        value: '6',
-                        label: '6월',
-                      },
-                      {
-                        value: '7',
-                        label: '7월',
-                      },
-                      {
-                        value: '8',
-                        label: '8월',
-                      },
-                      {
-                        value: '9',
-                        label: '9월',
-                      },
-                      {
-                        value: '10',
-                        label: '10월',
-                      },
-                      {
-                        value: '11',
-                        label: '11월',
-                      },
-                      {
-                        value: '12',
-                        label: '12월',
-                      },
-                    ]"
-                    title="입사월 선택하기"
-                    inputId="LM_P01_p002_WorkMonth"
+                  <BasicDatepicker
+                    title="입사일"
+                    id="LM_P01_p002_workDate"
+                    buttonId="LM_P01_p002_workDateButton"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -840,13 +696,27 @@ export default {
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
+              <!-- Case : 금액 입력 시 노출 -->
+              <FormHelpText :classNames="{ wrap: 'align-right' }"
+                >구천만원</FormHelpText
+              >
+              <!-- // Case : 금액 입력 시 노출 -->
             </FormInvalid>
           </FormListItem>
         </FormList>
       </section>
 
       <section class="row-margin-block-small">
-        <h3 class="text-title-1 row-margin-contents">사업자 정보</h3>
+        <div class="flex-box row-margin-contents">
+          <div class="flex-box__cell flex-1">
+            <h3 class="text-title-1">사업자정보</h3>
+          </div>
+          <div class="flex-box__cell">
+            <BasicButton size="small" theme="tertiary">
+              KCB사업자조회
+            </BasicButton>
+          </div>
+        </div>
 
         <FormList>
           <FormListItem titleText="사업자명" target="#LM_P01_p002_buisnessName">
@@ -855,44 +725,49 @@ export default {
                 <InputBlockCell :flexible="true">
                   <BasicInput title="사업자명" id="LM_P01_p002_buisnessName" />
                 </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <!-- DD :"KCB사업자조회"로 정보 입력 시 :disabled="true" -->
+          <FormListItem
+            titleText="사업자등록번호"
+            target="#LM_P01_p002_buisnessLicense"
+            :disabled="false"
+          >
+            <FormInvalid :error="state.buisnessLicenseError">
+              <InputBlock :error="state.buisnessLicenseError" :disabled="false">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    pattern="\d*"
+                    title="사업자등록번호"
+                    id="LM_P01_p002_buisnessLicense"
+                    :disabled="false"
+                  />
+                </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="small" theme="tertiary"
-                    >KCB사업자조회</BasicButton
+                  <BasicButton size="small" theme="quaternary"
+                    >확인</BasicButton
                   >
                 </template>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // DD :"KCB사업자조회"로 정보 입력 시 :disabled="true" -->
 
           <FormListItem
-            titleText="사업자등록번호"
-            target="#LM_P01_p002_buisnessLicense"
-          >
-            <FormInvalid :error="state.buisnessLicenseError">
-              <InputBlock :error="state.buisnessLicenseError">
-                <InputBlockCell :flexible="true">
-                  <BasicInput
-                    pattern="\d*"
-                    title="사업자등록번호"
-                    id="LM_P01_p002_buisnessLicense"
-                  />
-                </InputBlockCell>
-              </InputBlock>
-              <FormInvalidMessage>Error Message</FormInvalidMessage>
-            </FormInvalid>
-          </FormListItem>
-
-          <FormListItem
-            titleText="사업게시일자"
-            target="#LM_P01_p002_buisnessDate"
+            titleText="사업개시일자"
+            target="#LM_P01_p002_buisnessDateButton"
           >
             <FormInvalid :error="state.buisnessDateError">
               <InputBlock :error="state.buisnessDateError">
                 <InputBlockCell :flexible="true">
-                  <BasicInput
-                    title="사업게시일자"
+                  <BasicDatepicker
+                    title="사업개시일자"
                     id="LM_P01_p002_buisnessDate"
+                    buttonId="LM_P01_p002_buisnessDateButton"
                   />
                 </InputBlockCell>
               </InputBlock>
