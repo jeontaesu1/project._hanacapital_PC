@@ -27,5 +27,23 @@
         background-color: $color-gray-30;
       }
     }
+
+    & + &--small {
+      position: relative;
+      padding-left: 17px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 8px;
+        margin-top: -6px;
+        width: 1px;
+        height: 12px;
+        background-color: $color-gray-30;
+      }
+    }
   }
 }

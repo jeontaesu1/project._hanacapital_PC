@@ -57,6 +57,16 @@
         width: auto;
       }
     }
+
+    &-large {
+      .tooltip__bubble {
+        width: 400px;
+      }
+
+      .tooltip__tail {
+        margin-left: 205px;
+      }
+    }
   }
 
   &:global(.is-show) {

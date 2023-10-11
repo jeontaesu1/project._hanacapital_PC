@@ -37,6 +37,7 @@ import InputBlockCell from '@/components/ui/form/InputBlockCell.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import BankLogo from '@/components/ui/imageData/BankLogo.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BasicTooltip from '@/components/ui/tooltip/BasicTooltip.vue';
 
 import IF_P03_l002 from '@/views/inventoryFinance/IF_P03_l002.vue';
 
@@ -75,6 +76,7 @@ export default {
     BasicDatepicker,
     BankLogo,
     TextButton,
+    BasicTooltip,
     IF_P03_l002,
     iconInformation,
   },
@@ -139,10 +141,43 @@ export default {
     <BasicBox>
       <BasicBoxHead>
         <BasicBoxHeadLeft>
-          <h3 class="text-title-2 font-weight-medium">20고5678</h3>
-          <p class="text-body-3 color-gray-tertiary row-margin-item-small">
-            BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
-          </p>
+          <div :class="[$style['division-info'], 'row-margin-item-small']">
+            <ul :class="$style['division-info__list']">
+              <li :class="$style['division-info__item']">
+                <div class="text-title-2 font-weight-medium">20고5678</div>
+              </li>
+              <li
+                :class="[
+                  $style['division-info__item'],
+                  $style['division-info__item--small'],
+                  'flex-box__cell flex-1',
+                ]"
+              >
+                <BasicTooltip
+                  :classNames="{ button: 'display-block' }"
+                  type="large"
+                >
+                  <div
+                    class="text-body-3 color-gray-tertiary row-margin-item-small ellipsis"
+                  >
+                    BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021 텍스트가
+                    길어지면 말줄임처리되어 보여지고, 차종 Text hover 시에
+                    Tooltip으로 모든 정보가 보여집니다.
+                  </div>
+
+                  <template v-slot:contents>
+                    <section :class="$style['tooltip-section']">
+                      <p :class="$style['tooltip-section__title']">
+                        BMW 5시리즈(7세대) 520d M스포츠 패키지 플러스 2021
+                        텍스트가 길어지면 말줄임처리되어 보여지고, 차종 Text
+                        hover 시에 Tooltip으로 모든 정보가 보여집니다.
+                      </p>
+                    </section>
+                  </template>
+                </BasicTooltip>
+              </li>
+            </ul>
+          </div>
         </BasicBoxHeadLeft>
       </BasicBoxHead>
 
@@ -519,3 +554,7 @@ export default {
     <IF_P03_l002 ref="layer001" />
   </PageContents>
 </template>
+
+<style lang="scss" module>
+@import '@/assets/scss/views/inventoryFinance/IF_P03_p002.scss';
+</style>

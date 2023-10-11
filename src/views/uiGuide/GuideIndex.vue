@@ -3401,7 +3401,12 @@ const datas = () => [
         path: '/inventory-finance/IF_P03_p002',
         status: 'end',
         create: '2023.05.26',
-        log: [],
+        log: [
+          {
+            date: '2023.10.11',
+            text: '차량정보 영역 정렬 수정 및 툴팁 추가',
+          },
+        ],
       },
       {
         depth2: '중도상환',
