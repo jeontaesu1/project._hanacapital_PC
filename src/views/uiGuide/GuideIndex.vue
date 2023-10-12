@@ -4706,6 +4706,10 @@ const datas = () => [
             date: '2023.08.16',
             text: '- Agent_P00_l009 전송버튼 글자크기 수정',
           },
+          {
+            date: '2023.10.12',
+            text: 'Agent_P00_l003 테이블 내 버튼 색상 변경',
+          },
         ],
       },
       {
@@ -4800,7 +4804,10 @@ const datas = () => [
         path: '/agent/Agent_P02_p003',
         status: 'end',
         create: '2023.07.07',
-        log: [{ date: '2023.08.14', text: '판정결과 삭제' }],
+        log: [
+          { date: '2023.08.14', text: '판정결과 삭제' },
+          { date: '2023.10.12', text: '테이블 내 버튼 색상 변경' },
+        ],
       },
       {
         depth2: '내구재할부',
@@ -4827,7 +4834,7 @@ const datas = () => [
         path: '/agent/Agent_P02_p006',
         status: 'end',
         create: '2023.07.07',
-        log: [],
+        log: [{ date: '2023.10.12', text: '테이블 내 버튼 색상 변경' }],
       },
       {
         depth2: '내구재할부',

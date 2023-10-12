@@ -318,7 +318,7 @@ export default {
             <td class="txt-center">케이네트웍스</td>
             <td class="txt-center">
               <div class="flex-container">
-                <button class="btn btn-s05">SMS발송</button>
+                <button class="btn btn-s01">SMS발송</button>
               </div>
             </td>
           </tr>
@@ -335,7 +335,7 @@ export default {
             <td class="txt-center">케이네트웍스</td>
             <td class="txt-center">
               <div class="flex-container">
-                <button class="btn btn-s05">SMS발송</button>
+                <button class="btn btn-s01">SMS발송</button>
               </div>
             </td>
           </tr>
@@ -352,7 +352,7 @@ export default {
             <td class="txt-center">케이네트웍스</td>
             <td class="txt-center">
               <div class="flex-container">
-                <button class="btn btn-s05">SMS발송</button>
+                <button class="btn btn-s01">SMS발송</button>
               </div>
             </td>
           </tr>
@@ -369,7 +369,7 @@ export default {
             <td class="txt-center">케이네트웍스</td>
             <td class="txt-center">
               <div class="flex-container">
-                <button class="btn btn-s05">SMS발송</button>
+                <button class="btn btn-s01">SMS발송</button>
               </div>
             </td>
           </tr>

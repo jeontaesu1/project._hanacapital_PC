@@ -462,7 +462,7 @@ export default {
               <td class="txt-center">김하나</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">ARS</button>
+                  <button class="btn btn-s01">ARS</button>
                 </div>
               </td>
               <td class="txt-center">일반(완료)</td>
@@ -476,7 +476,7 @@ export default {
               <td class="txt-center">제우스이엔지</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">2023.01.01</td>
@@ -486,7 +486,7 @@ export default {
               <td class="txt-center">O</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">O</td>
@@ -503,7 +503,7 @@ export default {
               <td class="txt-center">김하나</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">ARS</button>
+                  <button class="btn btn-s01">ARS</button>
                 </div>
               </td>
               <td class="txt-center">일반(완료)</td>
@@ -517,7 +517,7 @@ export default {
               <td class="txt-center">제우스이엔지</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">2023.01.01</td>
@@ -527,7 +527,7 @@ export default {
               <td class="txt-center">O</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">O</td>
@@ -544,7 +544,7 @@ export default {
               <td class="txt-center">김하나</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">ARS</button>
+                  <button class="btn btn-s01">ARS</button>
                 </div>
               </td>
               <td class="txt-center">일반(완료)</td>
@@ -558,7 +558,7 @@ export default {
               <td class="txt-center">제우스이엔지</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">2023.01.01</td>
@@ -568,7 +568,7 @@ export default {
               <td class="txt-center">O</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">O</td>
@@ -585,7 +585,7 @@ export default {
               <td class="txt-center">김하나</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">ARS</button>
+                  <button class="btn btn-s01">ARS</button>
                 </div>
               </td>
               <td class="txt-center">일반(완료)</td>
@@ -599,7 +599,7 @@ export default {
               <td class="txt-center">제우스이엔지</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">2023.01.01</td>
@@ -609,7 +609,7 @@ export default {
               <td class="txt-center">O</td>
               <td class="txt-center">
                 <div class="flex-container">
-                  <button class="btn btn-s05">SMS발송</button>
+                  <button class="btn btn-s01">SMS발송</button>
                 </div>
               </td>
               <td class="txt-center">O</td>
