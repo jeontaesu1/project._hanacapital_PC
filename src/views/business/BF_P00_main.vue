@@ -12,8 +12,8 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import IconleaseStuff from '@/assets/images/icon/lease-stuff.svg?component';
 import IconMedical from '@/assets/images/icon/medical.svg?component';
+import IconDentistGray from '@/assets/images/icon/dentist-gray.svg?component';
 import IconGoodsLoan from '@/assets/images/icon/goods-loan.svg?component';
 
 export default {
@@ -25,8 +25,8 @@ export default {
     PageTitle,
     PageMainText,
     TextButton,
-    IconleaseStuff,
     IconMedical,
+    IconDentistGray,
     IconGoodsLoan,
   },
   setup() {
@@ -82,7 +82,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconleaseStuff />
+              <IconMedical />
             </div>
             <h3 :class="$style['product-list__title']">일반리스</h3>
             <p :class="$style['product-list__text']">
@@ -105,7 +105,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconMedical />
+              <IconDentistGray />
             </div>
             <h3 :class="$style['product-list__title']">일반할부</h3>
             <p :class="$style['product-list__text']">

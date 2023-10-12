@@ -35,7 +35,7 @@ import IconRegisterCertificate from '@/assets/images/icon/register-certificate.s
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconVip from '@/assets/images/icon/vip.svg?component';
-import IconLeaseStuff from '@/assets/images/icon/lease-stuff.svg?component';
+import IconDentist from '@/assets/images/icon/dentist.svg?component';
 import IconMedical from '@/assets/images/icon/medical.svg?component';
 import IconContractGray from '@/assets/images/icon/contract-gray.svg?component';
 import IconWarning from '@/assets/images/icon/warning.svg?component';
@@ -86,7 +86,7 @@ export default {
     IconPig,
     IconBuilding,
     IconVip,
-    IconLeaseStuff,
+    IconDentist,
     IconMedical,
     IconContractGray,
     IconWarning,
@@ -981,7 +981,7 @@ export default {
                   <li :class="$style['link-banners__item']">
                     <RouterLink to="" :class="$style['link-banners__link']">
                       <span :class="$style['link-banners__icon']">
-                        <IconLeaseStuff />
+                        <IconMedical />
                       </span>
                       <span :class="$style['link-banners__contents']">
                         <span :class="$style['link-banners__title']"
@@ -1000,7 +1000,7 @@ export default {
                   <li :class="$style['link-banners__item']">
                     <RouterLink to="" :class="$style['link-banners__link']">
                       <span :class="$style['link-banners__icon']">
-                        <IconMedical />
+                        <IconDentist />
                       </span>
                       <span :class="$style['link-banners__contents']">
                         <span :class="$style['link-banners__title']"
