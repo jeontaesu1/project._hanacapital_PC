@@ -64,7 +64,7 @@ export default {
           :class="[
             $style['product-detail'],
             $style['product-detail--main'],
-            'row-margin-container',
+            'row-margin-contents-small',
           ]"
         >
           <ul :class="$style['product-detail__list']">

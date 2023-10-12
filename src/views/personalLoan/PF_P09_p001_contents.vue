@@ -67,7 +67,7 @@ export default {
           :class="[
             $style['product-detail'],
             $style['product-detail--main'],
-            'row-margin-container',
+            'row-margin-contents-small',
           ]"
         >
           <ul :class="$style['product-detail__list']">
@@ -124,7 +124,12 @@ export default {
           </ul>
         </div>
 
-        <ButtonList :wrap="true" :col="4" align="center">
+        <ButtonList
+          :wrap="true"
+          :col="4"
+          align="center"
+          :classNames="{ wrap: 'row-margin-block-small' }"
+        >
           <ButtonListItem>
             <BasicButton>상담신청</BasicButton>
           </ButtonListItem>
