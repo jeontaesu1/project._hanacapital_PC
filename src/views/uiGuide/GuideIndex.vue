@@ -335,6 +335,17 @@ const datas = () => [
         create: '2023.05.19',
         log: [],
       },
+      {
+        depth2: '404 오류 안내\nCommon_P00_p018',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/error/Common_P00_p018',
+        status: 'end',
+        create: '2023.10.13',
+        log: [],
+      },
     ],
   },
   {

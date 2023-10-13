@@ -284,6 +284,11 @@ const routes = [
     name: '/error/Common_P00_p013',
     component: () => import('@/views/error/Common_P00_p013.vue'),
   },
+  {
+    path: '/error/Common_P00_p018',
+    name: '/error/Common_P00_p018',
+    component: () => import('@/views/error/Common_P00_p018.vue'),
+  },
 
   // customer
   {
