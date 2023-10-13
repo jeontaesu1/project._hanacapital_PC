@@ -2986,7 +2986,18 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/online-branch/MI_P01_p000',
+        status: 'end',
+        create: '2023.10.13',
+        log: [],
+      },
+      {
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '비밀번호 변경',
         depth4: '정보입력\nMI_P01_p001',
         depth5: '',
@@ -3002,7 +3013,7 @@ const datas = () => [
         ],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '비밀번호 변경',
         depth4: '본인인증\nMI_P01_p002',
         depth5: '',
@@ -3013,7 +3024,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '비밀번호 변경',
         depth4: '변경완료\nMI_P01_p003',
         depth5: '',
@@ -3024,7 +3035,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '',
         depth5: '',
@@ -3035,7 +3046,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '주소지 변경',
         depth5: '정보변경\nMI_P01_p005',
@@ -3055,7 +3066,7 @@ const datas = () => [
         ],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '주소지 변경',
         depth5: '본인인증\nMI_P01_p006',
@@ -3066,7 +3077,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '주소지 변경',
         depth5: '변경완료\nMI_P01_p007',
@@ -3077,7 +3088,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '연락처 변경',
         depth5: '정보변경\nMI_P01_p008',
@@ -3088,7 +3099,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '연락처 변경',
         depth5: '본인인증\nMI_P01_p009',
@@ -3099,7 +3110,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '주소지/연락처 변경\nMI_P01_p004',
         depth4: '연락처 변경',
         depth5: '변경완료\nMI_P01_p010',
@@ -3110,7 +3121,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '회원 탈퇴',
         depth4: '본인인증\nMI_P01_p011',
         depth5: '',
@@ -3121,7 +3132,7 @@ const datas = () => [
         log: [],
       },
       {
-        depth2: '내정보관리',
+        depth2: '내정보관리\nMI_P01_p000',
         depth3: '회원 탈퇴',
         depth4: '탈퇴 완료\nMI_P01_p012',
         depth5: '',

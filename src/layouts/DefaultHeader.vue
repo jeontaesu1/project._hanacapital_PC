@@ -131,7 +131,7 @@ export default {
           {
             name: 'onlineBranch003',
             text: '내정보관리',
-            to: '/online-branch/MI_P01_p001',
+            to: '/online-branch/MI_P01_p000',
           },
           {
             name: 'onlineBranch004',
