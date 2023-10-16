@@ -39,6 +39,15 @@ export default {
     <div :class="$style['image-view']">
       <img src="@/assets/images/contents/hanamoney-w.png" alt="" />
     </div>
+
+    <ul :class="[$style['basic-list'], 'row-margin-contents-small']">
+      <li :class="$style['basic-list__item']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          준법심의필 23-342 (2023.09.25~2024.09.24)
+        </div>
+      </li>
+    </ul>
   </PageContents>
 </template>
 
