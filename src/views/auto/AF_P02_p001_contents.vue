@@ -55,10 +55,10 @@ export default {
     <div :class="$style['product-top']">
       <div :class="$style['product-top__contents']">
         <div :class="$style['product-top__head']">
-          <h2 :class="$style['product-top__sub-text']">다이렉트 오토리스</h2>
+          <h2 :class="$style['product-top__sub-text']">오토리스</h2>
           <p :class="$style['product-top__main-text']">
-            손님이 원하는 차량을 리스회사가 대신 구입하여<br />
-            이를 일정기간 동안 대여해주는 서비스입니다
+            빠른견적! 저렴한 견적!<br />
+            하나캐피탈 다이렉트 오토리스!
           </p>
         </div>
 
@@ -93,6 +93,20 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">12 ~ 60개월</div>
+              </div>
+            </li>
+            <li :class="$style['product-detail__item']">
+              <div :class="$style['product-detail__icon']">
+                <IconRate />
+              </div>
+              <div :class="$style['product-detail__block']">
+                <div :class="$style['product-detail__title']">금융리스</div>
+                <div :class="$style['product-detail__desc']">
+                  연 6.3%~9.1%<br />
+                  (금융리스의<br />
+                  개인신용평점에<br />
+                  따라 차등 적용)
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -190,16 +204,14 @@ export default {
                     <div :class="$style['product-info__icon']">
                       <IconRate />
                     </div>
-                    <div :class="$style['product-info__title']">금리</div>
+                    <div :class="$style['product-info__title']">금융리스</div>
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      <span class="font-weight-bold underline">
-                        금융리스 연 6.1% ~ 9.0%
-                      </span>
+                      <span class="font-weight-bold"> 연 6.3% ~ 9.1% </span>
                     </div>
                     <div :class="$style['product-info__sub']">
-                      <span class="font-weight-medium underline">
+                      <span class="font-weight-medium">
                         (금융소비자의 개인신용평점에 따라 차등 적용)
                       </span>
                     </div>
@@ -267,9 +279,8 @@ export default {
                   <tbody>
                     <tr>
                       <th>
-                        규정<br />
                         손해<br />
-                        배상금<br />
+                        배상금
                       </th>
                       <td class="align-left">
                         <div :class="$style['contents-list']">
@@ -457,132 +468,49 @@ export default {
               <h3
                 class="text-body-3 font-weight-medium color-gray row-margin-item"
               >
-                금융리스 연체이자율
+                반환지연금
               </h3>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--medium'],
-                  $style['basic-list--regular-margin'],
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>유이자 : 약정금리 + 3.00%</div>
-                    <p class="text-body-3 color-gray row-margin-small">
-                      (법정최고금리 연 20% 이내)
-                    </p>
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>무이자 : 상시약정금리 + 3%</div>
-                    <p class="text-body-3 color-gray row-margin-small">
-                      (법정최고금리 연 20% 이내)
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item-medium',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    <div>
-                      단, 연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
-                      적용함
-                    </div>
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--regular'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'font-weight-regular',
-                          'color-black',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          <div class="color-gray-tertiary font-weight-light">
-                            약정 금리는 상법상 상사법정이율과 상호금융
-                            가계대출금리*중 높은 금리 적용약정 금리는 상법상
-                            상사법정이율과 상호금융 가계대출금리*중 높은 금리
-                            적용
-                          </div>
-                          <ul
-                            :class="[
-                              $style['basic-list'],
-                              $style['basic-list--regular'],
-                              'row-margin-item',
-                            ]"
-                          >
-                            <li
-                              :class="[
-                                $style['basic-list__item'],
-                                'text-body-4',
-                                'font-weight-regular',
-                                'color-gray-secondary',
-                              ]"
-                            >
-                              <div :class="$style['basic-list__symbol']">*</div>
-                              <div :class="$style['basic-list__content']">
-                                <div>
-                                  한국은행에서 매월 발표하는 가장 최근의 비은행
-                                  금융기관 가중평균대출금리(신규대출 기준)
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+              <p class="text-title-2">
+                [일 리스료 + (일 리스료 X 반환지원금율 100%)] X 경과일수
+              </p>
             </section>
-
             <section class="row-margin-contents">
               <h3
                 class="text-body-3 font-weight-medium color-gray row-margin-item"
               >
-                운용리스 연체이자율
+                가치감가금액
               </h3>
-              <p class="text-title-2 underline">연 20%</p>
+              <p class="text-title-2">
+                반환시점의 자동차의 기대가치(혹은 중고차 시세) X 감가율(1~14%)의
+                합
+              </p>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
+                초과운행부담금
+              </h3>
+              <p class="text-title-2">초과운행 KM X KM 당 초과운행료</p>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
+                초과운행료
+              </h3>
+              <p class="text-title-2">수입차 300원, 국산차 100원</p>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-medium color-gray row-margin-item"
+              >
+                연체이자율
+              </h3>
+              <p class="text-title-2 underline">
+                금융리스 (약정이율 + 3%, 법정최고금리 연 20% 이내), 운용리스 연
+                20%
+              </p>
             </section>
 
             <section class="row-margin-contents">
@@ -681,16 +609,53 @@ export default {
               >
                 기타
               </h3>
-              <p class="text-title-2">
-                만기 시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한
-                취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이
-                부담하셔야 합니다.
-              </p>
-              <p class="text-title-2 row-margin-item">
-                운용리스의 경우, 만기 차량 반납시사고이력 또는 약정주행거리
-                초과에 따라 별도의 감사비용이 추가로 발생 할 수 있습니다.<br />
-                차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
-              </p>
+
+              <ul
+                :class="[$style['basic-list'], $style['basic-list--regular']]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-title-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    만기시 차량을 매입하실 경우 손님의 명의로 이전하는데 필요한
+                    취득세 등의 제세공과금이 발생할 수 있으며, 이는 손님이
+                    부담하셔야 합니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-title-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    운용리스의 경우, 만기 차량 반납시 사고이력 또는 약정주행거리
+                    초과에 따라 별도의 감사비용이 추가로 발생 할 수 있습니다.
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'color-black',
+                    'text-title-2',
+                    'font-weight-regular',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    차량 반납시 유의사항을 꼭 확인하여 주시기 바랍니다.
+                  </div>
+                </li>
+              </ul>
             </section>
             <div class="inline-wrap row-margin-contents">
               <TextButton
@@ -818,8 +783,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
-                발생할 수 있습니다.
+                개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
+                있습니다.
               </div>
             </li>
             <li
@@ -832,8 +797,8 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
-                개인신용평점 하락 시 금융거래와 관련된 불이익 발생할 수
-                있습니다.
+                일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가
+                발생할 수 있습니다.
               </div>
             </li>
             <li
