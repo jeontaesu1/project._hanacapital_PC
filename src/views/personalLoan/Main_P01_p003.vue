@@ -17,7 +17,7 @@ import IconProperty from '@/assets/images/icon/property.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconVip from '@/assets/images/icon/vip.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
-import IconGoodsLoan from '@/assets/images/icon/goods-loan.svg?component';
+import IconRealEstatePrice from '@/assets/images/icon/real-estate-price.svg?component';
 import IconHome from '@/assets/images/icon/home.svg?component';
 
 export default {
@@ -34,7 +34,7 @@ export default {
     IconCarSecurity,
     IconVip,
     IconInterestRate,
-    IconGoodsLoan,
+    IconRealEstatePrice,
     IconHome,
   },
   setup() {
@@ -89,8 +89,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">e하나신용대출</h3>
             <p :class="$style['product-list__text']">
-              빠르고 간편한<br />
-              인터넷 전용대출
+              소득이 있다면<br />
+              쉽고 빠른 신용대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -113,8 +113,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">행복아파트론</h3>
             <p :class="$style['product-list__text']">
-              아파트를 소유자를<br />
-              대상으로 하는 신용대출
+              아파트 소유자를 위한<br />
+              무담보 아파트 대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -137,8 +137,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">아파트론</h3>
             <p :class="$style['product-list__text']">
-              아파트를 소유자를<br />
-              대상으로 하는 신용대출
+              무담보·무설정<br />
+              아파트 소유자 신용대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -161,8 +161,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">원큐자동차담보대출</h3>
             <p :class="$style['product-list__text']">
-              소유하고 있는 차량으로<br />
-              담보 대출
+              내 차만 있다면<br />
+              특별한도와 금리혜택을
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -185,8 +185,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">우수고객추가대출</h3>
             <p :class="$style['product-list__text']">
-              우수고객에게<br />
-              추가 자금 지원
+              중도상환수수료 없는<br />
+              쉽고 빠른 신용대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -209,8 +209,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">e임대주택론</h3>
             <p :class="$style['product-list__text']">
-              임대보증금을<br />
-              담보로 가능한 대출
+              임대보증금을 담보로<br />
+              빠르고 간편한 대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -230,12 +230,12 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconGoodsLoan />
+              <IconRealEstatePrice />
             </div>
             <h3 :class="$style['product-list__title']">사업자주택담보대출</h3>
             <p :class="$style['product-list__text']">
-              생활에 꼭 필요한 소비재도<br />
-              이젠 할부로!
+              개인사업자를 대상으로<br />
+              사업자금을 지원하는 담보대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -258,8 +258,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">스탁론</h3>
             <p :class="$style['product-list__text']">
-              주식매입<br />
-              자금 지원
+              주식매입자금을 위한<br />
+              금융서비스
             </p>
             <div :class="$style['product-list__link']">
               <TextButton

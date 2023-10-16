@@ -86,7 +86,7 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">일반리스</h3>
             <p :class="$style['product-list__text']">
-              물건 장기대여 금융 상품!
+              의료장비, 스크린골프, 설비 등
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -109,7 +109,7 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">일반할부</h3>
             <p :class="$style['product-list__text']">
-              의료장비, 의료소모품, 설비 구입 지원
+              의료장비, 의료소모품, 설비 등
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -132,7 +132,7 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">내구재할부</h3>
             <p :class="$style['product-list__text']">
-              생활에 꼭 필요한 소비재도 이젠 할부로!
+              일반 내구소비재 구입자금 대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton

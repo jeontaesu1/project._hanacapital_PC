@@ -241,22 +241,9 @@ export default {
                 <!-- Case : 링크 기능 없을 때 -->
                 <SwiperSlide>
                   <div :class="$style['top-banner__block']">
-                    <div :class="$style['top-banner__contents']">
-                      <div :class="$style['top-banner__category-wrap']">
-                        <div :class="$style['top-banner__category']">상품</div>
-                      </div>
-                      <div :class="$style['top-banner__title']">
-                        빠르고 간편한 인터넷 전용 대출<br />
-                        e하나신용대출
-                      </div>
-                      <div :class="$style['top-banner__text']">
-                        최대한도 6억원!<br />
-                        최대 12개월까지!!
-                      </div>
-                    </div>
                     <div :class="$style['top-banner__img']">
                       <img
-                        :src="`${BASE_URL}images/_dummy/banner-003.png`"
+                        :src="`${BASE_URL}images/_dummy/banner-006.png`"
                         @error="
                           (e) => {
                             e.target.parentNode.classList.add('is-error');
@@ -271,27 +258,9 @@ export default {
                 <!-- Case : 링크 기능 있을 때 (RouterLink) -->
                 <SwiperSlide>
                   <div :class="$style['top-banner__block']">
-                    <div :class="$style['top-banner__contents']">
-                      <div :class="$style['top-banner__category-wrap']">
-                        <div :class="$style['top-banner__category']">
-                          이벤트
-                        </div>
-                      </div>
-                      <div :class="$style['top-banner__title']">
-                        타이틀 텍스트 최대 두줄까지 노출 타이틀 텍스트 최대
-                        두줄까지 노출 타이틀 텍스트 최대 두줄까지 노출 타이틀
-                        텍스트 최대 두줄까지 노출
-                      </div>
-                      <div :class="$style['top-banner__text']">
-                        설명 텍스트 최대 두줄까지 노출 설명 텍스트 최대 두줄까지
-                        노출 설명 텍스트 최대 두줄까지 노출 설명 텍스트 최대
-                        두줄까지 노출 설명 텍스트 최대 두줄까지 노출 설명 텍스트
-                        최대 두줄까지 노출 텍스트 최대 두줄까지 노출
-                      </div>
-                    </div>
                     <div :class="$style['top-banner__img']">
                       <img
-                        :src="`${BASE_URL}images/_dummy/banner-003.png`"
+                        :src="`${BASE_URL}images/_dummy/banner-007.png`"
                         @error="
                           (e) => {
                             e.target.parentNode.classList.add('is-error');
@@ -309,27 +278,9 @@ export default {
                 <!-- Case : 링크 기능 있을 때 (a tag) -->
                 <SwiperSlide>
                   <div :class="$style['top-banner__block']">
-                    <div :class="$style['top-banner__contents']">
-                      <div :class="$style['top-banner__category-wrap']">
-                        <div :class="$style['top-banner__category']">
-                          이벤트
-                        </div>
-                      </div>
-                      <div :class="$style['top-banner__title']">
-                        타이틀 텍스트 최대 두줄까지 노출 타이틀 텍스트 최대
-                        두줄까지 노출 타이틀 텍스트 최대 두줄까지 노출 타이틀
-                        텍스트 최대 두줄까지 노출
-                      </div>
-                      <div :class="$style['top-banner__text']">
-                        설명 텍스트 최대 두줄까지 노출 설명 텍스트 최대 두줄까지
-                        노출 설명 텍스트 최대 두줄까지 노출 설명 텍스트 최대
-                        두줄까지 노출 설명 텍스트 최대 두줄까지 노출 설명 텍스트
-                        최대 두줄까지 노출 텍스트 최대 두줄까지 노출
-                      </div>
-                    </div>
                     <div :class="$style['top-banner__img']">
                       <img
-                        :src="`${BASE_URL}images/_dummy/banner-003.png`"
+                        :src="`${BASE_URL}images/_dummy/banner-008.png`"
                         @error="
                           (e) => {
                             e.target.parentNode.classList.add('is-error');
@@ -744,7 +695,7 @@ export default {
                       견적조회
                     </span>
                     <span :class="$style['product-banners__text']"
-                      >지금 바로 견적을 확인해 보세요!</span
+                      >지금 바로 견적 확인하기</span
                     >
                   </RouterLink>
                 </li>
@@ -761,7 +712,7 @@ export default {
                       자금 대출
                     </span>
                     <span :class="$style['product-banners__text']"
-                      >하나캐피탈을 이용해 보세요!</span
+                      >스마트한 중고차 구입</span
                     >
                   </RouterLink>
                 </li>
@@ -775,7 +726,9 @@ export default {
             <section :class="$style['section']">
               <div :class="$style['section__head']">
                 <div :class="$style['section__head-left']">
-                  <h2 :class="$style['section__title']">즉시출고 핫딜!</h2>
+                  <h2 :class="$style['section__title']">
+                    렌터카 즉시출고 핫딜!
+                  </h2>
                 </div>
                 <div :class="$style['section__head-right']">
                   <TextButton
@@ -887,8 +840,8 @@ export default {
                         e하나신용대출
                       </h3>
                       <p :class="$style['product-list__text']">
-                        빠르고 간편한<br />
-                        인터넷 전용대출
+                        소득이 있다면<br />
+                        쉽고 빠른 신용대출
                       </p>
                       <div :class="$style['product-list__link']">
                         <TextButton
@@ -915,8 +868,8 @@ export default {
                         행복아파트론
                       </h3>
                       <p :class="$style['product-list__text']">
-                        아파트를 소유자를<br />
-                        대상으로 하는 신용대출
+                        아파트 소유자를 위한<br />
+                        무담보 아파트 대출
                       </p>
                       <div :class="$style['product-list__link']">
                         <TextButton
@@ -943,8 +896,8 @@ export default {
                         우수고객추가대출
                       </h3>
                       <p :class="$style['product-list__text']">
-                        우수고객에게<br />
-                        추가 자금 지원
+                        중도상환수수료 없는<br />
+                        쉽고 빠른 신용대출
                       </p>
                       <div :class="$style['product-list__link']">
                         <TextButton
@@ -988,8 +941,8 @@ export default {
                           >일반리스</span
                         >
                         <span :class="$style['link-banners__text']">
-                          물건 장기대여<br />
-                          금융 상품!
+                          의료장비, 스크린골프<br />
+                          설비 등
                         </span>
                       </span>
                       <span :class="$style['link-banners__arrow']">
@@ -1008,7 +961,7 @@ export default {
                         >
                         <span :class="$style['link-banners__text']">
                           의료장비, 의료소모품,<br />
-                          설비 구입 지원
+                          설비 등
                         </span>
                       </span>
                       <span :class="$style['link-banners__arrow']">
@@ -1049,7 +1002,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-009.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1067,7 +1020,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-009.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1091,7 +1044,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-009.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1126,7 +1079,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1144,7 +1097,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1168,7 +1121,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
