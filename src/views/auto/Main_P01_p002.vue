@@ -83,8 +83,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">오토론</h3>
             <p :class="$style['product-list__text']">
-              저렴한 금리,<br />
-              간편한 이용
+              차량 대금은 금융사에서<br />
+              금액은 분할 납부로
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -110,8 +110,8 @@ export default {
               장기렌터카
             </h3>
             <p :class="$style['product-list__text']">
-              비용 NO! 보험 NO!<br />
-              내차 OK!
+              로켓출고! 하나캐피탈<br />
+              장기렌터카
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -137,8 +137,8 @@ export default {
               오토리스
             </h3>
             <p :class="$style['product-list__text']">
-              다양한 혜택,<br />
-              편리한 내차 이용
+              빠른견적!<br />
+              저렴한 견적!
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -161,8 +161,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">중고차 오토론</h3>
             <p :class="$style['product-list__text']">
-              차별화된<br />
-              중고차 구입 방법!
+              스마트한 중고차<br />
+              구입자금 대출
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
@@ -185,8 +185,8 @@ export default {
             </div>
             <h3 :class="$style['product-list__title']">오토할부</h3>
             <p :class="$style['product-list__text']">
-              차량 대금<br />
-              분할 납부!
+              판매사와 제휴,<br />
+              합리적인 할부
             </p>
             <div :class="$style['product-list__link']">
               <TextButton
