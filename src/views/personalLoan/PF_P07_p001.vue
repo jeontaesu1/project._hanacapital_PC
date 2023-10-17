@@ -61,7 +61,7 @@ export default {
 </script>
 
 <template>
-  <PageContents size="large">
+  <PageContents size="large-small">
     <template v-slot:head>
       <LocationBar
         :data="[
@@ -242,8 +242,8 @@ export default {
         대출신청 진행할 증권사 선택
       </h3>
 
-      <BoxCheckList :wrap="true" :col="3">
-        <BoxCheckListItem v-for="i in 10" :key="i">
+      <BoxCheckList :wrap="true" :col="4">
+        <BoxCheckListItem v-for="i in 13" :key="i">
           <BoxCheck
             :contents="true"
             name="PF_P07_p001_bankSelect"

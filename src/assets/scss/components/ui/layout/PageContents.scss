@@ -37,6 +37,13 @@
         }
       }
     }
+    &-large-small {
+      .page-contents {
+        &__body {
+          width: $contents-width-large-small;
+        }
+      }
+    }
     &-max {
       .page-contents {
         &__body {
