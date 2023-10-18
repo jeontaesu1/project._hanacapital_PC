@@ -418,7 +418,10 @@ export default {
                         id="mainHomeLoginBusinessType001"
                         v-model="state.loginBusinessType.personal"
                       >
-                        <BoxCheckLabel>개인 / 개인사업자</BoxCheckLabel>
+                        <BoxCheckLabel>
+                          <span>개인</span>
+                          <span class="text-body-4">(개인사업자 포함)</span>
+                        </BoxCheckLabel>
                       </BoxCheck>
                     </BoxCheckListItem>
                     <BoxCheckListItem>

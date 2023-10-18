@@ -94,9 +94,7 @@ export default {
     };
 
     const state = reactive({
-      accountNumberError: false,
       repaymentMethodError: false,
-      paymentDateError: false,
       repaymentStandardError001: false,
       repaymentStandardError002: false,
       accountError: false,
@@ -244,33 +242,40 @@ export default {
       </BasicBox>
       <!-- //Case : 스탁론 외 일 때 -->
 
-      <FormList
-        :classNames="{
-          wrap: 'row-margin-container-medium row-margin-bottom-none',
-        }"
+      <KeyValue
+        direction="vertical-small"
+        :classNames="{ wrap: 'row-margin-contents' }"
       >
         <!-- Case : 스탁론일 때만 노출 -->
-        <FormListItem
-          titleText="증권계좌번호"
-          target="#MI_P00_p011_accountNumber"
-          :disabled="true"
-        >
-          <FormInvalid :error="state.accountNumberError">
-            <InputBlock :error="state.accountNumberError" :disabled="true">
-              <InputBlockCell :flexible="true">
-                <BasicInput
-                  title="증권계좌번호"
-                  id="MI_P00_p011_accountNumber"
-                  defaultValue="키움증권 28374795829903"
-                  :disabled="true"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- //Case : 스탁론일 때만 노출 -->
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'font-weight-medium' }"
+            >증권계좌번호</KeyValueTitle
+          >
+          <KeyValueText>
+            <div class="text-title-1 font-weight-medium">
+              키움증권 28374795829903
+            </div>
+          </KeyValueText>
+        </KeyValueItem>
+        <!-- // Case : 스탁론일 때만 노출 -->
 
+        <KeyValueItem>
+          <KeyValueTitle :classNames="{ title: 'font-weight-medium' }"
+            >결제방법</KeyValueTitle
+          >
+          <KeyValueText>
+            <div class="text-title-1 font-weight-medium">
+              오늘 즉시 출금 (2023.01.01)
+            </div>
+          </KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
+
+      <FormList
+        :classNames="{
+          wrap: 'row-margin-contents row-margin-bottom-none',
+        }"
+      >
         <FormListItem titleText="중도상환방법" :forceFocus="true">
           <FormInvalid :error="state.repaymentMethodError">
             <BoxCheckList>
@@ -342,39 +347,21 @@ export default {
         </FormListItem>
         <!-- //Case : 전체상환 선택 시 -->
 
-        <!-- Case : 스탁론 외 일 때 노출 -->
-        <FormListItem
-          titleText="중도상환 후 결제일자"
-          target="#MI_P00_p011_paymentDate"
-          :selectOnly="true"
+        <KeyValue
+          direction="vertical-small"
+          :classNames="{ wrap: 'row-margin-contents row' }"
         >
-          <FormInvalid :error="state.paymentDateError">
-            <InputBlock :error="state.paymentDateError">
-              <InputBlockCell :flexible="true">
-                <BasicSelect
-                  :options="[
-                    {
-                      value: '1',
-                      label: '2021.11.20',
-                    },
-                    {
-                      value: '2',
-                      label: '2021.12.20',
-                    },
-                    {
-                      value: '3',
-                      label: '2022.01.20',
-                    },
-                  ]"
-                  title="중도상환 후 결제일자"
-                  inputId="MI_P00_p011_paymentDate"
-                />
-              </InputBlockCell>
-            </InputBlock>
-            <FormInvalidMessage>Error Message</FormInvalidMessage>
-          </FormInvalid>
-        </FormListItem>
-        <!-- //Case : 스탁론 외 일 때 노출 -->
+          <!-- Case : 스탁론 외 일 때 노출 -->
+          <KeyValueItem>
+            <KeyValueTitle :classNames="{ title: 'font-weight-medium' }"
+              >중도상환 후 결제일자</KeyValueTitle
+            >
+            <KeyValueText>
+              <div class="text-title-1 font-weight-medium">2023.01.01</div>
+            </KeyValueText>
+          </KeyValueItem>
+        </KeyValue>
+        <!-- // Case : 스탁론 외 일 때 노출 -->
 
         <FormListItem
           titleText="상환금액"

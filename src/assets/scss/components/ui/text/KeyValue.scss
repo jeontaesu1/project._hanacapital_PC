@@ -69,6 +69,27 @@
         }
       }
     }
+
+    &-vertical-small {
+      > .key-value__list {
+        > .key-value__item {
+          display: block;
+          & + .key-value__item {
+            margin-top: 24px;
+          }
+
+          > .key-value__key {
+            margin-right: 0;
+            @include font-size-default(13);
+          }
+
+          > .key-value__value {
+            margin-top: 8px;
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 
   &--wrap {
