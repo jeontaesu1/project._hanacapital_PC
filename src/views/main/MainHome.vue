@@ -1079,7 +1079,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                              :src="`${BASE_URL}images/_dummy/main_banner_e.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1097,7 +1097,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                              :src="`${BASE_URL}images/_dummy/main_banner_e.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1121,7 +1121,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
+                              :src="`${BASE_URL}images/_dummy/main_banner_e.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
