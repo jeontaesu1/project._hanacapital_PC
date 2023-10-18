@@ -92,8 +92,7 @@ export default {
                 <div :class="$style['product-detail__desc']">
                   <strong>
                     (고정금리)<br />
-                    최저 연7.2%<br />
-                    ~ 최고 9.0%
+                    연 7.5% ~ 9.4%
                   </strong>
                   <div class="text-body-3 font-weight-light row-margin-mini">
                     * 만기연장 시 최초 약정 금리<br />
