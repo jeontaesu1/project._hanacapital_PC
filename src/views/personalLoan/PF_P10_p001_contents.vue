@@ -70,7 +70,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 0~19%</div>
+                <div :class="$style['product-detail__desc']">연 0~16.0%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -80,7 +80,11 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  3개월 ~ 36개월
+                  <div>3개월 ~ 36개월</div>
+                  <div class="text-body-3 font-weight-light row-margin-mini">
+                    (일부품목에 한하여<br />
+                    60개월까지 가능)
+                  </div>
                 </div>
               </div>
             </li>
@@ -143,7 +147,7 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">연 0~19%</div>
+                    <div :class="$style['product-info__text']">연 0~16.0%</div>
                   </div>
                 </div>
               </li>
@@ -159,6 +163,9 @@ export default {
                     <div :class="$style['product-info__text']">
                       3개월 ~ 36개월
                     </div>
+                    <div :class="$style['product-info__sub']">
+                      (일부품목에 한하여 60개월까지 가능)
+                    </div>
                   </div>
                 </div>
               </li>
@@ -168,15 +175,17 @@ export default {
           <div class="row-margin-block-small">
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 상환방법
               </h3>
-              <p class="text-title-2">원리금균등분할상환</p>
+              <p class="text-title-2 font-weight-bold">
+                원리금균등분할상환 또는 원금균등분할상환
+              </p>
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 중도상환수수료
               </h3>
@@ -193,12 +202,12 @@ export default {
                     $style['basic-list__item'],
                     'text-title-2',
                     'color-black',
-                    'font-weight-regular',
+                    'font-weight-bold',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
+                    만기 1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
                     (중도상환수수료율 - 1%) X 잔존기간/(대출기간 - 30일)
                   </div>
                 </li>
@@ -207,12 +216,12 @@ export default {
                     $style['basic-list__item'],
                     'text-title-2',
                     'color-black',
-                    'font-weight-regular',
+                    'font-weight-bold',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                    만기 1년 미만 : 중도상환원금 X (중도상환수수료율) X
                     잔존기간/(대출기간 - 30일)
                   </div>
                 </li>
@@ -228,7 +237,7 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-gray-secondary',
                   ]"
                 >
@@ -241,20 +250,20 @@ export default {
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-gray-secondary',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']">※</div>
                   <div :class="$style['basic-list__content']">
-                    중도상환수수료율 : 1%
+                    중도상환수수료율 : 2%
                   </div>
                 </li>
                 <li
                   :class="[
                     $style['basic-list__item'],
                     'text-body-4',
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-gray-secondary',
                   ]"
                 >
@@ -267,181 +276,7 @@ export default {
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                대출부대비용
-              </h3>
-              <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
-              <p class="text-body-3 color-gray row-margin-small">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-              </p>
-
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 5천만원 초과 1억원 이하 : 7만원
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 1억원 초과 10억원 이하 : 15만원
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                연체이자율
-              </h3>
-
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--medium'],
-                  $style['basic-list--regular-margin'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>유이자 : 약정이율+3%,</div>
-                    <p class="text-body-3 color-gray row-margin-small">
-                      (법정최고금리 연 20% 이내)
-                    </p>
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>무이자 : 상사약정금리+3%,</div>
-                    <p class="text-body-3 color-gray row-margin-small">
-                      (법정최고금리 연 20% 이내)
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item-medium',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    <div>
-                      단, 연체 발생 시점에 약정금리가 없는 경우는 아래의 사항을
-                      적용함
-                    </div>
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--regular'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-4',
-                          'font-weight-regular',
-                          'color-black',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">-</div>
-                        <div :class="$style['basic-list__content']">
-                          <div>
-                            약정금리는 상법상 상사법정이율과 상호금융
-                            가계자금대출금리 *중 높은 금리 적용
-                          </div>
-                          <ul
-                            :class="[
-                              $style['basic-list'],
-                              $style['basic-list--regular'],
-                              'row-margin-item',
-                            ]"
-                          >
-                            <li
-                              :class="[
-                                $style['basic-list__item'],
-                                'text-body-4',
-                                'font-weight-regular',
-                                'color-gray-secondary',
-                              ]"
-                            >
-                              <div :class="$style['basic-list__symbol']">*</div>
-                              <div :class="$style['basic-list__content']">
-                                <div>
-                                  한국은행에서 매월 발표하는 가장 최근의
-                                  비은행금융기관 가중평균대출금리 (신규대출
-                                  기준)
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                이자부과시기
-              </h3>
-              <p class="text-title-2">매월 후취</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
+                class="text-body-3 font-weight-bold color-gray row-margin-item-medium"
               >
                 구비서류
               </h3>
@@ -656,6 +491,181 @@ export default {
                 </ol>
               </div>
             </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
+              >
+                대출부대비용
+              </h3>
+              <p class="text-title-2 font-weight-bold">
+                5천만원 초과 실행 시 인지세 발생
+              </p>
+              <p class="text-body-3 color-gray row-margin-small">
+                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
+              </p>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    5천만원 초과 1억원 이하 : 7만원
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">-</div>
+                  <div :class="$style['basic-list__content']">
+                    1억원 초과 10억원 이하 : 15만원
+                  </div>
+                </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-regular',
+                    'color-gray-secondary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    국민주택채권매입비(고객부담)
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
+              >
+                연체이자율
+              </h3>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--medium'],
+                  $style['basic-list--regular-margin'],
+                  'row-margin-item',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-title-2',
+                    'color-black',
+                    'font-weight-bold',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    <div>유이자 : 약정이율+3%,</div>
+                    <p
+                      class="text-body-3 color-gray font-weight-bold row-margin-small"
+                    >
+                      (법정최고금리 연 20% 이내)
+                    </p>
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-title-2',
+                    'font-weight-bold',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    <div>무이자 : 상사약정금리+3%,</div>
+                    <p
+                      class="text-body-3 color-gray font-weight-bold row-margin-small"
+                    >
+                      (법정최고금리 연 20% 이내)
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--regular'],
+                  'row-margin-item-medium',
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-body-4',
+                    'font-weight-bold',
+                    'color-gray-secondary',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']">※</div>
+                  <div :class="$style['basic-list__content']">
+                    <div>
+                      단, 연체 발생 시점에 약정이율이 없는 경우 약정금리는
+                      상법상 상사법정이율과 상호금융 가계자금대출금리 *중 높은
+                      금리 적용
+                    </div>
+                    <ul
+                      :class="[
+                        $style['basic-list'],
+                        $style['basic-list--regular'],
+                        'row-margin-item',
+                      ]"
+                    >
+                      <li
+                        :class="[
+                          $style['basic-list__item'],
+                          'text-body-5',
+                          'font-weight-bold',
+                          'color-gray-secondary',
+                        ]"
+                      >
+                        <div :class="$style['basic-list__symbol']">*</div>
+                        <div :class="$style['basic-list__content']">
+                          한국은행에서 매월 발표하는 가장 최근의 비은행금융기관
+                          가중평균대출금리 (신규대출 기준)
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
+              >
+                이자부과시기
+              </h3>
+              <p class="text-title-2">매월 후취</p>
+            </section>
           </div>
         </UiTabPanel>
         <!-- // 상품안내 -->
@@ -712,11 +722,9 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
-                      물품 구입대금을
-                      <strong>고객님 대신 일시에</strong><br />
-                      <strong>지급</strong>하고, 고객님 명의로
-                      <strong>할부금융이</strong><br />
-                      <strong>시작</strong>됩니다.
+                      물품 구입대금을 <strong>손님 대신</strong><br />
+                      <strong>일시에 지급</strong>하고, 손님 명의로<br />
+                      <strong>할부금융이 시작</strong>됩니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">

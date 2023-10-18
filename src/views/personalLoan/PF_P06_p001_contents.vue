@@ -92,16 +92,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">
-                  <strong>
-                    연 6.1% ~ 11.4%<br />
-                    연체이자율 :<br />
-                    약정이율 + 3%
-                  </strong>
-                  <div class="text-body-3 font-weight-light row-margin-mini">
-                    (법정최고금리 연 20% 이내)
-                  </div>
-                </div>
+                <div :class="$style['product-detail__desc']">연 6.7~11.8%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -111,7 +102,7 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>6개월 ~ 27개월</div>
+                  <div>21개월 ~ 27개월</div>
                   <div class="text-body-3 font-weight-light row-margin-mini">
                     (임대차계약기간 이내)
                   </div>
@@ -181,22 +172,7 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div
-                      :class="[
-                        $style['product-info__text'],
-                        'font-weight-bold',
-                      ]"
-                    >
-                      연 6.1% ~ 11.4% / 연체이자율 : 약정이율 + 3%
-                    </div>
-                    <div
-                      :class="[
-                        $style['product-info__sub'],
-                        'font-weight-regular',
-                      ]"
-                    >
-                      (법정최고금리 연 20% 이내)
-                    </div>
+                    <div :class="$style['product-info__text']">6.7 ~ 11.8%</div>
                   </div>
                 </div>
               </li>
@@ -209,9 +185,7 @@ export default {
                     <div :class="$style['product-info__title']">기간</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      6개월 ~ 27개월
-                    </div>
+                    <div :class="$style['product-info__text']">21 ~ 27개월</div>
                     <div :class="$style['product-info__sub']">
                       (임대차계약기간 이내)
                     </div>
@@ -224,27 +198,19 @@ export default {
           <div class="row-margin-block-small">
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 상환방법
               </h3>
-              <p class="text-title-2">만기일시상환</p>
+              <p class="text-title-2 font-weight-bold">만기일시상환</p>
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                취급수수료
-              </h3>
-              <p class="text-title-2">없음</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 중도상환수수료
               </h3>
-              <p class="text-title-2">
+              <p class="text-title-2 font-weight-bold">
                 대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
               </p>
               <ul
@@ -257,7 +223,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -270,7 +236,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
-                    'font-weight-regular',
+                    'font-weight-bold',
                     'color-black',
                   ]"
                 >
@@ -318,11 +284,13 @@ export default {
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 대출부대비용
               </h3>
-              <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
+              <p class="text-title-2 font-weight-bold">
+                5천만원 초과 실행 시 인지세 발생
+              </p>
               <p class="text-body-3 color-gray row-margin-small">
                 (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
               </p>
@@ -361,15 +329,28 @@ export default {
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
-                이자부과시기
+                연체이자율
               </h3>
-              <p class="text-title-2">매월 후취</p>
+              <p class="text-title-2 font-weight-bold">약정이율+3%</p>
+              <p
+                class="text-body-3 font-weight-bold color-gray row-margin-small"
+              >
+                (법정최고금리 연 20% 이내)
+              </p>
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
+              >
+                이자부과시기
+              </h3>
+              <p class="text-title-2 font-weight-bold">매월 후취</p>
+            </section>
+            <section class="row-margin-contents">
+              <h3
+                class="text-body-3 font-weight-bold color-gray row-margin-item-medium"
               >
                 제출서류
               </h3>
@@ -469,11 +450,11 @@ export default {
             </section>
             <section class="row-margin-contents">
               <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
+                class="text-body-3 font-weight-bold color-gray row-margin-item"
               >
                 채권보전
               </h3>
-              <p class="text-title-2">
+              <p class="text-title-2 font-weight-bold">
                 임대보증금 반환 채권에 대한 채원양수도 계약
               </p>
             </section>
@@ -702,24 +683,23 @@ export default {
               </div>
             </li>
           </ul>
-
-          <ul :class="[$style['basic-list'], 'row-margin-contents']">
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                준법심의필 22-1613 (2022.09.26 ~ 2023.09.25)
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                여신금융협회 심의필 제 2022-L1h-08221호 (2022.09.26 ~
-                2023.09.25)
-              </div>
-            </li>
-          </ul>
         </UiTabPanel>
         <!-- // 유의사항 -->
+
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              준법심의필 22-1613 (2022.09.26 ~ 2023.09.25)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              여신금융협회 심의필 제 2022-L1h-08221호 (2022.09.26 ~ 2023.09.25)
+            </div>
+          </li>
+        </ul>
       </UiTab>
 
       <BasicHr
