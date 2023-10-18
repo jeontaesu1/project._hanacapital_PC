@@ -348,10 +348,12 @@ table {
     }
 
     td {
-      padding: 24px;
+      padding: 0 16px;
       color: $color-black;
       border-bottom: 1px solid $color-gray-30;
       border-right: 1px solid $color-gray-30;
+      height: 58px;
+      max-height: 58px;
 
       &.on {
         background-color: rgba($color-navy-50, 0.08);

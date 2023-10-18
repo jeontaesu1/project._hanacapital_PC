@@ -1002,7 +1002,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-009.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1044,7 +1044,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-009.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1079,7 +1079,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1097,7 +1097,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-004.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
@@ -1121,7 +1121,7 @@ export default {
                         <div :class="$style['event-banner__block']">
                           <div :class="$style['event-banner__img']">
                             <img
-                              :src="`${BASE_URL}images/_dummy/banner-010.png`"
+                              :src="`${BASE_URL}images/_dummy/banner-005.png`"
                               @error="
                                 (e) => {
                                   e.target.parentNode.classList.add('is-error');
