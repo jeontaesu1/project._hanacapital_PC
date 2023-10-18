@@ -207,7 +207,42 @@ export default {
               >
                 상환방법
               </h3>
-              <p class="text-title-2">원리금균등분할상환</p>
+
+              <ul
+                :class="[
+                  $style['basic-list'],
+                  $style['basic-list--medium'],
+                  $style['basic-list--regular-margin'],
+                ]"
+              >
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-title-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    신청금액 1억원 미만: <strong>원리금균등분할상환</strong>
+                  </div>
+                </li>
+                <li
+                  :class="[
+                    $style['basic-list__item'],
+                    'text-title-2',
+                    'font-weight-regular',
+                    'color-black',
+                  ]"
+                >
+                  <div :class="$style['basic-list__symbol']"></div>
+                  <div :class="$style['basic-list__content']">
+                    신청금액 1억원 이상:
+                    <strong>원리금균등분할상환/만기일시상환 중 택1</strong>
+                  </div>
+                </li>
+              </ul>
             </section>
             <section class="row-margin-contents">
               <h3
@@ -386,7 +421,7 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      고객님이 원하는 조건으로<br />
+                      손님이 원하는 조건으로<br />
                       <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>

@@ -157,7 +157,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      최대 1억원 (최저 100만원)
+                      최대 1억원 (최저 300만원)
                     </div>
                   </div>
                 </div>
@@ -417,7 +417,7 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      고객님이 원하는 조건으로<br />
+                      손님이 원하는 조건으로<br />
                       <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>
@@ -447,8 +447,8 @@ export default {
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
                       온라인으로<br />
-                      <strong>약정을 진행 및</strong><br />
-                      <strong>저당설정을 진행</strong>합니다.
+                      <strong>약정 및 저당설정을</strong><br />
+                      <strong>진행</strong>합니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
@@ -563,6 +563,20 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
+                담보 물건, 담보종류 등에 따라 대출조건이 차등 적용되며, 담보물이
+                부적합할 경우 대출이 제한될 수 있습니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
                 금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
                 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
               </div>
@@ -579,20 +593,6 @@ export default {
               <div :class="$style['basic-list__content']">
                 금리인하요구권 및 대출계약 철회권에 대한 자세한 사항은 당사
                 홈페이지에서 확인하시기 바랍니다.
-              </div>
-            </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-1',
-                'font-weight-regular',
-                'color-black',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                담보 물건, 담보종류 등에 따라 대출조건이 차등 적용되며, 담보물이
-                부적합할 경우 대출이 제한될 수 있습니다.
               </div>
             </li>
           </ul>

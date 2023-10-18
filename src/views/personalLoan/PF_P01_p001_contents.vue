@@ -17,7 +17,6 @@ import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
@@ -41,7 +40,6 @@ export default {
     IconInterestRate,
     IconSearchMoney,
     IconPersonalTerms,
-    IconContract,
     IconSend,
     IconDeposit,
     IconCalculate,
@@ -403,21 +401,6 @@ export default {
                 서류 제출 필요
               </p>
             </section>
-
-            <ul :class="[$style['basic-list'], 'row-margin-contents']">
-              <li :class="$style['basic-list__item']">
-                <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
-                  준법심의필 23-37(2023.02.15~2024.02.14)
-                </div>
-              </li>
-              <li :class="$style['basic-list__item']">
-                <div :class="$style['basic-list__symbol']"></div>
-                <div :class="$style['basic-list__content']">
-                  여신금융협회 심의필 제 2023-L1h-01303호(2023.02.15~2024.02.14)
-                </div>
-              </li>
-            </ul>
           </div>
         </UiTabPanel>
         <!-- // 상품안내 -->
@@ -445,7 +428,7 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      고객님이 원하는 조건으로<br />
+                      손님이 원하는 조건으로<br />
                       <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>
@@ -473,20 +456,6 @@ export default {
                 <div :class="$style['step__inner']">
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 4</div>
-                    <p :class="$style['step__text']">
-                      온라인으로<br />
-                      <strong>약정을 진행</strong>합니다.
-                    </p>
-                  </div>
-                  <div :class="$style['step__icon']">
-                    <IconContract />
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['step__item']">
-                <div :class="$style['step__inner']">
-                  <div :class="$style['step__contents']">
-                    <div :class="$style['step__badge']">STEP 5</div>
                     <p :class="$style['step__text']">
                       손님 계좌로<br />
                       <strong>대출금을 입금</strong>해드립니다.
@@ -590,6 +559,20 @@ export default {
             >
               <div :class="$style['basic-list__symbol']"></div>
               <div :class="$style['basic-list__content']">
+                금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
+                적용됩니다.
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-1',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
                 금융소비자는 해당상품에 대하여 설명을 받을 권리가 있으며, 그
                 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.
               </div>
@@ -608,38 +591,24 @@ export default {
                 홈페이지에서 확인하시기 바랍니다.
               </div>
             </li>
-            <li
-              :class="[
-                $style['basic-list__item'],
-                'text-body-1',
-                'font-weight-regular',
-                'color-black',
-              ]"
-            >
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                금융소비자의 개인신용평점에 따라 대출한도 및 금리가 차등
-                적용됩니다.
-              </div>
-            </li>
-          </ul>
-
-          <ul :class="[$style['basic-list'], 'row-margin-contents']">
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                준법심의필 23-40(2023.02.15~2024.02.14)
-              </div>
-            </li>
-            <li :class="$style['basic-list__item']">
-              <div :class="$style['basic-list__symbol']"></div>
-              <div :class="$style['basic-list__content']">
-                여신금융협회 심의필 제 2023-L1h-01303호(2023.02.15~2024.02.14)
-              </div>
-            </li>
           </ul>
         </UiTabPanel>
         <!-- // 유의사항 -->
+
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              준법심의필 23-37(2023.02.15~2024.02.14)
+            </div>
+          </li>
+          <li :class="$style['basic-list__item']">
+            <div :class="$style['basic-list__symbol']"></div>
+            <div :class="$style['basic-list__content']">
+              여신금융협회 심의필 제 2023-L1h-01303호(2023.02.15~2024.02.14)
+            </div>
+          </li>
+        </ul>
       </UiTab>
 
       <BasicHr

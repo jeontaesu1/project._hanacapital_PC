@@ -262,7 +262,7 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 2</div>
                     <p :class="$style['step__text']">
-                      고객님이 원하는 조건으로<br />
+                      손님이 원하는 조건으로<br />
                       <strong>대출을 신청</strong>합니다.
                     </p>
                   </div>
