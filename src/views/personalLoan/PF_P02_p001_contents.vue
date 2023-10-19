@@ -77,7 +77,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">최대한도</div>
-                <div :class="$style['product-detail__desc']">1억원</div>
+                <div :class="$style['product-detail__desc']">2억원</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -157,7 +157,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      최대 1억원 (최저 300만원)
+                      최대 2억원 (최저 300만원)
                     </div>
                   </div>
                 </div>
@@ -263,6 +263,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -276,6 +277,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -338,6 +340,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -350,6 +353,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
