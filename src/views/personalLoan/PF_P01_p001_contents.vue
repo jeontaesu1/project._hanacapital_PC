@@ -130,10 +130,7 @@ export default {
       <div :class="[$style['product-benefit'], 'row-margin-block-group']">
         <section :class="$style['product-benefit__section']">
           <div :class="$style['product-benefit__image']">
-            <img
-              src="@/assets/images/contents/img-zero-commission-p.png"
-              alt=""
-            />
+            <img src="@/assets/images/contents/img-scraping-p.png" alt="" />
           </div>
           <div :class="$style['product-benefit__info']">
             <h3 :class="$style['product-benefit__title']">서류 자동제출!</h3>
