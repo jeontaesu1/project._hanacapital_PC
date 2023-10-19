@@ -55,6 +55,9 @@ export default {
           <p :class="$style['product-top__main-text']">
             무담보 · 무설정 아파트 소유자 신용대출
           </p>
+          <p :class="$style['product-top__main-sub-text']">
+            행복아파트론 미진행 고객용
+          </p>
         </div>
 
         <div :class="$style['product-top__image']">
@@ -226,6 +229,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -239,6 +243,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"

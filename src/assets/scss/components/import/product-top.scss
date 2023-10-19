@@ -27,6 +27,14 @@
     text-align: center;
   }
 
+  &__main-sub-text {
+    margin: 16px 0 0;
+    @include font-size-head(24);
+    font-weight: 500;
+    color: $color-gray-80;
+    text-align: center;
+  }
+
   &__image {
     width: 644px;
     height: 260px;

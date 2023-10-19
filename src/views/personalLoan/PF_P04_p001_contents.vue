@@ -229,6 +229,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -241,6 +242,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -271,6 +273,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -284,6 +287,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -346,6 +350,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
@@ -358,6 +363,7 @@ export default {
                 <li
                   :class="[
                     $style['basic-list__item'],
+                    'text-title-2',
                     'font-weight-regular',
                     'color-black',
                   ]"
