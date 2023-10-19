@@ -202,6 +202,173 @@ export default {
         </ul>
       </div>
 
+      <div :class="[$style['logs-wrap'], 'row-margin-block-small']">
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    자동이체계좌변경
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    청구방법/청구지변경
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    SMS안내 수신 변경
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    중도상환신청
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    근저당설정해지 조회
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    범칙금/자동차세 조회
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    지정운전자 등록
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    금리인하요구권 신청
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    청약철회권 신청
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
       <!-- Case : 마케팅 동의여부, 대출 여부 확인 -->
       <BasicBox className="row-margin-block-small">
         <p class="text-title-2 font-weight-medium row-margin-contents">
