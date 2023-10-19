@@ -14,6 +14,7 @@ import Simplebar from 'simplebar-vue';
 const defaultClassNames = () => ({
   wrap: '',
   outerBottom: '',
+  bgBottom: '',
   head: '',
   body: '',
   bodyInner: '',
@@ -55,6 +56,10 @@ export default {
       Type: String,
       default: null,
     },
+    line: {
+      Type: String,
+      default: null,
+    },
   },
   setup(props, { slots }) {
     const state = reactive({
@@ -83,6 +88,10 @@ export default {
       return isSlot(state.slots.outerBottom);
     });
 
+    const isBgBottom = computed(() => {
+      return isSlot(state.slots.bgBottom);
+    });
+
     const isHead = computed(() => {
       return isSlot(state.slots.head);
     });
@@ -99,12 +108,14 @@ export default {
 
     onBeforeMount(() => {
       state.slots.outerBottom = slots.outerBottom;
+      state.slots.bgBottom = slots.bgBottom;
       state.slots.head = slots.head;
       state.slots.foot = slots.foot;
     });
 
     onUpdated(() => {
       state.slots.outerBottom = slots.outerBottom;
+      state.slots.bgBottom = slots.bgBottom;
       state.slots.head = slots.head;
       state.slots.foot = slots.foot;
     });
@@ -122,6 +133,7 @@ export default {
       bodyScroll,
       customClassNames,
       isOuterBottom,
+      isBgBottom,
       isHead,
       isFoot,
     };
@@ -137,6 +149,7 @@ export default {
         [$style[`popup--bg-${bg}`]]: bg,
         [$style['popup--fix']]: fix,
         [$style[`popup--size-${size}`]]: size,
+        [$style[`popup--line-${line}`]]: line,
       },
       customClassNames.wrap,
     ]"
@@ -161,6 +174,12 @@ export default {
     </div>
     <div v-if="isFoot" :class="[$style['popup__foot'], customClassNames.foot]">
       <slot name="foot" />
+    </div>
+    <div
+      v-if="isBgBottom"
+      :class="[$style['popup__bg-bottom'], customClassNames.bgBottom]"
+    >
+      <slot name="bgBottom" />
     </div>
     <div
       v-if="isOuterBottom"
