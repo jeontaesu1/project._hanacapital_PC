@@ -480,6 +480,8 @@
 
 .event-banner {
   position: relative;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
 
   &__block {
     position: relative;
