@@ -5,7 +5,7 @@
   align-items: stretch;
   width: 500px;
   max-height: 800px;
-  // border-radius: 20px;
+  border-radius: 20px;
   background-color: $color-white;
 
   &__outer-bottom {
@@ -22,7 +22,8 @@
     text-align: right;
     padding: 17px 27px;
     background-color: #00a69e;
-    // border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
 
   &__head {
@@ -245,7 +246,6 @@
     &-secondary {
       border: 2px solid #00a69e;
       border-radius: 20px;
-      overflow: hidden;
     }
   }
 }
