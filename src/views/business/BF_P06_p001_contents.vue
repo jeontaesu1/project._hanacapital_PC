@@ -253,7 +253,7 @@ export default {
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="$style['basic-list__content']">
-                    무이자 : 9%(상사약정금리+3%)(법정최고금리 연 20%이내)
+                    무이자 : 9.00%(상사약정금리+3.00%) (법정최고금리 연 20%이내)
                   </div>
                 </li>
               </ul>
@@ -764,10 +764,10 @@ export default {
                   <div :class="$style['step__contents']">
                     <div :class="$style['step__badge']">STEP 4</div>
                     <p :class="$style['step__text']">
-                      손님께서<br />
-                      <strong>원하시는 기기를</strong><br />
-                      <strong>설치</strong> 해드리고,<br />
-                      담당직원이 실사를 합니다.
+                      판매업체와 계약하신<br />
+                      <strong>물건을 설치한 후</strong><br />
+                      할부금융 상품이<br />
+                      실행 됩니다.
                     </p>
                   </div>
                   <div :class="$style['step__icon']">

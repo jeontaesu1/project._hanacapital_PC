@@ -92,7 +92,9 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">연 6.7~11.8%</div>
+                <div :class="$style['product-detail__desc']">
+                  연 7.4% ~ 12.0%
+                </div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -172,7 +174,9 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">6.7 ~ 11.8%</div>
+                    <div :class="$style['product-info__text']">
+                      연 7.4% ~ 12.0%
+                    </div>
                   </div>
                 </div>
               </li>
