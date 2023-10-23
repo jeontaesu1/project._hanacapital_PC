@@ -88,7 +88,7 @@ export default {
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">금리</div>
-                <div :class="$style['product-detail__desc']">8.2%</div>
+                <div :class="$style['product-detail__desc']">연 7.5%</div>
               </div>
             </li>
             <li :class="$style['product-detail__item']">
@@ -164,8 +164,11 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      고객계좌를 담보로 계좌평가금액의 최대 250%, 최대
-                      6억원(계좌당 3억원)까지
+                      최소 1백만원 ~ 최대 6억원
+                    </div>
+                    <div :class="$style['product-info__sub']">
+                      고객계좌를 담보로 계좌평가금액의 최대 300%, 최대 6억원
+                      (계좌당 3억원)까지
                     </div>
                   </div>
                 </div>
@@ -179,7 +182,7 @@ export default {
                     <div :class="$style['product-info__title']">금리</div>
                   </div>
                   <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">8.2%</div>
+                    <div :class="$style['product-info__text']">연 7.5%</div>
                   </div>
                 </div>
               </li>
@@ -434,22 +437,9 @@ export default {
                     <div :class="$style['contents-list__head']">
                       <div :class="$style['contents-list__symbol']">2</div>
                       <div :class="$style['contents-list__title']">
-                        기존 집중투자비율 60~80% 상품은 15년 6월 15일부터
-                        추가대출 불가
+                        한도대출(마이너스식)은 변경된 대출비율에 한해 한도 내
+                        추가대출 가능
                       </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-small',
-                      ]"
-                    >
-                      <p
-                        class="text-body-3 font-weight-light color-gray-secondary"
-                      >
-                        단, 한도대출(마이너스식)은 변경된 대출비율에 한해
-                        한도내추가대출 가능
-                      </p>
                     </div>
                   </li>
                   <li :class="$style['contents-list__item']">
@@ -521,20 +511,20 @@ export default {
                   <tbody>
                     <tr>
                       <th>대출신청기간</th>
-                      <td class="align-left">
+                      <td class="align-center">
                         증권사 영업일 08:10 ~ 16:00 (토,일,공휴일은 제외)
                       </td>
                     </tr>
                     <tr>
                       <th>증권계좌보유</th>
-                      <td class="align-left">
+                      <td class="align-center">
                         대출을 받고자하는 증권계좌에 100만원 이상 보유 시 신청이
                         가능합니다.
                       </td>
                     </tr>
                     <tr>
                       <th>본인인증과정</th>
-                      <td class="align-left">
+                      <td class="align-center">
                         본인명의의 공동인증서로 인증 후 신청할 수 있으며, 일
                         5회이상 오류시 당일 대출신청을 할 수 없습니다.
                       </td>
@@ -701,7 +691,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-regular',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -715,7 +705,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-regular',
+                'font-weight-bold',
                 'color-black',
               ]"
             >
@@ -729,7 +719,7 @@ export default {
               :class="[
                 $style['basic-list__item'],
                 'text-body-1',
-                'font-weight-regular',
+                'font-weight-bold',
                 'color-black',
               ]"
             >

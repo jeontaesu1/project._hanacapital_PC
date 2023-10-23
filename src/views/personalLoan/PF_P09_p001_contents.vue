@@ -76,10 +76,8 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">한도</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>시세의 최대 85%</div>
-                  <div class="text-body-3 font-weight-light row-margin-mini">
-                    (선순위, 후순위)
-                  </div>
+                  시세의 최대 85%<br />
+                  (선순위, 후순위)
                 </div>
               </div>
             </li>
@@ -92,7 +90,7 @@ export default {
                 <div :class="$style['product-detail__desc']">
                   <strong>
                     (고정금리)<br />
-                    연 7.5% ~ 9.4%
+                    연 8.0% ~ 9.6%
                   </strong>
                   <div class="text-body-3 font-weight-light row-margin-mini">
                     * 만기연장 시 최초 약정 금리<br />
@@ -108,13 +106,9 @@ export default {
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">기간</div>
                 <div :class="$style['product-detail__desc']">
-                  <div>
-                    신규 : 12개월 ~ 36개월<br />
-                    연장 : 1년 단위
-                  </div>
-                  <div class="text-body-3 font-weight-light row-margin-mini">
-                    (최대 10년 이내)
-                  </div>
+                  신규 : 12개월 ~ 36개월<br />
+                  연장 : 1년 단위<br />
+                  (최대 10년 이내)
                 </div>
               </div>
             </li>
@@ -197,7 +191,7 @@ export default {
                   </div>
                   <div :class="$style['product-info__contents']">
                     <div :class="$style['product-info__text']">
-                      시세의 최대 85%
+                      시세의 최대 85% (선순위, 후순위)
                     </div>
                   </div>
                 </div>
@@ -213,7 +207,7 @@ export default {
                   <div :class="$style['product-info__contents']">
                     <div class="inline-wrap row-margin-small">
                       <div :class="$style['product-info__text']">
-                        (고정금리) 연 7.5% ~ 9.4%
+                        (고정금리) 연 8.0% ~ 9.6%
                       </div>
                       <div :class="$style['product-info__sub']">
                         * 만기연장 시 최초 약정 금리조건적용 (변동 또는
