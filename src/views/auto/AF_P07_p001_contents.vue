@@ -761,6 +761,22 @@ export default {
               </ul>
             </UiTabPanel>
             <!-- // 유의사항 -->
+
+            <ul :class="[$style['basic-list'], 'row-margin-contents']">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  준법심의필 23-370 (2023.10.16 ~ 2024.10.15)
+                </div>
+              </li>
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  여신금융협회 심의필 제2023-C1h-11528호 (2023.10.16 ~
+                  2024.10.15)
+                </div>
+              </li>
+            </ul>
           </UiTab>
         </UiTabPanel>
         <!-- // 리스승계 -->
@@ -1227,24 +1243,18 @@ export default {
               </ul>
             </UiTabPanel>
             <!-- // 유의사항 -->
+
+            <ul :class="[$style['basic-list'], 'row-margin-contents']">
+              <li :class="$style['basic-list__item']">
+                <div :class="$style['basic-list__symbol']"></div>
+                <div :class="$style['basic-list__content']">
+                  준법심의필 23-372 (2023.10.16 ~ 2024.10.15)
+                </div>
+              </li>
+            </ul>
           </UiTab>
         </UiTabPanel>
         <!-- // 렌트승계 -->
-
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 22-1258 (2022.06.10~2023.06.09)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2022-C1h-04727호 (2022.06.10~2023.06.09)
-            </div>
-          </li>
-        </ul>
       </UiTab>
 
       <BasicHr
