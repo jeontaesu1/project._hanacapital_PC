@@ -13,6 +13,7 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   transition: opacity 350ms linear;
+  background-color: transparent;
 
   &::before {
     content: '';
