@@ -2,7 +2,7 @@
 // Main_P01_l002
 import { ref } from 'vue';
 
-import UiLayer from '@/components/ui/layer/UiLayer.vue';
+import UiLayerMain from '@/components/ui/layer/UiLayerMain.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
@@ -11,7 +11,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
-    UiLayer,
+    UiLayerMain,
     PopupTitle,
     PopupButton,
     ModalPopup,
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <UiLayer ref="layer" v-slot="layerSlotProps">
+  <UiLayerMain ref="layer" v-slot="layerSlotProps">
     <ModalPopup line="secondary">
       <template v-slot:head>
         <ModalPopupHead>
@@ -55,7 +55,7 @@ export default {
         </TextButton>
       </template>
     </ModalPopup>
-  </UiLayer>
+  </UiLayerMain>
 </template>
 
 <style lang="scss" module>

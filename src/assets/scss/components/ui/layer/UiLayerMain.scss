@@ -1,0 +1,58 @@
+.layer {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+  text-align: center;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: opacity 350ms linear;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  &__container {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size-default(16);
+    white-space: normal;
+    text-align: left;
+    outline: none;
+  }
+
+  &__loop {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &--opened {
+    display: block;
+    opacity: 1;
+  }
+
+  &--type {
+    &-full {
+      background-color: transparent;
+
+      &::before {
+        display: none;
+      }
+
+      .layer__container {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
