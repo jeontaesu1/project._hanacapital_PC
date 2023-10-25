@@ -1,6 +1,6 @@
 .layer {
-  display: none;
-  opacity: 0;
+  display: block;
+  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -39,21 +39,5 @@
   &--opened {
     display: block;
     opacity: 1;
-  }
-
-  &--type {
-    &-full {
-      background-color: transparent;
-
-      &::before {
-        display: none;
-      }
-
-      .layer__container {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
   }
 }

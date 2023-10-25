@@ -258,6 +258,13 @@ const routes = [
     component: () => import('@/views/main/MainHome.vue'),
   },
 
+  {
+    path: '/main/home_popup',
+    name: '/main/home_popup',
+    component: () => import('@/views/main/Main_P01_l002.vue'),
+    meta: { layout: 'NoneLayout' },
+  },
+
   // identification
   {
     path: '/identification/Common_P00_p003',

@@ -2,18 +2,14 @@
 // Main_P01_l002
 import { ref } from 'vue';
 
-import UiLayerMain from '@/components/ui/layer/UiLayerMain.vue';
 import PopupTitle from '@/components/ui/layer/PopupTitle.vue';
-import PopupButton from '@/components/ui/layer/PopupButton.vue';
 import ModalPopup from '@/components/ui/layer/ModalPopup.vue';
 import ModalPopupHead from '@/components/ui/layer/ModalPopupHead.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
-    UiLayerMain,
     PopupTitle,
-    PopupButton,
     ModalPopup,
     ModalPopupHead,
     TextButton,
@@ -29,13 +25,10 @@ export default {
 </script>
 
 <template>
-  <UiLayerMain ref="layer" v-slot="layerSlotProps">
+  <div :class="$style['popup']">
     <ModalPopup line="secondary">
       <template v-slot:head>
         <ModalPopupHead>
-          <template v-slot:right>
-            <PopupButton @click="layerSlotProps.close()" />
-          </template>
           <PopupTitle>금융사기 피해예방 안내문</PopupTitle>
         </ModalPopupHead>
       </template>
@@ -45,17 +38,31 @@ export default {
       </div>
 
       <template v-slot:bgBottom>
-        <TextButton
-          :underline="true"
-          :classNames="{
-            wrap: 'text-body-3 color-white',
-          }"
-        >
-          오늘 하루 보지 않기
-        </TextButton>
+        <div class="flex-box">
+          <div class="flex-box__cell flex-1">
+            <TextButton
+              :underline="true"
+              :classNames="{
+                wrap: 'text-body-3 color-white',
+              }"
+            >
+              오늘 하루 보지 않기
+            </TextButton>
+          </div>
+          <div class="flex-box__cell">
+            <TextButton
+              :underline="true"
+              :classNames="{
+                wrap: 'text-title-2 color-white',
+              }"
+            >
+              닫기
+            </TextButton>
+          </div>
+        </div>
       </template>
     </ModalPopup>
-  </UiLayerMain>
+  </div>
 </template>
 
 <style lang="scss" module>

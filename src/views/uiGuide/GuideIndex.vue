@@ -365,14 +365,6 @@ const datas = () => [
             date: '2023.09.05',
             text: 'Main_P01_l001 슬라이드 기능 추가',
           },
-          {
-            date: '2023.10.19',
-            text: '팝업 추가\n- Main_P01_l002',
-          },
-          {
-            date: '2023.10.25',
-            text: 'Main_P01_l002 팝업 배경 제거',
-          },
         ],
       },
       {
@@ -422,6 +414,17 @@ const datas = () => [
             text: '메인 배너 이미지 교체',
           },
         ],
+      },
+      {
+        depth2: '홈\nMain_P01_p001',
+        depth3: '팝업\nMain_P01_l002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/main/home_popup',
+        status: 'end',
+        create: '2023.10.26',
+        log: [],
       },
     ],
   },
