@@ -417,7 +417,7 @@ const datas = () => [
       },
       {
         depth2: '홈\nMain_P01_p001',
-        depth3: '팝업\nMain_P01_l002',
+        depth3: '안내문\nMain_P01_l002',
         depth4: '',
         depth5: '',
         depth6: '',
