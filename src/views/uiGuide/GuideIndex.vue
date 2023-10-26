@@ -4166,7 +4166,12 @@ const datas = () => [
         path: '/ui-guide/auto-002',
         status: 'end',
         create: '2023.06.02',
-        log: [],
+        log: [
+          {
+            date: '2023.10.26',
+            text: '팝업 추가\n -AF_P03_l002\n -AF_P03_l003',
+          },
+        ],
       },
       {
         depth2: '오토론\nAF_P04_p001',
