@@ -172,9 +172,7 @@ export default {
               >
                 상환방법
               </h3>
-              <p class="text-title-2 font-weight-bold">
-                원리금균등분할상환 또는 원금균등분할상환
-              </p>
+              <p class="text-title-2 font-weight-bold">원리금균등분할상환</p>
             </section>
             <section class="row-margin-contents">
               <h3
