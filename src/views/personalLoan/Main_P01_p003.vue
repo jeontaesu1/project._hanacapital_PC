@@ -13,7 +13,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconProperty from '@/assets/images/icon/property.svg?component';
+import IconApt from '@/assets/images/icon/apt.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconVip from '@/assets/images/icon/vip.svg?component';
 import IconStock from '@/assets/images/icon/stock.svg?component';
@@ -30,7 +30,7 @@ export default {
     TextButton,
     IconPig,
     IconBuilding,
-    IconProperty,
+    IconApt,
     IconCarSecurity,
     IconVip,
     IconStock,
@@ -133,7 +133,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconProperty />
+              <IconApt />
             </div>
             <h3 :class="$style['product-list__title']">아파트론</h3>
             <p :class="$style['product-list__text']">
