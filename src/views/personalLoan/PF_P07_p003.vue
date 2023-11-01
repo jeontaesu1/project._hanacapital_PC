@@ -95,28 +95,15 @@ export default {
     <div>
       <section>
         <section>
-          <div class="flex-box">
-            <div class="flex-box__cell">
-              <div class="inline-wrap"><IconCheckDocument /></div>
-            </div>
-            <div class="flex-box__cell">
-              <p class="text-title-2 font-weight-medium">
-                하나증권 계좌를 개설하셨나요?
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex-box row-margin-container-medium row-margin-bottom-none"
-          >
-            <div class="flex-box__cell">
-              <div class="inline-wrap"><IconCheckDocument /></div>
-            </div>
-            <div class="flex-box__cell">
-              <p class="text-title-2 font-weight-medium">
-                공동인증서는 보유하고 계신가요?
-              </p>
-            </div>
+          <div>
+            <h3 class="text-title-2 font-weight-medium">
+              하나증권 계좌를 개설하셨나요?
+            </h3>
+            <h3
+              class="text-title-2 font-weight-medium row-margin-container-medium"
+            >
+              공동인증서는 보유하고 계신가요?
+            </h3>
           </div>
 
           <BasicHr theme="quaternary" className="row-margin-contents" />
@@ -130,22 +117,17 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
+              <BasicButton theme="quaternary" size="small"
+                >내용보기</BasicButton
+              >
             </div>
           </div>
         </section>
 
         <section class="row-margin-container-medium">
-          <div class="flex-box">
-            <div class="flex-box__cell">
-              <div class="inline-wrap"><IconCheckDocument /></div>
-            </div>
-            <div class="flex-box__cell">
-              <p class="text-title-2 font-weight-medium">
-                하나증권 인증서는 설치하셨나요?
-              </p>
-            </div>
-          </div>
+          <h3 class="text-title-2 font-weight-medium">
+            하나증권 인증서는 설치하셨나요?
+          </h3>
 
           <BasicHr theme="quaternary" className="row-margin-contents" />
 
@@ -158,7 +140,9 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
+              <BasicButton theme="quaternary" size="small"
+                >내용보기</BasicButton
+              >
             </div>
           </div>
 
@@ -171,7 +155,9 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
+              <BasicButton theme="quaternary" size="small"
+                >내용보기</BasicButton
+              >
             </div>
           </div>
         </section>
@@ -229,19 +215,30 @@ export default {
               </div>
             </li>
             <li class="row-margin-contents-small">
-              <h4 class="text-body-3 color-gray-tertiary font-weight-regular">
-                유효한 공동인증서를 보유하고 계신가요?
-              </h4>
-              <ul :class="[$style['basic-list'], 'row-margin-item']">
-                <li :class="[$style['basic-list__item'], 'text-body-5']">
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    금융기관(은행/범용)에서 발급받으신 본인 명의의 공동인증서로
-                    인증과정을 거쳐 신청할 수 있으며,<br />
-                    일 5회 이상 오류 시 당일에는 대출신청이 불가합니다.
-                  </div>
-                </li>
-              </ul>
+              <div class="flex-box align-items-start">
+                <div class="flex-box__cell flex-1">
+                  <h4
+                    class="text-body-3 color-gray-tertiary font-weight-regular"
+                  >
+                    유효한 공동인증서를 보유하고 계신가요?
+                  </h4>
+                  <ul :class="[$style['basic-list'], 'row-margin-item']">
+                    <li :class="[$style['basic-list__item'], 'text-body-5']">
+                      <div :class="$style['basic-list__symbol']"></div>
+                      <div :class="$style['basic-list__content']">
+                        금융기관(은행/범용)에서 발급받으신 본인 명의의
+                        공동인증서로 인증과정을 거쳐 신청할 수 있으며,<br />
+                        일 5회 이상 오류 시 당일에는 대출신청이 불가합니다.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex-box__cell">
+                  <button type="button" :class="$style['link-button']">
+                    <span class="for-a11y">바로가기</span>
+                  </button>
+                </div>
+              </div>
             </li>
           </ul>
         </BasicBox>
