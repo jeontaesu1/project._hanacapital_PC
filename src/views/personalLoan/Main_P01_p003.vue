@@ -17,7 +17,7 @@ import IconProperty from '@/assets/images/icon/property.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconVip from '@/assets/images/icon/vip.svg?component';
 import IconStock from '@/assets/images/icon/stock.svg?component';
-import IconRealEstatePrice from '@/assets/images/icon/real-estate-price.svg?component';
+import IconRealEstateSecurity from '@/assets/images/icon/real-estate-security.svg?component';
 import IconHome from '@/assets/images/icon/home.svg?component';
 
 export default {
@@ -34,7 +34,7 @@ export default {
     IconCarSecurity,
     IconVip,
     IconStock,
-    IconRealEstatePrice,
+    IconRealEstateSecurity,
     IconHome,
   },
   setup() {
@@ -230,7 +230,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconRealEstatePrice />
+              <IconRealEstateSecurity />
             </div>
             <h3 :class="$style['product-list__title']">사업자주택담보대출</h3>
             <p :class="$style['product-list__text']">
