@@ -24,7 +24,7 @@ import IconCallMint from '@/assets/images/icon/call-mint.svg?component';
 import IconCompleted from '@/assets/images/icon/completed.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
-import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
+import IconHanacapitalSmall from '@/assets/images/icon/hanacapital-small.svg?component';
 
 export default {
   components: {
@@ -51,7 +51,7 @@ export default {
     IconCompleted,
     IconCalculate,
     IconConsultation,
-    Icon1QCapital,
+    IconHanacapitalSmall,
   },
 };
 </script>
@@ -1295,8 +1295,13 @@ export default {
           </li>
           <li :class="$style['icon-list__item']">
             <div :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']">
-                <Icon1QCapital />
+              <div
+                :class="[
+                  $style['icon-list__icon'],
+                  $style['icon-list__icon-secondary'],
+                ]"
+              >
+                <IconHanacapitalSmall />
               </div>
               <div :class="$style['icon-list__content']">
                 <div class="flex-box">

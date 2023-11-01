@@ -16,7 +16,7 @@ import IconCheckDocument from '@/assets/images/icon/check-document.svg?component
 import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
-import Icon1QCapital from '@/assets/images/icon/1qcapital.svg?component';
+import IconHanacapitalSmall from '@/assets/images/icon/hanacapital-small.svg?component';
 
 export default {
   components: {
@@ -35,7 +35,7 @@ export default {
     IconConsulting,
     IconSend,
     IconContract,
-    Icon1QCapital,
+    IconHanacapitalSmall,
   },
 };
 </script>
@@ -551,8 +551,13 @@ export default {
         <ul :class="$style['icon-list__list']">
           <li :class="$style['icon-list__item']">
             <div :class="$style['icon-list__block']">
-              <div :class="$style['icon-list__icon']">
-                <Icon1QCapital />
+              <div
+                :class="[
+                  $style['icon-list__icon'],
+                  $style['icon-list__icon-secondary'],
+                ]"
+              >
+                <IconHanacapitalSmall />
               </div>
               <div :class="$style['icon-list__content']">
                 <div class="flex-box">
