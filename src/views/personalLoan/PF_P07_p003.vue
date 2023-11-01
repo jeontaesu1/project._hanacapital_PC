@@ -18,8 +18,6 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BankFullLogo from '@/components/ui/imageData/BankFullLogo.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
-import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
-
 export default {
   components: {
     PageContents,
@@ -35,7 +33,6 @@ export default {
     ButtonListItem,
     BankFullLogo,
     BasicHr,
-    IconCheckDocument,
   },
   setup() {
     const store = {
@@ -117,9 +114,13 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton theme="quaternary" size="small"
-                >내용보기</BasicButton
-              >
+              <BasicButton size="small">내용보기</BasicButton>
+
+              <!-- Case : 내용 확인 시 노출 -->
+              <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+              <!-- // Case : 내용 확인 시 노출 -->
             </div>
           </div>
         </section>
@@ -140,9 +141,13 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton theme="quaternary" size="small"
-                >내용보기</BasicButton
-              >
+              <BasicButton size="small">내용보기</BasicButton>
+
+              <!-- Case : 내용 확인 시 노출 -->
+              <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+              <!-- // Case : 내용 확인 시 노출 -->
             </div>
           </div>
 
@@ -155,9 +160,13 @@ export default {
               </div>
             </div>
             <div class="flex-box__cell">
-              <BasicButton theme="quaternary" size="small"
-                >내용보기</BasicButton
-              >
+              <BasicButton size="small">내용보기</BasicButton>
+
+              <!-- Case : 내용 확인 시 노출 -->
+              <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+              <!-- // Case : 내용 확인 시 노출 -->
             </div>
           </div>
         </section>
