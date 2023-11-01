@@ -1918,7 +1918,12 @@ const datas = () => [
         path: '/personal-loan/PF_P07_p003',
         status: 'end',
         create: '2023.06.09',
-        log: [],
+        log: [
+          {
+            date: '2023.11.01',
+            text: '약관 형식 타입 전체 수정',
+          },
+        ],
       },
       {
         depth2: '스탁론\nPF_P07_p000',
