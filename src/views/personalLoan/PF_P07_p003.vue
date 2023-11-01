@@ -18,6 +18,8 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BankFullLogo from '@/components/ui/imageData/BankFullLogo.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
+import IconInfo from '@/assets/images/icon/info.svg?component';
+
 export default {
   components: {
     PageContents,
@@ -33,6 +35,7 @@ export default {
     ButtonListItem,
     BankFullLogo,
     BasicHr,
+    IconInfo,
   },
   setup() {
     const store = {
@@ -89,169 +92,168 @@ export default {
       </PageSubText>
     </PageHead>
 
-    <div>
-      <section>
-        <section>
-          <div>
-            <h3 class="text-title-2 font-weight-medium">
-              하나증권 계좌를 개설하셨나요?
-            </h3>
-            <h3
-              class="text-title-2 font-weight-medium row-margin-container-medium"
-            >
-              공동인증서는 보유하고 계신가요?
-            </h3>
-          </div>
-
-          <BasicHr theme="quaternary" className="row-margin-contents" />
-
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              <div class="inline-wrap">
-                <p class="text-body-1 font-weight-medium">
-                  공동인증서 관련 약관 이용 동의
-                </p>
-              </div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
-
-              <!-- Case : 내용 확인 시 노출 -->
-              <!-- <BasicButton theme="quaternary" size="small">
-                내용읽음
-              </BasicButton> -->
-              <!-- // Case : 내용 확인 시 노출 -->
-            </div>
-          </div>
-        </section>
-
-        <section class="row-margin-container-medium">
-          <h3 class="text-title-2 font-weight-medium">
-            하나증권 인증서는 설치하셨나요?
-          </h3>
-
-          <BasicHr theme="quaternary" className="row-margin-contents" />
-
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              <div class="inline-wrap">
-                <p class="text-body-1 font-weight-medium">
-                  하나증권 인증서 관련 약관 이용 동의
-                </p>
-              </div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
-
-              <!-- Case : 내용 확인 시 노출 -->
-              <!-- <BasicButton theme="quaternary" size="small">
-                내용읽음
-              </BasicButton> -->
-              <!-- // Case : 내용 확인 시 노출 -->
-            </div>
-          </div>
-
-          <div class="flex-box row-margin-contents-small">
-            <div class="flex-box__cell flex-1">
-              <div class="inline-wrap">
-                <p class="text-body-1 font-weight-medium">
-                  개인(신용)정보 필수적 제공 동의(공공 마이데이터)
-                </p>
-              </div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="small">내용보기</BasicButton>
-
-              <!-- Case : 내용 확인 시 노출 -->
-              <!-- <BasicButton theme="quaternary" size="small">
-                내용읽음
-              </BasicButton> -->
-              <!-- // Case : 내용 확인 시 노출 -->
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <div class="row-margin-block-small">
-        <BasicBox theme="tertiary">
-          <ul class="reset-list">
-            <li class="row-margin-contents-small">
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell flex-1">
-                  <h4
-                    class="text-body-3 color-gray-tertiary font-weight-regular"
-                  >
-                    하나&스탁론II 상품조건은 알고 계신가요?
-                  </h4>
-                </div>
-                <div class="flex-box__cell">
-                  <button type="button" :class="$style['link-button']">
-                    <span class="for-a11y">바로가기</span>
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="row-margin-contents-small">
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell flex-1">
-                  <h4
-                    class="text-body-3 color-gray-tertiary font-weight-regular"
-                  >
-                    계좌운용규칙을 숙지하셨나요?
-                  </h4>
-                </div>
-                <div class="flex-box__cell">
-                  <button type="button" :class="$style['link-button']">
-                    <span class="for-a11y">바로가기</span>
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="row-margin-contents-small">
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell flex-1">
-                  <h4
-                    class="text-body-3 color-gray-tertiary font-weight-regular"
-                  >
-                    약정서 및 약관 내용은 숙지하셨나요?
-                  </h4>
-                </div>
-                <div class="flex-box__cell">
-                  <button type="button" :class="$style['link-button']">
-                    <span class="for-a11y">바로가기</span>
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="row-margin-contents-small">
-              <div class="flex-box align-items-start">
-                <div class="flex-box__cell flex-1">
-                  <h4
-                    class="text-body-3 color-gray-tertiary font-weight-regular"
-                  >
-                    유효한 공동인증서를 보유하고 계신가요?
-                  </h4>
-                  <ul :class="[$style['basic-list'], 'row-margin-item']">
-                    <li :class="[$style['basic-list__item'], 'text-body-5']">
-                      <div :class="$style['basic-list__symbol']"></div>
-                      <div :class="$style['basic-list__content']">
-                        금융기관(은행/범용)에서 발급받으신 본인 명의의
-                        공동인증서로 인증과정을 거쳐 신청할 수 있으며,<br />
-                        일 5회 이상 오류 시 당일에는 대출신청이 불가합니다.
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="flex-box__cell">
-                  <button type="button" :class="$style['link-button']">
-                    <span class="for-a11y">바로가기</span>
-                  </button>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </BasicBox>
+    <section>
+      <div>
+        <h3 class="text-body-1 font-weight-regular">
+          하나증권 계좌를 개설하셨나요?
+        </h3>
+        <h3 class="text-body-1 font-weight-regular row-margin-container-medium">
+          공동인증서는 보유하고 계신가요?
+        </h3>
       </div>
+
+      <BasicHr theme="quaternary" className="row-margin-contents" />
+
+      <div class="flex-box">
+        <div class="flex-box__cell">
+          <div class="inline-wrap"><IconInfo /></div>
+        </div>
+        <div class="flex-box__cell flex-1">
+          <div class="inline-wrap">
+            <p class="text-title-2 font-weight-medium">
+              공동인증서 관련 약관 이용 동의
+            </p>
+          </div>
+        </div>
+        <div class="flex-box__cell">
+          <BasicButton size="small">내용보기</BasicButton>
+
+          <!-- Case : 내용 확인 시 노출 -->
+          <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+          <!-- // Case : 내용 확인 시 노출 -->
+        </div>
+      </div>
+    </section>
+
+    <BasicHr theme="quaternary" className="row-margin-contents" />
+
+    <section class="row-margin-container-medium row-margin-bottom-none">
+      <h3 class="text-body-1 font-weight-regular">
+        하나증권 인증서는 설치하셨나요?
+      </h3>
+
+      <BasicHr theme="quaternary" className="row-margin-contents" />
+
+      <div class="flex-box">
+        <div class="flex-box__cell">
+          <div class="inline-wrap"><IconInfo /></div>
+        </div>
+        <div class="flex-box__cell flex-1">
+          <div class="inline-wrap">
+            <p class="text-title-2 font-weight-medium">
+              하나증권 인증서 관련 약관 이용 동의
+            </p>
+          </div>
+        </div>
+        <div class="flex-box__cell">
+          <BasicButton size="small">내용보기</BasicButton>
+
+          <!-- Case : 내용 확인 시 노출 -->
+          <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+          <!-- // Case : 내용 확인 시 노출 -->
+        </div>
+      </div>
+
+      <div class="flex-box row-margin-contents-small">
+        <div class="flex-box__cell">
+          <div class="inline-wrap"><IconInfo /></div>
+        </div>
+        <div class="flex-box__cell flex-1">
+          <div class="inline-wrap">
+            <p class="text-title-2 font-weight-medium">
+              개인(신용)정보 필수적 제공 동의(공공 마이데이터)
+            </p>
+          </div>
+        </div>
+        <div class="flex-box__cell">
+          <BasicButton size="small">내용보기</BasicButton>
+
+          <!-- Case : 내용 확인 시 노출 -->
+          <!-- <BasicButton theme="quaternary" size="small">
+                내용읽음
+              </BasicButton> -->
+          <!-- // Case : 내용 확인 시 노출 -->
+        </div>
+      </div>
+    </section>
+
+    <BasicHr theme="quaternary" className="row-margin-contents" />
+
+    <div class="row-margin-block-small row-margin-bottom-none">
+      <BasicBox theme="tertiary">
+        <ul class="reset-list">
+          <li class="row-margin-contents-small">
+            <div class="flex-box align-items-start">
+              <div class="flex-box__cell flex-1">
+                <h4 class="text-body-3 font-weight-regular">
+                  하나&스탁론II 상품조건은 알고 계신가요?
+                </h4>
+              </div>
+              <div class="flex-box__cell">
+                <button type="button" :class="$style['link-button']">
+                  <span class="for-a11y">바로가기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-contents-small">
+            <div class="flex-box align-items-start">
+              <div class="flex-box__cell flex-1">
+                <h4 class="text-body-3 font-weight-regular">
+                  계좌운용규칙을 숙지하셨나요?
+                </h4>
+              </div>
+              <div class="flex-box__cell">
+                <button type="button" :class="$style['link-button']">
+                  <span class="for-a11y">바로가기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-contents-small">
+            <div class="flex-box align-items-start">
+              <div class="flex-box__cell flex-1">
+                <h4 class="text-body-3 font-weight-regular">
+                  약정서 및 약관 내용은 숙지하셨나요?
+                </h4>
+              </div>
+              <div class="flex-box__cell">
+                <button type="button" :class="$style['link-button']">
+                  <span class="for-a11y">바로가기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="row-margin-contents-small">
+            <div class="flex-box align-items-start">
+              <div class="flex-box__cell flex-1">
+                <h4 class="text-body-3 font-weight-regular">
+                  유효한 공동인증서를 보유하고 계신가요?
+                </h4>
+                <ul :class="[$style['basic-list'], 'row-margin-item']">
+                  <li :class="[$style['basic-list__item'], 'text-body-5']">
+                    <div :class="$style['basic-list__symbol']"></div>
+                    <div :class="$style['basic-list__content']">
+                      금융기관(은행/범용)에서 발급받으신 본인 명의의
+                      공동인증서로 인증과정을 거쳐 신청할 수 있으며,<br />
+                      일 5회 이상 오류 시 당일에는 대출신청이 불가합니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex-box__cell">
+                <button type="button" :class="$style['link-button']">
+                  <span class="for-a11y">바로가기</span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </BasicBox>
     </div>
 
     <ButtonList>
