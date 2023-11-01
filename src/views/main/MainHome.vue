@@ -42,14 +42,15 @@ import IconDentist from '@/assets/images/icon/dentist.svg?component';
 import IconMedical from '@/assets/images/icon/medical.svg?component';
 import IconContractGray from '@/assets/images/icon/contract-gray.svg?component';
 import IconWarning from '@/assets/images/icon/warning.svg?component';
-import IconCustomerInfo from '@/assets/images/icon/customer-info.svg?component';
-import IconDate from '@/assets/images/icon/date.svg?component';
-import IconCorporateFinance from '@/assets/images/icon/corporate-finance.svg?component';
-import IconDeposit from '@/assets/images/icon/deposit.svg?component';
-import IconInstallment from '@/assets/images/icon/installment.svg?component';
-import IconMyLoan from '@/assets/images/icon/my-loan.svg?component';
-import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
-import IconHomeSetting from '@/assets/images/icon/home-setting.svg?component';
+import IconMain1 from '@/assets/images/icon/main-1.svg?component';
+import IconMain2 from '@/assets/images/icon/main-2.svg?component';
+import IconMain3 from '@/assets/images/icon/main-3.svg?component';
+import IconMain4 from '@/assets/images/icon/main-4.svg?component';
+import IconMain5 from '@/assets/images/icon/main-5.svg?component';
+import IconMain6 from '@/assets/images/icon/main-6.svg?component';
+import IconMain7 from '@/assets/images/icon/main-7.svg?component';
+import IconMain8 from '@/assets/images/icon/main-8.svg?component';
+import IconMain9 from '@/assets/images/icon/main-9.svg?component';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -96,14 +97,15 @@ export default {
     IconMedical,
     IconContractGray,
     IconWarning,
-    IconCustomerInfo,
-    IconDate,
-    IconCorporateFinance,
-    IconDeposit,
-    IconInstallment,
-    IconMyLoan,
-    IconCarSecurity,
-    IconHomeSetting,
+    IconMain1,
+    IconMain2,
+    IconMain3,
+    IconMain4,
+    IconMain5,
+    IconMain6,
+    IconMain7,
+    IconMain8,
+    IconMain9,
   },
   setup() {
     const state = reactive({
@@ -586,7 +588,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconCustomerInfo />
+                      <IconMain1 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       계약현황<br />
@@ -597,7 +599,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconDate />
+                      <IconMain2 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       상환<br />
@@ -608,7 +610,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconCorporateFinance />
+                      <IconMain3 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       청구방법/<br />
@@ -619,7 +621,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconDeposit />
+                      <IconMain4 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       자동이체<br />
@@ -630,7 +632,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconInstallment />
+                      <IconMain5 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       중도상환<br />
@@ -641,7 +643,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconMyLoan />
+                      <IconMain6 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       주소지/<br />
@@ -652,7 +654,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconCarSecurity />
+                      <IconMain7 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       범칙금/<br />
@@ -663,7 +665,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconHomeSetting />
+                      <IconMain8 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       근저당설정<br />
@@ -674,7 +676,7 @@ export default {
                 <li :class="$style['my-menu__item']">
                   <RouterLink to="" :class="$style['my-menu__link']">
                     <span :class="$style['my-menu__icon']">
-                      <IconLeaseStuff />
+                      <IconMain9 />
                     </span>
                     <span :class="$style['my-menu__title']">
                       온라인<br />

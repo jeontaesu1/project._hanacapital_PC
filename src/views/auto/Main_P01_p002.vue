@@ -13,7 +13,7 @@ import TextButton from '@/components/ui/button/TextButton.vue';
 
 import IconCarGreen from '@/assets/images/icon/car-green.svg?component';
 import IconCarRent from '@/assets/images/icon/car-rent.svg?component';
-import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
+import IconAutoLease from '@/assets/images/icon/auto-lease.svg?component';
 import IconCarUsed from '@/assets/images/icon/car-used.svg?component';
 import IconCarPay from '@/assets/images/icon/car-pay.svg?component';
 
@@ -27,7 +27,7 @@ export default {
     TextButton,
     IconCarGreen,
     IconCarRent,
-    IconCarSecurity,
+    IconAutoLease,
     IconCarUsed,
     IconCarPay,
   },
@@ -130,7 +130,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconCarSecurity />
+              <IconAutoLease />
             </div>
             <h3 :class="$style['product-list__title']">
               다이렉트<br />

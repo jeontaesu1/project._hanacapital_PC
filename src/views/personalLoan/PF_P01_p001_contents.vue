@@ -12,7 +12,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
-import IconCommision from '@/assets/images/icon/commission.svg?component';
+import IconPage from '@/assets/images/icon/page.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
@@ -36,7 +36,7 @@ export default {
     IconMoney,
     IconRate,
     IconDate,
-    IconCommision,
+    IconPage,
     IconPerson,
     IconInterestRate,
     IconSearchMoney,
@@ -102,7 +102,7 @@ export default {
             </li>
             <li :class="$style['product-detail__item']">
               <div :class="$style['product-detail__icon']">
-                <IconCommision />
+                <IconPage />
               </div>
               <div :class="$style['product-detail__block']">
                 <div :class="$style['product-detail__title']">서류</div>

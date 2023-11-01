@@ -9,7 +9,7 @@ import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
-import IconPersonalTermsGray from '@/assets/images/icon/personal-terms-gray.svg?component';
+import IconEstimation from '@/assets/images/icon/estimation.svg?component';
 import IconTrophy from '@/assets/images/icon/trophy.svg?component';
 import IconHrPoint from '@/assets/images/icon/hr-point.svg?component';
 import IconGiftBox from '@/assets/images/icon/gift-box.svg?component';
@@ -32,7 +32,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
-    IconPersonalTermsGray,
+    IconEstimation,
     IconTrophy,
     IconHrPoint,
     IconGiftBox,
@@ -97,7 +97,7 @@ export default {
                     'row-margin-contents-small',
                   ]"
                 >
-                  <IconPersonalTermsGray />
+                  <IconEstimation />
                 </div>
                 <h3 class="text-title-2">평가제도</h3>
                 <p class="text-body-3 color-gray-tertiary row-margin-item">

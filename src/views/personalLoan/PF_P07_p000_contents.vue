@@ -16,7 +16,7 @@ import IconDate from '@/assets/images/icon/date.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
 import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconCompany from '@/assets/images/icon/company.svg?component';
 import IconSend from '@/assets/images/icon/send.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
@@ -40,7 +40,7 @@ export default {
     IconPerson,
     IconInterestRate,
     IconPersonalTerms,
-    IconContract,
+    IconCompany,
     IconSend,
     IconDeposit,
     IconCalculate,
@@ -614,7 +614,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconContract />
+                    <IconCompany />
                   </div>
                 </div>
               </li>

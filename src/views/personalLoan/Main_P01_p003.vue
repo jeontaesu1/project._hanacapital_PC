@@ -16,7 +16,7 @@ import IconBuilding from '@/assets/images/icon/building.svg?component';
 import IconProperty from '@/assets/images/icon/property.svg?component';
 import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 import IconVip from '@/assets/images/icon/vip.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
+import IconStock from '@/assets/images/icon/stock.svg?component';
 import IconRealEstatePrice from '@/assets/images/icon/real-estate-price.svg?component';
 import IconHome from '@/assets/images/icon/home.svg?component';
 
@@ -33,7 +33,7 @@ export default {
     IconProperty,
     IconCarSecurity,
     IconVip,
-    IconInterestRate,
+    IconStock,
     IconRealEstatePrice,
     IconHome,
   },
@@ -254,7 +254,7 @@ export default {
         <li :class="$style['product-list__item']">
           <div :class="$style['product-list__block']">
             <div :class="$style['product-list__icon']">
-              <IconInterestRate />
+              <IconStock />
             </div>
             <h3 :class="$style['product-list__title']">스탁론</h3>
             <p :class="$style['product-list__text']">
