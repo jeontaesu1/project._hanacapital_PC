@@ -15,9 +15,8 @@ import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 
-import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
-import IconInterestRate from '@/assets/images/icon/interest-rate.svg?component';
-
+import IconMaximum from '@/assets/images/icon/maximum.svg?component';
+import IconExpectedInterestRate from '@/assets/images/icon/expected-interest-rate.svg?component';
 export default {
   components: {
     PageContents,
@@ -30,8 +29,8 @@ export default {
     IllustInfoTitle,
     BasicBox,
     UnitText,
-    IconSearchMoney,
-    IconInterestRate,
+    IconMaximum,
+    IconExpectedInterestRate,
   },
   setup() {
     const store = {
@@ -85,7 +84,7 @@ export default {
               <div :class="$style['product-detail__list']">
                 <div :class="$style['product-detail__item']">
                   <div :class="$style['product-detail__icon']">
-                    <IconSearchMoney />
+                    <IconMaximum />
                   </div>
                   <div :class="$style['product-detail__block']">
                     <div :class="$style['product-detail__title']">
@@ -108,7 +107,7 @@ export default {
               <div :class="$style['product-detail__list']">
                 <div :class="$style['product-detail__item']">
                   <div :class="$style['product-detail__icon']">
-                    <IconInterestRate />
+                    <IconExpectedInterestRate />
                   </div>
                   <div :class="$style['product-detail__block']">
                     <div :class="$style['product-detail__title']">대출금리</div>

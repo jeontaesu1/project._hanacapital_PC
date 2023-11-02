@@ -17,7 +17,7 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconHanacapitalSmall from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconCompleted from '@/assets/images/icon/completed.svg?component';
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
     IconCalculate,
     IconHanacapitalSmall,
     IconConsultation,
-    IconContract,
+    IconCompleted,
   },
 };
 </script>
@@ -511,7 +511,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconContract />
+                    <IconCompleted />
                   </div>
                 </div>
               </li>

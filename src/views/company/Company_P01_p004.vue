@@ -7,7 +7,7 @@ import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageSubText from '@/components/ui/text/PageSubText.vue';
 
 import IconPersonal from '@/assets/images/icon/personal-finance.svg?component';
-import IconAuto from '@/assets/images/icon/car-check.svg?component';
+import IconCar from '@/assets/images/icon/car.svg?component';
 import IconCorporate from '@/assets/images/icon/corporate-finance.svg?component';
 import IconGlobal from '@/assets/images/icon/global-finance.svg?component';
 
@@ -20,7 +20,7 @@ export default {
     PageSubText,
 
     IconPersonal,
-    IconAuto,
+    IconCar,
     IconCorporate,
     IconGlobal,
   },
@@ -89,7 +89,7 @@ export default {
             ]"
           >
             <div :class="$style['product-list__icon']">
-              <IconAuto />
+              <IconCar />
             </div>
             <h3 class="text-title-2">하나의 젊음! 오토금융</h3>
             <p class="text-body-3 color-gray-tertiary row-margin-item">

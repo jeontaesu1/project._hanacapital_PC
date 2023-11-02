@@ -18,7 +18,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconHanacapitalSmall from '@/assets/images/icon/hanacapital-small.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
-import IconContract from '@/assets/images/icon/contract.svg?component';
+import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconSearchMoney from '@/assets/images/icon/search-money.svg?component';
 
 export default {
@@ -40,7 +40,7 @@ export default {
     IconDeposit,
     IconCalculate,
     IconHanacapitalSmall,
-    IconContract,
+    IconPersonalTerms,
     IconSearchMoney,
   },
 };
@@ -322,7 +322,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconSend />
+                    <IconPersonalTerms />
                   </div>
                 </div>
               </li>
@@ -337,7 +337,7 @@ export default {
                     </p>
                   </div>
                   <div :class="$style['step__icon']">
-                    <IconContract />
+                    <IconSend />
                   </div>
                 </div>
               </li>

@@ -17,7 +17,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconPig from '@/assets/images/icon/pig.svg?component';
 import IconBuilding from '@/assets/images/icon/building.svg?component';
-import IconCar from '@/assets/images/icon/car.svg?component';
+import IconCarSecurity from '@/assets/images/icon/car-security.svg?component';
 
 export default {
   components: {
@@ -33,7 +33,7 @@ export default {
     BasicHr,
     IconPig,
     IconBuilding,
-    IconCar,
+    IconCarSecurity,
   },
   setup() {
     const store = {
@@ -109,7 +109,7 @@ export default {
         </li>
         <li :class="$style['icon-list__item']">
           <RouterLink to="" :class="$style['icon-list__block']">
-            <span :class="$style['icon-list__icon']"><IconCar /></span>
+            <span :class="$style['icon-list__icon']"><IconCarSecurity /></span>
             <span :class="$style['icon-list__content']">
               <span :class="$style['icon-list__text']">
                 내 차만 있다면 특별한도와 금리혜택까지
