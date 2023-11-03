@@ -78,19 +78,6 @@ export default {
             주택임대사업자, 주택매매사업자는 취급 불가합니다.
           </div>
         </li>
-        <li
-          :class="[
-            $style['basic-list__item'],
-            'text-body-1',
-            'color-black',
-            'font-weight-regular',
-          ]"
-        >
-          <div :class="$style['basic-list__symbol']"></div>
-          <div :class="$style['basic-list__content']">
-            서울, 인천, 경기 지역만 신청 가능합니다.
-          </div>
-        </li>
       </ul>
 
       <template v-slot:foot>
