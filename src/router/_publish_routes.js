@@ -834,6 +834,11 @@ const routes = [
     component: () => import('@/views/onlineBranch/MI_P00_p013.vue'),
   },
   {
+    path: '/online-branch/MI_P00_p019',
+    name: '/online-branch/MI_P00_p019',
+    component: () => import('@/views/onlineBranch/MI_P00_p019.vue'),
+  },
+  {
     path: '/online-branch/MI_P00_p014',
     name: '/online-branch/MI_P00_p014',
     component: () => import('@/views/onlineBranch/MI_P00_p014.vue'),

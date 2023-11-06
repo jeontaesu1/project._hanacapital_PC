@@ -1,0 +1,47 @@
+@import '@/assets/scss/components/import/division-info.scss';
+
+.add-button {
+  @include reset-button;
+  display: block;
+  width: 100%;
+  padding: 23px;
+  border-radius: 8px;
+  border: 1px solid $color-gray-30;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    svg {
+      display: block;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__text {
+    margin-left: 16px;
+    display: block;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    @include font-size-default(18);
+  }
+
+  &__icon {
+    flex: none;
+    margin-left: 8px;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+
+      * {
+        fill: $color-black;
+      }
+    }
+  }
+}
