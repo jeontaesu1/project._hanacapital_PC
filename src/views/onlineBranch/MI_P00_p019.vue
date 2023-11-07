@@ -205,9 +205,7 @@ export default {
                   <p class="text-body-4 font-weight-light row-margin-small">
                     지정운전자 2
                   </p>
-                  <h3 class="text-title-2 font-weight-medium">
-                    김하나(친인척)
-                  </h3>
+                  <h3 class="text-title-2 font-weight-medium">김하나(기타)</h3>
                 </BasicBoxHeadLeft>
                 <BasicBoxHeadRight>
                   <div class="flex-box">

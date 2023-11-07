@@ -12,6 +12,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import IllustInfo from '@/components/ui/common/IllustInfo.vue';
 import IllustInfoTitle from '@/components/ui/common/IllustInfoTitle.vue';
+import IllustInfoText from '@/components/ui/common/IllustInfoText.vue';
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     IllustObject,
     IllustInfo,
     IllustInfoTitle,
+    IllustInfoText,
   },
   setup() {
     const store = {
@@ -69,6 +71,12 @@ export default {
     <IllustInfo>
       <IllustObject type="complete" />
       <IllustInfoTitle>지정운전자 등록이 완료되었습니다</IllustInfoTitle>
+
+      <IllustInfoText>
+        <strong class="color-green">###-####-####</strong> 번호로 등록 신청
+        문자가 발송되었습니다.<br />
+        서비스 이용약관 동의 및 지정운전자 정보 등록 완료 신청이 완료됩니다.
+      </IllustInfoText>
     </IllustInfo>
 
     <ButtonList :wrap="true" align="center">

@@ -2776,7 +2776,12 @@ const datas = () => [
         path: '/online-branch/MI_P00_p016',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.11.07',
+            text: '서브 타이틀 추가',
+          },
+        ],
       },
       {
         depth2: '계약정보',
