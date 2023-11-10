@@ -18,6 +18,7 @@ import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import UiScroller from '@/components/ui/common/UiScroller.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -35,6 +36,7 @@ export default {
     CheckBoxLabelText,
     CheckBoxObject,
     UiScroller,
+    TextButton,
   },
   setup() {
     const store = {
@@ -89,6 +91,37 @@ export default {
         약관동의 및 본인확인이 필요합니다
       </PageMainText>
     </PageHead>
+
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+        'row-margin-block-small',
+        'row-margin-top-none',
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
+              정보이용∙제공 현황을 조회할 수 있습니다.
+            </div>
+            <div class="flex-box__cell flex-box__cell--medium">
+              <TextButton
+                textSize="regular"
+                theme="secondary"
+                :underline="true"
+                :block="true"
+              >
+                이동하기
+              </TextButton>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
 
     <div :class="$style['agree-box']">
       <div :class="$style['agree-box__block']">

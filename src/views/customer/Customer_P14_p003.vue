@@ -20,6 +20,7 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import TextButton from '@/components/ui/button/TextButton.vue';
 
 export default {
   components: {
@@ -38,6 +39,7 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
+    TextButton,
   },
   setup() {
     const store = {
@@ -86,6 +88,37 @@ export default {
         </PageTitle>
       </PageHeadRow>
     </PageHead>
+
+    <ul
+      :class="[
+        $style['basic-list'],
+        $style['basic-list--regular'],
+        $style['basic-list--regular-margin'],
+        'row-margin-block-small',
+        'row-margin-top-none',
+      ]"
+    >
+      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
+        <div :class="$style['basic-list__symbol']"></div>
+        <div :class="$style['basic-list__content']">
+          <div class="flex-box">
+            <div class="flex-box__cell flex-1">
+              개인정보 열람 청구를 신청할 수 있습니다.
+            </div>
+            <div class="flex-box__cell flex-box__cell--medium">
+              <TextButton
+                textSize="regular"
+                theme="secondary"
+                :underline="true"
+                :block="true"
+              >
+                이동하기
+              </TextButton>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
 
     <BoxCheckList>
       <BoxCheckListItem>

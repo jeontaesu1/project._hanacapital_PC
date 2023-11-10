@@ -837,7 +837,12 @@ const datas = () => [
         path: '/customer/Customer_P14_p001',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '상단에 안내문구 및 텍스트 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '개인정보이용현황',
@@ -875,7 +880,12 @@ const datas = () => [
         path: '/customer/Customer_P14_p003',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '상단에 안내문구 및 텍스트 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '개인정보이용현황',
@@ -908,7 +918,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p001',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -919,7 +934,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p002',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -930,7 +950,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p003',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -941,7 +966,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p004',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -952,7 +982,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p005',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -974,7 +1009,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p007',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -985,7 +1025,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p008',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -996,7 +1041,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p009',
         status: 'end',
         create: '2023.06.14',
-        log: [],
+        log: [
+          {
+            date: '2023.11.10',
+            text: '하단에 버튼 추가',
+          },
+        ],
       },
       {
         depth2: '전자민원접수',
