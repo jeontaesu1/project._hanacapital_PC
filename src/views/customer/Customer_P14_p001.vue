@@ -18,7 +18,7 @@ import CheckBox from '@/components/ui/form/CheckBox.vue';
 import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
 import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
 import UiScroller from '@/components/ui/common/UiScroller.vue';
-import TextButton from '@/components/ui/button/TextButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 export default {
   components: {
@@ -36,7 +36,7 @@ export default {
     CheckBoxLabelText,
     CheckBoxObject,
     UiScroller,
-    TextButton,
+    BasicHr,
   },
   setup() {
     const store = {
@@ -92,37 +92,6 @@ export default {
       </PageMainText>
     </PageHead>
 
-    <ul
-      :class="[
-        $style['basic-list'],
-        $style['basic-list--regular'],
-        $style['basic-list--regular-margin'],
-        'row-margin-block-small',
-        'row-margin-top-none',
-      ]"
-    >
-      <li :class="[$style['basic-list__item'], 'font-weight-regular']">
-        <div :class="$style['basic-list__symbol']"></div>
-        <div :class="$style['basic-list__content']">
-          <div class="flex-box">
-            <div class="flex-box__cell flex-1">
-              정보이용∙제공 현황을 조회할 수 있습니다.
-            </div>
-            <div class="flex-box__cell flex-box__cell--medium">
-              <TextButton
-                textSize="regular"
-                theme="secondary"
-                :underline="true"
-                :block="true"
-              >
-                이동하기
-              </TextButton>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-
     <div :class="$style['agree-box']">
       <div :class="$style['agree-box__block']">
         <div :class="$style['agree-box__head']">
@@ -157,11 +126,60 @@ export default {
     </div>
 
     <!-- Case : 다음 누른 후 비노출 -->
-    <ButtonList>
-      <ButtonListItem>
-        <BasicButton>다음</BasicButton>
-      </ButtonListItem>
-    </ButtonList>
+    <div class="row-margin-block row-margin-bottom-none">
+      <ButtonList
+        :classNames="{
+          wrap: 'row-margin-block',
+        }"
+      >
+        <ButtonListItem>
+          <BasicButton>다음</BasicButton>
+        </ButtonListItem>
+      </ButtonList>
+
+      <BasicHr theme="tertiary" className="row-margin-container-medium" />
+
+      <div :class="$style['logs-wrap']">
+        <ul :class="$style['logs']">
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    개인정보 열람 청구
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li :class="$style['logs__item']">
+            <div
+              :class="[$style['logs__block'], $style['logs__block--tertiary']]"
+            >
+              <div :class="$style['logs__row']">
+                <div :class="$style['logs__contents']">
+                  <h3 :class="[$style['logs__title'], 'text-body-3']">
+                    정보 이용·제공 조회
+                  </h3>
+                </div>
+                <div :class="$style['logs__right']">
+                  <RouterLink to="" :class="$style['logs__link']">
+                    <span :class="$style['logs__link-text']">상세보기</span>
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!-- // Case : 다음 누른 후 비노출 -->
 
     <!-- Case : 다음 누른 후 노출 -->
