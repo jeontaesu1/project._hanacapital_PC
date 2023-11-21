@@ -530,6 +530,11 @@ export default {
               </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <!-- Case : 금액 입력 시 노출 -->
+            <FormHelpText :classNames="{ wrap: 'align-right' }"
+              >구천만원</FormHelpText
+            >
+            <!-- // Case : 금액 입력 시 노출 -->
           </FormInvalid>
         </FormListItem>
       </FormList>
