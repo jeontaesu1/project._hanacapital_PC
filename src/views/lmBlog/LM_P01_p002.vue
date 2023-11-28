@@ -672,6 +672,7 @@ export default {
                     title="입사일"
                     id="LM_P01_p002_workDate"
                     buttonId="LM_P01_p002_workDateButton"
+                    :isDelete="true"
                   />
                 </InputBlockCell>
               </InputBlock>

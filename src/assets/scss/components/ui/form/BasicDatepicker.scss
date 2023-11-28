@@ -132,4 +132,38 @@
       }
     }
   }
+
+  &__delete {
+    @include reset-button;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    position: relative;
+    display: block;
+    z-index: 999;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      box-sizing: content-box;
+      padding: 4px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-text {
+      @include for-a11y;
+    }
+  }
 }

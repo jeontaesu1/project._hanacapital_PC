@@ -11,18 +11,22 @@ import {
 } from 'vue';
 
 import IconCalendar from '@/assets/images/icon/calendar.svg?component';
+import IconDelete from '@/assets/images/icon/text-delete.svg?component';
 
 const defaultClassNames = () => ({
   wrap: '',
   dummy: '',
   text: '',
   icon: '',
+  isdelete: '',
+  deleteText: '',
 });
 
 export default {
   inheritAttrs: false,
   components: {
     IconCalendar,
+    IconDelete,
   },
   props: {
     classNames: {
@@ -111,6 +115,10 @@ export default {
     },
     modelValue: {
       Type: String,
+    },
+    isDelete: {
+      Type: String,
+      default: null,
     },
   },
   setup(props, { emit }) {
@@ -531,6 +539,17 @@ export default {
       <div :class="[$style['input__text'], customClassNames.text]">
         {{ state.val }}
       </div>
+      <button
+        type="button"
+        v-if="isDelete"
+        :class="[$style['input__delete'], customClassNames.isDelete]"
+      >
+        <IconDelete />
+        <span
+          :class="[$style['input__delete-text'], customClassNames.deleteText]"
+          >입력 내용 지우기</span
+        >
+      </button>
       <div :class="[$style['input__icon'], customClassNames.icon]">
         <IconCalendar />
       </div>
