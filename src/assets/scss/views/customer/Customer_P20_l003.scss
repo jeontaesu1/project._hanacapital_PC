@@ -1,0 +1,17 @@
+@import '@/assets/scss/components/import/icon-box.scss';
+@import '@/assets/scss/components/import/empty.scss';
+
+.empty {
+  background-color: $color-gray-05;
+  border-radius: 10px;
+  padding: 32px 0;
+}
+
+.empty__text {
+  padding: 0;
+  color: $color-gray-90;
+}
+
+.contents-wrap {
+  margin-top: 16px;
+}
