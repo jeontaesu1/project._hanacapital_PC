@@ -4337,6 +4337,17 @@ const datas = () => [
         ],
       },
       {
+        depth2: '다이렉트 오토리스\nAF_P02_p001',
+        depth3: '팝업',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/auto-005',
+        status: 'end',
+        create: '2023.11.30',
+        log: [],
+      },
+      {
         depth2: '오토할부\nAF_P03_p001',
         depth3: '',
         depth4: '',

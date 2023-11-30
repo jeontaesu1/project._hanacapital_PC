@@ -214,6 +214,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideAuto004.vue'),
   },
   {
+    path: '/ui-guide/auto-005',
+    name: '/ui-guide/auto-005',
+    component: () => import('@/views/uiGuide/GuideAuto005.vue'),
+  },
+  {
     path: '/ui-guide/main-001',
     name: '/ui-guide/main-001',
     component: () => import('@/views/uiGuide/GuideMain001.vue'),

@@ -1,0 +1,31 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/basic-list.scss';
+
+.contents-wrap {
+  margin-top: 16px;
+}
+
+.basic-table {
+  > table {
+    > tbody {
+      .table-head {
+        padding: 12px 0;
+      }
+      > tr {
+        > td {
+          padding: 8px 16px;
+          border-left: 1px solid $color-gray-30;
+          border-bottom: 1px solid $color-gray-30;
+          word-break: break-all;
+          @include font-size-default(16);
+          vertical-align: middle;
+          text-align: center;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+}
