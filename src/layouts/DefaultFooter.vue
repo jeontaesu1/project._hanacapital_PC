@@ -248,6 +248,13 @@ export default {
                   >
                 </RouterLink>
               </li>
+              <li :class="$style['sub-nav__item']">
+                <RouterLink to="" :class="$style['sub-nav__link']">
+                  <span :class="$style['sub-nav__text']"
+                    >방문 · 전화권유판매원 조회</span
+                  >
+                </RouterLink>
+              </li>
             </ul>
           </div>
         </div>

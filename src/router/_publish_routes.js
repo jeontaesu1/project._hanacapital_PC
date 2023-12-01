@@ -94,6 +94,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideCustomer001.vue'),
   },
   {
+    path: '/ui-guide/customer-003',
+    name: '/ui-guide/customer-003',
+    component: () => import('@/views/uiGuide/GuideCustomer003.vue'),
+  },
+  {
     path: '/ui-guide/sign-001',
     name: '/ui-guide/sign-001',
     component: () => import('@/views/uiGuide/GuideSign001.vue'),
@@ -332,6 +337,11 @@ const routes = [
     path: '/customer/Customer_P11_p001',
     name: '/customer/Customer_P11_p001',
     component: () => import('@/views/customer/Customer_P11_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P20_p001',
+    name: '/customer/Customer_P20_p001',
+    component: () => import('@/views/customer/Customer_P20_p001.vue'),
   },
   {
     path: '/customer/Customer_P01_p001',
