@@ -3,10 +3,6 @@
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
@@ -27,10 +23,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    UiTab,
-    UiTabPanel,
-    NavTab,
-    NavTabButton,
     BasicHr,
     IconMoney,
     IconRate,
@@ -115,132 +107,84 @@ export default {
     </div>
 
     <div class="wide-wrap row-margin-block">
-      <UiTab>
-        <NavTab
-          :useUiTab="true"
-          :classNames="{ wrap: 'row-margin-block-small' }"
-        >
-          <NavTabButton link="PF_P05_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P05_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P05_p001_tab003">유의사항</NavTabButton>
-        </NavTab>
+      <div class="flex-box row-margin-contents-group">
+        <div class="flex-box__cell">
+          <div :class="$style['product-box']"></div>
+        </div>
+        <div class="flex-box__cell flex-box__cell--regular">
+          <h3 class="text-big-2">상품안내</h3>
+        </div>
+      </div>
 
-        <!-- 상품안내 -->
-        <UiTabPanel name="PF_P05_p001_tab001">
-          <div :class="$style['product-info']">
-            <ul :class="$style['product-info__list']">
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconPerson />
-                    </div>
-                    <div :class="$style['product-info__title']">대상</div>
+      <div>
+        <div :class="$style['product-info']">
+          <ul :class="$style['product-info__list']">
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconPerson />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      하나캐피탈 우수거래고객 및 하나캐피탈 멤버십 우수회원
-                    </div>
+                  <div :class="$style['product-info__title']">대상</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    하나캐피탈 우수거래고객 및 하나캐피탈 멤버십 우수회원
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconInterestRate />
-                    </div>
-                    <div :class="$style['product-info__title']">한도</div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconInterestRate />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      최대 5천만원 (최저 300만원)
-                    </div>
+                  <div :class="$style['product-info__title']">한도</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    최대 5천만원 (최저 300만원)
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconRate />
-                    </div>
-                    <div :class="$style['product-info__title']">금리</div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconRate />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div
-                      :class="[
-                        $style['product-info__text'],
-                        'font-weight-bold',
-                      ]"
-                    >
-                      연 5.9% ~ 19.9%
-                    </div>
+                  <div :class="$style['product-info__title']">금리</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div
+                    :class="[$style['product-info__text'], 'font-weight-bold']"
+                  >
+                    연 5.9% ~ 19.9%
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconDate />
-                    </div>
-                    <div :class="$style['product-info__title']">기간</div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconDate />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      12개월 ~ 84개월
-                    </div>
+                  <div :class="$style['product-info__title']">기간</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    12개월 ~ 84개월
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-          <div class="row-margin-block-small">
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                상환방법
-              </h3>
-              <p class="text-title-2">원리금균등분할상환</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                중도상환수수료
-              </h3>
-              <p class="text-title-2">없음</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                연체이자율
-              </h3>
-              <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
-              <p
-                class="text-body-3 color-gray font-weight-bold row-margin-small"
-              >
-                (법정최고금리 연 20% 이내)
-              </p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                이자부과시기
-              </h3>
-              <p class="text-title-2">매월 후취</p>
-            </section>
-          </div>
-        </UiTabPanel>
-        <!-- // 상품안내 -->
-
-        <!-- 진행절차 -->
-        <UiTabPanel name="PF_P05_p001_tab002">
+        <section class="row-margin-block-small">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -316,11 +260,39 @@ export default {
               </li>
             </ul>
           </div>
-        </UiTabPanel>
-        <!-- // 진행절차 -->
+        </section>
 
-        <!-- 유의사항 -->
-        <UiTabPanel name="PF_P05_p001_tab003">
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            상환방법
+          </h3>
+          <p class="text-title-2">원리금균등분할상환</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            중도상환수수료
+          </h3>
+          <p class="text-title-2">없음</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            연체이자율
+          </h3>
+          <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
+          <p class="text-body-3 color-gray font-weight-bold row-margin-small">
+            (법정최고금리 연 20% 이내)
+          </p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            이자부과시기
+          </h3>
+          <p class="text-title-2">매월 후취</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            유의사항
+          </h3>
           <ul
             :class="[
               $style['basic-list'],
@@ -440,24 +412,23 @@ export default {
               </div>
             </li>
           </ul>
-        </UiTabPanel>
-        <!-- // 유의사항 -->
+        </section>
+      </div>
 
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 23-384 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2023-C1h-11548호 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-        </ul>
-      </UiTab>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-384 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2023-C1h-11548호 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+      </ul>
 
       <BasicHr
         theme="tertiary"

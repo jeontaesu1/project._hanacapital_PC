@@ -5,3 +5,9 @@
 @import '@/assets/scss/components/import/step.scss';
 @import '@/assets/scss/components/import/icon-list.scss';
 @import '@/assets/scss/components/import/basic-table.scss';
+
+.product-box {
+  width: 8px;
+  height: 30px;
+  background-color: $color-green-50;
+}
