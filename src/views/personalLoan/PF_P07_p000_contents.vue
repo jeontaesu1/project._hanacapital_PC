@@ -3,10 +3,6 @@
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
@@ -28,10 +24,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    UiTab,
-    UiTabPanel,
-    NavTab,
-    NavTabButton,
     BasicHr,
     TextButton,
     IconMoney,
@@ -125,469 +117,84 @@ export default {
     </div>
 
     <div class="wide-wrap row-margin-block">
-      <UiTab>
-        <NavTab
-          :useUiTab="true"
-          :classNames="{ wrap: 'row-margin-block-small' }"
-        >
-          <NavTabButton link="PF_P07_p000_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P07_p000_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P07_p000_tab003">유의사항</NavTabButton>
-        </NavTab>
+      <div class="flex-box row-margin-contents-group">
+        <div class="flex-box__cell">
+          <div :class="$style['product-box']"></div>
+        </div>
+        <div class="flex-box__cell flex-box__cell--regular">
+          <h3 class="text-big-2">상품안내</h3>
+        </div>
+      </div>
 
-        <!-- 상품안내 -->
-        <UiTabPanel name="PF_P07_p000_tab001">
-          <div :class="$style['product-info']">
-            <ul :class="$style['product-info__list']">
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconPerson />
-                    </div>
-                    <div :class="$style['product-info__title']">대상</div>
+      <div>
+        <div :class="$style['product-info']">
+          <ul :class="$style['product-info__list']">
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconPerson />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      만 20세 이상 개인 고객
-                    </div>
+                  <div :class="$style['product-info__title']">대상</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    만 20세 이상 개인 고객
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconInterestRate />
-                    </div>
-                    <div :class="$style['product-info__title']">한도</div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconInterestRate />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      최소 1백만원 ~ 최대 6억원
-                    </div>
-                    <div :class="$style['product-info__sub']">
-                      고객계좌를 담보로 계좌평가금액의 최대 300%, 최대 6억원
-                      (계좌당 3억원)까지
-                    </div>
+                  <div :class="$style['product-info__title']">한도</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    최소 1백만원 ~ 최대 6억원
+                  </div>
+                  <div :class="$style['product-info__sub']">
+                    고객계좌를 담보로 계좌평가금액의 최대 300%, 최대 6억원
+                    (계좌당 3억원)까지
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconRate />
-                    </div>
-                    <div :class="$style['product-info__title']">금리</div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconRate />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">연 7.5%</div>
+                  <div :class="$style['product-info__title']">금리</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">연 7.5%</div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconDate />
+                  </div>
+                  <div :class="$style['product-info__title']">기간</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    12개월(최대5년)
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconDate />
-                    </div>
-                    <div :class="$style['product-info__title']">기간</div>
-                  </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      12개월(최대5년)
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-          <div class="row-margin-block-small">
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                상환방법
-              </h3>
-              <p class="text-title-2">만기일시상환</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                중도상환수수료
-              </h3>
-              <p class="text-title-2">없음</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                대출부대비용
-              </h3>
-              <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
-              <p class="text-body-3 color-gray row-margin-small">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-              </p>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 5천만원 이하 : 비과세
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 5천만원 초과 1억원 이하 : 7만원
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 1억원 초과 10억원 이하 : 15만원
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                연체이자율
-              </h3>
-              <p class="text-title-2">약정이율 + 3%</p>
-              <p class="text-body-3 color-gray row-margin-small">
-                (법정최고금리 연 20% 이내)
-              </p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                시간
-              </h3>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--medium'],
-                  $style['basic-list--regular-margin'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    대출 : 08:10 ~ 16:00
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-regular',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <h5 class="text-title-2 font-weight-regular">
-                      상환 : 08:30 ~ 16:00
-                    </h5>
-                    <p class="text-body-3 color-gray row-margin-small">
-                      (토,일,공휴일은 불가합니다.)
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                이자부과시기
-              </h3>
-              <p class="text-title-2">매월 후취</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
-              >
-                스탁론 위험성 안내
-              </h3>
-              <div :class="$style['contents-list']">
-                <ol
-                  :class="[
-                    $style['contents-list__list'],
-                    $style['contents-list__list--quinary'],
-                  ]"
-                >
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">1</div>
-                      <div
-                        :class="[$style['contents-list__title'], 'color-red']"
-                      >
-                        리스크관리시스템(RMS) 자동제한을 통해 종목매수제한 및
-                        보유제한을 두고 있습니다.
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">2</div>
-                      <div
-                        :class="[$style['contents-list__title'], 'color-red']"
-                      >
-                        담보유지비율 하락으로 인한 반대매매, 보유불가종목
-                        반대매매 등 담보관리를 위한 여러가지 제한이 있으니
-                        계좌운용규칙을 충분히 숙지하시기 바랍니다.<TextButton
-                          theme="quinary"
-                          :classNames="{ wrap: $style['account-guide'] }"
-                          >[계좌운용규칙 열람]</TextButton
-                        >
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">3</div>
-                      <div :class="$style['contents-list__title']">
-                        주식 입/출고 및 대체가 제한되며, 계좌 내 일부 현금출금이
-                        제한됩니다.
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">4</div>
-                      <div :class="$style['contents-list__title']">
-                        주가 하락 시에는 대출금 및 투자원금의 일부 또는 전부를
-                        잃을 수 있으니 투자에 유의하시기 바랍니다.
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">5</div>
-                      <div :class="$style['contents-list__title']">
-                        상품의 위험성을 인지하시어 안정적인 투자를 위해 증권계좌
-                        담보평가비율 관리를 철저히 해주시기 바랍니다.
-                      </div>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
-              >
-                추가대출안내
-              </h3>
-              <div :class="$style['contents-list']">
-                <ol
-                  :class="[
-                    $style['contents-list__list'],
-                    $style['contents-list__list--quinary'],
-                  ]"
-                >
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">1</div>
-                      <div :class="$style['contents-list__title']">
-                        담보평가액에 따라 한도 내 추가 대출 신청가능
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">2</div>
-                      <div :class="$style['contents-list__title']">
-                        한도대출(마이너스식)은 변경된 대출비율에 한해 한도 내
-                        추가대출 가능
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">3</div>
-                      <div :class="$style['contents-list__title']">
-                        추가대출가능금액 = (계좌평가금액 - 대출잔액) ×
-                        대출가능비율 - 대출잔액
-                      </div>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">4</div>
-                      <div :class="$style['contents-list__title']">
-                        최초 대출금액과 상관없이 추가대출금액에 대해 인지대
-                        7만원~15만원 발생
-                      </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-small',
-                      ]"
-                    >
-                      <p
-                        class="text-body-3 font-weight-light color-gray-secondary"
-                      >
-                        (신규대출과 동일)
-                      </p>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">5</div>
-                      <div :class="$style['contents-list__title']">
-                        최초대출과 추가대출은 별개의 약정이므로 상품조건(금리,
-                        사용기간, 결제일자, 만기일자)이 상이할 수 있음
-                      </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-small',
-                      ]"
-                    >
-                      <p
-                        class="text-body-3 font-weight-light color-gray-secondary"
-                      >
-                        (상품포트폴리오는 동일함)
-                      </p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                이용가이드
-              </h3>
-              <div :class="$style['basic-table']">
-                <table>
-                  <colgroup>
-                    <col style="width: 114px" />
-                    <col />
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th>대출신청기간</th>
-                      <td class="align-center">
-                        증권사 영업일 08:10 ~ 16:00 (토,일,공휴일은 제외)
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>증권계좌보유</th>
-                      <td class="align-center">
-                        대출을 받고자하는 증권계좌에 100만원 이상 보유 시 신청이
-                        가능합니다.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>본인인증과정</th>
-                      <td class="align-center">
-                        본인명의의 공동인증서로 인증 후 신청할 수 있으며, 일
-                        5회이상 오류시 당일 대출신청을 할 수 없습니다.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item-group',
-                  'row-margin-bottom-none',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-3',
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출가능금액 산정을 위한 계좌평가시 RMS(리스크 관리 시스템)
-                    운용 규칙에 따라 일부 종목은 평가대상에서 제외될 수
-                    있습니다.<br />
-                    대출신청 시 개인신상정보 및 직장정보를 정확하게 입력해
-                    주셔야 합니다.
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    입력하신 개인신상정보는 한국신용정보의 개인신용정보 시스템과
-                    내부신용평가 프로그램, 기존 거래내역 조회 등을 통해 확인을
-                    거치므로 허위로 작성하실 경우 대출이 이루어지지 않습니다.
-                  </div>
-                </li>
-              </ul>
-            </section>
-          </div>
-        </UiTabPanel>
-        <!-- // 상품안내 -->
-
-        <!-- 진행절차 -->
-        <UiTabPanel name="PF_P07_p000_tab002">
+        <section class="row-margin-block-small">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -663,11 +270,366 @@ export default {
               </li>
             </ul>
           </div>
-        </UiTabPanel>
-        <!-- // 진행절차 -->
+        </section>
 
-        <!-- 유의사항 -->
-        <UiTabPanel name="PF_P07_p000_tab003">
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            상환방법
+          </h3>
+          <p class="text-title-2">만기일시상환</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            중도상환수수료
+          </h3>
+          <p class="text-title-2">없음</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            대출부대비용
+          </h3>
+          <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
+          <p class="text-body-3 color-gray row-margin-small">
+            (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
+          </p>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출금액 5천만원 이하 : 비과세
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출금액 5천만원 초과 1억원 이하 : 7만원
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출금액 1억원 초과 10억원 이하 : 15만원
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            연체이자율
+          </h3>
+          <p class="text-title-2">약정이율 + 3%</p>
+          <p class="text-body-3 color-gray row-margin-small">
+            (법정최고금리 연 20% 이내)
+          </p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            시간
+          </h3>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--medium'],
+              $style['basic-list--regular-margin'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-title-2',
+                'color-black',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                대출 : 08:10 ~ 16:00
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-title-2',
+                'color-black',
+                'font-weight-regular',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <h5 class="text-title-2 font-weight-regular">
+                  상환 : 08:30 ~ 16:00
+                </h5>
+                <p class="text-body-3 color-gray row-margin-small">
+                  (토,일,공휴일은 불가합니다.)
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            이자부과시기
+          </h3>
+          <p class="text-title-2">매월 후취</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3
+            class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
+          >
+            스탁론 위험성 안내
+          </h3>
+          <div :class="$style['contents-list']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="[$style['contents-list__title'], 'color-red']">
+                    리스크관리시스템(RMS) 자동제한을 통해 종목매수제한 및
+                    보유제한을 두고 있습니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="[$style['contents-list__title'], 'color-red']">
+                    담보유지비율 하락으로 인한 반대매매, 보유불가종목 반대매매
+                    등 담보관리를 위한 여러가지 제한이 있으니 계좌운용규칙을
+                    충분히 숙지하시기 바랍니다.<TextButton
+                      theme="quinary"
+                      :classNames="{ wrap: $style['account-guide'] }"
+                      >[계좌운용규칙 열람]</TextButton
+                    >
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">
+                    주식 입/출고 및 대체가 제한되며, 계좌 내 일부 현금출금이
+                    제한됩니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">4</div>
+                  <div :class="$style['contents-list__title']">
+                    주가 하락 시에는 대출금 및 투자원금의 일부 또는 전부를 잃을
+                    수 있으니 투자에 유의하시기 바랍니다.
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">5</div>
+                  <div :class="$style['contents-list__title']">
+                    상품의 위험성을 인지하시어 안정적인 투자를 위해 증권계좌
+                    담보평가비율 관리를 철저히 해주시기 바랍니다.
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section class="row-margin-contents">
+          <h3
+            class="text-body-1 font-weight-regular color-gray row-margin-item-medium"
+          >
+            추가대출안내
+          </h3>
+          <div :class="$style['contents-list']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="$style['contents-list__title']">
+                    담보평가액에 따라 한도 내 추가 대출 신청가능
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="$style['contents-list__title']">
+                    한도대출(마이너스식)은 변경된 대출비율에 한해 한도 내
+                    추가대출 가능
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">
+                    추가대출가능금액 = (계좌평가금액 - 대출잔액) × 대출가능비율
+                    - 대출잔액
+                  </div>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">4</div>
+                  <div :class="$style['contents-list__title']">
+                    최초 대출금액과 상관없이 추가대출금액에 대해 인지대
+                    7만원~15만원 발생
+                  </div>
+                </div>
+                <div
+                  :class="[
+                    $style['contents-list__depth-3'],
+                    'row-margin-small',
+                  ]"
+                >
+                  <p class="text-body-3 font-weight-light color-gray-secondary">
+                    (신규대출과 동일)
+                  </p>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">5</div>
+                  <div :class="$style['contents-list__title']">
+                    최초대출과 추가대출은 별개의 약정이므로 상품조건(금리,
+                    사용기간, 결제일자, 만기일자)이 상이할 수 있음
+                  </div>
+                </div>
+                <div
+                  :class="[
+                    $style['contents-list__depth-3'],
+                    'row-margin-small',
+                  ]"
+                >
+                  <p class="text-body-3 font-weight-light color-gray-secondary">
+                    (상품포트폴리오는 동일함)
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            이용가이드
+          </h3>
+          <div :class="$style['basic-table']">
+            <table>
+              <colgroup>
+                <col style="width: 114px" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>대출신청기간</th>
+                  <td class="align-center">
+                    증권사 영업일 08:10 ~ 16:00 (토,일,공휴일은 제외)
+                  </td>
+                </tr>
+                <tr>
+                  <th>증권계좌보유</th>
+                  <td class="align-center">
+                    대출을 받고자하는 증권계좌에 100만원 이상 보유 시 신청이
+                    가능합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <th>본인인증과정</th>
+                  <td class="align-center">
+                    본인명의의 공동인증서로 인증 후 신청할 수 있으며, 일 5회이상
+                    오류시 당일 대출신청을 할 수 없습니다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item-group',
+              'row-margin-bottom-none',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-3',
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출가능금액 산정을 위한 계좌평가시 RMS(리스크 관리 시스템) 운용
+                규칙에 따라 일부 종목은 평가대상에서 제외될 수 있습니다.<br />
+                대출신청 시 개인신상정보 및 직장정보를 정확하게 입력해 주셔야
+                합니다.
+              </div>
+            </li>
+          </ul>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-regular',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                입력하신 개인신상정보는 한국신용정보의 개인신용정보 시스템과
+                내부신용평가 프로그램, 기존 거래내역 조회 등을 통해 확인을
+                거치므로 허위로 작성하실 경우 대출이 이루어지지 않습니다.
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            유의사항
+          </h3>
           <ul
             :class="[
               $style['basic-list'],
@@ -810,24 +772,23 @@ export default {
               </div>
             </li>
           </ul>
-        </UiTabPanel>
-        <!-- // 유의사항 -->
+        </section>
+      </div>
 
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 23-386 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2023-C1h-11549호 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-        </ul>
-      </UiTab>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-386 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2023-C1h-11549호 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+      </ul>
 
       <BasicHr
         theme="tertiary"

@@ -3,10 +3,6 @@
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
@@ -28,10 +24,6 @@ export default {
     BasicButton,
     ButtonList,
     ButtonListItem,
-    UiTab,
-    UiTabPanel,
-    NavTab,
-    NavTabButton,
     BasicHr,
     IconMoney,
     IconRate,
@@ -160,18 +152,17 @@ export default {
         </section>
       </div>
 
-      <UiTab>
-        <NavTab
-          :useUiTab="true"
-          :classNames="{ wrap: 'row-margin-block-small' }"
-        >
-          <NavTabButton link="PF_P01_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P01_p001_tab003">유의사항</NavTabButton>
-        </NavTab>
+      <div>
+        <div class="flex-box row-margin-contents-group">
+          <div class="flex-box__cell">
+            <div :class="$style['product-box']"></div>
+          </div>
+          <div class="flex-box__cell flex-box__cell--regular">
+            <h3 class="text-big-2">상품안내</h3>
+          </div>
+        </div>
 
-        <!-- 상품안내 -->
-        <UiTabPanel name="PF_P01_p001_tab001">
+        <section>
           <div :class="$style['product-info']">
             <ul :class="$style['product-info__list']">
               <li :class="$style['product-info__item']">
@@ -241,171 +232,9 @@ export default {
               </li>
             </ul>
           </div>
+        </section>
 
-          <div class="row-margin-block-small">
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                상환방법
-              </h3>
-              <p class="text-title-2">원리금균등분할상환</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                중도상환수수료
-              </h3>
-              <p class="text-title-2">
-                대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
-              </p>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    1년 이상 : 중도상환원금 X 1% + 중도상환원금 X
-                    (중도상환수수료율 - 1%) X 잔존기간/(대출기간 - 30일)
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    1년 미만 : 중도상환원금 X (중도상환수수료율) X
-                    잔존기간/(대출기간 - 30일)
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[$style['basic-list'], $style['basic-list--regular']]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    중도상환수수료율 : 2%
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                연체이자율
-              </h3>
-              <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
-              <p
-                class="text-body-3 color-gray font-weight-bold row-margin-small"
-              >
-                (법정최고금리 연 20% 이내)
-              </p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                대출부대비용
-              </h3>
-              <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
-              <p class="text-body-3 color-gray row-margin-small">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-              </p>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 5천만원 초과 1억원 이하 : 7만원
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    대출금액 1억원 초과 10억원 이하 : 15만원
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                이자부과시기
-              </h3>
-              <p class="text-title-2">매월 후취</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-medium color-gray row-margin-item"
-              >
-                필요서류
-              </h3>
-              <p class="text-title-2">
-                재직/소득정보 확인은 공공마이데이터로 진행하며, 확인불가 시 관련
-                서류 제출 필요
-              </p>
-            </section>
-          </div>
-        </UiTabPanel>
-        <!-- // 상품안내 -->
-
-        <!-- 진행절차 -->
-        <UiTabPanel name="PF_P01_p001_tab002">
+        <section class="row-margin-block-small">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -481,11 +310,155 @@ export default {
               </li>
             </ul>
           </div>
-        </UiTabPanel>
-        <!-- // 진행절차 -->
+        </section>
 
-        <!-- 유의사항 -->
-        <UiTabPanel name="PF_P01_p001_tab003">
+        <section>
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            상환방법
+          </h3>
+          <p class="text-title-2">원리금균등분할상환</p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            중도상환수수료
+          </h3>
+          <p class="text-title-2">
+            대출실행일 기준 경과기간에 따라 차등 적용되며, 3년 경과 시 면제
+          </p>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                1년 이상 : 중도상환원금 X 1% + 중도상환원금 X (중도상환수수료율
+                - 1%) X 잔존기간/(대출기간 - 30일)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                잔존기간/(대출기간 - 30일)
+              </div>
+            </li>
+          </ul>
+          <ul :class="[$style['basic-list'], $style['basic-list--regular']]">
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-regular',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-regular',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                중도상환수수료율 : 2%
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            연체이자율
+          </h3>
+          <p class="text-title-2 font-weight-bold">약정이율 + 3%</p>
+          <p class="text-body-3 color-gray font-weight-bold row-margin-small">
+            (법정최고금리 연 20% 이내)
+          </p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            대출부대비용
+          </h3>
+          <p class="text-title-2">5천만원 초과 실행 시 인지세 발생</p>
+          <p class="text-body-3 color-gray row-margin-small">
+            (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
+          </p>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출금액 5천만원 초과 1억원 이하 : 7만원
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                대출금액 1억원 초과 10억원 이하 : 15만원
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            이자부과시기
+          </h3>
+          <p class="text-title-2">매월 후취</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            기타
+          </h3>
+          <p class="text-title-2">
+            재직/소득정보 확인은 공공마이데이터로 진행하며, 확인불가 시 관련
+            서류 제출 필요
+          </p>
+        </section>
+
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-medium color-gray row-margin-item">
+            유의사항
+          </h3>
           <ul
             :class="[
               $style['basic-list'],
@@ -605,24 +578,23 @@ export default {
               </div>
             </li>
           </ul>
-        </UiTabPanel>
-        <!-- // 유의사항 -->
+        </section>
+      </div>
 
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 23-376 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여신금융협회 심의필 제2023-C1h-11544호 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-        </ul>
-      </UiTab>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-376 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여신금융협회 심의필 제2023-C1h-11544호 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+      </ul>
 
       <BasicHr
         theme="tertiary"

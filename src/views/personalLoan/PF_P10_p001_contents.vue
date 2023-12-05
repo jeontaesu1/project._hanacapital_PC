@@ -1,9 +1,5 @@
 <script>
 // PF_P10_p001 컨텐츠
-import UiTab from '@/components/ui/tab/UiTab.vue';
-import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
-import NavTab from '@/components/ui/tab/NavTab.vue';
-import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -19,10 +15,6 @@ import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 
 export default {
   components: {
-    UiTab,
-    UiTabPanel,
-    NavTab,
-    NavTabButton,
     BasicHr,
     IconRate,
     IconDate,
@@ -90,561 +82,80 @@ export default {
     </div>
 
     <div class="wide-wrap row-margin-block">
-      <UiTab>
-        <NavTab
-          :useUiTab="true"
-          :classNames="{ wrap: 'row-margin-block-small' }"
-        >
-          <NavTabButton link="PF_P10_p001_tab001">상품안내</NavTabButton>
-          <NavTabButton link="PF_P10_p001_tab002">진행절차</NavTabButton>
-          <NavTabButton link="PF_P10_p001_tab003">유의사항</NavTabButton>
-        </NavTab>
+      <div class="flex-box row-margin-contents-group">
+        <div class="flex-box__cell">
+          <div :class="$style['product-box']"></div>
+        </div>
+        <div class="flex-box__cell flex-box__cell--regular">
+          <h3 class="text-big-2">상품안내</h3>
+        </div>
+      </div>
 
-        <!-- 상품안내 -->
-        <UiTabPanel name="PF_P10_p001_tab001">
-          <div :class="$style['product-info']">
-            <ul :class="$style['product-info__list']">
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconPerson />
-                    </div>
-                    <div :class="$style['product-info__title']">대상</div>
+      <div>
+        <div :class="$style['product-info']">
+          <ul :class="$style['product-info__list']">
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconPerson />
                   </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      개인, 개인사업자 및 법인
-                    </div>
+                  <div :class="$style['product-info__title']">대상</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    개인, 개인사업자 및 법인
                   </div>
                 </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconInterestRate />
-                    </div>
-                    <div :class="$style['product-info__title']">한도</div>
-                  </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      품목별 구매금액 범위 이내
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconRate />
-                    </div>
-                    <div :class="$style['product-info__title']">금리</div>
-                  </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">0.0 ~ 16.0%</div>
-                  </div>
-                </div>
-              </li>
-              <li :class="$style['product-info__item']">
-                <div :class="$style['product-info__block']">
-                  <div :class="$style['product-info__head']">
-                    <div :class="$style['product-info__icon']">
-                      <IconDate />
-                    </div>
-                    <div :class="$style['product-info__title']">기간</div>
-                  </div>
-                  <div :class="$style['product-info__contents']">
-                    <div :class="$style['product-info__text']">
-                      3개월 ~ 36개월
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="row-margin-block-small">
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item"
-              >
-                상환방법
-              </h3>
-              <p class="text-title-2 font-weight-bold">원리금균등분할상환</p>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item"
-              >
-                중도상환수수료
-              </h3>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--medium'],
-                  $style['basic-list--regular-margin'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-bold',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    만기 1년 이상 : 중도상환원금 X 1.00% + 중도상환원금 X
-                    (중도상환수수료율 - 1.00%) X 잔존기간/(대출기간 - 30일)
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-bold',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    만기 1년 미만 : 중도상환원금 X (중도상환수수료율) X
-                    잔존기간/(대출기간 - 30일)
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-bold',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-bold',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    중도상환수수료율 : 2.00%
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-bold',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    무이자의 경우 중도상환수수료 없음
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item-medium"
-              >
-                구비서류
-              </h3>
-              <div :class="$style['contents-list']">
-                <ol
-                  :class="[
-                    $style['contents-list__list'],
-                    $style['contents-list__list--quinary'],
-                  ]"
-                >
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">1</div>
-                      <div :class="$style['contents-list__title']">개인</div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
-                        ]"
-                      >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>신분증사본</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">2</div>
-                      <div :class="$style['contents-list__title']">
-                        개인사업자
-                      </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
-                        ]"
-                      >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>신분증사본</div>
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>사업자등록증</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">3</div>
-                      <div :class="$style['contents-list__title']">법인</div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
-                        ]"
-                      >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>사업자등록증</div>
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>법인등기부등본</div>
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>법인인감증명서</div>
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>법인주주명부</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li :class="$style['contents-list__item']">
-                    <div :class="$style['contents-list__head']">
-                      <div :class="$style['contents-list__symbol']">4</div>
-                      <div :class="$style['contents-list__title']">
-                        기타서류(필요 시)
-                      </div>
-                    </div>
-                    <div
-                      :class="[
-                        $style['contents-list__depth-3'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <ul
-                        :class="[
-                          $style['basic-list'],
-                          $style['basic-list--regular'],
-                        ]"
-                      >
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>개인인감증명서</div>
-                          </div>
-                        </li>
-                        <li
-                          :class="[
-                            $style['basic-list__item'],
-                            'text-body-3',
-                            'font-weight-regular',
-                            'color-black',
-                          ]"
-                        >
-                          <div :class="$style['basic-list__symbol']">-</div>
-                          <div :class="$style['basic-list__content']">
-                            <div>그 외 소득 및 재산 증빙서류</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ol>
               </div>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item"
-              >
-                대출부대비용
-              </h3>
-              <p class="text-title-2 font-weight-bold">
-                5천만원 초과 실행 시 인지세 발생
-              </p>
-              <p class="text-body-3 color-gray row-margin-small">
-                (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
-              </p>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconInterestRate />
+                  </div>
+                  <div :class="$style['product-info__title']">한도</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    품목별 구매금액 범위 이내
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconRate />
+                  </div>
+                  <div :class="$style['product-info__title']">금리</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">0.0 ~ 16.0%</div>
+                </div>
+              </div>
+            </li>
+            <li :class="$style['product-info__item']">
+              <div :class="$style['product-info__block']">
+                <div :class="$style['product-info__head']">
+                  <div :class="$style['product-info__icon']">
+                    <IconDate />
+                  </div>
+                  <div :class="$style['product-info__title']">기간</div>
+                </div>
+                <div :class="$style['product-info__contents']">
+                  <div :class="$style['product-info__text']">
+                    3개월 ~ 36개월
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    5천만원 초과 1억원 이하 : 7만원
-                  </div>
-                </li>
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'font-weight-regular',
-                    'color-black',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">-</div>
-                  <div :class="$style['basic-list__content']">
-                    1억원 초과 10억원 이하 : 15만원
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-regular',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    국민주택채권매입비(고객부담)
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item"
-              >
-                연체이자율
-              </h3>
-
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--medium'],
-                  $style['basic-list--regular-margin'],
-                  'row-margin-item',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-title-2',
-                    'color-black',
-                    'font-weight-bold',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']"></div>
-                  <div :class="$style['basic-list__content']">
-                    <div>약정이율+3.00%</div>
-                    <p
-                      class="text-body-3 color-gray font-weight-bold row-margin-small"
-                    >
-                      (법정최고금리 연 20% 이내)
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <ul
-                :class="[
-                  $style['basic-list'],
-                  $style['basic-list--regular'],
-                  'row-margin-item-medium',
-                ]"
-              >
-                <li
-                  :class="[
-                    $style['basic-list__item'],
-                    'text-body-4',
-                    'font-weight-bold',
-                    'color-gray-secondary',
-                  ]"
-                >
-                  <div :class="$style['basic-list__symbol']">※</div>
-                  <div :class="$style['basic-list__content']">
-                    <div>
-                      단, 연체 발생 시점에 약정이율이 없는 경우 약정금리는
-                      상법상 상사법정이율과 상호금융 가계자금대출금리 *중 높은
-                      금리 적용
-                    </div>
-                    <ul
-                      :class="[
-                        $style['basic-list'],
-                        $style['basic-list--regular'],
-                        'row-margin-item',
-                      ]"
-                    >
-                      <li
-                        :class="[
-                          $style['basic-list__item'],
-                          'text-body-5',
-                          'font-weight-bold',
-                          'color-gray-secondary',
-                        ]"
-                      >
-                        <div :class="$style['basic-list__symbol']">*</div>
-                        <div :class="$style['basic-list__content']">
-                          한국은행에서 매월 발표하는 가장 최근의 비은행금융기관
-                          가중평균대출금리 (신규대출 기준)
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="row-margin-contents">
-              <h3
-                class="text-body-3 font-weight-bold color-gray row-margin-item"
-              >
-                이자부과시기
-              </h3>
-              <p class="text-title-2">매월 후취</p>
-            </section>
-          </div>
-        </UiTabPanel>
-        <!-- // 상품안내 -->
-
-        <!-- 진행절차 -->
-        <UiTabPanel name="PF_P10_p001_tab002">
+        <section class="row-margin-block-small">
           <div :class="[$style['step'], $style['step--horizontal']]">
             <ul :class="$style['step__list']">
               <li :class="$style['step__item']">
@@ -707,11 +218,460 @@ export default {
               </li>
             </ul>
           </div>
-        </UiTabPanel>
-        <!-- // 진행절차 -->
+        </section>
 
-        <!-- 유의사항 -->
-        <UiTabPanel name="PF_P10_p001_tab003">
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            상환방법
+          </h3>
+          <p class="text-title-2 font-weight-bold">원리금균등분할상환</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            중도상환수수료
+          </h3>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--medium'],
+              $style['basic-list--regular-margin'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-title-2',
+                'color-black',
+                'font-weight-bold',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                만기 1년 이상 : 중도상환원금 X 1.00% + 중도상환원금 X
+                (중도상환수수료율 - 1.00%) X 잔존기간/(대출기간 - 30일)
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-title-2',
+                'color-black',
+                'font-weight-bold',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                만기 1년 미만 : 중도상환원금 X (중도상환수수료율) X
+                잔존기간/(대출기간 - 30일)
+              </div>
+            </li>
+          </ul>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-bold',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                잔존기간 : 30일 미만 상환 시 '대출 사용기간'을 30일로 간주
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-bold',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                중도상환수수료율 : 2.00%
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-bold',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                무이자의 경우 중도상환수수료 없음
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3
+            class="text-body-3 font-weight-bold color-gray row-margin-item-medium"
+          >
+            구비서류
+          </h3>
+          <div :class="$style['contents-list']">
+            <ol
+              :class="[
+                $style['contents-list__list'],
+                $style['contents-list__list--quinary'],
+              ]"
+            >
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">1</div>
+                  <div :class="$style['contents-list__title']">개인</div>
+                </div>
+                <div
+                  :class="[$style['contents-list__depth-3'], 'row-margin-item']"
+                >
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--regular'],
+                    ]"
+                  >
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>신분증사본</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">2</div>
+                  <div :class="$style['contents-list__title']">개인사업자</div>
+                </div>
+                <div
+                  :class="[$style['contents-list__depth-3'], 'row-margin-item']"
+                >
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--regular'],
+                    ]"
+                  >
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>신분증사본</div>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>사업자등록증</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">3</div>
+                  <div :class="$style['contents-list__title']">법인</div>
+                </div>
+                <div
+                  :class="[$style['contents-list__depth-3'], 'row-margin-item']"
+                >
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--regular'],
+                    ]"
+                  >
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>사업자등록증</div>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>법인등기부등본</div>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>법인인감증명서</div>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>법인주주명부</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li :class="$style['contents-list__item']">
+                <div :class="$style['contents-list__head']">
+                  <div :class="$style['contents-list__symbol']">4</div>
+                  <div :class="$style['contents-list__title']">
+                    기타서류(필요 시)
+                  </div>
+                </div>
+                <div
+                  :class="[$style['contents-list__depth-3'], 'row-margin-item']"
+                >
+                  <ul
+                    :class="[
+                      $style['basic-list'],
+                      $style['basic-list--regular'],
+                    ]"
+                  >
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>개인인감증명서</div>
+                      </div>
+                    </li>
+                    <li
+                      :class="[
+                        $style['basic-list__item'],
+                        'text-body-3',
+                        'font-weight-regular',
+                        'color-black',
+                      ]"
+                    >
+                      <div :class="$style['basic-list__symbol']">-</div>
+                      <div :class="$style['basic-list__content']">
+                        <div>그 외 소득 및 재산 증빙서류</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            대출부대비용
+          </h3>
+          <p class="text-title-2 font-weight-bold">
+            5천만원 초과 실행 시 인지세 발생
+          </p>
+          <p class="text-body-3 color-gray row-margin-small">
+            (인지세는 하나캐피탈과 금융소비자가 50%씩 부담합니다.)
+          </p>
+
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                5천만원 초과 1억원 이하 : 7만원
+              </div>
+            </li>
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'font-weight-regular',
+                'color-black',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">-</div>
+              <div :class="$style['basic-list__content']">
+                1억원 초과 10억원 이하 : 15만원
+              </div>
+            </li>
+          </ul>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-regular',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                국민주택채권매입비(고객부담)
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            연체이자율
+          </h3>
+
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--medium'],
+              $style['basic-list--regular-margin'],
+              'row-margin-item',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-title-2',
+                'color-black',
+                'font-weight-bold',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']"></div>
+              <div :class="$style['basic-list__content']">
+                <div>약정이율+3.00%</div>
+                <p
+                  class="text-body-3 color-gray font-weight-bold row-margin-small"
+                >
+                  (법정최고금리 연 20% 이내)
+                </p>
+              </div>
+            </li>
+          </ul>
+          <ul
+            :class="[
+              $style['basic-list'],
+              $style['basic-list--regular'],
+              'row-margin-item-medium',
+            ]"
+          >
+            <li
+              :class="[
+                $style['basic-list__item'],
+                'text-body-4',
+                'font-weight-bold',
+                'color-gray-secondary',
+              ]"
+            >
+              <div :class="$style['basic-list__symbol']">※</div>
+              <div :class="$style['basic-list__content']">
+                <div>
+                  단, 연체 발생 시점에 약정이율이 없는 경우 약정금리는 상법상
+                  상사법정이율과 상호금융 가계자금대출금리 *중 높은 금리 적용
+                </div>
+                <ul
+                  :class="[
+                    $style['basic-list'],
+                    $style['basic-list--regular'],
+                    'row-margin-item',
+                  ]"
+                >
+                  <li
+                    :class="[
+                      $style['basic-list__item'],
+                      'text-body-5',
+                      'font-weight-bold',
+                      'color-gray-secondary',
+                    ]"
+                  >
+                    <div :class="$style['basic-list__symbol']">*</div>
+                    <div :class="$style['basic-list__content']">
+                      한국은행에서 매월 발표하는 가장 최근의 비은행금융기관
+                      가중평균대출금리 (신규대출 기준)
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            이자부과시기
+          </h3>
+          <p class="text-title-2">매월 후취</p>
+        </section>
+        <section class="row-margin-contents">
+          <h3 class="text-body-3 font-weight-bold color-gray row-margin-item">
+            유의사항
+          </h3>
           <ul
             :class="[
               $style['basic-list'],
@@ -831,24 +791,23 @@ export default {
               </div>
             </li>
           </ul>
-        </UiTabPanel>
-        <!-- // 유의사항 -->
+        </section>
+      </div>
 
-        <ul :class="[$style['basic-list'], 'row-margin-contents']">
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              준법심의필 23-396 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-          <li :class="$style['basic-list__item']">
-            <div :class="$style['basic-list__symbol']"></div>
-            <div :class="$style['basic-list__content']">
-              여심금융협회 심의필 제2023-C1h-11442호 (2023.10.16 ~ 2024.10.15)
-            </div>
-          </li>
-        </ul>
-      </UiTab>
+      <ul :class="[$style['basic-list'], 'row-margin-contents']">
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            준법심의필 23-396 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+        <li :class="$style['basic-list__item']">
+          <div :class="$style['basic-list__symbol']"></div>
+          <div :class="$style['basic-list__content']">
+            여심금융협회 심의필 제2023-C1h-11442호 (2023.10.16 ~ 2024.10.15)
+          </div>
+        </li>
+      </ul>
 
       <BasicHr
         theme="tertiary"
