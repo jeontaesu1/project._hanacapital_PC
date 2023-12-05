@@ -41,7 +41,7 @@ export default {
     >
       <ButtonListItem>
         <BasicButton @click="layer001Open">
-          앱 설치 안내팝업<br />AF_P02_l001
+          차량 반납시 유의사항<br />AF_P02_l001
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
