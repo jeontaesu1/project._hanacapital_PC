@@ -275,6 +275,12 @@ const routes = [
     meta: { layout: 'NoneLayout' },
   },
 
+  {
+    path: '/main/Main_P01_l003',
+    name: '/main/Main_P01_l003',
+    component: () => import('@/views/main/Main_P01_l003.vue'),
+    meta: { layout: 'NoneLayout' },
+  },
   // identification
   {
     path: '/identification/Common_P00_p003',

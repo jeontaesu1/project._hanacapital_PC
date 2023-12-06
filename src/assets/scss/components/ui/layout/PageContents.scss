@@ -60,5 +60,12 @@
         }
       }
     }
+    &-default-small {
+      .page-contents {
+        &__body {
+          width: $contents-width-default-small;
+        }
+      }
+    }
   }
 }
