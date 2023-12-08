@@ -3302,7 +3302,12 @@ const datas = () => [
         path: '/online-branch/My_P08_p003',
         status: 'end',
         create: '2023.06.01',
-        log: [],
+        log: [
+          {
+            date: '2023.12.08',
+            text: '금리, 연체이자율 항목 텍스트 굵기 수정',
+          },
+        ],
       },
       {
         depth2: '계약정보',

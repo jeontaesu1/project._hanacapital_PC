@@ -261,17 +261,17 @@ export default {
 
             <section class="row-margin-contents">
               <h4
-                class="text-body-3 color-gray font-weight-medium row-margin-item"
+                class="text-body-3 color-gray font-weight-bold row-margin-item"
               >
                 금리
               </h4>
 
-              <p class="text-title-2">금융리스 : 연 4~10%</p>
+              <p class="text-title-2 font-weight-bold">금융리스 : 연 4~10%</p>
             </section>
 
             <section class="row-margin-contents">
               <h4
-                class="text-body-3 color-gray font-weight-medium row-margin-item"
+                class="text-body-3 color-gray font-weight-bold row-margin-item"
               >
                 연체이자율
               </h4>
@@ -288,13 +288,15 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-title-2',
-                    'font-weight-regular',
+                    'font-weight-bold',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
                   <div :class="[$style['basic-list__content']]">
                     <div>금융리스: 약정이율+3%</div>
-                    <div class="text-body-3 color-gray row-margin-small">
+                    <div
+                      class="text-body-3 color-gray font-weight-bold row-margin-small"
+                    >
                       (법정최고금리 연20% 이내)
                     </div>
                   </div>
@@ -304,7 +306,7 @@ export default {
                     $style['basic-list__item'],
                     'color-black',
                     'text-title-2',
-                    'font-weight-regular',
+                    'font-weight-bold',
                   ]"
                 >
                   <div :class="$style['basic-list__symbol']"></div>
