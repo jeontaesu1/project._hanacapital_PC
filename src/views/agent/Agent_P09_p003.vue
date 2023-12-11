@@ -353,6 +353,7 @@ export default {
                 <col />
                 <col style="width: 80px" />
                 <col style="width: 106px" />
+                <col />
                 <col style="width: 93px" />
                 <col />
                 <col style="width: 80px" />
@@ -366,6 +367,7 @@ export default {
                   <th>고객명</th>
                   <th>심사결과</th>
                   <th>고객구분</th>
+                  <th>신청금액</th>
                   <th>신청개월수</th>
                   <th>심사품목</th>
                   <th>승계여부</th>
@@ -382,6 +384,7 @@ export default {
                     <span class="color-green">승인</span>
                   </td>
                   <td>개인사업자</td>
+                  <td>999,999,999</td>
                   <td>120개월</td>
                   <td>[리체]수납장</td>
                   <td>N</td>
@@ -396,6 +399,7 @@ export default {
                     <span class="color-red">부결</span>
                   </td>
                   <td>개인사업자</td>
+                  <td>999,999,999</td>
                   <td>120개월</td>
                   <td>[리체]수납장</td>
                   <td>N</td>

@@ -83,7 +83,7 @@ export default {
               <td class="align-left">C12345678901234</td>
             </tr>
             <tr>
-              <th class="align-left">고객명</th>
+              <th class="align-left">보험가입자명</th>
               <td class="align-left">
                 <FormInvalid :error="state.nameError">
                   <SimpleInput

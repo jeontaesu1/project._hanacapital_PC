@@ -151,10 +151,6 @@ export default {
                     value: '3',
                     label: '실행여부',
                   },
-                  {
-                    value: '4',
-                    label: '지급여부',
-                  },
                 ]"
                 title="검색범위"
                 v-model="state.searchColumn"
@@ -226,32 +222,6 @@ export default {
                 <RadioButton
                   name="Agent_P10_p001_action"
                   id="Agent_P10_p001_action_002"
-                  theme="tertiary"
-                >
-                  <RadioButtonObject />
-                  <RadioButtonLabelText>N</RadioButtonLabelText>
-                </RadioButton>
-              </div>
-            </div>
-            <div
-              v-else-if="state.searchColumn === '4'"
-              class="flex-box__cell flex-box__cell--medium flex-box"
-            >
-              <div class="flex-box__cell flex-box__cell--medium">
-                <RadioButton
-                  name="Agent_P10_p001_give"
-                  id="Agent_P10_p001_give_001"
-                  theme="tertiary"
-                  :defaultChecked="true"
-                >
-                  <RadioButtonObject />
-                  <RadioButtonLabelText>Y</RadioButtonLabelText>
-                </RadioButton>
-              </div>
-              <div class="flex-box__cell flex-box__cell--medium">
-                <RadioButton
-                  name="Agent_P10_p001_give"
-                  id="Agent_P10_p001_give_002"
                   theme="tertiary"
                 >
                   <RadioButtonObject />
@@ -352,11 +322,8 @@ export default {
                 <col style="width: 200px" />
                 <col style="width: 120px" />
                 <col style="width: 80px" />
-                <col style="width: 80px" />
                 <col style="width: 122px" />
                 <col style="width: 122px" />
-                <col style="width: 122px" />
-                <col style="width: 80px" />
                 <col style="width: 114px" />
                 <col style="width: 122px" />
                 <col style="width: 134px" />
@@ -371,11 +338,8 @@ export default {
                   <th>채널명</th>
                   <th>선정산방식코드</th>
                   <th>실행여부</th>
-                  <th>지급여부</th>
                   <th>정산대상금액</th>
                   <th>실지급금액</th>
-                  <th>보증금액</th>
-                  <th>주문건수</th>
                   <th>정산예정일</th>
                   <th>할인금액</th>
                   <th>제휴사수수료금액</th>
@@ -391,11 +355,8 @@ export default {
                   <td>에이블리</td>
                   <td>30일</td>
                   <td>N</td>
-                  <td>Y</td>
                   <td>999,999,999</td>
                   <td>999,999,999</td>
-                  <td>999,999,999</td>
-                  <td>100</td>
                   <td>2023.01.01</td>
                   <td>999,999,999</td>
                   <td>999,999,999</td>
