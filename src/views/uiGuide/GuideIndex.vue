@@ -647,6 +647,10 @@ const datas = () => [
             date: '2023.08.25',
             text: '아코디언 오픈 시 노출되는 텍스트 크기 수정',
           },
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
         ],
       },
       {
@@ -707,7 +711,12 @@ const datas = () => [
         path: '/customer/Customer_P03_p002',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '이벤트',
@@ -729,7 +738,12 @@ const datas = () => [
         path: '/customer/Customer_P04_p002',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '서식다운로드\nCustomer_P12_p001',
@@ -1013,7 +1027,12 @@ const datas = () => [
         path: '/customer/Customer_P09_p006',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '금융소비자보호',
@@ -5235,7 +5254,12 @@ const datas = () => [
         path: '/company/Company_P03_p002',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
       {
         depth2: 'PR',
@@ -5257,7 +5281,12 @@ const datas = () => [
         path: '/company/Company_P03_p004',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
       {
         depth2: '투자정보',
@@ -5361,7 +5390,12 @@ const datas = () => [
         path: '/company/Company_P05_p005',
         status: 'end',
         create: '2023.06.16',
-        log: [],
+        log: [
+          {
+            date: '2023.12.21',
+            text: '버튼 케이스 추가',
+          },
+        ],
       },
     ],
   },

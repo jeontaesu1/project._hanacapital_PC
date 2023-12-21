@@ -245,6 +245,78 @@
         }
       }
     }
+
+    &-quaternary-green {
+      color: $color-green-50;
+      border-color: $color-gray-20;
+      background-color: $color-gray-20;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-black;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: $color-gray-30;
+        background-color: $color-gray-30;
+      }
+
+      &.button--line {
+        color: $color-green-50;
+        border-color: $color-gray-30;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: $color-gray-50;
+        }
+      }
+    }
+
+    &-quaternary-blue {
+      color: $color-blue-50;
+      border-color: $color-gray-20;
+      background-color: $color-gray-20;
+
+      .button__icon {
+        svg {
+          * {
+            fill: $color-black;
+          }
+        }
+      }
+
+      @include button-pressed-selector {
+        border-color: $color-gray-30;
+        background-color: $color-gray-30;
+      }
+
+      &.button--line {
+        color: $color-blue-50;
+        border-color: $color-gray-30;
+
+        .button__icon {
+          svg {
+            * {
+              fill: $color-gray-70;
+            }
+          }
+        }
+
+        @include button-pressed-selector {
+          border-color: $color-gray-50;
+        }
+      }
+    }
   }
 
   &[disabled],
