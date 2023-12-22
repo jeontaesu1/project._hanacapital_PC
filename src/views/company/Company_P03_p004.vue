@@ -193,6 +193,20 @@ export default {
         </ButtonList>
         <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
 
+        <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-container-medium',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton theme="quaternary-navy">버튼</BasicButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
+
         <!-- Case : 버튼 텍스트 컬러 타입 #00A69E  -->
         <ButtonList
           :wrap="true"
@@ -232,6 +246,46 @@ export default {
           </ButtonListItem>
         </ButtonList>
         <!-- // Case : 버튼 텍스트 컬러 타입 #3A81E0  -->
+
+        <!-- Case : 버튼 텍스트 컬러 타입 #757575  -->
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-container-medium',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton
+              :line="true"
+              theme="quaternary"
+              tagName="RouterLink"
+              to=""
+              >버튼</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 버튼 텍스트 컬러 타입 #757575  -->
+
+        <!-- Case : 버튼 텍스트 컬러 타입 #143B75  -->
+        <ButtonList
+          :wrap="true"
+          align="center"
+          :classNames="{
+            wrap: 'row-margin-container-medium',
+          }"
+        >
+          <ButtonListItem>
+            <BasicButton
+              :line="true"
+              theme="quaternary-navy"
+              tagName="RouterLink"
+              to=""
+              >버튼</BasicButton
+            >
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 버튼 텍스트 컬러 타입 #143B75  -->
 
         <!-- Case : 버튼 1개일 경우 -->
         <ButtonList
@@ -353,6 +407,25 @@ export default {
           </ButtonListItem>
         </ButtonList>
         <!-- // Case : 버튼 컬러 타입 757575 -->
+
+        <!-- Case : 버튼 컬러 타입 #143B75  -->
+        <ButtonList
+          :wrap="true"
+          align="left"
+          :classNames="{
+            wrap: 'row-margin-container-medium',
+          }"
+        >
+          <ButtonListItem>
+            <TextButton class="color-navy" :iconFillAll="true">
+              <template v-slot:rightIcon>
+                <IconRightArrow />
+              </template>
+              버튼
+            </TextButton>
+          </ButtonListItem>
+        </ButtonList>
+        <!-- // Case : 버튼 컬러 타입 #143B75  -->
       </section>
     </div>
 
