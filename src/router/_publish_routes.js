@@ -1763,11 +1763,6 @@ const routes = [
 
   // company
   {
-    path: '/company/Company_P05_p005_test',
-    name: '/company/Company_P05_p005_test',
-    component: () => import('@/views/company/Company_P05_p005_test.vue'),
-  },
-  {
     path: '/company/Company_P01_p001',
     name: '/company/Company_P01_p001',
     component: () => import('@/views/company/Company_P01_p001.vue'),

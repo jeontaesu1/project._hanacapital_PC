@@ -96,7 +96,7 @@ export default {
       <PageHeadRow>
         <PageTitle>
           김하나님이 보유하신 계약은 총
-          <span class="color-green">3</span>건 입니다
+          <span class="color-green">4</span>건 입니다
         </PageTitle>
       </PageHeadRow>
     </PageHead>
