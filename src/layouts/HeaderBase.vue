@@ -18,7 +18,8 @@ import { useUiScrollBlockStore } from '@/stores/ui/scrollBlock';
 import { useUiHeaderStore } from '@/stores/ui/header';
 
 import DropDownMenu from '@/components/ui/layout/DropDownMenu.vue';
-import LayerSiteMap from '@/components/ui/layout/LayerSiteMap.vue';
+
+import LayerSiteMap from '@/components/ui/layout/Common_P00_l004.vue';
 
 import ImgLogo from '@/assets/images/common/logo-main.svg?component';
 import IconMenu from '@/assets/images/common/menu.svg?component';
@@ -129,6 +130,7 @@ export default {
         inventoryFinance: '재고금융',
         lmBlog: 'LM블로그',
         agent: '에이전트',
+        agentTest: '테스트',
       };
 
       return page[type];
@@ -449,6 +451,10 @@ export default {
                   text: '에이전트',
                   to: '/agent/Agent_P01_p001',
                 },
+                {
+                  text: 'CRM',
+                  to: '/crm/Crm_P00_p001',
+                },
               ]"
               theme="secondary"
             />
@@ -484,11 +490,19 @@ export default {
             v-else-if="
               type === 'inventoryFinance' ||
               type === 'lmBlog' ||
-              type === 'agent'
+              type === 'agent' ||
+              type === 'agentTest'
             "
             :class="$style['etc']"
           >
             <ul :class="$style['etc__list']">
+              <!-- S: 240404 수정 -->
+              <li :class="$style['etc__item']">
+                <RouterLink to="" :class="$style['etc__link']">
+                  <span :class="$style['etc__text']">리스/렌트</span>
+                </RouterLink>
+              </li>
+              <!-- E: 240404 수정 -->
               <li :class="$style['etc__item']">
                 <RouterLink to="" :class="$style['etc__link']">
                   <span :class="$style['etc__text']"
