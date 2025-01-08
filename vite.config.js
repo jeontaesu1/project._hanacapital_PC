@@ -5,9 +5,9 @@ import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // GitHub Pages 배포를 위한 base URL 설정
   base:
     process.env.NODE_ENV === 'production' ? '/project._hanacapital_PC/' : '/',
+
   plugins: [
     vue({
       template: {
@@ -45,7 +45,6 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
-        // ws: true
       },
     },
   },
@@ -62,17 +61,34 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist/app',
-    // GitHub Pages를 위한 추가 빌드 설정
-    chunkSizeWarningLimit: 1600,
+    // GitHub Pages 배포를 위한 추가 설정
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // 대형 의존성 모듈을 별도 청크로 분리
           if (id.includes('node_modules')) {
             return 'vendor';
           }
         },
+        // 에셋 파일명 설정
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|gif|svg|ico|webp)$/.test(assetInfo.name)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/\.(css)$/.test(assetInfo.name)) {
+            return `assets/css/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        // 청크 파일명 설정
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        // 메인 엔트리 파일명 설정
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
+    // 소스맵 생성
+    sourcemap: true,
   },
 });
