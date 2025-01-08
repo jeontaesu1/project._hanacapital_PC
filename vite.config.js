@@ -1,11 +1,13 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // GitHub Pages 배포를 위한 base URL 설정
+  base:
+    process.env.NODE_ENV === 'production' ? '/project._hanacapital_PC/' : '/',
   plugins: [
     vue({
       template: {
@@ -60,5 +62,17 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist/app',
+    // GitHub Pages를 위한 추가 빌드 설정
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // 대형 의존성 모듈을 별도 청크로 분리
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
   },
 });

@@ -26,7 +26,7 @@ export default {
   <PageContents size="wide">
     <IllustInfo>
       <IllustObject />
-      <IllustInfoTitle>하나캐피탈 앱을 설치해 보세요!</IllustInfoTitle>
+      <IllustInfoTitle>하나캐피탈 앱을 설치해 보세요!!!</IllustInfoTitle>
       <IllustInfoText>
         하나캐피탈 앱을 설치하면<br />
         <span class="color-green font-weight-regular"
