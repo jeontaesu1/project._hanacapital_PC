@@ -1,0 +1,339 @@
+
+	
+	
+	
+	
+	﻿<!--
+/*************************************************************************************
+* 프 로 그 램 명  : NH S&C 스탁론 Ⅱ
+* 작    성    법  : 대출버튼은 반드시 아래의 규칙에 맞게 작성되어야 한다.
+*                 [대출구분코드]
+*                 1:신규대출 2:증액(추가)대출 3:한도대출신규 6:한도대출추가 4:대환대출 5:대환대출
+*                 [대출기간]
+*                 1:1개월 ~ 12:12개월
+*                 [수수료 지급방법코드]
+*                 01: 매월 분할지급(잔액기준)
+*				  ex) doReq(this.href, '[대출구분코드]','[대출기간]', '[수수료지급방법코드]') 하위 버튼 값 셋팅
+* 작    성    자  : 이용수
+* 작    성    일  : 2016.05.18
+* 수    정    일  : 2021.09.03 (금리수정)
+*************************************************************************************/
+-->
+	<!-- S : .content -->
+	<section class="content personal-finance stock">
+		<ul class="breadcrumb">
+			
+		</ul>
+
+		<!-- S : .colorPanerl -->
+		<div class="colorPanel">
+			<h1>대출신청</h1>
+		</div>
+		<!-- E : .colorPanerl -->
+		
+		<!-- S : .panel 상품안내 테이블 -->
+		<h2>상품안내</h2>
+		<div class="tab-menu-3 m1">
+			<ul>
+				<li class="m1"><a>NH투자증권 일반 신규/추가</a></li>
+				<!--<li class="m1"><a>NH투자증권 일반 추가</a></li>-->
+		        <!-- <li class="m2"><a>NH투자증권 한도신규</a></li>   -->
+				<!-- <li class="m3"><a>NH투자증권 한도내추가</a></li> -->
+			</ul>
+		</div>
+		<table id="tab01" class="tb01">
+			<caption>상품안내 테이블</caption>
+			<colgroup>
+				<col style="width:142px">
+				<col style="width:auto">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>증권사</th>
+					<td>NH투자증권(NH&amp;스탁론Ⅱ)</td>
+				</tr>
+				<tr>
+					<th>대출한도</th>
+					<td>최대 250% , 최대 3억원까지<br>[추가대출가능금액 = (계좌평가금액 - 대출잔액) x 대출가능비율 – 대출잔액]</td>
+				</tr>
+				<tr>
+					<th>대출기간</th>
+					<td><b>12개월 (최대 5년까지 연장가능)<br>만기일 : 대출일로부터 12개월 되는 월의 해당 결제일</b></td>
+				</tr>
+				<tr>
+					<th>대출금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">연 7.7%</em></b></td>
+				</tr>
+				<tr>
+					<th>연장금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">연장 시 당사 기준금리 적용</em></b></td>
+				</tr>
+				<tr>
+					<th>취급수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>연장 및<br>중도상환수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>한종목 투자비율</th>
+					<td>최대 50%</td>
+				</tr>
+				<tr>
+					<th>로스컷비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">120%</em></b></td>
+				</tr>
+				<tr>
+					<th>현금인출비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">130%(최초 담보제공자산 중 한종목 보유비중 70% 이상일 경우 인출 제한됨)</em></b></td>
+				</tr>
+				<tr>
+					<th>주식입출고</th>
+					<td>불가</td>
+				</tr>
+				<tr>
+					<th>시간외거래</th>
+					<td>매도주문만 가능</td>
+				</tr>
+				<tr>
+					<th>지연배상금</th>
+					<td>약정이율+최대3%, 법정 최고금리(24%)이내</td>
+				</tr>
+				<tr>
+					<th>시스템자동제한</th>
+					<td>실시간 위험관리 시스템사(RMS)에서 고객 투자안전을 위해<br>매수금지로 설정한 종목 매수불가</td>
+				</tr>
+			</tbody>
+		</table>
+	<!--
+ 		<table id="tab02" class="tb01" style="display:none;">
+			<caption>상품안내 테이블</caption>
+			<colgroup>
+				<col style="width:142px"/>
+				<col style="width:auto"/>
+			</colgroup>
+			<tbody>
+				<tr style="border-top:1px solid #ccc;">
+					<th>증권사</th>
+					<td>NH투자증권(NH&스탁론I)</td>
+				</tr>
+				<tr>
+					<th>대출한도</th>
+					<td>최대 250% , 최대 3억원까지</td>
+				</tr>
+				<tr>
+					<th>대출기간</th>
+					<td><b>6개월 (최대 5년까지 연장가능)<br />만기일 : 대출일로부터 6개월 되는 월의 해당 결제일</b></td>
+				</tr>
+				<tr>
+					<th>대출금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">연 4.5%<br/></em></b></td>
+				</tr>
+				<tr>
+					<th>연장금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">6개월 후 연장 시 연 4.5%(36개월까지 적용, 37개월 부터 5.9% )</em></b></td>
+				</tr>
+				<tr>
+					<th>취급수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>연장 및<br />중도상환수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>한종목 투자비율</th>
+					<td>최대 50%</td>
+				</tr>
+				<tr>
+					<th>로스컷비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">120%</em></b></td>
+				</tr>
+				<tr>
+					<th>현금인출비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">130%(최초 담보제공자산 중 한종목 보유비중 70% 이상일 경우 인출 제한됨)</em></b></td>
+				</tr>
+				<tr>
+					<th>주식입출고</th>
+					<td>불가</td>
+				</tr>
+				<tr>
+					<th>시간외거래</th>
+					<td>매도주문만 가능</td>
+				</tr>
+				<tr>
+					<th>지연배상금</th>
+					<td>약정이율+최대3%, 법정 최고금리(24%)이내</td>
+				</tr>
+				<tr>
+					<th>시스템자동제한</th>
+					<td>실시간 위험관리 시스템사(RMS)에서 고객 투자안전을 위해<br />매수금지로 설정한 종목 매수불가</td>
+				</tr>
+			</tbody>
+		</table> 
+
+		<table id="tab03" class="tb01" style="display:none;">
+			<caption>상품안내 테이블</caption>
+			<colgroup>
+				<col style="width:142px"/>
+				<col style="width:auto"/>
+			</colgroup>
+			<tbody>
+				<tr style="border-top:1px solid #ccc;">
+					<th>증권사</th>
+					<td>NH투자증권(NH&스탁론I)</td>
+				</tr>
+				<tr>
+					<th>대출한도</th>
+					<td>최초 신청금액의 한도 내에서 한도 내 추가 가능<br />(계좌평가금액-대출잔액)X대출가능비율–대출잔액<br /><b><em style="color:#dc320a;margin-right:5px;font-style:normal">* 두 조건이 충족 되어야 함</em></b></td>
+				</tr>
+				<tr>
+					<th>대출기간</th>
+					<td><b>6개월 (최초대출의 5년 만기일까지 연장 가능)<br />만기일 : 대출일로부터 6개월 되는 월의 해당 결제일</b></td>
+				</tr>
+				<tr>
+					<th>대출금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">연 4.5%</em></b></td>
+				</tr>
+				<tr>
+					<th>연장금리</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">6개월 후 연장 시 연 4.5%(36개월까지 적용, 37개월부터 5.9%)</em></b></td>
+				</tr>
+				<tr>
+					<th>취급수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>연장 및<br />중도상환수수료</th>
+					<td>없음</td>
+				</tr>
+				<tr>
+					<th>한종목 투자비율</th>
+					<td>최대 50%</td>
+				</tr>
+				<tr>
+					<th>로스컷비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">120%</em></b></td>
+				</tr>
+				<tr>
+					<th>현금인출비율</th>
+					<td><b><em style="color:#dc320a;margin-right:5px;font-style:normal">130%(최초 담보제공자산 중 한종목 보유비중 70% 이상일 경우 인출 제한됨)</em></b></td>
+				</tr>
+				<tr>
+					<th>주식입출고</th>
+					<td>불가</td>
+				</tr>
+				<tr>
+					<th>시간외거래</th>
+					<td>매도주문만 가능</td>
+				</tr>
+				<tr>
+					<th>지연배상금</th>
+					<td>약정이율+최대3%, 법정 최고금리(24%)이내</td>
+				</tr>
+				<tr>
+					<th>시스템자동제한</th>
+					<td>실시간 위험관리 시스템사(RMS)에서 고객 투자안전을 위해<br />매수금지로 설정한 종목 매수불가</td>
+				</tr>
+			</tbody>
+		</table>				
+         -->
+		<!-- E : .panel 상품안내 테이블 
+			 1:신규대출 2:증액(추가)대출 3:한도대출신규 6:한도대출추가 4:대환대출 5:대환대출-->
+
+		<div id="btn01" class="btn-area">
+			
+			<a loan-div="1" loan-mcnt="12" cmfe-pymt-mth-cd="01" use-yn="Y" href="javascript:void(0);" onclick="goNext(this);" class="btn-f1">신규대출</a>
+			<a loan-div="2" loan-mcnt="12" cmfe-pymt-mth-cd="01" use-yn="Y" href="javascript:void(0);" onclick="goNext(this);" class="btn-f1">추가대출</a>
+			<!--
+			<a href="/product/lon/stl/loanStockCheckPoint.hnc" onclick="doReq(this.href, '2' , '12', '01'); return false;" class="btn-f1 m0a w230">추가대출</a>
+			-->
+		</div>
+	<!--
+ 		<div id="btn02" class="btn-area" style="display:none;">
+			<a href="/product/lon/stl/loanStockCheckPoint.hnc" onclick="doReq(this.href, '7' , '12', '01'); return false;" class="btn-f1 m0a w230">한도신규대출</a>
+		</div> 
+	 --> 
+		<!--
+		<div id="btn03" class="btn-area" style="display:none;">
+			<a href="/product/lon/stl/loanStockCheckPoint.hnc" onclick="doReq(this.href, '8', '6', ''); return false;" class="btn-f1 m0a w230">한도 내 추가대출</a>
+		</div>
+		-->
+		<!-- E : .panel 상품안내 테이블 -->		
+	</section>
+	<!-- E : .content -->
+	
+<script>
+	function goNext(obj){
+		var loanDiv = $(obj).attr('loan-div'); //대출신청구분
+		var loanMcnt = $(obj).attr('loan-mcnt'); //대출기간
+		var cmfePymtMthCd = $(obj).attr('cmfe-pymt-mth-cd'); //수수료 지급방법 코드
+		var aplyLmtAddDvCd = $(obj).attr('aply-lmt-add-dv-cd');
+		var useYn = ($(obj).attr('use-yn')==undefined)?'N':$(obj).attr('use-yn');
+		var urlChkPoint = "/product/lon/stl/loanStockCheckPoint.hnc";
+		// 1:신규대출 2:증액(추가)대출 3:한도대출신규 6:한도대출추가 4:대환대출 5:대환대출 7:한도신규 8:한도추가
+		if(useYn=='N'){
+			var loanDvNm = "신규";
+			switch(loanDiv){
+				case '1':loanDvNm = "신규"; break;
+				case '2':loanDvNm = "추가"; break;
+				case '3':loanDvNm = "한도 신규"; break;
+				case '4':
+				case '5':loanDvNm = "대환"; break;
+				case '6':loanDvNm = "한도 추가"; break;
+				case '7':loanDvNm = "한도 신규"; break;
+				case '8':loanDvNm = "한도 추가"; break;
+			}
+			var msg = "죄송합니다.\n현재 회사 내부 사정으로 인해\n"+loanDvNm+" 대출 건은\n대출이 불가합니다.";
+			HNCFnc.alert(msg);
+			return false;
+		} else {
+			if(aplyLmtAddDvCd==undefined){
+				doReq(urlChkPoint, loanDiv, loanMcnt, cmfePymtMthCd); 	
+			} else {
+				doReq(urlChkPoint, loanDiv, loanMcnt, cmfePymtMthCd, aplyLmtAddDvCd); 	
+			}
+			return false;
+		}
+
+	}
+$(function(){
+
+	/*** S : tab action ***/
+	var tab = $('.tab-menu-3');
+	function onSelectTab(e){
+		e.preventDefault();
+		var t = $(this);
+		var id = HNCUtil.nvl($(this).parent().attr("class")).substr(-1);
+		var myclass = [];
+		t.parentsUntil('.tab-menu-3:first').filter('li').each(function(){
+			myclass.push( $(this).attr('class') );
+		});
+
+		myclass = myclass.join(' ');
+
+		if (!tab.hasClass(myclass)) tab.attr('class','tab-menu-3').addClass(myclass);
+		
+		//탭, 버튼 비활성화
+		$(".tb01").hide();
+		$(".btn-area").hide();
+		
+		//탭, 버튼 활성화
+		$("#tab0"+id).show();
+		$("#btn0"+id).show();
+	}
+	tab.find('li>a').on("click", onSelectTab);
+	/*** E : tab action ***/
+
+});
+</script>	
+	
+
+	
+
+	
+
+	
+
+	

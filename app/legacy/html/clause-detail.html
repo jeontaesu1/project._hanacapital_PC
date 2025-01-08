@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>약관 상세 - 하나캐피탈 공식 웹사이트</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/default.css" />
+    <style>
+      .clause-txt {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        border: none;
+        font-family: '맑은 고딕', 'Malgun Gothic', 'Apple Gothic';
+        color: #666;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        font-size: 0.75em;
+      }
+    </style>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/hnc-util.js"></script>
+    <script>
+      $(function () {
+        var eLoad = new Event('load');
+        var $iframe = $('#clauseDetailframe', parent.document).get(0);
+
+        function triggerLoad() {
+          $iframe.dispatchEvent(eLoad);
+        }
+
+        $.ajax({
+          url: '../../_dummyData/clauseDetail/b1.txt',
+          dataType: 'text',
+          success: function (data) {
+            $('#clauseDetail').html(data);
+
+            triggerLoad();
+
+            $('a').on('click.clauseDetail', function () {
+              triggerLoad();
+            });
+
+            $('img').on('load.clauseDetail', function () {
+              triggerLoad();
+            });
+          },
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="clauseDetail"></div>
+  </body>
+</html>

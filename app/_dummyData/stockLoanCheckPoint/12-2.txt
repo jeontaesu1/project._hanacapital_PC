@@ -1,0 +1,13 @@
+	<div class="body">
+		<div class="tit">
+			<span>HTS[5875]제휴대출가능금액조회</span>
+			<a href="#" class="close"><img src="/utils/res/n/stockloan_2019012500000001_tms_20190125_stockloan-tms-2016050900000025-pop-close.png" alt="닫기" /></a>
+		</div>
+		<div class="cont">
+			<p class="elm-desc tit">대출 신청 전 NH투자증권 HTS[8575]에서 제휴대출가능금액을 확인하시기 바랍니다.</p>
+			<div class="img-area">
+				<img src="/utils/res/n/stockloan_2019012500000001_tms_20190125_nhsc8575-1.jpg" alt="신청" /><br/>
+				<img src="/utils/res/n/stockloan_2019012500000001_tms_20190125_nhsc8575-2.jpg" alt="신청" />
+			</div>
+		</div>
+	</div>

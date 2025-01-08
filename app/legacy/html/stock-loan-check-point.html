@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>스탁론 대출 전 주요 체크포인트 - 하나캐피탈 공식 웹사이트</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/default.css" />
+    <style>
+      .popup {
+        display: block;
+      }
+      .popup .body {
+        position: relative;
+        top: auto;
+      }
+      .popup.clause-area1 .body {
+        width: auto;
+        height: auto;
+      }
+      .popup.clause-area1 .body .cont {
+        height: auto !important;
+        overflow: visible;
+      }
+      .popup.stock .img-area img {
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .popup.stock .body div.tit .close,
+      .popup.clause-area1 .btn-fix {
+        display: none;
+      }
+    </style>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/hnc-util.js"></script>
+    <script>
+      $(function () {
+        var eLoad = new Event('load');
+        var $iframe = $('#stockLoanCheckPointframe', parent.document).get(0);
+
+        function triggerLoad() {
+          $iframe.dispatchEvent(eLoad);
+        }
+
+        $.ajax({
+          url: '../../_dummyData/stockLoanCheckPoint/9-1.txt',
+          dataType: 'text',
+          success: function (data) {
+            $('#stockLoanCheckPoint').html(data);
+
+            triggerLoad();
+
+            $('a').on('click.stockLoanCheckPoint', function () {
+              triggerLoad();
+            });
+
+            $('img').on('load.stockLoanCheckPoint', function () {
+              triggerLoad();
+            });
+          },
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="popup clause-area1 stock">
+      <div id="stockLoanCheckPoint"></div>
+    </div>
+  </body>
+</html>

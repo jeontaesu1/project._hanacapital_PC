@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>스탁론 상품 안내 - 하나캐피탈 공식 웹사이트</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/default.css" />
+    <style>
+      .content {
+        width: auto;
+        float: none;
+        margin: 0 !important;
+      }
+    </style>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/hnc-util.js"></script>
+    <script>
+      $(function () {
+        var eLoad = new Event('load');
+        var $iframe = $('#stockDetailIframe', parent.document).get(0);
+
+        function triggerLoad() {
+          $iframe.dispatchEvent(eLoad);
+        }
+
+        $.ajax({
+          url: '../../_dummyData/stockDetail/25_키움증권(이머니).txt',
+          dataType: 'text',
+          success: function (data) {
+            $('#stockDetailData').html(data);
+
+            triggerLoad();
+
+            $('a').on('click.stockDetailData', function () {
+              triggerLoad();
+            });
+
+            $('img').on('load.stockDetailData', function () {
+              triggerLoad();
+            });
+          },
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="stockDetailData"></div>
+  </body>
+</html>
