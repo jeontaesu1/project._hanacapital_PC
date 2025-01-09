@@ -6,6 +6,7 @@
     "dev": "vite --open --host",
     "dev-stage": "vite --mode stage",
     "build": "vite build",
+    "build:github": "vite build --base=/project._hanacapital_PC/",
     "preview": "vite preview --host",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "publish-build": "vite build --base=/pub/hanacapital-dt-rebuild/pc/",
