@@ -4,6 +4,10 @@ import PageContents from '@/components/ui/layout/PageContents.vue';
 import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
+import UiTab from '@/components/ui/tab/UiTab.vue';
+import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
+import NavTab from '@/components/ui/tab/NavTab.vue';
+import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 
 export default {
   components: {
@@ -11,6 +15,10 @@ export default {
     LocationBar,
     PageHead,
     PageTitle,
+    UiTab,
+    UiTabPanel,
+    NavTab,
+    NavTabButton,
   },
 };
 </script>
@@ -48,6 +56,11 @@ export default {
 
     <section>
       <div class="character-wrap">
+        <p class="title">별웅이</p>
+        <p class="desc">
+          <strong>별웅이</strong>는 당차고 도전적인 성격으로 망토를 메고
+          날아다니며, 언제 어디든 신혹하게 찾아갑니다.
+        </p>
         <div class="character-img">
           <img src="@/assets/images/contents/character-1.png" alt="별웅이" />
         </div>
