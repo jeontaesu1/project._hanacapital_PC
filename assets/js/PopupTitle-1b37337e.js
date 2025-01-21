@@ -1,0 +1,2 @@
+import{_ as l}from"./index-47a5d78d.js";import{T as c,e as r,o as n,c as p,v as u,n as m}from"./vendor-bff8f967.js";const a=()=>({title:""}),i={props:{classNames:{Type:Object,default(){return a()}}},setup(e){const t=c("popupStyleModule"),o=r(()=>{const{classNames:s}=e;return Object.assign(a(),s)});return{styleModule:t,customClassNames:o}}};function d(e,t,o,s,_,f){return n(),p("h2",{class:m([s.styleModule.popup__title,s.customClassNames.title])},[u(e.$slots,"default")],2)}const C=l(i,[["render",d]]);export{C as P};
+//# sourceMappingURL=PopupTitle-1b37337e.js.map
