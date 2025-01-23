@@ -74,6 +74,11 @@ const routes = [
     component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
   },
   {
+    path: '/ui-guide/search-workplace-001',
+    name: '/ui-guide/search-workplace-001',
+    component: () => import('@/views/uiGuide/GuideSearchWorkplace001.vue'),
+  },
+  {
     path: '/ui-guide/search-address-001',
     name: '/ui-guide/search-address-001',
     component: () => import('@/views/uiGuide/GuideSearchAddress001.vue'),
@@ -2178,6 +2183,55 @@ const routes = [
     component: () => import('@/views/customer/DS_NO_W01_02_L03.vue'),
   },
   // e:// 240912 추가
+
+  /* s: 250122 추가 */
+  {
+    path: '/main/Common_P11_l001',
+    name: '/main/Common_P11_l001',
+    component: () => import('@/views/main/Common_P11_l001.vue'),
+    meta: { layout: 'NoneLayout' },
+  },
+  {
+    path: '/ui-guide/Common_P11_p001',
+    name: '/ui-guide/Common_P11_p001',
+    component: () => import('@/views/uiGuide/Common_P11_p001.vue'),
+  },
+  {
+    path: '/ui-guide/Common_P11_p002',
+    name: '/ui-guide/Common_P11_p002',
+    component: () => import('@/views/uiGuide/Common_P11_p002.vue'),
+  },
+  {
+    path: '/ui-guide/Common_P11_p003',
+    name: '/ui-guide/Common_P11_p003',
+    component: () => import('@/views/uiGuide/Common_P11_p003.vue'),
+  },
+  {
+    path: '/ui-guide/Common_P11_p004',
+    name: '/ui-guide/Common_P11_p004',
+    component: () => import('@/views/uiGuide/Common_P11_p004.vue'),
+  },
+  {
+    path: '/ui-guide/Common_P11_p005',
+    name: '/ui-guide/Common_P11_p005',
+    component: () => import('@/views/uiGuide/Common_P11_p005.vue'),
+  },
+  {
+    path: '/customer/CstmPtct_P00_p001',
+    name: '/customer/CstmPtct_P00_p001',
+    component: () => import('@/views/customer/CstmPtct_P00_p001.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p014',
+    name: '/customer/Customer_P09_p014',
+    component: () => import('@/views/customer/Customer_P09_p014.vue'),
+  },
+  {
+    path: '/customer/Customer_P09_p015',
+    name: '/customer/Customer_P09_p015',
+    component: () => import('@/views/customer/Customer_P09_p015.vue'),
+  },
+  /* e:// 250122 추가 */
 ];
 
 export default routes;

@@ -604,7 +604,6 @@ export default {
             <PopupText>// contents</PopupText>
             <PopupText>// contents</PopupText>
 
-
             <template v-slot:foot>
               <ButtonList
                 :classNames="{
@@ -6812,6 +6811,7 @@ export default {
         <IllustObject type="license" />
         <IllustObject type="certification" />
         <IllustObject type="appfree" />
+        <IllustObject type="credit" />
       </div>
     </section>
 
