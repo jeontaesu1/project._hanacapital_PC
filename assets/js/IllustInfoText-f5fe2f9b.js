@@ -1,2 +1,0 @@
-import{_ as l}from"./index-5a8165ac.js";import{C as n,e as c,o as r,c as u,v as m,n as p}from"./vendor-97c83ce9.js";const a=()=>({text:""}),f={props:{classNames:{Type:Object,default(){return a()}}},setup(e){const t=n("illustInfoStyleModule"),o=c(()=>{const{classNames:s}=e;return Object.assign(a(),s)});return{styleModule:t,customClassNames:o}}};function d(e,t,o,s,i,_){return r(),u("p",{class:p([s.styleModule["illust-info__text"],s.customClassNames.text])},[m(e.$slots,"default")],2)}const N=l(f,[["render",d]]);export{N as I};
-//# sourceMappingURL=IllustInfoText-f5fe2f9b.js.map
