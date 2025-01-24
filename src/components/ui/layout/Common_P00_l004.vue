@@ -268,6 +268,29 @@ export default {
                           </ul>
                         </div>
                       </li>
+                      <!-- s: 250124 추가 -->
+                      <li :class="$style['nav__depth-item']">
+                        <div :class="$style['nav__depth-title']">
+                          <span :class="$style['nav__depth-text']"
+                            >보이스피싱 예방 안내</span
+                          >
+                        </div>
+                        <div :class="$style['nav__depth-contents']">
+                          <ul :class="$style['nav__list']">
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >보이스피싱 지킴이</RouterLink
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <!-- e:// 250124 추가 -->
                       <!-- s: 250123 추가 -->
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
@@ -313,7 +336,8 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >비대면 금융사고 책임분담기준</span
+                            >비대면 금융사고<br />
+                            책임분담기준</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
