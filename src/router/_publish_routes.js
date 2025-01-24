@@ -2186,12 +2186,6 @@ const routes = [
 
   /* s: 250122 추가 */
   {
-    path: '/main/Common_P11_l001',
-    name: '/main/Common_P11_l001',
-    component: () => import('@/views/main/Common_P11_l001.vue'),
-    meta: { layout: 'NoneLayout' },
-  },
-  {
     path: '/ui-guide/Common_P11_p001',
     name: '/ui-guide/Common_P11_p001',
     component: () => import('@/views/uiGuide/Common_P11_p001.vue'),
