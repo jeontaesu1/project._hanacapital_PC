@@ -1093,7 +1093,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p010',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1109,7 +1109,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p011',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1125,7 +1125,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p012',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1141,7 +1141,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p013',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1158,7 +1158,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p014',
-        status: 'ing',
+        status: 'end',
         create: '2025.01.23',
         log: [
           {
@@ -1174,7 +1174,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P09_p015',
-        status: 'ing',
+        status: 'end',
         create: '2025.01.23',
         log: [
           {
@@ -1271,7 +1271,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P21_p001',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1287,7 +1287,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/Customer_P21_p002',
-        status: 'ing',
+        status: 'end',
         create: '2024.07.25',
         log: [
           {
@@ -1456,7 +1456,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/DS_NO_W01_01',
-        status: 'ing',
+        status: 'end',
         create: '2024.09.12',
         log: [],
       },
@@ -1467,7 +1467,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/customer/DS_NO_W01_02',
-        status: 'ing',
+        status: 'end',
         create: '2024.09.12',
         log: [],
       },
@@ -2307,7 +2307,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/ui-guide/personal-loan-005',
-        status: 'ing',
+        status: 'end',
         create: '2023.05.26',
         log: [
           {
@@ -2562,7 +2562,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/personal-loan/PF_P07_p017',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.13',
         log: [],
       },
@@ -4027,7 +4027,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P03_l004',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.13',
         log: [],
       },
@@ -4038,7 +4038,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P03_l016',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.13',
         log: [],
       },
@@ -4049,7 +4049,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P03_l017',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.14',
         log: [],
       },
@@ -4060,7 +4060,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P03_l018',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.14',
         log: [],
       },
@@ -4071,7 +4071,7 @@ const datas = () => [
         depth5: '',
         depth6: '',
         path: '/additional-service/My_P03_l021',
-        status: 'ing',
+        status: 'end',
         create: '2024.05.14',
         log: [],
       },

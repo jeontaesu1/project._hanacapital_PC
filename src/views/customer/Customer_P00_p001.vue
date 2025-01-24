@@ -190,7 +190,8 @@ export default {
 
     <BasicHr theme="quaternary" className="row-margin-block" />
 
-    <section :class="$style['customer-layout__section']">
+    <!-- s: 250124 삭제 -->
+    <!-- <section :class="$style['customer-layout__section']">
       <div class="flex-box row-margin-container-medium">
         <div class="flex-box__cell flex-1">
           <h3 class="text-big-3">금융소비자보호</h3>
@@ -439,9 +440,10 @@ export default {
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
 
-    <BasicHr theme="quaternary" className="row-margin-block" />
+    <!-- <BasicHr theme="quaternary" className="row-margin-block" /> -->
+    <!-- e:// 250124 삭제 -->
 
     <div :class="[$style['customer-layout']]">
       <section :class="$style['customer-layout__section']">
