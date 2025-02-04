@@ -92,8 +92,6 @@ export default {
       />
     </template>
 
-    <BasicHr theme="quaternary" className="row-margin-block" />
-
     <section :class="$style['customer-layout__section']">
       <div class="flex-box row-margin-container-medium">
         <div class="flex-box__cell flex-1">

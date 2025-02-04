@@ -5,7 +5,6 @@ import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import PageHead from '@/components/ui/text/PageHead.vue';
 import PageTitle from '@/components/ui/text/PageTitle.vue';
 import PageMainText from '@/components/ui/text/PageMainText.vue';
-import BasicHr from '@/components/ui/common/BasicHr.vue';
 import IconImgColor from '@/assets/images/icon/img-color.svg?component';
 import IconDownloadSmall from '@/assets/images/icon/download-small.svg?component';
 import TextButton from '@/components/ui/button/TextButton.vue';
@@ -17,7 +16,6 @@ export default {
     PageHead,
     PageTitle,
     PageMainText,
-    BasicHr,
     IconImgColor,
     IconDownloadSmall,
     TextButton,

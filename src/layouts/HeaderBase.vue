@@ -537,29 +537,31 @@ export default {
             :class="$style['etc']"
           >
             <ul :class="$style['etc__list']">
+              <!-- s: 250204 재고금융, LM블로그, 에이전트 헤더에서의 삭제 요청 -->
               <!-- s: 250122 추가 -->
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="[$style['etc__text'], 'color-gray']"
-                    >고객센터</span
-                  >
-                </RouterLink>
-              </li>
-              <li :class="[$style['etc__item'], 'paddingLeft']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="[$style['etc__text'], 'color-gray']"
-                    >소비자보호</span
-                  >
-                </RouterLink>
-              </li>
+              <!-- <li :class="$style['etc__item']">
+                  <RouterLink to="" :class="$style['etc__link']">
+                    <span :class="[$style['etc__text'], 'color-gray']"
+                      >고객센터</span
+                    >
+                  </RouterLink>
+                </li>
+                <li :class="[$style['etc__item'], 'paddingLeft']">
+                  <RouterLink to="" :class="$style['etc__link']">
+                    <span :class="[$style['etc__text'], 'color-gray']"
+                      >소비자보호</span
+                    >
+                  </RouterLink>
+                </li> -->
               <!-- e:// 250122 추가 -->
               <!-- S: 240404 수정 -->
-              <li :class="$style['etc__item']">
-                <RouterLink to="" :class="$style['etc__link']">
-                  <span :class="$style['etc__text']">리스/렌트</span>
-                </RouterLink>
-              </li>
+              <!-- <li :class="$style['etc__item']">
+                  <RouterLink to="" :class="$style['etc__link']">
+                    <span :class="$style['etc__text']">리스/렌트</span>
+                  </RouterLink>
+                </li> -->
               <!-- E: 240404 수정 -->
+              <!-- e:// 250204 재고금융, LM블로그, 에이전트 헤더에서의 삭제 요청 -->
               <li :class="$style['etc__item']">
                 <RouterLink to="" :class="$style['etc__link']">
                   <span :class="$style['etc__text']"
@@ -573,29 +575,31 @@ export default {
                 </RouterLink>
               </li>
             </ul>
+            <!-- s: 250204 재고금융, LM블로그, 에이전트 헤더에서의 삭제 요청 -->
             <!-- s: 250122 추가 -->
-            <div :class="$style['etc__menu']">
-              <button
-                type="button"
-                :class="$style['menu-button']"
-                @click="searchOpen"
-              >
-                <IconSearch />
-                <span class="for-a11y">검색창 열기</span>
-              </button>
-            </div>
+            <!-- <div :class="$style['etc__menu']">
+                <button
+                  type="button"
+                  :class="$style['menu-button']"
+                  @click="searchOpen"
+                >
+                  <IconSearch />
+                  <span class="for-a11y">검색창 열기</span>
+                </button>
+              </div> -->
             <!-- e:// 250122 추가 -->
 
-            <div :class="[$style['etc__menu'], 'marginLeft']">
-              <button
-                type="button"
-                :class="$style['menu-button']"
-                @click="siteMapOpen"
-              >
-                <IconMenu />
-                <span class="for-a11y">사이트맵 열기</span>
-              </button>
-            </div>
+            <!-- <div :class="[$style['etc__menu'], 'marginLeft']">
+                <button
+                  type="button"
+                  :class="$style['menu-button']"
+                  @click="siteMapOpen"
+                >
+                  <IconMenu />
+                  <span class="for-a11y">사이트맵 열기</span>
+                </button>
+              </div> -->
+            <!-- e:// 250204 재고금융, LM블로그, 에이전트 헤더에서의 삭제 요청 -->
           </div>
         </header>
       </div>
