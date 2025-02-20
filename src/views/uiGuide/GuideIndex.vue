@@ -12,7 +12,7 @@ const datas = () => [
         depth3: '',
         depth4: '',
         depth5: '',
-        depth6: '', 
+        depth6: '',
         path: '/',
         status: 'ing', // ing, partend, end, moding, confirm
         create: '2023.03.24',
@@ -25,6 +25,59 @@ const datas = () => [
     ],
   },
   */
+  {
+    depth1: '프레임아웃 작업리스트',
+    datas: [
+      {
+        depth2: '프레임아웃 작업',
+        depth3: '대출상담\nLM_P01_p001',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lm-blog/LM_P01_p001',
+        status: 'end',
+        create: '2023.06.01',
+        log: [
+          {
+            date: '2023.07.28',
+            text: '빠른 직군 검색 버튼 추가',
+          },
+        ],
+      },
+      {
+        depth2: '한도금리 조회 결과\nLM_P01_p002_001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lm-blog/LM_P01_p002_001',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2023.07.28',
+          //   text: '빠른 직군 검색 버튼 추가',
+          // },
+        ],
+      },
+      {
+        depth2: '한도금리 조회 결과-신청불가\nLM_P01_p002_002',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lm-blog/LM_P01_p002_002',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2023.07.28',
+          //   text: '빠른 직군 검색 버튼 추가',
+          // },
+        ],
+      },
+    ],
+  },
   {
     depth1: '공통',
     datas: [
@@ -4508,6 +4561,38 @@ const datas = () => [
             date: '2023.07.28',
             text: '빠른 직군 검색 버튼 추가',
           },
+        ],
+      },
+      {
+        depth2: '한도금리 조회 결과\nLM_P01_p002_001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lm-blog/LM_P01_p002_001',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2023.07.28',
+          //   text: '빠른 직군 검색 버튼 추가',
+          // },
+        ],
+      },
+      {
+        depth2: '한도금리 조회 결과-신청불가\nLM_P01_p002_002',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/lm-blog/LM_P01_p002_002',
+        status: 'end',
+        create: '2025.02.20',
+        log: [
+          // {
+          //   date: '2023.07.28',
+          //   text: '빠른 직군 검색 버튼 추가',
+          // },
         ],
       },
       {

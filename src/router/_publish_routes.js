@@ -2226,6 +2226,20 @@ const routes = [
     component: () => import('@/views/customer/Customer_P09_p015.vue'),
   },
   /* e:// 250122 추가 */
+
+  /* 250220 추가 */
+  {
+    path: '/lm-blog/LM_P01_p002_001',
+    name: '/lm-blog/LM_P01_p002_001',
+    component: () => import('@/views/lmBlog/LM_P01_p002_001.vue'),
+    meta: { layout: 'LmBlogLayout' },
+  },
+  {
+    path: '/lm-blog/LM_P01_p002_002',
+    name: '/lm-blog/LM_P01_p002_002',
+    component: () => import('@/views/lmBlog/LM_P01_p002_002.vue'),
+    meta: { layout: 'LmBlogLayout' },
+  },
 ];
 
 export default routes;

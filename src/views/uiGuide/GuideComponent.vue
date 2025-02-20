@@ -5414,6 +5414,7 @@ export default {
         <RoundStatus theme="nonary">텍스트</RoundStatus>
         <RoundStatus theme="denary">텍스트</RoundStatus>
         <RoundStatus theme="undenary">텍스트</RoundStatus>
+        <RoundStatus theme="tredecary">텍스트</RoundStatus>
       </div>
 
       <div class="test-section-sub">
@@ -5429,6 +5430,7 @@ export default {
         <RoundStatus theme="nonary" size="large">텍스트</RoundStatus>
         <RoundStatus theme="denary" size="large">텍스트</RoundStatus>
         <RoundStatus theme="undenary" size="large">텍스트</RoundStatus>
+        <RoundStatus theme="tredecary" size="large">텍스트</RoundStatus>
       </div>
 
       <div class="test-section-sub">
