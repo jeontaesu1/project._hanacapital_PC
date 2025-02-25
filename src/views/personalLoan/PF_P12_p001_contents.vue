@@ -56,7 +56,11 @@ export default {
         </div>
 
         <div :class="$style['product-top__image']">
-          <img src="@/assets/images/contents/img-mortgage-loan.png" alt="" />
+          <img
+            style="object-fit: contain"
+            src="@/assets/images/contents/img-mortgage-loan.png"
+            alt=""
+          />
         </div>
 
         <div
