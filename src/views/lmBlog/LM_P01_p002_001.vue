@@ -1,5 +1,5 @@
 <script>
-// LM_P001_p002_001
+// LM_P01_p002_001
 import PageContents from '@/components/ui/layout/PageContents.vue';
 import LocationBar from '@/components/ui/layout/LocationBar.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';

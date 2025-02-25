@@ -42,11 +42,15 @@ const datas = () => [
             date: '2023.07.28',
             text: '빠른 직군 검색 버튼 추가',
           },
+          {
+            date: '2025.02.20',
+            text: '버튼스타일 변경, roundstatus추가',
+          },
         ],
       },
       {
-        depth2: '한도금리 조회 결과\nLM_P01_p002_001',
-        depth3: '',
+        depth2: '',
+        depth3: '한도금리 조회 결과\nLM_P01_p002_001',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -61,8 +65,8 @@ const datas = () => [
         ],
       },
       {
-        depth2: '한도금리 조회 결과-신청불가\nLM_P01_p002_002',
-        depth3: '',
+        depth2: '',
+        depth3: '한도금리 조회 결과-신청불가\nLM_P01_p002_002',
         depth4: '',
         depth5: '',
         depth6: '',
@@ -73,6 +77,46 @@ const datas = () => [
           // {
           //   date: '2023.07.28',
           //   text: '빠른 직군 검색 버튼 추가',
+          // },
+        ],
+      },
+      {
+        depth2: '',
+        depth3: '메인\nMain_P01_p003',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/Main_P01_p003',
+        status: 'end',
+        create: '2023.06.09',
+        log: [
+          {
+            date: '2023.08.18',
+            text: '타이틀 및 상품 문구 수정, 순서 변경',
+          },
+          {
+            date: '2023.10.16',
+            text: '문구 전체 수정 및 사업자주택담보대출 아이콘 교체',
+          },
+          {
+            date: '2025.02.20',
+            text: '"하나모기지론" 상품추가',
+          },
+        ],
+      },
+      {
+        depth2: '',
+        depth3: '주택담보대출 상품 소개\nPF_P12_p001',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/PF_P12_p001',
+        status: 'end',
+        create: '2025.02.25',
+        log: [
+          // {
+          //   date: '2023.08.18',
+          //   text: '타이틀 및 상품 문구 수정, 순서 변경',
           // },
         ],
       },
@@ -1548,6 +1592,10 @@ const datas = () => [
             date: '2023.10.16',
             text: '문구 전체 수정 및 사업자주택담보대출 아이콘 교체',
           },
+          {
+            date: '2025.02.20',
+            text: '"하나모기지론" 상품추가',
+          },
         ],
       },
       {
@@ -2798,6 +2846,17 @@ const datas = () => [
             text: '상품안내 전체 수정',
           },
         ],
+      },
+      {
+        depth2: '주택담보대출\nPF_P12_p001',
+        depth3: '',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/personal-loan/PF_P12_p001',
+        status: 'end',
+        create: '2025.02.25',
+        log: [],
       },
     ],
   },
@@ -4560,6 +4619,10 @@ const datas = () => [
           {
             date: '2023.07.28',
             text: '빠른 직군 검색 버튼 추가',
+          },
+          {
+            date: '2025.02.20',
+            text: '버튼스타일 변경, roundstatus추가',
           },
         ],
       },

@@ -2240,6 +2240,12 @@ const routes = [
     component: () => import('@/views/lmBlog/LM_P01_p002_002.vue'),
     meta: { layout: 'LmBlogLayout' },
   },
+  /* 250225 추가 */
+  {
+    path: '/personal-loan/PF_P12_p001',
+    name: '/personal-loan/PF_P12_p001',
+    component: () => import('@/views/personalLoan/PF_P12_p001.vue'),
+  },
 ];
 
 export default routes;
