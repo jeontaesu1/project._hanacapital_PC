@@ -15,7 +15,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 
 import IconArs from '@/assets/images/icon/ars.svg?component';
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
-import IconContractGray from '@/assets/images/icon/contract-gray.svg?component';
+import IconContractGrayNew from '@/assets/images/icon/contract-grayNew.svg?component';
 import IconFaqBlue from '@/assets/images/icon/faq-blue.svg?component';
 import IconLocation from '@/assets/images/icon/location.svg?component';
 import IconCertificationGray from '@/assets/images/icon/certification-gray.svg?component';
@@ -39,7 +39,7 @@ export default {
     RoundStatus,
     IconArs,
     IconCustomer,
-    IconContractGray,
+    IconContractGrayNew,
     IconFaqBlue,
     IconLocation,
     IconCertificationGray,
@@ -120,19 +120,23 @@ export default {
               </span>
             </RouterLink>
           </li>
+          <!-- s: 250325 수정 -->
           <li :class="$style['icon-list__item']">
             <RouterLink to="" :class="$style['icon-list__block']">
               <span :class="$style['icon-list__icon']"
-                ><IconContractGray
+                ><IconContractGrayNew
               /></span>
               <span :class="$style['icon-list__content']">
-                <span :class="$style['icon-list__title']">전자민원접수</span>
+                <span :class="$style['icon-list__title']"
+                  >증명서 조회/발급</span
+                >
                 <span :class="$style['icon-list__text']">
-                  불편했던 점을 말씀해주세요.<br />신속히 개선하도록 하겠습니다.
+                  원하시는 증명서를 조회 및 발급<br />받으실 수 있습니다.
                 </span>
               </span>
             </RouterLink>
           </li>
+          <!-- e:// 250325 수정 -->
         </ul>
       </div>
     </section>

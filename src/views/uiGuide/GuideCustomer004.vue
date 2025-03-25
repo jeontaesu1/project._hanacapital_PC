@@ -1,4 +1,3 @@
-<!-- 철주차장님 작업 -->
 <script>
 import { ref } from 'vue';
 
@@ -12,6 +11,7 @@ import Customer_P14_l002 from '@/views/customer/Customer_P14_l002.vue';
 import Customer_P14_l003 from '@/views/customer/Customer_P14_l003.vue';
 import Customer_P14_l004 from '@/views/customer/Customer_P14_l004.vue';
 import Customer_P14_l005 from '@/views/customer/Customer_P14_l005.vue';
+import Customer_P02_p002_l001 from '@/views/customer/Customer_P02_p002_l001.vue';
 
 export default {
   components: {
@@ -23,13 +23,14 @@ export default {
     Customer_P14_l002,
     Customer_P14_l003,
     Customer_P14_l004,
-    Customer_P14_l005,
+    Customer_P02_p002_l001,
   },
   setup() {
     const layer002 = ref(null);
     const layer003 = ref(null);
     const layer004 = ref(null);
     const layer005 = ref(null);
+    const layer006 = ref(null);
 
     const layer002Open = (e = {}) => {
       layer002.value.layer.open(e.target);
@@ -43,16 +44,21 @@ export default {
     const layer005Open = (e = {}) => {
       layer005.value.layer.open(e.target);
     };
+    const layer006Open = (e = {}) => {
+      layer006.value.layer.open(e.target);
+    };
 
     return {
       layer002,
       layer003,
       layer004,
       layer005,
+      layer006,
       layer002Open,
       layer003Open,
       layer004Open,
       layer005Open,
+      layer006Open,
     };
   },
 };
@@ -88,10 +94,16 @@ export default {
           마케팅 철회값 미선택 <br />Customer_P14_l005
         </BasicButton>
       </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer006Open">
+          증명서 발급 팝업 <br />Customer_P02_p002_l001
+        </BasicButton>
+      </ButtonListItem>
     </ButtonList>
     <Customer_P14_l002 ref="layer002" />
     <Customer_P14_l003 ref="layer003" />
     <Customer_P14_l004 ref="layer004" />
     <Customer_P14_l005 ref="layer005" />
+    <Customer_P02_p002_l001 ref="layer006" />
   </PageContents>
 </template>

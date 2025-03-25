@@ -120,6 +120,26 @@ const datas = () => [
           // },
         ],
       },
+      {
+        depth2: '',
+        depth3: '정보이용·제공 조회',
+        depth4: '팝업\nGuideCustomer004',
+        depth5: '',
+        depth6: '',
+        path: '/ui-guide/customer-004',
+        status: 'end',
+        create: '2024.04.24',
+        log: [
+          {
+            date: '2024.05.02',
+            text: 'Customer_P14_l002 , Customer_P14_l003, Customer_P14_l004 , Customer_P14_l005  ',
+          },
+          {
+            date: '2025.03.25',
+            text: 'Customer_P02_p002_l001',
+          },
+        ],
+      },
     ],
   },
   {
@@ -834,6 +854,24 @@ const datas = () => [
           },
         ],
       },
+      // s: 250325 추가
+      {
+        depth2: '고객상담',
+        depth3: '상담정보 입력\nCustomer_P02_p002',
+        depth4: '',
+        depth5: '',
+        depth6: '',
+        path: '/customer/Customer_P02_p002',
+        status: 'end',
+        create: '2023.06.16',
+        log: [
+          {
+            date: '2023.08.21',
+            text: '마우스 버튼(보안 키패드 버튼) 삭제',
+          },
+        ],
+      },
+      // e:// 250325 추가
       {
         depth2: '고객상담',
         depth3: '완료\nCustomer_P02_p003',
@@ -1130,6 +1168,10 @@ const datas = () => [
           {
             date: '2024.05.02',
             text: 'Customer_P14_l002 , Customer_P14_l003, Customer_P14_l004 , Customer_P14_l005  ',
+          },
+          {
+            date: '2025.03.25',
+            text: 'Customer_P02_p002_l001',
           },
         ],
       },

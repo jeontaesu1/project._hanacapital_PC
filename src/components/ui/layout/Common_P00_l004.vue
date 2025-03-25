@@ -372,32 +372,14 @@ export default {
                     <span :class="$style['nav__title-text']">고객센터</span>
                   </RouterLink>
                 </h3>
+                <!-- s: 250325 수정 -->
                 <div :class="$style['nav__contents']">
                   <div :class="$style['nav__depth']">
                     <ul :class="$style['nav__depth-list']">
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']">FAQ</span>
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >자주하는 질문</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >고객상담</span
+                            >상담·문의</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -408,7 +390,57 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >상담등록</RouterLink
+                                  >자주하는 질문 FAQ</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >증명서 조회/발급</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >고객상담 등록</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >금융상품 전화 상담</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >고객센터 ARS 안내</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >지점 안내</RouterLink
                                 >
                               </div>
                             </li>
@@ -418,7 +450,7 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >공지사항</span
+                            >홈페이지 이용 안내</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -429,26 +461,37 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >주요공지</RouterLink
+                                  >이용 시 유의사항</RouterLink
                                 >
                               </div>
                             </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']">이벤트</span>
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
                             <li :class="$style['nav__item']">
                               <div :class="$style['nav__text']">
                                 <RouterLink
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >이벤트 현황</RouterLink
+                                  >정책 및 약관</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >서식 다운로드</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >대출계산기</RouterLink
                                 >
                               </div>
                             </li>
@@ -458,7 +501,7 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >서식다운로드</span
+                            >개인정보 이용조회</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -469,7 +512,27 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >서식 자료실</RouterLink
+                                  >개인정보 열람 청구</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >정보이용·제공 조회</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >그룹사간 고객정보 제공조회</RouterLink
                                 >
                               </div>
                             </li>
@@ -479,7 +542,7 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >지점안내</span
+                            >공지사항/이벤트</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -490,7 +553,17 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >지점찾기</RouterLink
+                                  >공지사항</RouterLink
+                                >
+                              </div>
+                            </li>
+                            <li :class="$style['nav__item']">
+                              <div :class="$style['nav__text']">
+                                <RouterLink
+                                  to=""
+                                  :class="$style['nav__link']"
+                                  @click="layerSlotProps.close()"
+                                  >이벤트</RouterLink
                                 >
                               </div>
                             </li>
@@ -500,7 +573,7 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >이용 시 유의사항</span
+                            >인증서/보안센터</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -511,42 +584,10 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >유의사항</RouterLink
+                                  >공인인증서내보내기/가져오기</RouterLink
                                 >
                               </div>
                             </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >고객센터 ARS 안내</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >ARS상담</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >보안센터</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
                             <li :class="$style['nav__item']">
                               <div :class="$style['nav__text']">
                                 <RouterLink
@@ -573,7 +614,7 @@ export default {
                       <li :class="$style['nav__depth-item']">
                         <div :class="$style['nav__depth-title']">
                           <span :class="$style['nav__depth-text']"
-                            >정책 및 약관</span
+                            >통지서 열람</span
                           >
                         </div>
                         <div :class="$style['nav__depth-contents']">
@@ -584,124 +625,7 @@ export default {
                                   to=""
                                   :class="$style['nav__link']"
                                   @click="layerSlotProps.close()"
-                                  >약관 자료실</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >개인정보이용 현황</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >개인정보 열람 청구실</RouterLink
-                                >
-                              </div>
-                            </li>
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >정보이용·제공 조회</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >그룹사간 고객정보<br />
-                            제공내역 조회</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >정보제공 현황 조회</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >인증센터</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >공동인증서
-                                  <br />내보내기/가져오기</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >대출계산기</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >월납입금 계산</RouterLink
-                                >
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li :class="$style['nav__depth-item']">
-                        <div :class="$style['nav__depth-title']">
-                          <span :class="$style['nav__depth-text']"
-                            >전화상담신청</span
-                          >
-                        </div>
-                        <div :class="$style['nav__depth-contents']">
-                          <ul :class="$style['nav__list']">
-                            <li :class="$style['nav__item']">
-                              <div :class="$style['nav__text']">
-                                <RouterLink
-                                  to=""
-                                  :class="$style['nav__link']"
-                                  @click="layerSlotProps.close()"
-                                  >전화상담</RouterLink
+                                  >통지문서조회</RouterLink
                                 >
                               </div>
                             </li>
@@ -712,6 +636,7 @@ export default {
                   </div>
                 </div>
               </section>
+              <!-- e:// 250325 수정 -->
               <!-- // 고객센터 -->
             </div>
             <!-- // E: 240726 수정 -->
