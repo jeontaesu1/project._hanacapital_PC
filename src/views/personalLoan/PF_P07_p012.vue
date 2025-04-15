@@ -101,6 +101,49 @@ export default {
 
     <div>
       <ul class="reset-list">
+        <!-- 250415  버튼 추가 -->
+        <li class="row-margin-item-regular">
+          <ContentsButton>
+            <BasicBoxHead>
+              <BasicBoxHeadLeft>
+                <h3 class="text-title-2 font-weight-medium">
+                  NH투자증권(유캔그린)
+                </h3>
+              </BasicBoxHeadLeft>
+              <BasicBoxHeadRight>
+                <RoundStatus size="large" :block="true"> 5년 추가 연장 대상 </RoundStatus>
+              </BasicBoxHeadRight>
+            </BasicBoxHead>
+
+            <KeyValue :wrap="true">
+              <KeyValueItem>
+                <KeyValueTitle>대출일</KeyValueTitle>
+                <KeyValueText>2023.12.22</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>만기일</KeyValueTitle>
+                <KeyValueText>2023.12.22</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출잔액</KeyValueTitle>
+                <KeyValueText>50,000,000 원</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>현재금리</KeyValueTitle>
+                <KeyValueText>4.2%</KeyValueText>
+              </KeyValueItem>
+
+              <KeyValueItem>
+                <KeyValueTitle>대출기간</KeyValueTitle>
+                <KeyValueText>12개월</KeyValueText>
+              </KeyValueItem>
+            </KeyValue>
+          </ContentsButton>
+        </li>
+        <!--// 250415 -->
         <li class="row-margin-item-regular">
           <ContentsButton>
             <BasicBoxHead>

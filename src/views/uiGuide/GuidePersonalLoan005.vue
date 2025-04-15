@@ -13,6 +13,7 @@ import PF_P07_l101 from '@/views/personalLoan/PF_P07_l101.vue';
 import PF_P07_l301 from '@/views/personalLoan/PF_P07_l301.vue';
 import PF_P07_l004_001 from '@/views/personalLoan/PF_P07_l004_001.vue';
 import PF_P07_l004_002 from '@/views/personalLoan/PF_P07_l004_002.vue';
+import PF_P07_l004 from '@/views/personalLoan/PF_P07_l004.vue';
 
 export default {
   components: {
@@ -27,6 +28,7 @@ export default {
     PF_P07_l301,
     PF_P07_l004_001,
     PF_P07_l004_002,
+    PF_P07_l004,
   },
   setup() {
     const layer001 = ref(null);
@@ -36,6 +38,7 @@ export default {
     const layer005 = ref(null);
     const layer006 = ref(null);
     const layer007 = ref(null);
+    const layer008 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -58,6 +61,9 @@ export default {
     const layer007Open = (e = {}) => {
       layer007.value.layer.open(e.target);
     };
+    const layer008Open = (e = {}) => {
+      layer008.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -67,6 +73,7 @@ export default {
       layer005,
       layer006,
       layer007,
+      layer008,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -74,6 +81,7 @@ export default {
       layer005Open,
       layer006Open,
       layer007Open,
+      layer008Open,
     };
   },
 };
@@ -124,6 +132,13 @@ export default {
         </BasicButton>
       </ButtonListItem>
       <!-- // E: 240524 수정 -->
+      <!-- S: 250415 추가 PF_P07_l004 -->
+      <ButtonListItem>
+        <BasicButton @click="layer008Open">
+          추가연장 계약 동의서<br />PF_P07_l004
+        </BasicButton>
+      </ButtonListItem>
+      <!-- E: 250415 추가 PF_P07_l004 -->
     </ButtonList>
 
     <PF_P07_l001 ref="layer001" />
@@ -133,5 +148,6 @@ export default {
     <PF_P07_l301 ref="layer005" />
     <PF_P07_l004_001 ref="layer006" />
     <PF_P07_l004_002 ref="layer007" />
+    <PF_P07_l004 ref="layer008" />
   </PageContents>
 </template>

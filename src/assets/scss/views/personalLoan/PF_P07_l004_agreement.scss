@@ -1,0 +1,133 @@
+//@import '@/assets/scss/components/import/basic-list.scss';
+@import '@/assets/scss/components/import/basic-table.scss';
+@import '@/assets/scss/components/import/not-table.scss';
+
+.summary-text-ty1 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  color: #666;
+  padding: 0;
+  margin: 0;
+}
+.agree-h3-ty1 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  color: #15181F;
+  margin: 0 0;
+}
+.agree-text-ty1 {
+  color: #15181F;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  margin: 0px 0 0 0; padding: 0 0;
+}
+.agree-text-ty2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5; /* 150 */
+  letter-spacing: -0.28px;
+  margin: 0 0 0 0;
+  padding: 0 0;
+}
+.mt-6 {
+  margin-top: 6px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+/*
+._basic-table_bg5fm_1 > table > tbody > tr > td.al-text-left {
+  text-align: left;
+}
+*/
+.basic-table-new--ty1 {
+  border-top: 2px solid #8f8f8f;
+}
+.basic-table-new--ty1 table {
+  width: 100%;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-sizing: border-box;
+}
+.basic-table-new--ty1 > table > thead > tr > th:first-child {
+  border-left: none;
+}
+.basic-table-new--ty1 > table > thead > tr > th {
+  padding: 13px 0;
+  border-left: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  word-break: break-all;
+  color: #757575;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  text-align: center;
+}
+.basic-table-new--ty1 > table > tbody > tr > td {
+  padding: 16px 16px;
+  border-left: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  word-break: break-all;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 400;
+}
+.basic-table-new--ty1 > table > tbody > tr > td:first-child {
+  border-left: none;
+}
+.basic-table-new--ty1 > table > tbody > tr td.al-text-left {
+  text-align: left;
+}
+
+//__left-line.basic-table__left-line
+.basic-table-new--ty1 > table > tbody > tr td.basic-table__left-line:first-child {
+  border-left: 1px solid #e0e0e0;
+}
+
+.sign-content-box {
+  margin-top: 20px;
+}
+.sign-content-box > p {
+  margin-top: 0;
+}
+.sign-content-box p {
+  margin: 8px 0 0 0;
+  padding: 0;
+  text-align: right;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  color: #15181F;
+}
+.sign {
+  margin-top: 10px;
+
+  img {
+    display: block;
+    margin-left: auto;
+  }
+}
